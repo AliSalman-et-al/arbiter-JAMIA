@@ -1,5 +1,10 @@
 # ARBITER JAMIA analysis
 
+**Status: stopped at the mandatory section 5.4 validation gate.** See
+[VALIDATION-HALT.md](VALIDATION-HALT.md). The gate test currently fails on the
+supplied inputs. Reports and downstream outputs are not yet implemented;
+the render command below documents the intended completed workflow.
+
 From this directory, using R 4.6.1 and Quarto 1.10.19:
 
 ```powershell
