@@ -1,0 +1,16 @@
+source(file.path(analysis_dir,'R','presentation.R'))
+testthat::test_that('display punctuation follows the manuscript standard', {
+  testthat::expect_identical(fmt_ci(.26,.42),'(0.26\u20130.42)')
+  testthat::expect_identical(fmt_ci(-.03,.14),'(\u22120.03 to 0.14)')
+  testthat::expect_identical(fmt_ci(-.4,-.1),'(\u22120.40 to \u22120.10)')
+  testthat::expect_identical(fmt_number(-.001),'0.00')
+  testthat::expect_identical(fmt_fraction(54,62),'54/62 (87.1%)')
+  testthat::expect_identical(fmt_fraction(0,0),'\u2014')
+  testthat::expect_identical(fmt_ci(NA_real_,1),'\u2014')
+})
+testthat::test_that('reader labels translate sources without changing data', {
+  testthat::expect_identical(reader_label(c('ARBITER-Sonnet','Baseline-Sonnet','A','Z')),
+    c('ARBITER','Unassisted','Adjudicator 1','Adjudicator 2'))
+  testthat::expect_identical(reader_label('ARBITER-Haiku',TRUE),'ARBITER (Haiku 5.5)')
+  testthat::expect_identical(unname(JAMA_ROLES[1:3]),c('#00A1D5','#DF8F44','#374E55'))
+})

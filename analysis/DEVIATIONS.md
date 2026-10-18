@@ -176,3 +176,12 @@ No Python is used. This file records conservative resolutions as they arise.
     coder sample, instructions, coding functions/tests and QMD placeholders. The
     historical coding_sample_seed field in reproducibility.csv is retained solely
     to preserve that CSV; it is unused. Historical round reports remain provenance.
+
+24. **Round 8a presentation layer.** Section 7 supersedes earlier placement and
+    display choices. Statistical CSVs remain unchanged from 44a29a8. New Word
+    and HTML tables are display objects built from those CSVs and curated metadata.
+    Fira Sans regular/bold and Condensed regular are vendored with OFL licensing,
+    registered with systemfonts/ragg, and reproducibly installed per-user for Cairo
+    PDF via install-fonts.ps1. No Arial figure fallback is needed. Arial 9 pt is
+    used in editable Word tables. JAMA roles are fixed to the plan's hex values.
+    R string escapes preserve Unicode punctuation under this Windows locale.
