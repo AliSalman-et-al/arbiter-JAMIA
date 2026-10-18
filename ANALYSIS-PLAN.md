@@ -123,6 +123,29 @@ Until the coding is filled in, the report shows a placeholder for this analysis.
 
 Report the share of signalling answers whose justification contains a verbatim quotation, for each Sonnet arm. A quotation is text inside straight or curly double quotes with at least 5 words. Only answers marked `active` count. Report this as descriptive only. It is not a measure of whether the quotes were verified.
 
+### 5.8 Process and audit metrics (added 2026-10-18; Table 5 or supplement)
+
+The sources are the run logs (`<arm>/logs/<slug>/meta.json` and `turn*.jsonl`), `continues.csv` and, for the ARBITER arms, the bundles (`<arm>/bundles/<slug>.rob2.zip`, containing `canonical.json` and `verification.json`). The raw logs are about 1.1 GB and are not committed. A script, `analysis/R/extract-run-metrics.R` or a uv Python script if streaming JSON in R is impractical, writes one committed derived CSV per arm to `analysis/data-derived/`. The reports read only these derived CSVs. The script must be re-runnable, and it must stop with an error if the logs are absent rather than writing empty files.
+
+Per trial and arm:
+
+- **Wall-clock time:** sum of the `seconds` values across turns.
+- **Tokens:** input, cache creation, cache read, output and thinking tokens, summed across turns.
+- **Cost:** the cost in USD that the harness reported per turn, summed. The harness marks its cost basis as unknown, so report cost as harness-reported.
+- **Turns and agent steps:** turns, and `num_turns` per turn.
+- **Continue prompts:** the number of "Continue." replies, from `continues.csv` and `meta.json`.
+- **Approval:** whether the result-approval step occurred (ARBITER arms).
+
+Report the median [IQR] and the total per arm, and the paired ARBITER minus baseline difference for Sonnet, with a bootstrap CI as in section 4.
+
+From the ARBITER bundles, per arm:
+
+- The share of active signalling answers with at least one evidence basis. Also report the distribution of evidence bases per answer.
+- Bundle verification outcome, from `verification.json`, as the share of bundles that pass.
+- The proposed-judgement check and override list required by section 5.4.
+
+Baseline arms have no evidence trace. Report them as "not available" rather than 0.
+
 ## 6. Exploratory analyses
 
 - Signalling-answer agreement with each adjudicator's independent answers, on disputed domains only (`signalling_answers_independent`). Report it per question, collapsed to Y/PY, N/PN and NI/NA.
@@ -159,7 +182,13 @@ Figures are saved as PDF and as PNG at 600 dpi. Tables are saved as CSV and rend
 ## 8. Reporting
 
 - Follow TRIPOD-LLM, plus GRRAS for the agreement and reliability parts.
-- Methods state the model IDs, the effort setting, the run dates and the ARBITER commit.
+- Methods state the model IDs, the effort setting, the run dates and the ARBITER commit. Take these from the run READMEs and `meta.json`:
+  - models `claude-sonnet-5-5` and `claude-haiku-5-5`, effort medium
+  - Claude Code 2.1.278, with an isolated home (`claude-home-settings.json`)
+  - kit commit `2848c79`
+- At run time ARBITER was named rob2-kit, and the skill was invoked as `/rob2-assess`. Methods must state this.
+- The baseline prompt is the same minimal prompt without the skill, followed by the output-format instruction in `no-kit-*/nokit-format.txt`. Methods must quote it, and must not call the two prompts identical.
+- In the ARBITER arms, the harness approved the proposed result unchanged and replied "Continue." at most twice per phase (see the kit READMEs). Report this as part of the protocol.
 - Each arm ran each trial once. Report this as a limitation: run-to-run variability is not estimated.
 
 ## 9. Implementation
