@@ -1,4 +1,5 @@
 # Display transformations only. Statistical objects and CSVs are never modified.
+if(.Platform$OS.type=='windows') Sys.setlocale('LC_CTYPE','English_United States.utf8')
 JAMA_ROLES <- c(ARBITER='#00A1D5',Unassisted='#DF8F44',Published='#374E55',
   Split='#D9D9D9',`ARBITER (Haiku 5.5)`='#80D0EA',`Unassisted (Haiku 5.5)`='#EFC7A2')
 
@@ -34,7 +35,8 @@ fmt_fraction <- function(n,N) {
 fmt_estimate <- function(x,proportion=FALSE) {
   out <- fmt_number(x$estimate)
   if(proportion && all(c('count','n') %in% names(x))) out <- fmt_fraction(x$count,x$n)
-  paste0(out,' ',fmt_ci(x$lower,x$upper))
+  value <- paste0(out,' ',fmt_ci(x$lower,x$upper))
+  value[!is.finite(x$estimate)] <- '\u2014'; value
 }
 display_frame <- function(x,supplement=TRUE) {
   x <- as.data.frame(x)
@@ -59,7 +61,7 @@ house_table <- function(x,footnote=NULL,width=6.85) {
     flextable::valign(valign='top',part='all') |>
     flextable::align(align='left',part='all') |>
     flextable::autofit() |>
-    flextable::fit_to_width(max_width=width) |>
+    flextable::width(width=width/ncol(x)) |>
     flextable::fontsize(size=9,part='all') |>
     flextable::set_table_properties(layout='fixed',opts_word=list(split=FALSE,repeat_headers=TRUE))
   if(!is.null(footnote)) ft <- ft |> flextable::add_footer_lines(footnote) |>

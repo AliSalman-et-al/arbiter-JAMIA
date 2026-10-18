@@ -185,3 +185,15 @@ No Python is used. This file records conservative resolutions as they arise.
     PDF via install-fonts.ps1. No Arial figure fallback is needed. Arial 9 pt is
     used in editable Word tables. JAMA roles are fixed to the plan's hex values.
     R string escapes preserve Unicode punctuation under this Windows locale.
+
+25. **Round 8a main tables.** Main Table 1 pools D1-D5 counts from the frozen
+    label export, joins the curated specialty/journal/year/topic, sorts specialty
+    then journal, and adds totals. Existing per-domain table1.csv is retained for
+    the supplement. Table 2 has Published, composite and paired-difference blocks;
+    coefficient/proportion CIs stay on their original scale. Table 3 uses proposals
+    for domain consistency and separates exact Overall consistency and permitted
+    escalation; Unassisted proposal/override and trace metrics are unavailable.
+    Table 4 contains reliability only; localisation classes move to the supplement.
+    UTF-8 LC_CTYPE is set explicitly for Word Unicode headers on Windows, without
+    changing numeric or collation settings. Figure 1's report slot and code are
+    preserved as assigned to the separate worktree.

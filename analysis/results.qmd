@@ -3,22 +3,17 @@ title: "ARBITER: main analysis results"
 ---
 
 ```{r}
-#| label: rebuild
 source('run.R')
 source('R/report.R')
+main_tables <- list(benchmark_table(inputs),main_table2(),main_table3(),main_table4())
+notes <- main_table_notes()
 ```
 
-## Methods facts
+## Methods
 
-The run READMEs and harness metadata identify models `claude-sonnet-5-5` and `claude-haiku-5-5`, effort medium, and Claude Code 2.1.278 with isolated configuration homes. ARBITER 1.0.0 ([public commit 2f549ae](https://github.com/AliSalman-et-al/ARBITER/commit/2f549ae30f056ff441ea61a04b719968716f2219)) was used for the runs. ARBITER-Sonnet ran on 12 October 2026 (12:12–19:17 EDT); the other arms ran on 14 October 2026, per their READMEs. Each arm ran each trial once. Run-to-run variability is not estimated. [AUTHORS: ARBITER 1.0.0 Zenodo DOI].
+The benchmark includes 102 trials from 16 meta-analyses. Models were Claude Sonnet 5.5 and Haiku 5.5, effort medium, using Claude Code 2.1.278 and isolated configuration homes. ARBITER 1.0.0 (public commit 2f549ae) was used. Sonnet with ARBITER ran on 12 October 2026; other arms ran on 14 October 2026. Each arm ran each trial once; run-to-run variability is not estimated. Prompts differ by the skill invocation and the Unassisted output-format instruction; templates and a filled example are in the supplement. Proposed results were approved unchanged. Up to two uncoached Continue replies per phase were permitted.
 
-The ARBITER prompt invokes `/arbiter-assess`. The baseline uses the same minimal assessment request without the skill, followed by a fixed output-format instruction; the two prompts are not identical. Both templates and the verbatim baseline format instruction are quoted in the supplement. The ARBITER harness approved the proposed result unchanged and resumed with “Approved.” The protocol permitted uncoached “Continue.” replies at most twice per phase; observed counts are reported in the supplement. Baseline access was limited to Read, Glob and Grep, with no MCP server, skills or web tools; the supplied registry Markdown and acquired protocol/SAP documents preserved input parity.
-
-The analysis includes 102 trials, after excluding atwine-2020, haney-2004 and herrmann-2016 for unsupported designs. Only the win share on consensus discordant cells is confirmatory. All other estimates are secondary or exploratory. Intervals use 10,000 percentile bootstrap replicates, resampling trials within each meta-analysis, seed `r SEED`. All estimates and paired contrasts use the same replicate weights. Blank CSV estimates and em dashes indicate undefined values. Metrics and differences are expressed on the 0–1 scale, except that agreement coefficients and differences can be negative. No p-values or multiplicity adjustment are used.
-
-Missing arm judgements count as wrong. Ordinal coefficients for missing Haiku judgements use the documented maximal-disagreement penalty; an observed-cell sensitivity is supplied. The composite reference uses consensus preferred judgements on consensus disputed cells and meta labels on other cells, excluding split cells.
-
-Adjudicators could only choose among the three labels offered. Cells where both Sonnet arms matched the meta label were never adjudicated and are assumed correct. Both features inflate absolute composite values for the Sonnet arms. Composite accuracy must not be presented as an accuracy claim in the abstract.
+Only consensus-discordant win share is confirmatory. Intervals use 10,000 percentile bootstrap replicates, resampling trials within meta-analysis, seed 20261018. Missing judgements count as wrong. No p-values or multiplicity corrections are used. The composite excludes split cells and substitutes consensus preferred judgements on consensus cells. Adjudicators could only choose among the three offered labels. Cells where both Sonnet arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values; composite accuracy must not be an accuracy claim in the abstract.
 
 ## Figure 1: architecture and draft trace
 
@@ -26,123 +21,69 @@ Adjudicators could only choose among the three labels offered. Cells where both 
 
 The trace uses a consensus cell where ARBITER-Sonnet matched the preferred judgement and differed from the meta label. Four more-severe candidates where only ARBITER departed from meta, plus levin-2016 D2, with cited bundle passages, evidence identifiers, source/page locators, verification status and abbreviated answer sets are in [worked-trace-candidates.csv](output/tables/worked-trace-candidates.csv). The default is award-10-2018 D2. The trace shows the span binding to its hash-identified captured source and the recorded independent bundle verifier result. The displayed selection is provisional for author review.
 
-## Figure 2: study flow
 
-![Benchmark inclusion and adjudication flow. Unsupported-design exclusions apply to every arm and analysis. The 62 differing consensus cells split into 54 ARBITER wins, 7 Baseline wins and 1 neither.](output/figures/figure2.png)
+## Figure 2. Study flow
 
-The analysis contains `r nrow(inputs$trials)` trials from `r n_distinct(inputs$trials$meta_id)` meta-analyses, `r nrow(cells)` disputed cells, `r sum(cells$consensus)` consensus cells and `r sum(!cells$consensus)` split cells.
+![Benchmark inclusion and adjudication flow.](output/manuscript/Figure2.png)
 
-## Table 1: benchmark set
-
-Domain distributions are Low / Some concerns / High counts.
+## Table 1. Benchmark set
 
 ```{r}
-show_table(table_data('table1'))
+main_ft <- house_table(main_tables[[1]],notes[[1]])
+main_ft <- flextable::width(main_ft,j=1:6,width=c(.95,1.15,2.2,.45,1.2,.9))
+main_ft
 ```
 
-## Figure 3: adjudication endpoint
+## Figure 3. Blinded adjudication
 
-![Panel A (top): ARBITER and Baseline win shares with 95% stratified trial-cluster bootstrap CIs. Neither counts are 1/62 for consensus, 4/80 for adjudicator A, and 1/80 for adjudicator Z. The split-cell sensitivity has 19/80 residual cells, including 18 forced ARBITER losses. Panel B (bottom): all 154 disputed cells, grouped by departure from the meta label and coloured by preferred-label outcome. Counts include labels shared by both arms.](output/figures/figure3.png)
+![Win shares with 95% CIs and preferred labels on all disputed cells.](output/manuscript/Figure3.png)
 
 ```{r}
-p <- table_data('primary-endpoint')
-cons <- p |> filter(analysis=='Consensus')
+p <- manuscript_data('primary-endpoint') |> filter(analysis=='Consensus')
 ```
 
-On `r cons$n[1]` consensus discordant cells, ARBITER-Sonnet won `r cons$count[cons$metric=='ARBITER']`, baseline-Sonnet won `r cons$count[cons$metric=='Baseline']`, and neither won `r cons$count[cons$metric=='Neither']`. ARBITER win share was `r format_estimates(filter(cons,metric=='ARBITER'))` (95% CI).
+Among 62 consensus cells where the arms differed, ARBITER won 54, Unassisted won 7, and neither won 1. ARBITER's win share was `r fmt_fraction(p$count[p$metric=='ARBITER'],62)` `r fmt_ci(p$lower[p$metric=='ARBITER'],p$upper[p$metric=='ARBITER'])` (95% CI).
+
+## Table 2. Agreement (95% CI)
+
+Blocks are: Published reference; composite reference; paired ARBITER − Unassisted differences.
 
 ```{r}
-show_table(p |> select(analysis,metric,n,count,estimate,lower,upper))
+house_table(main_tables[[2]],notes[[2]])
 ```
 
-Panel B counts preferred labels by equality, including labels shared by multiple sources. Split-cell sensitivity forces split discordant cells to be ARBITER losses; its residual category includes these forced losses.
+## Figure 4. Published-label agreement and direction of error
 
-## Table 2: agreement with meta labels
+![Weighted kappa against Published and the direction of Published relative to consensus preferred judgements.](output/manuscript/Figure4.png)
 
-Cells are pooled D1–D5 (`r 102*5` per arm) or Overall (`r sum(!is.na(filter(inputs$labels,arm=='ARBITER-Sonnet',domain=='Overall')$meta))` per arm). Values are estimates (95% CI). Sensitivity and specificity classify Not Low using meta labels as the reference. All-Low reports accuracy and specificity only.
+## Table 3. RoB 2 rule consistency and audit (95% CI)
 
 ```{r}
-show_metrics('table2')
-show_metrics('table2-differences',c('comparison','domain'))
+house_table(main_tables[[3]],notes[[3]])
 ```
 
-Pooled D1–D5 exact agreement with meta labels was `r headline('agreement-meta','accuracy','ARBITER-Sonnet','D1-D5')` for ARBITER-Sonnet and `r headline('agreement-meta','accuracy','Baseline-Sonnet','D1-D5')` for baseline-Sonnet. The latter reproduces 395/510.
+ARBITER proposals reproduce all 510 Sonnet and 505 observed Haiku domain judgements from the official algorithms. Sonnet has no recorded override. Haiku has one recorded override (hill-2017 D1, Low to Some concerns); its rationale is in the supplement. Evidence binding and bundle verification are structural checks and do not establish clinical correctness.
 
-## Figure 4: domain agreement and composite reference
-
-![Domain-level linearly weighted κ against meta labels and the composite reference, with 95% stratified trial-cluster bootstrap CIs. The dashed line denotes the all-Low rule (κ = 0); its κ is suppressed in tables under the prespecified constant-rule reporting convention. Split cells are excluded from the composite.](output/figures/figure4.png)
-
-The composite includes 485 cells per Sonnet arm. Pooled weighted κ was `r headline('agreement-composite','kappa','ARBITER-Sonnet','D1-D5')` for ARBITER-Sonnet and `r headline('agreement-composite','kappa','Baseline-Sonnet','D1-D5')` for baseline-Sonnet.
+## Table 4. Reliability of the reference standard (95% CI)
 
 ```{r}
-show_table(metric_table(table_data('agreement-composite') |>
-  filter(domain=='D1-D5',arm!='All-Low',metric %in% c('kappa','AC2','accuracy'))))
-show_table(metric_table(table_data('agreement-composite-differences') |>
-  filter(domain=='D1-D5',metric %in% c('kappa','AC2','accuracy')),c('comparison','domain')))
+house_table(main_tables[[4]],notes[[4]])
 ```
 
-## Table 3: algorithm consistency and audit
+## Figure 5. Decisive signalling questions
 
-Domain algorithms use effect of assignment for D2. A required NA or missing answer makes a nonempty path invalid. Departure is Violation + Invalid answer path. Only absent labels or wholly absent answer sets are not evaluable, and excluded from rate denominators; their counts remain in the missing column. ARBITER domain consistency refers to the proposed judgement, with recorded overrides shown separately. Overall classifications distinguish exact consistency, permitted escalation, and violations.
+![Individually decisive questions among primary-population consensus losses, with loss denominators by domain.](output/manuscript/Figure5.png)
+
+The primary localisation population contains 10 ARBITER and 47 Unassisted losses. Cells may contribute several decisive questions. Jointly decisive sets do not contribute individual-question counts. Class counts and the sensitivity population are supplementary.
+
+## Time and reconstructed cost
 
 ```{r}
-show_table(table_data('table3') |> filter(domain %in% c('D1-D5','Overall','Audit')) |>
-  select(arm,domain,status,n,count,missing,estimate,lower,upper),
-  caption='Algorithm consistency and audit. Text-span quotes are server-extracted; visual image regions are server-rendered and hash-bound, while their model-written transcriptions are not machine-checked against the image.')
+proc <- manuscript_data('table5')
 ```
 
-The proposed judgement agrees with the official domain algorithm in 510/510 ARBITER-Sonnet domains and 505/505 observed ARBITER-Haiku domains. The recorded override rates are 0/510 and 1/505 (0.2%), respectively. The hill-2017 D1 bundle records a Low to Some concerns override with rationale and evidence. Its adopted-label agreement with the algorithm is therefore 504/505 (99.8%). Five award-1-2014 domain labels remain missing. The amended gate passes. Judgements are algorithm-proposed; any model departure is recorded and auditable. Baseline violations are unrecorded departures.
+Time per trial was `r proc[[2]][1]` minutes for ARBITER and `r proc[[3]][1]` minutes for Unassisted (median [IQR]); the paired mean difference was `r proc[[4]][1]` minutes (95% CI). Reconstructed API list-price cost per trial was US$`r proc[[2]][2]` and US$`r proc[[3]][2]`, respectively; the paired mean difference was US$`r proc[[4]][2]` (95% CI). These are list-price equivalents, not expenditure. The supplement gives process metrics, cost bounds and Haiku analyses.
 
-Evidence coverage and structural bundle verification are the main grounding evidence. Baseline evidence traces are not available. Verification does not establish assessment correctness or completion. Required active answers were checked in every domain history record of the ARBITER bundles; both arms have zero invalid paths. Invalid-path sensitivity counts, resolving required NA/missing answers first as N/PN and then as NI, are in the supplement.
+## Supplementary material
 
-```{r}
-binding <- table_data('audit-summary') |> filter(metric %in% c(
-  'Structural evidence binding (overall)','Text-span evidence binding','Visual evidence binding',
-  'Other evidence records','Trials using visual evidence'))
-for(i in seq_len(nrow(binding))) cat(sprintf('\n%s — %s: %d/%d (%.1f%%).\n',
-  binding$arm[i],binding$metric[i],binding$count[i],binding$n[i],100*binding$estimate[i]))
-```
-
-Text-span quotes are server-extracted. Text-span binding requires a non-empty quote, a source identifier matching a captured source in the same bundle, a source version, a finite page and character offsets with start < end. Visual evidence uses a server-rendered, hash-bound image region: render.source_id must match the record source_id and a captured source in the same bundle; render.page must be a positive integer; render.png_sha256 must be non-empty; region must contain four finite numbers in [0, 1], ordered x0 < x1 and y0 < y1; and transcription must be non-empty. The transcription is written by the model and is not machine-checked against the image.
-
-Each distinct evidence identity cited in bases or counterevidence by current active answers is counted once per bundle; superseded histories are excluded. Records with kind figure or a render field are visual (taking precedence for hybrid records); remaining narrative records or records with quote/start/end fields are text spans. Unmatched or missing cited records are reported as other and remain in the overall denominator as unbound. Overall counts include text, visual and other records. Trials using any visual evidence are counted over all 102 analysis-set trials per arm. These are structural checks, without PDF text re-extraction or a judgement of whether evidence supports an answer. Baseline evidence traces are not available.
-
-## Table 5: process metrics
-
-
-```{r}
-show_table(table_data('table5'))
-```
-
-Values are median [IQR], with paired mean ARBITER-Sonnet minus Baseline-Sonnet differences (95% CI), over 102 trials. Time is minutes per trial; input tokens are raw counts per trial (no decimals); cache creation and cache read tokens are millions per trial (two decimals); output and thinking tokens are thousands per trial (one decimal). Cost is a reconstructed API list-price equivalent in USD per trial under the frozen rate card in plan section 5.8; it is not expenditure. Thinking tokens are part of output tokens. Totals and Haiku results are in the supplement.
-
-## Table 4: reliability of the reference standard
-
-Disputed cells only (selected for disagreement with the meta label); not an estimate of overall meta-label accuracy. This restriction applies to all independent-judgement comparisons with source labels below.
-
-```{r}
-show_table(metric_table(table_data('table4-reliability'),c('comparison','population','n')))
-show_table(table_data('meta-consensus-confusion') |>
-  pivot_wider(names_from=preferred,values_from=n))
-show_table(table_data('meta-leniency') |> select(direction,n,count,estimate,lower,upper))
-```
-
-```{r}
-rel <- table_data('table4-reliability')
-len <- table_data('meta-leniency')
-```
-
-Adjudicator A–Z weighted κ was `r estimate_ci(filter(rel,comparison=='A vs Z independent',metric=='kappa'))` on independent judgements and `r estimate_ci(filter(rel,comparison=='A vs Z preferred',metric=='kappa'))` on preferred judgements. Among consensus disputed cells, meta labels were less severe in `r len$count[len$direction=='Less severe']`/`r len$n[1]` cells (`r percent(len$estimate[len$direction=='Less severe'])`).
-
-The primary error-localisation analysis uses consensus losses where both independent judgements equal the preferred judgement (10 ARBITER-Sonnet and 47 Baseline-Sonnet cells). Counts follow the six ordered classes in plan section 5.6.
-
-```{r}
-show_table(table_data('error-localisation-counts') |> filter(population=='Primary') |>
-  arrange(class_order) |> select(class,source,n) |> pivot_wider(names_from=source,values_from=n))
-```
-
-Among all consensus cells, ARBITER-Sonnet lost 13, Baseline-Sonnet 60 and the meta label 100. Meta losses cannot be localised because published meta labels have no signalling answers; their direction is reported above. The supplement gives sensitivity counts (12 and 57 eligible losses), question frequencies, parse issues and a figure. The deterministic [Discussion quote candidates](output/tables/discussion-quote-candidates.csv) preserve both adjudicators' full adjudication explanations.
-
-## Limitations facts and author completion
-
-Adjudicators could only choose among the three offered labels. Unadjudicated cells where both Sonnet arms matched the meta label are assumed correct in the composite. These features inflate absolute composite values. Each arm assessed each trial once; run-to-run variability is not estimated. The final worked-trace selection and checklist page/section references require author completion. Process times are harness measurements; costs are reconstructed API list-price equivalents; thinking tokens are reported separately and are part of output tokens. Trial PDFs are not redistributed; source DOIs and FILES.csv hashes identify them.
+[Supplement.docx](output/manuscript/Supplement.docx) contains numbered eTables and eFigures and the methods appendix. [TRIPOD-LLM.docx](output/manuscript/TRIPOD-LLM.docx) contains a checklist skeleton with GRRAS items, for author completion. Legends and alt text are in [figure-legends.md](output/manuscript/figure-legends.md).
