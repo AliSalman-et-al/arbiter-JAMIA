@@ -59,3 +59,5 @@ These are the labels used in manuscript text, figures and tables. The internal t
 | Meta label | Published label | Published label |
 | All-Low rule | All-Low rule | All-Low rule |
 | Adjudicator A / Z | Adjudicator 1 / 2 | Adjudicator 1 / 2 |
+| LLM agent | AI model (Figure 1: AI model (LLM agent)) | AI model |
+| ARBITER server | ARBITER (rule-based software, no AI) (Figure 1: ARBITER server) | ARBITER server |
