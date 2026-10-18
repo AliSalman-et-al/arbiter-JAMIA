@@ -59,5 +59,10 @@ These are the labels used in manuscript text, figures and tables. The internal t
 | Meta label | Published label | Published label |
 | All-Low rule | All-Low rule | All-Low rule |
 | Adjudicator A / Z | Adjudicator 1 / 2 | Adjudicator 1 / 2 |
+| Meta label (first use) | published review label | published review label |
+| Not Low | Some concerns or High | Some concerns or High |
+| Discordant cell | cell where the two arms disagreed | cell where the two arms disagreed |
+| Consensus preferred judgement | the adjudicators' agreed choice | the adjudicators' agreed choice |
+| Decisive question | question that alone changed the rating | question that alone changed the rating |
 | LLM agent | AI model (Figure 1: AI model (LLM agent)) | AI model |
 | ARBITER server | ARBITER (rule-based software, no AI) (Figure 1: ARBITER server) | ARBITER server |

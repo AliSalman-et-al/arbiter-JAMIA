@@ -305,3 +305,18 @@ One `Supplement.docx`, built by the pipeline, with eTables and eFigures numbered
   - a reproduction of the baseline-Sonnet D1 to D5 count of 395/510 from `no-kit-sonnet-5.5/accuracy.md`
 - Running `quarto render analysis/` rebuilds every number, figure and table from the CSVs.
 - Code and adjudication sheets go to a public repository with a Zenodo DOI. Trial PDFs are not redistributed; DOIs and the `FILES.csv` hashes are given instead.
+
+### Round 12 manuscript polish (2026-10-19)
+Applies to every main and supplementary item. Principles: Tufte/Heard (most ideas, least ink), Schimel (make the reader's job easy; data as supporting actors), one home per number.
+- **Titles** state the finding as a short sentence; statistical detail goes to the legend/footnote.
+- **Legends ≤ ~120 words**, fixed order: finding phrase → what each panel/row shows → how to read marks → essential definitions and method (CI type, n). No production notes, colour descriptions already visible, tool lists, hashes or repeated counts. Provenance detail lives in the figure notes files, not the manuscript. Never mention pre-release names or builds.
+- **One home per number**: Fig 3 stops at "62 consensus cells where the arms differ · 18 split" (no 54/7/1); Fig 4A drops the pooled point (pooled κ in Table 2); legends do not repeat counts printed in figures.
+- **Table 2**: Published D1–D5 and Overall (ARBITER, Unassisted, All-Low rule) + paired differences; columns weighted κ, exact agreement, sensitivity for Some concerns or High, specificity. AC2 and the composite block → supplement (footnote pointer).
+- **Table 3**: reframed around Unassisted departures (violation, invalid path, total, by domain; Overall consistency); ARBITER rule rows collapse to one note "0 by design"; ARBITER-only evidence/audit rows kept. Title: "Without ARBITER, 1 in 8 domain ratings broke the RoB 2 rules".
+- **Table 4**: weighted κ + raw agreement; AC2 → supplement. Title states that adjudicators' own prior ratings agreed far more with ARBITER.
+- **Fig 5B**: row labels "ARBITER, stricter / more lenient than published"; "vindicated" → "adjudicators agreed with it".
+- **Fig 6**: single unit — bars count loss cells by the question that alone changed the rating; cells without one go into facet labels; no lighter bars.
+- **Reader labels** per GLOSSARY (Some concerns or High; when the two arms disagreed; the adjudicators' agreed choice; published review label; question that alone changed the rating).
+- **Results sentences**: `analysis/output/manuscript/results-sentences.md`, one or two finding-first sentences per main item with magnitudes and parenthetical citations.
+- **Supplement audit**: same title/legend/label rules for all eTables/eFigures; merge duplicates (e.g. composite sensitivity eTables 15–18 → 2); every footnote defines abbreviations and denominators.
+- 6 figures and 4 tables retained.
