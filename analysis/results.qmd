@@ -100,7 +100,7 @@ Evidence coverage and structural bundle verification are the main grounding evid
 show_table(table_data('table5'))
 ```
 
-Values are median [IQR], with paired mean ARBITER-Sonnet minus Baseline-Sonnet differences (95% CI), over 102 trials. Time is minutes per trial; tokens are thousands per trial. Cost is a reconstructed API list-price equivalent in USD per trial under the frozen rate card in plan section 5.8; it is not expenditure. Thinking tokens are part of output tokens. Totals and Haiku results are in the supplement.
+Values are median [IQR], with paired mean ARBITER-Sonnet minus Baseline-Sonnet differences (95% CI), over 102 trials. Time is minutes per trial; input tokens are raw counts per trial (no decimals); cache creation and cache read tokens are millions per trial (two decimals); output and thinking tokens are thousands per trial (one decimal). Cost is a reconstructed API list-price equivalent in USD per trial under the frozen rate card in plan section 5.8; it is not expenditure. Thinking tokens are part of output tokens. Totals and Haiku results are in the supplement.
 
 ## Table 4: reliability of the reference standard
 

@@ -37,15 +37,18 @@ process_display <- function(metrics,weights,model='Sonnet') {
   differences <- paired_process_difference(metrics,weights,model) |> filter(estimand=='Mean paired trial difference')
   columns <- c('wall_seconds','cost_usd','input_tokens','cache_creation_tokens','cache_read_tokens',
     'output_tokens','thinking_tokens','agent_steps','continues','turns')
-  labels <- c('Time (minutes/trial)','Cost (USD/trial)','Input tokens (thousands/trial)',
-    'Cache creation tokens (thousands/trial)','Cache read tokens (thousands/trial)',
+  labels <- c('Time (minutes/trial)','Cost (USD/trial)','Input tokens (count/trial)',
+    'Cache creation tokens (millions/trial)','Cache read tokens (millions/trial)',
     'Output tokens (thousands/trial)','Thinking tokens (thousands/trial)',
     'Agent steps/trial','Continue prompts/trial','Turns/trial')
   bind_rows(lapply(seq_along(columns),function(i) {
     m <- columns[i]
-    scale <- if(m=='wall_seconds') 60 else if(grepl('tokens',m)) 1000 else 1
-    digits <- if(m=='cost_usd') 2 else if(grepl('tokens',m)) 3 else 1
-    fmt <- function(v) ifelse(is.na(v),'—',formatC(v/scale,format='f',digits=digits))
+    cache <- m %in% c('cache_creation_tokens','cache_read_tokens')
+    scale <- if(m=='wall_seconds') 60 else if(cache) 1e6 else
+      if(m %in% c('output_tokens','thinking_tokens')) 1000 else 1
+    digits <- if(m=='input_tokens') 0 else if(m=='cost_usd' || cache) 2 else 1
+    fmt <- function(v) ifelse(is.na(v),'—',formatC(v/scale,format='f',digits=digits,
+      big.mark=if(m=='input_tokens') ',' else ''))
     row <- tibble(Metric=labels[i])
     for(arm in paste0(c('ARBITER-','Baseline-'),model)) {
       s <- filter(summaries,.data$arm==.env$arm,metric==m)
