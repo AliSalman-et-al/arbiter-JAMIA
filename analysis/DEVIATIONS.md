@@ -197,3 +197,16 @@ No Python is used. This file records conservative resolutions as they arise.
     UTF-8 LC_CTYPE is set explicitly for Word Unicode headers on Windows, without
     changing numeric or collation settings. Figure 1's report slot and code are
     preserved as assigned to the separate worktree.
+
+26. **Round 8a figures.** Figures 2-5 and supplemental forest eFigure 1 use
+    174 mm widths, text no smaller than 7.5 pt, PDF vectors and 600-dpi LZW TIFFs;
+    PNGs are previews. Figure 3 panel B counts are reconstructed in memory from
+    the unchanged cell export, without rewriting figure3-panelB.csv. Figure 4
+    panel B is a count bar for the unchanged 78/29/22 direction totals; the zero
+    line in panel A is a coefficient reference, not an All-Low kappa estimate.
+    Figure 5 facets are domains with both primary loss denominators, paired
+    source bars and short question text; zero-in-both-source questions are omitted
+    only from the figure. Cairo initially substituted Arial until the installed
+    fonts were loaded into the Windows font session. install-fonts.ps1 now calls
+    AddFontResourceEx; embedded PDF fonts are checked during final verification.
+    Figure 1's old builder is no longer invoked by this worktree's pipeline.

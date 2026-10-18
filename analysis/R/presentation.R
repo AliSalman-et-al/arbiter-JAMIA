@@ -83,8 +83,9 @@ register_figure_fonts <- function() {
   fonts <- c('Fira Sans','Fira Sans Condensed')
   paths <- c('assets/fonts/FiraSans-Regular.ttf','assets/fonts/FiraSansCondensed-Regular.ttf')
   stopifnot(all(file.exists(paths)))
-  systemfonts::register_font(fonts[1],plain=paths[1],bold='assets/fonts/FiraSans-Bold.ttf')
-  systemfonts::register_font(fonts[2],plain=paths[2])
+  installed <- unique(systemfonts::system_fonts()$family)
+  if(!fonts[1] %in% installed) systemfonts::register_font(fonts[1],plain=paths[1],bold='assets/fonts/FiraSans-Bold.ttf')
+  if(!fonts[2] %in% installed) systemfonts::register_font(fonts[2],plain=paths[2])
   # Cairo PDF needs installed fonts; the installer installs these same vendored bytes.
   invisible(fonts)
 }
