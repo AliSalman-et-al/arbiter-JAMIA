@@ -12,7 +12,7 @@ def files():
     paths.append(HERE/'avatar-tool-counts.json')
     paths.append(HERE/'figure2-text-provenance.csv')
     paths.extend(sorted((HERE/'html-report').rglob('*.html')))
-    paths.extend(HERE/'qa'/n for n in ['html-report-relabel.md','html-report-relabel.diff','avatar-html-report.png','avatar-html-report-table.png'])
+    paths.extend(HERE/'qa'/n for n in ['html-report-relabel.md','html-report-relabel.diff','avatar-html-report.png','avatar-html-report-table.png','avatar-html-report-domain-view.png','avatar-html-report-domain-view.json'])
     paths.append(OUT/'legends-fig1-2.md')
     return sorted(paths)
 

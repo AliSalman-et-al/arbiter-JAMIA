@@ -18,7 +18,9 @@ def main():
         assert expected==target.read_bytes()
         proof.extend([f'## {path.relative_to(raw).as_posix()}','',f'Raw SHA-256: `{hashlib.sha256(original).hexdigest()}`',f'Relabelled SHA-256: `{hashlib.sha256(expected).hexdigest()}`','', '| Before | After | Replacements | Before-string raw / copy | After-string raw / copy |','|---|---|---:|---:|---:|'])
         for before,after,n,br,bc,ar,ac in counts:proof.append(f'| `{before}` | `{after}` | {n} | {br} / {bc} | {ar} / {ac} |')
-        diff.extend(difflib.unified_diff(text.splitlines(True),renamed.splitlines(True),fromfile='raw/'+path.relative_to(raw).as_posix(),tofile='relabelled/'+path.relative_to(raw).as_posix()))
-    (HERE/'qa/html-report-relabel.diff').write_text(''.join(diff),encoding='utf8')
+        for line in difflib.unified_diff(text.splitlines(True),renamed.splitlines(True),fromfile='raw/'+path.relative_to(raw).as_posix(),tofile='relabelled/'+path.relative_to(raw).as_posix()):
+            diff.append(line)
+            if not line.endswith('\n'):diff.append('\n\\ No newline at end of file\n')
+    (HERE/'qa/html-report-relabel.diff').write_bytes(''.join(diff).encode('utf8'))
     (HERE/'qa/html-report-relabel.md').write_text('\n'.join(['# Exact run-build HTML report and product relabel','', 'Run build: rob2-kit commit `2848c7926a2acc25402345a42be39d695a99861a`, version 0.13.0; installed non-editably into `%TEMP%/arbiter-avatar-2848c79` with `uv venv` and `uv pip install --python <venv>/Scripts/python.exe C:/Users/Ali-Salman/Documents/Code/rob2-kit playwright`. No source changes.', '', '`<venv>/Scripts/rob2.exe report kit-sonnet-5.5/bundles/banovic26-avatar-2024.rob2.zip --output analysis/figure1/html-report/raw` succeeded. Both original HTML files are retained.','', 'Only literal product names/CLI names/extensions are replaced in the copy, in the order below. RoB 2 (the instrument), source quotations, decisions, numbers, CSS and layout are unchanged. The original build version remains 0.13.0. Each file is asserted byte-equal to replaying exactly this substitution list. The full unified diff is [html-report-relabel.diff](html-report-relabel.diff).','',*proof,'']),encoding='utf8')
 if __name__=='__main__':main()

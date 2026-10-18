@@ -5,7 +5,7 @@
   "figures": [
     {
       "figure": "Figure1",
-      "tiff_sha256": "c40d0d72ad97c50a7dedba7ed9a1437c267d4e95736a39cbc361d7619a9f2b91",
+      "tiff_sha256": "8f0e4671e7434bac4a400f1a59b71dbeda3d41643605a09a6869f3777165c222",
       "source_size_600dpi": [
         4111,
         2953
@@ -98,10 +98,10 @@
     },
     {
       "figure": "Figure2",
-      "tiff_sha256": "7bbd34fa64d870333959e940428c00751b8a6a59f1d980e02ed004ba7eb123ab",
+      "tiff_sha256": "e21197be3e55e01e8d0edfe54633d2a77f3de66980c29a3ac105c7bce3100e5f",
       "source_size_600dpi": [
         4111,
-        5395
+        5327
       ],
       "rows": 4,
       "columns": 3,
@@ -112,7 +112,7 @@
             0,
             0,
             877,
-            864
+            853
           ]
         },
         {
@@ -121,7 +121,7 @@
             877,
             0,
             1754,
-            864
+            853
           ]
         },
         {
@@ -130,88 +130,88 @@
             1754,
             0,
             2631,
-            864
+            853
           ]
         },
         {
           "tile": "Figure2-r2c1.png",
           "bounds_384dpi": [
             0,
-            863,
+            852,
             877,
-            1727
+            1705
           ]
         },
         {
           "tile": "Figure2-r2c2.png",
           "bounds_384dpi": [
             877,
-            863,
+            852,
             1754,
-            1727
+            1705
           ]
         },
         {
           "tile": "Figure2-r2c3.png",
           "bounds_384dpi": [
             1754,
-            863,
+            852,
             2631,
-            1727
+            1705
           ]
         },
         {
           "tile": "Figure2-r3c1.png",
           "bounds_384dpi": [
             0,
-            1726,
+            1704,
             877,
-            2590
+            2557
           ]
         },
         {
           "tile": "Figure2-r3c2.png",
           "bounds_384dpi": [
             877,
-            1726,
+            1704,
             1754,
-            2590
+            2557
           ]
         },
         {
           "tile": "Figure2-r3c3.png",
           "bounds_384dpi": [
             1754,
-            1726,
+            1704,
             2631,
-            2590
+            2557
           ]
         },
         {
           "tile": "Figure2-r4c1.png",
           "bounds_384dpi": [
             0,
-            2589,
+            2556,
             877,
-            3453
+            3409
           ]
         },
         {
           "tile": "Figure2-r4c2.png",
           "bounds_384dpi": [
             877,
-            2589,
+            2556,
             1754,
-            3453
+            3409
           ]
         },
         {
           "tile": "Figure2-r4c3.png",
           "bounds_384dpi": [
             1754,
-            2589,
+            2556,
             2631,
-            3453
+            3409
           ]
         }
       ]

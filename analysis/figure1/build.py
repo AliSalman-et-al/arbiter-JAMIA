@@ -260,31 +260,40 @@ def draw_workflow(data):
     for cx,top,bottom in zip(centers,['Read the reports','Pick the result to assess','Answer signalling','Inspect the'],['and registry','(outcome + analysis)','questions + cite','assessment']):
         s.text(cx,103,top,10,'bold',LLM,anchor='middle');s.text(cx,120,bottom,10,'bold',LLM,anchor='middle')
     for x in [282,414,546]:s.line(x,91,x,126,dotted=True,sw=.6)
-    for cx,tool in zip(centers,['prepare_batch','save_proposal','save_domain_judgment','finalize_batch']):
-        s.line(cx-57,133,cx-57,161,arrow=True,sw=1)
-        s.line(cx+57,161,cx+57,133,arrow=True,sw=1)
-        s.text(cx,151,tool,10,'mono',GREY,anchor='middle',stretch=.84 if cx==480 else .92)
-    s.rect(12,163,672,60,MINT,6,INK,1.5)
-    s.text(25,179,'ARBITER server',11,'bold')
-    s.text(25,195,'rule-based software,',10);s.text(25,210,'no AI',10)
+    visible=[['prepare_batch','list_sources'],['validate_proposal','save_proposal'],['get_domain_context','save_domain_judgment'],['review_trial','finalize_batch']]
+    for cx,tools in zip(centers,visible):
+        s.line(cx-57,133,cx-57,178,arrow=True,sw=1)
+        s.line(cx+57,178,cx+57,133,arrow=True,sw=1)
+        for y,tool in zip([149,169],tools):
+            s.text(cx,y,tool,10,'mono',GREY,anchor='middle',stretch=.84 if cx==480 else .92)
+    s.rect(12,180,672,60,MINT,6,INK,1.5)
+    s.text(25,196,'ARBITER server',11,'bold')
+    s.text(25,212,'rule-based software,',10);s.text(25,227,'no AI',10)
     for cx,phrases in zip(centers,[['Store an unchangeable','copy of each source'],['Check and record','the choice'],['Check every quote','Apply the RoB 2 rules'],['Keep the full record','Package the audit file','Write the HTML report']]):
-        for j,phrase in enumerate(phrases):s.text(cx,178+j*12,phrase,10,'bold',anchor='middle')
-    s.text(612,216,'arbiter report',10,'mono',GREY,anchor='middle')
-    for x in [282,414,546]:s.line(x,170,x,216,dotted=True,sw=.6)
-    s.rect(12,229,672,20,YELLOW,5,INK,1.2)
-    s.text(23,243,'Audit file',10,'bold')
-    s.text(94,243,'Every source, quote, answer and decision · checkable by an independent verifier',10)
-    s.text(638,243,'.arbiter.zip',10,'mono',anchor='middle')
-    # A faithful crop of the one-trial report's domain summary table. No HTML restyling.
-    path=HERE/'qa/avatar-html-report-table.png'
-    image=Image.open(path);iw=644;ih=iw*image.height/image.width
-    assert 12*iw/740*72/101.6>=7  # smallest captured DOM font is 12 CSS px
-    s.rect(24,255,648,16+ih,'#F5F5F3',4,INK,1)
-    s.text(34,265,'ARBITER · AVATAR · HTML assessment report',10,'bold')
+        for j,phrase in enumerate(phrases):s.text(cx,195+j*12,phrase,10,'bold',anchor='middle')
+    s.text(612,233,'arbiter report',10,'mono',GREY,anchor='middle')
+    for x in [282,414,546]:s.line(x,187,x,233,dotted=True,sw=.6)
+    # Export gives the reviewer two concrete outputs; the fork remains below all text.
+    s.line(612,240,612,260,arrow=True,sw=1)
+    s.line(612,249,165,249,sw=1);s.line(165,249,165,330,arrow=True,sw=1)
+    s.rect(12,334,306,100,YELLOW,6,INK,1.5)
+    s.text(25,353,'Audit file',12,'bold')
+    s.text(241,353,'.arbiter.zip',10,'mono',anchor='middle')
+    s.text(25,377,'Every source, quote, answer',11)
+    s.text(25,392,'and decision',11)
+    s.text(25,417,'Checkable by an independent verifier',10)
+    # Focus on the actual domain-results area; full table and trial-page captures remain in QA.
+    path=HERE/'qa/avatar-html-report-domain-view.png'
+    meta=json.loads((HERE/'qa/avatar-html-report-domain-view.json').read_text())
+    image=Image.open(path);iw=312;ih=iw*image.height/image.width
+    min_font=meta['min_font_css_px']*iw/meta['clip_css_px']['width']*72/101.6
+    assert min_font>=7
+    s.rect(364,264,320,28+ih,'#F5F5F3',5,INK,1.2)
+    s.text(375,279,'ARBITER · AVATAR · HTML report',10,'bold')
     encoded=base64.b64encode(path.read_bytes()).decode()
-    s.add(f'<image x="26" y="269" width="644" height="{ih}" href="data:image/png;base64,{encoded}"/>')
-    s.report_image=dict(path=path,x=26,y=269,w=644,h=ih,min_text_pt=12*644/740*72/101.6)
-    s.wrap(12,487,"What the reviewer receives: ARBITER's HTML report for AVATAR (and the verifiable audit file, .arbiter.zip)",672,size=10,leading=11)
+    s.add(f'<image x="368" y="288" width="312" height="{ih}" href="data:image/png;base64,{encoded}"/>')
+    s.report_image=dict(path=path,x=368,y=288,w=312,h=ih,min_text_pt=min_font)
+    s.wrap(12,455,"What the reviewer receives: ARBITER's HTML report for AVATAR (and the verifiable audit file, .arbiter.zip)",306,size=10,leading=11)
     return s
 
 # Figure 2: verbatim selections are asserted against archived evidence/reasoning.
@@ -426,7 +435,10 @@ def export_scene(scene,out,name,geometry):
             for line in json.loads(p['svg_text_lines']):assert line in svg_labels,(line,'missing from final SVG')
     assert not re.search('rob2',svg,re.I),'Legacy name in rendered text'
     png=resvg_py.svg_to_bytes(svg_string=svg,width=1644,dpi=96,skip_system_fonts=True)
-    (out/f'{name}.png').write_bytes(png)
+    # Windows viewers may memory-map the previous image; replace instead of truncating it.
+    temporary_png=out/f'.{name}.render.png'
+    temporary_png.write_bytes(png)
+    temporary_png.replace(out/f'{name}.png')
     proof_dir=out if out.name=='qa' else out/'qa'
     (out/f'{name}.svg').write_text(svg,encoding='utf8')
     # PDF uses the same positions with subset-embedded TrueType fonts. SVG remains outlined.
@@ -509,7 +521,7 @@ def write_notes(data,rows,out):
           '', '## AVATAR storyboard', '',
           'The registry title identifies aortic valve replacement versus conservative treatment in asymptomatic severe aortic stenosis (AVATAR). Early surgery versus watchful waiting is the reader-facing description of this comparison. The requested outcome is all-cause death. Source letters: A = Circulation 2022 report; B = Eur Heart J 2024 report; C = ClinicalTrials.gov NCT02436655 (first submitted 2015); D = surgical-delay protocol amendment dated 4 Jan 2021. Page numbers refer to the respective stored source record.',
           '', 'Source quotations are verbatim selections with ellipses for omissions and normalized extraction whitespace. Two extraction breaks are joined: assign-↵ment and cen↵sored. Questions are paraphrased; official wording is retained below and in eTable 31. Model reasons are verbatim excerpts, with ellipses for omissions.',
-          '', 'Every manifest hash and source-version binding is checked at build time. The archive stores source identities and evidence quotations, rather than complete trial PDFs. The fingerprint is the first six hex characters of evidence.source_version (the source projection hash), not the original-file hash; it identifies the stored text copy to which each quote binds. Archived independent-verifier receipt: '+data['verification']['result']+'; this is a structure/evidence-binding check, not a clinical judgement.',
+          '', 'Every manifest hash and source-version binding is checked at build time. The archive stores source identities and evidence quotations, rather than complete trial PDFs. Source-version identities bind each quote to its stored text copy and remain asserted internally. Fingerprints and their explanation are omitted from the displayed figure. Archived independent-verifier receipt: '+data['verification']['result']+'; this is a structure/evidence-binding check, not a clinical judgement.',
           '', 'D5 rule checked against the scientific-pack selection.md Algorithm section: High if 5.2 or 5.3 is Yes/Probably yes; otherwise Some concerns if 5.1 is No/Probably no/No information, or 5.2/5.3 is No information. NI/PN/PN therefore yields Some concerns. The overall.any_concerns rule is asserted from the bundle; the figure describes this trial, where no domain is High.',
           '', 'Both adjudicators preferred D5 Some concerns; Published D5 is Low. Overall was not adjudicated. The Without ARBITER comparison strip has been removed.',
           '', 'Bundle SHA-256: `'+data['bundle_sha256']+'`. AVATAR is illustrative, not representative.',
@@ -521,7 +533,7 @@ def write_notes(data,rows,out):
         begin=content.index('## Algorithm')+1
         end=next((j for j in range(begin,len(content)) if content[j].startswith('## ')),len(content))
         text += ['', f'- `{domain}.md:{begin}–{end}`: '+ ' '.join(content[begin:end]).strip()]
-    text += ['', '- `src/rob2_kit/logic/evaluator.py:361`: recorded `overall.any_concerns`; plain-language wording agrees with `src/rob2_kit/application/report.py:47` (at least one Some concerns and no High).', '- Four Low trace IDs map only to “Official RoB 2 rule → Low”; `selection.some_concerns` maps only to “Official RoB 2 rule → Some concerns”. The additional D5 line is “decided by question 5.1”, mapped from recorded driver_questions. The complete semantic SVG text audit is analysis/figure1/figure2-text-provenance.csv; every row string in the source, AI and software/result columns is covered, with only the fixed Weighed against/Open point structural labels exempted.']
+    text += ['', '- `src/rob2_kit/logic/evaluator.py:361`: recorded `overall.any_concerns`; plain-language wording agrees with `src/rob2_kit/application/report.py:47` (at least one Some concerns and no High).', '- The four Low trace IDs map to the visible “Low” result pills; `selection.some_concerns` maps to the “Some concerns” result pill. Repeated per-row rule labels are omitted because the header names the software’s RoB 2 rule role. The additional D5 line is “decided by question 5.1”, mapped from recorded driver_questions. The complete semantic SVG text audit is analysis/figure1/figure2-text-provenance.csv; every row string in the source, AI and software/result columns is covered, with only the fixed Weighed against/Open point structural labels exempted.']
     for i,r in enumerate(rows,1):
         text += ['',f'## Domain {i}', '',r['question'],'',
                  'Displayed source quotation(s): '+r['summary_quote'],'',
@@ -530,7 +542,7 @@ def write_notes(data,rows,out):
                  'Complete answers, inactive branches and decision:',json.dumps(dict(answers=r['d']['answers'],inactive=r['d']['inactive_questions'],decision=r['d']['decision']),ensure_ascii=False,indent=2),'',
                  'Full selected-answer evidence:',json.dumps(r['bases'],ensure_ascii=False,indent=2)]
         if i==4:text += ['', '4.4 reasoning basis: '+json.dumps(r['inference_basis'],ensure_ascii=False),'',r['inference']]
-        if i==5:text += ['', 'The exact run-build HTML render succeeded. Product-name-only substitutions are proved in analysis/figure1/qa/html-report-relabel.md; the original and relabelled renders are retained. Figure 1 shows a crop of the actual one-trial domain summary, whose table includes the AVATAR title; the trial-page screenshot is retained separately.']
+        if i==5:text += ['', 'The exact run-build HTML render succeeded. Product-name-only substitutions are proved in analysis/figure1/qa/html-report-relabel.md; the original and relabelled renders are retained. Figure 1 shows the actual trial page’s five domain-navigation results and first domain card in a framed detail. The full trial page and full summary table are retained separately. The responsive viewport is native HTML, with no injected styling.']
     (out/'figure1-notes.md').write_text('\n'.join(text)+'\n',encoding='utf8')
 
 

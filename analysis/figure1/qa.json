@@ -5,18 +5,18 @@
       "clearance_mm": 0.3,
       "arrow_tip_clearance_mm": 0.8,
       "curve_sampling_max_mm": 0.0375,
-      "minimum_text_stroke_clearance_mm": 0.6425,
-      "minimum_arrow_text_clearance_mm": 2.4563,
-      "text_elements": 46,
-      "shape_elements": 37,
-      "arrow_tips": 10,
+      "minimum_text_stroke_clearance_mm": 0.6852,
+      "minimum_arrow_text_clearance_mm": 2.2622,
+      "text_elements": 53,
+      "shape_elements": 42,
+      "arrow_tips": 12,
       "checks": {
-        "text_stroke_pairs": 1702,
+        "text_stroke_pairs": 2226,
         "box_pairs": 21,
-        "arrow_text_pairs": 460,
-        "arrow_box_pairs": 70,
-        "frame_elements": 83,
-        "text_pairs": 1035
+        "arrow_text_pairs": 636,
+        "arrow_box_pairs": 84,
+        "frame_elements": 95,
+        "text_pairs": 1378
       },
       "violations": []
     },
@@ -33,8 +33,8 @@
     ],
     "tiff_dpi": 600,
     "tiff_compression": "LZW",
-    "text_elements": 46,
-    "raster_report_thumbnail": 7.4007235582038735
+    "text_elements": 53,
+    "raster_report_thumbnail": 7.075275590551181
   },
   "Figure2": {
     "geometry": {
@@ -44,21 +44,21 @@
       "curve_sampling_max_mm": 0.0375,
       "minimum_text_stroke_clearance_mm": 0.37,
       "minimum_arrow_text_clearance_mm": null,
-      "text_elements": 167,
-      "shape_elements": 95,
+      "text_elements": 148,
+      "shape_elements": 104,
       "arrow_tips": 0,
       "checks": {
-        "text_stroke_pairs": 12024,
-        "box_pairs": 3160,
+        "text_stroke_pairs": 11544,
+        "box_pairs": 3240,
         "arrow_text_pairs": 0,
         "arrow_box_pairs": 0,
-        "frame_elements": 262,
-        "text_pairs": 13861
+        "frame_elements": 252,
+        "text_pairs": 10878
       },
       "violations": []
     },
     "width_mm": 174,
-    "height_mm": 228.375,
+    "height_mm": 225.5,
     "min_text_pt": 7.086614173228347,
     "vector_pdf": true,
     "vector_diagram": true,
@@ -69,7 +69,7 @@
     ],
     "tiff_dpi": 600,
     "tiff_compression": "LZW",
-    "text_elements": 167,
+    "text_elements": 148,
     "bundle_facts": {
       "sources": 7,
       "evidence_records": 16,
