@@ -1,4 +1,4 @@
-Table 1. Benchmark set
+Table 1. Sixteen meta-analyses across 15 specialties supplied the benchmark
 Specialty
 Journal
 Year
@@ -125,4 +125,4 @@ Total
 102
 427 / 69 / 14
 81 / 102
-SC, Some concerns; RoB 2, risk of bias tool for randomised trials. Counts are published labels pooled across D1–D5. Overall given indicates whether published Overall labels are available; total is labelled trials/all trials. The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses. ACL, anterior cruciate ligament; CDK4/6, cyclin-dependent kinases 4 and 6; eGFR, estimated glomerular filtration rate; GLP-1, glucagon-like peptide-1; HER2, human epidermal growth factor receptor 2; HR, hormone receptor; IgA, immunoglobulin A; SGLT2, sodium-glucose cotransporter 2.
+SC, Some concerns; RoB 2, risk of bias tool for randomised trials. Counts are published labels pooled across D1–D5. Per-domain distributions: eTable 8. Overall given indicates whether published Overall labels are available; total is labelled trials/all trials. The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses. ACL, anterior cruciate ligament; CDK4/6, cyclin-dependent kinases 4 and 6; eGFR, estimated glomerular filtration rate; GLP-1, glucagon-like peptide-1; HER2, human epidermal growth factor receptor 2; HR, hormone receptor; IgA, immunoglobulin A; SGLT2, sodium-glucose cotransporter 2.

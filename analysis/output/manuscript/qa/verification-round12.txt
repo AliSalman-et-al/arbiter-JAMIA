@@ -1,0 +1,38 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed
+2: Setting LC_CTYPE=C.UTF-8 failed
+3: Setting LC_MONETARY=C.UTF-8 failed
+4: Setting LC_TIME=C.UTF-8 failed
+Supplement.docx 54 editable tables, Arial 9 pt (trace 8 pt); text clean
+TRIPOD-LLM.docx 1 editable tables, Arial 9 pt (trace 8 pt); text clean
+Table1.docx 1 editable tables, Arial 9 pt (trace 8 pt); text clean
+Table2.docx 1 editable tables, Arial 9 pt (trace 8 pt); text clean
+Table3.docx 1 editable tables, Arial 9 pt (trace 8 pt); text clean
+Table4.docx 1 editable tables, Arial 9 pt (trace 8 pt); text clean
+Figure3 : min text 7.966772 pt, 174 mm, 600-dpi LZW; text clean
+Figure4 : min text 7.966772 pt, 174 mm, 600-dpi LZW; text clean
+Figure5 : min text 7.113189 pt, 174 mm, 600-dpi LZW; text clean
+Figure6 : min text 7.966772 pt, 174 mm, 600-dpi LZW; text clean
+eFigure1 : min text 8 pt, 174 mm, 600-dpi LZW; text clean
+eFigure2 : min text 7.5 pt, 174 mm, 600-dpi LZW; text clean
+results.html reader text clean
+supplement.html reader text clean
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Table 1 : every label and non-free-text value stays on one line in native Word PDF
+Table 2 : every label and non-free-text value stays on one line in native Word PDF
+Table 3 : every label and non-free-text value stays on one line in native Word PDF
+Table 4 : every label and non-free-text value stays on one line in native Word PDF
+All six HTML figures embed the current PNG bytes and have full alt text
+Statistical CSVs and protected Figure 1/2 files unchanged
+16 complete distinct evidence quotes verified in Word-rendered PDF
+Supplement: 51 pages; AVATAR eTable: 9 pages ( 4 – 12 )

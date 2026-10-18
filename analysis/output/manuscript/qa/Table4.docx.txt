@@ -1,41 +1,32 @@
-Table 4. Reliability of the reference standard (95% CI)
+Table 4. Before seeing any label, both adjudicators’ own ratings agreed with ARBITER far more than with the unassisted model or the published review
 Comparison
 Weighted κ
-AC2
 Raw agreement
 Between adjudicators
 Independent judgements
 0.59 (0.48–0.68)
-0.69 (0.61–0.77)
 114/154 (74.0%) (68.2–79.9)
 Preferred judgements
 0.69 (0.57–0.79)
-0.83 (0.77–0.89)
 129/154 (83.8%) (78.6–88.9)
 Adjudicator 1 independent vs …
 Published
 −0.08 (−0.17 to 0.01)
-−0.06 (−0.18 to 0.07)
 34/154 (22.1%) (15.8–28.5)
 ARBITER
 0.52 (0.41–0.62)
-0.66 (0.57–0.74)
 107/154 (69.5%) (62.7–76.0)
 Unassisted
 0.22 (0.13–0.30)
-0.28 (0.18–0.38)
 69/154 (44.8%) (38.1–51.6)
 Adjudicator 2 independent vs …
 Published
 −0.08 (−0.18 to 0.03)
-0.14 (0.04–0.24)
 42/154 (27.3%) (20.4–34.3)
 ARBITER
 0.67 (0.56–0.76)
-0.79 (0.73–0.85)
 120/154 (77.9%) (71.7–84.0)
 Unassisted
 0.31 (0.19–0.42)
-0.45 (0.37–0.53)
 76/154 (49.4%) (42.2–56.5)
-All comparisons use the 154 disputed cells, selected because at least one Sonnet arm differed from Published. These comparisons cannot estimate agreement or published-label accuracy in the full benchmark. Independent judgements preceded blinded label presentation; preferred judgements selected among the three offered labels. Linearly weighted Cohen’s κ; Gwet’s AC2; raw agreement as n/N (%) with CI bounds in %. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.
+All comparisons use the 154 disputed cells, selected because at least one Sonnet arm differed from Published. These comparisons cannot estimate agreement or published-label accuracy in the full benchmark. Independent judgements preceded blinded label presentation; preferred judgements selected among the three offered labels. Linearly weighted Cohen’s κ; AC2 is in eTable 16; raw agreement as n/N (%) with CI bounds in %. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.

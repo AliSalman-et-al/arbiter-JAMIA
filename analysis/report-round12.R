@@ -58,4 +58,5 @@ lines <- c(lines,
   '- R startup locale warnings are environmental; testthat reports zero test warnings. No push was performed.','',
   '## Full supplementary footnotes','')
 for(i in seq_along(entries)) lines <- c(lines,paste0('### eTable ',i,'. ',entries[[i]]$caption),'',entries[[i]]$note,'')
-writeLines(enc2utf8(lines),'round12-report.md',useBytes=TRUE)
+text <- gsub('[ \t]+\n','\n',paste(lines,collapse='\n'))
+writeLines(enc2utf8(sub('\n+$','',text)),'round12-report.md',useBytes=TRUE)
