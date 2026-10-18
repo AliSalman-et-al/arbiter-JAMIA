@@ -405,7 +405,7 @@ def main():
         assert len(page.get_images()) == 0, "PDF must contain vector paths, no raster image"
         pix = page.get_pixmap(dpi=600, alpha=False)
         image = Image.frombytes("RGB", (pix.width, pix.height), pix.samples)
-        image.save(out / "Figure1.tif", compression="tiff_lzw", dpi=(600,600))
+        image.save(out / "Figure1.tiff", compression="tiff_lzw", dpi=(600,600))
         pdf_preview = page.get_pixmap(dpi=240, alpha=False)
         Image.frombytes("RGB", (pdf_preview.width,pdf_preview.height), pdf_preview.samples).save(HERE / "qa-pdf.png")
     preview = Image.open(io.BytesIO(png)).convert("RGB")

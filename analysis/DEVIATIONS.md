@@ -237,3 +237,12 @@ No Python is used. This file records conservative resolutions as they arise.
     deuteranopia and tritanopia. Raster mapping preserves raster storage order.
     Real Word cells/fonts, PDF embedded fonts/minimum text and TIFF resolution/
     LZW compression are verified. No numerical or methodological deviation occurs.
+
+29. **Round 9 R0–R4 display corrections.** Figure 1 TIFF extension is .tiff;
+    its image content is unchanged. Table 1 separates year, uses journal
+    abbreviations, puts General medicine first, and defines SC. Tables 2–4 use
+    spanning group rows. All proportion intervals display percentages; paired
+    proportion contrasts display percentage points. Table 3 suppresses intervals
+    except Unassisted departure-type rates, in a separate percent column.
+    No CSV or statistic changes. The existing flextable/officer pipeline and
+    native Word PDF renderer are retained as the repository's Windows workflow.

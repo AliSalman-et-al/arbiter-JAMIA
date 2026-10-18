@@ -23,7 +23,7 @@ The build checks the public `arbiter review` CLI entry point and `.arbiter.zip` 
 
 ## Outputs and editing
 
-`analysis/output/manuscript/` receives `Figure1.svg`, `Figure1.pdf`, `Figure1.tif`, `Figure1.png` and `figure1-notes.md`. Notes include all 18 tools, source references, the exact excerpt and locator, proposed/adopted judgements, a draft legend and alt text. The shared figure-legends document is outside this agent's ownership and is intentionally not edited; the lead can copy the draft legend there.
+`analysis/output/manuscript/` receives `Figure1.svg`, `Figure1.pdf`, `Figure1.tiff`, `Figure1.png` and `figure1-notes.md`. Notes include all 18 tools, source references, the exact excerpt and locator, proposed/adopted judgements, a draft legend and alt text. The shared figure-legends document is outside this agent's ownership and is intentionally not edited; the lead can copy the draft legend there.
 
 Edit `build.py` to change the scene. Coordinates are quarter-millimetres. Tool-call text uses 92% horizontal width to clear both traffic arrows while retaining its 7.23 pt height and fixed character spacing. Italic response summaries use a 12-degree oblique outline transform. All text is converted to vector paths with fontTools from the bundled Fira Sans Condensed Regular/Bold and Fira Code Regular OFL fonts. SVG includes accessible text labels and titles for each outlined text run. The PDF contains only vector paths, with no font or raster dependencies. The SVG is converted to PDF with svglib/ReportLab; resvg independently renders the PNG; PyMuPDF renders the vector PDF at 600 dpi for the RGB LZW TIFF. PDF metadata is invariant for repeatable builds.
 

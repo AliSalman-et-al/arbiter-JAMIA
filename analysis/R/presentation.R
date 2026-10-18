@@ -14,6 +14,7 @@ reader_label <- function(x, supplement=FALSE) {
     'All-Low'='All-Low rule')
   for(k in names(replacements)) x <- gsub(k,replacements[[k]],x,fixed=TRUE)
   x <- gsub('All-Low rule rule','All-Low rule',x,fixed=TRUE)
+  x <- gsub('D1-D5','D1\u2013D5',x,fixed=TRUE)
   x[x=='Meta'] <- 'Published'; x[x=='A'] <- 'Adjudicator 1'; x[x=='Z'] <- 'Adjudicator 2'
   x
 }
@@ -39,8 +40,10 @@ fmt_process_text <- function(x) {
 }
 fmt_estimate <- function(x,proportion=FALSE) {
   out <- fmt_number(x$estimate)
-  if(proportion && all(c('count','n') %in% names(x))) out <- fmt_fraction(x$count,x$n)
-  value <- paste0(out,' ',fmt_ci(x$lower,x$upper))
+  if(proportion) {
+    out <- if(all(c('count','n') %in% names(x))) fmt_fraction(x$count,x$n) else paste0(fmt_number(100*x$estimate,1),'%')
+  }
+  value <- paste0(out,' ',fmt_ci(x$lower*if(proportion) 100 else 1,x$upper*if(proportion) 100 else 1,if(proportion) 1L else 2L))
   value[!is.finite(x$estimate)] <- '\u2014'; value
 }
 display_frame <- function(x,supplement=TRUE) {
@@ -111,4 +114,16 @@ theme_manuscript <- function() {
     legend.text=ggplot2::element_text(size=8),legend.position='bottom',
     plot.tag=ggplot2::element_text(face='bold',size=11),
     plot.margin=ggplot2::margin(8,8,8,8))
+}
+
+# A block row is a display object, with no estimand attached.
+group_row <- function(x,label) {
+  header <- x[1,,drop=FALSE]; header[] <- ''; header[[1]] <- label
+  dplyr::bind_rows(header,x)
+}
+style_group_rows <- function(ft,x) {
+  rows <- which(apply(as.data.frame(x)[,-1,drop=FALSE],1,function(v) all(is.na(v)|v=='')))
+  for(r in rows) ft <- flextable::merge_at(ft,i=r,j=seq_len(ncol(x)),part='body')
+  if(length(rows)) ft <- flextable::bold(ft,i=rows,part='body')
+  ft
 }

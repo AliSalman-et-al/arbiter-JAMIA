@@ -18,3 +18,14 @@ testthat::test_that('reader labels translate sources without changing data', {
   testthat::expect_identical(display_frame(data.frame(question=1.1))$question,'1.1')
   testthat::expect_identical(display_frame(data.frame(count=-3041))$count,'\u22123,041')
 })
+
+testthat::test_that('proportion intervals use the percentage scale', {
+  x <- data.frame(estimate=386/510,lower=.724,upper=.790,count=386,n=510)
+  testthat::expect_identical(fmt_estimate(x,TRUE),'386/510 (75.7%) (72.4\u201379.0)')
+  testthat::expect_identical(reader_label('D1-D5'),'D1\u2013D5')
+})
+testthat::test_that('group rows have an empty measure area', {
+  x <- data.frame(Source=c('ARBITER','Unassisted'),Value=c('1','2'))
+  testthat::expect_identical(group_row(x,'Group')$Value,c('','1','2'))
+  testthat::expect_identical(x$Value,c('1','2'))
+})
