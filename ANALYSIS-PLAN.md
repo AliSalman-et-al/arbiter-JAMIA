@@ -114,16 +114,51 @@ Report on the 154 disputed cells:
 - For each adjudicator, agreement of the independent judgement with the meta label, the ARBITER-Sonnet label and the baseline-Sonnet label.
 - Direction of meta-label error: a 3×3 table of meta label against consensus preferred judgement, summarised as the share where the meta label is less severe, equal or more severe.
 
-### 5.6 Error taxonomy (Table 4 or supplement)
+### 5.6 Error localisation by signalling question (Table 4 or supplement)
 
-This analysis needs human coding. The analysis pipeline only prepares the materials and summarises the result.
+Amended 2026-10-18. This replaces the human-coded taxonomy. No human or LLM coding is used. The adjudicators' independent signalling answers serve as the reference, because each adjudicator wrote them before seeing the three blinded labels.
 
-1. Draft a deductive codebook per domain from RoB 2 guidance concepts. Examples: allocation concealment misjudged; blinding or awareness misread; deviations ignored or overcounted; missing-data threshold; wrong result or outcome assessed; selective reporting evidence missed; algorithm not followed.
-2. Build a coding sheet with one row per losing source per consensus cell. Include the adjudicators' explanation text and empty code columns. A losing source is any source whose label differs from the consensus preferred judgement.
-3. One author codes every row. A second author codes a random 20% sample, drawn with a fixed seed. Report Cohen's κ between the two authors.
-4. Summarise codes by losing source (ARBITER, baseline, meta) as a stacked bar or a table.
+**Population**
 
-Until the coding is filled in, the report shows a placeholder for this analysis.
+- Consensus cells where a Sonnet arm lost, meaning its label differs from the consensus preferred judgement. The losing sources are ARBITER-Sonnet and Baseline-Sonnet. Haiku was not adjudicated and is excluded.
+- Meta-label losses cannot be localised, because meta-analyses publish no signalling answers. Report only their count, and point to section 5.5 for their direction.
+
+**Reference answers**
+
+- Parse `signalling_answers_independent` for each adjudicator.
+- An adjudicator's answers are usable for a cell only if that adjudicator's independent judgement (`own`) equals the consensus preferred judgement.
+- **Primary analysis:** cells where both adjudicators' answers are usable.
+- **Sensitivity analysis:** cells where at least one adjudicator's answers are usable.
+- Report any answers that cannot be parsed, by cell.
+
+**Answer collapse**
+
+Collapse Y and PY to Y, and N and PN to N. Keep NI and NA as separate values.
+
+**Question classification**
+
+- **Discordant question:** the loser's collapsed answer differs from the reference answer, and every usable adjudicator gives that same reference answer.
+- **Adjudicators differ:** the usable adjudicators give different answers to the question. Report this separately; it is not an error.
+- **Decisive question:** a discordant question where substituting the reference answer into the loser's answers, with nothing else changed, changes the official algorithm's output.
+
+**Cell classification**
+
+Assign each losing cell to exactly one class, checking the classes in this order:
+
+1. **Judgement departs from own answers.** The loser's label differs from the algorithm applied to its own answers. This is a violation, an invalid path, or a recorded override for ARBITER.
+2. **Single decisive question.** One question is decisive. Name the question.
+3. **Several decisive questions.** Two or more questions are each decisive.
+4. **Jointly decisive.** No single substitution changes the output, but substituting all the discordant questions together reaches the preferred judgement.
+5. **Answers agree, judgement differs.** There are no discordant questions. Also flag cells where the adjudicators' own judgement differs from the algorithm applied to their own answers.
+6. **Not attributable.** Anything else.
+
+**Outputs**
+
+- Counts by losing source and class.
+- Decisive-question frequencies by losing source, domain and question number, labelled with the RoB 2 question text.
+- A CSV of 3 to 5 candidate cells per losing source with the adjudicators' explanation text, for authors to quote in the Discussion.
+
+Use the domain algorithms already validated in section 5.4.
 
 ### 5.7 Grounding metric
 
@@ -192,7 +227,7 @@ Baseline arms have no evidence trace. Report them as "not available" rather than
 | Table 2 | Agreement with meta labels (section 5.1) for ARBITER-Sonnet, baseline-Sonnet and all-Low, on D1 to D5 pooled and Overall. |
 | Table 3 | Algorithm consistency and audit (sections 5.4 and 5.8). Per arm: consistent, violation and invalid-answer-path rates, with overrides for the ARBITER arms; Overall consistency; evidence coverage; bundle verification. |
 | Table 5 | Process metrics (section 5.8), per Sonnet arm: time per trial in minutes, cost per trial in USD, tokens per trial, agent steps and continue prompts. Show the median [IQR] and paired differences. The Haiku arms go in the supplement. If the journal's display-item limit binds, Table 5 moves to the supplement. |
-| Table 4 | Reliability of the reference standard (section 5.5), and the error taxonomy (section 5.6) if space allows. |
+| Table 4 | Reliability of the reference standard (section 5.5), and error localisation by signalling question (section 5.6) if space allows. |
 
 ### Supplement
 
@@ -201,7 +236,6 @@ Baseline arms have no evidence trace. Report them as "not available" rather than
 - Forest plot by meta-analysis.
 - Per-adjudicator results and the split-cell sensitivity analysis.
 - The missing-judgement sensitivity analysis.
-- The error-taxonomy codebook.
 - The prompt template and one filled example.
 - The TRIPOD-LLM checklist, with GRRAS items for the agreement analyses.
 
