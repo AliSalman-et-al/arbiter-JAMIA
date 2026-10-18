@@ -9,8 +9,10 @@ def files():
     paths=[*OUT.glob('Figure1.*'),*OUT.glob('Figure2.*'),OUT/'figure1-notes.md',HERE/'qa.json',HERE/'save-rejections.csv',HERE/'save-rejections-summary.json',HERE/'avatar-save-retry.json']
     for n in [1,2]:
         paths.extend(OUT/'qa'/f'Figure{n}-{suffix}.png' for suffix in ['final-size','grayscale','deuteranopia','protanopia','tritanopia','pdf'])
-    paths.extend([OUT/'qa/Figure2-without-unassisted.png'])
-    paths.extend(OUT/'qa'/f'Figure2-without-unassisted-{suffix}.png' for suffix in ['final-size','grayscale','deuteranopia','protanopia','tritanopia'])
+    paths.append(HERE/'avatar-tool-counts.json')
+    paths.append(HERE/'figure2-text-provenance.csv')
+    paths.extend(sorted((HERE/'html-report').rglob('*.html')))
+    paths.extend(HERE/'qa'/n for n in ['html-report-relabel.md','html-report-relabel.diff','avatar-html-report.png','avatar-html-report-table.png','avatar-html-report-domain-view.png','avatar-html-report-domain-view.json'])
     paths.append(OUT/'legends-fig1-2.md')
     return sorted(paths)
 
@@ -18,10 +20,11 @@ def hashes():
     return {p.relative_to(ROOT).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in files()}
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--data-root',type=Path,required=True);p.add_argument('--arbiter-root',type=Path,required=True);args=p.parse_args()
-    command=[sys.executable,str(HERE/'build.py'),'--data-root',str(args.data_root),'--arbiter-root',str(args.arbiter_root)]
-    subprocess.run(command,check=True,capture_output=True);first=hashes()
-    subprocess.run(command,check=True,capture_output=True);second=hashes()
+    p=argparse.ArgumentParser();p.add_argument('--data-root',type=Path,required=True);p.add_argument('--logs-root',type=Path,required=True);p.add_argument('--arbiter-root',type=Path,required=True);args=p.parse_args()
+    subprocess.run([sys.executable,'-m','unittest','discover','-s',str(HERE),'-p','test_geometry.py'],check=True)
+    command=[sys.executable,str(HERE/'build.py'),'--data-root',str(args.data_root),'--arbiter-root',str(args.arbiter_root),'--logs-root',str(args.logs_root)]
+    subprocess.run(command,check=True);first=hashes()
+    subprocess.run(command,check=True);second=hashes()
     changed=[k for k in first if first[k]!=second.get(k)]
     assert first.keys()==second.keys() and not changed,changed
     report=dict(two_builds_identical=True,files_checked=len(first),sha256=second)

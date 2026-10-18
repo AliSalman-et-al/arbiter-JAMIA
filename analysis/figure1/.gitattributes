@@ -1,0 +1,2 @@
+html-report/** -text whitespace=cr-at-eol
+qa/html-report-relabel.diff -text whitespace=cr-at-eol

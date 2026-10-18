@@ -1,0 +1,220 @@
+{
+  "source_dpi": 600,
+  "inspection_dpi": 384,
+  "magnification_at_96dpi": 4,
+  "figures": [
+    {
+      "figure": "Figure1",
+      "tiff_sha256": "f3ad3d7b97816fe2992c15972002f30fb2ca1c95c0cbc38c1864102e7221a529",
+      "source_size_600dpi": [
+        4111,
+        3119
+      ],
+      "rows": 3,
+      "columns": 3,
+      "tiles": [
+        {
+          "tile": "Figure1-r1c1.png",
+          "bounds_384dpi": [
+            0,
+            0,
+            877,
+            666
+          ]
+        },
+        {
+          "tile": "Figure1-r1c2.png",
+          "bounds_384dpi": [
+            877,
+            0,
+            1754,
+            666
+          ]
+        },
+        {
+          "tile": "Figure1-r1c3.png",
+          "bounds_384dpi": [
+            1754,
+            0,
+            2631,
+            666
+          ]
+        },
+        {
+          "tile": "Figure1-r2c1.png",
+          "bounds_384dpi": [
+            0,
+            665,
+            877,
+            1331
+          ]
+        },
+        {
+          "tile": "Figure1-r2c2.png",
+          "bounds_384dpi": [
+            877,
+            665,
+            1754,
+            1331
+          ]
+        },
+        {
+          "tile": "Figure1-r2c3.png",
+          "bounds_384dpi": [
+            1754,
+            665,
+            2631,
+            1331
+          ]
+        },
+        {
+          "tile": "Figure1-r3c1.png",
+          "bounds_384dpi": [
+            0,
+            1330,
+            877,
+            1996
+          ]
+        },
+        {
+          "tile": "Figure1-r3c2.png",
+          "bounds_384dpi": [
+            877,
+            1330,
+            1754,
+            1996
+          ]
+        },
+        {
+          "tile": "Figure1-r3c3.png",
+          "bounds_384dpi": [
+            1754,
+            1330,
+            2631,
+            1996
+          ]
+        }
+      ]
+    },
+    {
+      "figure": "Figure2",
+      "tiff_sha256": "dc025aef7d66666f19ce880a5d54b57e9b3ec752e249146e777bec9ea9ea006d",
+      "source_size_600dpi": [
+        4111,
+        5327
+      ],
+      "rows": 4,
+      "columns": 3,
+      "tiles": [
+        {
+          "tile": "Figure2-r1c1.png",
+          "bounds_384dpi": [
+            0,
+            0,
+            877,
+            853
+          ]
+        },
+        {
+          "tile": "Figure2-r1c2.png",
+          "bounds_384dpi": [
+            877,
+            0,
+            1754,
+            853
+          ]
+        },
+        {
+          "tile": "Figure2-r1c3.png",
+          "bounds_384dpi": [
+            1754,
+            0,
+            2631,
+            853
+          ]
+        },
+        {
+          "tile": "Figure2-r2c1.png",
+          "bounds_384dpi": [
+            0,
+            852,
+            877,
+            1705
+          ]
+        },
+        {
+          "tile": "Figure2-r2c2.png",
+          "bounds_384dpi": [
+            877,
+            852,
+            1754,
+            1705
+          ]
+        },
+        {
+          "tile": "Figure2-r2c3.png",
+          "bounds_384dpi": [
+            1754,
+            852,
+            2631,
+            1705
+          ]
+        },
+        {
+          "tile": "Figure2-r3c1.png",
+          "bounds_384dpi": [
+            0,
+            1704,
+            877,
+            2557
+          ]
+        },
+        {
+          "tile": "Figure2-r3c2.png",
+          "bounds_384dpi": [
+            877,
+            1704,
+            1754,
+            2557
+          ]
+        },
+        {
+          "tile": "Figure2-r3c3.png",
+          "bounds_384dpi": [
+            1754,
+            1704,
+            2631,
+            2557
+          ]
+        },
+        {
+          "tile": "Figure2-r4c1.png",
+          "bounds_384dpi": [
+            0,
+            2556,
+            877,
+            3409
+          ]
+        },
+        {
+          "tile": "Figure2-r4c2.png",
+          "bounds_384dpi": [
+            877,
+            2556,
+            1754,
+            3409
+          ]
+        },
+        {
+          "tile": "Figure2-r4c3.png",
+          "bounds_384dpi": [
+            1754,
+            2556,
+            2631,
+            3409
+          ]
+        }
+      ]
+    }
+  ]
+}

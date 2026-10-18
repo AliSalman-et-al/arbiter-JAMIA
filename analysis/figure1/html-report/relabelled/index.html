@@ -1,0 +1,92 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>RoB 2: All-cause death, early surgery vs conservative treatment, long-term follow-up (median 63 months) defined as HR 0.44; 95% CI 0.23-0.85, P = .012, for all-cause death</title><style>
+:root{--bg:#f7f5f0;--paper:#fffdf8;--ink:#1d1f24;--muted:#5f6470;--line:#e4dfd3;--accent:#2b4c7e;
+--low:#1f8a4c;--low-bg:#e3f3e8;--concerns:#b8860b;--concerns-bg:#fbf1d3;--high:#b42b27;--high-bg:#f8e1df;
+--none:#8a8f99;--none-bg:#eceef1;--quote:#f3efe5;--shadow:0 1px 2px rgba(20,20,30,.06),0 4px 16px rgba(20,20,30,.05);
+--serif:"Iowan Old Style","Charter","Palatino Linotype","Book Antiqua",Georgia,serif;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#15171b;--paper:#1d2025;--ink:#e8e6e1;--muted:#a3a7b0;
+--line:#30343b;--accent:#8fb3ea;--low:#5cc488;--low-bg:#173326;--concerns:#e2b53f;--concerns-bg:#3a3018;
+--high:#ef6b66;--high-bg:#3d1f1e;--none:#9aa0aa;--none-bg:#2a2d33;--quote:#24282e}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans)}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+code{font-size:.9em}
+.masthead{background:var(--paper);border-bottom:1px solid var(--line)}
+.masthead .wrap{display:flex;gap:1rem;align-items:center;justify-content:space-between;min-height:3.5rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--ink);text-decoration:none;font-weight:600}
+.mark{font:700 .75rem/1 var(--sans);letter-spacing:.04em;color:var(--paper);background:var(--ink);padding:.35rem .45rem;border-radius:.3rem}
+.meta{color:var(--muted);font-size:.9rem}
+.hero{padding:2.5rem 0 1rem}.hero h1{font:600 clamp(1.8rem,3.5vw,2.6rem)/1.15 var(--serif);margin:.2rem 0 .5rem}
+.eyebrow{margin:0;text-transform:uppercase;letter-spacing:.12em;font-size:.72rem;font-weight:600;color:var(--muted)}
+.lede{color:var(--muted);margin:.25rem 0}
+.notice{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:.5rem;padding:.9rem 1.1rem;margin:1rem 0 1.5rem;font-size:.92rem;color:var(--muted)}
+.notice strong{color:var(--ink)}.cite{display:block;margin-top:.4rem;font-size:.85rem}
+.table-wrap{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:.75rem;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%}
+.summary th,.summary td{padding:.85rem 1rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+.summary thead th{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.summary tbody tr:last-child>*{border-bottom:0}.summary tbody tr:hover{background:var(--quote)}
+.summary .d{text-align:center;width:3.4rem;padding-left:.25rem;padding-right:.25rem}
+.summary .overall{border-left:1px solid var(--line)}
+.summary{min-width:44rem}.summary tbody th{white-space:nowrap}.summary .result{min-width:13rem}
+.trial-link{font-weight:600}.sub{display:block;color:var(--muted);font-size:.82rem;font-weight:400}
+.result span{display:block}.est{font-variant-numeric:tabular-nums;font-weight:500}
+.not-assessed .status{font-weight:600;color:var(--muted)}
+.dot{display:inline-grid;place-items:center;width:1.9rem;height:1.9rem;border-radius:50%;font:700 1.05rem/1 var(--sans);color:#fff}
+.dot.low{background:var(--low)}.dot.concerns{background:var(--concerns)}.dot.high{background:var(--high)}.dot.none{background:var(--none-bg);color:var(--none)}
+.pill{display:inline-flex;align-items:center;gap:.45rem;border-radius:999px;padding:.15rem .7rem .15rem .2rem;font-weight:600;font-size:.88rem;vertical-align:middle}
+.pill .dot{width:1.35rem;height:1.35rem;font-size:.8rem}
+.pill.low{background:var(--low-bg);color:var(--low)}.pill.low .dot{background:var(--low)}
+.pill.concerns{background:var(--concerns-bg);color:var(--concerns)}.pill.concerns .dot{background:var(--concerns)}
+.pill.high{background:var(--high-bg);color:var(--high)}.pill.high .dot{background:var(--high)}
+.pill.none{background:var(--none-bg);color:var(--none)}.pill.none .dot{background:var(--none)}
+.pill-lg{font-size:1rem;padding:.3rem .95rem .3rem .3rem}.pill-lg .dot{width:1.7rem;height:1.7rem;font-size:.95rem}
+.keys{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin:1.25rem 0 2rem;color:var(--muted);font-size:.88rem}
+.keys ul{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}.legend li{display:flex;align-items:center;gap:.5rem}
+.legend .dot{width:1.3rem;height:1.3rem;font-size:.8rem}.domain-key b{color:var(--ink);margin-right:.35rem}
+.crumbs{padding-top:1.25rem;font-size:.9rem}.crumbs a{text-decoration:none}
+.meta-line{color:var(--muted);font-size:.82rem;margin:.4rem 0 0}.meta-line code{font-size:.95em}
+.derivation{color:var(--muted);font-size:.9rem;margin:.3rem 0 .2rem}.derivation .pill{font-size:.8rem}
+q{font-family:var(--serif);color:var(--muted)}
+.overall-line{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;margin:1rem 0 .5rem;color:var(--muted)}
+.card,.domain{background:var(--paper);border:1px solid var(--line);border-radius:.75rem;box-shadow:var(--shadow);padding:1.4rem 1.5rem;margin:1.25rem 0}
+.card h2,.domain h2{font:600 1.3rem/1.25 var(--serif);margin:.15rem 0 .6rem}
+.hint{color:var(--muted);font-size:.88rem;margin:.2rem 0 1rem}
+.kv th{width:13rem;color:var(--muted);font-weight:500;padding:.45rem 1rem .45rem 0;vertical-align:top;text-align:left}
+.kv td{padding:.45rem 0;border-bottom:1px dashed var(--line)}.kv tr:last-child td{border-bottom:0}
+.domain-nav{position:sticky;top:0;z-index:2;display:flex;gap:.5rem;flex-wrap:wrap;padding:.6rem 0;background:var(--bg)}
+.domain-nav a{display:inline-flex;align-items:center;gap:.4rem;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.2rem .75rem .2rem .25rem;color:var(--ink);text-decoration:none;font-weight:600;font-size:.88rem}
+.domain-nav .dot{width:1.4rem;height:1.4rem;font-size:.8rem}
+.domain{scroll-margin-top:4rem}.domain-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:.9rem;margin-bottom:.4rem}
+.adjudication{background:var(--quote);border-radius:.5rem;padding:.8rem 1rem;margin:.9rem 0}
+.adjudication p{margin:.3rem 0}.adjudication details.adjudication-quotes{margin-left:0}
+.questions{list-style:none;margin:0;padding:0}
+.question{padding:1rem 0;border-bottom:1px solid var(--line)}.question:last-child{border-bottom:0}
+.q-head{display:grid;grid-template-columns:2.6rem 1fr auto auto;gap:.75rem;align-items:baseline}
+.q-num{font:600 .95rem var(--serif);color:var(--muted)}.q-text{font-weight:500}
+.answer{justify-self:end;white-space:nowrap;font-size:.82rem;font-weight:700;border-radius:.35rem;padding:.12rem .55rem;background:var(--none-bg);color:var(--ink)}
+.a-yes,.a-no{background:var(--ink);color:var(--paper)}.a-probably_yes,.a-probably_no{border:1.5px solid var(--ink);background:transparent}
+.a-no_information{background:var(--concerns-bg);color:var(--concerns)}.answer.na{background:transparent;color:var(--muted);font-weight:500}
+.badge{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);border:1px solid currentColor;border-radius:.3rem;padding:.05rem .35rem}
+.why{margin:.45rem 0 0 3.35rem}.notes{margin:.4rem 0 0 3.35rem;padding:0;list-style:none;font-size:.92rem}
+.notes li{margin:.2rem 0}.counter b{color:var(--high)}.unknown b{color:var(--concerns)}
+.skipped .q-text{color:var(--muted)}
+details.quotes{margin:.55rem 0 0 3.35rem}details.quotes summary{cursor:pointer;color:var(--accent);font-size:.88rem;font-weight:600}
+.evidence{margin:.6rem 0;padding:.65rem .9rem;background:var(--quote);border-left:3px solid var(--line);border-radius:0 .4rem .4rem 0}
+blockquote.evidence p{margin:.25rem 0 0;font-family:var(--serif);font-size:1rem}
+.where{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.role{margin-left:.5rem;font-size:.72rem;color:var(--accent);font-weight:600}
+.absence{border-left-color:var(--concerns)}.absence p{margin:.25rem 0 0}
+figure.evidence img{display:block;max-width:100%;margin:.5rem 0;border:1px solid var(--line);border-radius:.3rem;background:#fff}
+figcaption{font-size:.9rem}
+.sources td,.sources th{padding:.45rem .75rem .45rem 0;border-bottom:1px solid var(--line);text-align:left}
+.sources th{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.footer{color:var(--muted);font-size:.82rem;padding-top:1rem;padding-bottom:3rem;border-top:1px solid var(--line);margin-top:2.5rem}
+@media (max-width:640px){.q-head{grid-template-columns:2rem 1fr}.answer,.badge{grid-column:2;justify-self:start}
+.why,.notes,details.quotes{margin-left:2.75rem}.kv th{width:auto;display:block;padding-bottom:0}.kv td{display:block}}
+@media print{:root{--bg:#fff;--paper:#fff;--shadow:none}body{font-size:11pt}.masthead,.domain-nav,.crumbs{display:none}
+.card,.domain,.table-wrap{box-shadow:none;break-inside:auto}.question{break-inside:avoid}a{color:inherit;text-decoration:none}
+.dot,.pill,.answer{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+details::details-content{content-visibility:visible;height:auto}details>summary{list-style:none}}
+</style></head><body><header class="masthead"><div class="wrap"><a class="brand" href="index.html"><span class="mark" aria-hidden="true">RoB&nbsp;2</span>Risk of bias assessment</a><span class="meta">All-cause death, early surgery vs conservative treatment, long-term follow-up (median 63 months) defined as HR 0.44; 95% CI 0.23-0.85, P = .012, for all-cause death</span></div></header><main class="wrap"><section class="hero"><p class="eyebrow">Batch report</p><h1>All-cause death, early surgery vs conservative treatment, long-term follow-up (median 63 months) defined as HR 0.44; 95% CI 0.23-0.85, P = .012, for all-cause death</h1><p class="lede">1 trial · 1 assessed</p><p class="meta-line">Finalized 2026-10-12 · Bundle <code>7396c849ace4</code> · ARBITER 0.13.0 · RoB 2 guidance of 22 August 2019</p></section><aside class="notice"><strong>Produced by an AI assessor.</strong> The answers, justifications and quotations were written by an AI model working through ARBITER; the domain and overall judgments follow from those answers by the official RoB 2 algorithms. A reviewer must check every judgment before relying on it.<br><span class="cite">RoB 2: Sterne JAC, Savović J, Page MJ, et al. RoB 2: a revised tool for assessing risk of bias in randomised trials. <i>BMJ</i> 2019;366:l4898.</span></aside><div class="table-wrap"><table class="summary"><thead><tr><th scope="col">Trial</th><th scope="col">Assessed result</th><th class="d" scope="col" title="Bias arising from the randomization process">D1</th><th class="d" scope="col" title="Bias due to deviations from intended interventions">D2</th><th class="d" scope="col" title="Bias due to missing outcome data">D3</th><th class="d" scope="col" title="Bias in measurement of the outcome">D4</th><th class="d" scope="col" title="Bias in selection of the reported result">D5</th><th class="d overall" scope="col">Overall</th></tr></thead><tbody><tr><th scope="row"><a class="trial-link" href="trials/banovic26-avatar-2024.html">banovic26-avatar-2024</a><span class="sub">NCT02436655</span></th><td class="result"><span>All-cause death</span><span class="est">HR 0.44 (0.23-0.85)</span><span class="sub">All 157 randomized patients analysed by intention to treat; one patient lost to follow-up was censored at last follow-up.</span></td><td class="d"><span class="dot low" title="Low risk" aria-label="Low risk">✓</span></td><td class="d"><span class="dot low" title="Low risk" aria-label="Low risk">✓</span></td><td class="d"><span class="dot low" title="Low risk" aria-label="Low risk">✓</span></td><td class="d"><span class="dot low" title="Low risk" aria-label="Low risk">✓</span></td><td class="d"><span class="dot concerns" title="Some concerns" aria-label="Some concerns">!</span></td><td class="d overall"><span class="dot concerns" title="Some concerns" aria-label="Some concerns">!</span></td></tr></tbody></table></div><div class="keys"><ul class="legend"><li><span class="dot low" title="Low risk" aria-label="Low risk">✓</span> Low risk</li><li><span class="dot concerns" title="Some concerns" aria-label="Some concerns">!</span> Some concerns</li><li><span class="dot high" title="High risk" aria-label="High risk">✗</span> High risk</li></ul><ul class="domain-key"><li><b>D1</b> Bias arising from the randomization process</li><li><b>D2</b> Bias due to deviations from intended interventions</li><li><b>D3</b> Bias due to missing outcome data</li><li><b>D4</b> Bias in measurement of the outcome</li><li><b>D5</b> Bias in selection of the reported result</li></ul></div></main><footer class="wrap footer"><p>Rendered by ARBITER 0.13.0 from finalized bundle <code>7396c849ace44685</code> on 2026-10-12, which passed verification when this report was made. The bundle, not this page, is the record; verify it with <code>arbiter verify</code>.</p><p>Signalling questions and algorithms: RoB 2 for individually randomized parallel-group trials, version of 22 August 2019, reproduced with permission.</p></footer></body></html>

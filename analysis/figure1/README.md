@@ -1,63 +1,43 @@
-# Figures 1 and 2: workflow and AVATAR trace
+# Reproducible ARBITER figures
 
-Reproducible SVG illustration sources with bundled OFL Fira fonts. Figure 1 is a standalone workflow at 174 × 112.5 mm; Figure 2 is an AVATAR trace at 174 × 223.875 mm, with a provisional Unassisted column. No titles or panel tags appear inside either image.
+Figure 1 is a 174 × 132 mm workflow with plain-language actor/action labels and secondary grey tool names. Figure 2 is a 174 × 225.5 mm AVATAR storyboard: five domains link questions, quotations, AI answers, software checks, full answer chips and computed ratings. Its expanded D5 row explains the Some concerns result; a source strip, typed snippets, counter-evidence and open points show the basis of the answers. See STYLE-REFERENCE.md for the book's visual grammar.
 
-## Build
+## Build and verify
 
-From the repository root:
+Run from this worktree root:
 
 ```powershell
 uv sync --project analysis/figure1 --locked
-uv run --project analysis/figure1 --locked python analysis/figure1/build.py --data-root C:/Users/Ali-Salman/Documents/Analysis/arbiter-JAMIA --arbiter-root C:/Users/Ali-Salman/Documents/Code/ARBITER
+uv run --project analysis/figure1 --locked python analysis/figure1/build.py --logs-root C:/Users/Ali-Salman/Documents/Analysis/arbiter-JAMIA --arbiter-root C:/Users/Ali-Salman/Documents/Code/ARBITER
+uv run --project analysis/figure1 --locked python analysis/figure1/verify.py --data-root . --logs-root C:/Users/Ali-Salman/Documents/Analysis/arbiter-JAMIA --arbiter-root C:/Users/Ali-Salman/Documents/Code/ARBITER
+uv run --project analysis/figure1 --locked python analysis/figure1/inspect_tiffs.py
 ```
 
-The main checkout is read-only. `--data-root` defaults to this worktree, but untracked run logs must be available there. The command fails if any analysis-set trial log is absent. `--arbiter-root` identifies the public ARBITER source checkout used to verify the tool definitions, CLI and bundle extension. Outputs always go to this worktree. No R code, unrelated figures, shared legends, tables or supplement files are changed.
+All writes stay in this worktree. The bundle and versioned CSVs are read here; ignored logs are read from --logs-root. The ARBITER implementation and scientific-pack guidance are read-only references. Both figures are rebuilt. Frozen rejection-count CSV/JSON audits are retained; AVATAR tool/log audit hashes are rechecked.
 
-The build reads and checks:
+Each build checks bundle manifest hashes, source linkage, all 22 question positions (15 active answers and seven inactive branches), domain/Overall ratings, ordered verbatim quote selections, verbatim justification excerpts and every semantic SVG row string, both Without ARBITER label exports, the uncited log claim, adjudicators' consensus, published D5 and the archived verified receipt. The D5 rule is checked against the scientific-pack Algorithm section. Figure 2's rendered text and extracted PDF text fail on eh_, sha256, underscore identifiers, span, adopted or proposal. Both figures retain the rob2 legacy-name guard.
 
-- All AVATAR manifest content hashes, canonical domain decisions, answer/basis types, bound evidence/source linkage and archived verifier receipt.
-- Official question wording from archived MCP responses in AVATAR's logs, including the branching IDs for 2.4, 2.5 and 2.7.
-- Exact selected quotes, justification excerpts, unknowns and Unassisted rationale from the bundle and final.md. Only whitespace and two PDF extraction word breaks are joined; omissions use ellipses.
-- Published, ARBITER and Unassisted label CSVs, the consensus D5 adjudication cell and the Unassisted D4 invalid-path classification.
-- All Sonnet save calls in exactly 102 analysis-set trial logs, matched by unique tool-use ID to results. The three unsupported-design trials are excluded. `count_save_rejections.py` can also run independently with `--data-root`.
+Deliverables are analysis/output/manuscript/Figure{1,2}.{svg,pdf,png,tiff}. Figure 2 PDF is entirely vector with subset-embedded bundled Fira fonts. Figure 1 retains its vector diagram and embedded Fira fonts, with one faithful raster screenshot of the real HTML table (smallest captured text 7.08 pt); TIFF is PDF-rendered at 600 dpi with LZW compression. Minimum text is 7.0866 pt. SVG uses outlined glyphs. Source/model/software/person/check/cross glyphs use vectors. The qa directory includes final-size, PDF, greyscale and deuteranopia/protanopia/tritanopia proofs.
 
-## Outputs
+geometry.py checks actual SVG shapes and bundled-font glyph bounds: text/stroke clearance ≥0.3 mm, full arrow/text clearance ≥1.0 mm (tips also ≥0.8 mm), assessment-stack arrow clearance ≥1.5 mm and lane clearance ≥1 mm, no connector parallel to a box border within 2 mm for more than 5 mm, no text overlap, no overlapping pills, no unrelated-box penetration, and all content in frame. Height limits are 132 mm and 230 mm. verify.py runs 15 geometry regression fixtures and compares 38 artifacts across two builds. inspect_tiffs.py tiles both 600-dpi TIFFs for complete coverage at 4× final size, recording crop bounds and final TIFF hashes in visual-inspection.json. Inspection images stay in ignored .inspection/. See visual-review.md for the clinician walkthrough and actual review.
 
-`analysis/output/manuscript/`:
+Legends and alt text explain paraphrases, evidence types, source identities, verbatim model justification excerpts, counter-evidence, open points, archived verifier scope and the illustrative status of AVATAR. figure1-notes.md preserves full answers, evidence and source provenance. Full official questions and trace appear in eTable 31. Audit files store source identities and evidence quotations rather than complete trial PDFs. Overall was not adjudicated.
 
-- `Figure1.{svg,pdf,png,tiff}`: workflow, without benchmark count.
-- `Figure2.{svg,pdf,png,tiff}`: trace with Unassisted column.
-- `qa/Figure2-without-unassisted.png`: wider evidence rows at 174 × 214.125 mm; matching final-size, greyscale and CVD proofs use the same filename prefix.
-- `qa/Figure{1,2}-{final-size,grayscale,deuteranopia,protanopia,tritanopia,pdf}.png`: visual proofs.
-- `figure1-notes.md`: both figures' provenance, every displayed quote, full bound spans, handles, source IDs, pages, line ranges and complete hashes.
-- `legends-fig1-2.md`: legends and alt text for integration by the parent task.
+The exact run-build report now renders successfully with rob2-kit 2848c79 (0.13.0). Raw and product-name-only relabelled HTML are committed under html-report/. `relabel_report.py` is run by every figure build; it asserts byte equality with only the documented substitutions and writes full counts and a unified diff. No trial text, decision, number, CSS or layout is changed. The earlier 1.0.0 schema error is historical, superseded by the successful exact-build render.
 
-`analysis/figure1/`:
+To reproduce the original render and screenshots (all commands from this worktree root):
 
-- `save-rejections.csv`: one row per call, including successful calls so the denominator is auditable, with domain and attribution source. Turn files are sorted numerically; unique call insertion order records chronology. One malformed JSON call retains its literal domain; one domain-less call is attributed only after asserting that both flanking retries name D1. Error excerpts exclude generic recovery/example boilerplate.
-- `save-rejections-summary.json`: 637 calls, 53 rejections (32 evidence/basis construction; 21 other validation/input errors); AVATAR 1/7. All 47 trial-domain assessments with rejections ended successfully; 0/510 domains lacked an accepted save. All 53 rejected calls have a later accepted save in that domain, including one domain-less PALOMA-2 call contextually attributed to D1 and flagged in the CSV.
-- `avatar-save-retry.json`: failed and accepted AVATAR basis objects and exact tool-use IDs.
-- `qa.json`: physical dimensions, text minima, vector PDF and embedded font checks.
-- `verify.py`, `reproducibility.json`: two-build byte comparison and artifact hashes.
+```powershell
+uv venv "$env:TEMP/arbiter-avatar-2848c79"
+uv pip install --python "$env:TEMP/arbiter-avatar-2848c79/Scripts/python.exe" C:/Users/Ali-Salman/Documents/Code/rob2-kit playwright
+& "$env:TEMP/arbiter-avatar-2848c79/Scripts/rob2.exe" report kit-sonnet-5.5/bundles/banovic26-avatar-2024.rob2.zip --output analysis/figure1/html-report/raw
+uv run --project analysis/figure1 --locked python analysis/figure1/relabel_report.py
+& "$env:TEMP/arbiter-avatar-2848c79/Scripts/python.exe" -m playwright install chromium
+& "$env:TEMP/arbiter-avatar-2848c79/Scripts/python.exe" analysis/figure1/screenshot_report.py
+```
 
-## Rendering and QA
+The report source must be commit 2848c7926a2acc25402345a42be39d695a99861a. Its non-editable installed module was verified under the temporary environment's Lib/site-packages, with direct_url.json dir_info `{}`. The renderer verifies the bundle before writing HTML. The thumbnail is a native 400 px responsive trial-page view, cropped to domain navigation and the first domain card. The full batch-summary table is also retained in QA. The AVATAR trial-page screenshot is retained separately at qa/avatar-html-report.png. Screenshots use headless Chromium 156.0.8078.4 through Playwright installed by uv, full-page proof viewport 780 × 1000 and detail viewport 400 × 900, device scale 2. No page styling is injected. The screenshot and HTML are frozen figure inputs, so rebuilding figures needs no browser installation.
 
-Coordinates are quarter-millimetres. All text is at least 7 pt at final width (Figure 1 minimum 7.23 pt; Figure 2 minimum 7.09 pt). SVG text is outlined from bundled Fira Sans Condensed Regular/Bold and Fira Code Regular, with accessible labels. PDF uses the identical glyph positions and subset-embedded Fira TrueType fonts; no raster images or system-font dependency. ReportLab draws the vector SVG shapes and text; PyMuPDF renders the vector PDF at 600 dpi for LZW TIFF. An independent resvg rendering supplies PNG previews. Standard-font resources introduced by the converter are unused and removed.
+Figure 2 has no curved annotation arrows. The evidence legend uses visual yellow/grey/dashed boxes, plus light not-needed hatching. Fingerprints are omitted. Recorded trace IDs map directly to the result pills; the D5 driver outlines 5.1. The scene checks every source/AI/server/result row string against the provenance CSV, then greps semantic aria-label strings in the final SVG. Source and algorithm citations, with file/line numbers, appear in figure1-notes.md.
 
-Accessible SVG text and extracted PDF text are checked for the forbidden legacy product-name substring. A 658-pixel proof approximates 174 mm on a 96-dpi display; the numeric dimension and point-size checks are authoritative. Greyscale and approximate Machado full-severity deuteranopia, protanopia and tritanopia proofs retain written evidence types, domain/answer labels and dashed inference borders. These RGB diagnostic transforms are not calibrated clinical simulations.
-
-The supplied book pages 000202, 000090 and 000110 were inspected. Heavy rounded outlines, pastel role lanes, linked highlighting and curved keyword callouts follow their visual vocabulary. Final-size proofs, independent PDF proofs and all four diagnostic views were inspected after layout iteration.
-
-Font provenance: Fira Sans Condensed Regular/Bold from the Google Fonts OFL distribution; Fira Code Regular from the local upstream OFL distribution. Fonts and licenses remain versioned in `fonts/`; rebuilding does not download fonts.
-
-## Important interpretation
-
-AVATAR's rejected D3 save flattened the span locator into the basis. The accepted retry nested that locator under `bases[].evidence`; it did **not** send a literal `eh_…` handle string. The server bound the reference and archived a handle. This corrects the brief's narrower account without changing the intended validation mechanism.
-
-Context is lavender, direct support yellow, and inference an unfilled dashed outline. D5's missing dated source remains plain text because a context quotation cannot itself prove an absence. The footer compares D5 preferred judgements; Overall was not adjudicated. The verifier status is read from the archive, not re-executed, and does not establish clinical validity. See `DEVIATIONS.md` for scope and display decisions.
-
-## PI revision
-
-Answer pills follow questions, including 4.4; labelled Justification lines distinguish the agent’s words from source quotations. D5 and Overall chips have pale ARBITER-blue fill, and D5 has a heavier border. All four numbered curved arrows touch their targets without crossing glyphs. The unknown is grey with a bold label and an adjacent callout. The Unassisted comparison uses the same unfilled orange outline (#DF8F44) for all three author-flagged issues: 4.3 NA, the unblinding phrase and the registered-time-frame phrase, with no gutter-crossing arrows. The legend and alt text identify these as author flags. The Unknown label has a five-unit gap before its text, with wrapped lines aligned under the text start. The Unassisted explanatory notes wrap to two lines to preserve ≥7 pt type in the narrow column. Main quote, question and justification type increased from 7.30 to 7.51 pt.
-
-Figure 1 moves the assessment request/response arrows outward and places a straight red return between the response text and black up-arrow. The red return runs continuously through the server lane to its pill below the lane, using the broader invalid-or-unbound wording. The count variant has been removed; the legend holds the precise rejection and recovery counts. The Overall rule uses plain language.
+The readability pass retains all eight original tool labels, adds text search/selection and page-image inspection/selection tools within the workflow, and retains arbiter review/report. Figure 1 shows the audit file and the report as distinct outputs, with a smaller natural trial-page crop. Figure 2 uses 7.51 pt primary questions/answers, 7.09 pt secondary text, 12-unit primary leading and 11-unit quote leading, abbreviated domain headings and full-width counter-evidence/open-point lines. Repeated rule and quote-check lines are omitted, domain frames have uniform strokes, and source icons distinguish reports, registry and amendment.
