@@ -43,3 +43,5 @@ All workflow tool names now use natural monospace proportions, without horizonta
 Four evenly spaced bidirectional tool-exchange arrows replace unequal down/up pairs. Tool names keep their natural monospace proportions; read_pages and render_page remain separate lines.
 
 The audit card has centred, stacked text. Robot, server-stack and shield/check icons identify the model, server and shared verification node. The server’s two-line action cells are vertically centred in the mint lane.
+
+Source/actor/verifier icons and labels now share a fixed icon gutter and text edge. Server subtitles use the same left alignment as reviewer/model subtitles, eliminating the previous mixed alignment. Audit-card text remains centred.

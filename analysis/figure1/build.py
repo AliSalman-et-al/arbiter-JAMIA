@@ -242,13 +242,13 @@ def draw_workflow(data):
     s.description='Reviewer, AI model, rule-based server and audit file, ending in the actual AVATAR HTML report.'
     centers=[196,336,476,616]
     for phase,cx in zip(PHASES,centers):s.text(cx,16,phase,11,'bold',anchor='middle')
-    s.rect(12,5,11,16,'white',2,INK,.8)
-    s.line(15,11,20,11,sw=.6);s.line(15,15,20,15,sw=.6)
-    s.text(29,15,'Trial reports + registry',10)
+    s.rect(25,5,14,16,'white',2,INK,.8)
+    s.line(28,11,36,11,sw=.6);s.line(28,15,36,15,sw=.6)
+    s.text(47,15,'Trial reports + registry',10)
     s.line(150,13,168,13,arrow=True,sw=1)
     s.rect(12,28,672,38,'#F5F5F3',6,INK,1.5)
-    s.add('<circle cx="30" cy="42" r="4" fill="white" stroke="#171717" stroke-width="1"/>')
-    s.add('<path d="M23 59 Q23 48 30 48 Q37 48 37 59 Z" fill="white" stroke="#171717" stroke-width="1"/>')
+    s.add('<circle cx="32" cy="42" r="4" fill="white" stroke="#171717" stroke-width="1"/>')
+    s.add('<path d="M25 59 Q25 48 32 48 Q39 48 39 59 Z" fill="white" stroke="#171717" stroke-width="1"/>')
     s.text(47,47,'Reviewer',11,'bold');s.text(47,61,'Person',10,color=GREY)
     for cx,first,second in [(196,'Chooses the trial','and outcome'),(336,'Approves the result','arbiter review'),(616,'Receives','HTML report + audit file')]:
         s.text(cx,46,first,11,'bold',anchor='middle')
@@ -262,7 +262,7 @@ def draw_workflow(data):
     s.line(29,94,35,94,sw=.8)
     s.line(23,89,23,94,sw=.8);s.line(41,89,41,94,sw=.8)
     s.text(47,94,'AI model',11,'bold',LLM)
-    s.text(25,107,'LLM agent; follows',10,color=GREY);s.text(25,119,'the assessment guide',10,color=GREY)
+    s.text(47,107,'LLM agent; follows',10,color=GREY);s.text(47,119,'the assessment guide',10,color=GREY)
     for cx,top,bottom in zip(centers,['Locate trial reports','Specify the outcome','Read text or page images','Review the answers'],['and registry records','and analysis to assess','Select and cite evidence','and supporting evidence']):
         if cx==476:
             for y,label in zip([92,105,118],[top,bottom,'Answer RoB 2 questions']):s.text(cx,y,label,10,'bold',LLM,anchor='middle')
@@ -278,12 +278,12 @@ def draw_workflow(data):
         for y,tool in zip({2:[148,180],4:[140,156,172,188],6:[136,147,158,169,180,191]}[len(tools)],tools):
             s.text(cx,y,tool,10,'mono',GREY,anchor='middle')
     s.rect(12,196,672,60,MINT,6,INK,1.5)
-    for y in (203,213):
-        s.rect(18,y,14,6,'white',1,INK,.8)
-        s.add(f'<circle cx="21" cy="{y+3}" r=".65" fill="#171717"/>')
-        s.line(24,y+3,29,y+3,sw=.6)
-    s.text(40,214,'ARBITER server',11,'bold')
-    s.text(76,230,'rule-based software,',10,anchor='middle');s.text(76,245,'no AI',10,anchor='middle')
+    for y in (208,218):
+        s.rect(25,y,14,6,'white',1,INK,.8)
+        s.add(f'<circle cx="28" cy="{y+3}" r=".65" fill="#171717"/>')
+        s.line(31,y+3,36,y+3,sw=.6)
+    s.text(47,217,'ARBITER server',11,'bold')
+    s.text(47,230,'Rule-based software',10);s.text(47,242,'No AI',10)
     for cx,phrases in zip(centers,[['Store an unchangeable','copy of each source'],['Check and record','the choice'],['Check every quote','Apply the RoB 2 rules'],['Keep the full record','Package the audit file','Write the HTML report']]):
         for j,phrase in enumerate(phrases):s.text(cx,(223 if len(phrases)==2 else 210)+j*12,phrase,10,'bold',anchor='middle')
     s.text(616,248,'arbiter report',10,'mono',GREY,anchor='middle')
@@ -316,7 +316,7 @@ def draw_workflow(data):
     s.rect(12,461,306,33,'white',5,INK,1.2)
     s.add('<path d="M25 469 L32 467 L39 469 V476 Q39 481 32 485 Q25 481 25 476 Z" fill="white" stroke="#171717" stroke-width=".9" stroke-linejoin="round"/>')
     s.add('<path d="M28 475 l3 3 l5 -6" fill="none" stroke="#171717" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>')
-    s.text(165,482,'Checkable by an independent verifier',10,'bold',anchor='middle')
+    s.text(47,482,'Checkable by an independent verifier',10,'bold')
     s.line(165,412,165,457,arrow=True,sw=1)
     s.line(364,445,340,445,sw=1);s.line(340,445,340,477,sw=1)
     s.line(340,477,322,477,arrow=True,sw=1)
