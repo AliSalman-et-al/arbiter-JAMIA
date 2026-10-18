@@ -36,6 +36,12 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 **Algorithm violation**: A domain or Overall judgement that differs from what the official algorithm gives from the source's own answers or domain labels, with no override recorded. Only baseline arms and meta labels can have one.
 
+**Departure**: A domain judgement that breaks the RoB 2 algorithm: an algorithm violation or an invalid answer path. Use "departure" only in this sense.
+
+**Disagreement with Published**: A cell where a source's label differs from the meta label. Do not call it a "departure".
+
+**Vindicated disagreement**: A disagreement with Published where the consensus preferred judgement equals the disagreeing source's label.
+
 **Decisive question**: A signalling question where a losing source's answer contradicts the adjudicators' independent answer, and where substituting the adjudicators' answer alone changes the algorithm's judgement.
 
 **All-Low rule**: A reference rule that predicts Low for every cell. Do not call it a "baseline", which means the baseline arm. It shows how much of an accuracy figure comes from Low being the most common label.
