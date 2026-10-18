@@ -255,8 +255,14 @@ def draw_workflow(data):
         s.text(cx,61,second,10,'mono' if cx==336 else 'regular',GREY if cx==336 else INK,anchor='middle')
     s.line(402,49,476,49,sw=1);s.line(476,49,476,73,arrow=True,sw=1)
     s.rect(12,77,672,49,LAVENDER,6,INK,1.5)
-    s.text(25,92,'AI model (LLM agent)',11,'bold',LLM)
-    s.text(25,106,'follows the ARBITER',10,color=GREY);s.text(25,119,'assessment guide',10,color=GREY)
+    s.rect(25,85,14,12,'white',2,INK,.8)
+    s.line(32,82,32,85,sw=.8)
+    s.add('<circle cx="32" cy="81" r="1" fill="#171717"/>')
+    for x in (29,35):s.add(f'<circle cx="{x}" cy="90" r=".8" fill="#171717"/>')
+    s.line(29,94,35,94,sw=.8)
+    s.line(23,89,23,94,sw=.8);s.line(41,89,41,94,sw=.8)
+    s.text(47,94,'AI model',11,'bold',LLM)
+    s.text(25,107,'LLM agent; follows',10,color=GREY);s.text(25,119,'the assessment guide',10,color=GREY)
     for cx,top,bottom in zip(centers,['Locate trial reports','Specify the outcome','Read text or page images','Review the answers'],['and registry records','and analysis to assess','Select and cite evidence','and supporting evidence']):
         if cx==476:
             for y,label in zip([92,105,118],[top,bottom,'Answer RoB 2 questions']):s.text(cx,y,label,10,'bold',LLM,anchor='middle')
@@ -272,10 +278,14 @@ def draw_workflow(data):
         for y,tool in zip({2:[148,180],4:[140,156,172,188],6:[136,147,158,169,180,191]}[len(tools)],tools):
             s.text(cx,y,tool,10,'mono',GREY,anchor='middle')
     s.rect(12,196,672,60,MINT,6,INK,1.5)
-    s.text(25,211,'ARBITER server',11,'bold')
-    s.text(25,227,'rule-based software,',10);s.text(25,242,'no AI',10)
+    for y in (203,213):
+        s.rect(18,y,14,6,'white',1,INK,.8)
+        s.add(f'<circle cx="21" cy="{y+3}" r=".65" fill="#171717"/>')
+        s.line(24,y+3,29,y+3,sw=.6)
+    s.text(40,214,'ARBITER server',11,'bold')
+    s.text(76,230,'rule-based software,',10,anchor='middle');s.text(76,245,'no AI',10,anchor='middle')
     for cx,phrases in zip(centers,[['Store an unchangeable','copy of each source'],['Check and record','the choice'],['Check every quote','Apply the RoB 2 rules'],['Keep the full record','Package the audit file','Write the HTML report']]):
-        for j,phrase in enumerate(phrases):s.text(cx,210+j*12,phrase,10,'bold',anchor='middle')
+        for j,phrase in enumerate(phrases):s.text(cx,(223 if len(phrases)==2 else 210)+j*12,phrase,10,'bold',anchor='middle')
     s.text(616,248,'arbiter report',10,'mono',GREY,anchor='middle')
     for x in [266,406,546]:s.line(x,203,x,249,dotted=True,sw=.6)
     # Export gives the reviewer two concrete outputs; the fork remains below all text.
@@ -288,10 +298,10 @@ def draw_workflow(data):
         assert 'def '+tool+'(' in visual_source
         assert data['tool_audit']['counts'].get(tool,0)==0
     s.rect(12,334,306,78,YELLOW,6,INK,1.5)
-    s.text(25,353,'Audit file',12,'bold')
-    s.text(241,353,'.arbiter.zip',10,'mono',anchor='middle')
-    s.text(25,377,'Every source, quote, answer',11)
-    s.text(25,392,'and decision',11)
+    s.text(165,351,'Audit file',12,'bold',anchor='middle')
+    s.text(165,366,'.arbiter.zip',10,'mono',anchor='middle')
+    s.text(165,384,'Every source, quote, answer',11,anchor='middle')
+    s.text(165,399,'and decision',11,anchor='middle')
     # Focus on the actual domain-results area; full table and trial-page captures remain in QA.
     path=HERE/'qa/avatar-html-report-domain-view.png'
     meta=json.loads((HERE/'qa/avatar-html-report-domain-view.json').read_text())
@@ -304,6 +314,8 @@ def draw_workflow(data):
     s.add(f'<image x="368" y="288" width="312" height="{ih}" href="data:image/png;base64,{encoded}"/>')
     s.report_image=dict(path=path,x=368,y=288,w=312,h=ih,min_text_pt=min_font)
     s.rect(12,461,306,33,'white',5,INK,1.2)
+    s.add('<path d="M25 469 L32 467 L39 469 V476 Q39 481 32 485 Q25 481 25 476 Z" fill="white" stroke="#171717" stroke-width=".9" stroke-linejoin="round"/>')
+    s.add('<path d="M28 475 l3 3 l5 -6" fill="none" stroke="#171717" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>')
     s.text(165,482,'Checkable by an independent verifier',10,'bold',anchor='middle')
     s.line(165,412,165,457,arrow=True,sw=1)
     s.line(364,445,340,445,sw=1);s.line(340,445,340,477,sw=1)

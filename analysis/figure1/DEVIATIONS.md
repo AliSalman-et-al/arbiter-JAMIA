@@ -41,3 +41,5 @@ All model-lane wording is revised to concrete verbs and plain clinical objects: 
 All workflow tool names now use natural monospace proportions, without horizontal compression. The domain-assessment column is wider, read_pages/render_page have separate lines, and the model lane moves up 1.75 mm to give six tool names their own baselines. Figure height remains 125 mm.
 
 Four evenly spaced bidirectional tool-exchange arrows replace unequal down/up pairs. Tool names keep their natural monospace proportions; read_pages and render_page remain separate lines.
+
+The audit card has centred, stacked text. Robot, server-stack and shield/check icons identify the model, server and shared verification node. The server’s two-line action cells are vertically centred in the mint lane.
