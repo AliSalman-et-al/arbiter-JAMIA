@@ -215,31 +215,70 @@ Baseline arms have no evidence trace. Report them as "not available" rather than
 
 ## 7. Outputs
 
+Revised 2026-10-18 for JAMIA's Research and Applications limits: at most 4 tables and 6 figures, tables as editable Word tables, figures as separate files with legends and alt text. Supplementary material is unlimited. Every output must be ready for the manuscript as produced.
+
+### Story
+
+Published RoB 2 labels are a weak reference. An unassisted model matches them about as well as ARBITER does. But ARBITER follows the RoB 2 rules, ties every answer to a cited passage, and is the arm blinded experts prefer when the two arms disagree, at a known cost per trial. Each main item serves one part of this story. Items that do not serve it go to the supplement. No item repeats another.
+
 ### Main text
 
 | Item | Content |
 |---|---|
-| Fig 1 | The ARBITER workflow, with one worked trace built from a bundle. Steps: trial sources captured → the assessed result is proposed and the user approves it → the model answers each signalling question and cites passages → the server checks each cited passage against the captured sources → the server applies the RoB 2 algorithm (proposed judgement; any override is recorded with its rationale) → a verifiable bundle is exported. The trace uses a real cited passage with its page locator, the answers abbreviated Y/PY/PN/N/NI/NA, the proposed judgement, the meta label and the consensus preferred judgement. Use a consensus cell where ARBITER beat the meta label. The pipeline drafts the figure and lists 3 to 5 candidate cells. The authors pick one. |
-| Fig 2 | Flow diagram: 16 metas → 105 trials → 3 excluded (unsupported design) → 102 → 510 D1 to D5 cells → 154 disputed → 129 consensus and 25 split. |
-| Fig 3 | Panel A: the primary endpoint, with win shares and CIs for consensus, adjudicator A, adjudicator Z and the split-cell sensitivity. Panel B: all 154 disputed cells grouped by which arm departed from the meta label, coloured by whose label the adjudicators preferred. |
-| Fig 4 | By domain: weighted κ against the meta label and against the composite reference, for both Sonnet arms. Show κ only. Do not plot accuracy on the same axis as κ. Mark the all-Low rule as a reference line at κ = 0. Accuracy stays in Table 2. |
-| Table 1 | Benchmark set: one row per meta with field, journal, trial count and meta-label distribution by domain. |
-| Table 2 | Agreement with meta labels (section 5.1) for ARBITER-Sonnet, baseline-Sonnet and all-Low, on D1 to D5 pooled and Overall. |
-| Table 3 | Algorithm consistency and audit (sections 5.4 and 5.8). Per arm: consistent, violation and invalid-answer-path rates, with overrides for the ARBITER arms; Overall consistency; evidence coverage; bundle verification. |
-| Table 5 | Process metrics (section 5.8), per Sonnet arm: time per trial in minutes, cost per trial in USD, tokens per trial, agent steps and continue prompts. Show the median [IQR] and paired differences. The Haiku arms go in the supplement. If the journal's display-item limit binds, Table 5 moves to the supplement. |
-| Table 4 | Reliability of the reference standard (section 5.5), and error localisation by signalling question (section 5.6) if space allows. |
+| Fig 1 | "How ARBITER works". Double column, two panels. **A:** swimlanes for Reviewer (human icon), LLM agent, ARBITER server and Bundle. The server lane is labelled "deterministic; no model calls". The real MCP tool names, from ARBITER 1.0.0 and the run logs, sit in monospace on the arrows between agent and server, grouped into four phases: Capture → Propose & approve → Assess each domain → Review & export. The Reviewer approves the result (`rob2 review`). **B:** one answer traced for AVATAR (banovic26-avatar-2024), D5, from the ARBITER-Sonnet bundle. Above it, a strip shows D1–D5 and Overall (Low · Low · Low · Low · Some concerns → Some concerns). The cited passage is a highlighted pill that reappears beside the signalling answer it supports. The domain's answer set then feeds the proposed judgement. Show the binding (file, page, lines, hash prefix) and the bundle verification. Footer: "Published: Low · Adjudicators: Some concerns · Unassisted: Low". Fallback trace if AVATAR's passage is unsuitable: ASCET D5. |
+| Fig 2 | Study flow, CONSORT style (unchanged content). |
+| Fig 3 | Primary endpoint. **A:** win shares with 95% CIs for: Both adjudicators (consensus), Adjudicator 1, Adjudicator 2, and Split cells counted against ARBITER. **B:** all 154 disputed cells, by which arm departed from the published label (rows) and whose label the adjudicators preferred (columns). |
+| Fig 4 | "Published labels are a weak reference". **A:** weighted κ against published labels, by domain and pooled D1–D5, for ARBITER and Unassisted, with 95% CIs. **B:** on consensus cells, where the published label falls relative to the adjudicators' preferred judgement: less severe, equal or more severe. Show the 3×3 tile or direction bar with counts. |
+| Fig 5 | The decisive signalling questions behind each arm's losses (section 5.6, primary population). Paired horizontal bars, ARBITER and Unassisted, each labelled with its question number and short text. The facet titles give the number of losses. |
+| Fig 6 | Unused. |
+| Table 1 | Benchmark set. One row per meta-analysis, sorted by specialty. Columns: specialty; journal and year; topic; trials in the analysis set; published D1–D5 labels pooled as Low / Some concerns / High counts; Overall labels given (yes/no). A totals row closes the table. Specialty, journal, year and topic come from `analysis/data-curated/meta-analyses.csv`. |
+| Table 2 | Agreement. Block 1: against published labels, for ARBITER, Unassisted and the All-Low rule, on D1–D5 pooled and on Overall. Block 2: against the composite reference, D1–D5. Block 3: the paired ARBITER − Unassisted differences. The footnote states both caveats on the composite reference. |
+| Table 3 | RoB 2 rule consistency and audit, for ARBITER and Unassisted (sections 5.4 and 5.8): consistent; violation; invalid answer path; departure; recorded overrides; Overall consistency; evidence binding (text spans and visual, separately); bundle verification. |
+| Table 4 | Reliability of the reference standard (section 5.5): Adjudicator 1 vs Adjudicator 2 on independent and on preferred judgements, and each adjudicator's independent judgement against the Published, ARBITER and Unassisted labels, on disputed cells only. The footnote states the selection. |
+
+Results text gives the time and cost per trial (median [IQR]) and the paired differences. Their table is in the supplement.
 
 ### Supplement
 
-- Haiku arms on every analysis except the adjudication analyses (sections 4, 5.2 and 5.6).
-- Full 3×3 confusion matrices per arm and domain.
-- Forest plot by meta-analysis.
-- Per-adjudicator results and the split-cell sensitivity analysis.
-- The missing-judgement sensitivity analysis.
-- The prompt template and one filled example.
-- The TRIPOD-LLM checklist, with GRRAS items for the agreement analyses.
+One `Supplement.docx`, built by the pipeline, with eTables and eFigures numbered in the order they are cited. Each has a caption and footnotes. It holds:
 
-Figures are saved as PDF and as PNG at 600 dpi. Tables are saved as CSV and rendered in the report.
+- a short methods appendix: the RoB 2 algorithms and validation; the API list-price reconstruction; the error-localisation rules; the evidence-binding criteria
+- Table 1 per domain
+- process metrics (former Table 5), Sonnet and Haiku
+- the Haiku arms on every analysis except the adjudication analyses
+- confusion matrices
+- per-meta forest plot
+- per-adjudicator, split-cell and missing-judgement sensitivity analyses
+- error-localisation class counts, both populations, and the decisive-question frequency table
+- the recorded override
+- grounding by quote syntax
+- exploratory signalling-answer agreement
+- the prompt template and one filled example
+- run provenance
+
+`TRIPOD-LLM.docx` is a separate file: the checklist skeleton, with GRRAS items.
+
+The HTML reports stay as internal working views.
+
+### Production standards
+
+- **Reader-facing labels:** follow the GLOSSARY table: ARBITER, Unassisted, Published, All-Low rule, Adjudicator 1 and Adjudicator 2. In the supplement, add the model, e.g. "ARBITER (Sonnet 5.5)". Internal names never appear.
+- **Tables:** flextable, written to `.docx` with matching HTML. Arial 9 pt. Three-line style: rules above and below the header and at the foot only. Abbreviations defined in a footnote. Save each main table as its own `.docx` (`Table1.docx` … `Table4.docx`).
+- **Colours:** ggsci JAMA palette with fixed roles: ARBITER `#00A1D5`, Unassisted `#DF8F44`, Published `#374E55`, split or not applicable light grey. Haiku uses lighter tints of the same hues. Check the result in greyscale and under colour-vision-deficiency simulation.
+- **Fonts:** Fira Sans (OFL) in every figure, via `systemfonts` and `ragg`: Fira Sans Condensed for diagram text, Fira Sans for plots. Use Arial throughout if Fira Sans cannot be installed reproducibly.
+- **Figures:**
+  - Sizes: 84 mm (single column) or 174 mm (double column) wide.
+  - Text at least 7 pt at final size.
+  - Panel tags in bold capitals (A, B); no titles inside images.
+  - Export as vector PDF plus 600-dpi TIFF (LZW).
+  - Fig 1 is generated as SVG by a script in the repo, styled after Grootendorst & Alammar's *An Illustrated Guide to AI Agents*: heavy black rounded outlines, pastel lane fills (lavender for the LLM, mint for the server, pale yellow for the bundle), highlighter pills for evidence, and monospace tool calls.
+- **Legends:** `analysis/output/figure-legends.md` holds each figure's legend, followed by an "Alt text:" line.
+- **Numbers:**
+  - κ and AC2 to 2 decimals.
+  - Proportions as n/N (x.x%).
+  - 95% CIs in parentheses with an en dash ("0.26–0.42"), or "to" when a bound is negative, using a true minus sign ("−0.03 to 0.14").
+  - US$ to 2 decimals; minutes to 1 decimal.
+  - No p-values. State "95% CI" once, in the column header.
 
 ## 8. Reporting
 

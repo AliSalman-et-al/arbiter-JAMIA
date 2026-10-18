@@ -10,7 +10,7 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 **Meta label**: The published RoB 2 judgement for a trial, taken from the source meta-analysis. The data files call it "human". Do not call it "the human label" or "ground truth".
 
-**Adjudicator**: One of two blinded human reviewers (A and Z) who re-assessed the disputed cells.
+**Adjudicator**: One of two blinded human reviewers who re-assessed the disputed cells. Outputs call them Adjudicator 1 and Adjudicator 2. The data files call them A and Z: A is Adjudicator 1 and Z is Adjudicator 2.
 
 **Independent judgement**: An adjudicator's own domain judgement, made before they saw any other source. The data files call it `own`.
 
@@ -38,4 +38,18 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 **Decisive question**: A signalling question where a losing source's answer contradicts the adjudicators' independent answer, and where substituting the adjudicators' answer alone changes the algorithm's judgement.
 
-**All-Low baseline**: A reference rule that predicts Low for every cell. It shows how much of an accuracy figure comes from Low being the most common label.
+**All-Low rule**: A reference rule that predicts Low for every cell. Do not call it a "baseline", which means the baseline arm. It shows how much of an accuracy figure comes from Low being the most common label.
+
+## Reader-facing labels
+
+These are the labels used in manuscript text, figures and tables. The internal terms above stay in the code and the plan.
+
+| Internal term | Main text | Supplement |
+|---|---|---|
+| ARBITER-Sonnet | ARBITER | ARBITER (Sonnet 5.5) |
+| Baseline-Sonnet | Unassisted | Unassisted (Sonnet 5.5) |
+| ARBITER-Haiku | — | ARBITER (Haiku 5.5) |
+| Baseline-Haiku | — | Unassisted (Haiku 5.5) |
+| Meta label | Published label | Published label |
+| All-Low rule | All-Low rule | All-Low rule |
+| Adjudicator A / Z | Adjudicator 1 / 2 | Adjudicator 1 / 2 |
