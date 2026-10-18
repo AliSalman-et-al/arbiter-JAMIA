@@ -88,20 +88,14 @@ build_materials <- function(inputs,cells) {
     save_table(coding$reliability,'coding-reliability')
     save_table(coding$counts,'coding-counts')
   }
-  quoted_cells <- inputs$signals |> filter(arm=='ARBITER-Sonnet',active,has_quotation(justification)) |>
-    distinct(slug,domain) |> mutate(has_qualifying_quotation=TRUE)
-  candidates <- cells |> filter(consensus,kit==preferred,kit!=meta) |>
-    left_join(quoted_cells,by=c('slug','domain')) |>
-    mutate(has_qualifying_quotation=coalesce(has_qualifying_quotation,FALSE)) |>
-    arrange(desc(has_qualifying_quotation),slug,domain) |>
-    slice_head(n=5) |> select(slug,meta_id,domain,meta,kit,nokit,preferred,has_qualifying_quotation)
-  text <- inputs$signals |> filter(arm=='ARBITER-Sonnet',active) |> arrange(slug,domain,question) |>
-    group_by(slug,domain) |> summarise(signalling_answers=paste(paste0(question,'=',answer),collapse='; '),
-      arbiter_justifications=paste(paste0(question,': ',justification),collapse='\n\n'),
-      .groups='drop')
-  save_table(left_join(candidates,text,by=c('slug','domain')),'worked-trace-candidates')
-  stopifnot(nrow(candidates)>=3L,nrow(candidates)<=5L)
-
+  evidence <- readr::read_csv('data-derived/bundle-trace-evidence.csv',show_col_types=FALSE)
+  # Prefer a short, complete cited passage; keep one evidence-backed trace per cell.
+  candidates <- evidence |> filter(passage_words>=8) |>
+    mutate(complete=passage==full_passage) |>
+    arrange(desc(complete),passage_words,slug,domain,question) |>
+    distinct(slug,domain,.keep_all=TRUE) |> slice_head(n=5)
+  save_table(candidates,'worked-trace-candidates')
+  stopifnot(nrow(candidates)==5L)
   journals <- c('ajsm-acl-leap'='American Journal of Sports Medicine','bja-prehab'='British Journal of Anaesthesia',
     'cid-rifampin'='Clinical Infectious Diseases','cjasn-iga'='Clinical Journal of the American Society of Nephrology',
     'gastro-glp1'='Gastroenterology','hru-preconception'='Human Reproduction Update',

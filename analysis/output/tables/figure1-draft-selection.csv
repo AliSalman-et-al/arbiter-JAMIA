@@ -1,2 +1,2 @@
-slug,domain,question,answer,quotation
-freeman-2020,D3,3.4,probably_no,"""no participants dropped out because of treatment"""
+slug,domain,meta,ARBITER_label,Baseline_label,preferred,question,answer,signalling_answers,proposed,passage,source,page,evidence_id,full_passage,passage_words,complete
+levin-2016,D2,Some concerns,Low,Low,Low,2.6,Y,2.1=PN; 2.2=PN; 2.6=Y,Low,All analyses were conducted on the intent-to-treat sample.,j.drugalcdep.2015.11.025.pdf,4,sha256:7aa586b897bd8bbceac768c6d6080f1bda917f922bd77da08973578793031bb7,All analyses were conducted on the intent-to-treat sample.,8,TRUE
