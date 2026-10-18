@@ -1,0 +1,21 @@
+{
+  "trials": 102,
+  "total_calls": 637,
+  "rejected": 53,
+  "by_reason": {
+    "accepted": 584,
+    "evidence_or_basis_schema": 32,
+    "other_validation": 21
+  },
+  "avatar_calls": 7,
+  "avatar_rejected": 1,
+  "trial_domains_audited": 510,
+  "domain_attribution_inferred_calls": [
+    "toolu_01SEACoGACFkmrTarcdeV4oH"
+  ],
+  "domains_with_rejection": 47,
+  "domains_final_save_succeeded_after_rejection": 47,
+  "rejections_followed_by_success_same_domain": 53,
+  "domains_without_successful_save": [],
+  "domains_final_call_rejected": []
+}
