@@ -39,23 +39,23 @@
       "clearance_mm": 0.3,
       "arrow_tip_clearance_mm": 0.8,
       "curve_sampling_max_mm": 0.0375,
-      "minimum_text_stroke_clearance_mm": 0.35,
-      "minimum_arrow_text_clearance_mm": 2.725,
-      "text_elements": 124,
-      "shape_elements": 131,
+      "minimum_text_stroke_clearance_mm": 0.335,
+      "minimum_arrow_text_clearance_mm": 2.755,
+      "text_elements": 127,
+      "shape_elements": 123,
       "arrow_tips": 15,
       "checks": {
-        "text_stroke_pairs": 13020,
-        "box_pairs": 3570,
-        "arrow_text_pairs": 1860,
-        "arrow_box_pairs": 1275,
-        "frame_elements": 255,
-        "text_pairs": 7626
+        "text_stroke_pairs": 11938,
+        "box_pairs": 4278,
+        "arrow_text_pairs": 1905,
+        "arrow_box_pairs": 1395,
+        "frame_elements": 250,
+        "text_pairs": 8001
       },
       "violations": []
     },
     "width_mm": 174,
-    "height_mm": 230.0,
+    "height_mm": 224.25,
     "min_text_pt": 7.086614173228347,
     "vector_pdf": true,
     "embedded_fonts": [
@@ -65,7 +65,7 @@
     ],
     "tiff_dpi": 600,
     "tiff_compression": "LZW",
-    "text_elements": 124,
+    "text_elements": 127,
     "bundle_facts": {
       "sources": 7,
       "evidence_records": 16,
@@ -80,23 +80,23 @@
       "clearance_mm": 0.3,
       "arrow_tip_clearance_mm": 0.8,
       "curve_sampling_max_mm": 0.0375,
-      "minimum_text_stroke_clearance_mm": 0.35,
-      "minimum_arrow_text_clearance_mm": 2.725,
-      "text_elements": 114,
-      "shape_elements": 128,
+      "minimum_text_stroke_clearance_mm": 0.335,
+      "minimum_arrow_text_clearance_mm": 2.755,
+      "text_elements": 117,
+      "shape_elements": 120,
       "arrow_tips": 15,
       "checks": {
-        "text_stroke_pairs": 11628,
-        "box_pairs": 3321,
-        "arrow_text_pairs": 1710,
-        "arrow_box_pairs": 1230,
-        "frame_elements": 242,
-        "text_pairs": 6441
+        "text_stroke_pairs": 10647,
+        "box_pairs": 4005,
+        "arrow_text_pairs": 1755,
+        "arrow_box_pairs": 1350,
+        "frame_elements": 237,
+        "text_pairs": 6786
       },
       "violations": []
     },
     "width_mm": 174,
-    "height_mm": 206.75,
+    "height_mm": 201.75,
     "min_text_pt": 7.086614173228347,
     "vector_pdf": true,
     "embedded_fonts": [
@@ -106,6 +106,6 @@
     ],
     "tiff_dpi": 600,
     "tiff_compression": "LZW",
-    "text_elements": 114
+    "text_elements": 117
   }
 }

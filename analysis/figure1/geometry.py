@@ -15,6 +15,7 @@ from svgpathtools import parse_path
 def check(scene):
     shapes=[]
     def visit(element,dy=0):
+        if element.tag.split('}')[-1]=='defs': return  # paint definitions are not scene obstacles
         if 'aria-label' in element.attrib: return  # glyph paths belong to text
         transform=element.get('transform','')
         match=re.fullmatch(r'translate\(0 (-?[\d.]+)\)',transform)

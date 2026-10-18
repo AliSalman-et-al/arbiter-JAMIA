@@ -71,10 +71,10 @@
     },
     {
       "figure": "Figure2",
-      "tiff_sha256": "2c8056ceefc1e86a72e7b1ad35a8e627c6f2aa0415e1675404f59bc79c404cf1",
+      "tiff_sha256": "7d799669b524fed2ee64835d1869f5c66f469858a760db8aa6116f2b1f7b20a5",
       "source_size_600dpi": [
         4111,
-        5434
+        5298
       ],
       "rows": 4,
       "columns": 3,
@@ -85,7 +85,7 @@
             0,
             0,
             877,
-            870
+            848
           ]
         },
         {
@@ -94,7 +94,7 @@
             877,
             0,
             1754,
-            870
+            848
           ]
         },
         {
@@ -103,98 +103,98 @@
             1754,
             0,
             2631,
-            870
+            848
           ]
         },
         {
           "tile": "Figure2-r2c1.png",
           "bounds_384dpi": [
             0,
-            869,
+            847,
             877,
-            1739
+            1696
           ]
         },
         {
           "tile": "Figure2-r2c2.png",
           "bounds_384dpi": [
             877,
-            869,
+            847,
             1754,
-            1739
+            1696
           ]
         },
         {
           "tile": "Figure2-r2c3.png",
           "bounds_384dpi": [
             1754,
-            869,
+            847,
             2631,
-            1739
+            1696
           ]
         },
         {
           "tile": "Figure2-r3c1.png",
           "bounds_384dpi": [
             0,
-            1739,
+            1695,
             877,
-            2609
+            2544
           ]
         },
         {
           "tile": "Figure2-r3c2.png",
           "bounds_384dpi": [
             877,
-            1739,
+            1695,
             1754,
-            2609
+            2544
           ]
         },
         {
           "tile": "Figure2-r3c3.png",
           "bounds_384dpi": [
             1754,
-            1739,
+            1695,
             2631,
-            2609
+            2544
           ]
         },
         {
           "tile": "Figure2-r4c1.png",
           "bounds_384dpi": [
             0,
-            2608,
+            2543,
             877,
-            3478
+            3391
           ]
         },
         {
           "tile": "Figure2-r4c2.png",
           "bounds_384dpi": [
             877,
-            2608,
+            2543,
             1754,
-            3478
+            3391
           ]
         },
         {
           "tile": "Figure2-r4c3.png",
           "bounds_384dpi": [
             1754,
-            2608,
+            2543,
             2631,
-            3478
+            3391
           ]
         }
       ]
     },
     {
       "figure": "Figure2-without-unassisted",
-      "tiff_sha256": "1609ee68067a9cae1167b7c88e242dd2f4e16f6657229d345f9864f827c3f1c4",
+      "tiff_sha256": "1018cff383c95806c016ed16f23d6092d946b6bad7a0c3d6091805ec5752cbcd",
       "source_size_600dpi": [
         4111,
-        4884
+        4766
       ],
       "rows": 4,
       "columns": 3,
@@ -205,7 +205,7 @@
             0,
             0,
             877,
-            782
+            763
           ]
         },
         {
@@ -214,7 +214,7 @@
             877,
             0,
             1754,
-            782
+            763
           ]
         },
         {
@@ -223,88 +223,88 @@
             1754,
             0,
             2631,
-            782
+            763
           ]
         },
         {
           "tile": "Figure2-without-unassisted-r2c1.png",
           "bounds_384dpi": [
             0,
-            781,
+            762,
             877,
-            1563
+            1525
           ]
         },
         {
           "tile": "Figure2-without-unassisted-r2c2.png",
           "bounds_384dpi": [
             877,
-            781,
+            762,
             1754,
-            1563
+            1525
           ]
         },
         {
           "tile": "Figure2-without-unassisted-r2c3.png",
           "bounds_384dpi": [
             1754,
-            781,
+            762,
             2631,
-            1563
+            1525
           ]
         },
         {
           "tile": "Figure2-without-unassisted-r3c1.png",
           "bounds_384dpi": [
             0,
-            1563,
+            1525,
             877,
-            2345
+            2288
           ]
         },
         {
           "tile": "Figure2-without-unassisted-r3c2.png",
           "bounds_384dpi": [
             877,
-            1563,
+            1525,
             1754,
-            2345
+            2288
           ]
         },
         {
           "tile": "Figure2-without-unassisted-r3c3.png",
           "bounds_384dpi": [
             1754,
-            1563,
+            1525,
             2631,
-            2345
+            2288
           ]
         },
         {
           "tile": "Figure2-without-unassisted-r4c1.png",
           "bounds_384dpi": [
             0,
-            2344,
+            2287,
             877,
-            3126
+            3050
           ]
         },
         {
           "tile": "Figure2-without-unassisted-r4c2.png",
           "bounds_384dpi": [
             877,
-            2344,
+            2287,
             1754,
-            3126
+            3050
           ]
         },
         {
           "tile": "Figure2-without-unassisted-r4c3.png",
           "bounds_384dpi": [
             1754,
-            2344,
+            2287,
             2631,
-            3126
+            3050
           ]
         }
       ]

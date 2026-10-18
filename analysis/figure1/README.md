@@ -1,6 +1,6 @@
 # Figures 1 and 2: workflow and AVATAR engineering trace
 
-Reproducible vector illustrations with bundled OFL Fira fonts. Figure 1 is 174 × 107 mm. Figure 2 is 174 × 230 mm; the identical-layout variant without the Unassisted strip is 174 × 206.75 mm. Figure 2 replaces the former document layout and per-domain Unassisted column with aligned Evidence → LLM agent → ARBITER server lanes.
+Reproducible vector illustrations with bundled OFL Fira fonts. Figure 1 is 174 × 107 mm. Figure 2 is 174 × 224.25 mm; the identical-layout variant without the Unassisted strip is 174 × 201.75 mm. Figure 2 replaces the former document layout and per-domain Unassisted column with aligned Evidence → LLM agent → ARBITER server lanes.
 
 ## Build
 
@@ -25,7 +25,7 @@ The rejection audit scans exactly 102 analysis-set Sonnet trials, matching uniqu
 
 ## Layout and outputs
 
-Figure 1 retains four role lanes and phase-aligned request/response arrows, with at least 3 mm between neighbouring phase arrows and one orthogonal approval bend. Smaller agent/server and server/bundle gaps restore a compact height. Figure 2 uses row heights driven by the tallest of its three cells, centred left-to-right gutter arrows, white evidence cards, lavender agent cells and mint server cells. Yellow means direct support, pale grey means context and an unfilled dashed outline means inference. Selected questions have heavier chip outlines; inactive questions have light-grey chips with hatching in a reserved margin. Pale-blue chips identify Some concerns. There are no numbered callouts. Only D4 and D5 appear in the pale-orange Unassisted contrast strip; the yellow bundle strip has no rejection item.
+Figure 1 retains four role lanes and phase-aligned request/response arrows, with at least 3 mm between neighbouring phase arrows and one orthogonal approval bend. Smaller agent/server and server/bundle gaps restore a compact height. Figure 2 uses row heights driven by the tallest of its three cells, centred left-to-right gutter arrows and a fixed right-hand judgement column aligned across D1–D5 and Overall, white evidence cards, lavender agent cells and mint server cells. Yellow means direct support, pale grey means context and an unfilled dashed outline means inference. Selected questions have heavier chip outlines; inactive questions have diagonal hatch fills, grey numbers and solid grey outlines. Pale-blue chips identify Some concerns. There are no numbered callouts. Only D4 and D5 appear in the pale-orange Unassisted contrast strip; the yellow bundle strip has no rejection item.
 
 `analysis/output/manuscript/` contains:
 
@@ -40,7 +40,7 @@ Figure 1 retains four role lanes and phase-aligned request/response arrows, with
 
 Coordinates are quarter-millimetres: 696 units = 174 mm. Text is at least 7 pt (Figure 1 7.23 pt; Figure 2 7.09 pt). SVG text is outlined from bundled Fira Sans Condensed Regular/Bold and Fira Code Regular; PDF uses identical positions with subset-embedded Fira TrueType fonts and no raster images. TIFFs are rendered independently from vector PDFs at 600 dpi with LZW compression; resvg supplies PNG previews. Fonts and OFL licences are versioned; no system-font lookup or font download is needed.
 
-`geometry.py` checks the actual SVG shapes against exact bundled-font glyph extents: text/stroke clearance ≥0.3 mm, no overlapping non-nested pills/outlines, arrow-tip/text clearance ≥0.8 mm, no unrelated-box penetration, no text overlap and no content outside the frame. Layout containers may enclose their own children; borders still clear text. Dashed paths use conservative continuous stroke envelopes; curve sampling intervals are ≤0.0375 mm. Failure stops the build **before export**. Figure 1 has a 110 mm height gate; Figure 2 retains an explicit 235 mm hard gate and also asserts the agreed 230 mm design limit.
+`geometry.py` checks the actual SVG shapes against exact bundled-font glyph extents: text/stroke clearance ≥0.3 mm, no overlapping non-nested pills/outlines, arrow-tip/text clearance ≥0.8 mm, no unrelated-box penetration, no text overlap and no content outside the frame. Layout containers may enclose their own children; borders still clear text. Dashed paths use conservative continuous stroke envelopes; curve sampling intervals are ≤0.0375 mm. Failure stops the build **before export**. Figure 1 has a 110 mm height gate; Figure 2 retains an explicit 235 mm hard gate and also asserts the stricter 225 mm polish target (within the 230 mm design limit).
 
 SVG labels and extracted PDF text retain the `rob2` legacy-name guard. Final-size, greyscale and approximate Machado full-severity CVD proofs complement the physical dimension and geometry checks. CVD transforms are diagnostic RGB approximations. The supplied book pages 000202 and 000037 were inspected; heavy rounded card outlines, role pastels and linked highlighter text follow that illustration vocabulary.
 
