@@ -1,0 +1,14 @@
+departure,preference,n
+ARBITER only,ARBITER,30
+ARBITER only,Baseline + Meta,2
+ARBITER only,Split,7
+Baseline only,ARBITER + Meta,21
+Baseline only,Baseline,3
+Baseline only,Split,6
+Both: different labels,ARBITER,3
+Both: different labels,Baseline,2
+Both: different labels,Meta,1
+Both: different labels,Split,5
+Both: same label,ARBITER + Baseline,62
+Both: same label,Meta,5
+Both: same label,Split,7

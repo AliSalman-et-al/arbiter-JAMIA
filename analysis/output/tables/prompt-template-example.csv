@@ -1,0 +1,3 @@
+type,slug,prompt
+Template,,/arbiter-assess Assess risk of bias for {outcome} defined as {definition} in {trial}.
+Example,aarnoutse-2017,"/arbiter-assess Assess risk of bias for Adverse events graded by CTCAE v4.0; 'Grade 3 (severe AEs)' row of Table 3; patients with grade 3 events in Table 4 defined as Table 3 Grade 3 (severe AEs) number of AEs: 600 mg 6, 900 mg 5, 1,200 mg 9 (all subjects 20); Grade 4: 0; Grade 5 (death): 1 per arm. Table 4 total no. of patients with grade 3 events: 2, 4, 5. Abstract: 'Grade 3 adverse events occurred in only 2 patients in the 600-mg arm, 4 patients in the 900-mg arm, and 5 patients in the 1,200-mg arm.' in aarnoutse-2017."

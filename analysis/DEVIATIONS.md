@@ -46,3 +46,11 @@ No Python is used. This file records conservative resolutions as they arise.
    question eligibility, including explicit NA; missing arm answers count as wrong.
    Haiku is included in this non-adjudication-derived-arm comparison to independent
    signalling answers, but never in preferred-judgement endpoints or composites.
+7. **Worked-trace candidates and raw bundles.** Five consensus cells where ARBITER
+   beat the meta label are exported with verbatim ARBITER justifications. Only two
+   eligible cells have an active justification meeting the five-word double-quote
+   criterion; those are prioritised and flagged, and the draft trace uses one.
+   The other three preserve the source justifications without inventing quotations.
+   Newly available raw run folders, logs, runner scripts and local settings are
+   ignored by git; the tracked exported inputs remain unchanged. No raw bundles,
+   settings or trial PDFs are added to the public analysis commit.

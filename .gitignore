@@ -21,5 +21,10 @@ __pycache__/
 analysis/.quarto/
 analysis/_freeze/
 
+# Read-only run bundles, logs and local runner settings. Exported inputs already
+# tracked in these folders remain versioned; raw runs are not redistributed.
+kit-*/
+no-kit-*/
+
 # Run logs: ~1.1 GB stream-json with trial text; kept local, summarised by the analysis
 */logs/

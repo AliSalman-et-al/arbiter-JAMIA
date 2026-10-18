@@ -1,0 +1,15 @@
+domain,code,concept,include,exclude
+D1,D1_sequence,Sequence generation,Misread random sequence evidence,Concealment only
+D1,D1_concealment,Allocation concealment,Misjudged concealment before assignment,Post-allocation blinding
+D1,D1_imbalance,Baseline imbalance,Misjudged evidence of a randomization problem,Chance imbalance without concern
+D2,D2_awareness,Awareness of intervention,Misread participant or personnel awareness,Outcome-assessor awareness
+D2,D2_deviations,Deviations from intended intervention,"Ignored or overcounted trial-context deviations, impact or balance",Routine adherence alone
+D2,D2_analysis,Effect-of-assignment analysis,Misjudged assignment analysis or substantial impact,Missing outcome data only
+D3,D3_missingness,Missing outcome data,"Misjudged completeness, dependence or evidence against bias",Exclusions with complete outcomes
+D4,D4_measurement,Measurement method,Misread inappropriate or differential measurement,Assessor awareness alone
+D4,D4_awareness,Outcome-assessor awareness,Misjudged awareness and likely influence,Participant awareness without assessment role
+D5,D5_prespecification,Prespecified analysis,Missed or misread prospectively specified analysis,Multiplicity alone
+D5,D5_selection,Selection of reported result,Missed selective measurement or analysis reporting,Absent protocol alone
+All,X_target,Wrong result or outcome,"Wrong outcome, time point or contrast assessed",Correct target with evidence error
+All,X_algorithm,Algorithm not followed,Own answers do not yield reported domain label,Disagreement about evidence feeding answers
+All,X_other,Other or insufficient explanation,Explain in coding_notes; no specific code supported,Specific supported category
