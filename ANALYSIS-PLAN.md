@@ -139,7 +139,26 @@ Per trial and arm:
 
 - **Wall-clock time:** sum of the `seconds` values across turns.
 - **Tokens:** input, cache creation, cache read, output and thinking tokens, summed across turns.
-- **Cost:** the cost in USD that the harness reported per turn, summed. The harness marks its cost basis as unknown, so report cost as harness-reported.
+- **Cost:** reconstructed API list-price cost (amended 2026-10-18). The harness cost is unusable. Claude Code logged `unrecognized_model` for both models and marks its cost basis as unknown. Report the harness figure in the supplement only.
+  - **Rates** are in USD per million tokens, from https://platform.claude.com/docs/en/about-claude/pricing, fetched 2026-10-18:
+
+    | Model | Input | 1-hour cache write | 5-minute cache write | Cache read | Output |
+    |---|---|---|---|---|---|
+    | Sonnet 5.5 | 2.00 | 4.00 | 2.50 | 0.10 | 10.00 |
+    | Haiku 5.5, prompt ≤100,000 tokens | 0.10 | 0.20 | 0.125 | 0.01 | 0.50 |
+    | Haiku 5.5, prompt >100,000 tokens | 0.50 | 1.00 | 0.625 | 0.05 | 2.50 |
+
+    Routing was `global` in every run, so no 1.1× geography multiplier applies. Thinking tokens are output tokens.
+  - **Main-thread requests** are the `assistant` events in each `turn*.jsonl`, deduplicated by `message.id`. The input-side counts per request are final, because they are fixed when the request starts. These are input, cache creation split into 5-minute and 1-hour writes, and cache read.
+    - A Haiku request's prompt length is input + cache creation + cache read. It pays the >100K rates if that sum exceeds 100,000.
+    - Any input-side gap between the summed requests and `result.usage` is unattributed. Price it at the ≤100K rates for the lower bound and the >100K rates for the upper bound, and allocate it by request share for the point estimate.
+  - **Main-thread output** is `result.usage.output_tokens`. Output per request is not recoverable, because the `assistant` events hold streaming snapshots. For Haiku, price output three ways:
+    - lower bound: all at the ≤100K rate
+    - upper bound: all at the >100K rate
+    - point estimate: split in proportion to the share of main-thread requests in each tier
+  - **Side calls** are `modelUsage` minus `result.usage`, field by field. They are Claude Code's auto-compactions, every one recorded with a prompt of 161,797 to 231,976 tokens, so Haiku side calls are priced at the >100K rates. Side-call cache writes are priced as 1-hour writes, because every observed main-thread write is 1-hour; give a sensitivity analysis at 5-minute. If a turn has side-call tokens but no `compact_boundary` event, flag it, and price its side calls with the lower and upper bounds.
+  - Sonnet has a single rate card, so its three estimates coincide.
+  - **Outputs:** per trial and arm, the point estimate, lower and upper bounds and harness cost, plus the token components and tier counts, in `analysis/data-derived/`. Table 5 uses the point estimate, with the Haiku bounds in a footnote. Call it an API list-price equivalent, not what was paid.
 - **Turns and agent steps:** turns, and `num_turns` per turn.
 - **Continue prompts:** the number of "Continue." replies, from `continues.csv` and `meta.json`.
 - **Approval:** whether the result-approval step occurred (ARBITER arms).
