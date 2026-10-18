@@ -185,8 +185,8 @@ Figures are saved as PDF and as PNG at 600 dpi. Tables are saved as CSV and rend
 - Methods state the model IDs, the effort setting, the run dates and the ARBITER commit. Take these from the run READMEs and `meta.json`:
   - models `claude-sonnet-5-5` and `claude-haiku-5-5`, effort medium
   - Claude Code 2.1.278, with an isolated home (`claude-home-settings.json`)
-  - kit commit `2848c79`
-- At run time ARBITER was named rob2-kit, and the skill was invoked as `/rob2-assess`. Methods must state this.
+  - the ARBITER version used for the runs: internal commit `2848c79`, cited as its public ARBITER release
+- Call the tool ARBITER and the skill `/arbiter-assess` throughout, including in the analysis code, figures and tables. rob2-kit is an earlier name for the same software. File names and identifiers in the data, such as `rob2kit_*` columns, `/rob2-assess` in the logs and `kit_commit`, are internal and are never shown in outputs. The version cited in Methods must resolve in the public ARBITER repository or its Zenodo archive.
 - The baseline prompt is the same minimal prompt without the skill, followed by the output-format instruction in `no-kit-*/nokit-format.txt`. Methods must quote it, and must not call the two prompts identical.
 - In the ARBITER arms, the harness approved the proposed result unchanged and replied "Continue." at most twice per phase (see the kit READMEs). Report this as part of the protocol.
 - Each arm ran each trial once. Report this as a limitation: run-to-run variability is not estimated.
