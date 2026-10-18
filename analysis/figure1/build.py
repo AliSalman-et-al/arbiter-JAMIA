@@ -257,25 +257,34 @@ def draw_workflow(data):
     s.rect(12,84,672,49,LAVENDER,6,INK,1.5)
     s.text(25,99,'AI model (LLM agent)',11,'bold',LLM)
     s.text(25,113,'follows the ARBITER',10,color=GREY);s.text(25,126,'assessment guide',10,color=GREY)
-    for cx,top,bottom in zip(centers,['Read the reports','Pick the result to assess','Answer signalling','Inspect the'],['and registry','(outcome + analysis)','questions + cite','assessment']):
+    for cx,top,bottom in zip(centers,['Find relevant evidence','Pick the result to assess','Select evidence + answer','Inspect the'],['Read text or page images','(outcome + analysis)','signalling questions','assessment']):
         s.text(cx,103,top,10,'bold',LLM,anchor='middle');s.text(cx,120,bottom,10,'bold',LLM,anchor='middle')
     for x in [282,414,546]:s.line(x,91,x,126,dotted=True,sw=.6)
-    visible=[['prepare_batch','list_sources'],['validate_proposal','save_proposal'],['get_domain_context','save_domain_judgment'],['review_trial','finalize_batch']]
+    visible=[['prepare_batch','list_sources','search_sources','search_sources_batch','select_text_evidence'],['validate_proposal','save_proposal'],['get_domain_context','read_pages','render_page','select_visual_evidence','save_domain_judgment'],['review_trial','finalize_batch']]
+    assert all(data['tool_audit']['counts'].get(t,0)>0 for t in ['search_sources','search_sources_batch','read_pages'])
+    # Subtle fills distinguish text search/selection from page-image evidence.
+    s.rect(162,158,108,35,CONTEXT,3,stroke='none',sw=0)
+    s.rect(426,146,108,11,CONTEXT,3,stroke='none',sw=0)
+    s.rect(426,159,108,23,LAVENDER,3,stroke='none',sw=0)
     for cx,tools in zip(centers,visible):
-        s.line(cx-57,133,cx-57,178,arrow=True,sw=1)
-        s.line(cx+57,178,cx+57,133,arrow=True,sw=1)
-        for y,tool in zip([149,169],tools):
-            s.text(cx,y,tool,10,'mono',GREY,anchor='middle',stretch=.84 if cx==480 else .92)
-    s.rect(12,180,672,60,MINT,6,INK,1.5)
-    s.text(25,196,'ARBITER server',11,'bold')
-    s.text(25,212,'rule-based software,',10);s.text(25,227,'no AI',10)
+        s.line(cx-57,133,cx-57,193,arrow=True,sw=1)
+        s.line(cx+57,193,cx+57,133,arrow=True,sw=1)
+        for y,tool in zip({2:[151,177],3:[145,163,181],4:[144,156,168,180],5:[144,155,166,177,188]}[len(tools)],tools):
+            s.text(cx,y,tool,10,'mono',GREY,anchor='middle',stretch=.8 if cx==480 else .84 if cx==216 else .92)
+    s.rect(12,195,672,60,MINT,6,INK,1.5)
+    s.text(25,211,'ARBITER server',11,'bold')
+    s.text(25,227,'rule-based software,',10);s.text(25,242,'no AI',10)
     for cx,phrases in zip(centers,[['Store an unchangeable','copy of each source'],['Check and record','the choice'],['Check every quote','Apply the RoB 2 rules'],['Keep the full record','Package the audit file','Write the HTML report']]):
-        for j,phrase in enumerate(phrases):s.text(cx,195+j*12,phrase,10,'bold',anchor='middle')
-    s.text(612,233,'arbiter report',10,'mono',GREY,anchor='middle')
-    for x in [282,414,546]:s.line(x,187,x,233,dotted=True,sw=.6)
+        for j,phrase in enumerate(phrases):s.text(cx,210+j*12,phrase,10,'bold',anchor='middle')
+    s.text(612,248,'arbiter report',10,'mono',GREY,anchor='middle')
+    for x in [282,414,546]:s.line(x,202,x,248,dotted=True,sw=.6)
     # Export gives the reviewer two concrete outputs; the fork remains below all text.
-    s.line(612,240,612,260,arrow=True,sw=1)
-    s.line(612,249,165,249,sw=1);s.line(165,249,165,330,arrow=True,sw=1)
+    s.line(612,255,612,260,arrow=True,sw=1)
+    s.line(612,260,165,260,sw=1);s.line(165,260,165,330,arrow=True,sw=1)
+    visual_source=Path('C:/Users/Ali-Salman/Documents/Code/rob2-kit/src/rob2_kit/application/evidence.py').read_text(encoding='utf8')
+    for tool in ('render_page','select_visual_evidence','select_text_evidence'):
+        assert 'def '+tool+'(' in visual_source
+        assert data['tool_audit']['counts'].get(tool,0)==0
     s.rect(12,334,306,100,YELLOW,6,INK,1.5)
     s.text(25,353,'Audit file',12,'bold')
     s.text(241,353,'.arbiter.zip',10,'mono',anchor='middle')
@@ -293,7 +302,6 @@ def draw_workflow(data):
     encoded=base64.b64encode(path.read_bytes()).decode()
     s.add(f'<image x="368" y="288" width="312" height="{ih}" href="data:image/png;base64,{encoded}"/>')
     s.report_image=dict(path=path,x=368,y=288,w=312,h=ih,min_text_pt=min_font)
-    s.wrap(12,455,"What the reviewer receives: ARBITER's HTML report for AVATAR (and the verifiable audit file, .arbiter.zip)",306,size=10,leading=11)
     return s
 
 # Figure 2: verbatim selections are asserted against archived evidence/reasoning.
