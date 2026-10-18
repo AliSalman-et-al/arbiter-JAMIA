@@ -37,3 +37,7 @@ Independent checkability is a shared output node, with incoming arrows from the 
 Reading text/page images now belongs to Assess each domain, alongside text and visual evidence selection. Capture prepares source records and locates reports/registry records. read_pages and render_page share one tool line to keep all names readable within the existing height.
 
 All model-lane wording is revised to concrete verbs and plain clinical objects: locate reports/registry records, specify the outcome/analysis, read text/page images and cite evidence to answer RoB 2 questions, then review answers/supporting evidence.
+
+All workflow tool names now use natural monospace proportions, without horizontal compression. The domain-assessment column is wider, read_pages/render_page have separate lines, and the model lane moves up 1.75 mm to give six tool names their own baselines. Figure height remains 125 mm.
+
+Four evenly spaced bidirectional tool-exchange arrows replace unequal down/up pairs. Tool names keep their natural monospace proportions; read_pages and render_page remain separate lines.

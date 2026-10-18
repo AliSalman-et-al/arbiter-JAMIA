@@ -5,18 +5,18 @@
       "clearance_mm": 0.3,
       "arrow_tip_clearance_mm": 0.8,
       "curve_sampling_max_mm": 0.0375,
-      "minimum_text_stroke_clearance_mm": 0.5804,
-      "minimum_arrow_text_clearance_mm": 2.2091,
-      "text_elements": 57,
+      "minimum_text_stroke_clearance_mm": 0.3304,
+      "minimum_arrow_text_clearance_mm": 2.3131,
+      "text_elements": 58,
       "shape_elements": 52,
       "arrow_tips": 14,
       "checks": {
-        "text_stroke_pairs": 2964,
+        "text_stroke_pairs": 3016,
         "box_pairs": 28,
-        "arrow_text_pairs": 798,
+        "arrow_text_pairs": 812,
         "arrow_box_pairs": 112,
-        "frame_elements": 109,
-        "text_pairs": 1596
+        "frame_elements": 110,
+        "text_pairs": 1653
       },
       "violations": []
     },
@@ -33,7 +33,7 @@
     ],
     "tiff_dpi": 600,
     "tiff_compression": "LZW",
-    "text_elements": 57,
+    "text_elements": 58,
     "raster_report_thumbnail": 7.075275590551181
   },
   "Figure2": {

@@ -240,46 +240,47 @@ class Scene:
 def draw_workflow(data):
     s=Scene();s.height=500
     s.description='Reviewer, AI model, rule-based server and audit file, ending in the actual AVATAR HTML report.'
-    centers=[216,348,480,612]
+    centers=[196,336,476,616]
     for phase,cx in zip(PHASES,centers):s.text(cx,16,phase,11,'bold',anchor='middle')
     s.rect(12,5,11,16,'white',2,INK,.8)
     s.line(15,11,20,11,sw=.6);s.line(15,15,20,15,sw=.6)
     s.text(29,15,'Trial reports + registry',10)
-    s.line(150,13,188,13,arrow=True,sw=1)
-    s.rect(12,28,672,43,'#F5F5F3',6,INK,1.5)
+    s.line(150,13,168,13,arrow=True,sw=1)
+    s.rect(12,28,672,38,'#F5F5F3',6,INK,1.5)
     s.add('<circle cx="30" cy="42" r="4" fill="white" stroke="#171717" stroke-width="1"/>')
     s.add('<path d="M23 59 Q23 48 30 48 Q37 48 37 59 Z" fill="white" stroke="#171717" stroke-width="1"/>')
     s.text(47,47,'Reviewer',11,'bold');s.text(47,61,'Person',10,color=GREY)
-    for cx,first,second in [(216,'Chooses the trial','and outcome'),(348,'Approves the result','arbiter review'),(612,'Receives','HTML report + audit file')]:
+    for cx,first,second in [(196,'Chooses the trial','and outcome'),(336,'Approves the result','arbiter review'),(616,'Receives','HTML report + audit file')]:
         s.text(cx,46,first,11,'bold',anchor='middle')
-        s.text(cx,61,second,10,'mono' if cx==348 else 'regular',GREY if cx==348 else INK,anchor='middle')
-    s.line(412,49,480,49,sw=1);s.line(480,49,480,80,arrow=True,sw=1)
-    s.rect(12,84,672,49,LAVENDER,6,INK,1.5)
-    s.text(25,99,'AI model (LLM agent)',11,'bold',LLM)
-    s.text(25,113,'follows the ARBITER',10,color=GREY);s.text(25,126,'assessment guide',10,color=GREY)
+        s.text(cx,61,second,10,'mono' if cx==336 else 'regular',GREY if cx==336 else INK,anchor='middle')
+    s.line(402,49,476,49,sw=1);s.line(476,49,476,73,arrow=True,sw=1)
+    s.rect(12,77,672,49,LAVENDER,6,INK,1.5)
+    s.text(25,92,'AI model (LLM agent)',11,'bold',LLM)
+    s.text(25,106,'follows the ARBITER',10,color=GREY);s.text(25,119,'assessment guide',10,color=GREY)
     for cx,top,bottom in zip(centers,['Locate trial reports','Specify the outcome','Read text or page images','Review the answers'],['and registry records','and analysis to assess','Select and cite evidence','and supporting evidence']):
-        if cx==480:
-            for y,label in zip([99,112,125],[top,bottom,'Answer RoB 2 questions']):s.text(cx,y,label,10,'bold',LLM,anchor='middle')
+        if cx==476:
+            for y,label in zip([92,105,118],[top,bottom,'Answer RoB 2 questions']):s.text(cx,y,label,10,'bold',LLM,anchor='middle')
         else:
-            s.text(cx,103,top,10,'bold',LLM,anchor='middle');s.text(cx,120,bottom,10,'bold',LLM,anchor='middle')
-    for x in [282,414,546]:s.line(x,91,x,126,dotted=True,sw=.6)
-    visible=[['prepare_batch','list_sources','search_sources','search_sources_batch'],['validate_proposal','save_proposal'],['get_domain_context','read_pages / render_page','select_text_evidence','select_visual_evidence','save_domain_judgment'],['review_trial','finalize_batch']]
+            s.text(cx,96,top,10,'bold',LLM,anchor='middle');s.text(cx,113,bottom,10,'bold',LLM,anchor='middle')
+    for x in [266,406,546]:s.line(x,84,x,119,dotted=True,sw=.6)
+    visible=[['prepare_batch','list_sources','search_sources','search_sources_batch'],['validate_proposal','save_proposal'],['get_domain_context','read_pages','render_page','select_text_evidence','select_visual_evidence','save_domain_judgment'],['review_trial','finalize_batch']]
     assert all(data['tool_audit']['counts'].get(t,0)>0 for t in ['search_sources','search_sources_batch','read_pages'])
     for cx,tools in zip(centers,visible):
-        s.line(cx-57,133,cx-57,193,arrow=True,sw=1)
-        s.line(cx+57,193,cx+57,133,arrow=True,sw=1)
-        for y,tool in zip({2:[151,177],3:[145,163,181],4:[144,156,168,180],5:[144,155,166,177,188]}[len(tools)],tools):
-            s.text(cx,y,tool,10,'mono',GREY,anchor='middle',stretch=.74 if '/' in tool else .8 if cx==480 else .84 if cx==216 else .92)
-    s.rect(12,195,672,60,MINT,6,INK,1.5)
+        track=cx-70
+        s.line(track,126,track,194,arrow=True,sw=1)
+        s.line(track,194,track,126,arrow=True,sw=1)
+        for y,tool in zip({2:[148,180],4:[140,156,172,188],6:[136,147,158,169,180,191]}[len(tools)],tools):
+            s.text(cx,y,tool,10,'mono',GREY,anchor='middle')
+    s.rect(12,196,672,60,MINT,6,INK,1.5)
     s.text(25,211,'ARBITER server',11,'bold')
     s.text(25,227,'rule-based software,',10);s.text(25,242,'no AI',10)
     for cx,phrases in zip(centers,[['Store an unchangeable','copy of each source'],['Check and record','the choice'],['Check every quote','Apply the RoB 2 rules'],['Keep the full record','Package the audit file','Write the HTML report']]):
         for j,phrase in enumerate(phrases):s.text(cx,210+j*12,phrase,10,'bold',anchor='middle')
-    s.text(612,248,'arbiter report',10,'mono',GREY,anchor='middle')
-    for x in [282,414,546]:s.line(x,202,x,248,dotted=True,sw=.6)
+    s.text(616,248,'arbiter report',10,'mono',GREY,anchor='middle')
+    for x in [266,406,546]:s.line(x,203,x,249,dotted=True,sw=.6)
     # Export gives the reviewer two concrete outputs; the fork remains below all text.
-    s.line(612,255,612,260,sw=1)
-    s.line(612,260,340,260,sw=1);s.line(340,260,340,280,sw=1)
+    s.line(616,256,616,260,sw=1)
+    s.line(616,260,340,260,sw=1);s.line(340,260,340,280,sw=1)
     s.line(340,280,360,280,arrow=True,sw=1)
     s.line(340,260,165,260,sw=1);s.line(165,260,165,330,arrow=True,sw=1)
     visual_source=Path('C:/Users/Ali-Salman/Documents/Code/rob2-kit/src/rob2_kit/application/evidence.py').read_text(encoding='utf8')
