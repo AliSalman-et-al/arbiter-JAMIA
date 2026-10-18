@@ -217,11 +217,13 @@ supplement_registry <- function(inputs) {
     paste('Correct collapsed answers / eligible questions (95% CI) on disputed domains. Independent answers define reference; Y/PY, N/PN, NI/NA collapse. Missing predictions are wrong. Includes Haiku without a preferred-judgement endpoint.',CI_NOTE),blocks)
 
   add('AVATAR complete trace',NULL,
-    'Illustrative all-cause-death assessment, Banovic 2024. All ARBITER answers, full evidence-record quotes, basis types, justifications, unknowns and source locations are shown alongside Unassisted answers and verbatim domain rationale. Inactive questions follow branching. Quote chunks concatenate without omissions. Source hashes identify captured source versions. Original clinical wording in quotations and rationale is retained verbatim; it does not name an analysis arm.',avatar_trace_blocks(inputs))
+    'Illustrative all-cause-death assessment, Banovic 2024. All ARBITER answers, full evidence-record quotes, basis types, justifications, unknowns and source locations are shown alongside Unassisted answers and verbatim domain rationale. Inactive questions follow branching. Part A lists each of the 22 questions once, with inactive questions marked not asked. Part B lists each of the 16 archived evidence records (15 cited by the current answers; one additional captured record retained) once. Full quotes retain every word; original line breaks are collapsed to spaces for compactness in this display. Machine-readable full trace: analysis/data-derived/avatar-trace.json. This eTable alone uses landscape pages and Arial 8 pt. Figure and table numbers inside verbatim quotations refer to the original source documents. Source hashes identify captured source versions. Original clinical wording in quotations and rationale is retained verbatim; it does not name an analysis arm.',avatar_trace_blocks(inputs))
   entries
 }
 supplement_table <- function(entry,data=entry$data) {
   x <- if(entry$caption=='AVATAR complete trace') as.data.frame(data) else display_frame(data,TRUE)
+  if(entry$caption=='AVATAR complete trace' && 'Full verbatim quote' %in% names(x))
+    x[['Full verbatim quote']] <- gsub('\n',' ',x[['Full verbatim quote']],fixed=TRUE)
   names(x) <- reader_field(names(x))
   if(entry$caption=='Exploratory signalling-answer agreement') {
     names(x)[names(x)=='Question'] <- 'SQ'
@@ -252,11 +254,19 @@ supplement_table <- function(entry,data=entry$data) {
   else if(grouped && ncol(x)==6) widths <- c(.6,.85,.85,1.5,1.55,1.5)
   else if(grouped && ncol(x)==4) widths <- c(.65,1.55,1.55,3.1)
   else if(ncol(x)==2) widths <- c(2.5,4.35)
-  else if(entry$caption=='AVATAR complete trace') widths <- c(1.1,3.65,2.1)
+  else if(entry$caption=='AVATAR complete trace') widths <- if(ncol(x)==7) c(1.1,.8,1.45,2.7,.85,1.1,2.2) else c(1.45,1.4,.4,.55,1,5.4)
   else if(ncol(x)==3) widths <- c(1.8,2.4,2.65)
   ft <- flextable::width(ft,j=seq_len(ncol(x)),width=widths)
+  if(entry$caption=='AVATAR complete trace') ft <- ft |>
+    flextable::fontsize(size=8,part='all') |> flextable::padding(padding=2,part='all') |>
+    flextable::set_table_properties(layout='fixed',opts_word=list(split=TRUE,repeat_headers=TRUE))
   if(grouped) ft <- style_group_rows(ft,x)
   ft
+}
+supplement_end_section <- function(doc,landscape=FALSE) {
+  officer::body_end_block_section(doc,officer::block_section(officer::prop_section(
+    page_size=officer::page_size(width=8.27,height=11.69,orient=if(landscape) 'landscape' else 'portrait'),
+    page_margins=officer::page_mar(top=.6,bottom=.6,left=.65,right=.65))))
 }
 build_supplement <- function(inputs) {
   entries <- supplement_registry(inputs)
@@ -275,7 +285,8 @@ build_supplement <- function(inputs) {
   doc <- manuscript_par(doc,'Supplementary results',style='heading 1')
   for(i in seq_along(entries)) {
     e <- entries[[i]]
-    doc <- officer::body_add_break(doc)
+    if(e$caption=='AVATAR complete trace') doc <- supplement_end_section(doc)
+    else doc <- officer::body_add_break(doc)
     doc <- manuscript_par(doc,paste0('eTable ',i,'. ',e$caption),style='heading 2')
     if(is.null(e$blocks)) doc <- flextable::body_add_flextable(doc,supplement_table(e))
     else for(k in seq_along(e$blocks)) {
@@ -287,9 +298,10 @@ build_supplement <- function(inputs) {
       block <- e$blocks[[k]]
       doc <- manuscript_par(doc,block$title,style='heading 2')
       # The note is attached once per source's six grids.
-      be <- e; be$note <- if(k%%per_page==0) e$note else NULL
+      be <- e; be$note <- if(k%%per_page==0 || k==length(e$blocks)) e$note else NULL
       doc <- flextable::body_add_flextable(doc,supplement_table(be,block$data))
     }
+    if(e$caption=='AVATAR complete trace') doc <- supplement_end_section(doc,TRUE)
     if(e$caption=='Per-meta-analysis weighted κ') {
       doc <- officer::body_add_break(doc) |> manuscript_par('eFigure 1. Agreement against Published by meta-analysis',style='heading 2') |>
         officer::body_add_img(src='output/manuscript/eFigure1.png',width=6.7,height=6.7*200/174) |>
@@ -297,7 +309,7 @@ build_supplement <- function(inputs) {
           'Undefined coefficients are omitted. Specialty and topic identify each meta-analysis. Descriptive estimates only; no statistical tests.',CI_NOTE))
     }
   }
-  doc <- officer::body_add_break(doc) |> manuscript_par('eFigure 2. Disagreement patterns and preferred judgements',style='heading 2') |>
+  doc <- doc |> manuscript_par('eFigure 2. Disagreement patterns and preferred judgements',style='heading 2') |>
     officer::body_add_img(src='output/manuscript/eFigure2.png',width=6.7,height=6.7*95/174) |>
     manuscript_par('All 154 disputed cells, grouped by disagreement with Published and preferred-label outcome. Counts use label equality; split cells are separate. Shared labels count as both arms preferred.')
   prompts <- manuscript_data('prompt-template-example')

@@ -64,20 +64,26 @@ testthat::test_that('grey remainder reconciles distinct decisive cells with elig
 testthat::test_that('AVATAR trace includes all questions and original rationale', {
   old <- getwd(); setwd(analysis_dir); on.exit(setwd(old))
   blocks <- avatar_trace_blocks(inputs)
-  titles <- vapply(blocks,function(b) b$title,character(1))
-  testthat::expect_equal(sum(grepl('^Question ',titles)),22)
-  testthat::expect_setequal(sub('^Question ','',titles[grepl('^Question ',titles)]),question_map()$question)
-  testthat::expect_true('Overall' %in% titles)
+  answers <- blocks[[1]]$data; evidence <- blocks[[2]]$data
+  testthat::expect_equal(sum(grepl('^[1-5][.]',answers$Question)),22)
+  testthat::expect_equal(nrow(answers),28)
+  testthat::expect_equal(nrow(evidence),16)
+  testthat::expect_false(anyDuplicated(evidence$Handle)>0)
+  testthat::expect_true('Overall' %in% answers$Question)
   rationale <- jsonlite::fromJSON('data-derived/avatar-unassisted-rationale.json')
-  for(d in paste0('D',1:5)) testthat::expect_identical(blocks[[match(paste(d,'judgements and rationale'),titles)]]$data[[3]][2],rationale[[d]])
+  for(d in paste0('D',1:5)) {
+    value <- answers$Unassisted[answers$Question==paste(d,'judgement / rationale')]
+    testthat::expect_identical(sub('^[^\\n]*\\n','',value),rationale[[d]])
+  }
   bundle <- jsonlite::fromJSON('data-derived/avatar-trace.json',simplifyVector=FALSE)
+  testthat::expect_setequal(evidence$`Full verbatim quote`,vapply(bundle$proposal$evidence,function(e) e$quote,character(1)))
   for(rec in bundle$domain_records) for(a in rec$answers) {
     q <- question_map()$question[match(a$question_id,question_map()$question_id)]
-    data <- blocks[[match(paste('Question',q),titles)]]$data
-    for(i in seq_along(a$bases)) {
-      e <- bundle$proposal$evidence[[a$bases[[i]]$evidence]]
-      quote_rows <- startsWith(data$Field,paste0('Full quote ',i))
-      testthat::expect_identical(paste0(data[[2]][quote_rows],collapse=''),e$quote)
+    answer <- answers[startsWith(answers$Question,paste0(q,' ')),]
+    for(basis in a$bases) {
+      e <- bundle$proposal$evidence[[basis$evidence]]
+      testthat::expect_true(grepl(paste0(e$handle,' (',gsub('_',' ',basis$kind,fixed=TRUE),')'),answer$`Evidence handles (type)`,fixed=TRUE))
+      testthat::expect_identical(evidence$`Full verbatim quote`[evidence$Handle==e$handle],e$quote)
     }
   }
 })
@@ -103,14 +109,6 @@ testthat::test_that('all primary figure rows retain label-based counts and CIs',
   testthat::expect_equal(out$upper[out$metric=='ARBITER'],c(.9433962264150944,5/6,.872093023255814,.7631578947368421))
 })
 
-testthat::test_that('trace quote chunks preserve content and bound extracted table lines', {
-  sample <- paste(rep('short line\n',80),collapse='')
-  chunks <- trace_quote_chunks(sample)
-  testthat::expect_identical(paste0(chunks,collapse=''),sample)
-  testthat::expect_true(all(nchar(chunks)<=800))
-  testthat::expect_true(all(stringr::str_count(chunks,'\n')<=18))
-})
-
 testthat::test_that('supplementary disagreement matrix retains every disputed cell', {
   x <- disagreement_pattern_counts(adjudication_cells(inputs))
   expected <- list(
@@ -124,4 +122,34 @@ testthat::test_that('supplementary disagreement matrix retains every disputed ce
     testthat::expect_equal(z$n[match(outcomes,z$outcome)],expected[[p]])
   }
   testthat::expect_equal(sum(x$n),154)
+})
+
+
+testthat::test_that('revised figure layouts and supplied legends retain their contracts', {
+  old <- getwd(); setwd(analysis_dir); on.exit(setwd(old))
+  source('R/manuscript-figures.R'); source('R/manuscript-legends.R')
+  nodes <- study_flow_nodes()
+  testthat::expect_equal(nodes$x[c(1,2,4,5,6)],rep(0,5))
+  testthat::expect_equal(nodes$w[c(1,2,4,5,6)],rep(5.1,5))
+  testthat::expect_equal(nodes$x[7],-nodes$x[8])
+  testthat::expect_equal(nodes$w[7],nodes$w[8])
+  testthat::expect_gt(nodes$x[3],0)
+  p <- decisive_question_plot()
+  testthat::expect_false(any(p$data$domain=='D1' & p$data$question=='remainder'))
+  testthat::expect_identical(p$labels$x,'Count')
+  testthat::expect_equal(unname(p$scales$get_scales('fill')$palette(4)[3:4]),c('#B2E3F2','#F5DDC7'))
+  direction <- published_reference_plot()[[2]]
+  scale <- direction$scales$get_scales('fill')
+  testthat::expect_equal(unname(scale$palette(3)),c('#374E55','#94A1A6','#DCE1E3'))
+  testthat::expect_identical(levels(direction$data$direction),c('Less severe','Equal','More severe'))
+  built <- ggplot2::ggplot_build(direction)$data
+  testthat::expect_equal(built[[2]]$x,(built[[1]]$xmin+built[[1]]$xmax)/2)
+  primary <- adjudication_plot(NULL)
+  testthat::expect_gt(primary[[1]]$layers[[5]]$data$x,.5)
+  testthat::expect_true(all(grepl('vindicated · ',rlang::eval_tidy(primary[[2]]$layers[[3]]$mapping$label,primary[[2]]$layers[[3]]$data),fixed=TRUE)))
+  sections <- figure_legend_sections()
+  supplied <- supplied_figure_legends()
+  testthat::expect_identical(sections[1:2],supplied)
+  testthat::expect_true(all(grepl('Alt text:',unlist(sections),fixed=TRUE)))
+  testthat::expect_false(any(grepl('Legend supplied',unlist(sections),fixed=TRUE)))
 })

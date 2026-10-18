@@ -14,16 +14,9 @@ The benchmark compares ARBITER with an Unassisted model on 102 trials from 16 me
 ```{r}
 for(i in 1:6) {
   cat('\n## ',names(legends)[i],'\n\n',sep='')
-  cat('![',names(legends)[i],'](output/manuscript/Figure',i,'.png)\n\n',sep='')
-  if(i<3 && file.exists('output/manuscript/legends-fig1-2.md')) {
-    supplied <- readLines('output/manuscript/legends-fig1-2.md',warn=FALSE)
-    starts <- grep(paste0('^## Figure ',i,'[.]'),supplied)
-    if(length(starts)) {
-      end <- c(grep('^## Figure ',supplied),length(supplied)+1L)
-      stop <- min(end[end>starts[1]])-1L
-      cat(paste(supplied[seq.int(starts[1]+1L,stop)],collapse='\n'),'\n')
-    } else cat(legends[[i]],'\n')
-  } else cat(legends[[i]],'\n')
+  alt <- sub('.*Alt text: ', '', legends[[i]])
+  cat('<img class="img-fluid" src="output/manuscript/Figure',i,'.png" alt="',htmltools::htmlEscape(gsub('\n',' ',alt),attribute=TRUE),'">\n\n',sep='')
+  cat(legends[[i]],'\n')
 }
 ```
 

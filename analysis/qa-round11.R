@@ -27,3 +27,10 @@ for(name in c(paste0('Figure',3:6),'eFigure1','eFigure2')) {
     paste0('output/manuscript/qa/',name,'-accessibility.png'),format='png')
 }
 writeLines(trimws(capture.output(sessionInfo()),which='right'),'output/manuscript/qa/session-info.txt')
+
+# Refresh the summary from the actual vector-PDF rasters.
+figure_names <- c(paste0('Figure',3:6),'eFigure1','eFigure2')
+previews <- magick::image_read(paste0('output/manuscript/qa/',figure_names,'-pdf-1.png')) |>
+  magick::image_resize('650x')
+magick::image_write(magick::image_montage(previews,tile='3x2',geometry='+4+4'),
+  'output/manuscript/qa/round11-pdf-contact.png',format='png')

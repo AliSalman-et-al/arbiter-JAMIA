@@ -12,12 +12,13 @@ for(p in list.files('output/manuscript',pattern='[.]docx$',full.names=TRUE)) {
   xml <- xml2::read_xml(file.path(tmp,'word/document.xml')); ns <- xml2::xml_ns(xml)
   tables <- xml2::xml_find_all(xml,'//w:tbl',ns)
   stopifnot(length(tables)>=1)
-  for(tbl in tables) {
+  for(i in seq_along(tables)) {
+    tbl <- tables[[i]]
     sizes <- xml2::xml_attr(xml2::xml_find_all(tbl,'.//w:sz',ns),'val')
     fonts <- xml2::xml_attr(xml2::xml_find_all(tbl,'.//w:rFonts',ns),'ascii')
-    stopifnot(all(sizes=='18'),all(fonts=='Arial'))
+    stopifnot(all(sizes %in% if(basename(p)=='Supplement.docx' && i>length(tables)-2L) '16' else '18'),all(fonts=='Arial'))
   }
-  cat(basename(p),length(tables),'editable tables, Arial 9 pt; text clean\n')
+  cat(basename(p),length(tables),'editable tables, Arial 9 pt (trace 8 pt); text clean\n')
 }
 for(name in c(paste0('Figure',3:6),'eFigure1','eFigure2')) {
   path <- paste0('output/manuscript/',name,'.pdf')
@@ -40,6 +41,15 @@ for(p in c('results.html','supplement.html')) {
 }
 scan_text(readLines('output/manuscript/figure-legends.md',warn=FALSE,encoding='UTF-8'),'legends')
 html <- xml2::read_html('results.html')
+images <- xml2::xml_find_all(html,'//main//img')
+stopifnot(length(images)==6L,all(nchar(xml2::xml_attr(images,'alt'))>100L))
+for(i in seq_along(images)) {
+  src <- xml2::xml_attr(images[[i]],'src')
+  path <- paste0('output/manuscript/Figure',i,'.png')
+  stopifnot(startsWith(src,'data:image/png;base64,'),identical(
+    jsonlite::base64_dec(sub('^[^,]*,','',src)),readBin(path,'raw',file.info(path)$size)))
+}
+cat('All six HTML figures embed the current PNG bytes and have full alt text\n')
 heads <- xml2::xml_text(xml2::xml_find_all(html,'//main//h2'))
 stopifnot(all(mapply(function(p,x) grepl(p,x,fixed=TRUE),paste0('Figure ',1:6),heads[1:6])))
 stopifnot(all(mapply(function(p,x) grepl(p,x,fixed=TRUE),paste0('Table ',1:4),heads[7:10])))
@@ -47,14 +57,30 @@ stopifnot(all(mapply(function(p,x) grepl(p,x,fixed=TRUE),paste0('Table ',1:4),he
 changed <- system2('git',c('diff','--name-only','9792c55','--','output/tables'),stdout=TRUE)
 allowed <- paste0('analysis/output/tables/',c('figure3-panelB.csv','efigure2-disagreement-patterns.csv','no-decisive-counts.csv','published-direction-domain.csv','severity-win-share.csv','vindicated-disagreements.csv'))
 stopifnot(setequal(changed,allowed))
-protected <- system2('git',c('diff','--name-only','9792c55','--','figure1','output/manuscript/Figure1.*','output/manuscript/Figure2.*','output/manuscript/legends-fig1-2.md'),stdout=TRUE)
+protected <- system2('git',c('diff','--name-only','c6d6a09','--','figure1','output/manuscript/Figure1.*','output/manuscript/Figure2.*','output/manuscript/legends-fig1-2.md'),stdout=TRUE)
 stopifnot(length(protected)==0)
 cat('Existing numerical results unchanged; legacy matrix relabelled; protected Figure 1/2 files unchanged\n')
 source('R/load.R')
 source('R/avatar-trace.R')
 trace <- avatar_trace_blocks(load_inputs())
-quotes <- unlist(lapply(trace,function(b) b$data[[2]][startsWith(b$data$Field,'Full quote')]))
+quotes <- trace[[2]]$data$`Full verbatim quote`
 normalise <- function(x) gsub('[[:space:]]','',x)
-pdf <- normalise(paste(pdftools::pdf_text('output/manuscript/qa/Supplement-word.pdf'),collapse=''))
+# Raw reading order preserves cell text. Remove only the repeated Part B header
+# so evidence records spanning pages reconstruct as one complete quote.
+pdf <- normalise(paste(pdftools::pdf_text('output/manuscript/qa/Supplement-word.pdf',raw=TRUE),collapse=''))
+pdf <- gsub('HandleSourcePageLinesSource-versionhashFullverbatimquote','',pdf,fixed=TRUE)
 stopifnot(all(vapply(quotes,function(q) grepl(normalise(q),pdf,fixed=TRUE),logical(1))))
-cat(length(quotes),'complete quote chunks verified in Word-rendered PDF\n')
+cat(length(quotes),'complete distinct evidence quotes verified in Word-rendered PDF\n')
+
+pages <- pdftools::pdf_text('output/manuscript/qa/Supplement-word.pdf')
+trace_start <- grep('Part A. Answers and judgements',pages,fixed=TRUE)
+stopifnot(length(trace_start)==1L)
+trace_end <- min(which(seq_along(pages)>trace_start & grepl('eFigure 2. Disagreement patterns',pages,fixed=TRUE)))-1L
+page_sizes <- pdftools::pdf_pagesize('output/manuscript/qa/Supplement-word.pdf')
+stopifnot(all(page_sizes$width[trace_start:trace_end]>page_sizes$height[trace_start:trace_end]),
+  trace_end-trace_start+1L<=12L,all(nzchar(trimws(pages))))
+cat('Supplement:',length(pages),'pages; AVATAR eTable:',trace_end-trace_start+1L,
+    'pages (',trace_start,'–',trace_end,')\n')
+jsonlite::write_json(list(supplement_pages=length(pages),avatar_pages=trace_end-trace_start+1L,
+  avatar_first_page=trace_start,avatar_last_page=trace_end,distinct_quotes=length(quotes)),
+  'output/manuscript/qa/round11b2-pagination.json',auto_unbox=TRUE,pretty=TRUE)

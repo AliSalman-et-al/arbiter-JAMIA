@@ -323,3 +323,17 @@ No Python is used. This file records conservative resolutions as they arise.
     evidence hash prefixes are provenance. The existing native Word PDF renderer
     is retained as explicitly requested. Figures 1/2, their builder and their
     separate legend file remain owned by the parallel task and untouched here.
+
+
+36. **Round 11B-2 presentation update (supersedes entry 35 layout details).**
+    Figure 5B reports vindicated/consensus N and splits at right; complete
+    Published-upheld and other-label counts remain in eTable 13. Figure 6 uses
+    lighter arm colours for cell remainders, with a shared paired-colour key;
+    its all-zero D1 remainder row is omitted. The AVATAR eTable separates answers
+    from unique evidence records on landscape pages, using Arial 8 pt only for
+    that eTable. Displayed quote line breaks collapse to spaces, preserving all
+    words; exact original strings remain in the common trace objects and committed
+    JSON and are tested against every basis. The archive contains 16 evidence
+    records, of which 15 are cited by current answers; the additional captured
+    record is retained and that distinction is stated in the footnote. No
+    statistical methods, source data or estimates change.
