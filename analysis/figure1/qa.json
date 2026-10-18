@@ -1,0 +1,22 @@
+{
+  "width_mm": 174,
+  "height_mm": 204.0,
+  "min_text_pt": 7.228346456692914,
+  "text_elements": 96,
+  "no_legacy_names": true,
+  "pdf_vector_only": true,
+  "tiff_pixels": [
+    4111,
+    4819
+  ],
+  "tiff_dpi": [
+    600,
+    600
+  ],
+  "tiff_compression": "LZW",
+  "font_strategy": "all text outlined from bundled OFL fonts",
+  "bundle_sha256": "d6d683efd3acce82f9e0ee233d194223c569ffb7ac76ab74e45c6c4071fb6655",
+  "evidence": "sha256:7ad155913c1c58263ae1f68422aa27e610b681a3d164be094e441d48d5fd3bb4",
+  "source_projection": "sha256:592b9a6c531c0b049f2039fffd71fd128e6a604e908c06cec2bb153c4878b8a0",
+  "verification": "verified"
+}
