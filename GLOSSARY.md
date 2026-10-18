@@ -30,4 +30,10 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 **Not Low**: A judgement of Some concerns or High, counted as one class.
 
+**Proposed judgement**: The domain judgement ARBITER's server computes from the signalling answers using the official RoB 2 algorithm.
+
+**Override**: A recorded departure by the assessing model from the proposed judgement, stored in the run bundle with a rationale and evidence. The bundle calls it a "reasoned adjudication". Do not confuse it with the human adjudication.
+
+**Algorithm violation**: A domain or Overall judgement that differs from what the official algorithm gives from the source's own answers or domain labels, with no override recorded. Only baseline arms and meta labels can have one.
+
 **All-Low baseline**: A reference rule that predicts Low for every cell. It shows how much of an accuracy figure comes from Low being the most common label.
