@@ -31,3 +31,5 @@ Light grey tool highlights group text search/reading/selection; lavender groups 
 At the author’s request, text/visual tool highlights are removed. All tool names use the same grey style; the model action “Read text or page images” and the explicit render_page/select_visual_evidence names convey visual capability.
 
 The export-to-report arrow now approaches the browser frame from its left, with a 20-unit final horizontal segment. This replaces the cramped 5-unit arrow in the gap below the server; the output fork still leads to both deliverables.
+
+Independent checkability is a shared output node, with incoming arrows from the HTML report and audit file. The label is removed from the audit card. The legend retains the verifier’s archive/evidence-binding scope.

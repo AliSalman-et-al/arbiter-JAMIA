@@ -283,12 +283,11 @@ def draw_workflow(data):
     for tool in ('render_page','select_visual_evidence','select_text_evidence'):
         assert 'def '+tool+'(' in visual_source
         assert data['tool_audit']['counts'].get(tool,0)==0
-    s.rect(12,334,306,100,YELLOW,6,INK,1.5)
+    s.rect(12,334,306,78,YELLOW,6,INK,1.5)
     s.text(25,353,'Audit file',12,'bold')
     s.text(241,353,'.arbiter.zip',10,'mono',anchor='middle')
     s.text(25,377,'Every source, quote, answer',11)
     s.text(25,392,'and decision',11)
-    s.text(25,417,'Checkable by an independent verifier',10)
     # Focus on the actual domain-results area; full table and trial-page captures remain in QA.
     path=HERE/'qa/avatar-html-report-domain-view.png'
     meta=json.loads((HERE/'qa/avatar-html-report-domain-view.json').read_text())
@@ -300,6 +299,11 @@ def draw_workflow(data):
     encoded=base64.b64encode(path.read_bytes()).decode()
     s.add(f'<image x="368" y="288" width="312" height="{ih}" href="data:image/png;base64,{encoded}"/>')
     s.report_image=dict(path=path,x=368,y=288,w=312,h=ih,min_text_pt=min_font)
+    s.rect(12,461,306,33,'white',5,INK,1.2)
+    s.text(165,482,'Checkable by an independent verifier',10,'bold',anchor='middle')
+    s.line(165,412,165,457,arrow=True,sw=1)
+    s.line(364,445,340,445,sw=1);s.line(340,445,340,477,sw=1)
+    s.line(340,477,322,477,arrow=True,sw=1)
     return s
 
 # Figure 2: verbatim selections are asserted against archived evidence/reasoning.
