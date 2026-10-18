@@ -323,7 +323,8 @@ def excerpt(value, parts):
     for part in parts: assert part in value, (part,value)
     return ' … '.join(parts)
 
-def trace_data(data,root):
+def trace_data(data,root,logs_root=None):
+    logs_root=logs_root or root
     c=data['c'];rows=[]
     official={};locators={}
     def collect(value):
@@ -336,7 +337,7 @@ def trace_data(data,root):
             for child in value.values():collect(child)
         elif isinstance(value,list):
             for child in value:collect(child)
-    for path in sorted((root/f'kit-sonnet-5.5/logs/{SLUG}').glob('turn*.jsonl')):
+    for path in sorted((logs_root/f'kit-sonnet-5.5/logs/{SLUG}').glob('turn*.jsonl')):
         for line in path.open(encoding='utf8'):
             event=json.loads(line);content=event.get('message',{}).get('content',[])
             if not isinstance(content,list):continue
@@ -386,7 +387,7 @@ def trace_data(data,root):
     r[4]['shown']=[(1,excerpt(r[4]['bases'][1]['ev']['quote'],['Prespecified secondary end points included the following:','Time to death'])),(0,excerpt(r[4]['bases'][0]['ev']['quote'],['Primary outcome 1: all cause death, Major Adverse Cardiac Event (MACE) including:'])+' …')]
     r[4]['reason']=excerpt(r[4]['a']['justification'],['names all-cause death only as a component of composite outcomes.'])
     r[4]['gap']=excerpt(r[4]['a']['justification'],['No dated source therefore specifies this measurement and analysis.'])
-    final=(root/f'no-kit-sonnet-5.5/logs/{SLUG}/final.md').read_text(encoding='utf8')
+    final=(logs_root/f'no-kit-sonnet-5.5/logs/{SLUG}/final.md').read_text(encoding='utf8')
     rationale={int(n):t for n,t in re.findall(r'- \*\*D(\d):\*\* (.*)',final)}
     answers={}
     for n,q,a in re.findall(r'\| D(\d)[^|]*\| ([\d.]+) \| (\w+) \|',final):answers[q]=a
@@ -427,186 +428,6 @@ def lines_for(s,text,width,size=10.3,face='regular'):
         else:line=trial
     if line:result.append(line)
     return result
-
-
-def draw_trace(data,rows,with_unassisted=True):
-    s=Scene()
-    s.title='AVATAR, all-cause death: evidence → LLM agent → ARBITER server'
-    s.description='Five domain rows link bound evidence, agent answers and citations, and deterministic branching and judgements. D1–D4 Low; D5 and Overall Some concerns.'
-    ex,ew=12,226
-    ax,aw=258,210
-    sx,sw=488,196
-    judgement_x=601
-    s.add('<defs><pattern id="not-asked" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#F7F7F5"/><path d="M-1 1 L1 -1 M0 6 L6 0 M5 7 L7 5" stroke="#CECECA" stroke-width=".65"/></pattern></defs>')
-    size=10
-
-    def textlines(x,y,value,width,face='regular',fill=None,dashed=False):
-        lines=lines_for(s,value,width-10 if fill or dashed else width,size,face)
-        if dashed:
-            # Continuous conservative border geometry is checked even though rendered dashes have gaps.
-            s.rect(x,y-11,width,len(lines)*14+1,'none',4,sw=1.1,kind='outline')
-            s.parts[-1]=s.parts[-1].replace('/>',' stroke-dasharray="4 3"/>')
-        for line in lines:
-            if fill:
-                s.rect(x,y-10.7,s.width(line,size,face)+10,12.6,fill,3,stroke='none',sw=0,kind='pill')
-            s.text(x+5 if fill or dashed else x,y,line,size,face)
-            y+=14 if fill or dashed else 13
-        return y
-
-    def chip(x,y,value,fill='white',emphasis=False,hatched=False,width=None,dashed=False):
-        width=width or s.width(value,size,'bold')+12
-        s.rect(x,y-12,width,19,'url(#not-asked)' if hatched else fill,5,
-               stroke='#989894' if hatched else INK,sw=1.7 if emphasis else .7,kind='pill')
-        if hatched:s.hatch_records.append((x,y-12,width,19))
-        if dashed:s.parts[-1]=s.parts[-1].replace('/>',' stroke-dasharray="4 3"/>')
-        s.text(x+6,y+1,value,size,'bold',GREY if hatched else INK)
-        return width
-
-    # Identical title/subtitle baselines, followed by one aligned key row.
-    for x,title,subtitle,color in [
-        (ex,'Evidence','bound by the server · span · page · lines · hash',INK),
-        (ax,'LLM agent','writes answers and citations',LLM),
-        (sx,'ARBITER server','no model calls · official RoB 2 algorithm',INK)]:
-        s.text(x+7,17,title,12,'bold',color)
-        s.text(x+7,33,subtitle,10,color=GREY)
-    keyx=ex+7
-    for label,fill,dashed in [('Direct support',HILITE,False),('Context',CONTEXT,False),('Inference','none',True)]:
-        keyx+=chip(keyx,53,label,fill,width=72,dashed=dashed)+5
-    keyw=chip(sx+7,53,'2.4',hatched=True)
-    s.text(sx+7+keyw+6,54,'not asked (RoB 2 branching)',10)
-
-    short=['1.2 … concealed until participants were enrolled …?',
-           '2.1 Were participants aware of their assigned intervention …?',
-           '3.1 Were data … available for all, or nearly all, participants …?',
-           '4.3 … outcome assessors aware …?',
-           '5.1 … pre-specified analysis plan … before unblinded outcome data …?']
-    for i,question in enumerate(short):
-        for part in re.split(r' … |…',question.split(' ',1)[1].removesuffix('?')):
-            if part.strip():assert part.strip() in QUESTIONS[i]
-
-    def question(y,value,answer):
-        lines=lines_for(s,value,aw-16,size,'bold')
-        if len(lines)>1 and len(lines[-1].split())<3:
-            previous=lines[-2].split()
-            lines[-1]=' '.join(previous[-2:])+' '+lines[-1]
-            lines[-2]=' '.join(previous[:-2])
-        pillwidth=s.width(answer,size,'bold')+12
-        # Keep a short final phrase and its answer together on the final baseline.
-        words=lines[-1].split();tail=[]
-        while words and (s.width(' '.join(words),size,'bold')+pillwidth+7>aw-16 or (tail and len(tail)<3)):
-            tail.insert(0,words.pop())
-        if tail:
-            lines[-1]=' '.join(words)
-            if not lines[-1]:lines.pop()
-            lines.append(' '.join(tail))
-        for line in lines:
-            s.text(ax+8,y,line,size,'bold');y+=17
-        chip(ax+8+s.width(lines[-1],size,'bold')+7,y-18,answer,'white')
-        return y
-
-    y=65
-    for i,r in enumerate(rows,1):
-        row_start=len(s.parts)
-        # Domain number is part of the evidence card, with identical row baselines.
-        ey=y+17
-        for index,quote in r['shown']:
-            b=r['bases'][index];ev=b['ev'];src=b['src']
-            metadata_start=len(s.parts)
-            metadata_top=ey-14
-            ey=textlines(ex+38 if index==r['shown'][0][0] else ex+8,ey,src['label'],ew-46 if index==r['shown'][0][0] else ew-16,face='mono')
-            locator=f"p {ev['page']} · L{ev['start_line']}–{ev['end_line']} · {ev['source_version'].split(':')[1][:10]}"
-            ey=textlines(ex+8,ey+5 if index==r['shown'][0][0] else ey,locator,ew-16,face='mono')
-            s.parts.insert(metadata_start,f'<rect data-kind="container" x="{ex+5}" y="{metadata_top}" width="{ew-10}" height="{ey-metadata_top-10}" rx="3" fill="#F5F5F3" stroke="none"/>')
-            ey=textlines(ex+8,ey+3,quote,ew-16,fill=HILITE if b['basis']['kind']=='direct_support' else CONTEXT)
-            ey+=5
-        s.rect(ex+8,y+5,24,19,'#DFF2F8',5,sw=.7,kind='pill')
-        s.text(ex+12,y+18,f'D{i}',10,'bold')
-        ay=question(y+17,short[i-1],DISPLAY[r['a']['answer']])
-        s.text(ax+8,ay+2,'Justification',10,color=GREY)
-        ay=textlines(ax+8,ay+17,r['reason']+('…' if not r['reason'].endswith('.') else ''),aw-16,fill=HILITE if i<5 else CONTEXT)
-        if i==1:
-            # The sentence is the complete verbatim recorded unknown.
-            ay=textlines(ax+8,ay+3,'? Unknown: '+r['a']['unknowns'][0],aw-16)
-        if i==4:
-            ay=question(ay+5,'4.4 … influenced by knowledge …?','Probably no')
-            ay=textlines(ax+8,ay+3,r['inference']+'…',aw-16,dashed=True)
-        # The complete answer pattern and inactive set are read from the canonical record.
-        answers={a['question_id']:a['answer'] for a in r['d']['answers']}
-        inactive=set(r['d']['inactive_questions'])
-        abbr={'yes':'Y','no':'N','probably_yes':'PY','probably_no':'PN','no_information':'NI','not_applicable':'NA'}
-        # Lay out the answer block first; the tallest cell sets the row height.
-        answer_rows=[];current=[];used=0
-        for qid,number in sorted(r['numbers'].items(),key=lambda item:tuple(map(int,item[1].split('.')))):
-            value=number+((' '+abbr[answers[qid]]) if qid in answers else '')
-            width=s.width(value,size,'bold')+12
-            if current and used+width>judgement_x-sx-36:
-                answer_rows.append(current);current=[];used=0
-            current.append((qid,value,width));used+=width+5
-        if current:answer_rows.append(current)
-        block_height=19+24*(len(answer_rows)-1)
-        h=max(ey-y+1,ay-y+1,block_height+16)
-        cy=y+(h-block_height)/2+12
-        for answer_row in answer_rows:
-            cx=sx+8
-            for qid,value,width in answer_row:
-                chip(cx,cy,value,emphasis=qid==r['a']['question_id'] or (i==4 and qid.endswith('influence-possible')),hatched=qid in inactive)
-                cx+=width+5
-            cy+=24
-        s.line(judgement_x-25,y+h/2,judgement_x-7,y+h/2,arrow=True,sw=1.3)
-        judgement=DISPLAY[r['d']['decision']['adopted']]
-        chip(judgement_x,y+h/2+2.5,judgement,'#DFF2F8' if judgement=='Some concerns' else 'white')
-        # Heavy lane outlines and coloured interiors follow the Figure 1 role key.
-        backgrounds=[]
-        for x,w,fill in [(ex,ew,'white'),(ax,aw,LAVENDER),(sx,sw,MINT)]:
-            backgrounds.append(f'<rect data-kind="container" x="{x}" y="{y}" width="{w}" height="{h}" rx="8" fill="{fill}" stroke="{INK}" stroke-width="2"/>')
-        s.parts[row_start:row_start]=backgrounds
-        for left,right in [(ex+ew,ax),(ax+aw,sx)]:
-            s.line(left+3,y+h/2,right-3,y+h/2,arrow=True,sw=1.4)
-        y+=h+4
-
-    # The overall rule and bundle are server-derived, never agent prose.
-    s.rect(12,y,672,30,MINT,8,sw=2)
-    s.text(22,y+20,'Overall',11,'bold')
-    s.text(75,y+20,'any Some concerns → Some concerns (server rule)',10)
-    overall=DISPLAY[data['c']['snapshots'][SLUG]['aggregation']['adopted']]
-    chip(judgement_x,y+17.5,overall,'#DFF2F8')
-    y+=34
-    facts=data['bundle_facts']
-    s.rect(12,y,672,39,YELLOW,8,sw=2)
-    s.text(22,y+17,'Bundle',11,'bold')
-    s.text(75,y+17,f"{facts['sources']} sources captured and hashed · {facts['evidence_records']} evidence records",10)
-    s.text(75,y+33,f"{facts['answered']} signalling questions answered, {facts['not_asked']} not asked · independent verifier: {facts['verifier']}",10)
-    s.text(674-s.width('.arbiter.zip',10,'mono'),y+17,'.arbiter.zip',10,'mono')
-    y+=44
-    if with_unassisted:
-        s.rect(12,y,672,86,'#FFF1E3',8,sw=2)
-        s.text(22,y+17,'Unassisted, same trial (same prompt, no ARBITER)',11,'bold',UNASSISTED)
-        s.text(22,y+37,'D4',10.5,'bold')
-        s.text(44,y+37,'4.1 N · 4.2 N ·',10,'bold')
-        flagx=44+s.width('4.1 N · 4.2 N ·',10,'bold')+6
-        flagw=s.width('4.3 NA',10,'bold')+10
-        s.rect(flagx,y+25,flagw,18,'none',3,UNASSISTED,1.2,kind='outline')
-        s.text(flagx+5,y+37,'4.3 NA',10,'bold')
-        s.text(flagx+flagw+4,y+37,'“Assessors were not blinded to allocation” → invalid answer path',10)
-        assert 'Assessors were not blinded to allocation' in rows[3]['unassisted_full']
-        s.text(22,y+59,'D5',10.5,'bold')
-        claim=rows[4]['unassisted'].removesuffix('.')
-        phrase='registered 5-year time frame'
-        prefix=claim[:claim.index(phrase)].rstrip()
-        s.text(44,y+59,'“'+prefix,10)
-        fx=44+s.width('“'+prefix+' ',10)+5
-        s.rect(fx-5,y+47,s.width(phrase,10)+10,18,'none',3,UNASSISTED,1.2,kind='outline')
-        s.text(fx,y+59,phrase,10)
-        s.text(fx+s.width(phrase,10)+7,y+59,'”',10)
-        s.text(44,y+81,'Registry: lists all-cause death only within a composite outcome',10,'bold')
-        y+=90
-    s.text(12,y+12,'Published: '+data['published']['D5'],10.8,'bold','#374E55')
-    s.text(190,y+12,'Adjudicators: '+data['adjud']['preferred'],10.8,'bold')
-    s.text(477,y+12,'Unassisted: '+data['unassisted']['model_D5'],10.8,'bold',UNASSISTED)
-    s.height=y+16
-    assert s.height/4<=235,('Figure 2 exceeds hard height gate',s.height/4)
-    assert s.height/4<=225,('Figure 2 exceeds agreed design height',s.height/4)
-    return s
 
 
 def export_scene(scene,out,name,geometry):
@@ -693,7 +514,7 @@ def write_notes(data,rows,out):
     '', '## Save-call rejection audit','',json.dumps(json.loads((HERE/'save-rejections-summary.json').read_text()),indent=2),
     '', 'The CSV has one row per unique tool-use ID, matched to its tool result across all turn logs. Trials come from the Sonnet domain-label file with the three design exclusions; exactly 102 are required. Rejected means an error flag or an explicit not-saved/error result. Reasons are classified from actual error details, not the scientific validity of a judgement. Accepted includes repeat successful saves. Chronology uses numeric turn ordering and unique call insertion order. All 47 trial-domain assessments with rejections ended with successful saves; none of the 510 domains lacked one. All 53 rejected calls have a later accepted save for their domain. One PALOMA-2 call omitted the domain entirely; its attribution to D1 is inferred from the explicit D1 retries immediately before and after it, asserted by the audit and marked in the CSV. One malformed JSON input retains a literal domain_id in its raw input. Counts describe Sonnet only; they are not a failure rate across all ARBITER models.',
     '', '## Figure 2','',f'Bundle SHA-256: `{data["bundle_sha256"]}`. Manifest content hashes checked at every build. Archived verifier: `{data["verification"]["result"]}`; this does not certify clinical correctness. Source hash prefixes identify searchable projections, not PDF bytes. Quotes preserve source text; whitespace wraps are collapsed. Two extraction line breaks are joined for legibility: assign-↵ment → assignment and cen↵sored → censored. No words are substituted. Ellipses denote omissions. Official question excerpts are shortened, with ellipses, from the RoB 2 wording.',
-    '', 'AVATAR log correction: the rejected D3 save (`toolu_01CTHBEhdF5BAGdpapeh9D5F`) flattened the locator fields directly into the basis. The accepted retry (`toolu_01PN3CESV3Hj5VbcRRWKbc5E`) nested source/page/lines under `bases[].evidence`, an accepted source-span reference form; it did **not** submit an `eh_…` string. The server bound it as `eh_e66d374e838e8c6d`. Therefore the figure illustrates schema/binding validation, not a claim that literal handles are the only accepted syntax.\n\nThe Evidence column identifies the server-bound span, page, lines and source hash. White source cards use solid yellow direct-support highlights and pale-grey context highlights, linked to the agent justification excerpts in the lavender lane. The dashed, unfilled D4 inference is agent reasoning, not a quotation. The mint server column shows every answer in official question order, with grey-numbered chips with a solid grey outline and diagonal hatch fill for inactive questions. Heavy chip outlines identify the displayed agent questions, including 4.4. Low chips remain white; Some concerns is pale blue. A fixed right-hand judgement column aligns D1–D5 and Overall. The server applies the Overall rule. The yellow Bundle strip counts all captured sources, all archived evidence JSON records, active answers and inactive questions, and reads the archived verifier receipt. The orange contrast strip contains only D4 and D5 from the same unassisted trial. Orange outlines mark 4.3 NA and the registered-time-frame phrase; the unblinding quote leads to the invalid-path annotation. The footer compares **D5**, the domain adjudicated for this trial; Overall was not adjudicated. The no-contrast variant preserves identical columns and row geometry, removing only the orange strip.','']
+    '', 'AVATAR log correction: the rejected D3 save (`toolu_01CTHBEhdF5BAGdpapeh9D5F`) flattened the locator fields directly into the basis. The accepted retry (`toolu_01PN3CESV3Hj5VbcRRWKbc5E`) nested source/page/lines under `bases[].evidence`, an accepted source-span reference form; it did **not** submit an `eh_…` string. The server bound it as `eh_e66d374e838e8c6d`. Therefore the figure illustrates schema/binding validation, not a claim that literal handles are the only accepted syntax.\n\nPanel A follows six numbered steps: guidance, source reading, agent reasoning, save with citations, deterministic checks and algorithm, and review/export. Two source tags and their two matching context highlights show the registry and report evidence. Step 5 displays two of four cited searchable-projection hash prefixes. Panel B shows one short source phrase per domain, every active answer and every inactive branch, and aligned domain/Overall outputs. Panel C uses whole-trial tool counts, explicitly labelled this trial, because earlier reads served multiple domains. Counts include failed attempts and retries. The complete Unassisted D5 claim is verbatim; only its registered-time-frame phrase is outlined orange. The D4 note records its skipped 4.3 invalid path. Check/cross marks compare D5 with adjudicators’ consensus preferred judgement, Some concerns; they are not verifier verdicts. Published D5 is Low. The verifier is an archived structural/binding receipt. No without-Unassisted variant is produced. Full trace: eTable 31.','']
     text += ['## Bundle strip facts','',json.dumps(data['bundle_facts'],indent=2),'',
              'Captured sources (searchable projection hashes):','']
     for source in data['c']['batch']['trials'][0]['sources']:
@@ -704,43 +525,40 @@ def write_notes(data,rows,out):
         tool_notes.append(phase+': '+', '.join(f'`{name}` (line {data["tool_lines"][name]})' for name in names)+'.')
     text[6:6]=tool_notes+['']
     for i,r in enumerate(rows,1):
-        text += [f'### D{i}', '',QUESTIONS[i-1].split()[0]+': '+r['question'], '',f'Answer: {DISPLAY[r["a"]["answer"]]}. Proposed/adopted: {r["d"]["decision"]["proposed"]}/{r["d"]["decision"]["adopted"]}.', '', 'Full recorded justification:',r['a']['justification'],'','Displayed justification excerpt:',r['reason']+('…' if not r['reason'].endswith('.') else ''),'','Unknowns:',json.dumps(r['a']['unknowns'],ensure_ascii=False),'']
+        text += [f'### D{i}', '',QUESTIONS[i-1].split()[0]+': '+r['question'], '',f'Answer: {DISPLAY[r["a"]["answer"]]}. Proposed/adopted: {r["d"]["decision"]["proposed"]}/{r["d"]["decision"]["adopted"]}.', '', 'Full recorded justification:',r['a']['justification'],'','Selected justification excerpt (displayed only for D5 in A):',r['reason']+('…' if not r['reason'].endswith('.') else ''),'','Unknowns:',json.dumps(r['a']['unknowns'],ensure_ascii=False),'']
         pattern=[]
         active={a['question_id']:a['answer'] for a in r['d']['answers']}
         for qid,number in sorted(r['numbers'].items(),key=lambda item:tuple(map(int,item[1].split('.')))):
             pattern.append(number+': '+active.get(qid,'not asked (RoB 2 branching)')+' ['+qid+']')
         text += ['Full displayed server pattern:','; '.join(pattern),'']
-        for index,quote in r['shown']:
-            b=r['bases'][index];ev=b['ev']
-            text += [f'**{b["basis"]["kind"]}**: `{b["src"]["label"]}`, page {ev["page"]}, bound lines {ev["start_line"]}–{ev["end_line"]}.',f'Handle `{ev["handle"]}`; evidence `{ev["identity"]}`; source `{ev["source_id"]}`; source projection `{ev["source_version"]}`.','',f'Displayed quote: {quote}','','Full bound span:','',ev['quote'],'']
-        if i==5:text+=['Additional recorded gap (not displayed in the compact redesign): '+r['gap'],'']
-        if i==4:text+=['Official 4.4 question: '+r['inference_question'],'Inference basis: '+json.dumps(r['inference_basis'],ensure_ascii=False),'Inference (no quotation displayed): '+r['inference']+'…','The inference basis still references the same bound evidence as 4.3; a dashed outline distinguishes the reasoning from quoted direct support. The bound 4.3 span explicitly includes the DSMB unblinding sentence; there is no citation mismatch.','']
-        text += ['Unassisted answers: '+r['unassisted_answers'].replace('\u00a0',' '),'',('Unassisted contrast excerpt: ' if i in (4,5) else 'Archived unassisted excerpt (not displayed): ')+r['unassisted'],'','Unassisted full rationale: '+r['unassisted_full'],'']
+        text += ['Panel B displayed evidence phrase: '+r['summary_quote'],'']
+        shown=dict(r['shown'])
+        for index,b in enumerate(r['bases']):
+            quote=shown.get(index,'Not displayed; additional cited evidence.')
+            ev=b['ev']
+            text += [f'**{b["basis"]["kind"]}**: `{b["src"]["label"]}`, page {ev["page"]}, bound lines {ev["start_line"]}–{ev["end_line"]}.',f'Handle `{ev["handle"]}`; evidence `{ev["identity"]}`; source `{ev["source_id"]}`; source projection `{ev["source_version"]}`.','',f'Selected source excerpt (A shows the D5 pair; B uses the shorter phrase above): {quote}','','Full bound span:','',ev['quote'],'']
+        if i==5:text+=['Displayed recorded gap: '+r['gap'],'']
+        if i==4:text+=['Official 4.4 question: '+r['inference_question'],'Inference basis: '+json.dumps(r['inference_basis'],ensure_ascii=False),'Inference (no quotation displayed): '+r['inference']+'…','The inference basis still references the same bound evidence as 4.3. This inference is retained here for provenance; Panel B displays its PN answer chip without a reasoning box. The bound 4.3 span explicitly includes the DSMB unblinding sentence; there is no citation mismatch.','']
+        text += ['Unassisted answers: '+r['unassisted_answers'].replace('\u00a0',' '),'',('Unassisted excerpt: ' if i in (4,5) else 'Archived unassisted excerpt (not displayed): ')+r['unassisted'],'','Unassisted full rationale: '+r['unassisted_full'],'']
+    text += ['## Tool attribution and counts', '', json.dumps(data['tool_audit'],indent=2), '', 'Both D5 context passages were returned by read_pages toolu_01F15hTxheM7WBgGMfE4mYpa during D5. The report and registry had also been read earlier. Four windows were requested by that D5 read; the displayed source tags identify the narrower saved evidence spans, not the complete read windows. D5 used three get_domain_context pages, one read_pages call, one search_sources call, and two save attempts (the first rejected). The second D5 save reclassified registry evidence as context and was accepted. Panel C is a compact selection of whole-trial tool categories, not a complete count of all MCP calls. review_trial, close_trial and finalize_batch occurred once each; close_trial is omitted from the compact export step.', '']
     (out/'figure1-notes.md').write_text('\n'.join(text),encoding='utf8')
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--data-root',type=Path,default=ROOT);p.add_argument('--arbiter-root',type=Path,required=True);args=p.parse_args()
-    from count_save_rejections import write_outputs
-    write_outputs(args.data_root)
-    audit=json.loads((HERE/'save-rejections-summary.json').read_text())
-    assert (audit['trials'],audit['total_calls'],audit['rejected'],audit['by_reason']['evidence_or_basis_schema'],audit['by_reason']['other_validation'])==(102,637,53,32,21)
-    assert audit['rejections_followed_by_success_same_domain']==53
-    assert audit['domains_final_save_succeeded_after_rejection']==audit['domains_with_rejection']==47
-    assert not audit['domains_without_successful_save'] and not audit['domains_final_call_rejected']
-    data=load(args.data_root,args.arbiter_root);rows=trace_data(data,args.data_root)
-    out=ROOT/'analysis/output/manuscript';out.mkdir(parents=True,exist_ok=True);(out/'qa').mkdir(exist_ok=True)
+    p=argparse.ArgumentParser();p.add_argument('--data-root',type=Path,default=ROOT);p.add_argument('--logs-root',type=Path,required=True);p.add_argument('--arbiter-root',type=Path,required=True);args=p.parse_args()
+    data=load(args.data_root,args.arbiter_root);rows=trace_data(data,args.data_root,args.logs_root)
+    from figure2 import draw_trace, tool_audit
+    data['tool_audit']=tool_audit(args.logs_root)
+    out=ROOT/'analysis/output/manuscript';(out/'qa').mkdir(parents=True,exist_ok=True)
     from geometry import check
-    scenes={'Figure1':draw_workflow(data),'Figure2':draw_trace(data,rows),
-            'Figure2-without-unassisted':draw_trace(data,rows,False)}
-    preflight={name:dict(geometry=check(scene)) for name,scene in scenes.items()}
-    if not all(v['geometry']['passed'] for v in preflight.values()):
-        (HERE/'qa.json').write_text(json.dumps(preflight,indent=2)+'\n')
-        raise AssertionError(json.dumps(preflight,indent=2))
-    assert scenes['Figure1'].height/4<=110
-    qa={name:export_scene(scene,out/'qa' if 'without' in name else out,name,preflight[name]['geometry']) for name,scene in scenes.items()}
+    scene=draw_trace(data,rows);geometry=check(scene)
+    if not geometry['passed']:
+        raise AssertionError(json.dumps(geometry,indent=2))
+    qa=json.loads((HERE/'qa.json').read_text())
+    qa.pop('Figure2-without-unassisted',None)
+    qa['Figure2']=export_scene(scene,out,'Figure2',geometry)
     qa['Figure2']['bundle_facts']=data['bundle_facts']
     write_notes(data,rows,out)
     (HERE/'qa.json').write_text(json.dumps(qa,indent=2)+'\n')
-    print(json.dumps(qa,indent=2))
+    print(json.dumps(qa['Figure2'],indent=2))
 if __name__=='__main__':main()

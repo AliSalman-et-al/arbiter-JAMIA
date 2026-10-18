@@ -1,0 +1,35 @@
+{
+  "trial": "banovic26-avatar-2024",
+  "scope": "this trial",
+  "counting": "Unique tool-use IDs, including failed attempts and retries; not evidence-read counts per domain.",
+  "counts": {
+    "ToolSearch": 5,
+    "close_trial": 1,
+    "finalize_batch": 1,
+    "get_domain_context": 15,
+    "get_status": 2,
+    "prepare_batch": 1,
+    "read_guidance": 2,
+    "read_pages": 14,
+    "request_proposal_approval": 1,
+    "review_trial": 1,
+    "save_domain_judgment": 7,
+    "save_proposal": 1,
+    "search_sources": 1,
+    "search_sources_batch": 1,
+    "validate_proposal": 2
+  },
+  "log_sha256": {
+    "turn1.jsonl": "8725cef692b2405063877ba1dee35c7f548841ee1fb3dc61c375d6cf9a6de4d0",
+    "turn2.jsonl": "e6fddf1b61f8a87581ef1a2adf00c973df519bd0c6722381345a090188c5bdb2"
+  },
+  "d5_passages_returned_by": {
+    "tool": "read_pages",
+    "tool_use_id": "toolu_01F15hTxheM7WBgGMfE4mYpa"
+  },
+  "displayed_counts": {
+    "get_domain_context": 15,
+    "read_pages": 14,
+    "save_domain_judgment": 7
+  }
+}

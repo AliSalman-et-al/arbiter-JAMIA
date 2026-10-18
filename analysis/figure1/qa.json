@@ -39,23 +39,23 @@
       "clearance_mm": 0.3,
       "arrow_tip_clearance_mm": 0.8,
       "curve_sampling_max_mm": 0.0375,
-      "minimum_text_stroke_clearance_mm": 0.335,
-      "minimum_arrow_text_clearance_mm": 2.755,
-      "text_elements": 127,
-      "shape_elements": 123,
-      "arrow_tips": 15,
+      "minimum_text_stroke_clearance_mm": 0.36,
+      "minimum_arrow_text_clearance_mm": 2.465,
+      "text_elements": 136,
+      "shape_elements": 148,
+      "arrow_tips": 18,
       "checks": {
-        "text_stroke_pairs": 11938,
-        "box_pairs": 4278,
-        "arrow_text_pairs": 1905,
-        "arrow_box_pairs": 1395,
-        "frame_elements": 250,
-        "text_pairs": 8001
+        "text_stroke_pairs": 17680,
+        "box_pairs": 4005,
+        "arrow_text_pairs": 2448,
+        "arrow_box_pairs": 1620,
+        "frame_elements": 284,
+        "text_pairs": 9180
       },
       "violations": []
     },
     "width_mm": 174,
-    "height_mm": 224.25,
+    "height_mm": 229.0,
     "min_text_pt": 7.086614173228347,
     "vector_pdf": true,
     "embedded_fonts": [
@@ -65,7 +65,7 @@
     ],
     "tiff_dpi": 600,
     "tiff_compression": "LZW",
-    "text_elements": 127,
+    "text_elements": 136,
     "bundle_facts": {
       "sources": 7,
       "evidence_records": 16,
@@ -73,39 +73,5 @@
       "not_asked": 7,
       "verifier": "verified"
     }
-  },
-  "Figure2-without-unassisted": {
-    "geometry": {
-      "passed": true,
-      "clearance_mm": 0.3,
-      "arrow_tip_clearance_mm": 0.8,
-      "curve_sampling_max_mm": 0.0375,
-      "minimum_text_stroke_clearance_mm": 0.335,
-      "minimum_arrow_text_clearance_mm": 2.755,
-      "text_elements": 117,
-      "shape_elements": 120,
-      "arrow_tips": 15,
-      "checks": {
-        "text_stroke_pairs": 10647,
-        "box_pairs": 4005,
-        "arrow_text_pairs": 1755,
-        "arrow_box_pairs": 1350,
-        "frame_elements": 237,
-        "text_pairs": 6786
-      },
-      "violations": []
-    },
-    "width_mm": 174,
-    "height_mm": 201.75,
-    "min_text_pt": 7.086614173228347,
-    "vector_pdf": true,
-    "embedded_fonts": [
-      "AAAAAA+FiraSansCondensed-Bold",
-      "AAAAAA+FiraSansCondensed-Regular",
-      "AAAAAA+FiraCode-Regular"
-    ],
-    "tiff_dpi": 600,
-    "tiff_compression": "LZW",
-    "text_elements": 117
   }
 }

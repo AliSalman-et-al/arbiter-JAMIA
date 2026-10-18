@@ -4,77 +4,11 @@
   "magnification_at_96dpi": 4,
   "figures": [
     {
-      "figure": "Figure1",
-      "tiff_sha256": "6caaa3a69fb801985b562709f861ba21da6ef4774b5096002cc1aa9a95c71a0f",
-      "source_size_600dpi": [
-        4111,
-        2528
-      ],
-      "rows": 2,
-      "columns": 3,
-      "tiles": [
-        {
-          "tile": "Figure1-r1c1.png",
-          "bounds_384dpi": [
-            0,
-            0,
-            877,
-            809
-          ]
-        },
-        {
-          "tile": "Figure1-r1c2.png",
-          "bounds_384dpi": [
-            877,
-            0,
-            1754,
-            809
-          ]
-        },
-        {
-          "tile": "Figure1-r1c3.png",
-          "bounds_384dpi": [
-            1754,
-            0,
-            2631,
-            809
-          ]
-        },
-        {
-          "tile": "Figure1-r2c1.png",
-          "bounds_384dpi": [
-            0,
-            809,
-            877,
-            1618
-          ]
-        },
-        {
-          "tile": "Figure1-r2c2.png",
-          "bounds_384dpi": [
-            877,
-            809,
-            1754,
-            1618
-          ]
-        },
-        {
-          "tile": "Figure1-r2c3.png",
-          "bounds_384dpi": [
-            1754,
-            809,
-            2631,
-            1618
-          ]
-        }
-      ]
-    },
-    {
       "figure": "Figure2",
-      "tiff_sha256": "7d799669b524fed2ee64835d1869f5c66f469858a760db8aa6116f2b1f7b20a5",
+      "tiff_sha256": "9ccbb6b70f6f77d78a2a4a7859196895d0c623c92b508a53af0462df8c09456c",
       "source_size_600dpi": [
         4111,
-        5298
+        5410
       ],
       "rows": 4,
       "columns": 3,
@@ -85,7 +19,7 @@
             0,
             0,
             877,
-            848
+            866
           ]
         },
         {
@@ -94,7 +28,7 @@
             877,
             0,
             1754,
-            848
+            866
           ]
         },
         {
@@ -103,208 +37,88 @@
             1754,
             0,
             2631,
-            848
+            866
           ]
         },
         {
           "tile": "Figure2-r2c1.png",
           "bounds_384dpi": [
             0,
-            847,
+            865,
             877,
-            1696
+            1731
           ]
         },
         {
           "tile": "Figure2-r2c2.png",
           "bounds_384dpi": [
             877,
-            847,
+            865,
             1754,
-            1696
+            1731
           ]
         },
         {
           "tile": "Figure2-r2c3.png",
           "bounds_384dpi": [
             1754,
-            847,
+            865,
             2631,
-            1696
+            1731
           ]
         },
         {
           "tile": "Figure2-r3c1.png",
           "bounds_384dpi": [
             0,
-            1695,
+            1731,
             877,
-            2544
+            2597
           ]
         },
         {
           "tile": "Figure2-r3c2.png",
           "bounds_384dpi": [
             877,
-            1695,
+            1731,
             1754,
-            2544
+            2597
           ]
         },
         {
           "tile": "Figure2-r3c3.png",
           "bounds_384dpi": [
             1754,
-            1695,
+            1731,
             2631,
-            2544
+            2597
           ]
         },
         {
           "tile": "Figure2-r4c1.png",
           "bounds_384dpi": [
             0,
-            2543,
+            2596,
             877,
-            3391
+            3462
           ]
         },
         {
           "tile": "Figure2-r4c2.png",
           "bounds_384dpi": [
             877,
-            2543,
+            2596,
             1754,
-            3391
+            3462
           ]
         },
         {
           "tile": "Figure2-r4c3.png",
           "bounds_384dpi": [
             1754,
-            2543,
+            2596,
             2631,
-            3391
-          ]
-        }
-      ]
-    },
-    {
-      "figure": "Figure2-without-unassisted",
-      "tiff_sha256": "1018cff383c95806c016ed16f23d6092d946b6bad7a0c3d6091805ec5752cbcd",
-      "source_size_600dpi": [
-        4111,
-        4766
-      ],
-      "rows": 4,
-      "columns": 3,
-      "tiles": [
-        {
-          "tile": "Figure2-without-unassisted-r1c1.png",
-          "bounds_384dpi": [
-            0,
-            0,
-            877,
-            763
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r1c2.png",
-          "bounds_384dpi": [
-            877,
-            0,
-            1754,
-            763
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r1c3.png",
-          "bounds_384dpi": [
-            1754,
-            0,
-            2631,
-            763
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r2c1.png",
-          "bounds_384dpi": [
-            0,
-            762,
-            877,
-            1525
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r2c2.png",
-          "bounds_384dpi": [
-            877,
-            762,
-            1754,
-            1525
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r2c3.png",
-          "bounds_384dpi": [
-            1754,
-            762,
-            2631,
-            1525
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r3c1.png",
-          "bounds_384dpi": [
-            0,
-            1525,
-            877,
-            2288
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r3c2.png",
-          "bounds_384dpi": [
-            877,
-            1525,
-            1754,
-            2288
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r3c3.png",
-          "bounds_384dpi": [
-            1754,
-            1525,
-            2631,
-            2288
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r4c1.png",
-          "bounds_384dpi": [
-            0,
-            2287,
-            877,
-            3050
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r4c2.png",
-          "bounds_384dpi": [
-            877,
-            2287,
-            1754,
-            3050
-          ]
-        },
-        {
-          "tile": "Figure2-without-unassisted-r4c3.png",
-          "bounds_384dpi": [
-            1754,
-            2287,
-            2631,
-            3050
+            3462
           ]
         }
       ]

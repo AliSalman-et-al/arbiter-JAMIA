@@ -17,8 +17,7 @@ DEST=HERE/'.inspection'
 def main():
     DEST.mkdir(exist_ok=True)
     figures=[]
-    for name,path in [('Figure1',OUT/'Figure1.tiff'),('Figure2',OUT/'Figure2.tiff'),
-                      ('Figure2-without-unassisted',OUT/'qa/Figure2-without-unassisted.tiff')]:
+    for name,path in [('Figure2',OUT/'Figure2.tiff')]:
         image=Image.open(path).convert('RGB')
         source_size=image.size
         image=image.resize((round(image.width*384/600),round(image.height*384/600)),Image.Resampling.LANCZOS)

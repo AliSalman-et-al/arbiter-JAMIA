@@ -1,47 +1,28 @@
-# Figures 1 and 2: workflow and AVATAR engineering trace
+# Reproducible ARBITER figures
 
-Reproducible vector illustrations with bundled OFL Fira fonts. Figure 1 is 174 × 107 mm. Figure 2 is 174 × 224.25 mm; the identical-layout variant without the Unassisted strip is 174 × 201.75 mm. Figure 2 replaces the former document layout and per-domain Unassisted column with aligned Evidence → LLM agent → ARBITER server lanes.
+Figure 1 is final and unchanged by this revision. Figure 2 is rebuilt as a 174 × 229 mm, three-panel illustration: A follows six numbered agent–server exchanges for AVATAR D5 question 5.1; B summarizes every domain answer pattern and judgement; C compares the same trial’s ARBITER and Unassisted D5 trajectories against the adjudicators’ preferred judgement. Read STYLE-REFERENCE.md for the PI’s visual grammar.
 
-## Build
+## Build and verify
 
-From this worktree root:
+Run from this worktree root:
 
 ```powershell
 uv sync --project analysis/figure1 --locked
-uv run --project analysis/figure1 --locked python analysis/figure1/build.py --data-root C:/Users/Ali-Salman/Documents/Analysis/arbiter-JAMIA --arbiter-root C:/Users/Ali-Salman/Documents/Code/ARBITER
-uv run --project analysis/figure1 --locked python analysis/figure1/verify.py --data-root C:/Users/Ali-Salman/Documents/Analysis/arbiter-JAMIA --arbiter-root C:/Users/Ali-Salman/Documents/Code/ARBITER
+uv run --project analysis/figure1 --locked python analysis/figure1/build.py --logs-root C:/Users/Ali-Salman/Documents/Analysis/arbiter-JAMIA --arbiter-root C:/Users/Ali-Salman/Documents/Code/ARBITER
+uv run --project analysis/figure1 --locked python analysis/figure1/verify.py --data-root . --logs-root C:/Users/Ali-Salman/Documents/Analysis/arbiter-JAMIA --arbiter-root C:/Users/Ali-Salman/Documents/Code/ARBITER
 uv run --project analysis/figure1 --locked python analysis/figure1/inspect_tiffs.py
 ```
 
-The main checkout is a read-only data source. All writes use this worktree. `--data-root` defaults to the worktree, but the archived bundles and untracked run logs must be available there. `--arbiter-root` supplies the public ARBITER implementation used to verify representative tools, CLI and bundle extension. No unrelated figures, shared manuscript legends, tables or supplement files are changed.
+All writes stay in this worktree. Data and the AVATAR zip are read directly from this worktree; only ignored archived logs are read from --logs-root. --arbiter-root is a read-only implementation reference for tool definitions, guidance and the public bundle extension. build.py produces Figure2 only and retains the existing Figure 1 audit and exports. The standalone count_save_rejections.py remains available for the frozen Figure 1 audit.
 
-## Data assertions
+Every build checks all manifest hashes, source-version linkage, canonical domain judgements and active/inactive answers, exact selected source/justification excerpts, archived official question numbers, label tables, adjudicator consensus, Unassisted D4’s invalid path, the seven-source inventory and the archived verifier receipt. avatar-tool-counts.json is a committed derived file asserted against the unique tool-use IDs and log hashes on every build. Its counts include failures and retries. Both illustrated D5 context passages were returned by read_pages during D5; Panel C deliberately uses selected whole-trial counts (15 context calls, 14 page reads and seven save calls), labelled “this trial”.
 
-Every build checks all AVATAR manifest file hashes; canonical domain decisions; basis types and source-version linkage; exact selected quotations, reasoning and unknowns; official question wording and numbered guidance locators from archived MCP responses; published, ARBITER, Unassisted and adjudicated labels; the archived verifier receipt; and the Unassisted D4 invalid-path classification.
+## Deliverables and rendering
 
-All server answer chips come from `domain_records[...].answers`; inactive chips come from `inactive_questions`. Official numbers come from archived guidance locators, with unique-number assertions. The 15 active answers / seven inactive questions are asserted. The bundle strip reads seven captured sources with valid projection hashes, 16 archived evidence JSON records and `verification.json` status verified. Source-hash prefixes refer to searchable projections, not PDF bytes.
+analysis/output/manuscript/Figure2.{svg,pdf,png,tiff} are the only Figure 2 variants. The obsolete without-Unassisted variant has been deleted. qa/Figure2-* contains the 174 mm final-size proof, PDF proof, greyscale and full-severity approximate Machado deuteranopia/protanopia/tritanopia proofs. figure1-notes.md records full provenance, bound spans, source inventory, handles and exact tool attribution; legends-fig1-2.md provides the updated Figure 2 legend and alt text while preserving Figure 1 text.
 
-The rejection audit scans exactly 102 analysis-set Sonnet trials, matching unique save-call tool-use IDs to results. The build asserts 637 calls, 53 rejections, 32 evidence/basis errors and 21 other input errors; all affected domains and all rejected calls recover with later accepted saves. Figure 1 moves this information into the legend, removing the red return arrow and its label. `count_save_rejections.py` also runs independently with `--data-root`; its CSV includes successes, retry chronology and the explicitly flagged contextual attribution of one domain-less PALOMA-2 call to D1.
+Bundled OFL Fira Sans Condensed Regular/Bold and Fira Code supply all type. Minimum text is 7.0866 pt. SVG glyphs are outlined; vector PDF text uses subset-embedded Fira fonts and has no raster images. TIFF is rendered from PDF at 600 dpi with LZW compression. Check/cross and source/agent/person icons are vector line glyphs, not system-font symbols.
 
-## Layout and outputs
+geometry.py checks the actual SVG shapes and bundled-font glyph bounds: text/stroke clearance ≥0.3 mm, arrow-tip/text clearance ≥0.8 mm, no overlapping pills or unrelated-box penetration, no text overlap, nothing outside the frame. The Figure 2 height gate is 230 mm. The legacy-name guard checks SVG and extracted PDF text. verify.py runs all seven geometry regression fixtures and builds twice, comparing the deliverables, proofs and audit bytes; it also hashes frozen Figure 1 files. inspect_tiffs.py tiles the Figure 2 600-dpi TIFF with complete coverage at 4× final size on a 96-dpi display, recording crop bounds and TIFF SHA-256 in visual-inspection.json. Tiles live in ignored .inspection/. See visual-review.md for the actual inspection.
 
-Figure 1 retains four role lanes and phase-aligned request/response arrows, with at least 3 mm between neighbouring phase arrows and one orthogonal approval bend. Smaller agent/server and server/bundle gaps restore a compact height. Figure 2 uses row heights driven by the tallest of its three cells, centred left-to-right gutter arrows and a fixed right-hand judgement column aligned across D1–D5 and Overall, white evidence cards, lavender agent cells and mint server cells. Yellow means direct support, pale grey means context and an unfilled dashed outline means inference. Selected questions have heavier chip outlines; inactive questions have diagonal hatch fills, grey numbers and solid grey outlines. Pale-blue chips identify Some concerns. There are no numbered callouts. Only D4 and D5 appear in the pale-orange Unassisted contrast strip; the yellow bundle strip has no rejection item.
-
-`analysis/output/manuscript/` contains:
-
-- `Figure{1,2}.{svg,pdf,png,tiff}` and `qa/Figure2-without-unassisted.{svg,pdf,png,tiff}`.
-- Matching `qa/*-{final-size,grayscale,deuteranopia,protanopia,tritanopia,pdf}.png` proofs. Obsolete Figure 1/2 QA suffixes from earlier designs are removed; other figures’ proofs are untouched.
-- `figure1-notes.md`: every displayed quote and reasoning excerpt, full bound spans, handles, source/page/lines/full hashes, complete server answer patterns and bundle-strip source inventory.
-- `legends-fig1-2.md`: current legends and alt text, ready for parent integration.
-
-`analysis/figure1/` contains the save-call audit, AVATAR retry record, `qa.json`, `reproducibility.json` and `visual-inspection.json`. `verify.py` runs seven geometry regression fixtures and builds twice, comparing every export/audit/proof artifact byte for byte. `inspect_tiffs.py` tiles all three TIFFs with complete coverage into local, ignored `.inspection/` crops at 4× final size on a 96-dpi display; the manifest records source TIFF hashes and crop bounds. See `visual-review.md` for inspection evidence.
-
-## Hard rendering gates
-
-Coordinates are quarter-millimetres: 696 units = 174 mm. Text is at least 7 pt (Figure 1 7.23 pt; Figure 2 7.09 pt). SVG text is outlined from bundled Fira Sans Condensed Regular/Bold and Fira Code Regular; PDF uses identical positions with subset-embedded Fira TrueType fonts and no raster images. TIFFs are rendered independently from vector PDFs at 600 dpi with LZW compression; resvg supplies PNG previews. Fonts and OFL licences are versioned; no system-font lookup or font download is needed.
-
-`geometry.py` checks the actual SVG shapes against exact bundled-font glyph extents: text/stroke clearance ≥0.3 mm, no overlapping non-nested pills/outlines, arrow-tip/text clearance ≥0.8 mm, no unrelated-box penetration, no text overlap and no content outside the frame. Layout containers may enclose their own children; borders still clear text. Dashed paths use conservative continuous stroke envelopes; curve sampling intervals are ≤0.0375 mm. Failure stops the build **before export**. Figure 1 has a 110 mm height gate; Figure 2 retains an explicit 235 mm hard gate and also asserts the stricter 225 mm polish target (within the 230 mm design limit).
-
-SVG labels and extracted PDF text retain the `rob2` legacy-name guard. Final-size, greyscale and approximate Machado full-severity CVD proofs complement the physical dimension and geometry checks. CVD transforms are diagnostic RGB approximations. The supplied book pages 000202 and 000037 were inspected; heavy rounded card outlines, role pastels and linked highlighter text follow that illustration vocabulary.
-
-AVATAR is illustrative, not representative. The footer compares adjudicated **D5**, not an adjudicated Overall. The verifier is an archived structural/binding receipt, not a new execution or evidence of clinical validity. The accepted AVATAR D3 retry nested a span locator under `bases[].evidence`; it did not submit a literal handle string. The server subsequently archived the bound handle. See `DEVIATIONS.md` for display decisions.
+AVATAR is illustrative, not representative. Adjudicators preferred D5 Some concerns; Overall was not adjudicated. The independent-verifier status is the archived structural/binding receipt, not a new verification execution or a claim of clinical validity. Source hashes identify searchable projections, not PDF bytes. Full trace: eTable 31.

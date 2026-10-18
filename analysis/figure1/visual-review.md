@@ -1,39 +1,30 @@
-# Figure 2 polish verification, 2026-10-18
+# Figure 2 visual review — 18 October 2026
 
-Figure 1 is unchanged byte for byte. Figure 2 now uses identical bold-title/grey-subtitle baselines in all three lanes, one baseline for the evidence and branching keys, equal-size evidence-key pills, pale-blue D1–D5 chips, and a fixed right-hand judgement column. Complete server answer blocks are vertically centred to the left of right-pointing arrows. Domain and Overall judgement chips share the same x coordinate. Evidence and agent text remains top-aligned. The bundle facts form two aligned lines; the filename is right-aligned. Unassisted D4/D5 use measured inline positions, snug orange flags, an adjacent closing quotation mark and a consistently indented Registry continuation. Scientific excerpts and answer patterns remain archive-asserted.
+Reviewed the final 174 × 229 mm figure after the last build, rather than the superseded lane grid. Figure 1 is final: its four exports, six proofs, legend and alt text were checked byte-for-byte against HEAD and remain unchanged.
 
-## Automated results
+## Reference and print-size assessment
 
-| Layout | Height, mm | Minimum type, pt | Geometry checks | Violations |
-|---|---:|---:|---:|---:|
-| Figure1 | 107 | 7.23 | 4,162 | 0 |
-| Figure2 | 224.25 | 7.09 | 27,767 | 0 |
-| Figure2-without-unassisted | 201.75 | 7.09 | 24,780 | 0 |
+Read the PI’s STYLE-REFERENCE.md first and opened all 20 distinct images cited there. The implementation follows the book’s sequence lifelines (000166), black numbered badges (000191–193/000097), dark-tab evidence tags (000143), soft reasoning box (000168/000203), curved italic annotations (000014/000171), and paired trajectories/person header (000230/000226). A uses a top source tab to fit the full filenames; B uses the compact left tab.
 
-All widths are 174 mm. Across the three layouts, 56,709 geometric checks pass with zero violations. Minimum Figure 2 text/stroke clearance is 0.335 mm (gate 0.3 mm); minimum arrow-tip/text clearance is 2.755 mm (gate 0.8 mm). The geometry gate retains exact bundled-font glyph bounds, stroke thickness, conservative continuous inference-outline envelopes and curve sampling ≤0.0375 mm. SVG paint definitions are excluded from scene obstacles; the actual hatched-chip outlines remain checked. No geometry thresholds were relaxed. Both Figure 2 variants satisfy the strengthened ≤225 mm target, within the requested ≤230 mm limit.
+Viewed qa/Figure2-final-size.png at its 658-pixel width, representing 174 mm on a 96-dpi display. This is a screen-based print-size assessment, not a physical paper proof. In the first five seconds, the reader sees two named actors and a downward numbered path in A; the mint check/algorithm block ends in the filled Some concerns pill. B reads as a compact summary with a conspicuous aligned judgement column: four Low outputs, then D5 and Overall Some concerns. C reads as two opposing trajectories: blue ARBITER → Some concerns → check, orange Unassisted → Low → cross. The main distinction between model proposal and server computation is visible before reading the long excerpts. The evidence locators and handles reward closer reading; they are not the first visual layer. A carries most of the detail and remains denser than a book illustration because the requested verbatim provenance occupies real space, but the six badges supply a single path. C’s registered-time-frame claim stays contiguous across two lines inside one Thought box.
 
-Inactive questions use a genuine SVG diagonal pattern: light-grey diagonal lines over a very-light-grey fill, grey number text and a solid grey outline. PDF export repeats diagonal vector lines clipped to the same rounded chip geometry before drawing text; it does not depend on SVG-pattern support in the PDF converter. The hatching is a background fill, not slash characters or a dashed outline. Dashed outlines exclusively identify inference.
+## All 600-dpi TIFF tiles at 4×
 
-Seven geometry regression fixtures pass. `verify.py` completed two builds with 36 byte-identical artifacts. Vector-only PDFs, embedded bundled Fira TrueType fonts, SVG/PDF `rob2` legacy-name guards, archive/source hash assertions, minimum 7 pt type and 600-dpi LZW TIFF checks all pass. Figure 1 exports and proofs have no Git changes relative to 4f8ed13.
+Source TIFF SHA-256: 9ccbb6b70f6f77d78a2a4a7859196895d0c623c92b508a53af0462df8c09456c. Source is 4111 × 5410 pixels at 600 dpi, LZW. inspect_tiffs.py resamples to 384 dpi for 4× final size on a 96-dpi display and tiles the entire image into four rows by three columns. All 12 final tiles were opened individually after the last build. Exact crop bounds and hash are in visual-inspection.json; no area is omitted.
 
-Bundle facts remain seven captured and hashed sources, 16 evidence records, 15 answered signalling questions, seven not asked, independent verifier verified. The archived domain patterns and Overall Some concerns decision are unchanged. The verifier remains the archived structural/binding receipt.
+- r1c1–r1c3: actor labels, document glyphs, count, payload/tool pills, first two numbered messages and the first evidence tag. Clear glyphs, clean arrowheads, no clipping or crossings through labels.
+- r2c1–r2c3: registry tag, both reasoning sentences, save/citation payload, both displayed handles with +2, check block and hash prefixes. Grey highlights identify context, the gap sentence is plain italic, and the mint block makes server computation visible. No text reaches outlines.
+- r3c1–r3c3: return judgement, two curved annotations, review/export, B headers and D1–D4 rows. Tool pills have visible separation; answer numbers remain legible; hatch fill does not erase inactive question numbers; output pills align.
+- r4c1–r4c3: D5, Overall, and both complete trajectories. Real tool names and counts are readable at 4×, the orange flag stays within the Thought box, outputs align, check/cross have distinct geometry, and both footer notes remain inside the frame. Words split across tile boundaries are intact in the full TIFF.
 
-## Complete TIFF inspection at 4×
+## Proofs and objective checks
 
-After the final double build, `inspect_tiffs.py` tiled the entire PDF-derived 600-dpi TIFFs at 384 px/in (4× final size on a 96-dpi display). All 30 tiles were opened and inspected at original dimensions: six Figure 1 tiles, 12 Figure 2 tiles and 12 without-Unassisted tiles. `visual-inspection.json` records the final TIFF hashes, source dimensions and complete crop bounds. Adjacent tiles were read together across split text.
+Opened the final greyscale, deuteranopia, protanopia and tritanopia proofs. Labels, black contours, hatching and check/cross shapes retain the content when role colours converge. The outcome remains encoded in both words and shape. Direct-support yellow and context grey converge in greyscale, so evidence-type colour should be interpreted with the legend and source content; no answer or judgement depends on that hue distinction. CVD proofs are diagnostic full-severity RGB approximations.
 
-| Tiles opened | Inspection |
-|---|---|
-| Figure1 r1c1–r1c3, r2c1–r2c3 | Accepted reviewer/agent/server/bundle layout, approval bend, tool labels, arrows and borders; unchanged. |
-| Figure2 r1c1–r1c3 | Parallel headers, single key baseline, D1 metadata/quote/unknown, hatch key and D1 answer block → aligned Low. |
-| Figure2 r2c1–r2c3 | D2 and D3 metadata, quoted evidence, question/answer/justification text, complete branching patterns and hatch-filled chips. |
-| Figure2 r3c1–r3c3 | D4 DSMB quote, both emphasized answers, inference clearance/dashes, D5 report/registry context and Some concerns column. |
-| Figure2 r4c1–r4c3 | D5 context ending, aligned Overall chip, two-line bundle strip/filename, inline D4/D5 flags, closing quote, Registry continuation and D5 footer. |
-| Without-Unassisted r1c1–r1c3 | Same parallel headers/keys and D1 evidence, agent text and centred server block. |
-| Without-Unassisted r2c1–r2c3 | Complete D2/D3 cards, full server patterns, hatching, horizontal arrows and shared judgement column. |
-| Without-Unassisted r3c1–r3c3 | D4 metadata/quote/justification/inference, complete server pattern and aligned Low; D5 card beginning. |
-| Without-Unassisted r4c1–r4c3 | D5 context/justification and complete server pattern, D5/Overall aligned Some concerns, bundle facts/filename and footer. |
+The geometry gate reports zero violations across 136 text elements, 148 shapes and 18 arrow tips. Minimum text/stroke clearance is 0.36 mm (threshold 0.3); minimum arrow-tip/text clearance is 2.465 mm (threshold 0.8). Nothing lies outside the 174 × 229 mm frame; no pill or text overlaps. Minimum type is 7.0866 pt. PDF is vector, has embedded Fira fonts and no raster images; TIFF is 600-dpi LZW. SVG and extracted PDF text pass the legacy-name guard. Seven geometry regression fixtures pass; two final builds produce 27 byte-identical artifacts.
 
-No clipped text, colliding borders, missing answer chips or misplaced arrows were found. The hatch fill is visibly diagonal in the independent PDF-derived TIFFs and agrees with the SVG encoding. All judgement chips share their left edge in the right-hand sub-column; the widest Some concerns chips finish near the lane edge. D4/D5 inline flag padding and quote proximity are consistent with the clearance gate. Row heights follow the tallest cell, so shorter evidence or server content retains only the space required by its neighbour.
+## Scientific and attribution review
 
-Both Figure 2 final-size proofs, greyscale proofs and deuteranopia/protanopia/tritanopia diagnostics were opened and inspected. Labels, solid outlined active chips, diagonal hatching and dashed inference remain distinguishable without relying solely on colour. CVD transforms are approximate RGB diagnostics. The legend, alt text and provenance notes describe the diagonal hatch fill and shared judgement column. No requested work remains incomplete.
+Both displayed D5 passages were returned by read_pages toolu_01F15hTxheM7WBgGMfE4mYpa during D5; the request used four windows. The tag spans are saved evidence, not the wider read windows. The accepted 5.1 answer cites four handles; two appear with +2. Panel C explicitly uses selected whole-trial unique-call counts (15 context, 14 page-read, seven save calls), including failures and retries. Its marks indicate agreement/disagreement with adjudicators’ consensus preferred D5 judgement Some concerns. Published and Unassisted D5 are Low. No adjudicated Overall is claimed. All exact quotations, official question order, answer patterns, hashes, labels and archived verifier status are asserted at build time. Full trace: eTable 31.
+
+Display adaptations are documented in DEVIATIONS.md: top source tabs in A, count labels stacked beneath tools in C, a ten-word D4 phrase retaining the full assessor group, and omission of close_trial from the compact export step. No scientific-content or dimensional-gate deviation. The obsolete without-Unassisted variant and its ten QA/export files are removed.
