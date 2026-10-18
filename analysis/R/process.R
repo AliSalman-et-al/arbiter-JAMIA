@@ -17,11 +17,11 @@ process_summary <- function(metrics) {
   }))))
 }
 
-paired_process_difference <- function(metrics,weights) {
+paired_process_difference <- function(metrics,weights,model='Sonnet') {
   columns <- c('wall_seconds','input_tokens','cache_creation_tokens','cache_read_tokens',
     'output_tokens','thinking_tokens','cost_usd','turns','agent_steps','continues')
-  a <- filter(metrics,arm=='ARBITER-Sonnet')
-  b <- filter(metrics,arm=='Baseline-Sonnet'); b <- b[match(a$slug,b$slug),]
+  a <- filter(metrics,arm==paste0('ARBITER-',.env$model))
+  b <- filter(metrics,arm==paste0('Baseline-',.env$model)); b <- b[match(a$slug,b$slug),]
   bind_rows(lapply(columns,function(m) {
     delta <- a[[m]]-b[[m]]
     if(anyNA(delta)) return(tibble(metric=m,estimand='Mean paired trial difference',estimate=NA_real_,lower=NA_real_,upper=NA_real_,valid_replicates=0L))
@@ -29,6 +29,31 @@ paired_process_difference <- function(metrics,weights) {
     values <- rbind(`Mean paired trial difference`=colSums(w*delta)/colSums(w),
       `Total paired difference`=colSums(w*delta))
     interval_table(values) |> rename(estimand=metric) |> mutate(metric=m)
+  }))
+}
+
+process_display <- function(metrics,weights,model='Sonnet') {
+  summaries <- process_summary(metrics)
+  differences <- paired_process_difference(metrics,weights,model) |> filter(estimand=='Mean paired trial difference')
+  columns <- c('wall_seconds','cost_usd','input_tokens','cache_creation_tokens','cache_read_tokens',
+    'output_tokens','thinking_tokens','agent_steps','continues','turns')
+  labels <- c('Time (minutes/trial)','Cost (USD/trial)','Input tokens (thousands/trial)',
+    'Cache creation tokens (thousands/trial)','Cache read tokens (thousands/trial)',
+    'Output tokens (thousands/trial)','Thinking tokens (thousands/trial)',
+    'Agent steps/trial','Continue prompts/trial','Turns/trial')
+  bind_rows(lapply(seq_along(columns),function(i) {
+    m <- columns[i]
+    scale <- if(m=='wall_seconds') 60 else if(grepl('tokens',m)) 1000 else 1
+    digits <- if(m=='cost_usd') 2 else if(grepl('tokens',m)) 3 else 1
+    fmt <- function(v) ifelse(is.na(v),'—',formatC(v/scale,format='f',digits=digits))
+    row <- tibble(Metric=labels[i])
+    for(arm in paste0(c('ARBITER-','Baseline-'),model)) {
+      s <- filter(summaries,.data$arm==.env$arm,metric==m)
+      row[[arm]] <- paste0(fmt(s$median),' [',fmt(s$q1),' to ',fmt(s$q3),']')
+    }
+    d <- filter(differences,metric==m)
+    row[['Paired mean difference (95% CI)']] <- paste0(fmt(d$estimate),' (',fmt(d$lower),' to ',fmt(d$upper),')')
+    row
   }))
 }
 
@@ -60,9 +85,12 @@ bundle_decision_rates <- function(decisions,labels,weights) {
   bind_rows(lapply(c('D1-D5',paste0('D',1:5)),function(g) {
     x <- if(g=='D1-D5') observed else filter(observed,domain==g)
     bind_rows(lapply(split(x,x$arm),function(a) bind_rows(lapply(
-      c('Proposed agreement','Recorded override','Unrecorded violation'),function(s) {
-        event <- switch(s,`Proposed agreement`=a$proposed==a$algorithm,
-          `Recorded override`=a$override & a$recorded,`Unrecorded violation`=a$override & !a$recorded)
+      c('Consistent','Proposed agreement','Recorded override','Violation','Invalid answer path','Departure'),function(s) {
+        event <- switch(s,Consistent=a$proposed==a$algorithm,
+          `Proposed agreement`=a$proposed==a$algorithm,
+          `Recorded override`=a$override & a$recorded,
+          `Invalid answer path`=rep(FALSE,nrow(a)),
+          a$override & !a$recorded)
         interval_table(share_estimate(a,event,weights)) |> mutate(arm=a$arm[1],status=s,domain=g,
           n=nrow(a),count=sum(event),missing=102L*ifelse(g=='D1-D5',5L,1L)-nrow(a))
       }))))

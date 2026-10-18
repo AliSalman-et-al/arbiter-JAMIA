@@ -11,14 +11,22 @@ cells <- adjudication_cells(inputs)
 run_metrics <- load_run_metrics()
 bundle_decisions <- bundle_decision_cells(run_metrics)
 validate_proposed_gate(bundle_decisions,inputs$labels)
+bundle_paths <- readr::read_csv('data-derived/bundle-path-checks.csv',show_col_types=FALSE)
+stopifnot(!any(bundle_paths$invalid_path),!any(bundle_paths$invalid_active_answer),
+  all(bundle_paths$active_questions==bundle_paths$active_answered),
+  sum(bundle_paths$final)==nrow(bundle_decisions))
 dir.create('output/tables',recursive=TRUE,showWarnings=FALSE)
 save_table <- function(x,name) {
   # Internal source-column names are translated before publication.
   names(x)[names(x)=='kit'] <- 'ARBITER_label'
   names(x)[names(x)=='nokit'] <- 'Baseline_label'
+  if('arm' %in% names(x)) x <- x[order(match(x$arm,c('ARBITER-Sonnet','Baseline-Sonnet',
+    'All-Low','ARBITER-Haiku','Baseline-Haiku','Meta'))),,drop=FALSE]
   readr::write_csv(x,paste0('output/tables/',name,'.csv'),na='')
 }
 save_table(process_summary(run_metrics),'process-summary')
+save_table(process_display(run_metrics,weights),'table5')
+save_table(process_display(run_metrics,weights,'Haiku'),'table5-haiku')
 save_table(paired_process_difference(run_metrics,weights),'process-differences')
 save_table(audit_summary(run_metrics,weights),'audit-summary')
 save_table(evidence_distribution(run_metrics),'evidence-bases-distribution')
@@ -45,7 +53,19 @@ agreement_outputs <- function(labels,reference,exclude_missing=FALSE) {
       if(a=='All-Low') reps[[a]][c('kappa','AC2','sensitivity'),] <- NA_real_
       results[[paste(g,a)]] <- interval_table(reps[[a]]) |>
         mutate(arm=a,domain=g,reference=reference,n=sum(!exclude_missing|!is.na(d$label)),
-          missing=sum(is.na(d$label)))
+          missing=sum(is.na(d$label)),count=NA_integer_)
+      out <- results[[paste(g,a)]]
+      kept <- if(exclude_missing) filter(d,!is.na(label)) else d
+      for(m in c('accuracy','sensitivity','specificity')) {
+        eligible <- switch(m,accuracy=rep(TRUE,nrow(kept)),
+          sensitivity=kept$meta!='Low',specificity=kept$meta=='Low')
+        correct <- switch(m,accuracy=!is.na(kept$label)&kept$label==kept$meta,
+          sensitivity=!is.na(kept$label)&kept$label!='Low',
+          specificity=!is.na(kept$label)&kept$label=='Low')
+        out$count[out$metric==m] <- sum(correct & eligible)
+        out$n[out$metric==m] <- sum(eligible)
+      }
+      results[[paste(g,a)]] <- out
     }
     for(model in c('Sonnet','Haiku')) {
       aa <- paste0('ARBITER-',model); bb <- paste0('Baseline-',model)
@@ -75,6 +95,7 @@ save_table(missing_sensitivity$estimates,'missing-sensitivity')
 save_table(missing_sensitivity$differences,'missing-sensitivity-differences')
 
 save_table(checks,'domain-consistency-cells')
+save_table(invalid_path_sensitivity(inputs,checks),'invalid-path-sensitivity')
 save_table(checks |> filter(startsWith(arm,'ARBITER'),status=='Reported departure'),'algorithm-mismatches')
 save_table(checks |> count(arm,status),'algorithm-validation-summary')
 save_table(question_map(),'question-map')
@@ -86,20 +107,24 @@ domain_rates <- bind_rows(lapply(c('D1-D5',paste0('D',1:5)),function(d) {
   x <- filter(x,!startsWith(arm,'ARBITER'))
   consistency_rates(x,weights) |> mutate(domain=d)
 }))
-consistency <- bind_rows(overall_rates,domain_rates,bundle_decision_rates(bundle_decisions,inputs$labels,weights))
+consistency <- bind_rows(overall_rates,domain_rates,bundle_decision_rates(bundle_decisions,inputs$labels,weights),
+  audit_summary(run_metrics,weights) |> rename(status=metric) |> mutate(domain='Audit',missing=NA_integer_))
 save_table(consistency,'table3-supplement')
 save_table(consistency |> filter(arm %in% c('Meta','ARBITER-Sonnet','Baseline-Sonnet')),'table3')
 
 reliability_pair <- function(x,y,name) {
   d <- cells |> transmute(slug,meta=.data[[x]],label=.data[[y]])
   interval_table(agreement_replicates(d,weights)) |> filter(metric %in% c('kappa','AC2','accuracy')) |>
-    mutate(comparison=name,n=nrow(d))
+    mutate(comparison=name,n=nrow(d),count=if_else(metric=='accuracy',sum(d$meta==d$label),NA_integer_))
 }
 reliability <- bind_rows(reliability_pair('own_A','own_Z','A vs Z independent'),
   reliability_pair('chosen_label_A','chosen_label_Z','A vs Z preferred'),
   bind_rows(lapply(c('A','Z'),function(a) bind_rows(lapply(c('meta','kit','nokit'),function(s)
     reliability_pair(s,paste0('own_',a),paste(a,'independent vs',
       c(meta='meta label',kit='ARBITER-Sonnet',nokit='Baseline-Sonnet')[[s]])))))))
+reliability <- reliability |> mutate(population=if_else(grepl('independent vs',comparison),
+  'Disputed cells only (selected for disagreement with the meta label); not an estimate of overall meta-label accuracy',
+  'Disputed cells only'))
 save_table(reliability,'table4-reliability')
 leniency <- meta_leniency(cells,weights)
 save_table(leniency,'meta-leniency')
@@ -108,6 +133,10 @@ save_table(cells |> filter(consensus) |> count(meta,preferred) |>
 grounding <- bind_rows(lapply(names(ARMS),function(a)
   grounding_share(filter(inputs$signals,arm==a),weights) |> mutate(arm=a)))
 save_table(grounding,'grounding')
+save_table(inputs$signals |> filter(startsWith(arm,'Baseline'),active) |>
+  group_by(arm) |> summarise(n=n(),answer_code_only=sum(!is.na(justification) &
+    trimws(justification) %in% c('Y','PY','PN','N','NI','NA')),.groups='drop'),
+  'baseline-justification-content')
 save_table(signalling_agreement(inputs,weights),'signalling-agreement')
 
 confusion <- inputs$labels |> filter(!is.na(meta)) |>

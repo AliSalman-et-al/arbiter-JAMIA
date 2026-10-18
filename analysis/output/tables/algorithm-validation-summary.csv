@@ -1,11 +1,12 @@
 arm,status,n
+ARBITER-Sonnet,Consistent,510
+Baseline-Sonnet,Consistent,444
+Baseline-Sonnet,Invalid answer path,39
+Baseline-Sonnet,Not evaluable,1
+Baseline-Sonnet,Violation,26
 ARBITER-Haiku,Consistent,504
 ARBITER-Haiku,Not evaluable,5
 ARBITER-Haiku,Reported departure,1
-ARBITER-Sonnet,Consistent,510
 Baseline-Haiku,Consistent,330
-Baseline-Haiku,Not evaluable,48
+Baseline-Haiku,Invalid answer path,48
 Baseline-Haiku,Violation,132
-Baseline-Sonnet,Consistent,444
-Baseline-Sonnet,Not evaluable,39
-Baseline-Sonnet,Violation,27

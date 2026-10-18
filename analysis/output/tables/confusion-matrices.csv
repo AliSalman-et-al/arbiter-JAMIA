@@ -1,76 +1,4 @@
 arm,domain,meta,predicted,n
-ARBITER-Haiku,D1,High,High,1
-ARBITER-Haiku,D1,High,Low,1
-ARBITER-Haiku,D1,High,Missing,0
-ARBITER-Haiku,D1,High,Some concerns,3
-ARBITER-Haiku,D1,Low,High,2
-ARBITER-Haiku,D1,Low,Low,74
-ARBITER-Haiku,D1,Low,Missing,1
-ARBITER-Haiku,D1,Low,Some concerns,7
-ARBITER-Haiku,D1,Some concerns,High,0
-ARBITER-Haiku,D1,Some concerns,Low,6
-ARBITER-Haiku,D1,Some concerns,Missing,0
-ARBITER-Haiku,D1,Some concerns,Some concerns,7
-ARBITER-Haiku,D2,High,High,0
-ARBITER-Haiku,D2,High,Low,0
-ARBITER-Haiku,D2,High,Missing,0
-ARBITER-Haiku,D2,High,Some concerns,1
-ARBITER-Haiku,D2,Low,High,6
-ARBITER-Haiku,D2,Low,Low,53
-ARBITER-Haiku,D2,Low,Missing,1
-ARBITER-Haiku,D2,Low,Some concerns,26
-ARBITER-Haiku,D2,Some concerns,High,3
-ARBITER-Haiku,D2,Some concerns,Low,5
-ARBITER-Haiku,D2,Some concerns,Missing,0
-ARBITER-Haiku,D2,Some concerns,Some concerns,7
-ARBITER-Haiku,D3,High,High,3
-ARBITER-Haiku,D3,High,Low,1
-ARBITER-Haiku,D3,High,Missing,0
-ARBITER-Haiku,D3,High,Some concerns,1
-ARBITER-Haiku,D3,Low,High,9
-ARBITER-Haiku,D3,Low,Low,63
-ARBITER-Haiku,D3,Low,Missing,1
-ARBITER-Haiku,D3,Low,Some concerns,10
-ARBITER-Haiku,D3,Some concerns,High,7
-ARBITER-Haiku,D3,Some concerns,Low,1
-ARBITER-Haiku,D3,Some concerns,Missing,0
-ARBITER-Haiku,D3,Some concerns,Some concerns,6
-ARBITER-Haiku,D4,High,High,0
-ARBITER-Haiku,D4,High,Low,0
-ARBITER-Haiku,D4,High,Missing,0
-ARBITER-Haiku,D4,High,Some concerns,0
-ARBITER-Haiku,D4,Low,High,3
-ARBITER-Haiku,D4,Low,Low,82
-ARBITER-Haiku,D4,Low,Missing,1
-ARBITER-Haiku,D4,Low,Some concerns,7
-ARBITER-Haiku,D4,Some concerns,High,2
-ARBITER-Haiku,D4,Some concerns,Low,2
-ARBITER-Haiku,D4,Some concerns,Missing,0
-ARBITER-Haiku,D4,Some concerns,Some concerns,5
-ARBITER-Haiku,D5,High,High,0
-ARBITER-Haiku,D5,High,Low,0
-ARBITER-Haiku,D5,High,Missing,0
-ARBITER-Haiku,D5,High,Some concerns,3
-ARBITER-Haiku,D5,Low,High,5
-ARBITER-Haiku,D5,Low,Low,39
-ARBITER-Haiku,D5,Low,Missing,1
-ARBITER-Haiku,D5,Low,Some concerns,36
-ARBITER-Haiku,D5,Some concerns,High,0
-ARBITER-Haiku,D5,Some concerns,Low,3
-ARBITER-Haiku,D5,Some concerns,Missing,0
-ARBITER-Haiku,D5,Some concerns,Some concerns,15
-ARBITER-Haiku,Overall,High,High,13
-ARBITER-Haiku,Overall,High,Low,0
-ARBITER-Haiku,Overall,High,Missing,0
-ARBITER-Haiku,Overall,High,Some concerns,4
-ARBITER-Haiku,Overall,Low,High,9
-ARBITER-Haiku,Overall,Low,Low,15
-ARBITER-Haiku,Overall,Low,Missing,1
-ARBITER-Haiku,Overall,Low,Some concerns,17
-ARBITER-Haiku,Overall,Some concerns,High,7
-ARBITER-Haiku,Overall,Some concerns,Low,0
-ARBITER-Haiku,Overall,Some concerns,Missing,0
-ARBITER-Haiku,Overall,Some concerns,Some concerns,15
 ARBITER-Sonnet,D1,High,High,1
 ARBITER-Sonnet,D1,High,Low,1
 ARBITER-Sonnet,D1,High,Missing,0
@@ -143,78 +71,6 @@ ARBITER-Sonnet,Overall,Some concerns,High,4
 ARBITER-Sonnet,Overall,Some concerns,Low,3
 ARBITER-Sonnet,Overall,Some concerns,Missing,0
 ARBITER-Sonnet,Overall,Some concerns,Some concerns,15
-Baseline-Haiku,D1,High,High,0
-Baseline-Haiku,D1,High,Low,1
-Baseline-Haiku,D1,High,Missing,0
-Baseline-Haiku,D1,High,Some concerns,4
-Baseline-Haiku,D1,Low,High,2
-Baseline-Haiku,D1,Low,Low,67
-Baseline-Haiku,D1,Low,Missing,0
-Baseline-Haiku,D1,Low,Some concerns,15
-Baseline-Haiku,D1,Some concerns,High,1
-Baseline-Haiku,D1,Some concerns,Low,2
-Baseline-Haiku,D1,Some concerns,Missing,0
-Baseline-Haiku,D1,Some concerns,Some concerns,10
-Baseline-Haiku,D2,High,High,0
-Baseline-Haiku,D2,High,Low,0
-Baseline-Haiku,D2,High,Missing,0
-Baseline-Haiku,D2,High,Some concerns,1
-Baseline-Haiku,D2,Low,High,4
-Baseline-Haiku,D2,Low,Low,54
-Baseline-Haiku,D2,Low,Missing,0
-Baseline-Haiku,D2,Low,Some concerns,28
-Baseline-Haiku,D2,Some concerns,High,0
-Baseline-Haiku,D2,Some concerns,Low,5
-Baseline-Haiku,D2,Some concerns,Missing,0
-Baseline-Haiku,D2,Some concerns,Some concerns,10
-Baseline-Haiku,D3,High,High,1
-Baseline-Haiku,D3,High,Low,2
-Baseline-Haiku,D3,High,Missing,0
-Baseline-Haiku,D3,High,Some concerns,2
-Baseline-Haiku,D3,Low,High,7
-Baseline-Haiku,D3,Low,Low,60
-Baseline-Haiku,D3,Low,Missing,0
-Baseline-Haiku,D3,Low,Some concerns,16
-Baseline-Haiku,D3,Some concerns,High,4
-Baseline-Haiku,D3,Some concerns,Low,3
-Baseline-Haiku,D3,Some concerns,Missing,0
-Baseline-Haiku,D3,Some concerns,Some concerns,7
-Baseline-Haiku,D4,High,High,0
-Baseline-Haiku,D4,High,Low,0
-Baseline-Haiku,D4,High,Missing,0
-Baseline-Haiku,D4,High,Some concerns,0
-Baseline-Haiku,D4,Low,High,2
-Baseline-Haiku,D4,Low,Low,70
-Baseline-Haiku,D4,Low,Missing,0
-Baseline-Haiku,D4,Low,Some concerns,21
-Baseline-Haiku,D4,Some concerns,High,4
-Baseline-Haiku,D4,Some concerns,Low,2
-Baseline-Haiku,D4,Some concerns,Missing,0
-Baseline-Haiku,D4,Some concerns,Some concerns,3
-Baseline-Haiku,D5,High,High,1
-Baseline-Haiku,D5,High,Low,0
-Baseline-Haiku,D5,High,Missing,0
-Baseline-Haiku,D5,High,Some concerns,2
-Baseline-Haiku,D5,Low,High,9
-Baseline-Haiku,D5,Low,Low,38
-Baseline-Haiku,D5,Low,Missing,0
-Baseline-Haiku,D5,Low,Some concerns,34
-Baseline-Haiku,D5,Some concerns,High,2
-Baseline-Haiku,D5,Some concerns,Low,1
-Baseline-Haiku,D5,Some concerns,Missing,0
-Baseline-Haiku,D5,Some concerns,Some concerns,15
-Baseline-Haiku,Overall,High,High,11
-Baseline-Haiku,Overall,High,Low,0
-Baseline-Haiku,Overall,High,Missing,0
-Baseline-Haiku,Overall,High,Some concerns,6
-Baseline-Haiku,Overall,Low,High,7
-Baseline-Haiku,Overall,Low,Low,9
-Baseline-Haiku,Overall,Low,Missing,0
-Baseline-Haiku,Overall,Low,Some concerns,26
-Baseline-Haiku,Overall,Some concerns,High,6
-Baseline-Haiku,Overall,Some concerns,Low,1
-Baseline-Haiku,Overall,Some concerns,Missing,0
-Baseline-Haiku,Overall,Some concerns,Some concerns,15
 Baseline-Sonnet,D1,High,High,0
 Baseline-Sonnet,D1,High,Low,1
 Baseline-Sonnet,D1,High,Missing,0
@@ -287,3 +143,147 @@ Baseline-Sonnet,Overall,Some concerns,High,3
 Baseline-Sonnet,Overall,Some concerns,Low,12
 Baseline-Sonnet,Overall,Some concerns,Missing,0
 Baseline-Sonnet,Overall,Some concerns,Some concerns,7
+ARBITER-Haiku,D1,High,High,1
+ARBITER-Haiku,D1,High,Low,1
+ARBITER-Haiku,D1,High,Missing,0
+ARBITER-Haiku,D1,High,Some concerns,3
+ARBITER-Haiku,D1,Low,High,2
+ARBITER-Haiku,D1,Low,Low,74
+ARBITER-Haiku,D1,Low,Missing,1
+ARBITER-Haiku,D1,Low,Some concerns,7
+ARBITER-Haiku,D1,Some concerns,High,0
+ARBITER-Haiku,D1,Some concerns,Low,6
+ARBITER-Haiku,D1,Some concerns,Missing,0
+ARBITER-Haiku,D1,Some concerns,Some concerns,7
+ARBITER-Haiku,D2,High,High,0
+ARBITER-Haiku,D2,High,Low,0
+ARBITER-Haiku,D2,High,Missing,0
+ARBITER-Haiku,D2,High,Some concerns,1
+ARBITER-Haiku,D2,Low,High,6
+ARBITER-Haiku,D2,Low,Low,53
+ARBITER-Haiku,D2,Low,Missing,1
+ARBITER-Haiku,D2,Low,Some concerns,26
+ARBITER-Haiku,D2,Some concerns,High,3
+ARBITER-Haiku,D2,Some concerns,Low,5
+ARBITER-Haiku,D2,Some concerns,Missing,0
+ARBITER-Haiku,D2,Some concerns,Some concerns,7
+ARBITER-Haiku,D3,High,High,3
+ARBITER-Haiku,D3,High,Low,1
+ARBITER-Haiku,D3,High,Missing,0
+ARBITER-Haiku,D3,High,Some concerns,1
+ARBITER-Haiku,D3,Low,High,9
+ARBITER-Haiku,D3,Low,Low,63
+ARBITER-Haiku,D3,Low,Missing,1
+ARBITER-Haiku,D3,Low,Some concerns,10
+ARBITER-Haiku,D3,Some concerns,High,7
+ARBITER-Haiku,D3,Some concerns,Low,1
+ARBITER-Haiku,D3,Some concerns,Missing,0
+ARBITER-Haiku,D3,Some concerns,Some concerns,6
+ARBITER-Haiku,D4,High,High,0
+ARBITER-Haiku,D4,High,Low,0
+ARBITER-Haiku,D4,High,Missing,0
+ARBITER-Haiku,D4,High,Some concerns,0
+ARBITER-Haiku,D4,Low,High,3
+ARBITER-Haiku,D4,Low,Low,82
+ARBITER-Haiku,D4,Low,Missing,1
+ARBITER-Haiku,D4,Low,Some concerns,7
+ARBITER-Haiku,D4,Some concerns,High,2
+ARBITER-Haiku,D4,Some concerns,Low,2
+ARBITER-Haiku,D4,Some concerns,Missing,0
+ARBITER-Haiku,D4,Some concerns,Some concerns,5
+ARBITER-Haiku,D5,High,High,0
+ARBITER-Haiku,D5,High,Low,0
+ARBITER-Haiku,D5,High,Missing,0
+ARBITER-Haiku,D5,High,Some concerns,3
+ARBITER-Haiku,D5,Low,High,5
+ARBITER-Haiku,D5,Low,Low,39
+ARBITER-Haiku,D5,Low,Missing,1
+ARBITER-Haiku,D5,Low,Some concerns,36
+ARBITER-Haiku,D5,Some concerns,High,0
+ARBITER-Haiku,D5,Some concerns,Low,3
+ARBITER-Haiku,D5,Some concerns,Missing,0
+ARBITER-Haiku,D5,Some concerns,Some concerns,15
+ARBITER-Haiku,Overall,High,High,13
+ARBITER-Haiku,Overall,High,Low,0
+ARBITER-Haiku,Overall,High,Missing,0
+ARBITER-Haiku,Overall,High,Some concerns,4
+ARBITER-Haiku,Overall,Low,High,9
+ARBITER-Haiku,Overall,Low,Low,15
+ARBITER-Haiku,Overall,Low,Missing,1
+ARBITER-Haiku,Overall,Low,Some concerns,17
+ARBITER-Haiku,Overall,Some concerns,High,7
+ARBITER-Haiku,Overall,Some concerns,Low,0
+ARBITER-Haiku,Overall,Some concerns,Missing,0
+ARBITER-Haiku,Overall,Some concerns,Some concerns,15
+Baseline-Haiku,D1,High,High,0
+Baseline-Haiku,D1,High,Low,1
+Baseline-Haiku,D1,High,Missing,0
+Baseline-Haiku,D1,High,Some concerns,4
+Baseline-Haiku,D1,Low,High,2
+Baseline-Haiku,D1,Low,Low,67
+Baseline-Haiku,D1,Low,Missing,0
+Baseline-Haiku,D1,Low,Some concerns,15
+Baseline-Haiku,D1,Some concerns,High,1
+Baseline-Haiku,D1,Some concerns,Low,2
+Baseline-Haiku,D1,Some concerns,Missing,0
+Baseline-Haiku,D1,Some concerns,Some concerns,10
+Baseline-Haiku,D2,High,High,0
+Baseline-Haiku,D2,High,Low,0
+Baseline-Haiku,D2,High,Missing,0
+Baseline-Haiku,D2,High,Some concerns,1
+Baseline-Haiku,D2,Low,High,4
+Baseline-Haiku,D2,Low,Low,54
+Baseline-Haiku,D2,Low,Missing,0
+Baseline-Haiku,D2,Low,Some concerns,28
+Baseline-Haiku,D2,Some concerns,High,0
+Baseline-Haiku,D2,Some concerns,Low,5
+Baseline-Haiku,D2,Some concerns,Missing,0
+Baseline-Haiku,D2,Some concerns,Some concerns,10
+Baseline-Haiku,D3,High,High,1
+Baseline-Haiku,D3,High,Low,2
+Baseline-Haiku,D3,High,Missing,0
+Baseline-Haiku,D3,High,Some concerns,2
+Baseline-Haiku,D3,Low,High,7
+Baseline-Haiku,D3,Low,Low,60
+Baseline-Haiku,D3,Low,Missing,0
+Baseline-Haiku,D3,Low,Some concerns,16
+Baseline-Haiku,D3,Some concerns,High,4
+Baseline-Haiku,D3,Some concerns,Low,3
+Baseline-Haiku,D3,Some concerns,Missing,0
+Baseline-Haiku,D3,Some concerns,Some concerns,7
+Baseline-Haiku,D4,High,High,0
+Baseline-Haiku,D4,High,Low,0
+Baseline-Haiku,D4,High,Missing,0
+Baseline-Haiku,D4,High,Some concerns,0
+Baseline-Haiku,D4,Low,High,2
+Baseline-Haiku,D4,Low,Low,70
+Baseline-Haiku,D4,Low,Missing,0
+Baseline-Haiku,D4,Low,Some concerns,21
+Baseline-Haiku,D4,Some concerns,High,4
+Baseline-Haiku,D4,Some concerns,Low,2
+Baseline-Haiku,D4,Some concerns,Missing,0
+Baseline-Haiku,D4,Some concerns,Some concerns,3
+Baseline-Haiku,D5,High,High,1
+Baseline-Haiku,D5,High,Low,0
+Baseline-Haiku,D5,High,Missing,0
+Baseline-Haiku,D5,High,Some concerns,2
+Baseline-Haiku,D5,Low,High,9
+Baseline-Haiku,D5,Low,Low,38
+Baseline-Haiku,D5,Low,Missing,0
+Baseline-Haiku,D5,Low,Some concerns,34
+Baseline-Haiku,D5,Some concerns,High,2
+Baseline-Haiku,D5,Some concerns,Low,1
+Baseline-Haiku,D5,Some concerns,Missing,0
+Baseline-Haiku,D5,Some concerns,Some concerns,15
+Baseline-Haiku,Overall,High,High,11
+Baseline-Haiku,Overall,High,Low,0
+Baseline-Haiku,Overall,High,Missing,0
+Baseline-Haiku,Overall,High,Some concerns,6
+Baseline-Haiku,Overall,Low,High,7
+Baseline-Haiku,Overall,Low,Low,9
+Baseline-Haiku,Overall,Low,Missing,0
+Baseline-Haiku,Overall,Low,Some concerns,26
+Baseline-Haiku,Overall,Some concerns,High,6
+Baseline-Haiku,Overall,Some concerns,Low,1
+Baseline-Haiku,Overall,Some concerns,Missing,0
+Baseline-Haiku,Overall,Some concerns,Some concerns,15

@@ -1,46 +1,74 @@
-metric,estimate,lower,upper,valid_replicates,arm,status,n,count,missing,domain
-share,0.9901960784313726,0.9705882352941176,1,10000,ARBITER-Sonnet,Consistent,102,101,0,Overall
-share,0.00980392156862745,0,0.029411764705882353,10000,ARBITER-Sonnet,Permitted escalation,102,1,0,Overall
-share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,Overall
-share,1,1,1,10000,Baseline-Sonnet,Consistent,102,102,0,Overall
-share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,102,0,0,Overall
-share,0,0,0,10000,Baseline-Sonnet,Violation,102,0,0,Overall
-share,0.9135802469135802,0.8765432098765432,0.9506172839506173,10000,Meta,Consistent,81,74,21,Overall
-share,0.07407407407407407,0.04938271604938271,0.08641975308641975,10000,Meta,Permitted escalation,81,6,21,Overall
-share,0.012345679012345678,0,0.037037037037037035,10000,Meta,Violation,81,1,21,Overall
-share,0.9426751592356688,0.9224318658280922,0.9617021276595744,10000,Baseline-Sonnet,Consistent,471,444,39,D1-D5
-share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,471,0,39,D1-D5
-share,0.05732484076433121,0.03829787234042553,0.07756813417190776,10000,Baseline-Sonnet,Violation,471,27,39,D1-D5
-share,0.9504950495049505,0.9108910891089109,0.99,10000,Baseline-Sonnet,Consistent,101,96,1,D1
-share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,101,0,1,D1
-share,0.04950495049504951,0.01,0.0891089108910891,10000,Baseline-Sonnet,Violation,101,5,1,D1
-share,0.9693877551020408,0.9387755102040817,0.9900990099009901,10000,Baseline-Sonnet,Consistent,98,95,4,D2
-share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,98,0,4,D2
-share,0.030612244897959183,0.009900990099009901,0.061224489795918366,10000,Baseline-Sonnet,Violation,98,3,4,D2
-share,0.9603960396039604,0.9215686274509803,0.9901960784313726,10000,Baseline-Sonnet,Consistent,101,97,1,D3
-share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,101,0,1,D3
-share,0.039603960396039604,0.00980392156862745,0.0784313725490196,10000,Baseline-Sonnet,Violation,101,4,1,D3
-share,0.9571428571428572,0.9090909090909091,1,10000,Baseline-Sonnet,Consistent,70,67,32,D4
-share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,70,0,32,D4
-share,0.04285714285714286,0,0.09090909090909091,10000,Baseline-Sonnet,Violation,70,3,32,D4
-share,0.8811881188118812,0.82,0.9405940594059405,10000,Baseline-Sonnet,Consistent,101,89,1,D5
-share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,101,0,1,D5
-share,0.1188118811881188,0.0594059405940594,0.18,10000,Baseline-Sonnet,Violation,101,12,1,D5
-share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,510,510,0,D1-D5
-share,0,0,0,10000,ARBITER-Sonnet,Recorded override,510,0,0,D1-D5
-share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,510,0,0,D1-D5
-share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D1
-share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D1
-share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,102,0,0,D1
-share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D2
-share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D2
-share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,102,0,0,D2
-share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D3
-share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D3
-share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,102,0,0,D3
-share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D4
-share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D4
-share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,102,0,0,D4
-share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D5
-share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D5
-share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,102,0,0,D5
+metric,estimate,lower,upper,valid_replicates,arm,status,n,count,missing,domain,note
+share,0.9901960784313726,0.9705882352941176,1,10000,ARBITER-Sonnet,Consistent,102,101,0,Overall,
+share,0.00980392156862745,0,0.029411764705882353,10000,ARBITER-Sonnet,Permitted escalation,102,1,0,Overall,
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,Overall,
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,510,510,0,D1-D5,
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,510,510,0,D1-D5,
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,510,0,0,D1-D5,
+share,0,0,0,10000,ARBITER-Sonnet,Violation,510,0,0,D1-D5,
+share,0,0,0,10000,ARBITER-Sonnet,Invalid answer path,510,0,0,D1-D5,
+share,0,0,0,10000,ARBITER-Sonnet,Departure,510,0,0,D1-D5,
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D1,
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D1,
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D1,
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D1,
+share,0,0,0,10000,ARBITER-Sonnet,Invalid answer path,102,0,0,D1,
+share,0,0,0,10000,ARBITER-Sonnet,Departure,102,0,0,D1,
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D2,
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D2,
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D2,
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D2,
+share,0,0,0,10000,ARBITER-Sonnet,Invalid answer path,102,0,0,D2,
+share,0,0,0,10000,ARBITER-Sonnet,Departure,102,0,0,D2,
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D3,
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D3,
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D3,
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D3,
+share,0,0,0,10000,ARBITER-Sonnet,Invalid answer path,102,0,0,D3,
+share,0,0,0,10000,ARBITER-Sonnet,Departure,102,0,0,D3,
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D4,
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D4,
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D4,
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D4,
+share,0,0,0,10000,ARBITER-Sonnet,Invalid answer path,102,0,0,D4,
+share,0,0,0,10000,ARBITER-Sonnet,Departure,102,0,0,D4,
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D5,
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D5,
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D5,
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D5,
+share,0,0,0,10000,ARBITER-Sonnet,Invalid answer path,102,0,0,D5,
+share,0,0,0,10000,ARBITER-Sonnet,Departure,102,0,0,D5,
+,1,1,1,10000,ARBITER-Sonnet,Evidence coverage,1538,1538,,Audit,
+,1,1,1,10000,ARBITER-Sonnet,Bundle verification,102,102,,Audit,
+share,1,1,1,10000,Baseline-Sonnet,Consistent,102,102,0,Overall,
+share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,102,0,0,Overall,
+share,0,0,0,10000,Baseline-Sonnet,Violation,102,0,0,Overall,
+share,0.8722986247544204,0.844488188976378,0.899803536345776,10000,Baseline-Sonnet,Consistent,509,444,1,D1-D5,
+share,0.05108055009823183,0.03339882121807466,0.068897637795275593,10000,Baseline-Sonnet,Violation,509,26,1,D1-D5,
+share,0.07662082514734773,0.056862745098039215,0.10019646365422397,10000,Baseline-Sonnet,Invalid answer path,509,39,1,D1-D5,
+share,0.12770137524557956,0.10019646365422397,0.15551181102362205,10000,Baseline-Sonnet,Departure,509,65,1,D1-D5,
+share,0.9504950495049505,0.9108910891089109,0.99,10000,Baseline-Sonnet,Consistent,101,96,1,D1,
+share,0.04950495049504951,0.01,0.0891089108910891,10000,Baseline-Sonnet,Violation,101,5,1,D1,
+share,0,0,0,10000,Baseline-Sonnet,Invalid answer path,101,0,1,D1,
+share,0.04950495049504951,0.01,0.0891089108910891,10000,Baseline-Sonnet,Departure,101,5,1,D1,
+share,0.9313725490196079,0.8921568627450981,0.9705882352941176,10000,Baseline-Sonnet,Consistent,102,95,0,D2,
+share,0.029411764705882353,0.00980392156862745,0.058823529411764705,10000,Baseline-Sonnet,Violation,102,3,0,D2,
+share,0.0392156862745098,0.00980392156862745,0.0784313725490196,10000,Baseline-Sonnet,Invalid answer path,102,4,0,D2,
+share,0.06862745098039216,0.029411764705882353,0.10784313725490197,10000,Baseline-Sonnet,Departure,102,7,0,D2,
+share,0.9509803921568627,0.9117647058823529,0.9901960784313726,10000,Baseline-Sonnet,Consistent,102,97,0,D3,
+share,0.029411764705882353,0,0.058823529411764705,10000,Baseline-Sonnet,Violation,102,3,0,D3,
+share,0.0196078431372549,0,0.049019607843137254,10000,Baseline-Sonnet,Invalid answer path,102,2,0,D3,
+share,0.049019607843137254,0.00980392156862745,0.08823529411764706,10000,Baseline-Sonnet,Departure,102,5,0,D3,
+share,0.6568627450980392,0.5784313725490197,0.7352941176470589,10000,Baseline-Sonnet,Consistent,102,67,0,D4,
+share,0.029411764705882353,0,0.058823529411764705,10000,Baseline-Sonnet,Violation,102,3,0,D4,
+share,0.3137254901960784,0.23529411764705882,0.39215686274509803,10000,Baseline-Sonnet,Invalid answer path,102,32,0,D4,
+share,0.3431372549019608,0.2647058823529412,0.4215686274509804,10000,Baseline-Sonnet,Departure,102,35,0,D4,
+share,0.8725490196078431,0.8137254901960784,0.9313725490196079,10000,Baseline-Sonnet,Consistent,102,89,0,D5,
+share,0.11764705882352941,0.058823529411764705,0.17647058823529413,10000,Baseline-Sonnet,Violation,102,12,0,D5,
+share,0.00980392156862745,0,0.029411764705882353,10000,Baseline-Sonnet,Invalid answer path,102,1,0,D5,
+share,0.12745098039215685,0.06862745098039216,0.18627450980392157,10000,Baseline-Sonnet,Departure,102,13,0,D5,
+,,,,0,Baseline-Sonnet,Evidence coverage,,,,Audit,Not available
+,,,,0,Baseline-Sonnet,Bundle verification,,,,Audit,Not available
+share,0.9135802469135802,0.8765432098765432,0.9506172839506173,10000,Meta,Consistent,81,74,21,Overall,
+share,0.07407407407407407,0.04938271604938271,0.08641975308641975,10000,Meta,Permitted escalation,81,6,21,Overall,
+share,0.012345679012345678,0,0.037037037037037035,10000,Meta,Violation,81,1,21,Overall,
