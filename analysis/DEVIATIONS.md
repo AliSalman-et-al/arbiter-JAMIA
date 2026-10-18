@@ -246,3 +246,11 @@ No Python is used. This file records conservative resolutions as they arise.
     except Unassisted departure-type rates, in a separate percent column.
     No CSV or statistic changes. The existing flextable/officer pipeline and
     native Word PDF renderer are retained as the repository's Windows workflow.
+
+30. **Round 9 R5–R8 figures.** Figure 2 is 174 × 95 mm, with a horizontal
+    CONSORT exclusion arrow and author/year trial names. Figure 3 annotates
+    both consensus estimates with their counts. Figure 4B uses 0–100% with
+    n/N (%) labels. Figure 5 omits zero geometries/text and fixes source offsets
+    so ARBITER is consistently above Unassisted, first in the legend. Domain
+    facets and loss denominators remain. The supplementary forest joins curated
+    specialty/topic names and omits undefined/degenerate coefficients.
