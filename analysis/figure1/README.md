@@ -1,6 +1,6 @@
 # Reproducible ARBITER figures
 
-Figure 1 is final and unchanged by this revision. Figure 2 is rebuilt as a 174 × 229 mm, three-panel illustration: A follows six numbered agent–server exchanges for AVATAR D5 question 5.1; B summarizes every domain answer pattern and judgement; C compares the same trial’s ARBITER and Unassisted D5 trajectories against the adjudicators’ preferred judgement. Read STYLE-REFERENCE.md for the PI’s visual grammar.
+Figure 1 is final and unchanged by this revision. Figure 2 is rebuilt as a 174 × 230 mm, three-panel illustration: A follows six numbered agent–server exchanges for AVATAR D5 question 5.1; B summarizes every domain answer pattern and judgement; C compares the same trial’s ARBITER and Unassisted D5 trajectories against the adjudicators’ preferred judgement. Read STYLE-REFERENCE.md for the PI’s visual grammar.
 
 ## Build and verify
 

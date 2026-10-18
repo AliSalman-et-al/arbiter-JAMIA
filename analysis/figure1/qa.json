@@ -40,22 +40,22 @@
       "arrow_tip_clearance_mm": 0.8,
       "curve_sampling_max_mm": 0.0375,
       "minimum_text_stroke_clearance_mm": 0.36,
-      "minimum_arrow_text_clearance_mm": 2.465,
+      "minimum_arrow_text_clearance_mm": 3.5125,
       "text_elements": 136,
-      "shape_elements": 148,
+      "shape_elements": 151,
       "arrow_tips": 18,
       "checks": {
-        "text_stroke_pairs": 17680,
+        "text_stroke_pairs": 17952,
         "box_pairs": 4005,
         "arrow_text_pairs": 2448,
         "arrow_box_pairs": 1620,
-        "frame_elements": 284,
+        "frame_elements": 287,
         "text_pairs": 9180
       },
       "violations": []
     },
     "width_mm": 174,
-    "height_mm": 229.0,
+    "height_mm": 230.0,
     "min_text_pt": 7.086614173228347,
     "vector_pdf": true,
     "embedded_fonts": [

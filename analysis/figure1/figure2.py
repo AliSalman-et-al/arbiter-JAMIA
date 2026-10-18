@@ -22,8 +22,11 @@ def tool_audit(root):
     counts=dict(sorted(Counter(b['name'].split('__')[-1] for b in calls.values()).items()))
     selected='toolu_01F15hTxheM7WBgGMfE4mYpa'
     assert calls[selected]['name'].endswith('read_pages')
-    assert len(calls[selected]['input']['windows'])==4
+    windows=calls[selected]['input']['windows']
+    assert len(windows)==4 and len({w['source_id'] for w in windows})==4
     result=results[selected]['content']
+    pages=json.loads(result)['data']['pages']
+    assert len(pages)==4 and len({p['source_id'] for p in pages})==4
     assert all(p in result for p in ['Prespecified secondary end points included','Primary outcome 1: all cause death'])
     audit=dict(trial=SLUG,scope='this trial',counting='Unique tool-use IDs, including failed attempts and retries; not evidence-read counts per domain.',counts=counts,log_sha256=log_hashes,
                d5_passages_returned_by=dict(tool='read_pages',tool_use_id=selected),
@@ -34,9 +37,9 @@ def tool_audit(root):
 
 
 def draw_trace(data,rows):
-    s=Scene();s.height=916
+    s=Scene();s.height=920
     s.title='AVATAR: one answer, every domain, two trajectories'
-    s.description='A: numbered agent–server sequence for D5 question 5.1. B: complete domain answer paths. C: ARBITER and Unassisted D5 outputs compared with adjudicators.'
+    s.description='A: numbered agent–server sequence for D5 question 5.1. B: complete domain answer paths; the outlined D5 5.1 chip with A badge links to panel A. C: ARBITER and Unassisted D5 outputs compared with adjudicators.'
     assert data['unassisted']['model_D5']=='Low'
     assert data['published']['D5']=='Low'
     assert data['adjud']['preferred']=='Some concerns'
@@ -71,10 +74,10 @@ def draw_trace(data,rows):
         s.text(88,y+.5,str(n),10,'bold','#FFFFFF',anchor='middle')
         label(104,y,title,'bold',size=11)
     def message(y,reverse=False):
-        s.line(616 if reverse else 66,y,66 if reverse else 616,y,arrow=True,sw=1.6)
+        s.line(628 if reverse else 64,y,64 if reverse else 628,y,arrow=True,sw=1.6)
     def tag(x,y,w,source,quote,context=True):
         # A dark source tab and a highlighted quotation body share one outline.
-        box(x,y,w,45,CONTEXT if context else HILITE,sw=1.4,kind='container')
+        box(x,y,w,36,CONTEXT if context else HILITE,sw=1.4,kind='container')
         s.rect(x+2,y+2,w-4,16,INK,4,stroke='none',sw=0)
         label(x+8,y+13,source,'regular','white')
         ls=lines_for(s,quote,w-16,size)
@@ -93,59 +96,62 @@ def draw_trace(data,rows):
     panel(19,'A','Under the hood: one answer · AVATAR · D5 · question 5.1')
     box(14,32,106,28,LAVENDER,sw=2,kind='container');label(27,50,'LLM agent','bold',LLM,size=13)
     box(548,32,134,28,MINT,sw=2,kind='container');label(558,49,'ARBITER server','bold',size=12)
-    label(574,75,'no model calls',color=GREY)
+    label(550,75,'no model calls',color=GREY)
     # Source documents attach to the server; count and prefixes derive from the bundle.
     document(270,34,'PDF');document(330,34,'PDF');document(390,34,'registry')
     label(270,75,f"{data['bundle_facts']['sources']} sources captured · sha256",'bold')
     s.line(464,44,538,44,arrow=True,sw=1.4)
-    s.rect(54,94,10,426,LAVENDER,2,INK,1.8)
-    s.rect(628,94,10,426,MINT,2,INK,1.8)
+    s.line(59,60,59,64,sw=1.8)
+    s.rect(54,64,10,550,LAVENDER,2,INK,1.8)
+    s.line(633,60,633,64,sw=1.8)
+    s.rect(628,64,10,550,MINT,2,INK,1.8)
 
-    badge(1,106,'Get guidance');pill(285,91,'get_domain_context',face='mono');pill(460,91,'domain:selection',face='mono');message(121)
+    badge(1,106,'Get guidance');pill(285,91,'get_domain_context',face='mono');pill(422,91,'D5',face='mono');message(121)
     pill(189,130,'questions 5.1–5.3 + RoB 2 guidance',fill='#F4F4F2');message(158,True)
-    badge(2,179,'Read sources');pill(285,164,'read_pages',face='mono');pill(405,164,'4 windows',face='mono');message(194)
-    for y,(index,quote) in zip([203,254],rows[4]['shown']):
+    badge(2,179,'Read sources');pill(285,164,'read_pages',face='mono');pill(405,164,'4 sources · 4 passages',face='mono');message(194)
+    for y,(index,quote) in zip([203,245],rows[4]['shown']):
         b=rows[4]['bases'][index];ev=b['ev']
-        tag(106,y,494,f"{b['src']['label']} · p {ev['page']} · L{ev['start_line']}–{ev['end_line']}",quote)
+        tag(106,y,494,f"{b['src']['label']} · p {ev['page']} · L{ev['start_line']}–{ev['end_line']} · sha256 {ev['source_version'].split(':')[1][:8]}…",quote)
 
     # Return line follows the two source-tag payloads.
-    message(308,True)
-    badge(3,328,'Reason from context')
-    box(106,338,494,43,LAVENDER,sw=1.5,kind='container')
-    for y,t in [(352,'… '+rows[4]['reason']), (370,rows[4]['gap'])]:
-        if y==352:s.rect(113,y-10, s.width(t,10)+8,13,CONTEXT,3,stroke='none',sw=0,kind='pill')
+    message(284,True)
+    badge(3,304,'Reason from context')
+    box(106,314,494,43,LAVENDER,sw=1.5,kind='container')
+    for y,t in [(328,'… '+rows[4]['reason']), (346,rows[4]['gap'])]:
+        if y==328:s.rect(113,y-10, s.width(t,10)+8,13,CONTEXT,3,stroke='none',sw=0,kind='pill')
         label(117,y,t,italic=True)
-    badge(4,403,'Save answer + citations');pill(327,388,'save_domain_judgment',face='mono')
-    pill(106,416,'5.1 No information · cites',fill=LAVENDER)
-    handles=[b['ev']['handle'] for b in rows[4]['bases']]
-    assert len(handles)==4
-    pill(310,416,handles[0]+' · '+handles[1]+' +2',face='mono')
-    message(447)
-    box(101,453,511,85,MINT,sw=1.5,kind='container')
-    badge(5,467,'Check spans; compute judgement')
+    badge(4,379,'Save answer + citations');pill(327,364,'save_domain_judgment',face='mono')
+    handles=[rows[4]['bases'][i]['ev']['handle'][:11]+'…' for i in [1,0]]
+    assert len(rows[4]['bases'])==4
+    payload='5.1 No information · cites '+handles[0]+' · '+handles[1]+' +2'
+    w=pill(106,392,payload,fill=LAVENDER,face='mono')
+    s.line(64,402,106,402,sw=1.6)
+    s.line(106+w,402,628,402,arrow=True,sw=1.6)
+    box(101,427,511,87,MINT,sw=1.5,kind='container')
+    badge(5,443,'Check spans; compute judgement')
     hashes=[rows[4]['bases'][i]['ev']['source_version'].split(':')[1][:8] for i in [0,1]]
-    label(106,487,'✓ each cited span matches its hashed source','bold')
-    label(448,487,' · '.join(hashes),'mono')
+    assert hashes==['d32e23eb','592b9a6c']
+    label(106,463,'✓ spans match sha256 '+hashes[1]+'… report · '+hashes[0]+'… registry','bold')
     d5abbr={'no_information':'NI','probably_no':'PN'}
     d5pattern=' · '.join(rows[4]['numbers'][a['question_id']]+' '+d5abbr[a['answer']] for a in rows[4]['d']['answers'])
     assert d5pattern=='5.1 NI · 5.2 PN · 5.3 PN'
-    label(106,505,d5pattern+' → official RoB 2 algorithm')
-    label(106,529,'proposed judgement · adopted, no override',color=GREY)
-    output(462,515,'Some concerns');message(548,True)
+    label(106,481,d5pattern+' → official RoB 2 algorithm')
+    label(106,505,'proposed judgement · adopted, no override',color=GREY)
+    output(462,491,'Some concerns');message(524,True)
     # Short curved notes occupy the actor margins, away from the exchange path.
-    label(13,568,'The model only proposes answers and citations',italic=True)
-    s.add(f'<path d="M44,555 Q17,537 43,506" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-    s.line(43,506,49,501,arrow=True,sw=1.2)
-    label(352,568,'Every check and judgement is computed here — no model calls',italic=True)
-    s.add(f'<path d="M665,555 Q681,533 648,506" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-    s.line(648,506,642,501,arrow=True,sw=1.2)
-    badge(6,594,'Review + export')
-    pill(232,579,'review_trial',face='mono');pill(325,579,'finalize_batch',face='mono')
-    box(445,579,237,20,YELLOW,sw=1.3,kind='container')
-    label(452,592,'.arbiter.zip ✓ independent verifier: verified')
-    s.line(425,589,441,589,arrow=True,sw=1.3)
+    label(106,544,'The model only proposes answers and citations',italic=True)
+    s.add(f'<path d="M44,531 Q17,513 43,482" fill="none" stroke="{INK}" stroke-width="1.2"/>')
+    s.line(43,482,49,477,arrow=True,sw=1.2)
+    label(328,558,'Every check and judgement is computed here — no model calls',italic=True)
+    s.add(f'<path d="M665,531 Q681,509 648,482" fill="none" stroke="{INK}" stroke-width="1.2"/>')
+    s.line(648,482,642,477,arrow=True,sw=1.2)
+    badge(6,570,'Review + export')
+    pill(140,580,'review_trial',face='mono');pill(235,580,'finalize_batch',face='mono')
+    box(363,580,237,20,YELLOW,sw=1.3,kind='container')
+    label(370,593,'.arbiter.zip ✓ independent verifier: verified')
+    message(610)
 
-    compress_sequence(s,.88)
+    compress_sequence(s,.84)
     a_parts=len(s.parts);a_text=len(s.text_records);a_pdf=len(s.pdf_text);a_tips=len(s.arrow_tips)
     panel(621,'B','Same machinery, every domain')
     label(65,639,'Evidence','bold');label(300,639,'Answers · question order','bold');label(580,639,'Judgement','bold')
@@ -158,10 +164,10 @@ def draw_trace(data,rows):
         y=647+i*29
         pill(12,y+2,f'D{i+1}',33,fill=MINT)
         src='Registry' if i==1 else 'p '+str(r['bases'][1 if i==4 else 0]['ev']['page'])
-        box(54,y,230,26,CONTEXT if i==4 else HILITE,sw=.9,kind='container')
+        box(54,y,220 if i==4 else 230,26,CONTEXT if i==4 else HILITE,sw=.9,kind='container')
         s.rect(56,y+2,40,22,INK,3,stroke='none',sw=0)
         label(60,y+16,src,color='white')
-        ls=lines_for(s,phrase,178,10)
+        ls=lines_for(s,phrase,168 if i==4 else 178,10)
         assert len(ls)<=2
         for k,t in enumerate(ls):label(101,y+11+k*11,t)
         active={a['question_id']:a['answer'] for a in r['d']['answers']}
@@ -169,7 +175,11 @@ def draw_trace(data,rows):
             x=300+j*35
             inactive=qid not in active
             label(x+5,y+8,num,color=GREY if inactive else INK,size=10)
-            box(x,y+12,29,14,'url(#not-asked)' if inactive else 'white',sw=.7)
+            traced=i==4 and num=='5.1'
+            box(x,y+12,29,14,'url(#not-asked)' if inactive else LAVENDER if traced else 'white',sw=2 if traced else .7)
+            if traced:
+                s.add(f'<circle cx="286" cy="{y+19}" r="6" fill="{INK}"/>')
+                s.text(286,y+22.5,'A',10,'bold','#FFFFFF',anchor='middle')
             if inactive:s.hatch_records.append((x,y+12,29,14))
             else:label(x+7,y+23,abbr[active[qid]],'bold')
         s.line(552,y+15,568,y+15,arrow=True,sw=1.3)
@@ -178,13 +188,14 @@ def draw_trace(data,rows):
     label(80,809,'any Some concerns → Some concerns','bold')
     s.line(552,805,568,805,arrow=True,sw=1.3);output(576,795,'Some concerns',108)
 
-    shift_since(s,a_parts,a_text,a_pdf,a_tips,-70)
-    panel(768,'C','Same trial, D5, with and without ARBITER')
-    label(106,786,'Trajectory · this trial','bold');label(511,786,'Output','bold')
-    label(584,786,'Adjudicators','bold')
-    s.add(f'<circle cx="675" cy="771" r="3" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-    s.add(f'<path d="M669,780 Q669,775 675,775 Q681,775 681,780" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-    label(429,801,'preferred D5 judgement: Some concerns',color=GREY)
+    shift_since(s,a_parts,a_text,a_pdf,a_tips,-90)
+    panel(750,'C','Same trial, D5, with and without ARBITER')
+    label(106,774,'Trajectory · this trial','bold');label(529,774,'Output','bold')
+    label(602,774,'Adjudicators','bold')
+    s.add(f'<circle cx="592" cy="764" r="3" fill="none" stroke="{INK}" stroke-width="1.2"/>')
+    s.add(f'<path d="M586,773 Q586,768 592,768 Q598,768 598,773" fill="none" stroke="{INK}" stroke-width="1.2"/>')
+    s.text(636,789,'preferred D5 judgement:',10,'regular',GREY,anchor='middle')
+    s.text(636,802,'Some concerns',10,'regular',GREY,anchor='middle')
     counts=data['tool_audit']['displayed_counts']
     robot(14,817,BLUE);label(41,830,'ARBITER','bold',BLUE)
     # Stacked tool names retain real names at 7pt without compressing their glyphs.
@@ -192,22 +203,24 @@ def draw_trace(data,rows):
         box(x,810,w,34,'#E4F5FB',sw=1.3,kind='container')
         label(x+6,823,t,'mono');label(x+6,838,'×'+str(n),'bold',BLUE)
     s.line(482,827,499,827,arrow=True,sw=1.3);output(506,817,'Some concerns',86)
-    label(612,832,'✓','bold','#345C4A',size=17)
+    label(629,832,'✓','bold','#345C4A',size=17)
     label(367,838,'✓ server check',color=GREY)
-    robot(14,875,UNASSISTED);label(41,888,'Unassisted','bold',UNASSISTED)
-    box(106,853,372,48,'#FFF1E3',sw=1.3,kind='container')
-    label(114,866,'Thought · no citation','bold',UNASSISTED)
+    robot(14,869,UNASSISTED);label(41,882,'Unassisted','bold',UNASSISTED)
+    box(106,847,372,48,'#FFF1E3',sw=1.3,kind='container')
+    label(114,860,'Thought · no citation','bold',UNASSISTED)
     claim=rows[4]['unassisted']
     prefix='Time to death was a prespecified secondary endpoint with a'
     assert claim==prefix+' registered 5-year time frame.'
-    label(114,879,prefix,italic=True)
+    label(114,873,prefix,italic=True)
     # The flagged phrase is a verbatim continuation in a separate orange outline.
-    box(114,884,180,16,'white',stroke=UNASSISTED,sw=1.1,kind='outline')
-    label(120,895,'registered 5-year time frame.',italic=True)
-    s.line(482,883,499,883,arrow=True,sw=1.3);output(506,873,'Low',86)
-    label(612,890,'×','bold','#7C3434',size=17)
-    label(106,912,'D4: 4.3 skipped → invalid answer path',color=GREY)
-    label(586,912,'Published: '+data['published']['D5'],color='#374E55')
+    box(114,878,180,16,'white',stroke=UNASSISTED,sw=1.1,kind='outline')
+    label(120,889,'registered 5-year time frame.',italic=True)
+    s.line(482,877,499,877,arrow=True,sw=1.3);output(506,867,'Low',86)
+    label(629,884,'×','bold','#7C3434',size=17)
+    label(106,905,'D4: 4.3 skipped → invalid answer path',color=GREY)
+    label(506,905,'Published: '+data['published']['D5'],color=GREY)
+    footer=[r for r in s.text_records if r['text'].startswith(('D4: 4.3 skipped','Published:'))]
+    assert len(footer)==2 and all(s.height-r['bbox'][3]>=12 for r in footer)
     assert s.height/4<=230
     return s
 
