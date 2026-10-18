@@ -114,6 +114,8 @@ def load(data_root, source_root):
             assert match, tool
             lines[tool] = server[:match.start()].count("\n") + 1
     guidance = (source_root / "src/arbiter/skills/arbiter-assess/references/selection.md").read_text(encoding="utf-8")
+    assert '**Some concerns:** 5.1 No/Probably no/No information;' in guidance
+    assert '**High:** 5.2 Yes/Probably yes; or 5.3 Yes/Probably yes.' in guidance
     question = re.search(r"## 5\.1 .*?\) (.*?)\n", guidance).group(1)
     source_commit = subprocess.check_output(["git", "-C", str(source_root), "rev-parse", "HEAD"], text=True).strip()
     trial_name = re.search(r"\((\w+) Trial\)", trial["registry"]["title"]).group(1)
@@ -234,32 +236,38 @@ def draw_workflow(data):
         if i < 4:
             midpoint = (cx + centers[i]) / 2
             s.line(midpoint-7, 49, midpoint+7, 49, arrow=True, sw=1.4)
+    s.rect(14, 31, 12, 17, "white", 2, INK, 1)
+    s.line(17, 37, 23, 37, sw=.6)
+    s.line(17, 41, 23, 41, sw=.6)
+    s.text(39, 44, "Trial reports + registry", 10)
+    s.line(144, 40, 162, 40, sw=1)
+    s.line(162, 40, 162, 53, arrow=True, sw=1)
     # The single human icon uses only geometric strokes.
     s.rect(12, 68, 672, 61, "#F5F5F3", 11)
     s.add('<circle cx="30" cy="88" r="6" fill="white" stroke="#171717" stroke-width="2"/>')
     s.add('<path d="M19 112 Q19 98 30 98 Q41 98 41 112 Z" fill="white" stroke="#171717" stroke-width="2"/>')
     s.text(49, 94, "Reviewer", 12.5, "bold")
-    s.text(49, 111, "Human", 10.5, color=GREY)
-    s.text(216, 94, "Define the", 11.5, anchor="middle")
-    s.text(216, 110, "requested outcome", 11.5, anchor="middle")
+    s.text(49, 111, "Person", 10.5, color=GREY)
+    s.text(216, 94, "Chooses the trial", 11.5, anchor="middle")
+    s.text(216, 110, "and outcome", 11.5, anchor="middle")
     s.rect(284, 76, 128, 45, "white", 8, sw=2.3)
     s.text(348, 94, "Approve the result", 12, "bold", anchor="middle")
     s.text(348, 111, "arbiter review", 10.5, "mono", anchor="middle")
     s.text(612, 94, "Report +", 11.5, "bold", anchor="middle")
-    s.text(612, 111, "verifiable bundle", 11.5, "bold", anchor="middle")
+    s.text(612, 111, "audit file", 11.5, "bold", anchor="middle")
     s.line(412, 99, 480, 99)
     s.line(480, 99, 480, 146, arrow=True)
     s.text(490, 140, "unlocks domain work", 10.2)
 
     s.rect(12, 146, 672, 70, LAVENDER, 11, sw=2.3)
-    s.text(25, 168, "LLM agent", 14, "bold", LLM)
-    s.text(25, 187, "/arbiter-assess", 11.5, "bold", LLM)
-    s.text(25, 202, "Guides each question", 10.5, color=GREY)
+    s.text(25, 166, "AI model (LLM agent)", 12, "bold", LLM)
+    s.text(25, 184, "follows the ARBITER", 10, color=GREY)
+    s.text(25, 201, "assessment guide", 10, color=GREY)
     for cx, top, bottom in zip(centers,
-            ["Read the reports", "Identify a result", "Answer signalling", "Inspect the"],
-            ["and registry", "for approval", "questions + cite", "assessment"]):
-        s.text(cx, 174, top, 12, "bold", LLM, "middle")
-        s.text(cx, 193, bottom, 12, "bold", LLM, "middle")
+            ["Read the reports", "Pick the result to assess", "Answer signalling", "Inspect the"],
+            ["and registry", "(outcome + analysis)", "questions + cite", "assessment"]):
+        s.text(cx, 174, top, 11, "bold", LLM, "middle")
+        s.text(cx, 193, bottom, 11, "bold", LLM, "middle")
     for x in [282, 414, 546]:
         s.line(x, 155, x, 207, dotted=True, sw=1)
 
@@ -274,25 +282,22 @@ def draw_workflow(data):
         s.line(response_x, 302, response_x, 216, arrow=True, sw=1.4)
         for y, call in zip([239, 262], calls):
             assert s.width(call, 10.2, "mono") * .92 < 118
-            s.text(cx, y, call, 10.2, "mono", anchor="middle", stretch=.84 if cx==480 else .92)
+            s.text(cx, y, call, 10.2, "mono", color=GREY, anchor="middle", stretch=.84 if cx==480 else .92)
         s.text(cx, 281, response, 10.5, anchor="middle", italic=True)
 
     s.rect(12, 302, 672, 77, MINT, 11, sw=2.3)
     s.text(25, 324, "ARBITER server", 13.5, "bold")
-    s.text(25, 343, "deterministic;", 10.5)
-    s.text(25, 359, "no model calls", 10.5)
-    for cx, top, bottom in zip(centers,
-            ["Capture sources", "Validate & store", "Check cited spans", "Record history"],
-            ["Bind their versions", "the result proposal", "Compute judgements", "Verify & package"]):
-        s.text(cx, 330, top, 11.5, "bold", anchor="middle")
-        s.text(cx, 350, bottom, 11.2, anchor="middle")
+    s.text(25, 343, "rule-based software,", 10.5)
+    s.text(25, 359, "no AI", 10.5)
+    for cx, phrase in zip(centers, ["Store an unchangeable copy of each source", "Check and record the choice", "Check every quote · Apply the RoB 2 rules", "Keep the full record · Package the audit file"]):
+        s.wrap(cx-55, 324, phrase, 110, size=11, face="bold", leading=16)
     for x in [282, 414, 546]:
         s.line(x, 313, x, 367, dotted=True, sw=1)
     s.line(612, 379, 612, 403, arrow=True)
     s.rect(12, 403, 672, 43, YELLOW, 10, sw=2)
-    s.text(25, 429, "Bundle", 13, "bold")
-    s.text(155, 420, "Source identities + bound evidence + complete history", 11.5)
-    s.text(155, 438, "Checked by an independent verifier", 11.5)
+    s.text(25, 429, "Audit file", 13, "bold")
+    s.text(155, 420, "Every source, quote, answer and decision", 11.5)
+    s.text(155, 438, "Checkable by an independent verifier", 11.5)
     s.text(612, 429, ".arbiter.zip", 10.5, "mono", anchor="middle")
 
     s.height = 456
@@ -487,6 +492,7 @@ def export_scene(scene,out,name,geometry):
         assert fonts and all('Fira' in f[3] and f[1]=='ttf' for f in fonts),fonts
         assert all(len(pdf.extract_font(f[0])[3])>0 for f in fonts),'Missing embedded font bytes'
         assert not re.search('rob2',page.get_text(),re.I)
+        if name=='Figure2':assert not re.search(r'eh_|sha256|_|span|adopted|proposal',page.get_text(),re.I)
         pix=page.get_pixmap(dpi=600,alpha=False)
         image=Image.frombytes('RGB',(pix.width,pix.height),pix.samples)
         image.save(out/f'{name}.tiff',compression='tiff_lzw',dpi=(600,600))
@@ -509,39 +515,26 @@ def diagnostic_proofs(preview,directory,name,height):
 
 
 def write_notes(data,rows,out):
-    text=['# Figures 1–2: provenance and display notes','','## Figure 1','',
-    'The workflow is a functional grouping of representative real MCP tools. Response labels are explanatory summaries. Rejection and recovery counts appear in the legend only; no return arrow is drawn. Approval uses the public `arbiter review` command; archived inputs retain their historical names. The server proposes judgements from the official algorithm; adopted judgements may differ through a recorded override. AVATAR has no override.',
-    '', '## Save-call rejection audit','',json.dumps(json.loads((HERE/'save-rejections-summary.json').read_text()),indent=2),
-    '', 'The CSV has one row per unique tool-use ID, matched to its tool result across all turn logs. Trials come from the Sonnet domain-label file with the three design exclusions; exactly 102 are required. Rejected means an error flag or an explicit not-saved/error result. Reasons are classified from actual error details, not the scientific validity of a judgement. Accepted includes repeat successful saves. Chronology uses numeric turn ordering and unique call insertion order. All 47 trial-domain assessments with rejections ended with successful saves; none of the 510 domains lacked one. All 53 rejected calls have a later accepted save for their domain. One PALOMA-2 call omitted the domain entirely; its attribution to D1 is inferred from the explicit D1 retries immediately before and after it, asserted by the audit and marked in the CSV. One malformed JSON input retains a literal domain_id in its raw input. Counts describe Sonnet only; they are not a failure rate across all ARBITER models.',
-    '', '## Figure 2','',f'Bundle SHA-256: `{data["bundle_sha256"]}`. Manifest content hashes checked at every build. Archived verifier: `{data["verification"]["result"]}`; this does not certify clinical correctness. Source hash prefixes identify searchable projections, not PDF bytes. Quotes preserve source text; whitespace wraps are collapsed. Two extraction line breaks are joined for legibility: assign-↵ment → assignment and cen↵sored → censored. No words are substituted. Ellipses denote omissions. Official question excerpts are shortened, with ellipses, from the RoB 2 wording.',
-    '', 'AVATAR log correction: the rejected D3 save (`toolu_01CTHBEhdF5BAGdpapeh9D5F`) flattened the locator fields directly into the basis. The accepted retry (`toolu_01PN3CESV3Hj5VbcRRWKbc5E`) nested source/page/lines under `bases[].evidence`, an accepted source-span reference form; it did **not** submit an `eh_…` string. The server bound it as `eh_e66d374e838e8c6d`. Therefore the figure illustrates schema/binding validation, not a claim that literal handles are the only accepted syntax.\n\nPanel A follows six numbered steps: guidance, source reading, agent reasoning, save with citations, deterministic checks and algorithm, and review/export. Two source tags and their two matching context highlights show the registry and report evidence. Step 5 displays two of four cited searchable-projection hash prefixes. Panel B shows one short source phrase per domain, every active answer and every inactive branch, and aligned domain/Overall outputs. Panel C uses whole-trial tool counts, explicitly labelled this trial, because earlier reads served multiple domains. Counts include failed attempts and retries. The complete Unassisted D5 claim is verbatim; only its registered-time-frame phrase is outlined orange. The D4 note records its skipped 4.3 invalid path. Check/cross marks compare D5 with adjudicators’ consensus preferred judgement, Some concerns; they are not verifier verdicts. Published D5 is Low. The verifier is an archived structural/binding receipt. No without-Unassisted variant is produced. Full trace: eTable 31.','']
-    text += ['## Bundle strip facts','',json.dumps(data['bundle_facts'],indent=2),'',
-             'Captured sources (searchable projection hashes):','']
-    for source in data['c']['batch']['trials'][0]['sources']:
-        text.append(f"- `{source['label']}`: `{source['id']}`; `{source['projection_hash']}`.")
-    text.append('')
-    tool_notes=['## Workflow tool provenance','',f'ARBITER source commit: `{data["source_commit"]}`. Definitions: `src/arbiter/interfaces/mcp/server.py`.','']
-    for phase,names in PHASES.items():
-        tool_notes.append(phase+': '+', '.join(f'`{name}` (line {data["tool_lines"][name]})' for name in names)+'.')
-    text[6:6]=tool_notes+['']
+    text=['# Figures 1–2: provenance and display notes','',
+          'The workflow uses plain labels above representative real MCP calls. Tool definitions and the public audit-file extension are checked against ARBITER source commit `'+data['source_commit']+'`. The frozen rejection audit remains in save-rejections.csv and its summary JSON.',
+          '', '## AVATAR storyboard', '',
+          'The registry title identifies aortic valve replacement versus conservative treatment in asymptomatic severe aortic stenosis (AVATAR). Early surgery versus watchful waiting is the reader-facing description of this comparison. The requested outcome is all-cause death. Paper page numbers refer to CIRCULATIONAHA.121.057639.pdf; the registry is NCT02436655.',
+          '', 'Source quotations are verbatim selections with ellipses for omissions and normalized extraction whitespace. Two extraction breaks are joined: assign-↵ment and cen↵sored. Questions and plain reasons are paraphrased; official wording is retained below and in eTable 31.',
+          '', 'Every manifest hash and source-version binding is checked at build time. The archive stores source identities and evidence quotations, rather than complete trial PDFs. Its stored evidence is the unchangeable source copy referenced by the illustration. Archived independent-verifier receipt: '+data['verification']['result']+'; this is a structure/evidence-binding check, not a clinical judgement.',
+          '', 'D5 rule checked against the scientific-pack selection.md Algorithm section: High if 5.2 or 5.3 is Yes/Probably yes; otherwise Some concerns if 5.1 is No/Probably no/No information, or 5.2/5.3 is No information. NI/PN/PN therefore yields Some concerns. The overall.any_concerns rule is asserted from the bundle; the figure describes this trial, where no domain is High.',
+          '', 'All six Without ARBITER labels are asserted against both results-102/model-domain-labels.csv and the versioned model-domain-labels.csv. The quoted 5.1 claim is asserted against the ignored final run log. Both adjudicators preferred D5 Some concerns; Published D5 is Low. Overall was not adjudicated. Check/cross mean agreement/disagreement with this consensus preferred D5 judgement.',
+          '', 'Bundle SHA-256: `'+data['bundle_sha256']+'`. AVATAR is illustrative, not representative.',
+          '', '## Save-call rejection audit', '',json.dumps(json.loads((HERE/'save-rejections-summary.json').read_text()),indent=2)]
     for i,r in enumerate(rows,1):
-        text += [f'### D{i}', '',QUESTIONS[i-1].split()[0]+': '+r['question'], '',f'Answer: {DISPLAY[r["a"]["answer"]]}. Proposed/adopted: {r["d"]["decision"]["proposed"]}/{r["d"]["decision"]["adopted"]}.', '', 'Full recorded justification:',r['a']['justification'],'','Selected justification excerpt (displayed only for D5 in A):',r['reason']+('…' if not r['reason'].endswith('.') else ''),'','Unknowns:',json.dumps(r['a']['unknowns'],ensure_ascii=False),'']
-        pattern=[]
-        active={a['question_id']:a['answer'] for a in r['d']['answers']}
-        for qid,number in sorted(r['numbers'].items(),key=lambda item:tuple(map(int,item[1].split('.')))):
-            pattern.append(number+': '+active.get(qid,'not asked (RoB 2 branching)')+' ['+qid+']')
-        text += ['Full displayed server pattern:','; '.join(pattern),'']
-        text += ['Panel B displayed evidence phrase: '+r['summary_quote'],'']
-        shown=dict(r['shown'])
-        for index,b in enumerate(r['bases']):
-            quote=shown.get(index,'Not displayed; additional cited evidence.')
-            ev=b['ev']
-            text += [f'**{b["basis"]["kind"]}**: `{b["src"]["label"]}`, page {ev["page"]}, bound lines {ev["start_line"]}–{ev["end_line"]}.',f'Handle `{ev["handle"]}`; evidence `{ev["identity"]}`; source `{ev["source_id"]}`; source projection `{ev["source_version"]}`.','',f'Selected source excerpt (A shows the D5 pair; B uses the shorter phrase above): {quote}','','Full bound span:','',ev['quote'],'']
-        if i==5:text+=['Displayed recorded gap: '+r['gap'],'']
-        if i==4:text+=['Official 4.4 question: '+r['inference_question'],'Inference basis: '+json.dumps(r['inference_basis'],ensure_ascii=False),'Inference (no quotation displayed): '+r['inference']+'…','The inference basis still references the same bound evidence as 4.3. This inference is retained here for provenance; Panel B displays its PN answer chip without a reasoning box. The bound 4.3 span explicitly includes the DSMB unblinding sentence; there is no citation mismatch.','']
-        text += ['Unassisted answers: '+r['unassisted_answers'].replace('\u00a0',' '),'',('Unassisted excerpt: ' if i in (4,5) else 'Archived unassisted excerpt (not displayed): ')+r['unassisted'],'','Unassisted full rationale: '+r['unassisted_full'],'']
-    text += ['## Tool attribution and counts', '', json.dumps(data['tool_audit'],indent=2), '', 'Both D5 context passages were returned by read_pages toolu_01F15hTxheM7WBgGMfE4mYpa during D5. The report and registry had also been read earlier. Four windows were requested by that D5 read; the displayed source tags identify the narrower saved evidence spans, not the complete read windows. D5 used three get_domain_context pages, one read_pages call, one search_sources call, and two save attempts (the first rejected). The second D5 save reclassified registry evidence as context and was accepted. Panel C is a compact selection of whole-trial tool categories, not a complete count of all MCP calls. review_trial, close_trial and finalize_batch occurred once each; close_trial is omitted from the compact export step.', '']
-    (out/'figure1-notes.md').write_text('\n'.join(text),encoding='utf8')
+        text += ['',f'## Domain {i}', '',r['question'],'',
+                 'Displayed source quotation(s): '+r['summary_quote'],'',
+                 'Full recorded selected-answer justification: '+r['a']['justification'],'',
+                 'Unknowns: '+json.dumps(r['a']['unknowns'],ensure_ascii=False),'',
+                 'Complete answers, inactive branches and decision:',json.dumps(dict(answers=r['d']['answers'],inactive=r['d']['inactive_questions'],decision=r['d']['decision']),ensure_ascii=False,indent=2),'',
+                 'Full selected-answer evidence:',json.dumps(r['bases'],ensure_ascii=False,indent=2)]
+        if i==4:text += ['', '4.4 reasoning basis: '+json.dumps(r['inference_basis'],ensure_ascii=False),'',r['inference']]
+        if i==5:text += ['', 'Without ARBITER: '+r['unassisted_full']]
+    (out/'figure1-notes.md').write_text('\n'.join(text)+'\n',encoding='utf8')
 
 
 def main():
@@ -551,13 +544,20 @@ def main():
     data['tool_audit']=tool_audit(args.logs_root)
     out=ROOT/'analysis/output/manuscript';(out/'qa').mkdir(parents=True,exist_ok=True)
     from geometry import check
+    workflow=draw_workflow(data)
+    workflow_geometry=check(workflow)
+    assert workflow.height/4<=110
+    assert workflow_geometry['passed'],json.dumps(workflow_geometry,indent=2)
     scene=draw_trace(data,rows);geometry=check(scene)
     if not geometry['passed']:
         raise AssertionError(json.dumps(geometry,indent=2))
     qa=json.loads((HERE/'qa.json').read_text())
     qa.pop('Figure2-without-unassisted',None)
+    qa['Figure1']=export_scene(workflow,out,'Figure1',workflow_geometry)
     qa['Figure2']=export_scene(scene,out,'Figure2',geometry)
     qa['Figure2']['bundle_facts']=data['bundle_facts']
+    qa['Figure2']['reader_jargon_guard']=True
+    qa['Figure2']['all_quotes_answers_labels_asserted']=True
     write_notes(data,rows,out)
     (HERE/'qa.json').write_text(json.dumps(qa,indent=2)+'\n')
     print(json.dumps(qa['Figure2'],indent=2))

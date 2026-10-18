@@ -7,55 +7,21 @@
       "curve_sampling_max_mm": 0.0375,
       "minimum_text_stroke_clearance_mm": 0.5263,
       "minimum_arrow_text_clearance_mm": 1.8447,
-      "text_elements": 51,
-      "shape_elements": 40,
-      "arrow_tips": 13,
+      "text_elements": 52,
+      "shape_elements": 46,
+      "arrow_tips": 14,
       "checks": {
-        "text_stroke_pairs": 2040,
-        "box_pairs": 15,
-        "arrow_text_pairs": 663,
-        "arrow_box_pairs": 78,
-        "frame_elements": 91,
-        "text_pairs": 1275
+        "text_stroke_pairs": 2392,
+        "box_pairs": 21,
+        "arrow_text_pairs": 728,
+        "arrow_box_pairs": 98,
+        "frame_elements": 98,
+        "text_pairs": 1326
       },
       "violations": []
     },
     "width_mm": 174,
     "height_mm": 107.0,
-    "min_text_pt": 7.228346456692914,
-    "vector_pdf": true,
-    "embedded_fonts": [
-      "AAAAAA+FiraSansCondensed-Bold",
-      "AAAAAA+FiraSansCondensed-Regular",
-      "AAAAAA+FiraCode-Regular"
-    ],
-    "tiff_dpi": 600,
-    "tiff_compression": "LZW",
-    "text_elements": 51
-  },
-  "Figure2": {
-    "geometry": {
-      "passed": true,
-      "clearance_mm": 0.3,
-      "arrow_tip_clearance_mm": 0.8,
-      "curve_sampling_max_mm": 0.0375,
-      "minimum_text_stroke_clearance_mm": 0.36,
-      "minimum_arrow_text_clearance_mm": 3.5125,
-      "text_elements": 136,
-      "shape_elements": 151,
-      "arrow_tips": 18,
-      "checks": {
-        "text_stroke_pairs": 17952,
-        "box_pairs": 4005,
-        "arrow_text_pairs": 2448,
-        "arrow_box_pairs": 1620,
-        "frame_elements": 287,
-        "text_pairs": 9180
-      },
-      "violations": []
-    },
-    "width_mm": 174,
-    "height_mm": 230.0,
     "min_text_pt": 7.086614173228347,
     "vector_pdf": true,
     "embedded_fonts": [
@@ -65,13 +31,48 @@
     ],
     "tiff_dpi": 600,
     "tiff_compression": "LZW",
-    "text_elements": 136,
+    "text_elements": 52
+  },
+  "Figure2": {
+    "geometry": {
+      "passed": true,
+      "clearance_mm": 0.3,
+      "arrow_tip_clearance_mm": 0.8,
+      "curve_sampling_max_mm": 0.0375,
+      "minimum_text_stroke_clearance_mm": 0.4775,
+      "minimum_arrow_text_clearance_mm": 3.4725,
+      "text_elements": 152,
+      "shape_elements": 78,
+      "arrow_tips": 3,
+      "checks": {
+        "text_stroke_pairs": 10640,
+        "box_pairs": 1485,
+        "arrow_text_pairs": 456,
+        "arrow_box_pairs": 165,
+        "frame_elements": 230,
+        "text_pairs": 11476
+      },
+      "violations": []
+    },
+    "width_mm": 174,
+    "height_mm": 230.0,
+    "min_text_pt": 7.086614173228347,
+    "vector_pdf": true,
+    "embedded_fonts": [
+      "AAAAAA+FiraSansCondensed-Bold",
+      "AAAAAA+FiraSansCondensed-Regular"
+    ],
+    "tiff_dpi": 600,
+    "tiff_compression": "LZW",
+    "text_elements": 152,
     "bundle_facts": {
       "sources": 7,
       "evidence_records": 16,
       "answered": 15,
       "not_asked": 7,
       "verifier": "verified"
-    }
+    },
+    "reader_jargon_guard": true,
+    "all_quotes_answers_labels_asserted": true
   }
 }

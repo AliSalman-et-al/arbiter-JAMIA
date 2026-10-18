@@ -1,11 +1,7 @@
-"""Figure 2: a numbered sequence, compact domain summary, and paired trajectories."""
-import hashlib
-import json
-import re
+"""Reader-first AVATAR storyboard; archived evidence remains build-asserted."""
+import hashlib,json,re
 from collections import Counter
-from build import (Scene, HERE, SLUG, INK, BLUE, LLM, LAVENDER, MINT, YELLOW,
-                   HILITE, CONTEXT, GREY, UNASSISTED, DISPLAY, excerpt, lines_for)
-
+from build import (Scene,HERE,SLUG,INK,LLM,LAVENDER,MINT,HILITE,CONTEXT,GREY,DISPLAY,excerpt,lines_for,row,norm)
 
 def tool_audit(root):
     calls={};results={};log_hashes={}
@@ -36,227 +32,141 @@ def tool_audit(root):
     return audit
 
 
+
 def draw_trace(data,rows):
     s=Scene();s.height=920
-    s.title='AVATAR: one answer, every domain, two trajectories'
-    s.description='A: numbered agent–server sequence for D5 question 5.1. B: complete domain answer paths; the outlined D5 5.1 chip with A badge links to panel A. C: ARBITER and Unassisted D5 outputs compared with adjudicators.'
-    assert data['unassisted']['model_D5']=='Low'
-    assert data['published']['D5']=='Low'
-    assert data['adjud']['preferred']=='Some concerns'
-    assert data['bundle_facts']['sources']==7
+    s.title='AVATAR, assessed by ARBITER, domain by domain'
+    s.description='Five domains connect source quotations, AI answers, rule-based checks and results. Selection of the reported result yields Some concerns.'
     size=10
-    def label(x,y,t,face='regular',color=INK,size=size,italic=False):
-        if color=='white':color='#FFFFFF'
-        if '✓' in t:
-            left,right=t.split('✓',1)
-            if left:s.text(x,y,left,size,face,color,italic=italic)
-            cx=x+s.width(left,size,face)
-            s.add(f'<path d="M{cx+1},{y-5} L{cx+5},{y-1} L{cx+12},{y-10}" fill="none" stroke="{color}" stroke-width="1.7"/>')
-            if right:s.text(cx+15,y,right.lstrip(),size,face,color,italic=italic)
-        elif t=='×':
-            s.add(f'<path d="M{x+1},{y-11} L{x+12},{y}" fill="none" stroke="{color}" stroke-width="1.7"/><path d="M{x+12},{y-11} L{x+1},{y}" fill="none" stroke="{color}" stroke-width="1.7"/>')
-        else:s.text(x,y,t,size,face,color,italic=italic)
-    def box(x,y,w,h,fill='white',stroke=INK,sw=1.2,kind='pill'):
-        s.rect(x,y,w,h,fill,6,stroke,sw,kind)
-    def pill(x,y,t,w=None,fill='white',face='bold',color=INK):
-        w=w or s.width(t,size,face)+14
-        box(x,y,w,20,fill)
-        label(x+7,y+13.5,t,face,color)
-        return w
-    def output(x,y,t,w=88):
-        box(x,y,w,20,'#DFF2F8' if t=='Some concerns' else 'white',sw=2)
-        label(x+7,y+13.5,t,'bold')
-        return w
-    def panel(y,tag,title):
-        label(12,y,tag,'bold',size=16);label(32,y,title,'bold',size=12)
-    def badge(n,y,title):
-        s.add(f'<circle cx="88" cy="{y-3}" r="9" fill="{INK}"/>')
-        s.text(88,y+.5,str(n),10,'bold','#FFFFFF',anchor='middle')
-        label(104,y,title,'bold',size=11)
-    def message(y,reverse=False):
-        s.line(628 if reverse else 64,y,64 if reverse else 628,y,arrow=True,sw=1.6)
-    def tag(x,y,w,source,quote,context=True):
-        # A dark source tab and a highlighted quotation body share one outline.
-        box(x,y,w,36,CONTEXT if context else HILITE,sw=1.4,kind='container')
-        s.rect(x+2,y+2,w-4,16,INK,4,stroke='none',sw=0)
-        label(x+8,y+13,source,'regular','white')
-        ls=lines_for(s,quote,w-16,size)
-        assert len(ls)<=2,(quote,ls)
-        for k,line in enumerate(ls):label(x+8,y+29+12*k,line,italic=True)
-    def robot(x,y,color):
-        box(x,y,21,17,'white',stroke=color,sw=1.8,kind='container')
-        s.add(f'<circle cx="{x+7}" cy="{y+6}" r="1.4" fill="{INK}"/><circle cx="{x+14}" cy="{y+6}" r="1.4" fill="{INK}"/>')
-        s.line(x+6,y+12,x+15,y+12,sw=1)
-        s.line(x+10,y-4,x+10,y,sw=1)
-    def document(x,y,name):
-        s.rect(x,y,15,21,'white',2,INK,1.3)
-        for dy in [6,10,14]:s.line(x+4,y+dy,x+11,y+dy,sw=.7)
-        label(x+20,y+14,name)
-
-    panel(19,'A','Under the hood: one answer · AVATAR · D5 · question 5.1')
-    box(14,32,106,28,LAVENDER,sw=2,kind='container');label(27,50,'LLM agent','bold',LLM,size=13)
-    box(548,32,134,28,MINT,sw=2,kind='container');label(558,49,'ARBITER server','bold',size=12)
-    label(550,75,'no model calls',color=GREY)
-    # Source documents attach to the server; count and prefixes derive from the bundle.
-    document(270,34,'PDF');document(330,34,'PDF');document(390,34,'registry')
-    label(270,75,f"{data['bundle_facts']['sources']} sources captured · sha256",'bold')
-    s.line(464,44,538,44,arrow=True,sw=1.4)
-    s.line(59,60,59,64,sw=1.8)
-    s.rect(54,64,10,550,LAVENDER,2,INK,1.8)
-    s.line(633,60,633,64,sw=1.8)
-    s.rect(628,64,10,550,MINT,2,INK,1.8)
-
-    badge(1,106,'Get guidance');pill(285,91,'get_domain_context',face='mono');pill(422,91,'D5',face='mono');message(121)
-    pill(189,130,'questions 5.1–5.3 + RoB 2 guidance',fill='#F4F4F2');message(158,True)
-    badge(2,179,'Read sources');pill(285,164,'read_pages',face='mono');pill(405,164,'4 sources · 4 passages',face='mono');message(194)
-    for y,(index,quote) in zip([203,245],rows[4]['shown']):
-        b=rows[4]['bases'][index];ev=b['ev']
-        tag(106,y,494,f"{b['src']['label']} · p {ev['page']} · L{ev['start_line']}–{ev['end_line']} · sha256 {ev['source_version'].split(':')[1][:8]}…",quote)
-
-    # Return line follows the two source-tag payloads.
-    message(284,True)
-    badge(3,304,'Reason from context')
-    box(106,314,494,43,LAVENDER,sw=1.5,kind='container')
-    for y,t in [(328,'… '+rows[4]['reason']), (346,rows[4]['gap'])]:
-        if y==328:s.rect(113,y-10, s.width(t,10)+8,13,CONTEXT,3,stroke='none',sw=0,kind='pill')
-        label(117,y,t,italic=True)
-    badge(4,379,'Save answer + citations');pill(327,364,'save_domain_judgment',face='mono')
-    handles=[rows[4]['bases'][i]['ev']['handle'][:11]+'…' for i in [1,0]]
-    assert len(rows[4]['bases'])==4
-    payload='5.1 No information · cites '+handles[0]+' · '+handles[1]+' +2'
-    w=pill(106,392,payload,fill=LAVENDER,face='mono')
-    s.line(64,402,106,402,sw=1.6)
-    s.line(106+w,402,628,402,arrow=True,sw=1.6)
-    box(101,427,511,87,MINT,sw=1.5,kind='container')
-    badge(5,443,'Check spans; compute judgement')
-    hashes=[rows[4]['bases'][i]['ev']['source_version'].split(':')[1][:8] for i in [0,1]]
-    assert hashes==['d32e23eb','592b9a6c']
-    label(106,463,'✓ spans match sha256 '+hashes[1]+'… report · '+hashes[0]+'… registry','bold')
-    d5abbr={'no_information':'NI','probably_no':'PN'}
-    d5pattern=' · '.join(rows[4]['numbers'][a['question_id']]+' '+d5abbr[a['answer']] for a in rows[4]['d']['answers'])
-    assert d5pattern=='5.1 NI · 5.2 PN · 5.3 PN'
-    label(106,481,d5pattern+' → official RoB 2 algorithm')
-    label(106,505,'proposed judgement · adopted, no override',color=GREY)
-    output(462,491,'Some concerns');message(524,True)
-    # Short curved notes occupy the actor margins, away from the exchange path.
-    label(106,544,'The model only proposes answers and citations',italic=True)
-    s.add(f'<path d="M44,531 Q17,513 43,482" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-    s.line(43,482,49,477,arrow=True,sw=1.2)
-    label(328,558,'Every check and judgement is computed here — no model calls',italic=True)
-    s.add(f'<path d="M665,531 Q681,509 648,482" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-    s.line(648,482,642,477,arrow=True,sw=1.2)
-    badge(6,570,'Review + export')
-    pill(140,580,'review_trial',face='mono');pill(235,580,'finalize_batch',face='mono')
-    box(363,580,237,20,YELLOW,sw=1.3,kind='container')
-    label(370,593,'.arbiter.zip ✓ independent verifier: verified')
-    message(610)
-
-    compress_sequence(s,.84)
-    a_parts=len(s.parts);a_text=len(s.text_records);a_pdf=len(s.pdf_text);a_tips=len(s.arrow_tips)
-    panel(621,'B','Same machinery, every domain')
-    label(65,639,'Evidence','bold');label(300,639,'Answers · question order','bold');label(580,639,'Judgement','bold')
-    s.add('<defs><pattern id="not-asked" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#F7F7F5"/><path d="M-1 1 L1 -1 M0 6 L6 0 M5 7 L7 5" stroke="#CECECA" stroke-width=".65"/></pattern></defs>')
-    phrases=[excerpt(rows[0]['bases'][0]['ev']['quote'],['computer-generated','permuted-block sequence']), 'Masking: NONE',excerpt(rows[2]['bases'][0]['ev']['quote'],['One patient','lost to follow-up','censored']),excerpt(rows[3]['bases'][0]['ev']['quote'],['Data and safety monitoring board members were not blinded']),excerpt(rows[4]['bases'][1]['ev']['quote'],['Prespecified secondary end points','Time to death'])]
-    abbr={'yes':'Y','no':'N','probably_yes':'PY','probably_no':'PN','no_information':'NI'}
-    # Question numbers sit above a uniform answer chip; inactive chips keep their number.
-    for i,(r,phrase) in enumerate(zip(rows,phrases)):
-        r['summary_quote']=phrase
-        y=647+i*29
-        pill(12,y+2,f'D{i+1}',33,fill=MINT)
-        src='Registry' if i==1 else 'p '+str(r['bases'][1 if i==4 else 0]['ev']['page'])
-        box(54,y,220 if i==4 else 230,26,CONTEXT if i==4 else HILITE,sw=.9,kind='container')
-        s.rect(56,y+2,40,22,INK,3,stroke='none',sw=0)
-        label(60,y+16,src,color='white')
-        ls=lines_for(s,phrase,168 if i==4 else 178,10)
-        assert len(ls)<=2
-        for k,t in enumerate(ls):label(101,y+11+k*11,t)
+    def text(x,y,t,face='regular',color=INK,italic=False):
+        s.text(x,y,t,size,face,color,italic=italic)
+    def wrap(x,y,t,w,face='regular',color=INK,italic=False):
+        ls=lines_for(s,t,w,size,face)
+        for j,line in enumerate(ls):text(x,y+j*12,line,face,color,italic)
+        return y+len(ls)*12
+    def check(x,y,t,w):
+        s.add(f'<path d="M{x},{y-4} l3,3 l6,-8" fill="none" stroke="{INK}" stroke-width="1.4"/>')
+        return wrap(x+14,y,t,w-14)
+    def pill(x,y,t,w,fill=LAVENDER):
+        s.rect(x,y,w,20,fill,5,INK,1.3,'pill');text(x+7,y+14,t,'bold')
+    def doc(x,y):
+        s.rect(x,y,13,17,'white',2,INK,1.2)
+        for dy in (5,9,13):s.line(x+3,y+dy,x+10,y+dy,sw=.6)
+    def quote(x,y,t,w,context=False):
+        ls=lines_for(s,'“'+t+'”',w-12,size)
+        s.rect(x,y,w,len(ls)*12+10,CONTEXT if context else HILITE,4,stroke='none',sw=0)
+        for j,line in enumerate(ls):text(x+6,y+12+j*12,line)
+        return y+len(ls)*12+10
+    def chips(r,y):
         active={a['question_id']:a['answer'] for a in r['d']['answers']}
+        abbr={'yes':'Y','no':'N','probably_no':'PN','probably_yes':'PY','no_information':'NI'}
+        pattern=[]
         for j,(qid,num) in enumerate(sorted(r['numbers'].items(),key=lambda z:float(z[1]))):
-            x=300+j*35
+            x=423+(j%4)*43;cy=y+(j//4)*25
             inactive=qid not in active
-            label(x+5,y+8,num,color=GREY if inactive else INK,size=10)
-            traced=i==4 and num=='5.1'
-            box(x,y+12,29,14,'url(#not-asked)' if inactive else LAVENDER if traced else 'white',sw=2 if traced else .7)
-            if traced:
-                s.add(f'<circle cx="286" cy="{y+19}" r="6" fill="{INK}"/>')
-                s.text(286,y+22.5,'A',10,'bold','#FFFFFF',anchor='middle')
-            if inactive:s.hatch_records.append((x,y+12,29,14))
-            else:label(x+7,y+23,abbr[active[qid]],'bold')
-        s.line(552,y+15,568,y+15,arrow=True,sw=1.3)
-        output(576,y+5,DISPLAY[r['d']['decision']['adopted']],108)
-    pill(12,795,'Overall',54,fill=MINT)
-    label(80,809,'any Some concerns → Some concerns','bold')
-    s.line(552,805,568,805,arrow=True,sw=1.3);output(576,795,'Some concerns',108)
-
-    shift_since(s,a_parts,a_text,a_pdf,a_tips,-90)
-    panel(750,'C','Same trial, D5, with and without ARBITER')
-    label(106,774,'Trajectory · this trial','bold');label(529,774,'Output','bold')
-    label(602,774,'Adjudicators','bold')
-    s.add(f'<circle cx="592" cy="764" r="3" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-    s.add(f'<path d="M586,773 Q586,768 592,768 Q598,768 598,773" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-    s.text(636,789,'preferred D5 judgement:',10,'regular',GREY,anchor='middle')
-    s.text(636,802,'Some concerns',10,'regular',GREY,anchor='middle')
-    counts=data['tool_audit']['displayed_counts']
-    robot(14,817,BLUE);label(41,830,'ARBITER','bold',BLUE)
-    # Stacked tool names retain real names at 7pt without compressing their glyphs.
-    for x,t,n,w in [(106,'get_domain_context',counts['get_domain_context'],128),(242,'read_pages',counts['read_pages'],91),(341,'save_domain_judgment',counts['save_domain_judgment'],137)]:
-        box(x,810,w,34,'#E4F5FB',sw=1.3,kind='container')
-        label(x+6,823,t,'mono');label(x+6,838,'×'+str(n),'bold',BLUE)
-    s.line(482,827,499,827,arrow=True,sw=1.3);output(506,817,'Some concerns',86)
-    label(629,832,'✓','bold','#345C4A',size=17)
-    label(367,838,'✓ server check',color=GREY)
-    robot(14,869,UNASSISTED);label(41,882,'Unassisted','bold',UNASSISTED)
-    box(106,847,372,48,'#FFF1E3',sw=1.3,kind='container')
-    label(114,860,'Thought · no citation','bold',UNASSISTED)
-    claim=rows[4]['unassisted']
-    prefix='Time to death was a prespecified secondary endpoint with a'
-    assert claim==prefix+' registered 5-year time frame.'
-    label(114,873,prefix,italic=True)
-    # The flagged phrase is a verbatim continuation in a separate orange outline.
-    box(114,878,180,16,'white',stroke=UNASSISTED,sw=1.1,kind='outline')
-    label(120,889,'registered 5-year time frame.',italic=True)
-    s.line(482,877,499,877,arrow=True,sw=1.3);output(506,867,'Low',86)
-    label(629,884,'×','bold','#7C3434',size=17)
-    label(106,905,'D4: 4.3 skipped → invalid answer path',color=GREY)
-    label(506,905,'Published: '+data['published']['D5'],color=GREY)
-    footer=[r for r in s.text_records if r['text'].startswith(('D4: 4.3 skipped','Published:'))]
-    assert len(footer)==2 and all(s.height-r['bbox'][3]>=12 for r in footer)
+            s.rect(x,cy,39,19,'url(#not-asked)' if inactive else 'white',3,INK,.7,'pill')
+            if inactive:s.hatch_records.append((x,cy,39,19))
+            text(x+3,cy+13,num+(' '+abbr[active[qid]] if not inactive else ''),'regular',GREY if inactive else INK)
+            pattern.append(abbr.get(active.get(qid),'NA'))
+        assert pattern==patterns[rows.index(r)],pattern
+        return y+((len(pattern)+3)//4)*25
+    patterns=[['Y','Y','N'],['Y','Y','PN','NA','NA','Y','NA'],['Y','NA','NA','NA'],['PN','PN','Y','PN','NA'],['NI','PN','PN']]
+    # Assert every comparator label from both the analysis-set export and its versioned source.
+    for source in ('results-102/model-domain-labels.csv','model-domain-labels.csv'):
+        labels=row(HERE.parents[1]/('no-kit-sonnet-5.5/'+source),slug=SLUG)
+        assert all(labels['model_'+d]=='Low' for d in ['D1','D2','D3','D4','D5','Overall'])
+    assert data['published']['D5']=='Low' and data['adjud']['preferred']=='Some concerns'
+    trial=data['c']['batch']['trials'][0]
+    assert 'Asymptomatic Severe Aortic Stenosis' in trial['registry']['title']
+    assert 'all-cause' in trial['requested_outcome'].lower()
+    assert 'independent of enrolling staff' in rows[0]['a']['unknowns'][0]
+    assert 'No dated source therefore specifies this measurement and analysis.' in rows[4]['a']['justification']
+    text(12,16,'AVATAR · early surgery vs watchful waiting in asymptomatic severe aortic stenosis · outcome: all-cause death','bold')
+    text(12,33,'RoB 2 asks up to 22 questions in 5 domains. Results describe risk of bias.')
+    text(12,50,'Y yes · PY / PN probably yes / no · N no · NI no information')
+    s.rect(279,40,14,13,'url(#not-asked)',2,INK,.6,'pill');s.hatch_records.append((279,40,14,13))
+    text(300,50,'not needed (RoB 2 branching)')
+    text(12,67,'Evidence key: yellow = quote directly supports the answer · grey = background context · dashed = reasoning without a quote')
+    s.add('<defs><pattern id="not-asked" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#F7F7F5"/><path d="M0 6 L6 0" stroke="#AAA" stroke-width=".65"/></pattern></defs>')
+    s.rect(305,80,108,59,LAVENDER,5,INK,1.5)
+    s.rect(419,80,188,59,MINT,5,INK,1.5)
+    # Book-style line glyphs identify document, model and rule-based actor.
+    doc(158,88)
+    s.rect(314,88,18,13,'white',2,INK,1)
+    for x in (319,327):s.add(f'<circle cx="{x}" cy="93" r="1" fill="{INK}"/>')
+    s.line(319,98,327,98,sw=.7)
+    s.rect(428,87,16,16,'white',2,INK,1)
+    for dy in (92,97):s.line(431,dy,441,dy,sw=.8)
+    wrap(12,103,'Domain & question',128,'bold')
+    text(177,100,'The sources say','bold')
+    wrap(339,100,'AI model answers',68,'bold',LLM)
+    wrap(450,95,'ARBITER (rule-based software, no AI) checks and applies the rules',150,'bold')
+    text(619,103,'Result','bold')
+    names=['Randomisation process','Deviations from intended interventions','Missing outcome data','Measurement of the outcome','Selection of the reported result']
+    questions=['Was allocation concealed until participants were assigned?','Did participants know which treatment they received?','Were outcome data available for nearly all participants?','Did outcome assessors know the treatment? Could that have influenced how deaths were recorded?','Was the analysis plan fixed before the results were known?']
+    nums=['1.2','2.1','3.1','4.3, 4.4','5.1']
+    reasons=['Central web-based allocation.','Open-label surgery vs watchful waiting.','1 of 157 (0.6%) incomplete.','All-cause death involves no judgement.','The paper says “prespecified”, but no dated plan lists this analysis; the registry lists death only inside a combined outcome.']
+    ys=[147,252,357,439,553];heights=[105,105,82,114,165]
+    rows[0]['shown']=[(0,'… '+excerpt(rows[0]['bases'][0]['ev']['quote'],['web-based interactive response system','computer-generated','permuted-block sequence with variable block size.']))]
+    for i,(r,y,h) in enumerate(zip(rows,ys,heights)):
+        s.rect(8,y,680,h-5,'white',5,INK,1.7 if i==4 else .8)
+        ny=wrap(16,y+17,names[i],126,'bold')
+        ny=wrap(16,ny+5,questions[i],126)
+        text(16,ny+4,nums[i],color=GREY)
+        qy=y+15
+        for index,q in r['shown']:
+            src=r['bases'][index]
+            label='Registry' if i==1 or (i==4 and index==0) else 'Paper p '+str(src['ev']['page'])
+            if i==4:label+=' · context'
+            # Every displayed quotation must be an ordered verbatim selection.
+            source_quote=norm(src['ev']['quote']);cursor=0
+            for part in q.split('…'):
+                part=part.strip()
+                if part:
+                    found=source_quote.find(part,cursor)
+                    assert found>=0,(label,part)
+                    cursor=found+len(part)
+            text(154,qy,label,'bold');qy=quote(152,qy+5,q,147,i==4)+14
+        r['summary_quote']=' / '.join(q for _,q in r['shown'])
+        if i==3:
+            pill(307,y+10,'Yes',44);text(356,y+24,'→');pill(307,y+36,'Probably no',99)
+            s.rect(305,y+61,106,43,'white',4,GREY,.7,'container')
+            # Dashed boundary is the evidence key for reasoning without a quote.
+            s.parts[-1]=s.parts[-1].replace('/>',' stroke-dasharray="3 3"/>')
+            wrap(312,y+75,reasons[i],92,italic=True)
+        else:
+            pill(307,y+10,'No information' if i==4 else 'Yes',103 if i==4 else 44)
+            wrap(309,y+47,reasons[i],100)
+        cy=check(425,y+16,'Both quotes found in the stored sources' if i==4 else 'Found in the stored registry record' if i==1 else 'Quote found in stored paper'+(' (4.3)' if i==3 else ''),176)
+        if i==0:cy=wrap(425,cy+2,'Open point recorded: whether the system was run independently of enrolling staff is not stated.',174)
+        if i==3:cy=wrap(425,cy+2,'4.4 rests on reasoning, recorded as such (no quote).',174)
+        cy=chips(r,cy+5)
+        if i==1:wrap(425,cy+6,'3 questions not needed (RoB 2 rules)',174)
+        elif i==4:wrap(425,cy+4,'RoB 2 rule: plan not shown to be fixed in advance; no sign of selective reporting → Some concerns',174)
+        elif i==2:text(425,cy+5,'RoB 2 rules → Low')
+        result=DISPLAY[r['d']['decision']['adopted']]
+        s.rect(613,y+12,68,43 if i==4 else 24,'#DFF2F8' if i==4 else MINT,7,INK,1.5,'pill')
+        wrap(621,y+28,result,54,'bold')
+        if i<4:wrap(620,y+57,'RoB 2 rules',56,color=GREY)
+    text(16,734,'Overall','bold')
+    text(100,734,'ARBITER applies the RoB 2 rule: any domain with Some concerns → overall Some concerns')
+    pill(581,722,'Some concerns',103,'#DFF2F8')
+    notes=[('The AI model never sets the rating — ARBITER computes it from the answers with the official RoB 2 rules',16,206),('Every quote is checked against a stored, unchangeable copy of the source',246,190),('When the sources are silent, the answer says so — No information, not a guess',467,209)]
+    for t,x,w in notes:
+        wrap(x,779,t,w,italic=True)
+        s.add(f'<path d="M{x+5},766 Q{x-5},756 {x+16},752" fill="none" stroke="{INK}" stroke-width="1"/>')
+        s.line(x+16,752,x+22,750,arrow=True,sw=1)
+    s.rect(8,823,680,77,'#FFF1E3',6,INK,1)
+    text(16,838,'Without ARBITER','bold')
+    wrap(16,853,'The same AI model, with the same instructions but without ARBITER, rated every domain Low. On question 5.1 it wrote:',443)
+    wrap(16,877,'“'+rows[4]['unassisted']+'” — no source given; the registry lists death only inside a combined outcome.',443,italic=True)
+    wrap(477,838,'Expert adjudicators (both): Some concerns',200,'bold')
+    check(478,867,'ARBITER',85)
+    s.line(566,859,574,867,sw=1.4);s.line(574,859,566,867,sw=1.4)
+    text(581,867,'Without ARBITER')
+    text(478,889,'Published review: Low')
+    text(12,916,'Everything above is saved in one audit file (.arbiter.zip); an independent verifier checked it: verified.')
+    rendered=' '.join(r['text'] for r in s.text_records)
+    assert not re.search(r'eh_|sha256|_|span|adopted|proposal',rendered,re.I),'Reader-facing jargon guard'
     assert s.height/4<=230
     return s
-
-
-def compress_sequence(scene,factor):
-    """Reduce vertical spacing only; glyph sizes, widths and stroke widths stay fixed."""
-    import xml.etree.ElementTree as ET
-    from svgpathtools import parse_path
-    out=[]
-    # Each part may be an opening group, so wrap the complete sequence once.
-    root=ET.fromstring('<svg>'+''.join(scene.parts)+'</svg>')
-    def visit(e,in_text=False):
-        in_text=in_text or 'aria-label' in e.attrib
-        if in_text:
-            if e.tag=='path':
-                e.set('transform',re.sub(r'translate\(([-\d.]+) ([-\d.]+)\)',lambda m:f'translate({m[1]} {float(m[2])*factor})',e.get('transform','')))
-        else:
-            for key in ['y','cy','y1','y2','height']:
-                if key in e.attrib:e.set(key,str(float(e.get(key))*factor))
-            if e.tag=='path':e.set('d',parse_path(e.get('d')).scaled(1,factor,origin=0j).d())
-            if e.tag=='polygon':
-                nums=[float(n) for n in re.findall(r'-?[\d.]+',e.get('points'))]
-                e.set('points',' '.join(f'{x},{y*factor}' for x,y in zip(nums[::2],nums[1::2])))
-        for child in e:visit(child,in_text)
-    for child in root:visit(child);out.append(ET.tostring(child,encoding='unicode'))
-    scene.parts=out
-    for r in scene.text_records:
-        delta=r['baseline']*(factor-1);r['baseline']+=delta;r['bbox'][1]+=delta;r['bbox'][3]+=delta
-    for r in scene.pdf_text:r['y']*=factor
-    scene.arrow_tips=[(x,y*factor) for x,y in scene.arrow_tips]
-
-
-def shift_since(s,part,text,pdf,tip,dy):
-    s.parts[part:]=[f'<g transform="translate(0 {dy})">',*s.parts[part:],'</g>']
-    for r in s.text_records[text:]:
-        r['baseline']+=dy;r['bbox'][1]+=dy;r['bbox'][3]+=dy
-    for r in s.pdf_text[pdf:]:r['y']+=dy
-    s.arrow_tips[tip:]=[(x,y+dy) for x,y in s.arrow_tips[tip:]]
-    s.hatch_records=[(x,y+dy,w,h) for x,y,w,h in s.hatch_records]
