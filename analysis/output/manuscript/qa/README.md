@@ -60,3 +60,18 @@ main Word tables remain one page each; the checklist remains two pages.
 Tests: 414 passing assertions, 54 blocks, no failures/errors/skips/test warnings.
 See analysis/round11-report.md, “Round 11B-2”, for details and the archive's
 16-record/15-currently-cited distinction.
+
+## Round 11B-3
+
+Same build and QA commands as above. The final suite passes 493 assertions in
+57 blocks. `verify-round11.R` also rejects raw reader-facing codes and checks
+that every Table 2–3 value occupies one baseline in the native Word PDF.
+Both tables retain Arial 9 pt; Table 2 has revised explicit column widths.
+Supplement pagination remains 52 pages, with the trace on pages 42–50.
+All Word page previews were inspected, including each trace page individually.
+
+`Figure3-detail-4x.png` and `Figure6-detail-4x.png` show the exclusion box and
+compact paired-swatch legend from the final vector PDFs at 384 dpi (4× final
+size on a 96-dpi display). Full 4× views are retained too. Both details and
+the greyscale/CVD previews were inspected. Protected Figure 1/2 files and all
+numerical CSVs remain unchanged. See round11-report.md, “Round 11B-3”.

@@ -232,3 +232,79 @@ answers. All 16 are retained once, and the footnote states that one additional
 captured record is included. This distinction and the requested presentation
 exceptions are recorded in DEVIATIONS.md entry 36. No statistical-method or
 numerical-estimate change was needed.
+
+## Round 11B-3
+
+Date: 18 October 2026. Started on `main` at `e02a09c`. Implementation and
+regenerated publication/QA outputs are committed separately. No push performed.
+
+### Changes
+
+- Figure 3: widened the exclusion box and reflowed its text into the requested
+  two lines. Shifted the main column left, retained symmetric branches about
+  that column, and expanded the three-line arms and outcome boxes. Font-metric
+  tests require at least 2 mm of horizontal and vertical inner clearance in
+  every box. The plot has 3 mm margins; the rightmost box is 7.5 mm from the
+  figure edge (before the negligible outline half-width).
+- Figure 6: one compact, left-aligned legend row, with equal 3 mm keys and
+  equal entry spacing. The paired light-blue/light-orange swatches are side by
+  side within one key labelled “No individually decisive question (cells)”.
+  The existing full legend retains its explanation of lighter bars and the
+  distinction between question occurrences and cells.
+- Table 2: explicit Source/κ/AC2/exact/sensitivity/specificity widths of
+  1.02/1.18/1.26/1.11/1.08/1.26 inches, totalling 6.91 inches within the
+  6.97-inch portrait text area. Horizontal padding is 2 pt. Every numerical
+  value, including paired differences with negative CI bounds, remains on one
+  line in native Word. The Source descriptions may wrap. Arial **9 pt** is
+  retained throughout; the 8.5 pt fallback was unnecessary.
+- Table 3: Unassisted departure cells now use one parenthesis, for example
+  `26/509 (5.1%; 3.3–6.9)`. The footnote defines the range after the semicolon
+  as the 95% CI in percent. All value cells remain on one line.
+- eTable 31: both arms use Yes, No, Probably yes, Probably no, No information
+  and Not applicable; inactive ARBITER questions retain “Not asked (inactive;
+  branching)”. Evidence types use spaces. Empty recorded unknowns and
+  counterevidence use “—”, defined in the footnote. Verbatim evidence and
+  Unassisted domain rationales remain intact.
+- Scanned all main/supplement Word tables, both HTML reports, legends and
+  Word-rendered supplement text for raw internal codes and snake_case fields.
+  Shared reader formatting expands remaining answer/judgement codes. The
+  verifier rejects unexpected underscored tokens, with explicit exceptions
+  for literal tool/function names, evidence handles and filenames. HTML scans
+  preserve paragraph/cell boundaries so adjacent cells cannot manufacture
+  false internal-code matches.
+
+### Verification and visual QA
+
+- Full suite: **493 passing assertions in 57 test blocks**, zero failures,
+  errors, skipped tests or test warnings. Added font-metric width checks for
+  every value column in Tables 2–3 (Arial 9 pt, padding plus a 0.025-inch Word
+  allowance), physical flow-box padding/edge checks, trace label checks and
+  raw-code scans of the full supplement registry and final reader outputs.
+- `quarto render` completed for both HTML reports; results.qmd was rendered
+  again after the final flow-box height adjustment. Final native Word export
+  followed the completed build. `verify-round11.R` passes, including an actual
+  PDF-baseline check for every Table 2–3 value, current embedded PNG bytes,
+  complete evidence-quote fidelity and the protected-file checks.
+- Native Word: four one-page portrait main tables; two-page checklist;
+  52-page supplement with 56 editable tables. The AVATAR trace remains nine
+  landscape pages (42–50), using its existing Arial 8 pt exception. Inspected
+  the main tables, checklist, all supplement page previews/contact sheets and
+  all nine trace pages individually. No clipping or new pagination defect.
+- Regenerated actual PDF rasters, greyscale and severity-1 protanopia,
+  deuteranopia and tritanopia previews. Personally inspected the final Figure
+  3 exclusion and Figure 6 legend crops at 4× final size (384 dpi at a 96-dpi
+  display scale), plus their full accessibility previews. The crop/full-view
+  PNGs are retained in `output/manuscript/qa/` and reproducible with
+  `qa-round11.R`. Figure 3–6 minimum embedded text remains 7.97, 7.97, 7.11
+  and 7.97 pt; all are 174 mm vector PDFs and 600-dpi LZW TIFFs.
+- All numerical CSVs and protected Figure 1/2 paths are unchanged from
+  `e02a09c`. HTML and Word PDF/page QA intermediates retain the existing
+  ignore policy. R startup locale warnings, and an intermittent renv sandbox
+  activation-delay warning under concurrent QA, are environmental; the test
+  suite reports no warnings.
+
+### Deviations
+
+No methodological or numerical deviation. Main tables remain Arial 9 pt;
+the earlier AVATAR landscape/8 pt exception is unchanged. Used the repository's
+native Microsoft Word export workflow requested for this task.
