@@ -1,9 +1,11 @@
 metric,estimate,lower,upper,valid_replicates,n,count,arm,note
 Evidence coverage,1,1,1,10000,1538,1538,ARBITER-Sonnet,
 Bundle verification,1,1,1,10000,102,102,ARBITER-Sonnet,
+Structural evidence binding,0.9901477832512315,0.9827715221371706,0.9964055282522291,10000,1421,1407,ARBITER-Sonnet,
 Evidence coverage,,,,0,,,Baseline-Sonnet,Not available
 Bundle verification,,,,0,,,Baseline-Sonnet,Not available
 Evidence coverage,1,1,1,10000,1552,1552,ARBITER-Haiku,
 Bundle verification,1,1,1,10000,102,102,ARBITER-Haiku,
+Structural evidence binding,0.996031746031746,0.9918457512482812,0.9992242048099301,10000,1260,1255,ARBITER-Haiku,
 Evidence coverage,,,,0,,,Baseline-Haiku,Not available
 Bundle verification,,,,0,,,Baseline-Haiku,Not available

@@ -94,7 +94,16 @@ The proposed judgement agrees with the official domain algorithm in 510/510 ARBI
 
 Evidence coverage and structural bundle verification are the main grounding evidence. Baseline evidence traces are not available. Verification does not establish assessment correctness or completion. Required active answers were checked in every domain history record of the ARBITER bundles; both arms have zero invalid paths. Invalid-path sensitivity counts, resolving required NA/missing answers first as N/PN and then as NI, are in the supplement.
 
+```{r}
+binding <- table_data('audit-summary') |> filter(metric=='Structural evidence binding')
+for(i in seq_len(nrow(binding))) cat(sprintf('\n%s structural evidence binding: %d/%d (%.1f%%).\n',
+  binding$arm[i],binding$count[i],binding$n[i],100*binding$estimate[i]))
+```
+
+Structural evidence binding requires a non-empty quote, a source identifier matching a captured source in the same bundle, a source version, a page and character offsets with start < end. Each distinct evidence record cited by a current active answer is counted once per bundle. This metric does not re-extract PDF text or establish that the passage supports the answer.
+
 ## Table 5: process metrics
+
 
 ```{r}
 show_table(table_data('table5'))

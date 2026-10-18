@@ -9,6 +9,9 @@ validate_gate(checks)
 weights <- stratified_cluster_weights(inputs$trials,B,SEED)
 cells <- adjudication_cells(inputs)
 run_metrics <- load_run_metrics()
+bundle_bindings <- readr::read_csv('data-derived/bundle-binding-counts.csv',show_col_types=FALSE)
+stopifnot(nrow(bundle_bindings)==204L,!anyDuplicated(paste(bundle_bindings$arm,bundle_bindings$slug)),
+  setequal(bundle_bindings$slug,inputs$trials$slug))
 api_trials <- readr::read_csv('data-derived/api-cost-trials.csv',show_col_types=FALSE)
 api_turns <- readr::read_csv('data-derived/api-cost-turns.csv',show_col_types=FALSE)
 run_metrics <- run_metrics |> rename(harness_cost_usd=cost_usd) |>
@@ -44,7 +47,7 @@ save_table(process_summary(run_metrics),'process-summary')
 save_table(process_display(run_metrics,weights),'table5')
 save_table(process_display(run_metrics,weights,'Haiku'),'table5-haiku')
 save_table(paired_process_difference(run_metrics,weights),'process-differences')
-save_table(audit_summary(run_metrics,weights),'audit-summary')
+save_table(audit_summary(run_metrics,weights,bundle_bindings),'audit-summary')
 save_table(evidence_distribution(run_metrics),'evidence-bases-distribution')
 save_table(bundle_decisions,'bundle-domain-checks')
 save_table(bundle_decisions |> filter(override),'recorded-overrides')
@@ -124,7 +127,7 @@ domain_rates <- bind_rows(lapply(c('D1-D5',paste0('D',1:5)),function(d) {
   consistency_rates(x,weights) |> mutate(domain=d)
 }))
 consistency <- bind_rows(overall_rates,domain_rates,bundle_decision_rates(bundle_decisions,inputs$labels,weights),
-  audit_summary(run_metrics,weights) |> rename(status=metric) |> mutate(domain='Audit',missing=NA_integer_))
+  audit_summary(run_metrics,weights,bundle_bindings) |> rename(status=metric) |> mutate(domain='Audit',missing=NA_integer_))
 save_table(consistency,'table3-supplement')
 save_table(consistency |> filter(arm %in% c('Meta','ARBITER-Sonnet','Baseline-Sonnet')),'table3')
 

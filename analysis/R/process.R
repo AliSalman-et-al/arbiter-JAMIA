@@ -100,7 +100,16 @@ bundle_decision_rates <- function(decisions,labels,weights) {
   }))
 }
 
-audit_summary <- function(metrics,weights) {
+binding_summary <- function(bindings,weights) {
+  bind_rows(lapply(split(bindings,bindings$arm),function(x) {
+    w <- bootstrap_rows(x,weights)
+    interval_table(rbind(share=colSums(w*x$bound_records)/colSums(w*x$cited_records))) |>
+      mutate(arm=x$arm[1],metric='Structural evidence binding',n=sum(x$cited_records),
+        count=sum(x$bound_records),note='')
+  }))
+}
+
+audit_summary <- function(metrics,weights,bindings=NULL) {
   bind_rows(lapply(split(metrics,metrics$arm),function(x) {
     if(!startsWith(x$arm[1],'ARBITER')) return(tibble(arm=x$arm[1],metric=c('Evidence coverage','Bundle verification'),
       estimate=NA_real_,lower=NA_real_,upper=NA_real_,valid_replicates=0L,n=NA_real_,count=NA_real_,note='Not available'))
@@ -113,7 +122,7 @@ audit_summary <- function(metrics,weights) {
       interval_table(share_estimate(x,!is.na(x$verification_passed)&x$verification_passed,weights,valid)) |>
         mutate(metric='Bundle verification',n=sum(valid),count=sum(x$verification_passed,na.rm=TRUE))) |>
       mutate(arm=x$arm[1],note='')
-  }))
+  })) |> bind_rows(if(!is.null(bindings)) binding_summary(bindings,weights))
 }
 
 evidence_distribution <- function(metrics) {

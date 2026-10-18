@@ -101,6 +101,15 @@ show_table(table_data('evidence-bases-distribution'))
 
 The Haiku Table 5 uses median [IQR] and paired mean differences (95% CI). Input tokens are raw counts per trial (no decimals); cache creation and cache read tokens are millions per trial (two decimals); output and thinking tokens are thousands per trial (one decimal). Time is minutes per trial and cost is USD per trial. The following per-arm summaries retain native-unit median, first/third quartiles, and totals over 102 trials. Paired contrasts are the mean per-trial ARBITER-Sonnet minus baseline-Sonnet difference and the total difference, with the same 10,000 bootstrap weights as the primary endpoint. Costs in Table 5 are reconstructed API list-price equivalents, not expenditure. Thinking tokens are a component of output tokens and are not added to output again. Evidence coverage denominators are active answers in available bundles. Verification denominators are available bundles, including any bundle with no assessed domains; absent bundles are not silently treated as passes. Baseline evidence traces are not available, rather than zero.
 
+## Structural evidence binding
+```{r}
+binding <- table_data('audit-summary') |> filter(metric=='Structural evidence binding')
+for(i in seq_len(nrow(binding))) cat(sprintf('\n%s structural evidence binding: %d/%d (%.1f%%).\n',
+  binding$arm[i],binding$count[i],binding$n[i],100*binding$estimate[i]))
+```
+
+Structural evidence binding requires a non-empty quote, a source identifier matching a captured source in the same bundle, a source version, a page and character offsets with start < end. Each distinct evidence record cited in bases or counterevidence by current active answers is counted once per bundle; superseded domain histories are excluded and missing cited records fail the check. The denominator contains cited evidence records, not answers or all stored evidence. Fourteen ARBITER-Sonnet records and five ARBITER-Haiku records instead contain visual evidence fields (region, render, transcription and provenance) and lack the required text-span fields; they remain in the denominator and fail this check. This metric does not re-extract PDF text or establish that the passage supports the answer. It is reported for ARBITER arms only.
+
 ## API list-price reconstruction and reconciliation
 
 The frozen rates and reconstruction rules are those in binding plan section 5.8. Assistant events are deduplicated by message identity; synthetic zero-usage error messages are excluded. Haiku prompts of exactly 100,000 tokens use the lower tier, and 100,001 use the higher tier. Request input counts determine the input-side price. Terminal output is allocated to tiers by request share for the point estimate, with all-low-tier and all-high-tier bounds. Compaction side calls use higher-tier rates and one-hour cache writes; a five-minute-write sensitivity is included. Side-call turns without a compaction boundary are flagged and bounded.

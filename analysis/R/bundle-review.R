@@ -2,6 +2,29 @@
 answer_abbreviation <- function(x) unname(c(yes='Y',probably_yes='PY',probably_no='PN',
   no='N',no_information='NI',not_applicable='NA')[x])
 
+evidence_is_bound <- function(e,source_ids) {
+  text_present <- function(x) is.character(x) && length(x)==1L && !is.na(x) && nzchar(trimws(x))
+  number_present <- function(x) is.numeric(x) && length(x)==1L && is.finite(x)
+  text_present(e$quote) && text_present(e$source_id) && e$source_id %in% source_ids &&
+    text_present(e$source_version) && number_present(e$page) &&
+    number_present(e$start) && number_present(e$end) && e$start < e$end
+}
+
+bundle_binding_counts <- function(canonical,evidence) {
+  # Current domain records only; historical answers are not analysis answers.
+  cited <- unique(unlist(lapply(canonical$domain_records,function(d) {
+    active <- Filter(function(a) a$question_id %in% unlist(d$active_questions),d$answers)
+    unlist(lapply(active,function(a) vapply(c(a$bases,a$counterevidence),function(b)
+      if(is.null(b$evidence)) NA_character_ else b$evidence,character(1))),use.names=FALSE)
+  }),use.names=FALSE))
+  cited <- cited[!is.na(cited)]
+  sources <- unlist(lapply(canonical$batch$trials,function(t)
+    vapply(t$sources,function(s) s$id,character(1))),use.names=FALSE)
+  # A missing cited evidence record stays in the denominator and fails.
+  c(cited_records=length(cited),bound_records=sum(vapply(cited,function(id)
+    evidence_is_bound(evidence[[id]],sources),logical(1))))
+}
+
 bundle_review_records <- function(canonical,arm,slug) {
   mapping <- c('domain:randomization'='D1','domain:deviations'='D2','domain:missing'='D3',
     'domain:measurement'='D4','domain:selection'='D5')
@@ -57,19 +80,24 @@ bundle_trace_records <- function(canonical,slug,eligible) {
 
 extract_bundle_review <- function(inputs,root='..',output='data-derived') {
   cells <- adjudication_cells(inputs) |> filter(consensus,kit==preferred,kit!=meta)
-  paths <- traces <- list()
+  paths <- traces <- bindings <- list()
   for(arm in c('ARBITER-Sonnet','ARBITER-Haiku')) for(slug in inputs$trials$slug) {
     path <- file.path(root,ARMS[[arm]],'bundles',paste0(slug,'.rob2.zip'))
     if(!file.exists(path)) stop('Bundle absent: ',path)
     canonical <- json_zip(path,'canonical.json')
+    entries <- unzip(path,list=TRUE)$Name
+    evidence <- list()
+    for(entry in entries[grepl('^evidence/.*[.]json$',entries)]) {
+      e <- json_zip(path,entry)
+      evidence[[e$identity]] <- e
+    }
+    counts <- bundle_binding_counts(canonical,evidence)
+    bindings[[paste(arm,slug)]] <- tibble(arm=arm,slug=slug,
+      cited_records=unname(counts['cited_records']),bound_records=unname(counts['bound_records']))
     paths[[paste(arm,slug)]] <- bundle_review_records(canonical,arm,slug)
     eligible <- filter(cells,.data$slug==.env$slug)
     if(arm=='ARBITER-Sonnet' && nrow(eligible)) {
-      entries <- unzip(path,list=TRUE)$Name
-      for(entry in entries[grepl('^evidence/',entries)]) {
-        e <- json_zip(path,entry)
-        canonical$proposal$evidence[[e$identity]] <- e
-      }
+      canonical$proposal$evidence <- evidence
       verification <- json_zip(path,'verification.json')
       traces[[slug]] <- bundle_trace_records(canonical,slug,eligible) |>
         mutate(verification_status=verification$result,
@@ -81,6 +109,7 @@ extract_bundle_review <- function(inputs,root='..',output='data-derived') {
   stopifnot(!any(checks$invalid_path),!any(checks$invalid_active_answer),
     all(checks$active_questions==checks$active_answered))
   readr::write_csv(checks,file.path(output,'bundle-path-checks.csv'))
+  readr::write_csv(bind_rows(bindings),file.path(output,'bundle-binding-counts.csv'))
   readr::write_csv(bind_rows(traces),file.path(output,'bundle-trace-evidence.csv'))
   invisible(checks)
 }
