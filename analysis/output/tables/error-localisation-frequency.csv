@@ -1,0 +1,89 @@
+population,source,domain,question,n,short_text
+Primary,ARBITER-Sonnet,D1,1.1,0,Random allocation sequence
+Primary,ARBITER-Sonnet,D1,1.2,1,Concealment until enrolment and assignment
+Primary,ARBITER-Sonnet,D1,1.3,0,Baseline imbalance suggesting a randomisation problem
+Primary,ARBITER-Sonnet,D2,2.1,0,Participants aware of assignment
+Primary,ARBITER-Sonnet,D2,2.2,0,Carers or intervention providers aware of assignment
+Primary,ARBITER-Sonnet,D2,2.3,3,Deviations arising from trial context
+Primary,ARBITER-Sonnet,D2,2.4,0,Deviations affecting the outcome
+Primary,ARBITER-Sonnet,D2,2.5,0,Deviations balanced across groups
+Primary,ARBITER-Sonnet,D2,2.6,0,Appropriate analysis of assignment effect
+Primary,ARBITER-Sonnet,D2,2.7,1,Substantial impact of analysing outside assigned groups
+Primary,ARBITER-Sonnet,D3,3.1,0,Outcome data available for nearly everyone
+Primary,ARBITER-Sonnet,D3,3.2,0,Evidence against bias from missing data
+Primary,ARBITER-Sonnet,D3,3.3,0,Missingness potentially depends on true outcome
+Primary,ARBITER-Sonnet,D3,3.4,0,Missingness likely depends on true outcome
+Primary,ARBITER-Sonnet,D4,4.1,0,Inappropriate measurement method
+Primary,ARBITER-Sonnet,D4,4.2,0,Measurement differs across groups
+Primary,ARBITER-Sonnet,D4,4.3,0,Assessors aware of received intervention
+Primary,ARBITER-Sonnet,D4,4.4,0,Assessment potentially influenced by awareness
+Primary,ARBITER-Sonnet,D4,4.5,0,Assessment likely influenced by awareness
+Primary,ARBITER-Sonnet,D5,5.1,2,Analysis plan finalised before unblinding
+Primary,ARBITER-Sonnet,D5,5.2,0,Result selected from eligible outcome measurements
+Primary,ARBITER-Sonnet,D5,5.3,1,Result selected from eligible analyses
+Primary,Baseline-Sonnet,D1,1.1,0,Random allocation sequence
+Primary,Baseline-Sonnet,D1,1.2,3,Concealment until enrolment and assignment
+Primary,Baseline-Sonnet,D1,1.3,0,Baseline imbalance suggesting a randomisation problem
+Primary,Baseline-Sonnet,D2,2.1,0,Participants aware of assignment
+Primary,Baseline-Sonnet,D2,2.2,0,Carers or intervention providers aware of assignment
+Primary,Baseline-Sonnet,D2,2.3,3,Deviations arising from trial context
+Primary,Baseline-Sonnet,D2,2.4,0,Deviations affecting the outcome
+Primary,Baseline-Sonnet,D2,2.5,0,Deviations balanced across groups
+Primary,Baseline-Sonnet,D2,2.6,3,Appropriate analysis of assignment effect
+Primary,Baseline-Sonnet,D2,2.7,0,Substantial impact of analysing outside assigned groups
+Primary,Baseline-Sonnet,D3,3.1,1,Outcome data available for nearly everyone
+Primary,Baseline-Sonnet,D3,3.2,0,Evidence against bias from missing data
+Primary,Baseline-Sonnet,D3,3.3,0,Missingness potentially depends on true outcome
+Primary,Baseline-Sonnet,D3,3.4,0,Missingness likely depends on true outcome
+Primary,Baseline-Sonnet,D4,4.1,0,Inappropriate measurement method
+Primary,Baseline-Sonnet,D4,4.2,0,Measurement differs across groups
+Primary,Baseline-Sonnet,D4,4.3,0,Assessors aware of received intervention
+Primary,Baseline-Sonnet,D4,4.4,0,Assessment potentially influenced by awareness
+Primary,Baseline-Sonnet,D4,4.5,1,Assessment likely influenced by awareness
+Primary,Baseline-Sonnet,D5,5.1,18,Analysis plan finalised before unblinding
+Primary,Baseline-Sonnet,D5,5.2,1,Result selected from eligible outcome measurements
+Primary,Baseline-Sonnet,D5,5.3,1,Result selected from eligible analyses
+Sensitivity,ARBITER-Sonnet,D1,1.1,0,Random allocation sequence
+Sensitivity,ARBITER-Sonnet,D1,1.2,1,Concealment until enrolment and assignment
+Sensitivity,ARBITER-Sonnet,D1,1.3,0,Baseline imbalance suggesting a randomisation problem
+Sensitivity,ARBITER-Sonnet,D2,2.1,0,Participants aware of assignment
+Sensitivity,ARBITER-Sonnet,D2,2.2,0,Carers or intervention providers aware of assignment
+Sensitivity,ARBITER-Sonnet,D2,2.3,3,Deviations arising from trial context
+Sensitivity,ARBITER-Sonnet,D2,2.4,0,Deviations affecting the outcome
+Sensitivity,ARBITER-Sonnet,D2,2.5,0,Deviations balanced across groups
+Sensitivity,ARBITER-Sonnet,D2,2.6,0,Appropriate analysis of assignment effect
+Sensitivity,ARBITER-Sonnet,D2,2.7,1,Substantial impact of analysing outside assigned groups
+Sensitivity,ARBITER-Sonnet,D3,3.1,0,Outcome data available for nearly everyone
+Sensitivity,ARBITER-Sonnet,D3,3.2,0,Evidence against bias from missing data
+Sensitivity,ARBITER-Sonnet,D3,3.3,0,Missingness potentially depends on true outcome
+Sensitivity,ARBITER-Sonnet,D3,3.4,0,Missingness likely depends on true outcome
+Sensitivity,ARBITER-Sonnet,D4,4.1,0,Inappropriate measurement method
+Sensitivity,ARBITER-Sonnet,D4,4.2,0,Measurement differs across groups
+Sensitivity,ARBITER-Sonnet,D4,4.3,0,Assessors aware of received intervention
+Sensitivity,ARBITER-Sonnet,D4,4.4,0,Assessment potentially influenced by awareness
+Sensitivity,ARBITER-Sonnet,D4,4.5,0,Assessment likely influenced by awareness
+Sensitivity,ARBITER-Sonnet,D5,5.1,2,Analysis plan finalised before unblinding
+Sensitivity,ARBITER-Sonnet,D5,5.2,0,Result selected from eligible outcome measurements
+Sensitivity,ARBITER-Sonnet,D5,5.3,1,Result selected from eligible analyses
+Sensitivity,Baseline-Sonnet,D1,1.1,0,Random allocation sequence
+Sensitivity,Baseline-Sonnet,D1,1.2,3,Concealment until enrolment and assignment
+Sensitivity,Baseline-Sonnet,D1,1.3,0,Baseline imbalance suggesting a randomisation problem
+Sensitivity,Baseline-Sonnet,D2,2.1,0,Participants aware of assignment
+Sensitivity,Baseline-Sonnet,D2,2.2,0,Carers or intervention providers aware of assignment
+Sensitivity,Baseline-Sonnet,D2,2.3,3,Deviations arising from trial context
+Sensitivity,Baseline-Sonnet,D2,2.4,0,Deviations affecting the outcome
+Sensitivity,Baseline-Sonnet,D2,2.5,0,Deviations balanced across groups
+Sensitivity,Baseline-Sonnet,D2,2.6,4,Appropriate analysis of assignment effect
+Sensitivity,Baseline-Sonnet,D2,2.7,0,Substantial impact of analysing outside assigned groups
+Sensitivity,Baseline-Sonnet,D3,3.1,1,Outcome data available for nearly everyone
+Sensitivity,Baseline-Sonnet,D3,3.2,0,Evidence against bias from missing data
+Sensitivity,Baseline-Sonnet,D3,3.3,0,Missingness potentially depends on true outcome
+Sensitivity,Baseline-Sonnet,D3,3.4,0,Missingness likely depends on true outcome
+Sensitivity,Baseline-Sonnet,D4,4.1,0,Inappropriate measurement method
+Sensitivity,Baseline-Sonnet,D4,4.2,0,Measurement differs across groups
+Sensitivity,Baseline-Sonnet,D4,4.3,0,Assessors aware of received intervention
+Sensitivity,Baseline-Sonnet,D4,4.4,0,Assessment potentially influenced by awareness
+Sensitivity,Baseline-Sonnet,D4,4.5,1,Assessment likely influenced by awareness
+Sensitivity,Baseline-Sonnet,D5,5.1,18,Analysis plan finalised before unblinding
+Sensitivity,Baseline-Sonnet,D5,5.2,2,Result selected from eligible outcome measurements
+Sensitivity,Baseline-Sonnet,D5,5.3,1,Result selected from eligible analyses

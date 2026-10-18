@@ -1,0 +1,25 @@
+population,source,class,n,class_order
+Primary,ARBITER-Sonnet,Judgement departs from own answers,0,1
+Primary,ARBITER-Sonnet,Single decisive question,6,2
+Primary,ARBITER-Sonnet,Several decisive questions,1,3
+Primary,ARBITER-Sonnet,Jointly decisive,2,4
+Primary,ARBITER-Sonnet,"Answers agree, judgement differs",1,5
+Primary,ARBITER-Sonnet,Not attributable,0,6
+Primary,Baseline-Sonnet,Judgement departs from own answers,4,1
+Primary,Baseline-Sonnet,Single decisive question,27,2
+Primary,Baseline-Sonnet,Several decisive questions,2,3
+Primary,Baseline-Sonnet,Jointly decisive,11,4
+Primary,Baseline-Sonnet,"Answers agree, judgement differs",2,5
+Primary,Baseline-Sonnet,Not attributable,1,6
+Sensitivity,ARBITER-Sonnet,Judgement departs from own answers,0,1
+Sensitivity,ARBITER-Sonnet,Single decisive question,6,2
+Sensitivity,ARBITER-Sonnet,Several decisive questions,1,3
+Sensitivity,ARBITER-Sonnet,Jointly decisive,4,4
+Sensitivity,ARBITER-Sonnet,"Answers agree, judgement differs",1,5
+Sensitivity,ARBITER-Sonnet,Not attributable,0,6
+Sensitivity,Baseline-Sonnet,Judgement departs from own answers,4,1
+Sensitivity,Baseline-Sonnet,Single decisive question,29,2
+Sensitivity,Baseline-Sonnet,Several decisive questions,2,3
+Sensitivity,Baseline-Sonnet,Jointly decisive,18,4
+Sensitivity,Baseline-Sonnet,"Answers agree, judgement differs",2,5
+Sensitivity,Baseline-Sonnet,Not attributable,2,6

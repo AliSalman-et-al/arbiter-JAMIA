@@ -1,0 +1,404 @@
+slug,domain,preferred,meta,ARBITER_label,Baseline_label,own_A,own_Z,source,losing_label,usable_A,usable_Z,usable_adjudicators,class,own_algorithm,discordant_questions,adjudicators_differ,unresolved_reference_questions,decisive_questions,invalid_substitutions,all_substitutions_algorithm,reference_algorithm,reference_judgement_departs,primary,adjudication_explanation_A,adjudication_explanation_Z
+bausys-2023,D2,Some concerns,Some concerns,Low,Low,Some concerns,Some concerns,ARBITER-Sonnet,Low,TRUE,TRUE,A; Z,Single decisive question,Low,2.3,2.6; 2.7,,2.3,,Some concerns,A=Some concerns; Z=Some concerns,,TRUE,"D2: **Reviewer A’s Some concerns is most defensible.** Challenging A and my earlier assessment, unblinding alone does not establish bias, imperfect adherence need not reflect trial-context deviations, screening-error exclusions may be legitimate, and exclusions solely for missing outcomes belong outside D2 (§5.3.1; Box 6, 2.3 and 2.6). These considerations support B and C’s Low judgements. However, the specific result includes only 59 surgical patients per group (article, Table 2), omitting participants who died before surgery or became unfit (p. 1803). This conditions the analysis on post-randomization treatment progression; it is not clearly an otherwise appropriate ITT analysis excluding only unavailable measurements. Box 6, 2.6 treats exclusions of eligible randomized participants as inappropriate. The few, approximately balanced exclusions probably did not substantially affect the result, supporting 2.7=PN and **Some concerns** through Table 6, Part 2. Separately, acknowledged contamination risk and inadequate adherence measurement (p. 1805) do not prove deviations occurred, but leave their occurrence and trial-context origin uncertain; Box 6, 2.3 expressly permits NI in this situation. Thus neither Low judgement adequately resolves the analysis concern. Reconsideration weakens any argument based merely on unblinding or withdrawal, but does not justify Low.
+
+CHOICE: D2=A
+REVISED: D2=Some concerns","# Adjudication of Domain 2: Bausys 2023
+
+**Choice: Reviewer A (Some concerns).** All three reviewers agree on the analysis part of the domain, and all three would reach Low there. The disagreement comes down to one question: was 2.3 (""Were there deviations from the intended intervention that arose because of the trial context?"") answered ""No information"" or ""Probably no""?
+
+- **Low (B and C)** requires 2.3 = N/PN, via Table 6, Part 1 row ""Either 2.1 or 2.2 Y/PY/NI → 2.3 N/PN → Low"".
+- **Some concerns (A)** follows from 2.3 = NI, via the row ""2.3 NI → Some concerns"" (Figure 2: 2.3 ""NI"" → Some concerns).
+- 2.1 = Y and 2.2 = Y are not in dispute: the trial says ""neither the participants nor personnel were blinded"" (p.1801).
+
+**Trying to invalidate B and C (Low):**
+- **Their best case for ""Probably no"":**
+  - Fig. 1 reports ""Discontinued intervention n = 0"" in both arms.
+  - The control group ""did not receive advice on prehabilitation-related interventions"" (p.1801).
+  - Surgery type, approach, duration and R0 resection are balanced between arms (Table 1).
+  - Box 6 allows Y/PY at 2.3 ""only if there is evidence, or strong reason to believe"", and there is no such evidence.
+  - §1.1 says NI for a question that looks for a problem ""corresponds to no evidence of that problem"".
+- **Why that doesn't hold up:**
+  - The Box 6 rule above sets the bar for answering Yes. It does not license ""Probably no"".
+  - For this particular question, the Table 6 and Figure 2 algorithm explicitly maps NI to Some concerns. That more specific rule takes precedence over the general §1.1 remark.
+  - A PN answer has to rest on positive information. The flow chart's ""discontinued intervention"" only describes uptake of each arm's own allocation. It says nothing about what control patients did on their own or which co-interventions they received.
+  - The authors themselves state ""there was a risk of contamination in the control group"" and that ""the study lacked objective tools for measuring adherence"" (p.1805). They report no measurement of exercise, nutrition or psychological support in the control arm.
+  - Box 6 2.3 gives this exact situation as grounds for NI: ""The answer 'No information' may be appropriate, because trialists do not always report whether deviations arose because of the trial context.""
+  - §5.1.2.1 uses this very mechanism as its example of a deviation caused by the trial: controls who feel ""unlucky"" after giving consent and seek the intervention.
+  - Ward staff were only ""not actively informed"" of allocation, and several authors were treating surgeons. So it remains unverified whether perioperative co-interventions differed.
+
+**Trying to invalidate A (my own judgement):**
+- **Challenge 1:** contamination is patient behaviour that could also happen outside a trial, and Box 6 says to answer N/PN for changes ""consistent with what could occur outside the trial context"". But exercise prompted by the consent process is exactly the trial-context example in §5.1.2.1, so this challenge fails.
+- **Challenge 2:** under §1.2.1 (""risk of material bias""), contamination would bias towards the null, which can't explain a large benefit. That is a fair point for the contamination part. However, unreported differences in perioperative care could favour either arm. And §1.2.2 advises against guessing direction without a clear rationale. Neither point is strong enough to override the algorithm (§1.2.4 asks for reasons when departing from it).
+- **Challenge 3 (the analysis questions, 2.6 and 2.7):**
+  - The 10 exclusions from 128 are balanced: 3 ineligible, 3 who withdrew consent and had no data, and 4 who never had surgery.
+  - No one was analysed in the wrong group.
+  - Under Box 6 2.6, this counts as an acceptable analysis that excludes only participants without outcome data (or ineligible ones), so 2.6 = PY.
+  - Even if 2.6 were answered PN, 2.7 would be PN, which gives at most Some concerns and never High.
+
+**Conclusion:** Low depends on inferring ""no deviations"" from silence, in a trial whose own authors flag an unmeasured contamination risk. Under the guidance's specific NI elaboration and the Table 6 / Figure 2 mapping, Some concerns is the more defensible judgement. Two reviewers agreeing on Low doesn't outweigh that.
+
+CHOICE: D2=A
+REVISED: D2=Some concerns"
+fulop-2021,D1,Some concerns,Some concerns,Low,Low,Some concerns,Some concerns,ARBITER-Sonnet,Low,TRUE,TRUE,A; Z,Single decisive question,Low,1.2,1.3,,1.2,,Some concerns,A=Some concerns; Z=Some concerns,,TRUE,"**D1 — Reviewer A; Some concerns.** Computer-generated numbers establish random sequence generation (article, p.83). Against A, allocation by a coordinator uninvolved in clinical management provides some reassurance. However, B/C’s Low judgement requires assuming that this also prevented enrolling personnel from knowing forthcoming allocations; neither document establishes that safeguard. Box 4, 1.2 requires concealment until enrolment and assignment, and independence from clinical management is not equivalent to independence from enrolment. The apparently similar baseline groups cannot resolve this: Tables 1–2 cover only analysed participants, for which Box 4, 1.3 permits NI. Table 4 therefore supports Some concerns with 1.2=NI.
+
+**D2 — Reviewer B, tied with C; my judgement remains High.** A’s Low is defensible for intervention delivery: awareness alone does not establish trial-context deviations (Box 6, 2.3). It fails, however, to address the deliberate exclusion of 23 randomized TAMIS participants after study completion (article, p.84; Figure 1). Box 6, 2.6 treats exclusion of eligible randomized participants as inappropriate; these were not documented discoveries of baseline ineligibility. B/C’s Some concerns would require judging substantial impact unlikely. Challenging my earlier assessment, exclusions were numerically balanced and clinically explained. Nevertheless, they removed 12.5% of randomized participants whose primary outcomes reportedly differed substantially. Box 6, 2.7 asks about **potential**, not demonstrated impact; 2.6=N and 2.7=PY yield High under Table 6.
+
+**D3 — Reviewer C; High.** A’s Low would require assuming near-complete presurgical measurement. Figure 1 and Table 2 do not establish that: the table lacks time-specific denominators, and the flowchart does not allocate functional-data losses to particular assessments. Conversely, the 34 non-attenders cannot automatically be treated as missing presurgical outcomes, and deliberate TAMIS exclusions belong in D2 rather than automatically counting as missing data (§6.1). These limitations challenge both a confident High based on observed informative losses and B’s assumption that outcome-dependent missingness was unlikely. Health-related losses make dependence possible, but its likelihood remains unresolved. With 3.1=PN, 3.2=N, 3.3=PY and 3.4=NI, Table 10 explicitly proposes High; no robustness analysis supports overriding it.
+
+**D4 — Reviewer B, tied with C; Some concerns.** A’s Low has substantial support: the registry specifies blinded assessors independent of intervention delivery, and the article describes the same numerical treadmill measurement in both groups (p.84). However, participants knew their assignment and selected a walking speed that would make them tired. Section 7.3 says participant–collector assessments should be considered unblinded when either party is aware, absent convincing contrary evidence. Thus observer blinding does not entirely remove potential influence on effort. Against B/C, objective recording and independent assessors reduce that concern, but do not eliminate it. They support 4.5=PN rather than likely influence; Table 12 therefore gives Some concerns.
+
+**D5 — Reviewer B, tied with C; revised to Some concerns.** A’s Low lacks a sufficiently detailed, prospectively dated analysis plan: the supplied registry cannot verify the percentage metric and analysis population before unblinded outcomes became available (§8.3.1; Box 11, 5.1). However, my previous High overstated what the TAMIS exclusion proves. The authors explain clinical differences between surgical populations; they do not demonstrate choosing among treatment-effect estimates because of their direction, magnitude or significance—the selection mechanism defined in §8.1 and Box 11, 5.3. Table 2 also reports absolute and relative 6MWD at all stated endpoint visits, including nonsignificant results. The exclusion warrants scrutiny but does not by itself establish likely selective reporting. Unverified analysis intentions and unresolved analytical selection support Some concerns under Table 14.
+
+CHOICE: D1=A; D2=B; D3=C; D4=B; D5=B
+REVISED: D1=Some concerns; D2=High; D3=High; D4=Some concerns; D5=Some concerns","# Adjudication of the three reviewers' judgements, with my revisions
+
+**D1: Randomisation.** For B and C to reach Low, 1.2 must be Y/PY (Table 4 row 1; Table 3 ""Low"" requires ""(i) The allocation sequence was adequately concealed""). The best case for PY is that the article says allocation was done ""by a study coordinator who was not involved in the clinical management of the patients"", separate from the chief surgeon who checked eligibility. Box 4, 1.2 says a ""judgement may be required to justify… 'Probably yes'"". That case doesn't hold up:
+- Box 4 asks for independence from the *enrolment* personnel, not from the clinical team.
+- The registry says randomisation happened at the ""Nurse-led ERAS/Prehab clinic"", and lists ""Consent signed"" after it. The same nurse appears to randomise and enrol, and a ""trained nurse"" also carried out the rehabilitation.
+- No mechanism for hiding the sequence is described: no central or remote service, no envelopes.
+
+I challenged my own NI as well. Answering PN would need ""reason to suspect"" foreknowledge, and there is none, so NI stands. Baseline differences look like chance. That gives Table 4 row ""Any / NI / N/PN/NI"" → Some concerns. A is the most defensible.
+
+**D2: Deviations from intended interventions (effect of assignment).** A's Low needs Low in Part 2, which means 2.6 Y/PY. Box 6, 2.6 says ""Analyses excluding eligible trial participants post-randomization should also be considered inappropriate"". The 23 TAMIS patients met every inclusion criterion and were removed ""After completion of the whole study"". The only allowed exception is for *ineligible* participants, so it doesn't apply. High would need 2.7 Y/PY, but:
+- The exclusions were balanced (11 vs 12).
+- They were based on a procedure type agreed before randomisation (registry).
+- The rest of the comparison therefore stays randomised.
+
+So 2.7 is PN and Table 6 gives Some concerns. B and C agree; I've picked B.
+
+**D3: Missing outcome data.** A's Low fails Box 8, 3.1 (""data from 95%… will often be sufficient""). At most 149/161 non-TAMIS patients have data, and the non-attenders (16 vs 18) lost functional data according to the Fig. 1 footnote. C's High needs 3.4 Y/PY. I checked each of the five reasons Box 8 lists:
+- **Proportions:** similar between arms (excluded 4/81 vs 8/80; non-attenders 16 vs 18).
+- **Reasons:** the same kinds in both arms.
+- **Circumstances:** health-related missingness is *possible* (deaths, emergency surgery). But the time-of-surgery test was done while patients were in hospital, and the non-attendance most likely refers to the outpatient follow-up visits.
+
+That fits ""could depend"" (3.3 PY), not ""likely depended"" (3.4 PN). Table 10 row 4 gives Some concerns. I've picked B.
+
+**D4: Measurement of the outcome.** A's Low needs 4.3 N or 4.4 N. §7.3 says that when the participant is unblinded and the outcome comes from their interaction with a data collector, assessors ""should be considered to be aware"". The 6MWD here was self-paced (""a speed that would make them tired""), so it depends on effort, and 4.4 is Y. Low isn't defensible.
+
+My own High doesn't hold up well against Box 10, 4.5 either:
+- The registry says assessors were masked and rehabilitation staff were ""not involved in outcome assessment"".
+- The result is a measured distance, not a self-report.
+- Box 10's High examples are self-reported homeopathy symptoms and function assessed by the physiotherapist who delivered the treatment. Neither matches this trial.
+- My weekly-practice argument is about a learning effect from the intervention, not about knowledge of allocation changing the assessment.
+- My FVC comparison is weak, because FVC was never trained.
+
+The outcome ""could have"" been influenced, but there's no firm reason to say it was ""likely"". So 4.5 is PN, and Table 12 row 3 gives Some concerns. I'm revising my D4 from High down to Some concerns and choosing B.
+
+**D5: Selection of the reported result.** A's Low needs 5.1 Y/PY. That fails:
+- The trial was registered on 27 Nov 2018, after enrolment started in Oct 2017.
+- No SAP was found, and the registry gives no metric for 6MWD.
+- Primary outcomes were switched.
+- The TAMIS exclusion was decided after the study ended.
+
+My own 5.3 PY needs ""clear evidence"" that the reported result was ""likely… selected on the basis of the results"" (Box 11, 5.3). §8.1 defines that as selection by ""direction, magnitude or statistical significance"" of the effect estimate. The trial's reason for excluding TAMIS patients was that their outcome *levels* were very different (2-day stays, very low morbidity). That is not the between-group effect, and nothing shows the restricted analysis was picked because it favoured prehabilitation. The exclusion itself is already penalised in D2. So 5.3 is better answered NI, which gives Some concerns on Table 14 / Fig. 7, and 5.1 N gives the same. I'm revising my D5 from High down to Some concerns and choosing B.
+
+CHOICE: D1=A; D2=B; D3=B; D4=B; D5=B
+REVISED: D1=Some concerns; D2=Some concerns; D3=Some concerns; D4=Some concerns; D5=Some concerns"
+hanafiah-2022,D2,Low,Low,Some concerns,High,Low,Low,ARBITER-Sonnet,Some concerns,TRUE,TRUE,A; Z,Single decisive question,Some concerns,2.3,,,2.3,,Low,A=Low; Z=Low,,TRUE,"**D1 — High (Reviewer A; C is equally defensible).** The strongest argument against High is that distributing coded lists does not prove recruiters could interpret forthcoming assignments. Nevertheless, the enrolling nurse selected the lowest available ID from locally supplied lists containing randomisation codes, with fixed blocks of six and no described access safeguards (article p.3). Blinding the authors does not establish concealment from recruiters. Box 4, question 1.2, requires “reason to suspect” foreknowledge, rather than proof of manipulation; §4.3.2 also identifies predictable fixed-block allocation as problematic. Thus PN for concealment is more defensible than NI, rejecting B’s Some concerns under Figure 1. Conversely, the baseline age difference does **not** independently justify High: Table 1 covers completers only, warranting NI for 1.3 under Box 4.
+
+**D2 — Low (Reviewer C).** B’s High could follow from interpreting the completer analysis as an inappropriate per-protocol analysis, but the reported exclusions correspond to attrition, with no evidence that available outcomes were discarded for non-adherence or reassigned between groups (Figure 1; Table 2). Section 5.3.1 explicitly treats analyses excluding missing outcomes as appropriate for D2. A’s Some concerns is plausible if trial-context deviations are genuinely unknown. However, the article supplies explanatory evidence: limited app use, participants’ low perceived need for care, and promoters’ difficulties adapting their communication style (p.8). These support ordinary engagement and implementation difficulties rather than trial-induced departures. Challenging my earlier assessment, absence of reported contamination alone would not justify Low; here, the reported circumstances support PN. Box 6, 2.3 requires evidence or strong reason linking departures to the trial context and allows PN for difficulties consistent with practice outside trials. With 2.6=PY, Table 6 proposes Low.
+
+**D3 — High (Reviewer A; B is equally defensible).** C’s Some concerns correctly challenges any inference based solely on the large attrition percentage: magnitude alone does not establish outcome-dependent missingness (§6.1.3.2). Pregnancy losses were also similar between groups—77 versus 84—and some other losses were logistical (Figure 1). However, pregnancy accounts for 161 of 243 missing endpoints and directly affects the waist circumference that would have been measured. That supports **likely**, rather than merely possible, dependence on the true outcome under Box 8, 3.4, reason 2. Neither planned pregnancy exclusions nor broadly balanced losses establish absence of bias; §6.1.3 explains that outcome-dependent missingness can bias continuous-outcome comparisons even without differential missingness between arms. No suitable sensitivity analysis is reported. Figure 4 therefore supports High through N/N/Y/PY, independently of concerns about the analysis in D2.
+
+**D4 — Some concerns (Reviewer A; C is equally defensible).** B’s Low has substantial support: trained nurses used standardized WHO STEPS procedures and were separate from intervention providers (article p.3). My earlier judgement would be too severe if waist measurement involved effectively no assessor discretion. However, manually locating and measuring waist circumference involves some judgement, unlike an automated measurement; standardization reduces that discretion without eliminating it. Assessor blinding is not reported, and the registry specifies no masking, supporting probable awareness. Section 7.1’s observer-outcome category involving some judgement and Box 10, 4.4 therefore support possible influence. Conversely, separate assessors, training and standardized procedures argue against **likely** material influence under §7.3 and Box 10, 4.5. Figure 5 consequently supports Some concerns through N/PN/PY/PY/PN.
+
+CHOICE: D1=A; D2=C; D3=A; D4=A
+REVISED: D1=High; D2=Low; D3=High; D4=Some concerns","# Adjudication of the three reviewers' RoB 2 judgements for Hanafiah 2022, change in waist circumference
+
+My revised judgements are the same as my first assessment: **D1 High, D2 Low, D3 High, D4 Some concerns**. After trying to break each reviewer's judgement, and my own, A's D1/D3/D4 and C's D2 held up best. Where two reviewers agree, I picked one letter; the agreement itself didn't count as evidence.
+
+**D1 (A/C High vs B Some concerns).** B's Some concerns only works if 1.2 is ""No information"" and 1.3 is No/Probably no/NI (Table 4, row ""Any response / NI / N/PN/NI""). The strongest case for B is that ""randomisation codes"" might have been neutral labels such as A/B rather than arm names, so the enrolling nurse might not have seen the next arm. I tested that. Even with neutral codes, this was an open trial (""non-blinded"", p.2; registry ""Masking: NONE""), so each assignment became known as soon as the participant started her arm. Blocks were a fixed six per clinic, and the nurse working through the list assigned ""the lowest available ID number"" (p.3). §4.3.2 covers exactly this: ""When blocking is used… This will be a problem when the person recruiting participants knows the start and end of each block and the allocations are revealed after assignment… more serious if block sizes are small and of equal sizes. In such situations, an answer of 'No' or 'Probably no' should be provided."" So the guidance itself calls for Probably no, not ""No information"". A Probably no on 1.2 leads straight to High (Table 4, row ""Any response / N/PN / Any response → High""). I also looked for a reason to override, under §4.4's allowance for overrides. I found none: baseline data exist only for completers (1.3 = NI), so they can't reassure. **High stands.**
+
+**D2 (C Low vs A Some concerns vs B High).** B's High needs 2.6 to be No/Probably no/NI and 2.7 to be Yes/Probably yes/NI (Table 6, Part 2). That would mean the analysis was effectively per-protocol with a substantial impact. The strongest hint is Figure 1's label ""6 contact points and endpoint visit (n=145)"". But the attrition boxes account for all 127 + 116 excluded women by reason: pregnancy, lost to follow-up, withdrawal, health, moved, phone incompatibility. None is listed as excluded for non-adherence while still measured. Box 6, 2.6 says ""mITT analyses excluding participants with missing outcome data should be considered appropriate"". §6.1 counts women who ""can no longer experience the outcome"" (here, pregnant women) as missing outcome data, which belongs in D3. The only clear non-adherence-type exclusion is 3 phone-incompatible women, about 1%. Even if that made 2.6 Probably no, 2.7 would be Probably no, giving Some concerns, not High. So B fails.
+
+A's Some concerns could also come from Part 1, with 2.3 = NI (""may be appropriate, because trialists do not always report…""). Against that, Box 6 says to answer Yes ""only if there is evidence, or strong reason to believe, that the trial context led to failure to implement"". The reported fidelity problems are that CHPs were uncomfortable and the app was little used (p.8). Those would happen outside a trial too, so they get No/Probably no. I accept that A's reading is a reasonable alternative. Still, the rubric's default for an unreported problem the question looks for is ""no evidence of that problem"" (§1.1), which supports **Low**.
+
+**D3 (A/B High vs C Some concerns).** C's Some concerns needs 3.4 to be No/Probably no. The best case for C: pregnancy, the main reason for missing data, was balanced (77 vs 84), and the proportions missing differ only modestly (53% vs 58% analysed). But Box 8, 3.4 lists ""Reported reasons for missing outcome data differ between the intervention groups"" as a reason for Yes. Figure 1 shows withdrawal 23 vs 14, lost to follow-up 12 vs 5, and phone incompatibility 3 vs 0 (only possible in the intervention arm). Reason 4 (trial circumstances) also applies: in adiposity trials, dropout plausibly tracks weight trajectory, and 44% of outcomes are missing with no sensitivity analysis (so 3.2 = N). Table 10, row ""N/PN/NI; N/PN; Y/PY/NI; Y/PY/NI → High"". **High stands.**
+
+**D4 (A/C Some concerns vs B Low).** For Low, B needs either 4.3 = No (blinded assessors) or 4.4 = No (assessment couldn't be influenced). Nothing reports blinding of the study nurses, and the registry says ""Masking: NONE"". Box 10, 4.3 says answer No only ""if outcome assessors were blinded"". For 4.4, B could argue that waist circumference is objective. But it is a manual tape measurement, which involves placement, tension and reading. That fits §7.1(5) category 3, ""observer-reported outcomes involving some judgement"", not category 2 (e.g. ""the result of an automated test""). Concluding influence was likely (4.5 = Yes) would be too strong given the WHO STEPS protocol and data collectors separate from the intervention team, so 4.5 = Probably no. Table 12 → **Some concerns**.
+
+CHOICE: D1=A; D2=C; D3=A; D4=A
+REVISED: D1=High; D2=Low; D3=High; D4=Some concerns"
+ibrahim-2017,D2,Low,Low,Some concerns,Some concerns,Low,Low,ARBITER-Sonnet,Some concerns,TRUE,TRUE,A; Z,Single decisive question,Some concerns,2.3,,,2.3,,Low,A=Low; Z=Low,,TRUE,"**D1 — A (equally B), High.** To challenge High, the reported groups have similar sizes and baseline characteristics (article p. 2, Figure 1; p. 3, Table 1). However, these cannot establish concealment: allocation explicitly followed odd versus even birth dates (p. 2). Section 4.1.2 identifies a known deterministic rule as a concealment failure, and Box 4, 1.1 explicitly rejects allocation by birth date. Figure 1 routes 1.2=N directly to High. Thus C’s Low judgement is untenable; A and B are equally defensible.
+
+**D2 — C, Low.** A/B’s Some concerns could follow from answering 2.3=NI: participants and surgeons knew treatment, and detailed monitoring of deviations is absent. I reconsidered whether my earlier PN inferred too much from silence. Nevertheless, the article provides affirmative evidence of assigned surgery delivery for all 110 participants and describes a common rehabilitation regimen, including clinically indicated modifications for meniscal repair (pp. 2–4). Together these support PN, although not definitive N, for trial-context deviations. Box 6, 2.3 requires evidence or strong reason to attribute deviations to trial context; awareness alone is insufficient. Figure 1 and the outcome tables also support analysis by assignment, excluding only missing follow-up. Section 5.3.1 explicitly accepts such exclusions within D2. Figure 2 therefore gives Low through 2.3=PN and 2.6=PY.
+
+**D4 — A, Some concerns.** B/C’s Low is persuasive for KT-1000 and pivot shift: a separate surgeon assessed patients with stockings concealing the operated knees (p. 2). That challenges any blanket claim of unblinded measurement. However, the requested result also includes subjective function, including Lysholm, and participants explicitly knew their treatment (p. 8). Box 10, 4.3 and §7.1 make the participant the assessor for participant-reported outcomes; a blinded examiner cannot remove that concern. Conversely, High would require likely influence, not merely possible influence. The active surgical comparator, separate examiner and approximately 27-month assessment support 4.5=PN under §7.3. Table 12 therefore yields Some concerns for the requested outcome set.
+
+**D5 — A (equally B), Some concerns.** C’s Low gains support from correspondence between the article’s Methods and reported outcomes and tests, including nonsignificant findings (pp. 2, 4, 6–7). This challenges an allegation of demonstrated selective reporting, but cannot establish prospective analysis intentions. No supplied protocol or dated analysis plan verifies decisions before unblinded data became available. Section 8.3.1 requires that timing, while Box 11, 5.2–5.3 specifies NI when intentions are insufficient and multiple measurements or analyses are possible. Figure 7 routes those NI answers to Some concerns. Neither multiple outcomes nor the significant KT-1000 result alone establishes High; A and B are equally defensible.
+
+CHOICE: D1=A; D2=C; D4=A; D5=A
+REVISED: D1=High; D2=Low; D4=Some concerns; D5=Some concerns","# Adjudication of three reviewers' RoB 2 judgements: Ibrahim et al. 2017
+
+My judgements are unchanged after trying to overturn each one: D1 High, D2 Low, D4 Some concerns, D5 Some concerns. Reviewer A is most defensible for D1, D4 and D5; Reviewer C is most defensible for D2.
+
+**D1 (randomization process).** Reviewer C's Low cannot stand. The article says patients were allocated ""based on their birth dates… odd-numbered day… even-numbered day"" (p.2).
+- Box 4, 1.1 names this as a ""No"": ""methods based on dates (of birth or admission)"".
+- §4.3.1 says that with systematic methods ""concealing the allocation schedule is usually impossible"". So 1.2 is N.
+- Table 4 / Figure 1: 1.2 N/PN → High, whatever the answer to 1.3.
+
+The best case for Low is the well-balanced baseline: 56 vs 54 patients, and similar pre-operative pivot-shift, KT-1000, Lysholm and IKDC values. But Box 4 says balance at baseline ""should not influence answers to questions 1.1 or 1.2"". Table 3 makes a judgement of Low conditional on ""the allocation sequence was adequately concealed"". I also considered overriding the default to Some concerns because the baseline is balanced. I rejected this. Anyone enrolling a patient knows their birth date, and the hypothesis favoured ALL reconstruction, so there was both the means and a reason to steer enrolment. §4.4 allows overrides when beliefs about benefit are weak, but that does not apply here. Reviewers A and B agree; I pick A.
+
+**D2 (deviations from intended interventions, effect of assignment).** Reviewers A and B's Some concerns would need either 2.3 = NI (Part 1) or an inappropriate analysis (Part 2).
+- **Part 2:** the analysis is by allocated group (53 of 56, 50 of 54). The only exclusions are patients who ""left the country"", i.e. missing outcome data. Box 6, 2.6 calls this kind of mITT analysis ""appropriate"", so Part 2 is Low.
+- **Part 1:** Box 6, 2.3 notes that NI ""may be appropriate, because trialists do not always report"" deviations. Here, though, the flowchart reports ""Intervention (n = 110)"" and no crossovers. The surgery was a single procedure done once by one surgeon, and both groups had the same rehabilitation protocol. 2.3 requires ""evidence, or strong reason to believe"" before answering Y/PY. The evidence available points to protocol delivery, so PN is better supported than NI.
+
+The unblinding of participants and the surgeon only makes 2.3 necessary; it does not lower the rating by itself (Table 6, row ""Either 2.1 or 2.2 Y/PY/NI; 2.3 N/PN → Low""). The non-concealed allocation belongs to D1. The task told me not to carry it over, and Box 6 uses it only to answer 2.2, which is already Y. So I choose C (Low).
+
+**D4 (measurement of the outcome).** The result being assessed includes Lysholm and IKDC as well as KT-1000. Lysholm is participant-reported (IKDC as well, if ref 7's subjective form is meant), and participants were unblinded (""we were not able to blind the participants"", p.8).
+- §7.1 (participant-reported outcomes): the assessment ""is potentially influenced by knowledge of intervention received, leading to a judgement of at least 'Some concerns'"".
+- Box 10, 4.3: ""For participant-reported outcomes, the outcome assessor is the study participant.""
+
+Reviewers B and C's Low is defensible only if the result were narrowed to the KT-1000 median alone. Even then, the white-stocking blinding of the examiner could be broken by unblinded patients (§7.3: the assessor is ""considered to be aware… unless convincing evidence is available to the contrary""). The pivot-shift grading also involves examiner judgement. I also tested whether this should be High. It should not: both groups had active surgery, which §7.3 says carries lower risk than a no-treatment comparator. The patient-reported scores also showed no difference, so there is no reason to say influence was *likely* (Box 10, 4.5). So I choose A (Some concerns).
+
+**D5 (selection of the reported result).** Reviewer C's Low is ruled out by the algorithm. Table 14 and Figure 7 reach Low only through 5.1 = Y/PY, i.e. data analysed according to a pre-specified plan finalised before unblinded data were available. No protocol, registry record or analysis plan exists in the files, so 5.1 is NI.
+
+High would need clear evidence of selection based on the results (Box 11, 5.2/5.3). There are hints:
+- Translation ""at maximum pulling strength"" is mentioned in the text but its full data are not reported.
+- Only the final follow-up time point is reported.
+
+These suggest other measurements existed but do not show selection. Against selection, every measure named in the Methods is reported, including the null results. Table 14 then gives Some concerns, from either row (""N/PN/NI, N/PN, N/PN"" or ""Any, NI, NI""). Reviewers A and B agree; I pick A.
+
+CHOICE: D1=A; D2=C; D4=A; D5=A
+REVISED: D1=High; D2=Low; D4=Some concerns; D5=Some concerns"
+sung-2020,D2,Some concerns,Low,High,Some concerns,Some concerns,Some concerns,ARBITER-Sonnet,High,TRUE,TRUE,A; Z,Single decisive question,High,2.7,2.2; 2.3,,2.7,,Some concerns,A=Some concerns; Z=Some concerns,,TRUE,"**D2 — Reviewer A (Some concerns).** Reviewer B’s Low judgement fails because the analysis explicitly excluded four randomized ibuprofen infants for incomplete treatment (Article, p. 757; Figure 1, p. 758). Box 6, question 2.6, classifies such naïve per-protocol analyses as inappropriate for estimating assignment effects, regardless of their rationale in noninferiority trials. Reviewer C’s High judgement has support: exclusions were unilateral and two followed NEC, making prognostic selection plausible. However, question 2.7 requires potential for a **substantial impact**, rather than automatically assigning High for prognostic exclusions. Challenging my earlier assessment, the small percentage excluded alone is insufficient reassurance. The stronger evidence is the numerical bound: including all four as events or non-events changes the risk difference from 5.6 percentage points to between 2.9 and 8.3 points (Figure 1; Table 2). For this common outcome and specified noninferiority result, substantial impact remains unlikely. Thus 2.6=N and 2.7=PN yield Some concerns under Table 6.
+
+**D3 — Reviewer B (Low; Reviewer C is equally defensible).** Reviewer A’s Some concerns could reflect uncertain outcome availability among the four excluded infants, including potentially health-related missingness. Conversely, Low would be indefensible if based simply on complete data among the *analysed* participants: Box 8, question 3.1, requires considering **all randomized participants**. Reconsidering on that denominator, outcomes are reported for 142/146 infants, with 67 composite events (Figure 1; Table 2). Even conservatively treating all four exclusions as genuinely missing, their possible outcomes have the limited numerical effect described above. This supports “nearly all” under Box 8’s outcome-dependent rule, rather than a mechanical 95% threshold. Moreover, §6.1 explicitly assigns deliberate analytical exclusions to D2, so the per-protocol concern cannot itself justify Some concerns here. Question 3.1=PY leads to Low through Figure 4.
+
+**D5 — Reviewer A (Some concerns).** The strongest challenge to Some concerns is the detailed correspondence between the protocol and publication: the composite, assessment time, per-protocol approach, confidence interval and noninferiority margin are substantially specified (Protocol, pp. 10–12; Article, p. 757). This argues against demonstrated result-based selection. Nevertheless, both reviewers’ Low judgements require an additional assumption: that these intentions were finalized before unblinded outcomes became available. Protocol version 7.0 lacks a finalization date, and the supplied registry record was updated after completion; its initial registration date does not establish the historical content. Section 8.3.1 requires a confirming “date-stamp,” and §8.3.2 specifically identifies undated analysis plans as limiting assessment. Thus 5.1 remains NI; even with 5.2=PN and 5.3=PN, Table 14 proposes Some concerns. Neither analysis-plan correspondence nor absence of demonstrated selection satisfies the missing timing requirement.
+
+CHOICE: D2=A; D3=B; D5=A
+REVISED: D2=Some concerns; D3=Low; D5=Some concerns","## D2: Deviations from intended interventions (effect of assignment)
+
+**Reviewer B (Low) doesn't hold up.** A Low judgement needs Part 2 to be Low, which requires 2.6 = Y/PY (Table 6, Part 2, row 1). But the article says plainly: ""We performed per-protocol analysis instead of intention-to-treat analysis"" (p.757). Figure 1 shows 4 ibuprofen-arm infants excluded after randomization because they didn't complete the intervention. Box 6 (2.6) says naïve per-protocol analyses ""should be considered inappropriate"". §5.3.1 also lists exclusion for ""toxicities resulting from intervention"" as inappropriate, and 2 of these infants developed NEC ≥IIb.
+
+**Reviewer C (High) needs 2.7 = Y/PY/NI.** That is not impossible: Box 6 warns that impact can be substantial ""even if fewer than 5%… if exclusions are strongly related to prognostic factors"". All 4 exclusions were in one arm, and NEC is prognostic for BPD or death. To test my own PN, I put the 4 infants back under both extreme assumptions:
+- the risk difference ranges from 2.9% to 8.3%, against the reported 6%;
+- the lower 95% limit stays at about −0.13, inside the −0.2 margin.
+
+The excluded infants are 2.7% of the trial, and the outcome is common (67 events). The direction of the shift is uncertain, but the result and its conclusion cannot move substantially. So 2.7 = PN holds, Part 2 is Some concerns, and Part 1 is Low because participants and carers were blinded.
+
+**Reviewer A (Some concerns) follows Table 6 / Figure 2:** 2.6 N → 2.7 PN → Some concerns.
+
+## D3: Missing outcome data
+
+**Reviewer A (Some concerns) needs the path 3.1 N/PN → 3.2 N/PN → 3.3 Y/PY/NI → 3.4 N/PN.** I tested the weakest point in my answer: the article doesn't say whether outcomes were collected for the 4 excluded infants, so 3.1 could arguably be PN.
+
+Even then, 3.2 would be answered Y. §6.3(2) says risk of bias is low if sensitivity analyses ""conducted by either the trial investigators or the review authors… confirm that the finding is robust to plausible values of the missing outcome data"". My best-case/worst-case bounds do exactly that.
+
+The direct route is also clear. The Box 8 (3.1) rule says: ""If the observed number of events is much greater than the number of participants with missing outcome data, the bias would necessarily be small."" Here there are 67 events against at most 4 missing.
+
+Penalising the per-protocol exclusions again here would double-count them. §6.1 assigns exclusions of participants with available data to D2, and the task forbids carrying a concern across domains without a guidance basis.
+
+**Conclusion:** Low via Table 10 row 1 (or row 2). Reviewers B and C are equally right; I pick B.
+
+## D5: Selection of the reported result
+
+**Reviewer A's Some concerns is a real challenge.** It could only arise through 5.1 = N/PN/NI (Figure 7), because 5.2 and 5.3 are clearly PN:
+- One outcome definition at one time point is consistent across the registry, the protocol (p.10) and the article.
+- The reported unadjusted risk difference with its 95% CI and −20% margin, in the per-protocol population, is exactly the protocol's analysis (pp.11–12).
+- The adjusted odds ratio is also reported, so there was no either/or selection.
+
+The protocol ""ver 7.0"" has no date, and §8.3.1 asks for a ""date-stamp"". Several points still support PY over NI:
+- The outcome was registered on 2014-04-23, before enrolment began in July 2014.
+- The protocol describes the blinded hand-off of the randomization code to the statisticians at Visit 8 in the future tense.
+- The protocol names ""Stata 13"", while the paper used Stata 14, which points to an earlier drafting date.
+- The article calls the margin ""prespecified"".
+- Nothing in the reported result differs from the plan.
+
+§1.1 allows ""Probably yes"" where ""a judgement has been made"". §8.3.2 asks only that such inferences be recorded, which I did; it doesn't require NI. 5.1 = PY → Low (Table 14 row 1). Reviewer A's position is reasonable but stricter than the evidence requires. I keep Low and choose B.
+
+CHOICE: D2=A; D3=B; D5=B
+REVISED: D2=Some concerns; D3=Low; D5=Low"
+abbasi-2012,D2,Low,Low,Low,Some concerns,Low,Low,Baseline-Sonnet,Some concerns,TRUE,TRUE,A; Z,Single decisive question,Some concerns,2.3,,,2.3,,Low,A=Low; Z=Low,,TRUE,"**D1:** Reviewer **A’s High judgement** is most defensible; C’s identical judgement is equally defensible. Challenging High, §2.3 reports software-generated randomization, and the consecutive codes could conceivably describe an already randomized list. Staff being unblinded also does not, alone, establish failed allocation concealment. However, the explicit assignment of the first 12 participants to P-MPMP, the next 12 to SA-MPMP and the last 12 to SMC (p. 1034), together with acknowledged possible “order effects” (p. 1042), supports probable predictability. No protective allocation procedure is described. B’s Low judgement would require adequately concealed allocation, which these documents do not support: §4.3.2 directs N/PN when forthcoming allocations could be predicted, and Table 4 maps **1.2=N/PN to High**, irrespective of the other answers. The isolated baseline anxiety difference does not independently establish failed randomization (§4.3.3.1). After reconsidering the ambiguity, I retain High based on probable predictability, rather than merely missing reporting.
+
+**D2:** Reviewer **B’s Low judgement** is most defensible; C’s identical judgement is equally defensible. Challenging Low, participants probably recognized their treatments, staff were unblinded, long-term deviations were incompletely documented, and the analysis does not clearly account for all 36 participants. These points could support A’s Some concerns if qualifying deviations were genuinely indeterminate. However, filmed sessions, expert review and feedback support protocol delivery (p. 1038); reported withdrawal reasons resemble ordinary participation difficulties (Figure 1, p. 1035), and variable SMC was intended routine care. Box 6, 2.3 requires evidence or strong reason that **trial context caused non-protocol deviations**; awareness alone is insufficient. Analysis reportedly retained dropouts with baseline scores carried forward (§2.6, p. 1038), with no evidence of excluding available outcomes for non-adherence. Under §5.3.1, missing-outcome exclusions are acceptable for D2; imputation concerns belong to D3 (§6.1). Thus **2.3=PN and 2.6=PY yield Low under Table 6**, without importing D1 concerns.
+
+CHOICE: D1=A; D2=B
+REVISED: D1=High; D2=Low","## D1: Bias arising from the randomization process
+
+**Reviewer B (Low):** Low is not defensible.
+- Table 3 says Low requires ""(i) The allocation sequence was adequately concealed"".
+- The trial assigned patients by order of entry: ""coded consecutively; the first 12 were assigned to P-MPMP, the second 12 to SA-MPMP and the last 12 to SMC"" (§2.3, p.1034). Investigators ""were not blinded to the randomization"" (§2.3), and no envelopes, central allocation or other concealment method is reported.
+- The strongest case for B rests on the phrase ""software-generated randomization plan"" and the claim that participants were ""blinded"". Even granting that the block order was random, so that 1.1 = PY:
+  - Box 4, 1.2 says to answer ""'No' if there is reason to suspect that the enrolling investigator … had knowledge of the forthcoming allocation"". With fixed consecutive blocks, the whole schedule is known after the first patient.
+  - At the very least, 1.2 would be NI. Under Table 4 and Figure 1, NI with no baseline problem gives ""Some concerns"", never Low.
+- Figure 1's arm labels (""Chose to be included in…"") add to the concern.
+
+**Reviewers A and C (High):** I tried to invalidate High by asking whether 1.2 should be NI rather than N. That fails: §4.3.1 says that with systematic, predictable methods ""concealing the allocation schedule is usually impossible"". This makes N the right answer, and Table 4, row ""Any response / N/PN / Any response → High"", follows.
+
+**Choice:** A and C agree and are equally defensible. I choose C.
+
+## D2: Bias due to deviations from intended interventions (effect of assignment)
+
+**Reviewer A (Some concerns):** I tested the two routes that could lead there.
+
+1. **Part 1, with 2.3 = NI.** Box 6 does say ""The answer 'No information' may be appropriate, because trialists do not always report whether deviations arose because of the trial context"". Participants and staff knew the assignments, and the comparator was routine care that was ""not fully standardized"" (p.1042).
+   - However, that lack of standardization describes usual care itself, not a deviation from protocol. §5.1 says changes ""consistent with the trial protocol … should not be considered to be deviations"".
+   - The report does give relevant information:
+     - ""The interventions were implemented according to the study protocol"" (p.1041).
+     - Sessions were filmed and reviewed (p.1038).
+     - Attendance was high and similar between the active arms (§3.2).
+     - Each withdrawal has a reason (Fig. 1). Only one, in SMC (""no longer interested""), could reflect disappointment with allocation, and it is a missing-data matter rather than a co-intervention.
+   - Box 6 sets a high bar for a problem: Y/PY ""only if there is evidence, or strong reason to believe"". Taken together, this information supports PN rather than NI.
+2. **Part 2, with 2.6 = N/PN.** Three randomized patients were not analysed. Figure 1 shows they withdrew before any assessment, so they have no outcome data. Box 6, 2.6 says ""mITT analyses excluding participants with missing outcome data should be considered appropriate"", and §5.3.1 says that missing-data bias ""is addressed separately"". Patients were analysed in the groups they were allocated to.
+
+**Reviewers B and C (Low):** Low follows Table 6: Part 1 (2.1/2.2 Y/PY, 2.3 N/PN) gives Low; Part 2 (2.6 Y/PY) gives Low; so the domain is Low.
+
+**Choice:** The judgement is the same for B and C, but I choose C because B's reasoning is already unreliable in D1. I keep Low, while recognising that A's NI reading is the closest alternative.
+
+CHOICE: D1=C; D2=C
+REVISED: D1=High; D2=Low"
+allen-2014,D5,Some concerns,Some concerns,Some concerns,Low,Some concerns,Some concerns,Baseline-Sonnet,Low,TRUE,TRUE,A; Z,Single decisive question,Low,5.1,5.2; 5.3,,5.1,,Some concerns,A=Some concerns; Z=Some concerns,,TRUE,"**D1 — Low (A; C is equivalent).** I challenged Low because the article does not describe sequence generation or independent administration explicitly. However, the computerized enrollment system assigned participant and drug-package numbers while concealing allocation from patients and site personnel (p.341), supporting **1.2=PY**. Even if sequence generation were NI, **Table 4 permits Low with 1.1=NI, 1.2=PY and 1.3=PN**. Reviewer B’s Some concerns would require rejecting that concealment inference. The isolated weight difference (Table 1, p.344; P=0.025) does not compel this: **Box 4, 1.3** says a small number of conventional statistically significant differences are usually compatible with chance. The adaptive recruitment changes explain the unequal group sizes.
+
+**D2 — Some concerns (A).** Reviewers B and C’s Low is supported by blinding, retention of withdrawals as nonresponders, and the very small number excluded. Nevertheless, Figure 1 (p.343) explicitly separates four randomized participants who never took study drug from three lacking post-baseline efficacy data. **§5.3.1 and Box 6, 2.6** accept missing-data-only mITT analyses but distinguish exclusions based on receiving treatment; the latter make **2.6=N**. I challenged A’s judgement on materiality: four exclusions, common responses and no evidence of strongly prognostic exclusions support **2.7=PN**, rather than High. **Table 6 nevertheless maps N/PN at 2.6/2.7 to Some concerns**, even with Low for the deviations component.
+
+**D3 — Low (C), revising my earlier assessment.** The strongest challenge to C is **Box 8, 3.1’s instruction that imputed outcomes remain missing**. However, the specified result uses the last seven **on-therapy** scores and explicitly classifies AE/inefficacy withdrawals as nonresponders (p.342). For this operational endpoint, those withdrawal classifications are known; treating them as missing requires substituting an unobserved week-13 pain-only endpoint. My earlier High made that substitution. Reviewers A and B’s attrition concerns would apply to that different endpoint, but discontinuation alone does not establish missingness of the specified response classification. The analysis includes 405/412 randomized participants, with response frequencies of 26–37% (Figure 3). Under **§2.2’s result-specific assessment and Box 8, 3.1’s “nearly all” criterion**, the remaining unavailable classifications are unlikely to materially change this result: **3.1=PY → Low**, without proceeding to 3.4.
+
+**D5 — Some concerns (A; B is equivalent).** Reviewer C’s Low has supporting evidence: Methods specifies the responder definition and analysis, Figure 3 reports all doses despite nonsignificant comparisons, and Figure 4 reports additional thresholds (pp.342, 345–346). This challenges any inference of demonstrated selective reporting. It does not establish that the intentions preceded unblinded results. **§8.3.1 requires dated evidence of that timing**, and no protocol, SAP or registry record is supplied. **Box 11, 5.2–5.3 specifies NI when intentions are insufficiently available and multiple measurements or analyses are possible**; **Table 14 maps that uncertainty to Some concerns**. Thus A/B remain defensible without assuming that selection actually occurred.
+
+CHOICE: D1=A; D2=A; D3=C; D5=A
+REVISED: D1=Low; D2=Some concerns; D3=Low; D5=Some concerns","# Adjudicating the three reviewers' RoB 2 judgements: Allen 2014, 50% NRS responders at week 13 (ITT)
+
+## D1 (randomization process): A/C (Low) vs B (Some concerns)
+
+B's ""Some concerns"" could rest on three things, and none holds up under the guidance.
+
+- **Concealment.** Someone could argue the article never names a central randomization service. But it says a ""computerized randomization/enrollment system"" assigned ""subject numbers and study drug package numbers"" across 51 centres, and that it ensured blinding ""to treatment allocation"" (p.341). That is remote, centrally administered allocation using numbered drug packs. It fits Box 4, 1.2 (""any form of remote or centrally administered method"") and the minimal criteria in Table 2. So 1.2 is PY, not NI.
+- **Weight.** Weight differed between arms (P=0.025, Table 1). Box 4, 1.3 says ""A small number of differences identified as 'statistically significant' at the conventional 0.05 threshold should usually be considered to be compatible with chance.""
+- **Arm sizes.** The arms are unequal because the planned interim analysis stopped randomization to 50 and 400 mg (p.343). The design explains this, so it does not count as ""substantial differences… compared with the intended allocation ratio.""
+
+I also re-checked my own concern about non-concurrent placebo patients enrolled after the interim. Baseline NRS and other characteristics are similar across arms, so nothing indicates a problem with randomization. The route is Table 4, row Y/PY/NI, Y/PY, N/PN → Low.
+
+## D2 (deviations from intended interventions): B/C (Low) vs A (Some concerns)
+
+A's ""Some concerns"" could come from either part of the domain.
+
+- **Part 1: unblinding through side effects.** Suppose 2.1 is answered PY because nausea and dizziness were dose-related. Even then, Box 6, 2.3 says to answer ""'No' or 'Probably no' for changes to intervention that are consistent with the trial protocol, for example cessation of a drug intervention because of acute toxicity."" It also says ""If blinding is compromised because participants report side effects… answer 'Yes' or 'Probably yes' only if there were changes… inconsistent with the trial protocol and arose because of the trial context."" Nothing suggests such changes. The excess discontinuations in active arms were withdrawals for AEs, and the interim stop of two doses was planned. So 2.3 is PN, and Part 1 is Low either way.
+- **Part 2: the 7 excluded patients.** Of 412 randomized, 4 never took drug and 3 had no post-baseline data. None of the 7 has any on-therapy outcome. §5.3.1 and Box 6, 2.6 treat excluding participants with missing outcome data as appropriate for this domain. A stricter reading would count excluding the 4 non-dosed patients as excluding eligible participants. Even then, 4 of 412 (about 1%), balanced in a blinded trial, gives 2.7 = PN, and 2.6 PN with 2.7 PN gives ""Some concerns"", not High. I find the mITT reading more faithful to §5.3.1.
+
+D2 is Low.
+
+## D3 (missing outcome data): A (High) vs B (Some concerns) vs C (Low)
+
+- **C (Low).** This needs 3.1 = Y, which means treating the nonresponder rule as part of the outcome definition so that no data count as missing. Box 8, 3.1 rules that out: ""imputed data should be regarded as missing data."" Other dropouts were scored on their last on-therapy scores, which works like carrying the last observation forward. Box 8, 3.2 says ""'last-observation-carried-forward'… should not be assumed to correct for bias."" Completion ranged from 83% on placebo to 61% on 400 mg, so 3.1 cannot be Y and Low fails.
+- **B (Some concerns).** This needs 3.4 = PN, meaning it is not likely that missingness depended on the true outcome. The trial meets two of the five reasons Box 8, 3.4 gives for ""Yes"":
+  - Reason 1, different proportions missing: 16.7% discontinued on placebo vs 31.3% on 200 mg and 39.1% on 400 mg.
+  - Reason 3, different reasons for missingness: AE withdrawals were 5.6% on placebo vs 21.2% and 30.4% on 200 and 400 mg.
+- **The case for overriding High.** Counting AE dropouts as nonresponders is conservative, and the bias probably runs towards the null. However, §1.2.1 defines risk of bias as material bias, not bias in one direction. A patient who stopped active drug might still respond at about the placebo rate of 26%. Scoring them all as nonresponders could move the 400 mg arm by several percentage points, against between-arm differences of 6–11 points. No sensitivity analysis was reported (§6.1.7, Box 8, 3.2).
+
+The route is Table 10, row N/PN/NI, N/PN, Y/PY/NI, Y/PY/NI → High. I keep High.
+
+## D5 (selection of the reported result): A/B (Some concerns) vs C (Low)
+
+C's Low needs 5.1 = Y/PY. The article's Methods state the responder definition and the logistic regression model in advance (p.342). But no protocol, statistical analysis plan or date-stamped registry text was among the files. §8.3.1 requires ""a 'date-stamp' confirming that the analysis intentions were finalized before unblinded outcome data were available,"" and Box 11, 5.1 asks for the same. A results paper's own Methods section does not meet that. So 5.1 is NI.
+
+5.2 and 5.3 stay PN. Figure 4 shows every threshold, the 50% result was reported even though it was not significant, and only one analysis is described. Under Table 14 and Figure 7, 5.2 and 5.3 both N/PN, then 5.1 NI → Some concerns. Overriding to Low would mean assuming a plan existed that the files do not contain.
+
+CHOICE: D1=A; D2=B; D3=A; D5=A
+REVISED: D1=Low; D2=Low; D3=High; D5=Some concerns"
+an-2021,D2,Low,Low,Low,Some concerns,Low,Low,Baseline-Sonnet,Some concerns,TRUE,TRUE,A; Z,Single decisive question,Some concerns,2.6; 2.7,,,2.6,2.7,Low,A=Low; Z=Low,,TRUE,"**D1 — Reviewer A (tied with C): Some concerns.** I reconsidered whether the independent nurse, computerized sequence, and statement that assignments were “concealed in envelopes” justify Low (article p. 3, §2.3). They support random sequence generation and attempted concealment, but do not establish envelope opacity, sealing, or safeguards against foreknowledge. Conversely, incomplete reporting does not establish failed concealment. Box 4, question 1.2, requires appropriately safeguarded envelopes; §1.1 supports NI when neither adequacy nor inadequacy can reasonably be inferred. Baseline tables cover only analysed participants, supporting 1.3=NI under Box 4’s explicit elaboration. Table 4 maps 1.2=NI and 1.3=NI to Some concerns. Thus B’s Low requires an inadequately supported assumption; A and C are equally defensible.
+
+**D2 — Reviewer A (tied with B): Low.** The strongest challenge to Low is that participants and therapists probably knew treatment assignment, exercise exposure differed, two participants discontinued, and pain medication was uncontrolled (pp. 4–5, 10–11). However, Box 6, question 2.3, requires “evidence, or strong reason to believe” that deviations arose because of the trial context; ordinary non-adherence consistent with circumstances outside a trial supports N/PN. The described supervision differences were intended, and intolerance does not establish a trial-context deviation. C’s Some concerns would be defensible if 2.3 were genuinely unanswerable, but the documented circumstances support PN. Figure 1 identifies the seven exclusions as losses to follow-up, without evidence that available outcomes were discarded for non-adherence. Under §5.3.1 and Box 6, 2.6, excluding missing outcomes is appropriate for D2. Figure 2 therefore gives Low for both parts.
+
+**D3 — Reviewer A is the most defensible offered judgement, but my judgement remains High.** B and C’s Low cannot be supported merely by similar attrition rates: only 53/60 participants contributed complete outcomes, no robustness analysis is reported, and the losses were not uniformly outcome-independent (Figure 1, p. 4; §2.8, p. 6). A’s Some concerns appropriately recognizes possible outcome-dependent missingness, but requires 3.4=N/PN. I challenged my earlier inference that exercise intolerance and a fall necessarily indicate low strength: the article does not establish that directly. Nevertheless, losses explicitly differed in reason across groups—intensity-related discontinuation, cancelled surgery, and a fall—and some plausibly reflect functional status. Box 8, 3.4 specifically identifies differing reasons and outcome-related circumstances as grounds for Y/PY. Similar loss proportions do not negate these grounds (§6.1.4). I retain 3.4=PY; Figure 4 consequently gives High. A is preferable to the two Low judgements, although none fully matches this assessment.
+
+**D5 — Reviewer A (tied with C): Some concerns.** The strongest argument for B’s Low is that Table 2 reports both extension speeds at all stated assessment times, and the interaction analysis matches the published Methods (pp. 3, 5–7). This argues against demonstrated results-based selection. However, it cannot establish prospective specification: registration was retrospective, and no dated protocol or SAP is supplied (p. 3, §2.2). Section 8.3.1 requires evidence that analysis intentions preceded unblinded data availability; Box 11, 5.1 therefore supports NI. Conversely, missing prospective documentation does not establish selective reporting or justify High. Whether 5.3 is NI or PN, Table 14 gives Some concerns when prospective specification is unverified and neither selection question is Y/PY. A and C are equally defensible.
+
+CHOICE: D1=A; D2=A; D3=A; D5=A
+REVISED: D1=Some concerns; D2=Low; D3=High; D5=Some concerns","# Adjudication: An et al. 2021, 60°/s extension peak torque interaction (ITT effect)
+
+**D1: Randomization process.** Reviewer B's Low only holds if question 1.2 (was allocation concealed?) is answered ""Probably yes"". I gave it that answer, and on a strict reading of the guidance I now think it was too generous.
+- **Envelope safeguards are missing.** The paper says only that ""the group assignments were concealed in envelopes"" and that each patient chose ""one of three envelopes"" (p.3). The envelopes are not described as opaque, sealed or sequentially numbered. Those are the minimum criteria in Table 2, and Box 4 (1.2) requires them before envelopes count as ""used appropriately"".
+- **The process does not add up.**
+  - The paper also says a nurse generated a computerized sequence. That doesn't fit with patients choosing from three envelopes.
+  - The exact 20/20/20 split suggests someone controlled a restricted pool of envelopes.
+  - If the envelopes could be seen through, or were offered selectively, staff or patients could have known the allocation.
+- **Concealment is therefore ""No information"".** I can't justify ""Probably yes"" or ""Probably no"", so 1.2 = NI.
+- **Baseline balance.** Baseline data cover only the 53 analysed participants, so Box 4 (1.3) points to NI. Either way, no imbalance is apparent.
+- **Route.** Figure 1 / Table 4 row ""1.2 NI; 1.3 N/PN/NI → Some concerns"".
+
+Reviewers A and C are more defensible. I revise my judgement to Some concerns.
+
+**D2: Deviations from intended interventions.** I tried to break the Low in two ways.
+- **Could question 2.3 be ""No information""?** Box 6 (2.3) allows NI ""because trialists do not always report whether deviations arose because of the trial context"". But this trial does report its deviations: two telerehabilitation participants discontinued ""due to the high intensity"", and some surgeries were cancelled. Box 6 says that kind of non-adherence is ""consistent with what could occur outside the trial context"", so the answer is ""Probably no"". All participants also had a standardized post-operative rehabilitation programme.
+- **Was the analysis an excluded per-protocol analysis?** Fig. 1 labels the two discontinuers ""Lost to follow-up"". The analysis kept participants in their randomized groups and dropped only those with missing outcomes. Box 6 (2.6) treats this as acceptable: ""mITT analyses excluding participants with missing outcome data should be considered appropriate"". §6.1 says the missing data belong in D3, so they should not be counted against D2 as well.
+- **Route.** Table 6, Part 1 Low and Part 2 Low → Low.
+
+Reviewer C's Some concerns has no anchor in the documents. Reviewers A and B stand, and I keep Low.
+
+**D3: Missing outcome data.** Reviewers B and C's Low needs one of three things. None holds.
+- **""Nearly all"" participants had data (3.1).** Only 53 of 60 (88%) were analysed. Box 8 (3.1) says 95% is often enough for continuous outcomes, and seven missing outcomes could easily move an interaction with p = 0.047.
+- **Evidence the result is unbiased (3.2).** There was no sensitivity analysis and no correcting method.
+- **Missingness could not depend on the true value (3.3).** Box 8 (3.3) gives Low only if ""all missing outcome data occurred for documented reasons that are unrelated to the outcome"". Here, discontinuing because of exercise intensity and having a fall plausibly relate to quadriceps strength, and the reasons for cancelled surgery are not stated.
+
+I also tested whether this should be High under Box 8 (3.4), reason 3: ""reasons… differ between the intervention groups"". The reasons do differ somewhat. But the direction is mixed: losing intolerant participants from telerehabilitation would favour it, while losing the participant who fell from the control group would push towards the null. The numbers are tiny and the missing proportions are similar (10%, 15%, 10%). So I judge it possible rather than likely that missingness depended on strength. Table 10 row ""3.4 N/PN → Some concerns"". Reviewer A stands.
+
+**D5: Selection of the reported result.** Reviewer B's Low needs question 5.1 (was the analysis pre-specified?) to be Yes or Probably yes.
+- **No usable pre-specified plan.** The trial was ""retrospectively registered"" and no protocol or statistical analysis plan was available. Box 11 (5.1) says a plan only counts if it was finalized before unblinded outcome data were available, which cannot be shown here.
+- **Selection can't be judged either way (5.2, 5.3).** Strength could have been measured at several speeds, on either knee and at several time points, and analysed in several ways. Box 11 says to answer NI in that situation.
+- **No evidence of selection either.** Both extension speeds and all three time points are reported, so I don't see grounds for High. Flexion torque was measured but not reported. That measures the hamstrings, not the quadriceps, so it is not an eligible measure for this result.
+- **Route.** Table 14 row ""NI/NI → Some concerns"".
+
+Reviewers A and C stand.
+
+CHOICE: D1=A; D2=A; D3=A; D5=A
+REVISED: D1=Some concerns; D2=Low; D3=Some concerns; D5=Some concerns"
+apalla-2013,D5,Some concerns,Low,Some concerns,Low,Some concerns,Some concerns,Baseline-Sonnet,Low,TRUE,TRUE,A; Z,Single decisive question,Low,5.1,5.2; 5.3,,5.1,,Some concerns,A=Some concerns; Z=Some concerns,,TRUE,"For D5, **Reviewer A’s Some concerns is most defensible**. To challenge A, the article’s Methods identify the four-week VAS responder outcome and primary comparison (p. 858), and Results report that comparison alongside continuous VAS results at weeks 2 and 4 (p. 859). This consistency could support PN for 5.2 and 5.3, rather than my previous NI answers. However, neither Reviewer B’s nor Reviewer C’s Low judgement satisfies the decisive requirement: **Table 13 requires analysis according to a prespecified plan finalized before unblinded outcome data were available**. The reported registration date (p. 858) establishes neither the registered analysis details nor their correspondence with the reported analysis; no registry record, protocol, or SAP is supplied. Under §8.3.1, the analysis intentions themselves need a date-stamp establishing that timing, so 5.1 remains NI. Even granting PN for both selection questions, **Table 14 maps NI/PN/PN to Some concerns**. Conversely, the Fisher-versus-Pearson test discrepancy and “greater than” versus “at least” 50% wording (pp. 858–859) do not establish results-driven selection sufficient for High under Box 11. Reconsideration therefore leaves my domain judgement unchanged, without treating absent documentation as proof that selective reporting occurred.
+
+CHOICE: D5=A
+REVISED: D5=Some concerns","**D5 — choosing between Some concerns (A) and Low (B, C).**
+
+**Case for Low (B and C).**
+- The trial was registered (CSG Trial No. 54, accepted April 20, 2009) a week before enrolment began (27/04/2009).
+- The primary outcome, a >50% VAS reduction within 4 weeks, is described the same way in the abstract, methods, sample-size section and results.
+- All randomized patients were analysed.
+
+Taken together, a reviewer could answer 5.1 ""Probably yes"". Then 5.2 and 5.3 as PN, which I also gave, lead to Low.
+
+**Why that doesn't hold under the guidance.**
+- Under Table 14 and Figure 7, Low is reached only through 5.1 = Y/PY. Any other answer at 5.1 gives Some concerns, so the choice depends entirely on 5.1.
+- Box 11 (5.1) and §8.3.1 say the pre-specified intentions must be ""available in sufficient detail"" so that ""planned outcome measurements and analyses can be compared with those presented"". They also need a ""date-stamp confirming that the analysis intentions were finalized before unblinded outcome data were available"".
+- We have only a registration number and date. The registry content, protocol and analysis plan were not in the files, so there is no plan to compare against.
+- The article's own methods can't serve as the plan, because they were written after the results were known.
+- The methods also show small inconsistencies: the planned ""2-sided Fisher exact test"" was reported as ""Pearson χ2"", and the sample-size text speaks of ""complete response/complete clearance rates"" rather than ≥50% reduction. These suggest the stated plan wasn't followed exactly. Answering PY would mean assuming the registered record matched the reported analysis, which the documents don't show.
+- §1.1 allows ""Probably yes"" for missing details only when a judgement is reasonable in the circumstances, such as a large trial run by an experienced trials unit. This was a small single-centre trial, so that reasoning doesn't fit well.
+
+**Checking my own answers.** I re-examined whether 5.2 should be NI rather than PN, because the VAS was recorded at many time points and ""within 4 weeks"" is ambiguous. Either answer still leads to Some concerns (Table 14 rows 2–5). Nothing I could find supports ""likely selected"" (Y/PY), so High is not warranted either.
+
+**Conclusion.** Reviewer A's Some concerns is the most defensible judgement, and I keep my own judgement at Some concerns.
+
+CHOICE: D5=A
+REVISED: D5=Some concerns"
+ascet,D5,Some concerns,Low,Some concerns,Low,Some concerns,Some concerns,Baseline-Sonnet,Low,TRUE,TRUE,A; Z,Single decisive question,Low,5.1,5.3,,5.1,,Some concerns,A=Some concerns; Z=Some concerns,,TRUE,"**D2:** Reviewer **B’s Low** judgement is most defensible; C’s identical judgement is equally defensible. A’s Some concerns could follow from answering 2.3=NI, particularly because Table 2 (article, p. 5) includes unexplained medication changes “beyond the study protocol.” This challenges my previous PN answer: their causes are not fully documented. However, the reported discontinuations predominantly concern clinical indications or adverse effects, with necessary adverse-event cessation explicitly permitted (p. 3). Neither unequal discontinuation nor departure from protocol establishes a trial-context cause. **Box 6, 2.3** requires “evidence, or strong reason to believe” that trial context caused departures and directs N/PN for changes consistent with ordinary care. On balance, PN remains defensible. The stated ITT analysis and original randomized denominators support 2.6=Y (pp. 3–4). **Table 6** therefore yields Low for both parts. B and C withstand this challenge; choosing B does not imply superiority over C.
+
+**D5:** Reviewer **B’s Some concerns** is most defensible. A and C’s Low judgements have supporting evidence: the registry description identifies the four-component composite, and its two-year timing agrees with the article. This challenges any assumption that the reported outcome was invented retrospectively. Nevertheless, agreement on an outcome does not establish a sufficiently detailed analysis plan finalized before unblinded data were available. The supplied registry record was updated after completion, no historical version or full SAP is supplied, and the cited design paper is unavailable. **Section 8.3.1** requires a date-stamp establishing prospective analysis intentions; **Box 11, 5.1** requires finalization before unblinded outcome data. Consequently, 5.1=NI remains appropriate. Even granting PN to both selection questions, **Table 14** maps NI/PN/PN to Some concerns. Missing documentation does not prove selective analysis or justify High, but it prevents the Low route.
+
+CHOICE: D2=B; D5=B
+REVISED: D2=Low; D5=Some concerns","# Adjudication of reviewers' D2 and D5 judgements: ASCET trial, composite outcome at 2 years
+
+## D2: Deviations from intended interventions
+
+I tried to break both positions:
+
+- **Reviewer A (Some concerns).** The best case for A runs like this. The trial was open-label. Clopidogrel was stopped twice as often as aspirin (63 vs 32). Table 2 also includes ""discontinuation due to change of medication beyond the study protocol"". That could justify answering ""No information"" to question 2.3, which Figure 2 maps to Some concerns. I don't think this holds:
+  - Box 6 allows ""No information"" ""because trialists do not always report whether deviations arose because of the trial context"". Here the trialists did report the reasons, broken down by arm (Table 2, p.5).
+  - The excess in the clopidogrel arm is mostly drug stopped for side effects: rash 5, diarrhoea 4, dizziness and general discomfort 3 each. Box 6 tells assessors to answer N/PN for ""cessation of a drug intervention because of acute toxicity"". The paper also allows this: ""If considered necessary, the study drug was terminated"" (p.3).
+  - New indications for dual antiplatelet therapy or warfarin occurred in both arms. These are clinically required changes, which §5.1 says ""do not cause bias"".
+  - The ""beyond protocol"" changes number about 10 at most (about 2%). Nothing suggests they came from the trial context rather than ordinary prescribing. Box 6 allows Y/PY ""only if there is evidence, or strong reason to believe"" that the trial context caused the deviation.
+- **Reviewers B and C (Low).** Question 2.6 is answered Y: the analysis followed ""the intention-to-treat principle"" and included all 1001 randomised patients in their assigned groups.
+
+The Table 6 row ""either 2.1 or 2.2 Y/PY; 2.3 N/PN → Low"", combined with a Low for Part 2, gives Low. I keep Low. B and C agree, and I pick B.
+
+## D5: Selection of the reported result
+
+- **Reviewers A and C (Low).** Low requires a Y/PY answer to question 5.1: an analysis plan ""finalized before unblinded outcome data were available"" (Box 11; Table 13 ""Low"", criterion i). Three points weaken that answer:
+  1. **No plan in the files.** Neither the protocol nor a statistical analysis plan is among the documents, and the 2004 design paper was not available.
+  2. **Late registration in an open trial.** The registry entry was submitted in September 2005, about 2.5 years after the trial started in April 2003. Investigators at this single open-label centre could already see events as they occurred by arm. §8.3.1 asks for a date stamp that predates access to unblinded data. The registry entry does not clearly provide one.
+  3. **Registry and paper do not match.** The registry's outcome fields list death, myocardial infarction and unstable angina separately, without stroke. The published composite includes ""nonhemorrhagic stroke"". The registry also frames the drug comparison as one in ""aspirin non-responders"" rather than the overall randomised comparison reported. Under §8.3.2 these discrepancies prevent confirming a pre-specified plan.
+
+  Even so, nothing points to actual selection. The result is crude counts, it is null (P=0.87), and the outcome matches the registry summary. So questions 5.2 and 5.3 stay ""Probably no"", not Y/PY, and High would not be justified.
+- **Reviewer B (Some concerns).** This follows the Figure 7 / Table 14 row for 5.2 and 5.3 both N/PN with 5.1 N/PN/NI, which gives Some concerns. I checked whether I was being too harsh: §1.2.1 says risk of bias means ""material"" bias. However, overriding the default would need a pre-specified plan to rely on, and the files don't contain one. I keep Some concerns and pick B.
+
+CHOICE: D2=B; D5=B
+REVISED: D2=Low; D5=Some concerns"
