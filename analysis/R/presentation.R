@@ -10,7 +10,7 @@ reader_label <- function(x, supplement=FALSE) {
     'A vs Z'='Adjudicator 1 vs Adjudicator 2','Adjudicator A'='Adjudicator 1',
     'Adjudicator Z'='Adjudicator 2','A independent'='Adjudicator 1 independent',
     'Z independent'='Adjudicator 2 independent','Baseline imbalance'='Preintervention imbalance','meta-label'='published-label',
-    'Meta label'='Published label','meta label'='published label','Baseline'='Unassisted',
+    'meta_ids'='meta-analysis identifiers','Meta label'='Published label','meta label'='published label','Baseline'='Unassisted',
     'All-Low'='All-Low rule')
   for(k in names(replacements)) x <- gsub(k,replacements[[k]],x,fixed=TRUE)
   x <- gsub('All-Low rule rule','All-Low rule',x,fixed=TRUE)
@@ -35,6 +35,7 @@ fmt_fraction <- function(n,N) {
 }
 fmt_process_text <- function(x) {
   x <- gsub('\\(([0-9.,]+) to ([0-9.,]+)\\)','(\\1\u2013\\2)',x)
+  x <- gsub('\\[([0-9.,]+) to ([0-9.,]+)\\]','[\\1\u2013\\2]',x)
   x <- sub('^-([0-9])','\u2212\\1',x)
   gsub('([ (])-([0-9])','\\1\u2212\\2',x)
 }

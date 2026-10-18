@@ -26,9 +26,13 @@ for(i in seq_along(METHODS_APPENDIX)) cat('\n### ',names(METHODS_APPENDIX)[i],'\
 ```{r}
 for(i in seq_along(entries)) {
   cat('\n### eTable ',i,'. ',entries[[i]]$caption,'\n\n',sep='')
-  ft <- supplement_table(entries[[i]])
-  cat(flextable::flextable_to_rmd(ft),sep='\n')
-  if(entries[[i]]$caption=='Per-meta-analysis weighted kappa')
+  e <- entries[[i]]
+  if(is.null(e$blocks)) cat(flextable::flextable_to_rmd(supplement_table(e)),sep='\n')
+  else for(block in e$blocks) {
+    cat('\n#### ',block$title,'\n\n',sep='')
+    cat(flextable::flextable_to_rmd(supplement_table(e,block$data)),sep='\n')
+  }
+  if(entries[[i]]$caption=='Per-meta-analysis weighted κ')
     cat('\n### eFigure 1. Agreement against Published by meta-analysis\n\n![Weighted kappa with 95% CIs; undefined coefficients omitted.](output/manuscript/eFigure1.png)\n\n')
 }
 ```
@@ -37,6 +41,7 @@ for(i in seq_along(entries)) {
 
 ```{r}
 prompts <- manuscript_data('prompt-template-example')
+for(slug in inputs$trials$slug) prompts$prompt <- gsub(slug,trial_display(slug),prompts$prompt,fixed=TRUE)
 for(i in seq_len(nrow(prompts))) cat('\n### ',reader_label(prompts$type[i],TRUE),'\n\n',prompts$prompt[i],'\n',sep='')
 ```
 

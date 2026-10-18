@@ -254,3 +254,18 @@ No Python is used. This file records conservative resolutions as they arise.
     so ARBITER is consistently above Unassisted, first in the legend. Domain
     facets and loss denominators remain. The supplementary forest joins curated
     specialty/topic names and omits undefined/degenerate coefficients.
+
+31. **Round 9 R9 supplement redesign.** Twenty-eight eTables follow the plan's
+    supplement sequence, with a contents list and methods appendix first.
+    The redundant long process-summary table is dropped as permitted by R9;
+    per-trial process metrics remain in eTables 2–3, with cost totals/bounds and
+    token reconciliation in dedicated wide source-comparison tables. Confusion
+    matrices are 24 ordered grids (Published rows × predicted columns), with
+    Missing only where nonzero. Meta-analysis rows use curated specialty/topic;
+    trial identifiers use author/year. Repeated sources/comparisons become group
+    rows. Undefined or degenerate κ is —, with an explicit note. All tables have
+    captions, units and abbreviation notes. Clinical “baseline balance” wording
+    in the override is expanded to “preintervention balance”, explicitly noted;
+    the original model rationale remains unchanged in the CSV. Methods cite the
+    2019 RoB 2 guidance, frozen pricing documentation and ARBITER 1.0.0 commit.
+    The supplement remains portrait with editable Arial 9 pt tables.
