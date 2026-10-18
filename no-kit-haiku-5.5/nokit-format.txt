@@ -1,0 +1,1 @@
+When you have finished, give your answers in this format: a table with one row per signalling question (columns: domain, question number, answer as Y, PY, PN, N, NI or NA), and then a final line exactly like "FINAL: D1=<judgement>; D2=<judgement>; D3=<judgement>; D4=<judgement>; D5=<judgement>; Overall=<judgement>", where each judgement is Low, Some concerns or High.

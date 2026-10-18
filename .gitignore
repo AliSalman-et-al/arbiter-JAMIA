@@ -20,3 +20,6 @@ __pycache__/
 /.quarto/
 analysis/.quarto/
 analysis/_freeze/
+
+# Run logs: ~1.1 GB stream-json with trial text; kept local, summarised by the analysis
+*/logs/

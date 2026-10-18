@@ -1,0 +1,2203 @@
+slug,field,domain,question_id,answer,active,justification
+aarnoutse-2017,09 ID,D1,1.1,yes,yes,Y
+aarnoutse-2017,09 ID,D1,1.2,no_information,yes,NI
+aarnoutse-2017,09 ID,D1,1.3,no,yes,N
+aarnoutse-2017,09 ID,D2,2.1,no,yes,N
+aarnoutse-2017,09 ID,D2,2.2,no,yes,N
+aarnoutse-2017,09 ID,D2,2.3,not_applicable,no,NA
+aarnoutse-2017,09 ID,D2,2.4,not_applicable,no,NA
+aarnoutse-2017,09 ID,D2,2.5,probably_yes,yes,PY
+aarnoutse-2017,09 ID,D2,2.6,not_applicable,no,NA
+aarnoutse-2017,09 ID,D3,3.1,yes,yes,Y
+aarnoutse-2017,09 ID,D3,3.2,not_applicable,no,NA
+aarnoutse-2017,09 ID,D3,3.3,not_applicable,no,NA
+aarnoutse-2017,09 ID,D3,3.4,not_applicable,no,NA
+aarnoutse-2017,09 ID,D4,4.1,no,yes,N
+aarnoutse-2017,09 ID,D4,4.2,probably_no,yes,PN
+aarnoutse-2017,09 ID,D4,4.3,no,yes,N
+aarnoutse-2017,09 ID,D4,4.4,not_applicable,no,NA
+aarnoutse-2017,09 ID,D4,4.5,not_applicable,no,NA
+aarnoutse-2017,09 ID,D4,4.6,yes,yes,Y
+aarnoutse-2017,09 ID,D4,4.7,no,yes,N
+aarnoutse-2017,09 ID,D5,5.1,probably_no,yes,PN
+aarnoutse-2017,09 ID,D5,5.2,probably_no,yes,PN
+aarnoutse-2017,09 ID,D5,5.3,no,yes,N
+abbasi-2012,10 Rheum,D1,1.1,probably_no,yes,PN
+abbasi-2012,10 Rheum,D1,1.2,no,yes,N
+abbasi-2012,10 Rheum,D1,1.3,probably_no,yes,PN
+abbasi-2012,10 Rheum,D2,2.1,yes,yes,Y
+abbasi-2012,10 Rheum,D2,2.2,yes,yes,Y
+abbasi-2012,10 Rheum,D2,2.3,probably_no,yes,PN
+abbasi-2012,10 Rheum,D2,2.4,not_applicable,no,NA
+abbasi-2012,10 Rheum,D2,2.5,not_applicable,no,NA
+abbasi-2012,10 Rheum,D2,2.6,probably_no,yes,PN
+abbasi-2012,10 Rheum,D2,2.7,probably_no,yes,PN
+abbasi-2012,10 Rheum,D3,3.1,no,yes,N
+abbasi-2012,10 Rheum,D3,3.2,probably_no,yes,PN
+abbasi-2012,10 Rheum,D3,3.3,probably_yes,yes,PY
+abbasi-2012,10 Rheum,D3,3.4,no_information,yes,NI
+abbasi-2012,10 Rheum,D4,4.1,no,yes,N
+abbasi-2012,10 Rheum,D4,4.2,probably_yes,yes,PY
+abbasi-2012,10 Rheum,D4,4.3,yes,yes,Y
+abbasi-2012,10 Rheum,D4,4.4,probably_yes,yes,PY
+abbasi-2012,10 Rheum,D4,4.5,probably_yes,yes,PY
+abbasi-2012,10 Rheum,D5,5.1,no_information,yes,NI
+abbasi-2012,10 Rheum,D5,5.2,probably_no,yes,PN
+abbasi-2012,10 Rheum,D5,5.3,probably_no,yes,PN
+aboelfadl-2022,10 Rheum,D1,1.1,yes,yes,Y | Computer-generated randomisation table (p. 2.2)
+aboelfadl-2022,10 Rheum,D1,1.2,probably_yes,yes,"PY | Serially numbered opaque sealed envelopes, but the description of the allocation steps is inconsistent"
+aboelfadl-2022,10 Rheum,D1,1.3,no,yes,N | Baseline NRS and demographics similar (Tables 1-2)
+aboelfadl-2022,10 Rheum,D2,2.1,yes,yes,"Y | Sham procedure, patients blinded"
+aboelfadl-2022,10 Rheum,D2,2.2,no_information,yes,NI | Follow-up clinicians blinded; blinding of the procedural physician not stated
+aboelfadl-2022,10 Rheum,D2,2.3,no,yes,N | No deviations beyond usual practice reported
+aboelfadl-2022,10 Rheum,D2,2.4,not_applicable,no,NA | 2.3 is N
+aboelfadl-2022,10 Rheum,D2,2.5,no,yes,"N | Rescue paracetamol use differed (Table 3, months 4-12)"
+aboelfadl-2022,10 Rheum,D2,2.6,no,yes,N | Analysis covers 60 of 68 randomised; 3 excluded for failed dye spread after randomisation
+aboelfadl-2022,10 Rheum,D2,2.7,probably_no,yes,"PN | 4 excluded per arm; the exclusions are balanced, so impact is probably limited"
+aboelfadl-2022,10 Rheum,D3,3.1,probably_no,yes,"PN | 8/68 (11.8%) missing from analysis, 4 per arm"
+aboelfadl-2022,10 Rheum,D3,3.2,no,yes,N | No sensitivity analysis or evidence of robustness
+aboelfadl-2022,10 Rheum,D3,3.3,no_information,yes,NI | Reasons for loss to follow-up not reported
+aboelfadl-2022,10 Rheum,D4,4.1,no,yes,"N | NRS is an appropriate, validated patient-reported measure"
+aboelfadl-2022,10 Rheum,D4,4.2,no,yes,N | Same method in both arms
+aboelfadl-2022,10 Rheum,D4,4.3,no,yes,N | Patients blinded by sham; follow-up clinicians blinded
+aboelfadl-2022,10 Rheum,D4,4.4,not_applicable,no,NA | 4.3 is N
+aboelfadl-2022,10 Rheum,D4,4.5,not_applicable,no,NA | 4.3 is N
+aboelfadl-2022,10 Rheum,D5,5.1,no_information,yes,NI | No analysis plan or protocol available; registry has none
+aboelfadl-2022,10 Rheum,D5,5.2,probably_yes,yes,"PY | Six time points tested; registry primary time frame is ""up to 6 months"", but the 12-month result is the one reported"
+aboelfadl-2022,10 Rheum,D5,5.3,probably_yes,yes,PY | Unadjusted repeated Mann-Whitney tests across time points
+albert-2013,10 Rheum,D1,1.1,yes,yes,"Y | Random sequence generated (computer-generated list, Central Pharmacy)"
+albert-2013,10 Rheum,D1,1.2,yes,yes,"Y | Allocation concealed (numbered sealed boxes, identical tablets, list held until last follow-up)"
+albert-2013,10 Rheum,D1,1.3,probably_yes,yes,PY | Baseline imbalance suggesting randomisation problem (Modic size distribution p=0.007)
+albert-2013,10 Rheum,D2,2.1,probably_no,yes,"PN | Participants aware of assignment (double-blind, but antibiotic side effects 65% vs 23% could unblind)"
+albert-2013,10 Rheum,D2,2.2,no,yes,"N | Carers/personnel aware of assignment (blinded staff, blinded statistician)"
+albert-2013,10 Rheum,D2,2.3,probably_yes,yes,PY | Deviations from intended intervention (back-pain doctor consultations 23.4% vs 41.8%)
+albert-2013,10 Rheum,D2,2.4,probably_no,yes,PN | Deviations likely affected outcome
+albert-2013,10 Rheum,D2,2.5,no,yes,N | Deviations balanced between groups
+albert-2013,10 Rheum,D2,2.6,probably_no,yes,PN | Appropriate analysis of effect of assignment (analysis restricted to 1-year completers)
+albert-2013,10 Rheum,D2,2.7,probably_yes,yes,"PY | If 2.6 not appropriate, potential for substantial impact (differential exclusion)"
+albert-2013,10 Rheum,D3,3.1,no,yes,N | Outcome data available for all or nearly all (77/90 and 67/72 at 1 year)
+albert-2013,10 Rheum,D3,3.2,no,yes,N | Evidence results robust to missing data (no sensitivity analysis reported)
+albert-2013,10 Rheum,D3,3.3,probably_yes,yes,PY | Missingness could depend on true value (side-effect and new-herniation dropouts)
+albert-2013,10 Rheum,D3,3.4,probably_no,yes,PN | Missingness likely depended on true value
+albert-2013,10 Rheum,D4,4.1,no,yes,N | Outcome measurement method inappropriate (validated RMDQ and LBP scale)
+albert-2013,10 Rheum,D4,4.2,no,yes,N | Measurement could differ between groups
+albert-2013,10 Rheum,D4,4.3,no,yes,N | Outcome assessors aware of assignment (assessor masked)
+albert-2013,10 Rheum,D4,4.4,probably_yes,yes,"PY | Assessment likely influenced by knowledge of intervention (self-report, possible unblinding by side effects)"
+albert-2013,10 Rheum,D4,4.5,probably_no,yes,PN | Assessment likely influenced by knowledge (overall)
+albert-2013,10 Rheum,D5,5.1,probably_no,yes,PN | Analysis pre-specified before unblinded data (registry lists only RMDQ as primary; no SAP available)
+albert-2013,10 Rheum,D5,5.2,probably_yes,yes,PY | Result selected from multiple outcome measurements (LBP elevated to co-primary; many secondary outcomes)
+albert-2013,10 Rheum,D5,5.3,probably_no,yes,PN | Result selected from multiple analyses (p=0.0001 robust to test choice)
+allen-2014,04 Neuro,D1,1.1,probably_yes,yes,PY | Computerised randomisation/enrolment system; the sequence-generation method is not described in detail
+allen-2014,04 Neuro,D1,1.2,probably_yes,yes,PY | Central computerised assignment of subject and drug-package numbers; concealment not stated explicitly
+allen-2014,04 Neuro,D1,1.3,probably_yes,yes,"PY | Weight differed between groups (P=0.025, Table 1), which flags a possible baseline imbalance"
+allen-2014,04 Neuro,D2,2.1,no,yes,"N | Double-blind, with patients blinded to assignment"
+allen-2014,04 Neuro,D2,2.2,no,yes,N | Site personnel blinded
+allen-2014,04 Neuro,D2,2.3,not_applicable,no,NA | Not applicable as 2.1 and 2.2 are N
+allen-2014,04 Neuro,D2,2.4,not_applicable,no,NA | Not applicable
+allen-2014,04 Neuro,D2,2.5,not_applicable,no,NA | Not applicable
+allen-2014,04 Neuro,D2,2.6,probably_yes,yes,"PY | ITT population with logistic regression adjusted for treatment, site and baseline; one patient per arm with no post-baseline data was excluded"
+allen-2014,04 Neuro,D2,2.7,not_applicable,no,NA | Not applicable
+allen-2014,04 Neuro,D3,3.1,probably_no,yes,"PN | Discontinuation was 17–39% by arm (400 mg: 27/69), and the ITT population excludes one patient in three arms"
+allen-2014,04 Neuro,D3,3.2,probably_no,yes,"PN | No sensitivity analysis; AE and efficacy withdrawals were counted as nonresponders, but patient-request, protocol-violation and other withdrawals are not described"
+allen-2014,04 Neuro,D3,3.3,probably_yes,yes,"PY | Missingness could plausibly relate to response (lack of efficacy, AEs)"
+allen-2014,04 Neuro,D3,3.4,probably_no,yes,"PN | The main reasons for withdrawal (AE, efficacy) were imputed as nonresponse, so dependence on true value is unlikely to be substantial"
+allen-2014,04 Neuro,D4,4.1,no,yes,"N | Daily NRS diary is an appropriate measure, applied the same way in all arms"
+allen-2014,04 Neuro,D4,4.2,no,yes,N | Measurement identical across groups
+allen-2014,04 Neuro,D4,4.3,no,yes,N | Patients and site personnel blinded
+allen-2014,04 Neuro,D4,4.4,not_applicable,no,NA | Not applicable
+allen-2014,04 Neuro,D4,4.5,not_applicable,no,NA | Not applicable
+allen-2014,04 Neuro,D5,5.1,probably_yes,yes,"PY | Responder analysis is described in the Methods, though no protocol or SAP was available to confirm it was pre-specified"
+allen-2014,04 Neuro,D5,5.2,probably_yes,yes,"PY | Multiple pain and health outcomes, and multiple response thresholds reported"
+allen-2014,04 Neuro,D5,5.3,probably_yes,yes,"PY | Multiple analyses (timepoints, thresholds, interim-driven dose changes); no effect estimates or CIs reported for the responder outcome"
+allsop-2014,05 Psych,D1,1.1,yes,yes,Y
+allsop-2014,05 Psych,D1,1.2,probably_yes,yes,PY
+allsop-2014,05 Psych,D1,1.3,probably_yes,yes,PY
+allsop-2014,05 Psych,D2,2.1,probably_no,yes,PN
+allsop-2014,05 Psych,D2,2.2,probably_no,yes,PN
+allsop-2014,05 Psych,D2,2.3,no,yes,N
+allsop-2014,05 Psych,D2,2.4,not_applicable,no,NA
+allsop-2014,05 Psych,D2,2.5,not_applicable,no,NA
+allsop-2014,05 Psych,D2,2.6,yes,yes,Y
+allsop-2014,05 Psych,D2,2.7,not_applicable,no,NA
+allsop-2014,05 Psych,D3,3.1,probably_no,yes,PN
+allsop-2014,05 Psych,D3,3.2,probably_yes,yes,PY
+allsop-2014,05 Psych,D3,3.3,probably_yes,yes,PY
+allsop-2014,05 Psych,D3,3.4,probably_no,yes,PN
+allsop-2014,05 Psych,D4,4.1,no,yes,N
+allsop-2014,05 Psych,D4,4.2,no,yes,N
+allsop-2014,05 Psych,D4,4.3,no,yes,N
+allsop-2014,05 Psych,D4,4.4,not_applicable,no,NA
+allsop-2014,05 Psych,D4,4.5,not_applicable,no,NA
+allsop-2014,05 Psych,D5,5.1,probably_yes,yes,PY
+allsop-2014,05 Psych,D5,5.2,probably_yes,yes,PY
+allsop-2014,05 Psych,D5,5.3,no_information,yes,NI
+amini-2022,04 Neuro,D1,1.1,probably_yes,yes,PY
+amini-2022,04 Neuro,D1,1.2,no_information,yes,NI
+amini-2022,04 Neuro,D1,1.3,no,yes,N
+amini-2022,04 Neuro,D2,2.1,no,yes,N
+amini-2022,04 Neuro,D2,2.2,no,yes,N
+amini-2022,04 Neuro,D2,2.3,not_applicable,no,NA
+amini-2022,04 Neuro,D2,2.4,not_applicable,no,NA
+amini-2022,04 Neuro,D2,2.5,not_applicable,no,NA
+amini-2022,04 Neuro,D2,2.6,probably_yes,yes,PY
+amini-2022,04 Neuro,D2,2.7,not_applicable,no,NA
+amini-2022,04 Neuro,D3,3.1,probably_yes,yes,PY
+amini-2022,04 Neuro,D3,3.2,not_applicable,no,NA
+amini-2022,04 Neuro,D3,3.3,probably_no,yes,PN
+amini-2022,04 Neuro,D3,3.4,not_applicable,no,NA
+amini-2022,04 Neuro,D4,4.1,no,yes,N
+amini-2022,04 Neuro,D4,4.2,no,yes,N
+amini-2022,04 Neuro,D4,4.3,no,yes,N
+amini-2022,04 Neuro,D4,4.4,no,yes,N
+amini-2022,04 Neuro,D4,4.5,no,yes,N
+amini-2022,04 Neuro,D5,5.1,no_information,yes,NI
+amini-2022,04 Neuro,D5,5.2,probably_yes,yes,PY
+amini-2022,04 Neuro,D5,5.3,probably_yes,yes,PY
+an-2021,11 Surg,D1,1.1,yes,yes,Y
+an-2021,11 Surg,D1,1.2,probably_no,yes,PN
+an-2021,11 Surg,D1,1.3,probably_no,yes,PN
+an-2021,11 Surg,D2,2.1,probably_yes,yes,PY
+an-2021,11 Surg,D2,2.2,probably_no,yes,PN
+an-2021,11 Surg,D2,2.3,probably_no,yes,PN
+an-2021,11 Surg,D2,2.4,not_applicable,no,NA
+an-2021,11 Surg,D2,2.5,not_applicable,no,NA
+an-2021,11 Surg,D2,2.6,probably_no,yes,PN
+an-2021,11 Surg,D2,2.7,probably_no,yes,PN
+an-2021,11 Surg,D3,3.1,probably_no,yes,PN
+an-2021,11 Surg,D3,3.2,no_information,yes,NI
+an-2021,11 Surg,D3,3.3,probably_yes,yes,PY
+an-2021,11 Surg,D3,3.4,probably_yes,yes,PY
+an-2021,11 Surg,D4,4.1,no,yes,N
+an-2021,11 Surg,D4,4.2,no,yes,N
+an-2021,11 Surg,D4,4.3,no,yes,N
+an-2021,11 Surg,D4,4.4,no,yes,N
+an-2021,11 Surg,D5,5.1,probably_no,yes,PN
+an-2021,11 Surg,D5,5.2,probably_no,yes,PN
+an-2021,11 Surg,D5,5.3,no,yes,N
+apalla-2013,04 Neuro,D1,1.1,probably_yes,yes,PY
+apalla-2013,04 Neuro,D1,1.2,no_information,yes,NI
+apalla-2013,04 Neuro,D1,1.3,no,yes,N
+apalla-2013,04 Neuro,D2,2.1,no,yes,N
+apalla-2013,04 Neuro,D2,2.2,no,yes,N
+apalla-2013,04 Neuro,D2,2.3,no,yes,N
+apalla-2013,04 Neuro,D2,2.4,not_applicable,no,NA
+apalla-2013,04 Neuro,D2,2.5,not_applicable,no,NA
+apalla-2013,04 Neuro,D2,2.6,probably_yes,yes,PY
+apalla-2013,04 Neuro,D2,2.7,not_applicable,no,NA
+apalla-2013,04 Neuro,D3,3.1,yes,yes,Y
+apalla-2013,04 Neuro,D3,3.2,not_applicable,no,NA
+apalla-2013,04 Neuro,D3,3.3,no,yes,N
+apalla-2013,04 Neuro,D3,3.4,not_applicable,no,NA
+apalla-2013,04 Neuro,D4,4.1,no,yes,N
+apalla-2013,04 Neuro,D4,4.2,no,yes,N
+apalla-2013,04 Neuro,D4,4.3,no,yes,N
+apalla-2013,04 Neuro,D4,4.4,not_applicable,no,NA
+apalla-2013,04 Neuro,D4,4.5,not_applicable,no,NA
+apalla-2013,04 Neuro,D5,5.1,no,yes,N
+apalla-2013,04 Neuro,D5,5.2,probably_yes,yes,PY
+apalla-2013,04 Neuro,D5,5.3,no,yes,N
+arezzo-2008,04 Neuro,D1,1.1,yes,yes,"Y | Computer-generated random code (Methods, p2)"
+arezzo-2008,04 Neuro,D1,1.2,probably_yes,yes,PY | Numbered kits allocated via interactive voice-response system; concealment not explicitly described
+arezzo-2008,04 Neuro,D1,1.3,probably_no,yes,PN | Groups similar at baseline (pain 6.58 vs 6.28); male sex 53% vs 71% is a possible chance imbalance (Table 1)
+arezzo-2008,04 Neuro,D2,2.1,yes,yes,"Y | Sponsor, site and patients blinded; identical capsules"
+arezzo-2008,04 Neuro,D2,2.2,yes,yes,Y | Study site staff blinded
+arezzo-2008,04 Neuro,D2,2.3,no,yes,N | No deviations from intended dosing reported; titration was protocol-specified
+arezzo-2008,04 Neuro,D2,2.4,not_applicable,no,NA | 
+arezzo-2008,04 Neuro,D2,2.5,not_applicable,no,NA | 
+arezzo-2008,04 Neuro,D2,2.6,probably_yes,yes,"PY | Stratified CMH by centre on the randomised population, but denominators and handling of withdrawals for this analysis are not stated"
+arezzo-2008,04 Neuro,D2,2.7,not_applicable,no,NA | 
+arezzo-2008,04 Neuro,D3,3.1,probably_no,yes,"PN | About 30% withdrew in double-blind phase (28% placebo, 34% pregabalin); endpoint carried forward (LOCF) for non-completers"
+arezzo-2008,04 Neuro,D3,3.2,no_information,yes,NI | No sensitivity analysis reported for the responder outcome; BOCF sensitivity was reported only for mean pain
+arezzo-2008,04 Neuro,D3,3.3,probably_yes,yes,PY | Withdrawal for adverse events was more common on pregabalin (17% vs 12%); missingness plausibly relates to tolerability
+arezzo-2008,04 Neuro,D3,3.4,probably_yes,yes,PY | Withdrawal rates and reasons differ between arms
+arezzo-2008,04 Neuro,D3,3.5,probably_no,yes,"PN | Direction of bias from LOCF is unclear, and BOCF for mean pain gave the same conclusion"
+arezzo-2008,04 Neuro,D4,4.1,no,yes,"N | 11-point NRS daily diary, standard instrument"
+arezzo-2008,04 Neuro,D4,4.2,no,yes,N | Same method in both arms
+arezzo-2008,04 Neuro,D4,4.3,probably_no,yes,"PN | Patient-reported outcome; patients were blinded, but no blinding-integrity check was reported"
+arezzo-2008,04 Neuro,D4,4.4,probably_yes,yes,"PY | Large adverse-event imbalance (dizziness 33% vs 6%, weight gain 15% vs 1%) could allow guessing of allocation and influence self-reported pain"
+arezzo-2008,04 Neuro,D4,4.5,probably_no,yes,PN | No evidence the pain assessment was differentially influenced
+arezzo-2008,04 Neuro,D5,5.1,probably_no,yes,PN | Responder is one of several registered pain measures; registered as secondary outcome before completion
+arezzo-2008,04 Neuro,D5,5.2,probably_yes,yes,"PY | Reported as a supplemental p-value only, with no effect estimate, CI or denominators; prespecification not verifiable"
+arezzo-2008,04 Neuro,D5,5.3,no,yes,N | No subgroup selection
+ascet,01 GenMed,D1,1.1,yes,yes,Y
+ascet,01 GenMed,D1,1.2,probably_yes,yes,PY
+ascet,01 GenMed,D1,1.3,no,yes,N
+ascet,01 GenMed,D2,2.1,yes,yes,Y
+ascet,01 GenMed,D2,2.2,yes,yes,Y
+ascet,01 GenMed,D2,2.3,probably_no,yes,PN
+ascet,01 GenMed,D2,2.4,not_applicable,no,NA
+ascet,01 GenMed,D2,2.5,yes,yes,Y
+ascet,01 GenMed,D2,2.6,not_applicable,no,NA
+ascet,01 GenMed,D3,3.1,yes,yes,Y
+ascet,01 GenMed,D3,3.2,not_applicable,no,NA
+ascet,01 GenMed,D3,3.3,no,yes,N
+ascet,01 GenMed,D3,3.4,not_applicable,no,NA
+ascet,01 GenMed,D4,4.1,yes,yes,Y
+ascet,01 GenMed,D4,4.2,yes,yes,Y
+ascet,01 GenMed,D4,4.3,no,yes,N
+ascet,01 GenMed,D4,4.4,not_applicable,no,NA
+ascet,01 GenMed,D4,4.5,not_applicable,no,NA
+ascet,01 GenMed,D5,5.1,no,yes,N
+ascet,01 GenMed,D5,5.2,no,yes,N
+ascet,01 GenMed,D5,5.3,no,yes,N
+ashar-2022,10 Rheum,D1,1.1,yes,yes,Y
+ashar-2022,10 Rheum,D1,1.2,yes,yes,Y
+ashar-2022,10 Rheum,D1,1.3,no,yes,N
+ashar-2022,10 Rheum,D2,2.1,yes,yes,Y
+ashar-2022,10 Rheum,D2,2.2,yes,yes,Y
+ashar-2022,10 Rheum,D2,2.3,probably_yes,yes,PY
+ashar-2022,10 Rheum,D2,2.4,probably_yes,yes,PY
+ashar-2022,10 Rheum,D2,2.5,no_information,yes,NI
+ashar-2022,10 Rheum,D2,2.6,yes,yes,Y
+ashar-2022,10 Rheum,D2,2.7,not_applicable,no,NA
+ashar-2022,10 Rheum,D3,3.1,no,yes,N
+ashar-2022,10 Rheum,D3,3.2,no,yes,N
+ashar-2022,10 Rheum,D3,3.3,probably_yes,yes,PY
+ashar-2022,10 Rheum,D3,3.4,probably_yes,yes,PY
+ashar-2022,10 Rheum,D4,4.1,no,yes,N
+ashar-2022,10 Rheum,D4,4.2,probably_yes,yes,PY
+ashar-2022,10 Rheum,D4,4.3,probably_no,yes,PN
+ashar-2022,10 Rheum,D4,4.4,yes,yes,Y
+ashar-2022,10 Rheum,D5,5.1,probably_yes,yes,PY
+ashar-2022,10 Rheum,D5,5.2,probably_yes,yes,PY
+ashar-2022,10 Rheum,D5,5.3,probably_no,yes,PN
+atli-2005,04 Neuro,D1,1.1,probably_yes,yes,PY
+atli-2005,04 Neuro,D1,1.2,no_information,yes,NI
+atli-2005,04 Neuro,D1,1.3,no,yes,N
+atli-2005,04 Neuro,D2,2.1,probably_yes,yes,PY
+atli-2005,04 Neuro,D2,2.2,probably_yes,yes,PY
+atli-2005,04 Neuro,D2,2.3,probably_no,yes,PN
+atli-2005,04 Neuro,D2,2.4,probably_no,yes,PN
+atli-2005,04 Neuro,D2,2.5,no,yes,N
+atli-2005,04 Neuro,D2,2.6,probably_no,yes,PN
+atli-2005,04 Neuro,D2,2.7,probably_yes,yes,PY
+atli-2005,04 Neuro,D3,3.1,no,yes,N
+atli-2005,04 Neuro,D3,3.2,no,yes,N
+atli-2005,04 Neuro,D3,3.3,probably_yes,yes,PY
+atli-2005,04 Neuro,D3,3.4,probably_yes,yes,PY
+atli-2005,04 Neuro,D4,4.1,no,yes,N
+atli-2005,04 Neuro,D4,4.2,no,yes,N
+atli-2005,04 Neuro,D4,4.3,no,yes,N
+atli-2005,04 Neuro,D4,4.4,probably_no,yes,PN
+atli-2005,04 Neuro,D4,4.5,no,yes,N
+atli-2005,04 Neuro,D5,5.1,no,yes,N
+atli-2005,04 Neuro,D5,5.2,probably_yes,yes,PY
+atli-2005,04 Neuro,D5,5.3,yes,yes,Y
+attal-2016,04 Neuro,D1,1.1,yes,yes,Y
+attal-2016,04 Neuro,D1,1.2,yes,yes,Y
+attal-2016,04 Neuro,D1,1.3,no,yes,N
+attal-2016,04 Neuro,D2,2.1,no,yes,N
+attal-2016,04 Neuro,D2,2.2,no,yes,N
+attal-2016,04 Neuro,D2,2.3,no,yes,N
+attal-2016,04 Neuro,D2,2.4,not_applicable,no,NA
+attal-2016,04 Neuro,D2,2.5,yes,yes,Y
+attal-2016,04 Neuro,D2,2.6,no,yes,N
+attal-2016,04 Neuro,D2,2.7,probably_yes,yes,PY
+attal-2016,04 Neuro,D3,3.1,probably_no,yes,PN
+attal-2016,04 Neuro,D3,3.2,probably_no,yes,PN
+attal-2016,04 Neuro,D3,3.3,probably_yes,yes,PY
+attal-2016,04 Neuro,D3,3.4,probably_no,yes,PN
+attal-2016,04 Neuro,D4,4.1,no,yes,N
+attal-2016,04 Neuro,D4,4.2,no,yes,N
+attal-2016,04 Neuro,D4,4.3,no,yes,N
+attal-2016,04 Neuro,D4,4.4,probably_no,yes,PN
+attal-2016,04 Neuro,D4,4.5,no,yes,N
+attal-2016,04 Neuro,D5,5.1,probably_yes,yes,PY
+attal-2016,04 Neuro,D5,5.2,probably_yes,yes,PY
+attal-2016,04 Neuro,D5,5.3,probably_no,yes,PN
+attal-2021,04 Neuro,D1,1.1,yes,yes,"Y | Computer-generated permuted blocks, stratified by centre"
+attal-2021,04 Neuro,D1,1.2,yes,yes,Y | Central randomisation by the Clinical Research Unit
+attal-2021,04 Neuro,D1,1.3,no,yes,"N | Baseline pain similar (BPI 7.0, 6.5, 6.9)"
+attal-2021,04 Neuro,D2,2.1,no,yes,N | Double-blind with matched sham coil and scalp-tapping stimulation in all arms
+attal-2021,04 Neuro,D2,2.2,no,yes,N | Same as 2.1
+attal-2021,04 Neuro,D2,2.3,not_applicable,no,NA | Not applicable as 2.1 and 2.2 are N
+attal-2021,04 Neuro,D2,2.4,not_applicable,no,NA | Not applicable
+attal-2021,04 Neuro,D2,2.5,not_applicable,no,NA | Not applicable
+attal-2021,04 Neuro,D2,2.6,probably_no,yes,"PN | Primary mixed model is ITT, but the ≥50% responder NNT is calculated from completers"
+attal-2021,04 Neuro,D2,2.7,probably_yes,yes,PY | Completer analysis with differential attrition (see D3)
+attal-2021,04 Neuro,D3,3.1,no,yes,"N | Week 25 data: M1 39/49, DLPFC 29/52, sham 25/48"
+attal-2021,04 Neuro,D3,3.2,no,yes,"N | No sensitivity analysis reported for the responder outcome; dropouts were censored, not imputed"
+attal-2021,04 Neuro,D3,3.3,yes,yes,Y | Sham dropouts most often due to absence of efficacy (12 of 23)
+attal-2021,04 Neuro,D3,3.4,yes,yes,Y | Same as 3.3; attrition is 48% in sham vs about 20% in M1
+attal-2021,04 Neuro,D4,4.1,no,yes,N | Standard 0–100% relief item from the BPI
+attal-2021,04 Neuro,D4,4.2,no,yes,N | Same instrument and schedule in all arms
+attal-2021,04 Neuro,D4,4.3,probably_no,yes,"PN | Blinding guess accuracy about 59% (53/90), so partial awareness"
+attal-2021,04 Neuro,D4,4.4,probably_yes,yes,"PY | 88–89% of guesses were based on perceived efficacy, so ratings may reflect expectation"
+attal-2021,04 Neuro,D4,4.5,probably_yes,yes,PY | Same as 4.4
+attal-2021,04 Neuro,D5,5.1,probably_no,yes,"PN | The 0–100% relief scale and its NNT are not in the registry (registered responder outcome is ≥30%/≥50% change from baseline, not relief scale); no SAP in the files"
+attal-2021,04 Neuro,D5,5.2,yes,yes,"Y | Pain worst, least, average, relief, PGIC, CGIC, and two NNT scales reported"
+attal-2021,04 Neuro,D5,5.3,probably_yes,yes,PY | Relief-scale NNT (3.1) highlighted in discussion; NRS-based NNT (7.7) less favourable
+award-1-2014,06 Gastro,D1,1.1,yes,yes,Y | Computer-generated random sequence (article p.2160)
+award-1-2014,06 Gastro,D1,1.2,probably_yes,yes,"PY | IVRS allocation implies central concealment, but concealment is not stated explicitly"
+award-1-2014,06 Gastro,D1,1.3,no,yes,N | Baseline characteristics balanced (Table 1)
+award-1-2014,06 Gastro,D2,2.1,yes,yes,Y | Quadruple masking; participants blinded (CT.gov)
+award-1-2014,06 Gastro,D2,2.2,yes,yes,Y | Investigators and care providers blinded (CT.gov)
+award-1-2014,06 Gastro,D2,2.3,probably_no,yes,PN | Protocol-permitted rescue therapy was unbalanced (placebo 15.6% vs 1.4% and 4.3%) but is not a trial-context deviation
+award-1-2014,06 Gastro,D2,2.4,not_applicable,no,NA | 2.3 is PN
+award-1-2014,06 Gastro,D2,2.5,yes,yes,"Y | AEs analysed in all treated participants (ITT population, article p.2161)"
+award-1-2014,06 Gastro,D2,2.6,not_applicable,no,NA | Appropriate analysis used
+award-1-2014,06 Gastro,D3,3.1,yes,yes,Y | AE data available for all randomised (at risk 280/279/141)
+award-1-2014,06 Gastro,D3,3.2,not_applicable,no,NA | 3.1 is Y
+award-1-2014,06 Gastro,D3,3.3,no,yes,N | Lost to follow-up similar (pooled 17/559 vs placebo 5/141); discontinuations for AEs are recorded
+award-1-2014,06 Gastro,D3,3.4,not_applicable,no,NA | Not applicable
+award-1-2014,06 Gastro,D4,4.1,no,yes,N | Systematic MedDRA-coded AE collection; pancreatic events adjudicated
+award-1-2014,06 Gastro,D4,4.2,no,yes,N | Same collection method across arms
+award-1-2014,06 Gastro,D4,4.3,no,yes,N | Outcomes assessor masked (CT.gov)
+award-1-2014,06 Gastro,D4,4.4,not_applicable,no,NA | 4.3 is N
+award-1-2014,06 Gastro,D4,4.5,not_applicable,no,NA | 4.3 is N
+award-1-2014,06 Gastro,D5,5.1,probably_yes,yes,"PY | The 15 events come from the CT.gov serious-AE table, which is a reviewer-selected subset. The paper reports only AEs at ≥5%, and the registry holds several overlapping GI AE measures (serious vs all AEs; 26 vs 56 weeks)"
+award-1-2014,06 Gastro,D5,5.2,no,yes,N | Descriptive counts; no multiple analyses evident
+award-1-2014,06 Gastro,D5,5.3,no,yes,N | No subgroup analyses for these events
+award-10-2018,06 Gastro,D1,1.1,yes,yes,Y | Computer-generated random sequence
+award-10-2018,06 Gastro,D1,1.2,yes,yes,"Y | Allocation via IWRS, concealed from site staff"
+award-10-2018,06 Gastro,D1,1.3,no,yes,N | Baseline characteristics balanced across arms
+award-10-2018,06 Gastro,D2,2.1,yes,yes,Y | Participants masked
+award-10-2018,06 Gastro,D2,2.2,yes,yes,Y | Investigators masked
+award-10-2018,06 Gastro,D2,2.3,probably_no,yes,"PN | Rescue therapy allowed; 10 placebo vs 2 and 3 dulaglutide patients, but for hyperglycaemia and unlikely related to GI haemorrhage"
+award-10-2018,06 Gastro,D2,2.4,not_applicable,no,NA | Not needed since 2.3 is PN
+award-10-2018,06 Gastro,D2,2.5,yes,yes,Y | ITT analysis of all dosed patients
+award-10-2018,06 Gastro,D2,2.6,not_applicable,no,NA | Not needed since 2.5 is Y
+award-10-2018,06 Gastro,D3,3.1,yes,yes,"Y | At-risk denominators 142/141/140 match the randomised, dosed population"
+award-10-2018,06 Gastro,D3,3.2,not_applicable,no,NA | Not needed since 3.1 is Y
+award-10-2018,06 Gastro,D3,3.3,no,yes,N | No reason to think SAE missingness depends on its true value
+award-10-2018,06 Gastro,D3,3.4,not_applicable,no,NA | Not needed since 3.3 is N
+award-10-2018,06 Gastro,D4,4.1,no,yes,"N | SAEs captured by systematic assessment, MedDRA-coded, same method in all arms"
+award-10-2018,06 Gastro,D4,4.2,probably_no,yes,"PN | Dulaglutide GI effects could hint at allocation, but ascertainment was done by masked investigators"
+award-10-2018,06 Gastro,D4,4.3,yes,yes,Y | Outcome assessors masked (CT.gov: participant and investigator masking)
+award-10-2018,06 Gastro,D4,4.4,no,yes,N | Serious haemorrhage event is unlikely to be shaped by knowledge of allocation
+award-10-2018,06 Gastro,D4,4.5,no,yes,N | No evidence assessment was influenced by knowledge of allocation
+award-10-2018,06 Gastro,D5,5.1,probably_no,yes,"PN | GI haemorrhage is one of about 20 SAE preferred terms in the registry; the full SAE table is reported, but the article omits it"
+award-10-2018,06 Gastro,D5,5.2,probably_yes,yes,PY | Pooled 1.5 mg + 0.75 mg vs placebo is not a prespecified trial analysis
+award-10-2018,06 Gastro,D5,5.3,no,yes,N | No subgroup selection
+award-chn3-2023,06 Gastro,D1,1.1,yes,yes,Y
+award-chn3-2023,06 Gastro,D1,1.2,yes,yes,Y
+award-chn3-2023,06 Gastro,D1,1.3,no,yes,N
+award-chn3-2023,06 Gastro,D2,2.1,no,yes,N
+award-chn3-2023,06 Gastro,D2,2.2,no,yes,N
+award-chn3-2023,06 Gastro,D2,2.3,no,yes,N
+award-chn3-2023,06 Gastro,D2,2.4,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D2,2.5,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D2,2.6,yes,yes,Y
+award-chn3-2023,06 Gastro,D2,2.7,no,yes,N
+award-chn3-2023,06 Gastro,D3,3.1,yes,yes,Y
+award-chn3-2023,06 Gastro,D3,3.2,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D3,3.3,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D3,3.4,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D4,4.1,no,yes,N
+award-chn3-2023,06 Gastro,D4,4.2,probably_no,yes,PN
+award-chn3-2023,06 Gastro,D4,4.3,no_information,yes,NI
+award-chn3-2023,06 Gastro,D4,4.4,probably_yes,yes,PY
+award-chn3-2023,06 Gastro,D4,4.5,probably_no,yes,PN
+award-chn3-2023,06 Gastro,D5,5.1,no_information,yes,NI
+award-chn3-2023,06 Gastro,D5,5.2,probably_no,yes,PN
+award-chn3-2023,06 Gastro,D5,5.3,no,yes,N
+bagg-2022,10 Rheum,D1,1.1,yes,yes,Y
+bagg-2022,10 Rheum,D1,1.2,yes,yes,Y
+bagg-2022,10 Rheum,D1,1.3,probably_no,yes,PN
+bagg-2022,10 Rheum,D2,2.1,no,yes,N
+bagg-2022,10 Rheum,D2,2.2,yes,yes,Y
+bagg-2022,10 Rheum,D2,2.3,no,yes,N
+bagg-2022,10 Rheum,D2,2.4,no_information,yes,NI
+bagg-2022,10 Rheum,D2,2.5,yes,yes,Y
+bagg-2022,10 Rheum,D2,2.6,not_applicable,no,NA
+bagg-2022,10 Rheum,D2,2.7,not_applicable,no,NA
+bagg-2022,10 Rheum,D3,3.1,probably_yes,yes,PY
+bagg-2022,10 Rheum,D3,3.2,not_applicable,no,NA
+bagg-2022,10 Rheum,D3,3.3,probably_no,yes,PN
+bagg-2022,10 Rheum,D3,3.4,not_applicable,no,NA
+bagg-2022,10 Rheum,D4,4.1,no,yes,N
+bagg-2022,10 Rheum,D4,4.2,no,yes,N
+bagg-2022,10 Rheum,D4,4.3,no,yes,N
+bagg-2022,10 Rheum,D4,4.4,probably_no,yes,PN
+bagg-2022,10 Rheum,D4,4.5,probably_no,yes,PN
+bagg-2022,10 Rheum,D5,5.1,probably_yes,yes,PY
+bagg-2022,10 Rheum,D5,5.2,probably_no,yes,PN
+bagg-2022,10 Rheum,D5,5.3,no,yes,N
+baillard-2006,07 PulmCC,D1,1.1,yes,yes,Y | Computer-generated random-number table (Methods)
+baillard-2006,07 PulmCC,D1,1.2,yes,yes,"Y | Opaque, sealed, numbered envelopes (Methods)"
+baillard-2006,07 PulmCC,D1,1.3,no,yes,N | Table 1 shows similar groups
+baillard-2006,07 PulmCC,D2,2.1,yes,yes,"Y | Not blinded (Discussion, study limitations)"
+baillard-2006,07 PulmCC,D2,2.2,yes,yes,Y | Same as 2.1
+baillard-2006,07 PulmCC,D2,2.3,no,yes,N | No protocol deviations reported
+baillard-2006,07 PulmCC,D2,2.4,probably_no,yes,PN | Four randomised patients (2 per arm) excluded for incomplete data; mortality status of these not reported
+baillard-2006,07 PulmCC,D2,2.5,no,yes,"N | Balanced 2/2 exclusions, small, not outcome-related on the stated reason"
+baillard-2006,07 PulmCC,D3,3.1,probably_no,yes,PN | Mortality reported for 53/57 randomised; vital status of the 4 excluded not stated
+baillard-2006,07 PulmCC,D3,3.2,probably_yes,yes,"PY | 7% missing, balanced 2/2, mortality is near-universally ascertained in ICU"
+baillard-2006,07 PulmCC,D3,3.3,not_applicable,no,NA | Not reached (3.2 is PY)
+baillard-2006,07 PulmCC,D3,3.4,not_applicable,no,NA | Not reached (3.2 is PY)
+baillard-2006,07 PulmCC,D4,4.1,no,yes,N | ICU death is objective
+baillard-2006,07 PulmCC,D4,4.2,no,yes,N | Objective outcome; no differential ascertainment described
+baillard-2006,07 PulmCC,D4,4.3,yes,yes,Y | Investigators were part of treating teams (Discussion)
+baillard-2006,07 PulmCC,D4,4.4,no,yes,"N | Objective outcome, unlikely to be affected"
+baillard-2006,07 PulmCC,D4,4.5,not_applicable,no,NA | Not reached (4.4 is N)
+baillard-2006,07 PulmCC,D5,5.1,probably_no,yes,PN | Mortality is absent from the stated primary and secondary endpoints; no protocol available
+baillard-2006,07 PulmCC,D5,5.2,no,yes,N | One mortality measure reported
+baillard-2006,07 PulmCC,D5,5.3,no,yes,N | Single comparison reported (p = 0.21)
+baillard-2018,07 PulmCC,D1,1.1,probably_yes,yes,PY
+baillard-2018,07 PulmCC,D1,1.2,yes,yes,Y
+baillard-2018,07 PulmCC,D1,1.3,probably_no,yes,PN
+baillard-2018,07 PulmCC,D2,2.1,yes,yes,Y
+baillard-2018,07 PulmCC,D2,2.2,yes,yes,Y
+baillard-2018,07 PulmCC,D2,2.3,no_information,yes,NI
+baillard-2018,07 PulmCC,D2,2.4,not_applicable,no,NA
+baillard-2018,07 PulmCC,D2,2.5,not_applicable,no,NA
+baillard-2018,07 PulmCC,D2,2.6,yes,yes,Y
+baillard-2018,07 PulmCC,D2,2.7,no,yes,N
+baillard-2018,07 PulmCC,D3,3.1,probably_yes,yes,PY
+baillard-2018,07 PulmCC,D3,3.2,not_applicable,no,NA
+baillard-2018,07 PulmCC,D3,3.3,not_applicable,no,NA
+baillard-2018,07 PulmCC,D3,3.4,not_applicable,no,NA
+baillard-2018,07 PulmCC,D4,4.1,no,yes,N
+baillard-2018,07 PulmCC,D4,4.2,probably_no,yes,PN
+baillard-2018,07 PulmCC,D4,4.3,yes,yes,Y
+baillard-2018,07 PulmCC,D4,4.4,probably_no,yes,PN
+baillard-2018,07 PulmCC,D4,4.5,no,yes,N
+baillard-2018,07 PulmCC,D5,5.1,probably_no,yes,PN
+baillard-2018,07 PulmCC,D5,5.2,probably_no,yes,PN
+baillard-2018,07 PulmCC,D5,5.3,no,yes,N
+banovic26-avatar-2024,02 Cardio,D1,1.1,yes,yes,"Y | Computer-generated, stratified by centre, permuted-block with variable block size (Circulation 2022, p.649)"
+banovic26-avatar-2024,02 Cardio,D1,1.2,yes,yes,Y | Web-based interactive response system
+banovic26-avatar-2024,02 Cardio,D1,1.3,no,yes,"N | Minor imbalances (age p=.02, Hb p=.01) without evidence of a process failure (Table 2)"
+banovic26-avatar-2024,02 Cardio,D2,2.1,yes,yes,"Y | Open-label, Masking: NONE (registry)"
+banovic26-avatar-2024,02 Cardio,D2,2.2,yes,yes,Y | Open-label design
+banovic26-avatar-2024,02 Cardio,D2,2.3,probably_no,yes,PN | 6/78 early-surgery patients did not receive AVR; 35/79 controls had surgery on symptom onset per protocol
+banovic26-avatar-2024,02 Cardio,D2,2.4,not_applicable,no,NA | Not reached (2.3 is PN)
+banovic26-avatar-2024,02 Cardio,D2,2.5,yes,yes,"Y | ITT, all randomized analysed, Cox model (EHJ p.4530)"
+banovic26-avatar-2024,02 Cardio,D2,2.6,not_applicable,no,NA | Not reached (2.5 is Y)
+banovic26-avatar-2024,02 Cardio,D2,2.7,not_applicable,no,NA | Per-protocol analysis not the basis of the reported HR
+banovic26-avatar-2024,02 Cardio,D3,3.1,yes,yes,"Y | All 157 included; 1 early-surgery patient lost, censored at last contact (EHJ p.4530)"
+banovic26-avatar-2024,02 Cardio,D3,3.2,not_applicable,no,NA | Not reached
+banovic26-avatar-2024,02 Cardio,D3,3.3,no,yes,N | Vital status for death is objective and essentially complete
+banovic26-avatar-2024,02 Cardio,D3,3.4,not_applicable,no,NA | Not reached
+banovic26-avatar-2024,02 Cardio,D4,4.1,no,yes,N | Death confirmed from medical records; DSMB adjudication
+banovic26-avatar-2024,02 Cardio,D4,4.2,no,yes,N | Same procedures in both arms
+banovic26-avatar-2024,02 Cardio,D4,4.3,yes,yes,Y | Open-label; DSMB not blinded to allocation during event review
+banovic26-avatar-2024,02 Cardio,D4,4.4,no,yes,N | All-cause death is objective
+banovic26-avatar-2024,02 Cardio,D4,4.5,not_applicable,no,NA | Not reached (4.4 is N)
+banovic26-avatar-2024,02 Cardio,D5,5.1,probably_yes,yes,"PY | Registered outcomes include all-cause death within primary composites; ""time to death"" is a pre-specified secondary (Circulation 2022). The full SAP for the 63-month analysis is not in the bundle; only the COVID-delay amendment is"
+banovic26-avatar-2024,02 Cardio,D5,5.2,probably_yes,yes,"PY | Death is reported as a standalone endpoint alongside the composite and several secondaries, with no multiplicity adjustment (EHJ p.4530)"
+banovic26-avatar-2024,02 Cardio,D5,5.3,probably_yes,yes,"PY | Result comes from an extended 63-month analysis after a non-significant 32-month primary analysis (HR 0.46 for composite, death not significant), with a 3-year sensitivity analysis also run"
+barratt-2024,14 Neph,D1,1.1,yes,yes,Y
+barratt-2024,14 Neph,D1,1.2,yes,yes,Y
+barratt-2024,14 Neph,D1,1.3,probably_no,yes,PN
+barratt-2024,14 Neph,D2,2.1,yes,yes,Y
+barratt-2024,14 Neph,D2,2.2,no,yes,N
+barratt-2024,14 Neph,D2,2.3,no,yes,N
+barratt-2024,14 Neph,D2,2.4,no,yes,N
+barratt-2024,14 Neph,D2,2.5,probably_yes,yes,PY
+barratt-2024,14 Neph,D2,2.6,not_applicable,no,NA
+barratt-2024,14 Neph,D2,2.7,not_applicable,no,NA
+barratt-2024,14 Neph,D3,3.1,probably_yes,yes,PY
+barratt-2024,14 Neph,D3,3.2,not_applicable,no,NA
+barratt-2024,14 Neph,D3,3.3,no_information,yes,NI
+barratt-2024,14 Neph,D3,3.4,not_applicable,no,NA
+barratt-2024,14 Neph,D4,4.1,no,yes,N
+barratt-2024,14 Neph,D4,4.2,no,yes,N
+barratt-2024,14 Neph,D4,4.3,no,yes,N
+barratt-2024,14 Neph,D4,4.4,no,yes,N
+barratt-2024,14 Neph,D4,4.5,no,yes,N
+barratt-2024,14 Neph,D5,5.1,yes,yes,Y
+barratt-2024,14 Neph,D5,5.2,probably_no,yes,PN
+barratt-2024,14 Neph,D5,5.3,probably_no,yes,PN
+bausys-2023,11 Surg,D1,1.1,yes,yes,Y
+bausys-2023,11 Surg,D1,1.2,yes,yes,Y
+bausys-2023,11 Surg,D1,1.3,probably_no,yes,PN
+bausys-2023,11 Surg,D2,2.1,yes,yes,Y
+bausys-2023,11 Surg,D2,2.2,probably_no,yes,PN
+bausys-2023,11 Surg,D2,2.3,probably_no,yes,PN
+bausys-2023,11 Surg,D2,2.4,not_applicable,no,NA
+bausys-2023,11 Surg,D2,2.5,probably_no,yes,PN
+bausys-2023,11 Surg,D2,2.6,probably_no,yes,PN
+bausys-2023,11 Surg,D2,2.7,probably_no,yes,PN
+bausys-2023,11 Surg,D3,3.1,probably_no,yes,PN
+bausys-2023,11 Surg,D3,3.2,no_information,yes,NI
+bausys-2023,11 Surg,D3,3.3,probably_no,yes,PN
+bausys-2023,11 Surg,D3,3.4,not_applicable,no,NA
+bausys-2023,11 Surg,D4,4.1,no,yes,N
+bausys-2023,11 Surg,D4,4.2,no,yes,N
+bausys-2023,11 Surg,D4,4.3,no,yes,N
+bausys-2023,11 Surg,D4,4.4,not_applicable,no,NA
+bausys-2023,11 Surg,D4,4.5,not_applicable,no,NA
+bausys-2023,11 Surg,D5,5.1,probably_no,yes,PN
+bausys-2023,11 Surg,D5,5.2,probably_yes,yes,PY
+bausys-2023,11 Surg,D5,5.3,probably_no,yes,PN
+becker-2015,12 ObGyn,D1,1.1,no_information,yes,"NI | ""Randomized block design"" only; no sequence generation method."
+becker-2015,12 ObGyn,D1,1.2,no_information,yes,NI | Allocation concealment not reported.
+becker-2015,12 ObGyn,D1,1.3,probably_yes,yes,"PY | Baseline waist:hip ratio differed (0.87 vs 0.82, P=0.021, Table 2), and that outcome favoured the LGI group."
+becker-2015,12 ObGyn,D2,2.1,yes,yes,Y | Participants could not be blinded (p.1367).
+becker-2015,12 ObGyn,D2,2.2,yes,yes,Y | Dietitians were aware of allocation.
+becker-2015,12 ObGyn,D2,2.3,probably_no,yes,"PN | LGI group intake was below target (1332 vs 1537 kcal, Table 4), which is a deviation from the prescribed diet."
+becker-2015,12 ObGyn,D2,2.4,no,yes,N | LGI group alone received supplied olive oil and dried fruit; control had no equivalent.
+becker-2015,12 ObGyn,D2,2.5,no,yes,N | Analysis was complete-case (14 vs 12 and 11 vs 12); no ITT analysis.
+becker-2015,12 ObGyn,D2,2.6,probably_yes,yes,"PY | Attrition was 2/16 (LGI) vs 7/19 (control), so the unanalysed participants could substantially affect the estimate."
+becker-2015,12 ObGyn,D3,3.1,no,yes,N | 9 of 35 randomised were lost; 3 LGI pregnancies were excluded from the IVF and metabolic final analyses.
+becker-2015,12 ObGyn,D3,3.2,no,yes,N | No sensitivity analysis reported.
+becker-2015,12 ObGyn,D3,3.3,probably_yes,yes,"PY | Losses were due to non-compliance, cycle cancellation and spontaneous pregnancy, which relate to the outcomes."
+becker-2015,12 ObGyn,D3,3.4,probably_yes,yes,"PY | Pregnancy, the outcome of interest, is the reason for exclusion from the IVF outcome analysis."
+becker-2015,12 ObGyn,D4,4.1,no,yes,"N | Skinfolds, ELISA for leptin and ghrelin, and ultrasound-confirmed pregnancy are appropriate methods."
+becker-2015,12 ObGyn,D4,4.2,no,yes,N | Same methods used in both groups.
+becker-2015,12 ObGyn,D4,4.3,probably_yes,yes,"PY | Dietitians and patients were unblinded, and assessor blinding is not described."
+becker-2015,12 ObGyn,D4,4.4,probably_no,yes,PN | Most outcomes are objective; skinfold body fat is the most exposed.
+becker-2015,12 ObGyn,D5,5.1,probably_yes,yes,"PY | Many anthropometric, metabolic and hormonal measures were reported; hip circumference is significant in the text but omitted from the abstract."
+becker-2015,12 ObGyn,D5,5.2,probably_yes,yes,"PY | Multiple analyses, per-protocol subsets, and correlations with oocytes."
+becker-2015,12 ObGyn,D5,5.3,no,yes,N | No subgroup analyses reported.
+beerendonk-1996,12 ObGyn,D1,1.1,no_information,yes,NI
+beerendonk-1996,12 ObGyn,D1,1.2,no_information,yes,NI
+beerendonk-1996,12 ObGyn,D1,1.3,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D2,2.1,yes,yes,Y
+beerendonk-1996,12 ObGyn,D2,2.2,yes,yes,Y
+beerendonk-1996,12 ObGyn,D2,2.3,no,yes,N
+beerendonk-1996,12 ObGyn,D2,2.4,yes,yes,Y
+beerendonk-1996,12 ObGyn,D2,2.5,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D2,2.6,probably_yes,yes,PY
+beerendonk-1996,12 ObGyn,D3,3.1,probably_yes,yes,PY
+beerendonk-1996,12 ObGyn,D3,3.2,not_applicable,no,NA
+beerendonk-1996,12 ObGyn,D3,3.3,no,yes,N
+beerendonk-1996,12 ObGyn,D3,3.4,not_applicable,no,NA
+beerendonk-1996,12 ObGyn,D4,4.1,no,yes,N
+beerendonk-1996,12 ObGyn,D4,4.2,no,yes,N
+beerendonk-1996,12 ObGyn,D4,4.3,no_information,yes,NI
+beerendonk-1996,12 ObGyn,D4,4.4,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D4,4.5,no,yes,N
+beerendonk-1996,12 ObGyn,D5,5.1,no_information,yes,NI
+beerendonk-1996,12 ObGyn,D5,5.2,no,yes,N
+beerendonk-1996,12 ObGyn,D5,5.3,no,yes,N
+beerendonk-1996,12 ObGyn,D5,5.4,no,yes,N
+beerendonk-1999,12 ObGyn,D1,1.1,probably_yes,yes,PY
+beerendonk-1999,12 ObGyn,D1,1.2,no_information,yes,NI
+beerendonk-1999,12 ObGyn,D1,1.3,no_information,yes,NI
+beerendonk-1999,12 ObGyn,D2,2.1,yes,yes,Y
+beerendonk-1999,12 ObGyn,D2,2.2,yes,yes,Y
+beerendonk-1999,12 ObGyn,D2,2.3,probably_yes,yes,PY
+beerendonk-1999,12 ObGyn,D2,2.4,probably_yes,yes,PY
+beerendonk-1999,12 ObGyn,D2,2.5,no,yes,N
+beerendonk-1999,12 ObGyn,D2,2.6,yes,yes,Y
+beerendonk-1999,12 ObGyn,D2,2.7,no,yes,N
+beerendonk-1999,12 ObGyn,D3,3.1,no,yes,N
+beerendonk-1999,12 ObGyn,D3,3.2,no,yes,N
+beerendonk-1999,12 ObGyn,D3,3.3,probably_yes,yes,PY
+beerendonk-1999,12 ObGyn,D3,3.4,probably_yes,yes,PY
+beerendonk-1999,12 ObGyn,D4,4.1,no,yes,N
+beerendonk-1999,12 ObGyn,D4,4.2,no,yes,N
+beerendonk-1999,12 ObGyn,D4,4.3,no_information,yes,NI
+beerendonk-1999,12 ObGyn,D5,5.1,no_information,yes,NI
+beerendonk-1999,12 ObGyn,D5,5.2,probably_no,yes,PN
+beerendonk-1999,12 ObGyn,D5,5.3,probably_yes,yes,PY
+bendix-1996,10 Rheum,D1,1.1,probably_no,yes,PN
+bendix-1996,10 Rheum,D1,1.2,no_information,yes,NI
+bendix-1996,10 Rheum,D1,1.3,probably_yes,yes,PY
+bendix-1996,10 Rheum,D2,2.1,yes,yes,Y
+bendix-1996,10 Rheum,D2,2.2,yes,yes,Y
+bendix-1996,10 Rheum,D2,2.3,probably_no,yes,PN
+bendix-1996,10 Rheum,D2,2.4,no_information,yes,NI
+bendix-1996,10 Rheum,D2,2.5,no,yes,N
+bendix-1996,10 Rheum,D2,2.6,yes,yes,Y
+bendix-1996,10 Rheum,D3,3.1,no,yes,N
+bendix-1996,10 Rheum,D3,3.2,no,yes,N
+bendix-1996,10 Rheum,D3,3.3,probably_yes,yes,PY
+bendix-1996,10 Rheum,D3,3.4,probably_yes,yes,PY
+bendix-1996,10 Rheum,D4,4.1,no,yes,N
+bendix-1996,10 Rheum,D4,4.2,probably_no,yes,PN
+bendix-1996,10 Rheum,D4,4.3,probably_no,yes,PN
+bendix-1996,10 Rheum,D4,4.4,probably_yes,yes,PY
+bendix-1996,10 Rheum,D4,4.5,probably_no,yes,PN
+bendix-1996,10 Rheum,D5,5.1,probably_yes,yes,PY
+bendix-1996,10 Rheum,D5,5.2,probably_no,yes,PN
+bendix-1996,10 Rheum,D5,5.3,no_information,yes,NI
+bendix-2000,10 Rheum,D1,1.1,no_information,yes,NI
+bendix-2000,10 Rheum,D1,1.2,no_information,yes,NI
+bendix-2000,10 Rheum,D1,1.3,probably_yes,yes,PY
+bendix-2000,10 Rheum,D2,2.1,yes,yes,Y
+bendix-2000,10 Rheum,D2,2.2,yes,yes,Y
+bendix-2000,10 Rheum,D2,2.3,no,yes,N
+bendix-2000,10 Rheum,D2,2.4,not_applicable,no,NA
+bendix-2000,10 Rheum,D2,2.5,probably_yes,yes,PY
+bendix-2000,10 Rheum,D2,2.6,no,yes,N
+bendix-2000,10 Rheum,D2,2.7,no_information,yes,NI
+bendix-2000,10 Rheum,D3,3.1,no,yes,N
+bendix-2000,10 Rheum,D3,3.2,probably_no,yes,PN
+bendix-2000,10 Rheum,D3,3.3,no,yes,N
+bendix-2000,10 Rheum,D3,3.4,probably_yes,yes,PY
+bendix-2000,10 Rheum,D3,3.5,yes,yes,Y
+bendix-2000,10 Rheum,D4,4.1,no,yes,N
+bendix-2000,10 Rheum,D4,4.2,no,yes,N
+bendix-2000,10 Rheum,D4,4.3,probably_yes,yes,PY
+bendix-2000,10 Rheum,D4,4.4,probably_yes,yes,PY
+bendix-2000,10 Rheum,D4,4.5,no_information,yes,NI
+bendix-2000,10 Rheum,D5,5.1,no_information,yes,NI
+bendix-2000,10 Rheum,D5,5.2,probably_yes,yes,PY
+bendix-2000,10 Rheum,D5,5.3,no_information,yes,NI
+bente-2014,11 Surg,D1,1.1,yes,yes,Y
+bente-2014,11 Surg,D1,1.2,yes,yes,Y
+bente-2014,11 Surg,D1,1.3,no,yes,N
+bente-2014,11 Surg,D2,2.1,yes,yes,Y
+bente-2014,11 Surg,D2,2.2,yes,yes,Y
+bente-2014,11 Surg,D2,2.3,probably_no,yes,PN
+bente-2014,11 Surg,D2,2.4,yes,yes,Y
+bente-2014,11 Surg,D2,2.5,not_applicable,no,NA
+bente-2014,11 Surg,D2,2.6,probably_yes,yes,PY
+bente-2014,11 Surg,D2,2.7,not_applicable,no,NA
+bente-2014,11 Surg,D3,3.1,probably_no,yes,PN
+bente-2014,11 Surg,D3,3.2,probably_yes,yes,PY
+bente-2014,11 Surg,D3,3.3,no_information,yes,NI
+bente-2014,11 Surg,D3,3.4,not_applicable,no,NA
+bente-2014,11 Surg,D4,4.1,no,yes,N
+bente-2014,11 Surg,D4,4.2,probably_no,yes,PN
+bente-2014,11 Surg,D4,4.3,yes,yes,Y
+bente-2014,11 Surg,D4,4.4,probably_yes,yes,PY
+bente-2014,11 Surg,D5,5.1,yes,yes,Y
+bente-2014,11 Surg,D5,5.2,probably_no,yes,PN
+bente-2014,11 Surg,D5,5.3,no,yes,N
+boedt-2023,12 ObGyn,D1,1.1,yes,yes,Y
+boedt-2023,12 ObGyn,D1,1.2,yes,yes,Y
+boedt-2023,12 ObGyn,D1,1.3,probably_no,yes,PN
+boedt-2023,12 ObGyn,D2,2.1,yes,yes,Y
+boedt-2023,12 ObGyn,D2,2.2,yes,yes,Y
+boedt-2023,12 ObGyn,D2,2.3,probably_yes,yes,PY
+boedt-2023,12 ObGyn,D2,2.4,no_information,yes,NI
+boedt-2023,12 ObGyn,D2,2.5,yes,yes,Y
+boedt-2023,12 ObGyn,D2,2.6,not_applicable,no,NA
+boedt-2023,12 ObGyn,D2,2.7,not_applicable,no,NA
+boedt-2023,12 ObGyn,D3,3.1,no,yes,N
+boedt-2023,12 ObGyn,D3,3.2,no,yes,N
+boedt-2023,12 ObGyn,D3,3.3,probably_yes,yes,PY
+boedt-2023,12 ObGyn,D3,3.4,probably_no,yes,PN
+boedt-2023,12 ObGyn,D4,4.1,no,yes,N
+boedt-2023,12 ObGyn,D4,4.2,no,yes,N
+boedt-2023,12 ObGyn,D4,4.3,yes,yes,Y
+boedt-2023,12 ObGyn,D4,4.4,no,yes,N
+boedt-2023,12 ObGyn,D4,4.5,no,yes,N
+boedt-2023,12 ObGyn,D5,5.1,probably_no,yes,PN
+boedt-2023,12 ObGyn,D5,5.2,probably_yes,yes,PY
+boedt-2023,12 ObGyn,D5,5.3,no,yes,N
+boeree-2017,09 ID,D1,1.1,yes,yes,Y
+boeree-2017,09 ID,D1,1.2,yes,yes,Y
+boeree-2017,09 ID,D1,1.3,no,yes,N
+boeree-2017,09 ID,D2,2.1,yes,yes,Y
+boeree-2017,09 ID,D2,2.2,yes,yes,Y
+boeree-2017,09 ID,D2,2.3,probably_yes,yes,PY
+boeree-2017,09 ID,D2,2.4,probably_yes,yes,PY
+boeree-2017,09 ID,D2,2.5,yes,yes,Y
+boeree-2017,09 ID,D2,2.6,no,yes,N
+boeree-2017,09 ID,D3,3.1,yes,yes,Y
+boeree-2017,09 ID,D3,3.2,not_applicable,no,NA
+boeree-2017,09 ID,D3,3.3,no,yes,N
+boeree-2017,09 ID,D3,3.4,not_applicable,no,NA
+boeree-2017,09 ID,D4,4.1,no,yes,N
+boeree-2017,09 ID,D4,4.2,probably_yes,yes,PY
+boeree-2017,09 ID,D4,4.3,yes,yes,Y
+boeree-2017,09 ID,D4,4.4,probably_yes,yes,PY
+boeree-2017,09 ID,D4,4.5,probably_yes,yes,PY
+boeree-2017,09 ID,D5,5.1,probably_yes,yes,PY
+boeree-2017,09 ID,D5,5.2,probably_yes,yes,PY
+boeree-2017,09 ID,D5,5.3,no,yes,N
+cadet,01 GenMed,D1,1.1,probably_yes,yes,PY
+cadet,01 GenMed,D1,1.2,no_information,yes,NI
+cadet,01 GenMed,D1,1.3,probably_yes,yes,PY
+cadet,01 GenMed,D2,2.1,yes,yes,Y
+cadet,01 GenMed,D2,2.2,yes,yes,Y
+cadet,01 GenMed,D2,2.3,probably_no,yes,PN
+cadet,01 GenMed,D2,2.4,not_applicable,no,NA
+cadet,01 GenMed,D2,2.5,probably_no,yes,PN
+cadet,01 GenMed,D2,2.6,probably_no,yes,PN
+cadet,01 GenMed,D2,2.7,not_applicable,no,NA
+cadet,01 GenMed,D3,3.1,probably_no,yes,PN
+cadet,01 GenMed,D3,3.2,no_information,yes,NI
+cadet,01 GenMed,D3,3.3,probably_yes,yes,PY
+cadet,01 GenMed,D3,3.4,probably_no,yes,PN
+cadet,01 GenMed,D4,4.1,no,yes,N
+cadet,01 GenMed,D4,4.2,no,yes,N
+cadet,01 GenMed,D4,4.3,probably_yes,yes,PY
+cadet,01 GenMed,D4,4.4,probably_no,yes,PN
+cadet,01 GenMed,D4,4.5,probably_no,yes,PN
+cadet,01 GenMed,D5,5.1,probably_yes,yes,PY
+cadet,01 GenMed,D5,5.2,probably_yes,yes,PY
+cadet,01 GenMed,D5,5.3,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D1,1.1,yes,yes,Y | Computer-generated schedule with permuted blocks
+canvas-program,01 GenMed (alternate),D1,1.2,yes,yes,Y | Central interactive web-response system
+canvas-program,01 GenMed (alternate),D1,1.3,no,yes,N | Table 1 shows balanced groups
+canvas-program,01 GenMed (alternate),D2,2.1,yes,yes,"Y | Double-blind, matching placebo"
+canvas-program,01 GenMed (alternate),D2,2.2,yes,yes,Y | Same as 2.1
+canvas-program,01 GenMed (alternate),D2,2.3,probably_no,yes,PN | Placebo arm had more add-on glucose-lowering therapy; background therapy followed local guidelines (usual practice)
+canvas-program,01 GenMed (alternate),D2,2.4,no,yes,N | Discontinuation similar (29.2% vs 29.9%)
+canvas-program,01 GenMed (alternate),D2,2.6,yes,yes,"Y | Intention-to-treat Cox models, with the primary outcome also analysed under multiple imputation"
+canvas-program,01 GenMed (alternate),D2,2.7,not_applicable,no,NA | Not applicable as 2.6 is Y
+canvas-program,01 GenMed (alternate),D3,3.1,probably_yes,yes,"PY | Vital status for 10,100 of 10,142 (99.6%)"
+canvas-program,01 GenMed (alternate),D3,3.2,not_applicable,no,NA | Not applicable as 3.1 is PY
+canvas-program,01 GenMed (alternate),D3,3.3,no,yes,N | Imputation sensitivity HR 0.85 (0.75–0.97)
+canvas-program,01 GenMed (alternate),D3,3.4,no,yes,N | Same as 3.3
+canvas-program,01 GenMed (alternate),D4,4.1,no,yes,"N | Prespecified definitions, endpoint adjudication committees"
+canvas-program,01 GenMed (alternate),D4,4.2,no,yes,N | Same adjudication process for both arms
+canvas-program,01 GenMed (alternate),D4,4.3,no_information,yes,NI | Adjudicator blinding is not stated in the article or appendix I reviewed
+canvas-program,01 GenMed (alternate),D4,4.4,no,yes,"N | Hard outcomes (death, MI, stroke) with prespecified criteria"
+canvas-program,01 GenMed (alternate),D4,4.5,no,yes,N | Same as 4.4
+canvas-program,01 GenMed (alternate),D5,5.1,no,yes,N | Primary composite was prespecified as the first test in the hierarchy
+canvas-program,01 GenMed (alternate),D5,5.2,probably_no,yes,"PN | Integrated-set analysis chosen over CANVAS alone, but the integrated plan was prespecified and the CANVAS-only result (HR 0.88) is reported"
+canvas-program,01 GenMed (alternate),D5,5.3,no,yes,"N | Results reported with CIs for all outcomes, including non-significant ones"
+caprie,01 GenMed,D1,1.1,probably_yes,yes,"PY | Randomised, but the sequence-generation method is not given in the prompt."
+caprie,01 GenMed,D1,1.2,no_information,yes,NI | Allocation concealment is not reported in the information provided.
+caprie,01 GenMed,D1,1.3,no,yes,N | Baseline imbalance is not suggested.
+caprie,01 GenMed,D2,2.1,no,yes,N | Double-blind design.
+caprie,01 GenMed,D2,2.2,no,yes,N | Carers and staff were blinded.
+caprie,01 GenMed,D2,2.3,not_applicable,no,NA | No awareness-driven deviations to assess.
+caprie,01 GenMed,D2,2.4,not_applicable,no,NA | Not applicable.
+caprie,01 GenMed,D2,2.5,not_applicable,no,NA | Not applicable.
+caprie,01 GenMed,D2,2.6,yes,yes,Y | Analysis was by intention to treat.
+caprie,01 GenMed,D2,2.7,not_applicable,no,NA | Not applicable.
+caprie,01 GenMed,D3,3.1,probably_yes,yes,PY | Follow-up for the hard endpoint was nearly complete; exact loss-to-follow-up figures are not in the prompt.
+caprie,01 GenMed,D3,3.2,not_applicable,no,NA | Not applicable.
+caprie,01 GenMed,D3,3.3,not_applicable,no,NA | Not applicable.
+caprie,01 GenMed,D4,4.1,no,yes,"N | Stroke, MI and vascular death are standard, objective endpoints."
+caprie,01 GenMed,D4,4.2,no,yes,N | Measurement is not expected to differ between groups.
+caprie,01 GenMed,D4,4.3,no,yes,N | Events were adjudicated by a committee blinded to treatment.
+caprie,01 GenMed,D4,4.4,not_applicable,no,NA | Not applicable.
+caprie,01 GenMed,D4,4.5,not_applicable,no,NA | Not applicable.
+caprie,01 GenMed,D5,5.1,probably_yes,yes,PY | The composite was the pre-specified primary outcome.
+caprie,01 GenMed,D5,5.2,no,yes,N | The result is not selected from multiple outcome measures.
+caprie,01 GenMed,D5,5.3,no,yes,"N | The result is the primary analysis, not a selected one."
+castoldi-2020,15 Ortho,D1,1.1,no_information,yes,NI
+castoldi-2020,15 Ortho,D1,1.2,no_information,yes,NI
+castoldi-2020,15 Ortho,D1,1.3,yes,yes,Y
+castoldi-2020,15 Ortho,D2,2.1,yes,yes,Y
+castoldi-2020,15 Ortho,D2,2.2,yes,yes,Y
+castoldi-2020,15 Ortho,D2,2.3,no,yes,N
+castoldi-2020,15 Ortho,D2,2.4,not_applicable,no,NA
+castoldi-2020,15 Ortho,D2,2.5,not_applicable,no,NA
+castoldi-2020,15 Ortho,D2,2.6,no,yes,N
+castoldi-2020,15 Ortho,D2,2.7,probably_yes,yes,PY
+castoldi-2020,15 Ortho,D3,3.1,no,yes,N
+castoldi-2020,15 Ortho,D3,3.2,no,yes,N
+castoldi-2020,15 Ortho,D3,3.3,probably_yes,yes,PY
+castoldi-2020,15 Ortho,D3,3.4,probably_yes,yes,PY
+castoldi-2020,15 Ortho,D4,4.1,no,yes,N
+castoldi-2020,15 Ortho,D4,4.2,probably_yes,yes,PY
+castoldi-2020,15 Ortho,D4,4.3,yes,yes,Y
+castoldi-2020,15 Ortho,D4,4.4,probably_yes,yes,PY
+castoldi-2020,15 Ortho,D4,4.5,probably_yes,yes,PY
+castoldi-2020,15 Ortho,D5,5.1,no_information,yes,NI
+castoldi-2020,15 Ortho,D5,5.2,no,yes,N
+castoldi-2020,15 Ortho,D5,5.3,no,yes,N
+chiba-2021,15 Ortho,D1,1.1,probably_yes,yes,PY
+chiba-2021,15 Ortho,D1,1.2,probably_yes,yes,PY
+chiba-2021,15 Ortho,D1,1.3,no,yes,N
+chiba-2021,15 Ortho,D2,2.1,yes,yes,Y
+chiba-2021,15 Ortho,D2,2.2,yes,yes,Y
+chiba-2021,15 Ortho,D2,2.3,no,yes,N
+chiba-2021,15 Ortho,D2,2.4,not_applicable,no,NA
+chiba-2021,15 Ortho,D2,2.5,probably_no,yes,PN
+chiba-2021,15 Ortho,D2,2.6,probably_no,yes,PN
+chiba-2021,15 Ortho,D3,3.1,probably_no,yes,PN
+chiba-2021,15 Ortho,D3,3.2,probably_no,yes,PN
+chiba-2021,15 Ortho,D3,3.3,no_information,yes,NI
+chiba-2021,15 Ortho,D3,3.4,probably_no,yes,PN
+chiba-2021,15 Ortho,D4,4.1,yes,yes,Y
+chiba-2021,15 Ortho,D4,4.2,yes,yes,Y
+chiba-2021,15 Ortho,D4,4.3,probably_no,yes,PN
+chiba-2021,15 Ortho,D4,4.4,no,yes,N
+chiba-2021,15 Ortho,D4,4.5,no,yes,N
+chiba-2021,15 Ortho,D5,5.1,probably_no,yes,PN
+chiba-2021,15 Ortho,D5,5.2,yes,yes,Y
+chiba-2021,15 Ortho,D5,5.3,yes,yes,Y
+chua-2022,07 PulmCC,D1,1.1,yes,yes,Y
+chua-2022,07 PulmCC,D1,1.2,yes,yes,Y
+chua-2022,07 PulmCC,D1,1.3,probably_no,yes,PN
+chua-2022,07 PulmCC,D2,2.1,yes,yes,Y
+chua-2022,07 PulmCC,D2,2.2,yes,yes,Y
+chua-2022,07 PulmCC,D2,2.3,probably_no,yes,PN
+chua-2022,07 PulmCC,D2,2.4,not_applicable,no,NA
+chua-2022,07 PulmCC,D2,2.5,not_applicable,no,NA
+chua-2022,07 PulmCC,D2,2.6,probably_no,yes,PN
+chua-2022,07 PulmCC,D2,2.7,probably_no,yes,PN
+chua-2022,07 PulmCC,D3,3.1,probably_yes,yes,PY
+chua-2022,07 PulmCC,D3,3.2,not_applicable,no,NA
+chua-2022,07 PulmCC,D3,3.3,not_applicable,no,NA
+chua-2022,07 PulmCC,D3,3.4,not_applicable,no,NA
+chua-2022,07 PulmCC,D4,4.1,no,yes,N
+chua-2022,07 PulmCC,D4,4.2,probably_no,yes,PN
+chua-2022,07 PulmCC,D4,4.3,not_applicable,no,NA
+chua-2022,07 PulmCC,D4,4.4,not_applicable,no,NA
+chua-2022,07 PulmCC,D4,4.5,not_applicable,no,NA
+chua-2022,07 PulmCC,D5,5.1,probably_no,yes,PN
+chua-2022,07 PulmCC,D5,5.2,probably_no,yes,PN
+chua-2022,07 PulmCC,D5,5.3,probably_yes,yes,PY
+chua-2022,07 PulmCC,D5,5.4,no,yes,N
+clyman-2019,13 Peds,D1,1.1,yes,yes,"Y | Random number generator, blocks of two, stratified by gestational age and centre (paper p.2; protocol p.1)"
+clyman-2019,13 Peds,D1,1.2,yes,yes,"Y | Sequentially numbered sealed envelopes, held by a pharmacist not connected with the study (CONSORT item 9)"
+clyman-2019,13 Peds,D1,1.3,probably_no,yes,"PN | Multiple birth (39% vs 25%) and early-onset bacteremia differed, but these are 2 of many baseline variables, and the authors adjusted for them"
+clyman-2019,13 Peds,D2,2.1,yes,yes,Y | Open-label; parents not blinded
+clyman-2019,13 Peds,D2,2.2,yes,yes,Y | Treating team not blinded; the ligation decision was left to the attending neonatologist
+clyman-2019,13 Peds,D2,2.3,probably_yes,yes,PY | Drug choice varied by site; rescue treatment was clinician-discretionary in ERT infants regardless of criteria
+clyman-2019,13 Peds,D2,2.4,probably_no,yes,PN | Rescue use differed: 48% in CT vs 18% in ERT
+clyman-2019,13 Peds,D2,2.5,probably_no,yes,"PN | Same rescue imbalance; this would bias toward the null, which the authors acknowledge"
+clyman-2019,13 Peds,D2,2.6,yes,yes,Y | Analysed by randomized group; all 202 infants analysed in assigned groups
+clyman-2019,13 Peds,D2,2.7,not_applicable,no,NA | 2.6 is Y
+clyman-2019,13 Peds,D3,3.1,yes,yes,Y | No losses; 104 and 98 analysed (CONSORT 13b)
+clyman-2019,13 Peds,D3,3.2,not_applicable,no,NA | 3.1 is Y
+clyman-2019,13 Peds,D3,3.3,not_applicable,no,NA | 3.1 is Y
+clyman-2019,13 Peds,D3,3.4,not_applicable,no,NA | 3.1 is Y
+clyman-2019,13 Peds,D4,4.1,no,yes,"N | Discharge echocardiogram and ligation record, standard measures"
+clyman-2019,13 Peds,D4,4.2,probably_no,yes,"PN | Ligation and referral depend on clinical judgement, and treatment differed by arm"
+clyman-2019,13 Peds,D4,4.3,probably_yes,yes,"PY | Echo readers were blinded (CONSORT 11a; registry masking: outcomes assessor), but ligation and follow-up decisions were made by unblinded clinicians"
+clyman-2019,13 Peds,D4,4.4,probably_no,yes,"PN | Discharge echo is largely objective, with a fixed rule (open ductus of any size triggers follow-up)"
+clyman-2019,13 Peds,D4,4.5,probably_no,yes,"PN | Ligation is rare (12% vs 12%), so the unblinded component contributes little"
+clyman-2019,13 Peds,D5,5.1,no,yes,N | Primary outcome matches registry (NCT01958320) and the SAP
+clyman-2019,13 Peds,D5,5.2,no,yes,"N | Single prespecified analysis for the primary outcome; registry counts (33/104, 38/98) match Table IV"
+clyman-2019,13 Peds,D5,5.3,no,yes,N | Gestational-age subgroups were exploratory and not used for the primary outcome
+dapa-hf,01 GenMed (alternate),D1,1.1,yes,yes,Y
+dapa-hf,01 GenMed (alternate),D1,1.2,yes,yes,Y
+dapa-hf,01 GenMed (alternate),D1,1.3,no,yes,N
+dapa-hf,01 GenMed (alternate),D2,2.1,no,yes,N
+dapa-hf,01 GenMed (alternate),D2,2.2,no,yes,N
+dapa-hf,01 GenMed (alternate),D2,2.3,no,yes,N
+dapa-hf,01 GenMed (alternate),D2,2.4,yes,yes,Y
+dapa-hf,01 GenMed (alternate),D2,2.5,no,yes,N
+dapa-hf,01 GenMed (alternate),D2,2.6,yes,yes,Y
+dapa-hf,01 GenMed (alternate),D2,2.7,probably_yes,yes,PY
+dapa-hf,01 GenMed (alternate),D3,3.1,yes,yes,Y
+dapa-hf,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D4,4.1,no,yes,N
+dapa-hf,01 GenMed (alternate),D4,4.2,no,yes,N
+dapa-hf,01 GenMed (alternate),D4,4.3,no,yes,N
+dapa-hf,01 GenMed (alternate),D4,4.4,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D4,4.5,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D5,5.1,no,yes,N
+dapa-hf,01 GenMed (alternate),D5,5.2,probably_no,yes,PN
+dapa-hf,01 GenMed (alternate),D5,5.3,no,yes,N
+de-waal-2021,13 Peds,D1,1.1,yes,yes,Y
+de-waal-2021,13 Peds,D1,1.2,probably_yes,yes,PY
+de-waal-2021,13 Peds,D1,1.3,probably_yes,yes,PY
+de-waal-2021,13 Peds,D2,2.1,yes,yes,Y
+de-waal-2021,13 Peds,D2,2.2,yes,yes,Y
+de-waal-2021,13 Peds,D2,2.3,probably_yes,yes,PY
+de-waal-2021,13 Peds,D2,2.4,probably_no,yes,PN
+de-waal-2021,13 Peds,D2,2.5,not_applicable,no,NA
+de-waal-2021,13 Peds,D2,2.6,yes,yes,Y
+de-waal-2021,13 Peds,D2,2.7,not_applicable,no,NA
+de-waal-2021,13 Peds,D3,3.1,yes,yes,Y
+de-waal-2021,13 Peds,D3,3.2,not_applicable,no,NA
+de-waal-2021,13 Peds,D3,3.3,not_applicable,no,NA
+de-waal-2021,13 Peds,D3,3.4,not_applicable,no,NA
+de-waal-2021,13 Peds,D4,4.1,yes,yes,Y
+de-waal-2021,13 Peds,D4,4.2,no,yes,N
+de-waal-2021,13 Peds,D4,4.3,no,yes,N
+de-waal-2021,13 Peds,D4,4.4,not_applicable,no,NA
+de-waal-2021,13 Peds,D4,4.5,not_applicable,no,NA
+de-waal-2021,13 Peds,D5,5.1,probably_yes,yes,PY
+de-waal-2021,13 Peds,D5,5.2,probably_yes,yes,PY
+de-waal-2021,13 Peds,D5,5.3,no,yes,N
+declare-timi-58,01 GenMed (alternate),D1,1.1,yes,yes,Y
+declare-timi-58,01 GenMed (alternate),D1,1.2,probably_yes,yes,PY
+declare-timi-58,01 GenMed (alternate),D1,1.3,no,yes,N
+declare-timi-58,01 GenMed (alternate),D2,2.1,yes,yes,Y
+declare-timi-58,01 GenMed (alternate),D2,2.2,yes,yes,Y
+declare-timi-58,01 GenMed (alternate),D2,2.3,no,yes,N
+declare-timi-58,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D2,2.5,yes,yes,Y
+declare-timi-58,01 GenMed (alternate),D2,2.6,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D2,2.7,no,yes,N
+declare-timi-58,01 GenMed (alternate),D3,3.1,yes,yes,Y
+declare-timi-58,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D4,4.1,yes,yes,Y
+declare-timi-58,01 GenMed (alternate),D4,4.2,yes,yes,Y
+declare-timi-58,01 GenMed (alternate),D4,4.3,no,yes,N
+declare-timi-58,01 GenMed (alternate),D4,4.4,no,yes,N
+declare-timi-58,01 GenMed (alternate),D4,4.5,no,yes,N
+declare-timi-58,01 GenMed (alternate),D5,5.1,yes,yes,Y
+declare-timi-58,01 GenMed (alternate),D5,5.2,probably_no,yes,PN
+declare-timi-58,01 GenMed (alternate),D5,5.3,no,yes,N
+deliver,01 GenMed (alternate),D1,1.1,yes,yes,Y
+deliver,01 GenMed (alternate),D1,1.2,probably_yes,yes,PY
+deliver,01 GenMed (alternate),D1,1.3,no,yes,N
+deliver,01 GenMed (alternate),D2,2.1,no,yes,N
+deliver,01 GenMed (alternate),D2,2.2,no,yes,N
+deliver,01 GenMed (alternate),D2,2.3,probably_no,yes,PN
+deliver,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+deliver,01 GenMed (alternate),D2,2.5,yes,yes,Y
+deliver,01 GenMed (alternate),D2,2.6,not_applicable,no,NA
+deliver,01 GenMed (alternate),D3,3.1,yes,yes,Y
+deliver,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+deliver,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+deliver,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+deliver,01 GenMed (alternate),D4,4.1,no,yes,N
+deliver,01 GenMed (alternate),D4,4.2,no,yes,N
+deliver,01 GenMed (alternate),D4,4.3,no,yes,N
+deliver,01 GenMed (alternate),D4,4.4,not_applicable,no,NA
+deliver,01 GenMed (alternate),D4,4.5,not_applicable,no,NA
+deliver,01 GenMed (alternate),D5,5.1,yes,yes,Y
+deliver,01 GenMed (alternate),D5,5.2,no,yes,N
+deliver,01 GenMed (alternate),D5,5.3,no,yes,N
+deliver,01 GenMed (alternate),D5,5.4,no,yes,N
+dian-2018,09 ID,D1,1.1,probably_yes,yes,PY
+dian-2018,09 ID,D1,1.2,no_information,yes,NI
+dian-2018,09 ID,D1,1.3,no,yes,N
+dian-2018,09 ID,D2,2.1,yes,yes,Y
+dian-2018,09 ID,D2,2.2,probably_yes,yes,PY
+dian-2018,09 ID,D2,2.3,no,yes,N
+dian-2018,09 ID,D2,2.4,not_applicable,no,NA
+dian-2018,09 ID,D2,2.5,probably_yes,yes,PY
+dian-2018,09 ID,D2,2.6,no,yes,N
+dian-2018,09 ID,D3,3.1,yes,yes,Y
+dian-2018,09 ID,D3,3.2,not_applicable,no,NA
+dian-2018,09 ID,D3,3.3,not_applicable,no,NA
+dian-2018,09 ID,D4,4.1,no,yes,N
+dian-2018,09 ID,D4,4.2,no,yes,N
+dian-2018,09 ID,D4,4.3,probably_no,yes,PN
+dian-2018,09 ID,D4,4.4,not_applicable,no,NA
+dian-2018,09 ID,D4,4.5,not_applicable,no,NA
+dian-2018,09 ID,D5,5.1,probably_no,yes,PN
+dian-2018,09 ID,D5,5.2,probably_yes,yes,PY
+dian-2018,09 ID,D5,5.3,probably_no,yes,PN
+duration-8-2016,06 Gastro,D1,1.1,probably_yes,yes,PY
+duration-8-2016,06 Gastro,D1,1.2,yes,yes,Y
+duration-8-2016,06 Gastro,D1,1.3,no,yes,N
+duration-8-2016,06 Gastro,D2,2.1,no,yes,N
+duration-8-2016,06 Gastro,D2,2.2,no,yes,N
+duration-8-2016,06 Gastro,D2,2.3,not_applicable,no,NA
+duration-8-2016,06 Gastro,D2,2.4,not_applicable,no,NA
+duration-8-2016,06 Gastro,D2,2.5,yes,yes,Y
+duration-8-2016,06 Gastro,D2,2.6,not_applicable,no,NA
+duration-8-2016,06 Gastro,D3,3.1,yes,yes,Y
+duration-8-2016,06 Gastro,D3,3.2,not_applicable,no,NA
+duration-8-2016,06 Gastro,D3,3.3,no,yes,N
+duration-8-2016,06 Gastro,D3,3.4,not_applicable,no,NA
+duration-8-2016,06 Gastro,D4,4.1,no,yes,N
+duration-8-2016,06 Gastro,D4,4.2,no,yes,N
+duration-8-2016,06 Gastro,D4,4.3,not_applicable,no,NA
+duration-8-2016,06 Gastro,D4,4.4,not_applicable,no,NA
+duration-8-2016,06 Gastro,D4,4.5,not_applicable,no,NA
+duration-8-2016,06 Gastro,D5,5.1,probably_yes,yes,PY
+duration-8-2016,06 Gastro,D5,5.2,no,yes,N
+duration-8-2016,06 Gastro,D5,5.3,probably_yes,yes,PY
+einarsson-2017,12 ObGyn,D1,1.1,yes,yes,Y
+einarsson-2017,12 ObGyn,D1,1.2,yes,yes,Y
+einarsson-2017,12 ObGyn,D1,1.3,probably_no,yes,PN
+einarsson-2017,12 ObGyn,D2,2.1,yes,yes,Y
+einarsson-2017,12 ObGyn,D2,2.2,yes,yes,Y
+einarsson-2017,12 ObGyn,D2,2.3,probably_no,yes,PN
+einarsson-2017,12 ObGyn,D2,2.4,probably_no,yes,PN
+einarsson-2017,12 ObGyn,D2,2.5,probably_yes,yes,PY
+einarsson-2017,12 ObGyn,D2,2.6,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D3,3.1,probably_yes,yes,PY
+einarsson-2017,12 ObGyn,D3,3.2,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D3,3.3,probably_no,yes,PN
+einarsson-2017,12 ObGyn,D3,3.4,no,yes,N
+einarsson-2017,12 ObGyn,D4,4.1,yes,yes,Y
+einarsson-2017,12 ObGyn,D4,4.2,no,yes,N
+einarsson-2017,12 ObGyn,D4,4.3,probably_no,yes,PN
+einarsson-2017,12 ObGyn,D4,4.4,no,yes,N
+einarsson-2017,12 ObGyn,D5,5.1,yes,yes,Y
+einarsson-2017,12 ObGyn,D5,5.2,no,yes,N
+einarsson-2017,12 ObGyn,D5,5.3,no,yes,N
+el-khuffash-2021,13 Peds,D1,1.1,yes,yes,Y
+el-khuffash-2021,13 Peds,D1,1.2,probably_yes,yes,PY
+el-khuffash-2021,13 Peds,D1,1.3,probably_yes,yes,PY
+el-khuffash-2021,13 Peds,D2,2.1,yes,yes,Y
+el-khuffash-2021,13 Peds,D2,2.2,probably_yes,yes,PY
+el-khuffash-2021,13 Peds,D2,2.3,probably_yes,yes,PY
+el-khuffash-2021,13 Peds,D2,2.4,probably_no,yes,PN
+el-khuffash-2021,13 Peds,D2,2.5,probably_yes,yes,PY
+el-khuffash-2021,13 Peds,D2,2.6,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D3,3.1,yes,yes,Y
+el-khuffash-2021,13 Peds,D3,3.2,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D3,3.3,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D3,3.4,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D4,4.1,no,yes,N
+el-khuffash-2021,13 Peds,D4,4.2,no,yes,N
+el-khuffash-2021,13 Peds,D4,4.3,no,yes,N
+el-khuffash-2021,13 Peds,D4,4.4,no,yes,N
+el-khuffash-2021,13 Peds,D4,4.5,no,yes,N
+el-khuffash-2021,13 Peds,D5,5.1,probably_no,yes,PN
+el-khuffash-2021,13 Peds,D5,5.2,probably_no,yes,PN
+el-khuffash-2021,13 Peds,D5,5.3,no,yes,N
+elixa,08 Endo,D1,1.1,probably_yes,yes,PY
+elixa,08 Endo,D1,1.2,yes,yes,Y
+elixa,08 Endo,D1,1.3,no,yes,N
+elixa,08 Endo,D2,2.1,no,yes,N
+elixa,08 Endo,D2,2.2,no,yes,N
+elixa,08 Endo,D2,2.3,no,yes,N
+elixa,08 Endo,D2,2.4,not_applicable,no,NA
+elixa,08 Endo,D2,2.5,yes,yes,Y
+elixa,08 Endo,D2,2.6,not_applicable,no,NA
+elixa,08 Endo,D2,2.7,not_applicable,no,NA
+elixa,08 Endo,D3,3.1,probably_yes,yes,PY
+elixa,08 Endo,D3,3.2,not_applicable,no,NA
+elixa,08 Endo,D3,3.3,not_applicable,no,NA
+elixa,08 Endo,D3,3.4,not_applicable,no,NA
+elixa,08 Endo,D4,4.1,no,yes,N
+elixa,08 Endo,D4,4.2,no,yes,N
+elixa,08 Endo,D4,4.3,no,yes,N
+elixa,08 Endo,D4,4.4,not_applicable,no,NA
+elixa,08 Endo,D4,4.5,no,yes,N
+elixa,08 Endo,D5,5.1,yes,yes,Y
+elixa,08 Endo,D5,5.2,no,yes,N
+elixa,08 Endo,D5,5.3,no,yes,N
+empa-reg-outcome,01 GenMed (alternate),D1,1.1,yes,yes,"Y | Computer-generated random sequence (article, p. 2119)"
+empa-reg-outcome,01 GenMed (alternate),D1,1.2,yes,yes,Y | Central interactive voice/web response system (p. 2119)
+empa-reg-outcome,01 GenMed (alternate),D1,1.3,no,yes,"N | Baseline characteristics well balanced (Table S2, p. 2120)"
+empa-reg-outcome,01 GenMed (alternate),D2,2.1,yes,yes,"Y | Double-blind, placebo-controlled; registry masking ""DOUBLE"""
+empa-reg-outcome,01 GenMed (alternate),D2,2.2,yes,yes,Y | Same blinding applies to carers and staff
+empa-reg-outcome,01 GenMed (alternate),D2,2.3,no,yes,N | Glucose-therapy intensification followed usual guidelines (p. 2119)
+empa-reg-outcome,01 GenMed (alternate),D2,2.4,not_applicable,no,"NA | Not applicable, as 2.3 is N"
+empa-reg-outcome,01 GenMed (alternate),D2,2.5,yes,yes,"Y | Modified intention-to-treat, Cox model (p. 2120)"
+empa-reg-outcome,01 GenMed (alternate),D2,2.6,not_applicable,no,"NA | Not applicable, as 2.5 is Y"
+empa-reg-outcome,01 GenMed (alternate),D3,3.1,yes,yes,Y | Vital status available for 99.2%; 97% completed study (Fig. S1)
+empa-reg-outcome,01 GenMed (alternate),D3,3.2,not_applicable,no,"NA | Not applicable, as 3.1 is Y"
+empa-reg-outcome,01 GenMed (alternate),D3,3.3,no,yes,N | No evidence outcome missingness depended on the outcome
+empa-reg-outcome,01 GenMed (alternate),D3,3.4,not_applicable,no,"NA | Not applicable, as 3.3 is N"
+empa-reg-outcome,01 GenMed (alternate),D4,4.1,no,yes,"N | Adjudicated CV death, MI and stroke by two clinical-events committees (p. 2119)"
+empa-reg-outcome,01 GenMed (alternate),D4,4.2,no,yes,N | Same definitions and adjudication in both groups (Section E)
+empa-reg-outcome,01 GenMed (alternate),D4,4.3,probably_no,yes,"PN | Double-blind design implies masked adjudication, but this is not stated explicitly"
+empa-reg-outcome,01 GenMed (alternate),D4,4.4,not_applicable,no,"NA | Not applicable, as 4.3 is PN"
+empa-reg-outcome,01 GenMed (alternate),D4,4.5,not_applicable,no,"NA | Not applicable, as 4.3 is PN"
+empa-reg-outcome,01 GenMed (alternate),D5,5.1,yes,yes,"Y | Composite is the pre-specified primary outcome, matching NCT01131676; hierarchical testing pre-specified"
+empa-reg-outcome,01 GenMed (alternate),D5,5.2,no,yes,N | No evidence of selection among multiple outcome measurements
+empa-reg-outcome,01 GenMed (alternate),D5,5.3,no,yes,N | No evidence of selection among multiple analyses
+emperor-preserved,01 GenMed (alternate),D1,1.1,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D1,1.2,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D1,1.3,no,yes,N
+emperor-preserved,01 GenMed (alternate),D2,2.1,no,yes,N
+emperor-preserved,01 GenMed (alternate),D2,2.2,no,yes,N
+emperor-preserved,01 GenMed (alternate),D2,2.3,no,yes,N
+emperor-preserved,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D2,2.5,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D2,2.6,no,yes,N
+emperor-preserved,01 GenMed (alternate),D3,3.1,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D4,4.1,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D4,4.2,no,yes,N
+emperor-preserved,01 GenMed (alternate),D4,4.3,no,yes,N
+emperor-preserved,01 GenMed (alternate),D4,4.4,no,yes,N
+emperor-preserved,01 GenMed (alternate),D4,4.5,no,yes,N
+emperor-preserved,01 GenMed (alternate),D5,5.1,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D5,5.2,no,yes,N
+emperor-preserved,01 GenMed (alternate),D5,5.3,no,yes,N
+emperor-reduced,01 GenMed (alternate),D1,1.1,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D1,1.2,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D1,1.3,no,yes,N
+emperor-reduced,01 GenMed (alternate),D2,2.1,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D2,2.2,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D2,2.3,no,yes,N
+emperor-reduced,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D2,2.5,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D2,2.6,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D2,2.7,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D3,3.1,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D4,4.1,no,yes,N
+emperor-reduced,01 GenMed (alternate),D4,4.2,no,yes,N
+emperor-reduced,01 GenMed (alternate),D4,4.3,no,yes,N
+emperor-reduced,01 GenMed (alternate),D4,4.4,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D4,4.5,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D5,5.1,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D5,5.2,no,yes,N
+emperor-reduced,01 GenMed (alternate),D5,5.3,no,yes,N
+emperor-reduced,01 GenMed (alternate),D5,5.4,no,yes,N
+envision,14 Neph,D1,1.1,probably_yes,yes,"PY | IVRS/web randomization, 1:1:1:1, stratified; sequence-generation method not explicitly described (NEJM p.21)"
+envision,14 Neph,D1,1.2,yes,yes,Y | Central IVRS/web allocation (NEJM p.21)
+envision,14 Neph,D1,1.3,probably_no,yes,"PN | Placebo group had higher baseline eGFR and more proteinuria, but differences were modest and the model adjusts for baseline eGFR (NEJM p.23, Table 1)"
+envision,14 Neph,D2,2.1,no,yes,N | Double-blind; saline placebo with matched volumes (NEJM p.21–22)
+envision,14 Neph,D2,2.2,no,yes,"N | Site designee prepared infusions, unaware of assignment (NEJM p.22)"
+envision,14 Neph,D2,2.3,not_applicable,no,NA | Not applicable as 2.1 and 2.2 are N
+envision,14 Neph,D2,2.4,not_applicable,no,NA | Not applicable
+envision,14 Neph,D2,2.5,not_applicable,no,NA | Not applicable
+envision,14 Neph,D2,2.6,yes,yes,"Y | Modified ITT population, mixed model using all available data (NEJM p.23)"
+envision,14 Neph,D2,2.7,not_applicable,no,NA | Not applicable
+envision,14 Neph,D3,3.1,probably_yes,yes,PY | 146/155 completed the full course; about 92–97% had month-12 data (NEJM p.23; Fig. 1)
+envision,14 Neph,D3,3.2,not_applicable,no,NA | Not applicable as 3.1 is PY
+envision,14 Neph,D3,3.3,probably_no,yes,PN | No evidence that eGFR missingness depends on true value; discontinuations were few and balanced
+envision,14 Neph,D3,3.4,not_applicable,no,NA | Not applicable as 3.3 is PN
+envision,14 Neph,D4,4.1,no,yes,"N | Creatinine-based eGFR (CKD-EPI 2009) is an appropriate, standard measure (NEJM p.22)"
+envision,14 Neph,D4,4.2,no,yes,N | Same laboratory method across arms
+envision,14 Neph,D4,4.3,no,yes,N | Assessors were unaware of assignment (NEJM p.22)
+envision,14 Neph,D4,4.4,not_applicable,no,NA | Not applicable
+envision,14 Neph,D4,4.5,not_applicable,no,NA | Not applicable
+envision,14 Neph,D5,5.1,probably_no,yes,"PN | SAP v5.0 is dated 27 Jun 2023, after trial conduct ended in May 2023. Section 5 states the sponsor was unblinded to group-level interim efficacy results before the SAP was amended (SAP pp.44, 47)"
+envision,14 Neph,D5,5.2,probably_yes,yes,"PY | Several eGFR estimators exist (month-12 LS mean, ANCOVA per-subject slope in SAP §4.4.1.4, LME slope in SAP §4.4.2); the LME slope is reported as secondary although the SAP labels it a sensitivity analysis"
+envision,14 Neph,D5,5.3,probably_yes,yes,PY | Multiple analyses of eGFR were run (see 5.2); only the one showing attenuated decline is reported with a treatment-difference CI
+espinos-2017,12 ObGyn,D1,1.1,yes,yes,Y
+espinos-2017,12 ObGyn,D1,1.2,no_information,yes,NI
+espinos-2017,12 ObGyn,D1,1.3,probably_no,yes,PN
+espinos-2017,12 ObGyn,D2,2.1,yes,yes,Y
+espinos-2017,12 ObGyn,D2,2.2,probably_no,yes,PN
+espinos-2017,12 ObGyn,D2,2.3,no,yes,N
+espinos-2017,12 ObGyn,D2,2.4,not_applicable,no,NA
+espinos-2017,12 ObGyn,D2,2.5,probably_yes,yes,PY
+espinos-2017,12 ObGyn,D2,2.6,probably_yes,yes,PY
+espinos-2017,12 ObGyn,D2,2.7,not_applicable,no,NA
+espinos-2017,12 ObGyn,D3,3.1,probably_yes,yes,PY
+espinos-2017,12 ObGyn,D3,3.2,not_applicable,no,NA
+espinos-2017,12 ObGyn,D3,3.3,not_applicable,no,NA
+espinos-2017,12 ObGyn,D3,3.4,not_applicable,no,NA
+espinos-2017,12 ObGyn,D4,4.1,no,yes,N
+espinos-2017,12 ObGyn,D4,4.2,no,yes,N
+espinos-2017,12 ObGyn,D4,4.3,probably_no,yes,PN
+espinos-2017,12 ObGyn,D4,4.4,no,yes,N
+espinos-2017,12 ObGyn,D4,4.5,not_applicable,no,NA
+espinos-2017,12 ObGyn,D5,5.1,probably_yes,yes,PY
+espinos-2017,12 ObGyn,D5,5.2,probably_yes,yes,PY
+espinos-2017,12 ObGyn,D5,5.3,no,yes,N
+exscel,08 Endo,D1,1.1,yes,yes,Y | Computer-generated block randomization within site
+exscel,08 Endo,D1,1.2,yes,yes,Y | Interactive voice-response system
+exscel,08 Endo,D1,1.3,no,yes,N | Baseline characteristics did not differ meaningfully (Table S1)
+exscel,08 Endo,D2,2.1,no,yes,"N | Double-blind, placebo-controlled"
+exscel,08 Endo,D2,2.2,no,yes,N | Double-blind
+exscel,08 Endo,D2,2.3,not_applicable,no,NA | Not applicable as blinded
+exscel,08 Endo,D2,2.4,not_applicable,no,NA | Not applicable as blinded
+exscel,08 Endo,D2,2.5,no,yes,N | Open-label SGLT-2i use 6.5% vs 9.4% and GLP-1 RA use 2.5% vs 3.6% (exenatide vs placebo); authors note this may have lowered placebo event rates
+exscel,08 Endo,D2,2.6,yes,yes,"Y | Cox model, intention-to-treat, prespecified"
+exscel,08 Endo,D2,2.7,no,yes,N | Time on regimen 76.0% vs 75.0%; ITT used
+exscel,08 Endo,D3,3.1,yes,yes,Y | Vital status obtained for 98.8%; 96.2% completed the trial
+exscel,08 Endo,D3,3.2,not_applicable,no,NA | Not applicable as 3.1 is Y
+exscel,08 Endo,D3,3.3,not_applicable,no,NA | Not applicable as 3.1 is Y
+exscel,08 Endo,D3,3.4,not_applicable,no,NA | Not applicable as 3.1 is Y
+exscel,08 Endo,D3,3.5,yes,yes,Y | Vital status ascertained via registries and searches
+exscel,08 Endo,D4,4.1,no,yes,N | Standard CV event definitions
+exscel,08 Endo,D4,4.2,no,yes,N | Adjudicated by blinded independent committee
+exscel,08 Endo,D4,4.3,no,yes,N | Blinded committee
+exscel,08 Endo,D4,4.4,not_applicable,no,NA | Not applicable as 4.3 is N
+exscel,08 Endo,D4,4.5,no,yes,N | Blinded adjudication
+exscel,08 Endo,D5,5.1,yes,yes,Y | Protocol and SAP published; hierarchical testing prespecified
+exscel,08 Endo,D5,5.2,no,yes,N | Single prespecified primary composite
+exscel,08 Endo,D5,5.3,no,yes,N | Per-protocol analysis reported as sensitivity only
+ferreira-2021,11 Surg,D1,1.1,probably_yes,yes,"PY | Computer-generated random numbers, 1:1 allocation"
+ferreira-2021,11 Surg,D1,1.2,no_information,yes,NI | Allocation concealment not described
+ferreira-2021,11 Surg,D1,1.3,probably_no,yes,"PN | Only hypertension differs at baseline (48% vs 26%, P=.029) among about 25 comparisons"
+ferreira-2021,11 Surg,D2,2.1,yes,yes,Y | Participants knew their allocation (unblinded behavioural trial)
+ferreira-2021,11 Surg,D2,2.2,yes,yes,"Y | Kinesiologist, dietitian and psychologist delivered the programs knowing allocation"
+ferreira-2021,11 Surg,D2,2.3,probably_yes,yes,PY | Authors suggest REHAB patients may have been prompted to become active before surgery (contamination)
+ferreira-2021,11 Surg,D2,2.4,probably_yes,yes,PY | Contamination of the control arm would likely bias the effect toward null
+ferreira-2021,11 Surg,D2,2.5,probably_yes,yes,PY | Adherence was similar across arms (exercise 65% vs 59%; nutrition 76% vs 71%)
+ferreira-2021,11 Surg,D2,2.6,probably_yes,yes,"PY | Analysis of all 95 with multiple imputation, with per-protocol as a sensitivity analysis"
+ferreira-2021,11 Surg,D2,2.7,not_applicable,no,NA | Not needed given 2.6
+ferreira-2021,11 Surg,D3,3.1,no,yes,"N | 6MWT missing for about 35%, 43% and 48% of participants at the preoperative, 4-week and 8-week visits"
+ferreira-2021,11 Surg,D3,3.2,no_information,yes,NI | Only multiple imputation (MAR assumption) and per-protocol analyses reported; no complete-case 6MWT analysis
+ferreira-2021,11 Surg,D3,3.3,probably_yes,yes,PY | Dropout plausibly linked to poor functional recovery; authors acknowledge loss to follow-up as a concern
+ferreira-2021,11 Surg,D3,3.4,probably_yes,yes,PY | Same as 3.3
+ferreira-2021,11 Surg,D4,4.1,no,yes,"N | Standardized ATS 6MWT protocol, validated measure"
+ferreira-2021,11 Surg,D4,4.2,no,yes,N | Same measure and procedure in both groups
+ferreira-2021,11 Surg,D4,4.3,no,yes,N | Assessor blinded to group assignment
+ferreira-2021,11 Surg,D4,4.4,probably_no,yes,PN | Assessor blinded; participants' awareness of allocation is a residual risk
+ferreira-2021,11 Surg,D4,4.5,probably_no,yes,PN | No evidence the lack of participant blinding systematically affected assessment
+ferreira-2021,11 Surg,D5,5.1,probably_yes,yes,"PY | Multiple time points (preoperative, 4 and 8 weeks) and multiple analyses"
+ferreira-2021,11 Surg,D5,5.2,probably_yes,yes,"PY | Per-protocol, fit/unfit subgroup and Bonferroni-adjusted analyses reported"
+ferreira-2021,11 Surg,D5,5.3,no_information,yes,"NI | No statistical analysis plan available; registry lists 6MWT as primary only at 8 weeks, not at all time points"
+fr-as-2018,06 Gastro,D1,1.1,yes,yes,Y
+fr-as-2018,06 Gastro,D1,1.2,probably_yes,yes,PY
+fr-as-2018,06 Gastro,D1,1.3,no,yes,N
+fr-as-2018,06 Gastro,D2,2.1,no,yes,N
+fr-as-2018,06 Gastro,D2,2.2,no,yes,N
+fr-as-2018,06 Gastro,D2,2.3,not_applicable,no,NA
+fr-as-2018,06 Gastro,D2,2.4,not_applicable,no,NA
+fr-as-2018,06 Gastro,D2,2.5,yes,yes,Y
+fr-as-2018,06 Gastro,D2,2.6,no,yes,N
+fr-as-2018,06 Gastro,D2,2.7,not_applicable,no,NA
+fr-as-2018,06 Gastro,D3,3.1,probably_yes,yes,PY
+fr-as-2018,06 Gastro,D3,3.2,not_applicable,no,NA
+fr-as-2018,06 Gastro,D3,3.3,no,yes,N
+fr-as-2018,06 Gastro,D3,3.4,not_applicable,no,NA
+fr-as-2018,06 Gastro,D4,4.1,probably_no,yes,PN
+fr-as-2018,06 Gastro,D4,4.2,no,yes,N
+fr-as-2018,06 Gastro,D4,4.3,no_information,yes,NI
+fr-as-2018,06 Gastro,D4,4.4,probably_no,yes,PN
+fr-as-2018,06 Gastro,D5,5.1,probably_yes,yes,PY
+fr-as-2018,06 Gastro,D5,5.2,no,yes,N
+fr-as-2018,06 Gastro,D5,5.3,no,yes,N
+frat-2019,07 PulmCC,D1,1.1,yes,yes,Y
+frat-2019,07 PulmCC,D1,1.2,yes,yes,Y
+frat-2019,07 PulmCC,D1,1.3,probably_yes,yes,PY
+frat-2019,07 PulmCC,D2,2.1,yes,yes,Y
+frat-2019,07 PulmCC,D2,2.2,yes,yes,Y
+frat-2019,07 PulmCC,D2,2.3,no,yes,N
+frat-2019,07 PulmCC,D2,2.4,not_applicable,no,NA
+frat-2019,07 PulmCC,D2,2.5,probably_yes,yes,PY
+frat-2019,07 PulmCC,D2,2.6,probably_yes,yes,PY
+frat-2019,07 PulmCC,D2,2.7,no,yes,N
+frat-2019,07 PulmCC,D3,3.1,probably_yes,yes,PY
+frat-2019,07 PulmCC,D3,3.2,not_applicable,no,NA
+frat-2019,07 PulmCC,D3,3.3,not_applicable,no,NA
+frat-2019,07 PulmCC,D3,3.4,not_applicable,no,NA
+frat-2019,07 PulmCC,D4,4.1,no,yes,N
+frat-2019,07 PulmCC,D4,4.2,no,yes,N
+frat-2019,07 PulmCC,D4,4.3,no,yes,N
+frat-2019,07 PulmCC,D4,4.4,no,yes,N
+frat-2019,07 PulmCC,D4,4.5,no,yes,N
+frat-2019,07 PulmCC,D5,5.1,yes,yes,Y
+frat-2019,07 PulmCC,D5,5.2,no,yes,N
+frat-2019,07 PulmCC,D5,5.3,no,yes,N
+freeman-2020,05 Psych,D1,1.1,yes,yes,Y
+freeman-2020,05 Psych,D1,1.2,yes,yes,Y
+freeman-2020,05 Psych,D1,1.3,probably_no,yes,PN
+freeman-2020,05 Psych,D2,2.1,no,yes,N
+freeman-2020,05 Psych,D2,2.2,no,yes,N
+freeman-2020,05 Psych,D2,2.3,not_applicable,no,NA
+freeman-2020,05 Psych,D2,2.4,probably_no,yes,PN
+freeman-2020,05 Psych,D2,2.5,no,yes,N
+freeman-2020,05 Psych,D2,2.6,probably_no,yes,PN
+freeman-2020,05 Psych,D2,2.7,probably_yes,yes,PY
+freeman-2020,05 Psych,D2,2.8,not_applicable,no,NA
+freeman-2020,05 Psych,D3,3.1,probably_yes,yes,PY
+freeman-2020,05 Psych,D3,3.2,not_applicable,no,NA
+freeman-2020,05 Psych,D3,3.3,probably_yes,yes,PY
+freeman-2020,05 Psych,D3,3.4,no_information,yes,NI
+freeman-2020,05 Psych,D4,4.1,no,yes,N
+freeman-2020,05 Psych,D4,4.2,probably_no,yes,PN
+freeman-2020,05 Psych,D4,4.3,no,yes,N
+freeman-2020,05 Psych,D4,4.4,probably_no,yes,PN
+freeman-2020,05 Psych,D4,4.5,not_applicable,no,NA
+freeman-2020,05 Psych,D5,5.1,no_information,yes,NI
+freeman-2020,05 Psych,D5,5.2,probably_yes,yes,PY
+freeman-2020,05 Psych,D5,5.3,probably_yes,yes,PY
+fulop-2021,11 Surg,D1,1.1,yes,yes,Y
+fulop-2021,11 Surg,D1,1.2,no_information,yes,NI
+fulop-2021,11 Surg,D1,1.3,no,yes,N
+fulop-2021,11 Surg,D2,2.1,yes,yes,Y
+fulop-2021,11 Surg,D2,2.2,yes,yes,Y
+fulop-2021,11 Surg,D2,2.3,no_information,yes,NI
+fulop-2021,11 Surg,D2,2.4,not_applicable,no,NA
+fulop-2021,11 Surg,D2,2.5,probably_no,yes,PN
+fulop-2021,11 Surg,D2,2.6,probably_no,yes,PN
+fulop-2021,11 Surg,D3,3.1,probably_no,yes,PN
+fulop-2021,11 Surg,D3,3.2,probably_no,yes,PN
+fulop-2021,11 Surg,D3,3.3,probably_yes,yes,PY
+fulop-2021,11 Surg,D3,3.4,probably_no,yes,PN
+fulop-2021,11 Surg,D4,4.1,no,yes,N
+fulop-2021,11 Surg,D4,4.2,probably_yes,yes,PY
+fulop-2021,11 Surg,D4,4.3,probably_yes,yes,PY
+fulop-2021,11 Surg,D4,4.4,probably_yes,yes,PY
+fulop-2021,11 Surg,D4,4.5,probably_yes,yes,PY
+fulop-2021,11 Surg,D5,5.1,probably_no,yes,PN
+fulop-2021,11 Surg,D5,5.2,probably_yes,yes,PY
+fulop-2021,11 Surg,D5,5.3,probably_yes,yes,PY
+getgoal-duo1-2013,06 Gastro,D1,1.1,yes,yes,Y | Central 1:1 randomization from a centrally generated kit list (paper p.2498)
+getgoal-duo1-2013,06 Gastro,D1,1.2,yes,yes,Y | Central IVRS; investigators had no access to the code (p.2498)
+getgoal-duo1-2013,06 Gastro,D1,1.3,yes,yes,Y | Table 1 shows similar baseline characteristics
+getgoal-duo1-2013,06 Gastro,D2,2.1,no,yes,"N | Double-blind, injectable placebo (registry masking: DOUBLE)"
+getgoal-duo1-2013,06 Gastro,D2,2.2,no,yes,N | Investigators blinded
+getgoal-duo1-2013,06 Gastro,D2,2.3,no,yes,"N | Two protocol violations in lixisenatide arm; discontinuations reflect AEs, not deviations from the intended intervention"
+getgoal-duo1-2013,06 Gastro,D2,2.4,not_applicable,no,NA | 
+getgoal-duo1-2013,06 Gastro,D2,2.5,not_applicable,no,NA | 
+getgoal-duo1-2013,06 Gastro,D2,2.6,probably_yes,yes,"PY | Descriptive counts in all randomized, exposed participants (safety population, 223 vs 223); no formal test"
+getgoal-duo1-2013,06 Gastro,D2,2.7,not_applicable,no,NA | 
+getgoal-duo1-2013,06 Gastro,D3,3.1,yes,yes,Y | Safety population is all 446 randomized; SAE collection continued to 3 days after last dose
+getgoal-duo1-2013,06 Gastro,D3,3.2,not_applicable,no,NA | 
+getgoal-duo1-2013,06 Gastro,D3,3.3,not_applicable,no,NA | 
+getgoal-duo1-2013,06 Gastro,D3,3.4,not_applicable,no,NA | 
+getgoal-duo1-2013,06 Gastro,D4,4.1,probably_yes,yes,"PY | Investigator-reported, MedDRA-coded serious AEs; non-systematic but standard for SAEs"
+getgoal-duo1-2013,06 Gastro,D4,4.2,no,yes,N | Same collection process in both arms
+getgoal-duo1-2013,06 Gastro,D4,4.3,no,yes,N | Blinded investigators
+getgoal-duo1-2013,06 Gastro,D4,4.4,no,yes,"N | Blinded; GI events are not adjudicated, but assessors did not know arm"
+getgoal-duo1-2013,06 Gastro,D4,4.5,no,yes,N | No evidence of differential assessment
+getgoal-duo1-2013,06 Gastro,D5,5.1,probably_no,yes,PN | GI SAEs are not a registered outcome; safety was a secondary objective with descriptive analysis only
+getgoal-duo1-2013,06 Gastro,D5,5.2,no,yes,"N | The registry lists all serious AEs by term, without selection"
+getgoal-duo1-2013,06 Gastro,D5,5.3,no,yes,N | Single descriptive analysis
+getgoal-f1-2013,06 Gastro,D1,1.1,no_information,yes,"NI | Paper says only ""randomized in a 2:2:1:1 ratio"""
+getgoal-f1-2013,06 Gastro,D1,1.2,no_information,yes,NI | Not described
+getgoal-f1-2013,06 Gastro,D1,1.3,probably_no,yes,PN | Placebo ~3 years older (58.2 vs 54.6–55.4); otherwise similar
+getgoal-f1-2013,06 Gastro,D2,2.1,probably_no,yes,"PN | Double-blind, but ""study drug volume was not blinded"" and GI effects may unmask"
+getgoal-f1-2013,06 Gastro,D2,2.2,probably_no,yes,PN | Investigators masked; site staff may see volumes
+getgoal-f1-2013,06 Gastro,D2,2.3,no,yes,N | None reported beyond small protocol-violation counts
+getgoal-f1-2013,06 Gastro,D2,2.4,not_applicable,no,NA | 
+getgoal-f1-2013,06 Gastro,D2,2.5,not_applicable,no,NA | 
+getgoal-f1-2013,06 Gastro,D2,2.6,probably_yes,yes,PY | Descriptive comparison of safety population by randomised group; no exposure adjustment
+getgoal-f1-2013,06 Gastro,D2,2.7,not_applicable,no,NA | 
+getgoal-f1-2013,06 Gastro,D3,3.1,yes,yes,Y | AE data for the full safety population (161/161/160)
+getgoal-f1-2013,06 Gastro,D3,3.2,not_applicable,no,NA | 
+getgoal-f1-2013,06 Gastro,D4,4.1,no,yes,N | Systematic AE collection with MedDRA coding
+getgoal-f1-2013,06 Gastro,D4,4.2,probably_yes,yes,PY | Nausea/GI symptoms are participant-reported and may be reported differently on active drug
+getgoal-f1-2013,06 Gastro,D4,4.3,not_applicable,no,NA | Not reached because 4.2 is PY
+getgoal-f1-2013,06 Gastro,D4,4.4,not_applicable,no,NA | 
+getgoal-f1-2013,06 Gastro,D4,4.5,not_applicable,no,NA | 
+getgoal-f1-2013,06 Gastro,D5,5.1,probably_yes,yes,"PY | Methods pre-specify descriptive safety comparison, but cholecystitis/gastritis are not registered outcomes"
+getgoal-f1-2013,06 Gastro,D5,5.2,probably_yes,yes,PY | Many GI terms and two time windows; paper highlights nausea/vomiting and omits these terms
+getgoal-f1-2013,06 Gastro,D5,5.3,no,yes,N | 
+getgood-2020,15 Ortho,D1,1.1,yes,yes,"Y | Permuted blocks, stratified by surgeon, sex and meniscal repair"
+getgood-2020,15 Ortho,D1,1.2,yes,yes,Y | Allocation by telephone or web-based program (Empower)
+getgood-2020,15 Ortho,D1,1.3,probably_no,yes,PN | Table 1 is largely balanced; meniscal repair differs (P<.05) despite stratification
+getgood-2020,15 Ortho,D2,2.1,yes,yes,Y | Participants not blinded (lateral incision; Tubigrip used to conceal it)
+getgood-2020,15 Ortho,D2,2.2,yes,yes,Y | Operating surgeons knew allocation
+getgood-2020,15 Ortho,D2,2.3,probably_yes,yes,PY | Rehab adherence not measured; return to sport delayed ~1 month in LET group (P=.01)
+getgood-2020,15 Ortho,D2,2.4,probably_no,yes,PN | Authors' exposure-adjusted analysis suggests the delay does not explain the outcome difference
+getgood-2020,15 Ortho,D2,2.5,not_applicable,no,NA | 2.4 is not Y/PY
+getgood-2020,15 Ortho,D2,2.6,probably_yes,yes,"PY | Described as intention-to-treat, but 29 randomised patients (14 and 15) were excluded from the primary analysis"
+getgood-2020,15 Ortho,D2,2.7,probably_no,yes,"PN | Exclusions are 5% and 6%, similar across arms"
+getgood-2020,15 Ortho,D3,3.1,yes,yes,Y | Primary outcome available for 298/312 (95.5%) and 291/306 (95.1%)
+getgood-2020,15 Ortho,D3,3.2,not_applicable,no,NA | 3.1 is Y
+getgood-2020,15 Ortho,D3,3.3,not_applicable,no,NA | 3.1 is Y
+getgood-2020,15 Ortho,D3,3.4,not_applicable,no,NA | 3.1 is Y
+getgood-2020,15 Ortho,D4,4.1,no,yes,N | Pivot shift by blinded examiner; rupture confirmed by MRI or arthroscopy
+getgood-2020,15 Ortho,D4,4.2,probably_no,yes,PN | Patients and operating surgeons unblinded; pivot-shift grading is subjective
+getgood-2020,15 Ortho,D4,4.3,no,yes,N | Examiner was independent and blinded to allocation
+getgood-2020,15 Ortho,D4,4.4,not_applicable,no,NA | 4.3 is N
+getgood-2020,15 Ortho,D5,5.1,probably_yes,yes,"PY | Registered primary outcome, 24-month timepoint and MH analysis match; the outcome definition differs (see below)"
+getgood-2020,15 Ortho,D5,5.2,probably_yes,yes,PY | Composite redefined with persistence criteria; registered QALY and radiographic OA outcomes not reported here
+getgood-2020,15 Ortho,D5,5.3,probably_yes,yes,PY | Post hoc age-stratified analyses and multiple PRO comparisons
+gillis-2014,11 Surg,D1,1.1,yes,yes,Y
+gillis-2014,11 Surg,D1,1.2,yes,yes,Y
+gillis-2014,11 Surg,D1,1.3,no,yes,N
+gillis-2014,11 Surg,D2,2.1,yes,yes,Y
+gillis-2014,11 Surg,D2,2.2,yes,yes,Y
+gillis-2014,11 Surg,D2,2.3,probably_yes,yes,PY
+gillis-2014,11 Surg,D2,2.4,probably_yes,yes,PY
+gillis-2014,11 Surg,D2,2.5,probably_no,yes,PN
+gillis-2014,11 Surg,D2,2.6,probably_no,yes,PN
+gillis-2014,11 Surg,D3,3.1,probably_no,yes,PN
+gillis-2014,11 Surg,D3,3.2,no_information,yes,NI
+gillis-2014,11 Surg,D3,3.3,no,yes,N
+gillis-2014,11 Surg,D4,4.1,no,yes,N
+gillis-2014,11 Surg,D4,4.2,no,yes,N
+gillis-2014,11 Surg,D4,4.3,no,yes,N
+gillis-2014,11 Surg,D4,4.4,not_applicable,no,NA
+gillis-2014,11 Surg,D5,5.1,probably_no,yes,PN
+gillis-2014,11 Surg,D5,5.2,yes,yes,Y
+gillis-2014,11 Surg,D5,5.3,yes,yes,Y
+gillis-2014,11 Surg,D5,5.4,probably_no,yes,PN
+grant-2017,11 Surg,D1,1.1,probably_yes,yes,PY
+grant-2017,11 Surg,D1,1.2,no_information,yes,NI
+grant-2017,11 Surg,D1,1.3,probably_no,yes,PN
+grant-2017,11 Surg,D2,2.1,yes,yes,Y
+grant-2017,11 Surg,D2,2.2,yes,yes,Y
+grant-2017,11 Surg,D2,2.3,no_information,yes,NI
+grant-2017,11 Surg,D2,2.4,no_information,yes,NI
+grant-2017,11 Surg,D2,2.5,probably_no,yes,PN
+grant-2017,11 Surg,D2,2.6,probably_no,yes,PN
+grant-2017,11 Surg,D2,2.7,probably_no,yes,PN
+grant-2017,11 Surg,D3,3.1,probably_no,yes,PN
+grant-2017,11 Surg,D3,3.2,probably_no,yes,PN
+grant-2017,11 Surg,D3,3.3,probably_no,yes,PN
+grant-2017,11 Surg,D4,4.1,no,yes,N
+grant-2017,11 Surg,D4,4.2,no,yes,N
+grant-2017,11 Surg,D4,4.3,no,yes,N
+grant-2017,11 Surg,D4,4.4,not_applicable,no,NA
+grant-2017,11 Surg,D4,4.5,not_applicable,no,NA
+grant-2017,11 Surg,D5,5.1,probably_yes,yes,PY
+grant-2017,11 Surg,D5,5.2,probably_yes,yes,PY
+grant-2017,11 Surg,D5,5.3,probably_yes,yes,PY
+guitton-2019,07 PulmCC,D1,1.1,yes,yes,Y
+guitton-2019,07 PulmCC,D1,1.2,yes,yes,Y
+guitton-2019,07 PulmCC,D1,1.3,probably_no,yes,PN
+guitton-2019,07 PulmCC,D2,2.1,yes,yes,Y
+guitton-2019,07 PulmCC,D2,2.2,yes,yes,Y
+guitton-2019,07 PulmCC,D2,2.3,probably_no,yes,PN
+guitton-2019,07 PulmCC,D2,2.4,not_applicable,no,NA
+guitton-2019,07 PulmCC,D2,2.5,yes,yes,Y
+guitton-2019,07 PulmCC,D2,2.6,not_applicable,no,NA
+guitton-2019,07 PulmCC,D3,3.1,yes,yes,Y
+guitton-2019,07 PulmCC,D3,3.2,not_applicable,no,NA
+guitton-2019,07 PulmCC,D3,3.3,not_applicable,no,NA
+guitton-2019,07 PulmCC,D4,4.1,no,yes,N
+guitton-2019,07 PulmCC,D4,4.2,no,yes,N
+guitton-2019,07 PulmCC,D4,4.3,yes,yes,Y
+guitton-2019,07 PulmCC,D4,4.4,no,yes,N
+guitton-2019,07 PulmCC,D4,4.5,no,yes,N
+guitton-2019,07 PulmCC,D5,5.1,no,yes,N
+guitton-2019,07 PulmCC,D5,5.2,no,yes,N
+guitton-2019,07 PulmCC,D5,5.3,no,yes,N
+gupta-2024,13 Peds,D1,1.1,yes,yes,Y
+gupta-2024,13 Peds,D1,1.2,yes,yes,Y
+gupta-2024,13 Peds,D1,1.3,no,yes,N
+gupta-2024,13 Peds,D2,2.1,yes,yes,Y
+gupta-2024,13 Peds,D2,2.2,yes,yes,Y
+gupta-2024,13 Peds,D2,2.3,probably_yes,yes,PY
+gupta-2024,13 Peds,D2,2.4,no,yes,N
+gupta-2024,13 Peds,D2,2.5,no,yes,N
+gupta-2024,13 Peds,D2,2.6,yes,yes,Y
+gupta-2024,13 Peds,D2,2.7,not_applicable,no,NA
+gupta-2024,13 Peds,D3,3.1,yes,yes,Y
+gupta-2024,13 Peds,D3,3.2,not_applicable,no,NA
+gupta-2024,13 Peds,D3,3.3,not_applicable,no,NA
+gupta-2024,13 Peds,D3,3.4,not_applicable,no,NA
+gupta-2024,13 Peds,D4,4.1,no,yes,N
+gupta-2024,13 Peds,D4,4.2,no,yes,N
+gupta-2024,13 Peds,D4,4.3,not_applicable,no,NA
+gupta-2024,13 Peds,D4,4.4,not_applicable,no,NA
+gupta-2024,13 Peds,D4,4.5,not_applicable,no,NA
+gupta-2024,13 Peds,D5,5.1,yes,yes,Y
+gupta-2024,13 Peds,D5,5.2,yes,yes,Y
+gupta-2024,13 Peds,D5,5.3,no,yes,N
+gupta-2024,13 Peds,D5,5.4,no,yes,N
+hamido-2021,15 Ortho,D1,1.1,yes,yes,Y
+hamido-2021,15 Ortho,D1,1.2,no_information,yes,NI
+hamido-2021,15 Ortho,D1,1.3,probably_no,yes,PN
+hamido-2021,15 Ortho,D2,2.1,yes,yes,Y
+hamido-2021,15 Ortho,D2,2.2,yes,yes,Y
+hamido-2021,15 Ortho,D2,2.3,no,yes,N
+hamido-2021,15 Ortho,D2,2.4,not_applicable,no,NA
+hamido-2021,15 Ortho,D2,2.5,not_applicable,no,NA
+hamido-2021,15 Ortho,D2,2.6,no,yes,N
+hamido-2021,15 Ortho,D2,2.7,probably_no,yes,PN
+hamido-2021,15 Ortho,D3,3.1,probably_yes,yes,PY
+hamido-2021,15 Ortho,D3,3.2,not_applicable,no,NA
+hamido-2021,15 Ortho,D3,3.3,not_applicable,no,NA
+hamido-2021,15 Ortho,D3,3.4,not_applicable,no,NA
+hamido-2021,15 Ortho,D4,4.1,probably_no,yes,PN
+hamido-2021,15 Ortho,D4,4.2,probably_no,yes,PN
+hamido-2021,15 Ortho,D4,4.3,yes,yes,Y
+hamido-2021,15 Ortho,D4,4.4,yes,yes,Y
+hamido-2021,15 Ortho,D4,4.5,yes,yes,Y
+hamido-2021,15 Ortho,D5,5.1,probably_no,yes,PN
+hamido-2021,15 Ortho,D5,5.2,probably_yes,yes,PY
+hamido-2021,15 Ortho,D5,5.3,no_information,yes,NI
+hanafiah-2022,12 ObGyn,D1,1.1,yes,yes,Y
+hanafiah-2022,12 ObGyn,D1,1.2,probably_no,yes,PN
+hanafiah-2022,12 ObGyn,D1,1.3,probably_no,yes,PN
+hanafiah-2022,12 ObGyn,D2,2.1,yes,yes,Y
+hanafiah-2022,12 ObGyn,D2,2.2,yes,yes,Y
+hanafiah-2022,12 ObGyn,D2,2.3,no,yes,N
+hanafiah-2022,12 ObGyn,D2,2.4,not_applicable,no,NA
+hanafiah-2022,12 ObGyn,D2,2.5,not_applicable,no,NA
+hanafiah-2022,12 ObGyn,D2,2.6,no,yes,N
+hanafiah-2022,12 ObGyn,D2,2.7,probably_yes,yes,PY
+hanafiah-2022,12 ObGyn,D3,3.1,no,yes,N
+hanafiah-2022,12 ObGyn,D3,3.2,probably_no,yes,PN
+hanafiah-2022,12 ObGyn,D3,3.3,probably_yes,yes,PY
+hanafiah-2022,12 ObGyn,D3,3.4,probably_yes,yes,PY
+hanafiah-2022,12 ObGyn,D4,4.1,no,yes,N
+hanafiah-2022,12 ObGyn,D4,4.2,probably_no,yes,PN
+hanafiah-2022,12 ObGyn,D4,4.3,probably_yes,yes,PY
+hanafiah-2022,12 ObGyn,D4,4.4,no,yes,N
+hanafiah-2022,12 ObGyn,D4,4.5,probably_no,yes,PN
+hanafiah-2022,12 ObGyn,D5,5.1,probably_yes,yes,PY
+hanafiah-2022,12 ObGyn,D5,5.2,no,yes,N
+hanafiah-2022,12 ObGyn,D5,5.3,no,yes,N
+harmony-outcomes,08 Endo,D1,1.1,yes,yes,"Y | Sequestered, computer-generated randomization code (Lancet p.3)"
+harmony-outcomes,08 Endo,D1,1.2,yes,yes,Y | Central interactive voice/web response system for allocation
+harmony-outcomes,08 Endo,D1,1.3,no,yes,N | Baseline balance not checked in the text; no imbalance reported
+harmony-outcomes,08 Endo,D2,2.1,no,yes,"N | Double-blind, matched placebo injection"
+harmony-outcomes,08 Endo,D2,2.2,no,yes,N | Investigators and study staff masked
+harmony-outcomes,08 Endo,D2,2.3,not_applicable,no,NA | 2.1 and 2.2 are N
+harmony-outcomes,08 Endo,D2,2.4,not_applicable,no,NA | 2.3 is NA
+harmony-outcomes,08 Endo,D2,2.5,probably_yes,yes,PY | Background glucose-lowering therapy adjusted per usual care in both arms; balance not tabulated in the text
+harmony-outcomes,08 Endo,D2,2.6,yes,yes,"Y | ITT population, Cox model with treatment as sole covariate"
+harmony-outcomes,08 Endo,D2,2.7,not_applicable,no,NA | 2.6 is Y
+harmony-outcomes,08 Endo,D3,3.1,yes,yes,Y | 97.6% (albiglutide) and 96.7% (placebo) had complete CV event assessment; follow-up time attained 98.5% vs 97.9%
+harmony-outcomes,08 Endo,D3,3.2,not_applicable,no,NA | 3.1 is Y
+harmony-outcomes,08 Endo,D3,3.3,no,yes,N | Losses are censored; vital status known for about 99.8%
+harmony-outcomes,08 Endo,D3,3.4,no,yes,N | No evidence that missingness relates to the outcome
+harmony-outcomes,08 Endo,D4,4.1,no,yes,N | Standard adjudicated CV endpoints
+harmony-outcomes,08 Endo,D4,4.2,no,yes,N | Same method in both arms
+harmony-outcomes,08 Endo,D4,4.3,no,yes,N | Clinical events committee members were unaware of allocation
+harmony-outcomes,08 Endo,D4,4.4,not_applicable,no,NA | 4.3 is N
+harmony-outcomes,08 Endo,D4,4.5,no,yes,N | No plausible influence of knowledge on assessment
+harmony-outcomes,08 Endo,D5,5.1,probably_yes,yes,"PY | Protocol amendment 3 (Apr 2017) and registered primary endpoint pre-date the trigger; RAP approved 14 Nov 2017, after the 8 Nov 2017 event-count determination"
+harmony-outcomes,08 Endo,D5,5.2,no,yes,N | Single primary endpoint and analysis pre-specified
+harmony-outcomes,08 Endo,D5,5.3,no,yes,N | No alternative primary outcome measurements
+harmony-outcomes,08 Endo,D5,5.4,no,yes,N | Primary analysis as specified; no alternative analyses reported as primary
+heemskerk-2016,09 ID,D1,1.1,yes,yes,Y
+heemskerk-2016,09 ID,D1,1.2,yes,yes,Y
+heemskerk-2016,09 ID,D1,1.3,probably_no,yes,PN
+heemskerk-2016,09 ID,D2,2.1,no,yes,N
+heemskerk-2016,09 ID,D2,2.2,no,yes,N
+heemskerk-2016,09 ID,D2,2.3,not_applicable,no,NA
+heemskerk-2016,09 ID,D2,2.4,not_applicable,no,NA
+heemskerk-2016,09 ID,D2,2.5,probably_no,yes,PN
+heemskerk-2016,09 ID,D2,2.6,yes,yes,Y
+heemskerk-2016,09 ID,D2,2.7,not_applicable,no,NA
+heemskerk-2016,09 ID,D3,3.1,no_information,yes,NI
+heemskerk-2016,09 ID,D3,3.2,no_information,yes,NI
+heemskerk-2016,09 ID,D3,3.3,probably_yes,yes,PY
+heemskerk-2016,09 ID,D3,3.4,no_information,yes,NI
+heemskerk-2016,09 ID,D4,4.1,no,yes,N
+heemskerk-2016,09 ID,D4,4.2,probably_no,yes,PN
+heemskerk-2016,09 ID,D4,4.3,no,yes,N
+heemskerk-2016,09 ID,D4,4.4,not_applicable,no,NA
+heemskerk-2016,09 ID,D5,5.1,probably_yes,yes,PY
+heemskerk-2016,09 ID,D5,5.2,probably_yes,yes,PY
+heemskerk-2016,09 ID,D5,5.3,no,yes,N
+hill-2017,05 Psych,D1,1.1,no_information,yes,NI
+hill-2017,05 Psych,D1,1.2,no_information,yes,NI
+hill-2017,05 Psych,D1,1.3,no,yes,N
+hill-2017,05 Psych,D2,2.1,probably_yes,yes,PY
+hill-2017,05 Psych,D2,2.2,probably_yes,yes,PY
+hill-2017,05 Psych,D2,2.3,no,yes,N
+hill-2017,05 Psych,D2,2.4,no,yes,N
+hill-2017,05 Psych,D2,2.5,probably_no,yes,PN
+hill-2017,05 Psych,D2,2.6,no,yes,N
+hill-2017,05 Psych,D3,3.1,probably_yes,yes,PY
+hill-2017,05 Psych,D3,3.2,not_applicable,no,NA
+hill-2017,05 Psych,D3,3.3,not_applicable,no,NA
+hill-2017,05 Psych,D3,3.4,not_applicable,no,NA
+hill-2017,05 Psych,D4,4.1,probably_no,yes,PN
+hill-2017,05 Psych,D4,4.2,probably_no,yes,PN
+hill-2017,05 Psych,D4,4.3,no,yes,N
+hill-2017,05 Psych,D5,5.1,no,yes,N
+hill-2017,05 Psych,D5,5.2,probably_yes,yes,PY
+hill-2017,05 Psych,D5,5.3,probably_yes,yes,PY
+host-exam,01 GenMed,D1,1.1,yes,yes,"Y | Web-based IWRS randomisation, 1:1 (p.3)"
+host-exam,01 GenMed,D1,1.2,yes,yes,Y | Central web allocation after enrolment; consecutive assignment (p.3)
+host-exam,01 GenMed,D1,1.3,no,yes,N | Table 1 well balanced
+host-exam,01 GenMed,D2,2.1,yes,yes,"Y | Open-label, Masking: NONE"
+host-exam,01 GenMed,D2,2.2,yes,yes,Y | Open-label
+host-exam,01 GenMed,D2,2.3,probably_no,yes,"PN | Regimen switching 0.6% (35/5438), similar in both arms"
+host-exam,01 GenMed,D2,2.4,not_applicable,no,NA | Not applicable as 2.3 is PN
+host-exam,01 GenMed,D2,2.5,yes,yes,Y | Concomitant medications and PPI use balanced
+host-exam,01 GenMed,D2,2.6,yes,yes,Y | ITT Cox model on all randomised patients
+host-exam,01 GenMed,D2,2.7,not_applicable,no,NA | Not applicable as 2.6 is Y
+host-exam,01 GenMed,D3,3.1,yes,yes,Y | Primary endpoint ascertained in 5338/5438 (98.2%)
+host-exam,01 GenMed,D3,3.2,not_applicable,no,NA | Not applicable as 3.1 is Y
+host-exam,01 GenMed,D3,3.3,probably_no,yes,PN | Losses small (1.7%) and similar; vital status checked for all
+host-exam,01 GenMed,D3,3.4,not_applicable,no,NA | Not applicable as 3.3 is PN
+host-exam,01 GenMed,D4,4.1,no,yes,N | Standardised definitions (appendix pp.13-18)
+host-exam,01 GenMed,D4,4.2,probably_yes,yes,"PY | Investigators unmasked, so initial reporting could differ"
+host-exam,01 GenMed,D4,4.3,yes,yes,Y | Investigators were unmasked; skip logic is ambiguous here
+host-exam,01 GenMed,D4,4.4,probably_no,yes,"PN | Independent CEC unaware of allocation, received records with treatment references removed"
+host-exam,01 GenMed,D4,4.5,not_applicable,no,NA | Not applicable as 4.4 is PN
+host-exam,01 GenMed,D5,5.1,probably_yes,yes,PY | Registered primary outcome matches; SAP in appendix not fully checked
+host-exam,01 GenMed,D5,5.2,no,yes,N | Single registered primary composite; thrombotic and bleeding composites are post hoc
+host-exam,01 GenMed,D5,5.3,no,yes,N | ITT is the primary; per-protocol agrees (HR 0.72)
+hundscheid-2022,13 Peds,D1,1.1,probably_yes,yes,PY
+hundscheid-2022,13 Peds,D1,1.2,yes,yes,Y
+hundscheid-2022,13 Peds,D1,1.3,probably_no,yes,PN
+hundscheid-2022,13 Peds,D2,2.1,yes,yes,Y
+hundscheid-2022,13 Peds,D2,2.2,yes,yes,Y
+hundscheid-2022,13 Peds,D2,2.3,probably_yes,yes,PY
+hundscheid-2022,13 Peds,D2,2.4,probably_yes,yes,PY
+hundscheid-2022,13 Peds,D2,2.5,probably_yes,yes,PY
+hundscheid-2022,13 Peds,D2,2.6,yes,yes,Y
+hundscheid-2022,13 Peds,D2,2.7,not_applicable,no,NA
+hundscheid-2022,13 Peds,D3,3.1,yes,yes,Y
+hundscheid-2022,13 Peds,D3,3.2,not_applicable,no,NA
+hundscheid-2022,13 Peds,D3,3.3,not_applicable,no,NA
+hundscheid-2022,13 Peds,D3,3.4,not_applicable,no,NA
+hundscheid-2022,13 Peds,D4,4.1,no,yes,N
+hundscheid-2022,13 Peds,D4,4.2,probably_yes,yes,PY
+hundscheid-2022,13 Peds,D4,4.3,yes,yes,Y
+hundscheid-2022,13 Peds,D4,4.4,probably_yes,yes,PY
+hundscheid-2022,13 Peds,D4,4.5,probably_yes,yes,PY
+hundscheid-2022,13 Peds,D5,5.1,probably_yes,yes,PY
+hundscheid-2022,13 Peds,D5,5.2,no,yes,N
+hundscheid-2022,13 Peds,D5,5.3,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D1,1.1,no,yes,N
+ibrahim-2017,15 Ortho,D1,1.2,no,yes,N
+ibrahim-2017,15 Ortho,D1,1.3,no,yes,N
+ibrahim-2017,15 Ortho,D2,2.1,yes,yes,Y
+ibrahim-2017,15 Ortho,D2,2.2,yes,yes,Y
+ibrahim-2017,15 Ortho,D2,2.3,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D2,2.4,not_applicable,no,NA
+ibrahim-2017,15 Ortho,D2,2.5,no,yes,N
+ibrahim-2017,15 Ortho,D2,2.6,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D3,3.1,probably_yes,yes,PY
+ibrahim-2017,15 Ortho,D3,3.2,not_applicable,no,NA
+ibrahim-2017,15 Ortho,D3,3.3,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D3,3.4,not_applicable,no,NA
+ibrahim-2017,15 Ortho,D4,4.1,no,yes,N
+ibrahim-2017,15 Ortho,D4,4.2,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D4,4.3,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D4,4.4,probably_yes,yes,PY
+ibrahim-2017,15 Ortho,D4,4.5,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D5,5.1,no_information,yes,NI
+ibrahim-2017,15 Ortho,D5,5.2,yes,yes,Y
+ibrahim-2017,15 Ortho,D5,5.3,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D5,5.4,probably_no,yes,PN
+jaber-2016,07 PulmCC,D1,1.1,yes,yes,Y
+jaber-2016,07 PulmCC,D1,1.2,probably_yes,yes,PY
+jaber-2016,07 PulmCC,D1,1.3,probably_no,yes,PN
+jaber-2016,07 PulmCC,D2,2.1,probably_no,yes,PN
+jaber-2016,07 PulmCC,D2,2.2,probably_yes,yes,PY
+jaber-2016,07 PulmCC,D2,2.3,no,yes,N
+jaber-2016,07 PulmCC,D2,2.4,not_applicable,no,NA
+jaber-2016,07 PulmCC,D2,2.5,not_applicable,no,NA
+jaber-2016,07 PulmCC,D2,2.6,probably_yes,yes,PY
+jaber-2016,07 PulmCC,D2,2.7,not_applicable,no,NA
+jaber-2016,07 PulmCC,D3,3.1,probably_yes,yes,PY
+jaber-2016,07 PulmCC,D3,3.2,not_applicable,no,NA
+jaber-2016,07 PulmCC,D3,3.3,not_applicable,no,NA
+jaber-2016,07 PulmCC,D3,3.4,not_applicable,no,NA
+jaber-2016,07 PulmCC,D4,4.1,no,yes,N
+jaber-2016,07 PulmCC,D4,4.2,no,yes,N
+jaber-2016,07 PulmCC,D4,4.3,no,yes,N
+jaber-2016,07 PulmCC,D4,4.4,not_applicable,no,NA
+jaber-2016,07 PulmCC,D4,4.5,not_applicable,no,NA
+jaber-2016,07 PulmCC,D5,5.1,probably_no,yes,PN
+jaber-2016,07 PulmCC,D5,5.2,probably_no,yes,PN
+jaber-2016,07 PulmCC,D5,5.3,probably_no,yes,PN
+jindani-2016,09 ID,D1,1.1,probably_yes,yes,PY
+jindani-2016,09 ID,D1,1.2,yes,yes,Y
+jindani-2016,09 ID,D1,1.3,no,yes,N
+jindani-2016,09 ID,D2,2.1,yes,yes,Y
+jindani-2016,09 ID,D2,2.2,yes,yes,Y
+jindani-2016,09 ID,D2,2.3,no,yes,N
+jindani-2016,09 ID,D2,2.4,not_applicable,no,NA
+jindani-2016,09 ID,D2,2.5,yes,yes,Y
+jindani-2016,09 ID,D2,2.6,not_applicable,no,NA
+jindani-2016,09 ID,D2,2.7,yes,yes,Y
+jindani-2016,09 ID,D3,3.1,probably_yes,yes,PY
+jindani-2016,09 ID,D3,3.2,not_applicable,no,NA
+jindani-2016,09 ID,D3,3.3,probably_yes,yes,PY
+jindani-2016,09 ID,D3,3.4,no_information,yes,NI
+jindani-2016,09 ID,D4,4.1,no,yes,N
+jindani-2016,09 ID,D4,4.2,probably_no,yes,PN
+jindani-2016,09 ID,D4,4.3,probably_yes,yes,PY
+jindani-2016,09 ID,D4,4.4,probably_no,yes,PN
+jindani-2016,09 ID,D4,4.5,probably_no,yes,PN
+jindani-2016,09 ID,D5,5.1,no_information,yes,NI
+jindani-2016,09 ID,D5,5.2,probably_yes,yes,PY
+jindani-2016,09 ID,D5,5.3,probably_no,yes,PN
+kang25-recovery-2020,02 Cardio,D1,1.1,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D1,1.2,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D1,1.3,probably_no,yes,PN
+kang25-recovery-2020,02 Cardio,D2,2.1,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D2,2.2,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D2,2.3,probably_yes,yes,PY
+kang25-recovery-2020,02 Cardio,D2,2.4,probably_yes,yes,PY
+kang25-recovery-2020,02 Cardio,D2,2.5,probably_no,yes,PN
+kang25-recovery-2020,02 Cardio,D2,2.6,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D2,2.7,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D3,3.1,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D3,3.2,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D3,3.3,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D3,3.4,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D4,4.1,no,yes,N
+kang25-recovery-2020,02 Cardio,D4,4.2,no,yes,N
+kang25-recovery-2020,02 Cardio,D4,4.3,probably_yes,yes,PY
+kang25-recovery-2020,02 Cardio,D4,4.4,probably_no,yes,PN
+kang25-recovery-2020,02 Cardio,D4,4.5,no,yes,N
+kang25-recovery-2020,02 Cardio,D5,5.1,probably_yes,yes,PY
+kang25-recovery-2020,02 Cardio,D5,5.2,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D5,5.3,probably_no,yes,PN
+leader,08 Endo,D1,1.1,yes,yes,Y | Computer-generated randomization sequence (LEADER report)
+leader,08 Endo,D1,1.2,yes,yes,Y | Central interactive web/voice response allocation
+leader,08 Endo,D1,1.3,no,yes,N | Baseline characteristics well balanced (Table 1)
+leader,08 Endo,D2,2.1,no,yes,N | Double-blind; identical placebo and liraglutide pens
+leader,08 Endo,D2,2.2,no,yes,N | Carers and trial staff blinded
+leader,08 Endo,D2,2.3,no,yes,N | No deviations beyond usual practice reported
+leader,08 Endo,D2,2.4,not_applicable,no,NA | No deviations identified
+leader,08 Endo,D2,2.5,not_applicable,no,NA | No deviations identified
+leader,08 Endo,D2,2.6,yes,yes,Y | Intention-to-treat analysis of the primary outcome
+leader,08 Endo,D2,2.7,not_applicable,no,"NA | ITT analysis used, so failure to analyse by randomized group does not apply"
+leader,08 Endo,D3,3.1,yes,yes,Y | Vital status and events ascertained for virtually all randomized participants
+leader,08 Endo,D3,3.2,not_applicable,no,"NA | Not needed, as 3.1 is Y"
+leader,08 Endo,D3,3.3,no,yes,N | No evidence missingness depends on the outcome
+leader,08 Endo,D3,3.4,no,yes,N | Missingness unlikely to depend on true outcome value
+leader,08 Endo,D4,4.1,no,yes,"N | Event adjudication by standard, pre-specified definitions is appropriate"
+leader,08 Endo,D4,4.2,no,yes,N | Measurement unlikely to differ by group
+leader,08 Endo,D4,4.3,no,yes,N | Clinical events adjudicated by committee blinded to allocation
+leader,08 Endo,D4,4.4,no,yes,N | Assessment unlikely to be influenced by knowledge of allocation
+leader,08 Endo,D4,4.5,yes,yes,Y | Outcome assessment unlikely to be influenced by intervention knowledge
+leader,08 Endo,D5,5.1,yes,yes,Y | Primary outcome and analysis prespecified in protocol and SAP
+leader,08 Endo,D5,5.2,no,yes,"N | Primary composite was prespecified, not selected from multiple outcomes"
+leader,08 Endo,D5,5.3,no,yes,"N | Single prespecified primary analysis, with hierarchical testing (noninferiority then superiority)"
+levin-2011,05 Psych,D1,1.1,probably_yes,yes,PY
+levin-2011,05 Psych,D1,1.2,probably_yes,yes,PY
+levin-2011,05 Psych,D1,1.3,no,yes,N
+levin-2011,05 Psych,D2,2.1,probably_no,yes,PN
+levin-2011,05 Psych,D2,2.2,no,yes,N
+levin-2011,05 Psych,D2,2.3,not_applicable,no,NA
+levin-2011,05 Psych,D2,2.4,no,yes,N
+levin-2011,05 Psych,D2,2.5,not_applicable,no,NA
+levin-2011,05 Psych,D2,2.6,yes,yes,Y
+levin-2011,05 Psych,D2,2.7,no,yes,N
+levin-2011,05 Psych,D3,3.1,no,yes,N
+levin-2011,05 Psych,D3,3.2,probably_no,yes,PN
+levin-2011,05 Psych,D3,3.3,yes,yes,Y
+levin-2011,05 Psych,D3,3.4,probably_no,yes,PN
+levin-2011,05 Psych,D4,4.1,no,yes,N
+levin-2011,05 Psych,D4,4.2,yes,yes,Y
+levin-2011,05 Psych,D4,4.3,no,yes,N
+levin-2011,05 Psych,D4,4.4,probably_no,yes,PN
+levin-2011,05 Psych,D4,4.5,no,yes,N
+levin-2011,05 Psych,D5,5.1,probably_yes,yes,PY
+levin-2011,05 Psych,D5,5.2,no,yes,N
+levin-2011,05 Psych,D5,5.3,probably_no,yes,PN
+levin-2016,05 Psych,D1,1.1,yes,yes,Y
+levin-2016,05 Psych,D1,1.2,yes,yes,Y
+levin-2016,05 Psych,D1,1.3,no,yes,N
+levin-2016,05 Psych,D2,2.1,no,yes,N
+levin-2016,05 Psych,D2,2.2,no,yes,N
+levin-2016,05 Psych,D2,2.3,no,yes,N
+levin-2016,05 Psych,D2,2.4,no,yes,N
+levin-2016,05 Psych,D2,2.5,yes,yes,Y
+levin-2016,05 Psych,D2,2.6,no,yes,N
+levin-2016,05 Psych,D2,2.7,not_applicable,no,NA
+levin-2016,05 Psych,D3,3.1,no,yes,N
+levin-2016,05 Psych,D3,3.2,no,yes,N
+levin-2016,05 Psych,D3,3.3,probably_yes,yes,PY
+levin-2016,05 Psych,D3,3.4,probably_yes,yes,PY
+levin-2016,05 Psych,D4,4.1,no,yes,N
+levin-2016,05 Psych,D4,4.2,no,yes,N
+levin-2016,05 Psych,D4,4.3,no,yes,N
+levin-2016,05 Psych,D4,4.4,probably_yes,yes,PY
+levin-2016,05 Psych,D4,4.5,probably_no,yes,PN
+levin-2016,05 Psych,D5,5.1,no,yes,N
+levin-2016,05 Psych,D5,5.2,probably_no,yes,PN
+levin-2016,05 Psych,D5,5.3,no,yes,N
+lv-2023,14 Neph,D1,1.1,no_information,yes,NI
+lv-2023,14 Neph,D1,1.2,probably_yes,yes,PY
+lv-2023,14 Neph,D1,1.3,probably_no,yes,PN
+lv-2023,14 Neph,D2,2.1,probably_yes,yes,PY
+lv-2023,14 Neph,D2,2.2,probably_yes,yes,PY
+lv-2023,14 Neph,D2,2.3,no,yes,N
+lv-2023,14 Neph,D2,2.4,yes,yes,Y
+lv-2023,14 Neph,D2,2.5,not_applicable,no,NA
+lv-2023,14 Neph,D2,2.6,not_applicable,no,NA
+lv-2023,14 Neph,D3,3.1,probably_yes,yes,PY
+lv-2023,14 Neph,D3,3.2,not_applicable,no,NA
+lv-2023,14 Neph,D3,3.3,not_applicable,no,NA
+lv-2023,14 Neph,D3,3.4,not_applicable,no,NA
+lv-2023,14 Neph,D4,4.1,no,yes,N
+lv-2023,14 Neph,D4,4.2,no,yes,N
+lv-2023,14 Neph,D4,4.3,no,yes,N
+lv-2023,14 Neph,D4,4.4,not_applicable,no,NA
+lv-2023,14 Neph,D4,4.5,not_applicable,no,NA
+lv-2023,14 Neph,D5,5.1,no,yes,N
+lv-2023,14 Neph,D5,5.2,probably_no,yes,PN
+lv-2023,14 Neph,D5,5.3,probably_yes,yes,PY
+monaleesa-2,03 Onc,D1,1.1,yes,yes,Y
+monaleesa-2,03 Onc,D1,1.2,yes,yes,Y
+monaleesa-2,03 Onc,D1,1.3,no,yes,N
+monaleesa-2,03 Onc,D2,2.1,yes,yes,Y
+monaleesa-2,03 Onc,D2,2.2,yes,yes,Y
+monaleesa-2,03 Onc,D2,2.3,no,yes,N
+monaleesa-2,03 Onc,D2,2.4,not_applicable,no,NA
+monaleesa-2,03 Onc,D2,2.5,no_information,yes,NI
+monaleesa-2,03 Onc,D2,2.6,yes,yes,Y
+monaleesa-2,03 Onc,D2,2.7,no,yes,N
+monaleesa-2,03 Onc,D3,3.1,probably_yes,yes,PY
+monaleesa-2,03 Onc,D3,3.2,not_applicable,no,NA
+monaleesa-2,03 Onc,D3,3.3,not_applicable,no,NA
+monaleesa-2,03 Onc,D3,3.4,not_applicable,no,NA
+monaleesa-2,03 Onc,D4,4.1,no,yes,N
+monaleesa-2,03 Onc,D4,4.2,no,yes,N
+monaleesa-2,03 Onc,D4,4.3,no,yes,N
+monaleesa-2,03 Onc,D4,4.4,not_applicable,no,NA
+monaleesa-2,03 Onc,D5,5.1,probably_no,yes,PN
+monaleesa-2,03 Onc,D5,5.2,no,yes,N
+monaleesa-2,03 Onc,D5,5.3,no,yes,N
+monaleesa-2,03 Onc,D5,5.4,no,yes,N
+monaleesa-3,03 Onc,D1,1.1,yes,yes,Y
+monaleesa-3,03 Onc,D1,1.2,yes,yes,Y
+monaleesa-3,03 Onc,D1,1.3,no,yes,N
+monaleesa-3,03 Onc,D2,2.1,yes,yes,Y
+monaleesa-3,03 Onc,D2,2.2,yes,yes,Y
+monaleesa-3,03 Onc,D2,2.3,no,yes,N
+monaleesa-3,03 Onc,D2,2.4,not_applicable,no,NA
+monaleesa-3,03 Onc,D2,2.5,not_applicable,no,NA
+monaleesa-3,03 Onc,D2,2.6,yes,yes,Y
+monaleesa-3,03 Onc,D2,2.7,not_applicable,no,NA
+monaleesa-3,03 Onc,D3,3.1,yes,yes,Y
+monaleesa-3,03 Onc,D3,3.2,not_applicable,no,NA
+monaleesa-3,03 Onc,D3,3.3,not_applicable,no,NA
+monaleesa-3,03 Onc,D3,3.4,not_applicable,no,NA
+monaleesa-3,03 Onc,D4,4.1,no,yes,N
+monaleesa-3,03 Onc,D4,4.2,no,yes,N
+monaleesa-3,03 Onc,D4,4.3,probably_no,yes,PN
+monaleesa-3,03 Onc,D4,4.4,no,yes,N
+monaleesa-3,03 Onc,D4,4.5,not_applicable,no,NA
+monaleesa-3,03 Onc,D5,5.1,probably_yes,yes,PY
+monaleesa-3,03 Onc,D5,5.2,no,yes,N
+monaleesa-3,03 Onc,D5,5.3,no,yes,N
+monaleesa-7,03 Onc,D1,1.1,yes,yes,"Y | Permuted-block randomisation via interactive response technology, stratified by liver/lung metastases, prior chemotherapy and endocrine partner (paper p.906; SAP p.8)"
+monaleesa-7,03 Onc,D1,1.2,yes,yes,Y | Allocation concealed in the IRT system until after database lock (paper p.906)
+monaleesa-7,03 Onc,D1,1.3,yes,yes,"Y | Baseline characteristics well balanced (Table 1, paper p.907)"
+monaleesa-7,03 Onc,D2,2.1,yes,yes,Y | Matching placebo; patients and care providers masked (protocol p.18; registry quadruple masking)
+monaleesa-7,03 Onc,D2,2.2,yes,yes,Y | Investigators and sponsor masked until unblinding (paper p.906)
+monaleesa-7,03 Onc,D2,2.3,probably_no,yes,"PN | Ribociclib arm had more dose interruptions (77% vs 38%) and reductions (35% vs 5%), but these were protocol-specified toxicity management (paper p.912)"
+monaleesa-7,03 Onc,D2,2.4,yes,yes,Y | Primary analysis is intention-to-treat on the full analysis set (paper p.908; SAP §2.3.1)
+monaleesa-7,03 Onc,D2,2.5,probably_yes,yes,"PY | Stratified Cox model and log-rank test, pre-specified in the SAP; proportional hazards not formally reported"
+monaleesa-7,03 Onc,D2,2.6,not_applicable,no,NA | Not applicable to an ITT effect of assignment
+monaleesa-7,03 Onc,D2,2.7,not_applicable,no,NA | Not applicable
+monaleesa-7,03 Onc,D3,3.1,yes,yes,Y | All 672 randomised patients included in the analysis (Figure 1)
+monaleesa-7,03 Onc,D3,3.2,yes,yes,Y | Only 2 patients lost to follow-up in total; survival status known for all
+monaleesa-7,03 Onc,D3,3.3,not_applicable,no,NA | No evidence of informative missingness; PFS is censored at last adequate tumour assessment
+monaleesa-7,03 Onc,D3,3.4,not_applicable,no,NA | Not applicable
+monaleesa-7,03 Onc,D4,4.1,no,yes,"N | RECIST 1.1 imaging every 8 weeks, appropriate for PFS"
+monaleesa-7,03 Onc,D4,4.2,no,yes,N | Same imaging schedule and assessment in both arms
+monaleesa-7,03 Onc,D4,4.3,probably_no,yes,PN | Investigators nominally masked to assignment (paper p.906)
+monaleesa-7,03 Onc,D4,4.4,probably_yes,yes,"PY | Arm-specific toxicities (grade 3-4 neutropenia 61% vs 4%, ALT rise) could allow investigators to infer assignment, and PFS by investigator involves judgement"
+monaleesa-7,03 Onc,D4,4.5,probably_no,yes,"PN | Masked central review (subset, n=267) gave a consistent, more favourable HR of 0.43 (paper p.910), so no clear evidence of biased local calls"
+monaleesa-7,03 Onc,D5,5.1,yes,yes,"Y | Registry (NCT02278120) lists investigator-assessed PFS as primary outcome, matching the paper"
+monaleesa-7,03 Onc,D5,5.2,no,yes,N | Single PFS analysis reported; sensitivity analyses also reported
+monaleesa-7,03 Onc,D5,5.3,no,yes,N | No evidence of selection; the analysis follows the pre-specified SAP
+monarch-2,03 Onc,D1,1.1,yes,yes,Y
+monarch-2,03 Onc,D1,1.2,yes,yes,Y
+monarch-2,03 Onc,D1,1.3,no,yes,N
+monarch-2,03 Onc,D2,2.1,probably_yes,yes,PY
+monarch-2,03 Onc,D2,2.2,probably_yes,yes,PY
+monarch-2,03 Onc,D2,2.3,no,yes,N
+monarch-2,03 Onc,D2,2.4,not_applicable,no,NA
+monarch-2,03 Onc,D2,2.5,yes,yes,Y
+monarch-2,03 Onc,D2,2.6,not_applicable,no,NA
+monarch-2,03 Onc,D3,3.1,yes,yes,Y
+monarch-2,03 Onc,D3,3.2,not_applicable,no,NA
+monarch-2,03 Onc,D3,3.3,probably_no,yes,PN
+monarch-2,03 Onc,D3,3.4,not_applicable,no,NA
+monarch-2,03 Onc,D4,4.1,no,yes,N
+monarch-2,03 Onc,D4,4.2,probably_yes,yes,PY
+monarch-2,03 Onc,D4,4.3,probably_yes,yes,PY
+monarch-2,03 Onc,D4,4.4,probably_yes,yes,PY
+monarch-2,03 Onc,D4,4.5,probably_no,yes,PN
+monarch-2,03 Onc,D5,5.1,yes,yes,Y
+monarch-2,03 Onc,D5,5.2,no,yes,N
+monarch-2,03 Onc,D5,5.3,no,yes,N
+monarch-3,03 Onc,D1,1.1,probably_yes,yes,PY
+monarch-3,03 Onc,D1,1.2,yes,yes,Y
+monarch-3,03 Onc,D1,1.3,no,yes,N
+monarch-3,03 Onc,D2,2.1,no,yes,N
+monarch-3,03 Onc,D2,2.2,probably_no,yes,PN
+monarch-3,03 Onc,D2,2.3,not_applicable,no,NA
+monarch-3,03 Onc,D2,2.4,not_applicable,no,NA
+monarch-3,03 Onc,D2,2.5,yes,yes,Y
+monarch-3,03 Onc,D2,2.6,not_applicable,no,NA
+monarch-3,03 Onc,D2,2.7,not_applicable,no,NA
+monarch-3,03 Onc,D3,3.1,yes,yes,Y
+monarch-3,03 Onc,D3,3.2,not_applicable,no,NA
+monarch-3,03 Onc,D3,3.3,no,yes,N
+monarch-3,03 Onc,D3,3.4,no,yes,N
+monarch-3,03 Onc,D4,4.1,no,yes,N
+monarch-3,03 Onc,D4,4.2,no,yes,N
+monarch-3,03 Onc,D4,4.3,probably_yes,yes,PY
+monarch-3,03 Onc,D4,4.4,probably_yes,yes,PY
+monarch-3,03 Onc,D4,4.5,probably_no,yes,PN
+monarch-3,03 Onc,D5,5.1,probably_yes,yes,PY
+monarch-3,03 Onc,D5,5.2,no,yes,N
+monarch-3,03 Onc,D5,5.3,no,yes,N
+monarch-plus,03 Onc,D1,1.1,yes,yes,Y
+monarch-plus,03 Onc,D1,1.2,yes,yes,Y
+monarch-plus,03 Onc,D1,1.3,no,yes,N
+monarch-plus,03 Onc,D2,2.1,no,yes,N
+monarch-plus,03 Onc,D2,2.2,no,yes,N
+monarch-plus,03 Onc,D2,2.3,no,yes,N
+monarch-plus,03 Onc,D2,2.4,not_applicable,no,NA
+monarch-plus,03 Onc,D2,2.5,not_applicable,no,NA
+monarch-plus,03 Onc,D2,2.6,yes,yes,Y
+monarch-plus,03 Onc,D2,2.7,no,yes,N
+monarch-plus,03 Onc,D3,3.1,yes,yes,Y
+monarch-plus,03 Onc,D3,3.2,not_applicable,no,NA
+monarch-plus,03 Onc,D3,3.3,no,yes,N
+monarch-plus,03 Onc,D3,3.4,not_applicable,no,NA
+monarch-plus,03 Onc,D4,4.1,no,yes,N
+monarch-plus,03 Onc,D4,4.2,probably_yes,yes,PY
+monarch-plus,03 Onc,D4,4.3,probably_no,yes,PN
+monarch-plus,03 Onc,D4,4.4,probably_yes,yes,PY
+monarch-plus,03 Onc,D4,4.5,no_information,yes,NI
+monarch-plus,03 Onc,D5,5.1,yes,yes,Y
+monarch-plus,03 Onc,D5,5.2,no,yes,N
+monarch-plus,03 Onc,D5,5.3,no,yes,N
+nefigard,14 Neph,D1,1.1,yes,yes,Y
+nefigard,14 Neph,D1,1.2,probably_yes,yes,PY
+nefigard,14 Neph,D1,1.3,probably_no,yes,PN
+nefigard,14 Neph,D2,2.1,no,yes,N
+nefigard,14 Neph,D2,2.2,no,yes,N
+nefigard,14 Neph,D2,2.3,probably_no,yes,PN
+nefigard,14 Neph,D2,2.4,not_applicable,no,NA
+nefigard,14 Neph,D2,2.5,not_applicable,no,NA
+nefigard,14 Neph,D2,2.6,probably_yes,yes,PY
+nefigard,14 Neph,D2,2.7,not_applicable,no,NA
+nefigard,14 Neph,D3,3.1,probably_no,yes,PN
+nefigard,14 Neph,D3,3.2,probably_yes,yes,PY
+nefigard,14 Neph,D3,3.3,probably_yes,yes,PY
+nefigard,14 Neph,D3,3.4,probably_no,yes,PN
+nefigard,14 Neph,D4,4.1,no,yes,N
+nefigard,14 Neph,D4,4.2,no,yes,N
+nefigard,14 Neph,D4,4.3,no,yes,N
+nefigard,14 Neph,D4,4.4,not_applicable,no,NA
+nefigard,14 Neph,D4,4.5,not_applicable,no,NA
+nefigard,14 Neph,D5,5.1,probably_no,yes,PN
+nefigard,14 Neph,D5,5.2,probably_yes,yes,PY
+nefigard,14 Neph,D5,5.3,probably_yes,yes,PY
+paloma-2,03 Onc,D1,1.1,probably_yes,yes,PY
+paloma-2,03 Onc,D1,1.2,probably_yes,yes,PY
+paloma-2,03 Onc,D1,1.3,no,yes,N
+paloma-2,03 Onc,D2,2.1,no,yes,N
+paloma-2,03 Onc,D2,2.2,no,yes,N
+paloma-2,03 Onc,D2,2.3,no,yes,N
+paloma-2,03 Onc,D2,2.4,no,yes,N
+paloma-2,03 Onc,D2,2.5,yes,yes,Y
+paloma-2,03 Onc,D3,3.1,yes,yes,Y
+paloma-2,03 Onc,D3,3.2,not_applicable,no,NA
+paloma-2,03 Onc,D3,3.3,not_applicable,no,NA
+paloma-2,03 Onc,D4,4.1,probably_yes,yes,PY
+paloma-2,03 Onc,D4,4.2,no,yes,N
+paloma-2,03 Onc,D4,4.3,probably_no,yes,PN
+paloma-2,03 Onc,D4,4.4,no,yes,N
+paloma-2,03 Onc,D5,5.1,yes,yes,Y
+paloma-2,03 Onc,D5,5.2,yes,yes,Y
+paloma-2,03 Onc,D5,5.3,no,yes,N
+pioneer-6,08 Endo,D1,1.1,yes,yes,Y
+pioneer-6,08 Endo,D1,1.2,yes,yes,Y
+pioneer-6,08 Endo,D1,1.3,no,yes,N
+pioneer-6,08 Endo,D2,2.1,no,yes,N
+pioneer-6,08 Endo,D2,2.2,no,yes,N
+pioneer-6,08 Endo,D2,2.3,yes,yes,Y
+pioneer-6,08 Endo,D2,2.4,no,yes,N
+pioneer-6,08 Endo,D2,2.5,yes,yes,Y
+pioneer-6,08 Endo,D2,2.6,yes,yes,Y
+pioneer-6,08 Endo,D3,3.1,probably_yes,yes,PY
+pioneer-6,08 Endo,D3,3.2,not_applicable,no,NA
+pioneer-6,08 Endo,D3,3.3,not_applicable,no,NA
+pioneer-6,08 Endo,D3,3.4,no,yes,N
+pioneer-6,08 Endo,D4,4.1,yes,yes,Y
+pioneer-6,08 Endo,D4,4.2,yes,yes,Y
+pioneer-6,08 Endo,D4,4.3,no,yes,N
+pioneer-6,08 Endo,D4,4.4,no,yes,N
+pioneer-6,08 Endo,D5,5.1,yes,yes,Y
+pioneer-6,08 Endo,D5,5.2,no,yes,N
+pioneer-6,08 Endo,D5,5.3,no,yes,N
+pioneer-6,08 Endo,D5,5.4,no,yes,N
+potsiurko-2022,13 Peds,D1,1.1,probably_yes,yes,"PY | ""Computer-generated random sequence of numbers"" (p.731); no further detail"
+potsiurko-2022,13 Peds,D1,1.2,no_information,yes,NI | Concealment not described
+potsiurko-2022,13 Peds,D1,1.3,no,yes,N | Table 3 groups similar; male sex 50% vs 62.5% (p=0.07) is noted but not judged substantial
+potsiurko-2022,13 Peds,D2,2.1,yes,yes,Y | Masking: NONE (registry); open-label
+potsiurko-2022,13 Peds,D2,2.2,yes,yes,Y | Open-label design
+potsiurko-2022,13 Peds,D2,2.3,probably_no,yes,PN | 8/104 expectant infants received rescue acetaminophen under pre-specified criteria (p.732); this is protocol-defined and analysed ITT
+potsiurko-2022,13 Peds,D2,2.4,not_applicable,no,NA | Not applicable as 2.3 is PN
+potsiurko-2022,13 Peds,D2,2.5,yes,yes,Y | ITT analysis reported for the primary outcome
+potsiurko-2022,13 Peds,D2,2.6,no,yes,N | All 208 randomized were analysed (Fig. 1)
+potsiurko-2022,13 Peds,D3,3.1,yes,yes,Y | Fig. 1 analysed 52/52/104; no missing outcome data reported
+potsiurko-2022,13 Peds,D3,3.2,not_applicable,no,NA | Not applicable as 3.1 is Y
+potsiurko-2022,13 Peds,D4,4.1,no,yes,N | NICHD/Walsh BPD definition; Bell and Papile criteria for other outcomes
+potsiurko-2022,13 Peds,D4,4.2,no,yes,N | No differences in method reported
+potsiurko-2022,13 Peds,D4,4.3,yes,yes,"Y | Open-label, no masking"
+potsiurko-2022,13 Peds,D4,4.4,probably_yes,yes,PY | BPD depends partly on clinician decisions about oxygen and respiratory support; death is objective
+potsiurko-2022,13 Peds,D4,4.5,probably_no,yes,PN | No direction of influence is evident; death is objective and drives little of the difference
+potsiurko-2022,13 Peds,D5,5.1,no,yes,N | Composite matches the registered primary outcome
+potsiurko-2022,13 Peds,D5,5.2,probably_no,yes,PN | ITT and per-protocol both reported; both non-significant
+potsiurko-2022,13 Peds,D5,5.3,no,yes,N | No subgroup analysis of this outcome
+rewind,08 Endo,D1,1.1,yes,yes,Y | Computer-generated random code
+rewind,08 Endo,D1,1.2,probably_yes,yes,"PY | Central interactive web response system, stratified by site"
+rewind,08 Endo,D1,1.3,no,yes,N | Table 1 is well balanced
+rewind,08 Endo,D2,2.1,no,yes,"N | Double-blind, identical syringes"
+rewind,08 Endo,D2,2.2,no,yes,N | Investigators and staff masked
+rewind,08 Endo,D2,2.3,not_applicable,no,"NA | Skipped, since 2.1 and 2.2 are N"
+rewind,08 Endo,D2,2.4,not_applicable,no,NA | Skipped
+rewind,08 Endo,D2,2.5,not_applicable,no,NA | Skipped
+rewind,08 Endo,D2,2.6,yes,yes,"Y | ITT, all randomised analysed, Cox model"
+rewind,08 Endo,D2,2.7,not_applicable,no,"NA | Skipped, since 2.6 is Y"
+rewind,08 Endo,D3,3.1,probably_yes,yes,"PY | Outcome status known in 97.1%, with 17 unknown per arm"
+rewind,08 Endo,D3,3.2,not_applicable,no,"NA | Skipped, since 3.1 is PY"
+rewind,08 Endo,D3,3.3,not_applicable,no,NA | Skipped
+rewind,08 Endo,D3,3.4,not_applicable,no,NA | Skipped
+rewind,08 Endo,D4,4.1,no,yes,"N | Standard MI, stroke and CV death definitions"
+rewind,08 Endo,D4,4.2,no,yes,N | Same process in both arms
+rewind,08 Endo,D4,4.3,not_applicable,no,"NA | Skipped, since 4.1 and 4.2 are N"
+rewind,08 Endo,D4,4.4,not_applicable,no,NA | Skipped
+rewind,08 Endo,D4,4.5,not_applicable,no,NA | Skipped
+rewind,08 Endo,D5,5.1,no,yes,N | Primary composite as prespecified in registry
+rewind,08 Endo,D5,5.2,no,yes,"N | Single prespecified primary analysis, with alpha adjusted for the interim look"
+rewind,08 Endo,D5,5.3,no,yes,N | Subgroups reported as secondary; region interaction not used for the primary result
+rosen-2021,07 PulmCC,D1,1.1,probably_yes,yes,"PY | 1:1 allocation, block size 2; generation method not detailed"
+rosen-2021,07 PulmCC,D1,1.2,probably_yes,yes,"PY | Sealed, opaque, sequentially numbered envelopes; preparer not stated"
+rosen-2021,07 PulmCC,D1,1.3,probably_no,yes,"PN | HF group older (44.0 vs 38.7 y) and more smokers, but otherwise similar"
+rosen-2021,07 PulmCC,D2,2.1,yes,yes,Y | Open-label (Section 2.3)
+rosen-2021,07 PulmCC,D2,2.2,yes,yes,"Y | Anaesthetists briefed on protocol, not masked"
+rosen-2021,07 PulmCC,D2,2.3,no,yes,N | Intended laryngoscopy procedures were followed
+rosen-2021,07 PulmCC,D2,2.4,not_applicable,no,NA | 2.3 is N
+rosen-2021,07 PulmCC,D2,2.5,no_information,yes,NI | Bag-mask ventilation was unprotocolised; use not reported by arm
+rosen-2021,07 PulmCC,D2,2.6,no,yes,N | No analysis of this count
+rosen-2021,07 PulmCC,D2,2.7,probably_no,yes,PN | Small counts (1 vs 2 with 3 attempts)
+rosen-2021,07 PulmCC,D3,3.1,probably_yes,yes,"PY | 38/40 analysed (PEEP 18/20, HF 20/20)"
+rosen-2021,07 PulmCC,D3,3.2,not_applicable,no,NA | 3.1 is PY
+rosen-2021,07 PulmCC,D3,3.3,no_information,yes,NI | Reasons for 2 PEEP withdrawals not linked to attempt data
+rosen-2021,07 PulmCC,D3,3.4,no_information,yes,NI | Cannot tell whether missingness relates to attempts
+rosen-2021,07 PulmCC,D4,4.1,no,yes,N | Counting attempts is a reasonable method
+rosen-2021,07 PulmCC,D4,4.2,no,yes,N | No reason to expect differential ascertainment
+rosen-2021,07 PulmCC,D4,4.3,yes,yes,Y | Assessors (laryngoscopists) knew the allocation
+rosen-2021,07 PulmCC,D4,4.4,probably_yes,yes,PY | Knowledge of face mask vs HFNC could shape re-attempt decisions
+rosen-2021,07 PulmCC,D4,4.5,probably_yes,yes,PY | Attempt count is partly judgement-based and the count is small
+rosen-2021,07 PulmCC,D5,5.1,no,yes,N | Not selected from multiple outcome measurements
+rosen-2021,07 PulmCC,D5,5.2,no,yes,N | Not selected from multiple analyses
+rosen-2021,07 PulmCC,D5,5.3,no_information,yes,NI | Not in Methods outcome list; protocol not supplied to verify
+sanctuary,14 Neph,D1,1.1,probably_yes,yes,PY
+sanctuary,14 Neph,D1,1.2,yes,yes,Y
+sanctuary,14 Neph,D1,1.3,probably_no,yes,PN
+sanctuary,14 Neph,D2,2.1,no,yes,N
+sanctuary,14 Neph,D2,2.2,no,yes,N
+sanctuary,14 Neph,D2,2.3,no,yes,N
+sanctuary,14 Neph,D2,2.4,not_applicable,no,NA
+sanctuary,14 Neph,D2,2.5,yes,yes,Y
+sanctuary,14 Neph,D2,2.6,not_applicable,no,NA
+sanctuary,14 Neph,D2,2.7,not_applicable,no,NA
+sanctuary,14 Neph,D3,3.1,probably_yes,yes,PY
+sanctuary,14 Neph,D3,3.2,no,yes,N
+sanctuary,14 Neph,D3,3.3,probably_no,yes,PN
+sanctuary,14 Neph,D3,3.4,probably_yes,yes,PY
+sanctuary,14 Neph,D3,3.5,yes,yes,Y
+sanctuary,14 Neph,D4,4.1,yes,yes,Y
+sanctuary,14 Neph,D4,4.2,no,yes,N
+sanctuary,14 Neph,D4,4.3,yes,yes,Y
+sanctuary,14 Neph,D4,4.4,no,yes,N
+sanctuary,14 Neph,D4,4.5,not_applicable,no,NA
+sanctuary,14 Neph,D5,5.1,yes,yes,Y
+sanctuary,14 Neph,D5,5.2,yes,yes,Y
+sanctuary,14 Neph,D5,5.3,no,yes,N
+smart-choice-3,01 GenMed,D1,1.1,yes,yes,Y
+smart-choice-3,01 GenMed,D1,1.2,yes,yes,Y
+smart-choice-3,01 GenMed,D1,1.3,no,yes,N
+smart-choice-3,01 GenMed,D2,2.1,yes,yes,Y
+smart-choice-3,01 GenMed,D2,2.2,yes,yes,Y
+smart-choice-3,01 GenMed,D2,2.3,probably_yes,yes,PY
+smart-choice-3,01 GenMed,D2,2.4,probably_yes,yes,PY
+smart-choice-3,01 GenMed,D2,2.5,probably_yes,yes,PY
+smart-choice-3,01 GenMed,D2,2.6,yes,yes,Y
+smart-choice-3,01 GenMed,D2,2.7,not_applicable,no,NA
+smart-choice-3,01 GenMed,D3,3.1,yes,yes,Y
+smart-choice-3,01 GenMed,D3,3.2,not_applicable,no,NA
+smart-choice-3,01 GenMed,D3,3.3,not_applicable,no,NA
+smart-choice-3,01 GenMed,D3,3.4,not_applicable,no,NA
+smart-choice-3,01 GenMed,D4,4.1,no,yes,N
+smart-choice-3,01 GenMed,D4,4.2,probably_yes,yes,PY
+smart-choice-3,01 GenMed,D4,4.3,probably_no,yes,PN
+smart-choice-3,01 GenMed,D4,4.4,not_applicable,no,NA
+smart-choice-3,01 GenMed,D4,4.5,not_applicable,no,NA
+smart-choice-3,01 GenMed,D5,5.1,probably_yes,yes,PY
+smart-choice-3,01 GenMed,D5,5.2,probably_no,yes,PN
+smart-choice-3,01 GenMed,D5,5.3,probably_no,yes,PN
+stop-igan,14 Neph,D1,1.1,yes,yes,Y
+stop-igan,14 Neph,D1,1.2,probably_yes,yes,PY
+stop-igan,14 Neph,D1,1.3,probably_no,yes,PN
+stop-igan,14 Neph,D2,2.1,yes,yes,Y
+stop-igan,14 Neph,D2,2.2,yes,yes,Y
+stop-igan,14 Neph,D2,2.3,probably_no,yes,PN
+stop-igan,14 Neph,D2,2.4,not_applicable,no,NA
+stop-igan,14 Neph,D2,2.5,not_applicable,no,NA
+stop-igan,14 Neph,D2,2.6,no,yes,N
+stop-igan,14 Neph,D2,2.7,no,yes,N
+stop-igan,14 Neph,D3,3.1,no,yes,N
+stop-igan,14 Neph,D3,3.2,probably_no,yes,PN
+stop-igan,14 Neph,D3,3.3,no_information,yes,NI
+stop-igan,14 Neph,D3,3.4,no_information,yes,NI
+stop-igan,14 Neph,D4,4.1,probably_yes,yes,PY
+stop-igan,14 Neph,D4,4.2,yes,yes,Y
+stop-igan,14 Neph,D4,4.3,probably_yes,yes,PY
+stop-igan,14 Neph,D4,4.4,probably_no,yes,PN
+stop-igan,14 Neph,D4,4.5,probably_yes,yes,PY
+stop-igan,14 Neph,D5,5.1,yes,yes,Y
+stop-igan,14 Neph,D5,5.2,probably_no,yes,PN
+stop-igan,14 Neph,D5,5.3,probably_yes,yes,PY
+stopdapt-2,01 GenMed,D1,1.1,probably_yes,yes,PY
+stopdapt-2,01 GenMed,D1,1.2,yes,yes,Y
+stopdapt-2,01 GenMed,D1,1.3,no,yes,N
+stopdapt-2,01 GenMed,D2,2.1,yes,yes,Y
+stopdapt-2,01 GenMed,D2,2.2,yes,yes,Y
+stopdapt-2,01 GenMed,D2,2.3,probably_yes,yes,PY
+stopdapt-2,01 GenMed,D2,2.4,probably_yes,yes,PY
+stopdapt-2,01 GenMed,D2,2.5,yes,yes,Y
+stopdapt-2,01 GenMed,D2,2.6,yes,yes,Y
+stopdapt-2,01 GenMed,D2,2.7,probably_no,yes,PN
+stopdapt-2,01 GenMed,D2,2.8,yes,yes,Y
+stopdapt-2,01 GenMed,D3,3.1,probably_yes,yes,PY
+stopdapt-2,01 GenMed,D3,3.2,not_applicable,no,NA
+stopdapt-2,01 GenMed,D3,3.3,not_applicable,no,NA
+stopdapt-2,01 GenMed,D3,3.4,not_applicable,no,NA
+stopdapt-2,01 GenMed,D4,4.1,no,yes,N
+stopdapt-2,01 GenMed,D4,4.2,probably_no,yes,PN
+stopdapt-2,01 GenMed,D4,4.3,not_applicable,no,NA
+stopdapt-2,01 GenMed,D4,4.4,not_applicable,no,NA
+stopdapt-2,01 GenMed,D4,4.5,not_applicable,no,NA
+stopdapt-2,01 GenMed,D5,5.1,no,yes,N
+stopdapt-2,01 GenMed,D5,5.2,probably_yes,yes,PY
+stopdapt-2,01 GenMed,D5,5.3,no,yes,N
+stopdapt-3,01 GenMed,D1,1.1,probably_yes,yes,PY
+stopdapt-3,01 GenMed,D1,1.2,probably_yes,yes,PY
+stopdapt-3,01 GenMed,D1,1.3,no,yes,N
+stopdapt-3,01 GenMed,D2,2.1,yes,yes,Y
+stopdapt-3,01 GenMed,D2,2.2,yes,yes,Y
+stopdapt-3,01 GenMed,D2,2.3,probably_no,yes,PN
+stopdapt-3,01 GenMed,D2,2.4,not_applicable,no,NA
+stopdapt-3,01 GenMed,D2,2.5,probably_no,yes,PN
+stopdapt-3,01 GenMed,D2,2.6,probably_no,yes,PN
+stopdapt-3,01 GenMed,D2,2.7,not_applicable,no,NA
+stopdapt-3,01 GenMed,D3,3.1,probably_no,yes,PN
+stopdapt-3,01 GenMed,D3,3.2,probably_yes,yes,PY
+stopdapt-3,01 GenMed,D3,3.3,no_information,yes,NI
+stopdapt-3,01 GenMed,D3,3.4,probably_yes,yes,PY
+stopdapt-3,01 GenMed,D4,4.1,no,yes,N
+stopdapt-3,01 GenMed,D4,4.2,probably_yes,yes,PY
+stopdapt-3,01 GenMed,D4,4.3,no,yes,N
+stopdapt-3,01 GenMed,D4,4.4,no,yes,N
+stopdapt-3,01 GenMed,D5,5.1,no,yes,N
+stopdapt-3,01 GenMed,D5,5.2,probably_yes,yes,PY
+stopdapt-3,01 GenMed,D5,5.3,probably_yes,yes,PY
+sung-2020,13 Peds,D1,1.1,probably_yes,yes,PY
+sung-2020,13 Peds,D1,1.2,no_information,yes,NI
+sung-2020,13 Peds,D1,1.3,probably_no,yes,PN
+sung-2020,13 Peds,D2,2.1,no,yes,N
+sung-2020,13 Peds,D2,2.2,probably_yes,yes,PY
+sung-2020,13 Peds,D2,2.3,no,yes,N
+sung-2020,13 Peds,D2,2.4,not_applicable,no,NA
+sung-2020,13 Peds,D2,2.5,not_applicable,no,NA
+sung-2020,13 Peds,D2,2.6,no,yes,N
+sung-2020,13 Peds,D2,2.7,probably_yes,yes,PY
+sung-2020,13 Peds,D3,3.1,probably_yes,yes,PY
+sung-2020,13 Peds,D3,3.2,not_applicable,no,NA
+sung-2020,13 Peds,D3,3.3,probably_yes,yes,PY
+sung-2020,13 Peds,D3,3.4,no_information,yes,NI
+sung-2020,13 Peds,D4,4.1,no,yes,N
+sung-2020,13 Peds,D4,4.2,no,yes,N
+sung-2020,13 Peds,D4,4.3,no,yes,N
+sung-2020,13 Peds,D4,4.4,not_applicable,no,NA
+sung-2020,13 Peds,D4,4.5,not_applicable,no,NA
+sung-2020,13 Peds,D5,5.1,probably_yes,yes,PY
+sung-2020,13 Peds,D5,5.2,probably_yes,yes,PY
+sung-2020,13 Peds,D5,5.3,probably_no,yes,PN
+sustain-6,08 Endo,D1,1.1,yes,yes,Y
+sustain-6,08 Endo,D1,1.2,probably_yes,yes,PY
+sustain-6,08 Endo,D1,1.3,no,yes,N
+sustain-6,08 Endo,D2,2.1,no,yes,N
+sustain-6,08 Endo,D2,2.2,no,yes,N
+sustain-6,08 Endo,D2,2.3,not_applicable,no,NA
+sustain-6,08 Endo,D2,2.4,not_applicable,no,NA
+sustain-6,08 Endo,D2,2.5,no,yes,N
+sustain-6,08 Endo,D2,2.6,yes,yes,Y
+sustain-6,08 Endo,D2,2.7,not_applicable,no,NA
+sustain-6,08 Endo,D3,3.1,yes,yes,Y
+sustain-6,08 Endo,D3,3.2,not_applicable,no,NA
+sustain-6,08 Endo,D3,3.3,not_applicable,no,NA
+sustain-6,08 Endo,D3,3.4,not_applicable,no,NA
+sustain-6,08 Endo,D4,4.1,no,yes,N
+sustain-6,08 Endo,D4,4.2,no,yes,N
+sustain-6,08 Endo,D4,4.3,no,yes,N
+sustain-6,08 Endo,D4,4.4,not_applicable,no,NA
+sustain-6,08 Endo,D4,4.5,not_applicable,no,NA
+sustain-6,08 Endo,D5,5.1,yes,yes,Y
+sustain-6,08 Endo,D5,5.2,yes,yes,Y
+sustain-6,08 Endo,D5,5.3,no,yes,N
+sustain-6,08 Endo,D5,5.4,no,yes,N
+testing,14 Neph,D1,1.1,probably_yes,yes,PY
+testing,14 Neph,D1,1.2,yes,yes,Y
+testing,14 Neph,D1,1.3,no,yes,N
+testing,14 Neph,D2,2.1,no,yes,N
+testing,14 Neph,D2,2.2,no,yes,N
+testing,14 Neph,D2,2.3,probably_no,yes,PN
+testing,14 Neph,D2,2.4,not_applicable,no,NA
+testing,14 Neph,D2,2.5,probably_yes,yes,PY
+testing,14 Neph,D2,2.6,probably_no,yes,PN
+testing,14 Neph,D2,2.7,not_applicable,no,NA
+testing,14 Neph,D3,3.1,probably_no,yes,PN
+testing,14 Neph,D3,3.2,no_information,yes,NI
+testing,14 Neph,D3,3.3,probably_yes,yes,PY
+testing,14 Neph,D3,3.4,probably_yes,yes,PY
+testing,14 Neph,D4,4.1,no,yes,N
+testing,14 Neph,D4,4.2,no,yes,N
+testing,14 Neph,D4,4.3,no,yes,N
+testing,14 Neph,D4,4.4,not_applicable,no,NA
+testing,14 Neph,D4,4.5,not_applicable,no,NA
+testing,14 Neph,D5,5.1,probably_no,yes,PN
+testing,14 Neph,D5,5.2,yes,yes,Y
+testing,14 Neph,D5,5.3,no_information,yes,NI
+vel-squez-2018,09 ID,D1,1.1,yes,yes,Y
+vel-squez-2018,09 ID,D1,1.2,yes,yes,Y
+vel-squez-2018,09 ID,D1,1.3,no,yes,N
+vel-squez-2018,09 ID,D2,2.1,no,yes,N
+vel-squez-2018,09 ID,D2,2.2,probably_no,yes,PN
+vel-squez-2018,09 ID,D2,2.3,yes,yes,Y
+vel-squez-2018,09 ID,D2,2.4,probably_yes,yes,PY
+vel-squez-2018,09 ID,D2,2.5,yes,yes,Y
+vel-squez-2018,09 ID,D3,3.1,yes,yes,Y
+vel-squez-2018,09 ID,D3,3.2,not_applicable,no,NA
+vel-squez-2018,09 ID,D3,3.3,not_applicable,no,NA
+vel-squez-2018,09 ID,D3,3.4,not_applicable,no,NA
+vel-squez-2018,09 ID,D4,4.1,yes,yes,Y
+vel-squez-2018,09 ID,D4,4.2,no,yes,N
+vel-squez-2018,09 ID,D4,4.3,no,yes,N
+vel-squez-2018,09 ID,D4,4.4,not_applicable,no,NA
+vel-squez-2018,09 ID,D5,5.1,yes,yes,Y
+vel-squez-2018,09 ID,D5,5.2,yes,yes,Y
+vel-squez-2018,09 ID,D5,5.3,no_information,yes,NI

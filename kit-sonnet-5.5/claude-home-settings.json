@@ -1,0 +1,8 @@
+{
+  "disableClaudeAiConnectors": true,
+  "syncClaudeAiSkills": false,
+  "syncClaudeAiPlugins": false,
+  "disableBundledSkills": true,
+  "autoMemoryEnabled": false,
+  "permissions": { "deny": ["Skill(anthropic-skills *)"] }
+}
