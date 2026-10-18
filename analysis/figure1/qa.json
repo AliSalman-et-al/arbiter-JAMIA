@@ -8,14 +8,14 @@
       "minimum_text_stroke_clearance_mm": 0.5804,
       "minimum_arrow_text_clearance_mm": 1.6797,
       "text_elements": 57,
-      "shape_elements": 42,
+      "shape_elements": 45,
       "arrow_tips": 12,
       "checks": {
-        "text_stroke_pairs": 2394,
+        "text_stroke_pairs": 2565,
         "box_pairs": 21,
         "arrow_text_pairs": 684,
         "arrow_box_pairs": 84,
-        "frame_elements": 99,
+        "frame_elements": 102,
         "text_pairs": 1596
       },
       "violations": []

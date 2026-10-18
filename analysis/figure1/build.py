@@ -275,8 +275,10 @@ def draw_workflow(data):
     s.text(612,248,'arbiter report',10,'mono',GREY,anchor='middle')
     for x in [282,414,546]:s.line(x,202,x,248,dotted=True,sw=.6)
     # Export gives the reviewer two concrete outputs; the fork remains below all text.
-    s.line(612,255,612,260,arrow=True,sw=1)
-    s.line(612,260,165,260,sw=1);s.line(165,260,165,330,arrow=True,sw=1)
+    s.line(612,255,612,260,sw=1)
+    s.line(612,260,340,260,sw=1);s.line(340,260,340,280,sw=1)
+    s.line(340,280,360,280,arrow=True,sw=1)
+    s.line(340,260,165,260,sw=1);s.line(165,260,165,330,arrow=True,sw=1)
     visual_source=Path('C:/Users/Ali-Salman/Documents/Code/rob2-kit/src/rob2_kit/application/evidence.py').read_text(encoding='utf8')
     for tool in ('render_page','select_visual_evidence','select_text_evidence'):
         assert 'def '+tool+'(' in visual_source

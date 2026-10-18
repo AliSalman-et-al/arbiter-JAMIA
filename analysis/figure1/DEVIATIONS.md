@@ -29,3 +29,5 @@ The assessment tool column includes render_page and select_visual_evidence. Both
 Light grey tool highlights group text search/reading/selection; lavender groups page-image inspection and visual selection. select_text_evidence is now explicit as well. The repeated output caption below the audit card is removed at the author’s request; the reviewer lane and report title already identify the deliverables.
 
 At the author’s request, text/visual tool highlights are removed. All tool names use the same grey style; the model action “Read text or page images” and the explicit render_page/select_visual_evidence names convey visual capability.
+
+The export-to-report arrow now approaches the browser frame from its left, with a 20-unit final horizontal segment. This replaces the cramped 5-unit arrow in the gap below the server; the output fork still leads to both deliverables.
