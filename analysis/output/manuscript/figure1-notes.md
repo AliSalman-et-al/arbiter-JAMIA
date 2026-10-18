@@ -2,7 +2,7 @@
 
 ## Figure 1
 
-The workflow is a functional grouping of representative real MCP tools. Response labels and the rejection arrow are explanatory summaries. Approval uses the public `arbiter review` command; archived inputs retain their historical names. The server proposes judgements from the official algorithm; adopted judgements may differ through a recorded override. AVATAR has no override.
+The workflow is a functional grouping of representative real MCP tools. Response labels are explanatory summaries. Rejection and recovery counts appear in the legend only; no return arrow is drawn. Approval uses the public `arbiter review` command; archived inputs retain their historical names. The server proposes judgements from the official algorithm; adopted judgements may differ through a recorded override. AVATAR has no override.
 
 ## Workflow tool provenance
 
@@ -45,7 +45,27 @@ Bundle SHA-256: `d6d683efd3acce82f9e0ee233d194223c569ffb7ac76ab74e45c6c4071fb665
 
 AVATAR log correction: the rejected D3 save (`toolu_01CTHBEhdF5BAGdpapeh9D5F`) flattened the locator fields directly into the basis. The accepted retry (`toolu_01PN3CESV3Hj5VbcRRWKbc5E`) nested source/page/lines under `bases[].evidence`, an accepted source-span reference form; it did **not** submit an `eh_…` string. The server bound it as `eh_e66d374e838e8c6d`. Therefore the figure illustrates schema/binding validation, not a claim that literal handles are the only accepted syntax.
 
-The four numbered callouts identify span binding, branching, the server algorithm and unknowns. Yellow links direct-support source text to the corresponding recorded reasoning. Lavender links context text to the recorded composite-outcome interpretation. The missing dated plan remains plain text: a context quotation does not itself prove absence. Orange outlines mark the three issues flagged by the authors in the Unassisted output: 4.3 NA, the unblinding phrase and the registered-time-frame phrase. They do not encode evidence types. Their requested wording wraps to two lines to keep type at least 7 pt in the narrow column. Answer pills follow questions; Justification labels identify agent text. D5 and Overall use pale blue judgement chips; D5 has a heavier border. Unknown text is grey with a bold label and an adjacent curved callout. The footer compares **D5**, the domain adjudicated for this trial; the same Published/Unassisted labels also apply to Overall, but Overall was not adjudicated.
+The Evidence column identifies the server-bound span, page, lines and source hash. White source cards use solid yellow direct-support highlights and pale-grey context highlights, linked to the agent justification excerpts in the lavender lane. The dashed, unfilled D4 inference is agent reasoning, not a quotation. The mint server column shows every answer in official question order, with light-grey hatched chips for inactive questions. Heavy chip outlines identify the displayed agent questions, including 4.4. Low chips remain white; Some concerns is pale blue. The server applies the Overall rule. The yellow Bundle strip counts all captured sources, all archived evidence JSON records, active answers and inactive questions, and reads the archived verifier receipt. The orange contrast strip contains only D4 and D5 from the same unassisted trial. Orange outlines mark 4.3 NA and the registered-time-frame phrase; the unblinding quote leads to the invalid-path annotation. The footer compares **D5**, the domain adjudicated for this trial; Overall was not adjudicated. The no-contrast variant preserves identical columns and row geometry, removing only the orange strip.
+
+## Bundle strip facts
+
+{
+  "sources": 7,
+  "evidence_records": 16,
+  "answered": 15,
+  "not_asked": 7,
+  "verifier": "verified"
+}
+
+Captured sources (searchable projection hashes):
+
+- `circ_circulationaha-2021-057639_supp1.pdf`: `source_adf13573117c24aa2b923afbe12241e8e84df8e45681d6b5a6d2399ad0c413a8`; `sha256:f13411032fdbf64e9237c0f821a05efe30f9883cb46545e4598bdec81e2b64a4`.
+- `CIRCULATIONAHA.121.057639.pdf`: `source_695a701df7a7b784e50a68c4ab749ed7917e3cb84d87a08196adbdf37c6e4d56`; `sha256:592b9a6c531c0b049f2039fffd71fd128e6a604e908c06cec2bb153c4878b8a0`.
+- `ehae585.pdf`: `source_7f7b055eb93e03bcd72c8fe32984a531050e324a0b58555dbc9701c8b3e2d5e7`; `sha256:a890f771fd05ebda4edada403fa59475add7dfa13409e53bbca7f38407265ae3`.
+- `ehae585_supplementary_data.pdf`: `source_3369db06437bb7ac8f21480f5cab296a7b692c2c48c0db0fad40493ac13c7b47`; `sha256:4c4ec213f4fbe5fe030860006e448806168c06300efd21a6ade4e90b5d329c96`.
+- `ClinicalTrials.gov NCT02436655`: `source_b28064bc31d3335957e34134a4873694fc9f01af0ca3640ab719d51f1ae00099`; `sha256:d32e23eb2a1e9a1505bbcf5f930b2af72508c4887cea3775a63e30ab95ba16e0`.
+- `Current registry-linked sap: SAP_000.pdf`: `source_43321397d4087181f02a8d4c4efa651b92ee599bac4192a6784e12dd0bbfdcd9`; `sha256:ba0a932949980d33e88502105917caa5b9b14037acc62aa12c8b2f14b6deb8b3`.
+- `Registry document discovery/provenance: new capture, not historical replay`: `source_e0f11d3dea70333ea08446aa89a8b6a1d49d97555d9bf05558b0003e26089510`; `sha256:cc06e38ec077b0e7c24aa98819698330b45b3d16c0945eda30180e03b2a701d3`.
 
 ### D1
 
@@ -57,10 +77,13 @@ Full recorded justification:
 Patients were randomized using a web-based interactive response system, a central remote allocation method independent of enrolment staff. Variable block size limits predictability of the last allocations in a block.
 
 Displayed justification excerpt:
-Patients were randomized using a web-based interactive response system…
+web-based interactive response system…
 
 Unknowns:
 ["Whether the central system was run by a unit independent of enrolling staff is not stated explicitly."]
+
+Full displayed server pattern:
+1.1: yes [sq:randomization:sequence]; 1.2: yes [sq:randomization:concealment]; 1.3: no [sq:randomization:baseline-imbalance]
 
 **direct_support**: `CIRCULATIONAHA.121.057639.pdf`, page 3, bound lines 46–50.
 Handle `eh_d6c269341c7d8a5d`; evidence `sha256:d6c269341c7d8a5d5cb1b3dd7eaa6c26a63009a60f6b09d34dd2be02d496f349`; source `source_695a701df7a7b784e50a68c4ab749ed7917e3cb84d87a08196adbdf37c6e4d56`; source projection `sha256:592b9a6c531c0b049f2039fffd71fd128e6a604e908c06cec2bb153c4878b8a0`.
@@ -77,7 +100,7 @@ a permuted-block sequence with variable block size. Details
 
 Unassisted answers: 1.1 Y · 1.2 Y · 1.3 PN
 
-Unassisted displayed excerpt: Allocation used a computer-generated, centre-stratified permuted-block sequence delivered through a web-based interactive response system, so concealment was adequate.
+Archived unassisted excerpt (not displayed): Allocation used a computer-generated, centre-stratified permuted-block sequence delivered through a web-based interactive response system, so concealment was adequate.
 
 Unassisted full rationale: Allocation used a computer-generated, centre-stratified permuted-block sequence delivered through a web-based interactive response system, so concealment was adequate. The baseline differences in age (P = .02) and haemoglobin (P = .01) are consistent with chance across about 25 variables.
 
@@ -96,6 +119,9 @@ The registry lists masking as NONE…
 Unknowns:
 []
 
+Full displayed server pattern:
+2.1: yes [sq:deviations:participants-aware]; 2.2: yes [sq:deviations:personnel-aware]; 2.3: probably_no [sq:deviations:context-deviations]; 2.4: not asked (RoB 2 branching) [sq:deviations:affected-outcome]; 2.5: not asked (RoB 2 branching) [sq:deviations:balanced]; 2.6: yes [sq:deviations:appropriate-analysis]; 2.7: not asked (RoB 2 branching) [sq:deviations:substantial-impact]
+
 **direct_support**: `ClinicalTrials.gov NCT02436655`, page 1, bound lines 67–68.
 Handle `eh_975aac3202107531`; evidence `sha256:975aac3202107531915fbf535a75cc136f9b747b9d65d2e916ae80c99a59576e`; source `source_b28064bc31d3335957e34134a4873694fc9f01af0ca3640ab719d51f1ae00099`; source projection `sha256:d32e23eb2a1e9a1505bbcf5f930b2af72508c4887cea3775a63e30ab95ba16e0`.
 
@@ -108,7 +134,7 @@ Full bound span:
 
 Unassisted answers: 2.1 Y · 2.2 Y · 2.3 PN · 2.4 NA · 2.5 NA · 2.6 Y · 2.7 NA
 
-Unassisted displayed excerpt: The trial was open label, so participants and clinicians knew the assignments.
+Archived unassisted excerpt (not displayed): The trial was open label, so participants and clinicians knew the assignments.
 
 Unassisted full rationale: The trial was open label, so participants and clinicians knew the assignments. Surgery in the conservative arm followed protocol-defined triggers such as symptom onset. Six of 78 early-surgery patients did not receive surgery, and some surgeries were delayed by COVID-19. These are not deviations likely to affect the outcome. The analysis was intention-to-treat.
 
@@ -127,10 +153,13 @@ so 1/157 (0.6%) has incomplete outcome data.
 Unknowns:
 []
 
+Full displayed server pattern:
+3.1: yes [sq:missing:data-available]; 3.2: not asked (RoB 2 branching) [sq:missing:evidence-unbiased]; 3.3: not asked (RoB 2 branching) [sq:missing:true-value-dependent]; 3.4: not asked (RoB 2 branching) [sq:missing:likely-dependent]
+
 **direct_support**: `ehae585.pdf`, page 6, bound lines 26–32.
 Handle `eh_e66d374e838e8c6d`; evidence `sha256:e66d374e838e8c6ddbc115270872899bc6e58f850549df46d3e7ea953537067c`; source `source_7f7b055eb93e03bcd72c8fe32984a531050e324a0b58555dbc9701c8b3e2d5e7`; source projection `sha256:a890f771fd05ebda4edada403fa59475add7dfa13409e53bbca7f38407265ae3`.
 
-Displayed quote: All patients were included in the analysis. … One patient, who was randomized to early surgery, has been lost to follow-up, and this patient was censored…
+Displayed quote: All patients were included in the analysis. … One patient … lost to follow-up … censored…
 
 Full bound span:
 
@@ -144,7 +173,7 @@ in the intention-to-treat analysis (Figure 1).
 
 Unassisted answers: 3.1 Y · 3.2 NA · 3.3 NA · 3.4 NA
 
-Unassisted displayed excerpt: All 157 patients were analysed. One patient lost to follow-up was censored.
+Archived unassisted excerpt (not displayed): All 157 patients were analysed. One patient lost to follow-up was censored.
 
 Unassisted full rationale: All 157 patients were analysed. One patient lost to follow-up was censored.
 
@@ -158,10 +187,13 @@ Full recorded justification:
 The trial was open-label (registry masking: none), and the report states that DSMB members were not blinded to allocation when reviewing events. Site investigators recording deaths were also aware of the allocation.
 
 Displayed justification excerpt:
-the report states that DSMB members were not blinded to allocation when reviewing events.
+DSMB members were not blinded to allocation…
 
 Unknowns:
 []
+
+Full displayed server pattern:
+4.1: probably_no [sq:measurement:method-inappropriate]; 4.2: probably_no [sq:measurement:differential]; 4.3: yes [sq:measurement:assessor-aware]; 4.4: probably_no [sq:measurement:influence-possible]; 4.5: not asked (RoB 2 branching) [sq:measurement:influence-likely]
 
 **direct_support**: `ehae585.pdf`, page 3, bound lines 1–116.
 Handle `eh_3ce4199af9d487f3`; evidence `sha256:3ce4199af9d487f3e5ca3f79d7aa594f229272e2c0d58e52514ccdb17a749a68`; source `source_7f7b055eb93e03bcd72c8fe32984a531050e324a0b58555dbc9701c8b3e2d5e7`; source projection `sha256:a890f771fd05ebda4edada403fa59475add7dfa13409e53bbca7f38407265ae3`.
@@ -287,12 +319,14 @@ pressure > 50 mmHg)
 • Significant chronic obstructive pulmonary disease (FEV1 < 70% of
 predicted value)
 
+Official 4.4 question: If Y/PY/NI to 4.3: Could assessment of the outcome have been influenced by knowledge of intervention received?
+Inference basis: {"evidence": "sha256:3ce4199af9d487f3e5ca3f79d7aa594f229272e2c0d58e52514ccdb17a749a68", "kind": "inference", "source": "Introduction\nAortic stenosis (AS) is the single most common valvular heart disease re\nquiring intervention in developed countries and is projected to double by\n2050 in both the USA and Europe.1 The approach to symptomatic pa\ntients with severe AS is straightforward. Surgical aortic valve replacement\n(AVR) and, more recently, transcatheter aortic valve implantation (TAVI)\nprocedures are Class I recommendation to relieve symptoms and im\nprove survival in symptomatic patients with severe AS.2,3\nConversely, the question of when and how to treat truly asymptom\natic patients with severe AS and normal left ventricular (LV) systolic\nfunction is still subject to debate and ongoing research. To date, two\nrandomized trials have demonstrated benefit of early AVR in compari\nson with conservative strategy in asymptomatic patients with severe\nand very severe AS patients.4,5 In addition, there are several ongoing\nrandomized trials investigating the role of early TAVI and/or early sur\ngical AVR in asymptomatic AS.\nThe Aortic Valve Replacement Versus Conservative Treatment in\nAsymptomatic Severe Aortic Stenosis (AVATAR) trial is an investigator-\ninitiated, prospective, multinational, randomized, controlled, parallel-group,\nevent-driven trial that compared the safety and efficacy of early surgery in\nthe treatment of truly asymptomatic patients with severe AS and LV ejec\ntion fraction (LVEF) ≥ 50% vs. conservative treatment with watchful wait\ning strategy and AVR only after symptom onset, or other guidelines\ndirected Class I or II indications for AVR.3,6 In the primary analysis of the\nAVATAR trial, asymptomatic AS patients randomized to early surgery\nhad a lower incidence of the composite primary outcome comprising all-\ncause death, acute myocardial infarction, stroke, or unplanned hospitaliza\ntion for heart failure (HF), compared with patients who were randomized\nto conservative treatment.5 We now report the results of the AVATAR\ntrial after extended follow-up at 5 years.\nMethods\nStudy design and oversight\nThe AVATAR trial (ClinicalTrials.gov identifier NCT02436655) protocol\nand protocol update were designed by the first co-authors and steering\ncommittee co-chairmen and was approved by the steering committee of\nthe AVATAR trial.7,8 The clinical and outcomes data were collected by per\nsonnel at the participating sites and were sent directly to the data coordinat\ning centre at the University Clinical Center of Serbia. No extramural funding\nwas used to support this work. The authors, members of the steering com\nmittee, and investigators are solely responsible for the design and conduct of\nthis trial, all analyses, drafting and editing of the article, and its final contents.\nIndependent statistician conducted the long-term data analyses.\nThe trial was conducted in accordance with the Declaration of Helsinki. All\nparticipants provided written informed consent. An independent data and\nsafety monitoring board (DSMB) adjudicated all serious adverse events and\noversaw the safety of the trial. The article was prepared by the first author\nand steering committee co-chairmen and was reviewed and edited by mem\nbers of the steering committee and authors. All authors reviewed the article,\napproved its submission for publication, and vouched for the accuracy and\ncompleteness of the data and for the fidelity of the trial to the protocol.\nStudy population\nThe study inclusion and exclusion criteria are shown in Table 1; trial flowchart\nis shown in Figure 1. Briefly, a total of 157 patients with severe AS according to\nthe guidelines were enrolled in the trial: 79 were randomized to conservative\ntreatment and 78 were randomized to early surgery. To prove truly asymp\ntomatic status, exercise testing was performed in all candidates to evaluate\nsymptom status according to a standardized protocol using treadmill or semi-\nsupine ergo-bicycle. To consider exercise testing negative, which was manda\ntory for inclusion, all candidates needed to reach a projected submaximal\nheart rate. Positive exercise test included onset of AS-related symptoms,\nfall in systolic blood pressure (≥20 mmHg from the baseline values), or\nElectrocardiography (ECG) or stress echocardiography signs of myocardial\nischaemia.9\nFollow-up and trial endpoints\nPatients were followed according to the protocol every 6 months for the\nfirst year and then yearly with the in-person visits at the participating study\ncentre. As the trial was affected by the Covid-19 pandemic, contact with\npatients who could not come in person was made by phone. For any event\nthat was registered, the medical records were asked for and reviewed.\nAdverse clinical events were adjudicated by the DSMB per protocol defini\ntions.7,8 Data and safety monitoring board members were not blinded to\nthe treatment allocation during events review. They adjudicated the events\nby consensus.\nTable 1 Eligibility inclusion/exclusion criteria\nInclusion criteria\n• Men and women of any ethnic origin aged ≥18 years\n• Written informed consent\n• Vmax across the aortic valve > 4 m/s or P mean ≥ 40 mmHg and AVA ≤\n1 cm2 or AVAi ≤ 0.6 cm2/m2 at rest\n• Without reported symptoms\n• Society of Thoracic Surgeons score < 8%\nExclusion criteria\nParticipation in another clinical trial within 30 days prior to\nrandomization\n• Pregnant or nursing women\n• Mental condition rendering the patient unable to understand the\nnature, scope, and possible consequences of the study or to follow the\nprotocol\n• Positive stress-test defined as follows:\n(a)\nAnginal chest pain during testing\n(b)\nSyncope or dizziness during testing\n(c)\nDecrease in systolic blood pressure during exercise ≥ 20 mmHg\n(d)\nMalignant arrhythmia during exercise testing (VT or VF)\n• Left ventricular ejection fraction < 50% at rest\n• Very severe AS defined as Vmax > 5.5 m/s at rest\n• Significant disease of other valves: mitral stenosis with Pmean > 5 mg, or\nany significant regurgitation ≥ 3+\n• Recent previous myocardial infarction (<1 year)\n• Need for additional aortic root replacement (i.e. Bentall) or ascending\naorta surgery in asymptomatic patients undergoing AVR\n• Previous coronary bypass surgery\n• Previous any heart valve surgery\n• Impaired renal function, i.e. creatinine > 200 μmol/L or glomerular\nfiltration rate < 30 mL/min/1.73 m2\n• Significant pulmonary hypertension at rest (systolic pulmonary artery\npressure > 50 mmHg)\n• Uncontrolled hypertension at rest (systolic blood pressure >\n180 mmHg and diastolic blood pressure > 100 mmHg)\n• Significant comorbidity with reduced life expectancy (<3 years)\n• Uncontrolled diabetes mellitus (HbA1c > 9%)\n• Significant chronic obstructive pulmonary disease (FEV1 < 70% of\npredicted value)"}
 Inference (no quotation displayed): All-cause death is an observer-reported outcome that involves no judgement…
 The inference basis still references the same bound evidence as 4.3; a dashed outline distinguishes the reasoning from quoted direct support. The bound 4.3 span explicitly includes the DSMB unblinding sentence; there is no citation mismatch.
 
 Unassisted answers: 4.1 N · 4.2 N · 4.3 NA · 4.4 NA · 4.5 NA
 
-Unassisted displayed excerpt: Death is an objective outcome. Assessors were not blinded to allocation, but this cannot plausibly bias an all-cause death count.
+Unassisted contrast excerpt: Death is an objective outcome. Assessors were not blinded to allocation, but this cannot plausibly bias an all-cause death count.
 
 Unassisted full rationale: Death is an objective outcome. Assessors were not blinded to allocation, but this cannot plausibly bias an all-cause death count.
 
@@ -310,6 +344,9 @@ names all-cause death only as a component of composite outcomes.
 
 Unknowns:
 ["Whether the published protocol listed time to all-cause death and its Cox analysis, and its date relative to unblinded data."]
+
+Full displayed server pattern:
+5.1: no_information [sq:selection:prespecified-analysis]; 5.2: probably_no [sq:selection:multiple-measurements]; 5.3: probably_no [sq:selection:multiple-analyses]
 
 **context**: `CIRCULATIONAHA.121.057639.pdf`, page 4, bound lines 16–35.
 Handle `eh_7ad155913c1c5826`; evidence `sha256:7ad155913c1c58263ae1f68422aa27e610b681a3d164be094e441d48d5fd3bb4`; source `source_695a701df7a7b784e50a68c4ab749ed7917e3cb84d87a08196adbdf37c6e4d56`; source projection `sha256:592b9a6c531c0b049f2039fffd71fd128e6a604e908c06cec2bb153c4878b8a0`.
@@ -354,10 +391,10 @@ Full bound span:
 - Measure: all cause death, Major Adverse Cardiac Event (MACE) including: ( Acute Myocardial Infarction - AMI, Stroke - CVI, unplanned hospitalization for Heart failure (HF) needing intravenous treatment
 - Time frame: 5 years
 
-Displayed gap (plain text, not highlighted as evidence): No dated source therefore specifies this measurement and analysis.
+Additional recorded gap (not displayed in the compact redesign): No dated source therefore specifies this measurement and analysis.
 
 Unassisted answers: 5.1 PY · 5.2 PN · 5.3 PN
 
-Unassisted displayed excerpt: Time to death was a prespecified secondary endpoint with a registered 5-year time frame.
+Unassisted contrast excerpt: Time to death was a prespecified secondary endpoint with a registered 5-year time frame.
 
 Unassisted full rationale: Time to death was a prespecified secondary endpoint with a registered 5-year time frame. It was analysed with a single Cox model, and the SAP amendment only addresses COVID-19 delays. I found no sign of selective reporting. A small concern is that the extended follow-up was a later analysis, but it matches the registered time frame.

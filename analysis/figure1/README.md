@@ -1,67 +1,47 @@
-# Figures 1 and 2: workflow and AVATAR trace
+# Figures 1 and 2: workflow and AVATAR engineering trace
 
-Reproducible SVG illustration sources with bundled OFL Fira fonts. Figure 1 is a standalone workflow at 174 × 125 mm; Figure 2 is an AVATAR trace at 174 × 289 mm, with a provisional Unassisted column. No titles or panel tags appear inside either image.
+Reproducible vector illustrations with bundled OFL Fira fonts. Figure 1 is 174 × 107 mm. Figure 2 is 174 × 230 mm; the identical-layout variant without the Unassisted strip is 174 × 206.75 mm. Figure 2 replaces the former document layout and per-domain Unassisted column with aligned Evidence → LLM agent → ARBITER server lanes.
 
 ## Build
 
-From the repository root:
+From this worktree root:
 
 ```powershell
 uv sync --project analysis/figure1 --locked
 uv run --project analysis/figure1 --locked python analysis/figure1/build.py --data-root C:/Users/Ali-Salman/Documents/Analysis/arbiter-JAMIA --arbiter-root C:/Users/Ali-Salman/Documents/Code/ARBITER
+uv run --project analysis/figure1 --locked python analysis/figure1/verify.py --data-root C:/Users/Ali-Salman/Documents/Analysis/arbiter-JAMIA --arbiter-root C:/Users/Ali-Salman/Documents/Code/ARBITER
+uv run --project analysis/figure1 --locked python analysis/figure1/inspect_tiffs.py
 ```
 
-The main checkout is read-only. `--data-root` defaults to this worktree, but untracked run logs must be available there. The command fails if any analysis-set trial log is absent. `--arbiter-root` identifies the public ARBITER source checkout used to verify the tool definitions, CLI and bundle extension. Outputs always go to this worktree. No R code, unrelated figures, shared legends, tables or supplement files are changed.
+The main checkout is a read-only data source. All writes use this worktree. `--data-root` defaults to the worktree, but the archived bundles and untracked run logs must be available there. `--arbiter-root` supplies the public ARBITER implementation used to verify representative tools, CLI and bundle extension. No unrelated figures, shared manuscript legends, tables or supplement files are changed.
 
-The build reads and checks:
+## Data assertions
 
-- All AVATAR manifest content hashes, canonical domain decisions, answer/basis types, bound evidence/source linkage and archived verifier receipt.
-- Official question wording from archived MCP responses in AVATAR's logs, including the branching IDs for 2.4, 2.5 and 2.7.
-- Exact selected quotes, justification excerpts, unknowns and Unassisted rationale from the bundle and final.md. Only whitespace and two PDF extraction word breaks are joined; omissions use ellipses.
-- Published, ARBITER and Unassisted label CSVs, the consensus D5 adjudication cell and the Unassisted D4 invalid-path classification.
-- All Sonnet save calls in exactly 102 analysis-set trial logs, matched by unique tool-use ID to results. The three unsupported-design trials are excluded. `count_save_rejections.py` can also run independently with `--data-root`.
+Every build checks all AVATAR manifest file hashes; canonical domain decisions; basis types and source-version linkage; exact selected quotations, reasoning and unknowns; official question wording and numbered guidance locators from archived MCP responses; published, ARBITER, Unassisted and adjudicated labels; the archived verifier receipt; and the Unassisted D4 invalid-path classification.
 
-## Outputs
+All server answer chips come from `domain_records[...].answers`; inactive chips come from `inactive_questions`. Official numbers come from archived guidance locators, with unique-number assertions. The 15 active answers / seven inactive questions are asserted. The bundle strip reads seven captured sources with valid projection hashes, 16 archived evidence JSON records and `verification.json` status verified. Source-hash prefixes refer to searchable projections, not PDF bytes.
 
-`analysis/output/manuscript/`:
+The rejection audit scans exactly 102 analysis-set Sonnet trials, matching unique save-call tool-use IDs to results. The build asserts 637 calls, 53 rejections, 32 evidence/basis errors and 21 other input errors; all affected domains and all rejected calls recover with later accepted saves. Figure 1 moves this information into the legend, removing the red return arrow and its label. `count_save_rejections.py` also runs independently with `--data-root`; its CSV includes successes, retry chronology and the explicitly flagged contextual attribution of one domain-less PALOMA-2 call to D1.
 
-- `Figure1.{svg,pdf,png,tiff}`: workflow, without benchmark count.
-- `Figure2.{svg,pdf,png,tiff}`: trace with Unassisted column.
-- `qa/Figure2-without-unassisted.{svg,pdf,png,tiff}`: wider evidence rows at 174 × 276.75 mm; matching final-size, PDF, greyscale and CVD proofs use the same filename prefix.
-- `qa/Figure{1,2}-{final-size,grayscale,deuteranopia,protanopia,tritanopia,pdf}.png`: visual proofs.
-- `figure1-notes.md`: both figures' provenance, every displayed quote, full bound spans, handles, source IDs, pages, line ranges and complete hashes.
-- `legends-fig1-2.md`: legends and alt text for integration by the parent task.
+## Layout and outputs
 
-`analysis/figure1/`:
+Figure 1 retains four role lanes and phase-aligned request/response arrows, with at least 3 mm between neighbouring phase arrows and one orthogonal approval bend. Smaller agent/server and server/bundle gaps restore a compact height. Figure 2 uses row heights driven by the tallest of its three cells, centred left-to-right gutter arrows, white evidence cards, lavender agent cells and mint server cells. Yellow means direct support, pale grey means context and an unfilled dashed outline means inference. Selected questions have heavier chip outlines; inactive questions have light-grey chips with hatching in a reserved margin. Pale-blue chips identify Some concerns. There are no numbered callouts. Only D4 and D5 appear in the pale-orange Unassisted contrast strip; the yellow bundle strip has no rejection item.
 
-- `save-rejections.csv`: one row per call, including successful calls so the denominator is auditable, with domain and attribution source. Turn files are sorted numerically; unique call insertion order records chronology. One malformed JSON call retains its literal domain; one domain-less call is attributed only after asserting that both flanking retries name D1. Error excerpts exclude generic recovery/example boilerplate.
-- `save-rejections-summary.json`: 637 calls, 53 rejections (32 evidence/basis construction; 21 other validation/input errors); AVATAR 1/7. All 47 trial-domain assessments with rejections ended successfully; 0/510 domains lacked an accepted save. All 53 rejected calls have a later accepted save in that domain, including one domain-less PALOMA-2 call contextually attributed to D1 and flagged in the CSV.
-- `avatar-save-retry.json`: failed and accepted AVATAR basis objects and exact tool-use IDs.
-- `qa.json`: physical dimensions, text minima, vector PDF, embedded fonts, and geometric clearance checks for all three layouts.
-- `verify.py`, `reproducibility.json`: two-build byte comparison and artifact hashes.
+`analysis/output/manuscript/` contains:
 
-## Rendering and QA
+- `Figure{1,2}.{svg,pdf,png,tiff}` and `qa/Figure2-without-unassisted.{svg,pdf,png,tiff}`.
+- Matching `qa/*-{final-size,grayscale,deuteranopia,protanopia,tritanopia,pdf}.png` proofs. Obsolete Figure 1/2 QA suffixes from earlier designs are removed; other figures’ proofs are untouched.
+- `figure1-notes.md`: every displayed quote and reasoning excerpt, full bound spans, handles, source/page/lines/full hashes, complete server answer patterns and bundle-strip source inventory.
+- `legends-fig1-2.md`: current legends and alt text, ready for parent integration.
 
-Coordinates are quarter-millimetres. All text is at least 7 pt at final width (Figure 1 minimum 7.23 pt; Figure 2 minimum 7.09 pt). SVG text is outlined from bundled Fira Sans Condensed Regular/Bold and Fira Code Regular, with accessible labels. PDF uses the identical glyph positions and subset-embedded Fira TrueType fonts; no raster images or system-font dependency. ReportLab draws the vector SVG shapes and text; PyMuPDF renders the vector PDF at 600 dpi for LZW TIFF. An independent resvg rendering supplies PNG previews. Standard-font resources introduced by the converter are unused and removed.
+`analysis/figure1/` contains the save-call audit, AVATAR retry record, `qa.json`, `reproducibility.json` and `visual-inspection.json`. `verify.py` runs seven geometry regression fixtures and builds twice, comparing every export/audit/proof artifact byte for byte. `inspect_tiffs.py` tiles all three TIFFs with complete coverage into local, ignored `.inspection/` crops at 4× final size on a 96-dpi display; the manifest records source TIFF hashes and crop bounds. See `visual-review.md` for inspection evidence.
 
-Accessible SVG text and extracted PDF text are checked for the forbidden legacy product-name substring. A 658-pixel proof approximates 174 mm on a 96-dpi display; the numeric dimension and point-size checks are authoritative. Greyscale and approximate Machado full-severity deuteranopia, protanopia and tritanopia proofs retain written evidence types, domain/answer labels and dashed inference borders. These RGB diagnostic transforms are not calibrated clinical simulations.
+## Hard rendering gates
 
-The supplied book pages 000202, 000090 and 000110 were inspected. Heavy rounded outlines, pastel role lanes, linked highlighting and curved keyword callouts follow their visual vocabulary. Final-size proofs, independent PDF proofs and all four diagnostic views were inspected after layout iteration.
+Coordinates are quarter-millimetres: 696 units = 174 mm. Text is at least 7 pt (Figure 1 7.23 pt; Figure 2 7.09 pt). SVG text is outlined from bundled Fira Sans Condensed Regular/Bold and Fira Code Regular; PDF uses identical positions with subset-embedded Fira TrueType fonts and no raster images. TIFFs are rendered independently from vector PDFs at 600 dpi with LZW compression; resvg supplies PNG previews. Fonts and OFL licences are versioned; no system-font lookup or font download is needed.
 
-Font provenance: Fira Sans Condensed Regular/Bold from the Google Fonts OFL distribution; Fira Code Regular from the local upstream OFL distribution. Fonts and licenses remain versioned in `fonts/`; rebuilding does not download fonts.
+`geometry.py` checks the actual SVG shapes against exact bundled-font glyph extents: text/stroke clearance ≥0.3 mm, no overlapping non-nested pills/outlines, arrow-tip/text clearance ≥0.8 mm, no unrelated-box penetration, no text overlap and no content outside the frame. Layout containers may enclose their own children; borders still clear text. Dashed paths use conservative continuous stroke envelopes; curve sampling intervals are ≤0.0375 mm. Failure stops the build **before export**. Figure 1 has a 110 mm height gate; Figure 2 retains an explicit 235 mm hard gate and also asserts the agreed 230 mm design limit.
 
-## Important interpretation
+SVG labels and extracted PDF text retain the `rob2` legacy-name guard. Final-size, greyscale and approximate Machado full-severity CVD proofs complement the physical dimension and geometry checks. CVD transforms are diagnostic RGB approximations. The supplied book pages 000202 and 000037 were inspected; heavy rounded card outlines, role pastels and linked highlighter text follow that illustration vocabulary.
 
-AVATAR's rejected D3 save flattened the span locator into the basis. The accepted retry nested that locator under `bases[].evidence`; it did **not** send a literal `eh_…` handle string. The server bound the reference and archived a handle. This corrects the brief's narrower account without changing the intended validation mechanism.
-
-Context is lavender, direct support yellow, and inference an unfilled dashed outline. D5's missing dated source remains plain text because a context quotation cannot itself prove an absence. The footer compares D5 preferred judgements; Overall was not adjudicated. The verifier status is read from the archive, not re-executed, and does not establish clinical validity. See `DEVIATIONS.md` for scope and display decisions.
-
-## PI fine-detail revision
-
-All four numbered callouts use cubic Bézier arcs with tangent-aligned solid heads; the shaft ends beneath the head, and each tip stops 1.05 mm from the target text box. Labels sit in dedicated clear space and leaders shorten to nearby targets. Highlight rows have 18-unit pitch and 16-unit height (0.35 mm clear between their strokes). D4 question 4.4 has additional clearance above its inference box. Dashed boxes use fitted straight-run dash patterns joined to solid corners. Orange outlines include adjacent comma/period punctuation with padding; complete question–answer units wrap only at separators. No scientific wording changed, so the legends are unchanged.
-
-Figure 1 places the red return between the server top edge and agent bottom edge, with its label in the gap. Neighbouring phases' black arrows are separated by at least 5 mm; the red arrow has at least 3 mm centreline separation from either neighbouring black arrow. The approval connector has one horizontal run and one vertical drop. Figure heights increase to preserve clearance and type size.
-
-`geometry.py` parses the built SVG vector shapes, excluding glyph paths, and uses exact bundled-font outline extents from the scene text registry. It checks text against stroked paths and solid arrowheads with 0.3 mm clearance, non-nested pill/outline overlap, arrow tips against text with 0.8 mm clearance, tips penetrating unrelated boxes, text/text overlap, and frame containment. Layout containers may enclose children; their borders still have to clear text. Dashed paths use conservative continuous envelopes. Bézier sampling intervals are at most 0.0375 mm. Failed preflight writes all layout check reports to `qa.json` and stops before export.
-
-`verify.py` runs seven regression fixtures before the double build and compares 36 output artifacts. `inspect_tiffs.py` produces 39 complete-coverage TIFF-derived crops at 4× final size in local `.inspection/`; `visual-inspection.json` records crop bounds and source TIFF hashes. See `visual-review.md` for every inspected region and final results.
+AVATAR is illustrative, not representative. The footer compares adjudicated **D5**, not an adjudicated Overall. The verifier is an archived structural/binding receipt, not a new execution or evidence of clinical validity. The accepted AVATAR D3 retry nested a span locator under `bases[].evidence`; it did not submit a literal handle string. The server subsequently archived the bound handle. See `DEVIATIONS.md` for display decisions.
