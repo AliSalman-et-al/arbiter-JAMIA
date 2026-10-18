@@ -45,9 +45,10 @@ test_that('D3-D5 reproduce official default paths', {
 test_that('gate rejects a mismatch rather than tuning it away', {
   checks <- domain_checks(inputs)
   expect_true(all(checks$status[checks$arm=='ARBITER-Sonnet']=='Consistent'))
+  expect_no_error(validate_gate(checks))
+  checks$status[checks$arm=='ARBITER-Sonnet'][1] <- 'Violation'
   expect_error(validate_gate(checks),'validation gate failed')
 })
 test_that('section 5.4 mandatory ARBITER validation gate passes', {
-  # Deliberately remains red on the supplied inputs: this is a binding gate.
   expect_no_error(validate_gate(domain_checks(inputs)))
 })

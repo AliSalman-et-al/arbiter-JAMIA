@@ -1,0 +1,10 @@
+meta,preferred,n
+High,High,2
+High,Low,1
+High,Some concerns,6
+Low,High,9
+Low,Low,9
+Low,Some concerns,62
+Some concerns,High,7
+Some concerns,Low,15
+Some concerns,Some concerns,18

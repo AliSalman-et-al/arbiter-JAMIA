@@ -1,0 +1,155 @@
+slug,meta_id,domain,meta,kit,nokit,disputed,own_A,own_Z,chosen_label_A,chosen_label_Z,consensus,discordant,preferred
+abbasi-2012,lrheum-lbp,D1,Low,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+albert-2013,lrheum-lbp,D1,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+allen-2014,lneurol-neuropathic,D1,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+allsop-2014,lpsych-cannabinoids,D1,Some concerns,Low,Low,TRUE,Low,Low,Some concerns,Low,FALSE,FALSE,
+an-2021,bja-prehab,D1,Low,Some concerns,Some concerns,TRUE,Some concerns,Low,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+ashar-2022,lrheum-lbp,D1,Some concerns,Low,Low,TRUE,Low,Low,Low,Some concerns,FALSE,FALSE,
+atli-2005,lneurol-neuropathic,D1,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+becker-2015,hru-preconception,D1,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+cadet,lancet-clopidogrel,D1,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+castoldi-2020,ajsm-acl-leap,D1,High,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+chiba-2021,ajsm-acl-leap,D1,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+ferreira-2021,bja-prehab,D1,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+fulop-2021,bja-prehab,D1,Some concerns,Low,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+getgoal-f1-2013,gastro-glp1,D1,Some concerns,Low,Some concerns,TRUE,Some concerns,Low,Some concerns,Low,FALSE,TRUE,
+getgood-2020,ajsm-acl-leap,D1,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+gillis-2014,bja-prehab,D1,High,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+grant-2017,bja-prehab,D1,High,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+hamido-2021,ajsm-acl-leap,D1,High,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+hanafiah-2022,hru-preconception,D1,High,High,Some concerns,TRUE,High,High,High,High,TRUE,TRUE,High
+hill-2017,lpsych-cannabinoids,D1,Low,Low,Some concerns,TRUE,Some concerns,Low,Some concerns,Low,FALSE,TRUE,
+ibrahim-2017,ajsm-acl-leap,D1,Low,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+rosen-2021,lrm-preox,D1,Low,High,Low,TRUE,High,High,High,High,TRUE,TRUE,High
+abbasi-2012,lrheum-lbp,D2,Low,Low,Some concerns,TRUE,Low,Low,Low,Low,TRUE,TRUE,Low
+aboelfadl-2022,lrheum-lbp,D2,Some concerns,Low,Some concerns,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+allen-2014,lneurol-neuropathic,D2,Low,Some concerns,Low,TRUE,Some concerns,Low,Some concerns,Low,FALSE,TRUE,
+an-2021,bja-prehab,D2,Low,Low,Some concerns,TRUE,Low,Low,Low,Low,TRUE,TRUE,Low
+ascet,lancet-clopidogrel,D2,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+atli-2005,lneurol-neuropathic,D2,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+award-10-2018,gastro-glp1,D2,Low,Some concerns,Low,TRUE,High,Low,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+baillard-2006,lrm-preox,D2,Low,Some concerns,Some concerns,TRUE,Low,Low,Low,Some concerns,FALSE,FALSE,
+bausys-2023,bja-prehab,D2,Some concerns,Low,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+becker-2015,hru-preconception,D2,Low,High,High,TRUE,High,High,Low,High,FALSE,FALSE,
+beerendonk-1996,hru-preconception,D2,Low,Low,Some concerns,TRUE,High,Low,Low,Low,TRUE,TRUE,Low
+beerendonk-1999,hru-preconception,D2,Low,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+bendix-1996,lrheum-lbp,D2,Low,Low,High,TRUE,Some concerns,Some concerns,Low,Low,TRUE,TRUE,Low
+bendix-2000,lrheum-lbp,D2,Some concerns,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+bente-2014,bja-prehab,D2,High,Low,Some concerns,TRUE,High,Some concerns,High,Some concerns,FALSE,TRUE,
+boeree-2017,cid-rifampin,D2,Low,Some concerns,Low,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+castoldi-2020,ajsm-acl-leap,D2,Low,Low,Some concerns,TRUE,Some concerns,Low,Some concerns,Low,FALSE,TRUE,
+clyman-2019,jamapeds-pda,D2,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+einarsson-2017,hru-preconception,D2,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+el-khuffash-2021,jamapeds-pda,D2,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+empa-reg-outcome,jama-sglt2,D2,Low,Some concerns,Low,TRUE,Some concerns,Low,Some concerns,Low,FALSE,TRUE,
+espinos-2017,hru-preconception,D2,Low,Some concerns,Low,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+ferreira-2021,bja-prehab,D2,Low,Some concerns,Low,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+fr-as-2018,gastro-glp1,D2,Low,Some concerns,Low,TRUE,High,Low,Some concerns,Low,FALSE,TRUE,
+fulop-2021,bja-prehab,D2,Low,Some concerns,Some concerns,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+getgoal-f1-2013,gastro-glp1,D2,Some concerns,Some concerns,Low,TRUE,High,Low,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+gillis-2014,bja-prehab,D2,Low,Low,Some concerns,TRUE,High,Low,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+grant-2017,bja-prehab,D2,Low,Low,Some concerns,TRUE,Low,Low,Low,Low,TRUE,TRUE,Low
+gupta-2024,jamapeds-pda,D2,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+hamido-2021,ajsm-acl-leap,D2,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+hanafiah-2022,hru-preconception,D2,Low,Some concerns,High,TRUE,Low,Low,Low,Low,TRUE,TRUE,Low
+ibrahim-2017,ajsm-acl-leap,D2,Low,Some concerns,Some concerns,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+jaber-2016,lrm-preox,D2,Low,Some concerns,Low,TRUE,Some concerns,Low,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+levin-2011,lpsych-cannabinoids,D2,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+levin-2016,lpsych-cannabinoids,D2,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+nefigard,cjasn-iga,D2,Low,Some concerns,Low,TRUE,High,Low,Some concerns,Low,FALSE,TRUE,
+potsiurko-2022,jamapeds-pda,D2,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+rosen-2021,lrm-preox,D2,Low,Low,Some concerns,TRUE,Low,Low,Low,Low,TRUE,TRUE,Low
+stopdapt-2,lancet-clopidogrel,D2,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+sung-2020,jamapeds-pda,D2,Low,High,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+albert-2013,lrheum-lbp,D3,Some concerns,High,Some concerns,TRUE,High,High,High,High,TRUE,TRUE,High
+allen-2014,lneurol-neuropathic,D3,Some concerns,High,Low,TRUE,High,High,Low,High,FALSE,TRUE,
+allsop-2014,lpsych-cannabinoids,D3,Some concerns,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+amini-2022,lneurol-neuropathic,D3,Some concerns,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+an-2021,bja-prehab,D3,Low,Some concerns,Low,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+ashar-2022,lrheum-lbp,D3,Some concerns,High,Some concerns,TRUE,High,High,High,High,TRUE,TRUE,High
+atli-2005,lneurol-neuropathic,D3,Low,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+attal-2016,lneurol-neuropathic,D3,High,High,Low,TRUE,High,High,High,High,TRUE,TRUE,High
+attal-2021,lneurol-neuropathic,D3,Low,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+award-1-2014,gastro-glp1,D3,Low,Some concerns,Low,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+award-10-2018,gastro-glp1,D3,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+bagg-2022,lrheum-lbp,D3,Some concerns,Low,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+baillard-2006,lrm-preox,D3,High,Some concerns,Low,TRUE,High,Some concerns,High,Low,FALSE,TRUE,
+beerendonk-1999,hru-preconception,D3,Low,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+bendix-1996,lrheum-lbp,D3,Some concerns,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+bendix-2000,lrheum-lbp,D3,Some concerns,Some concerns,High,TRUE,High,Some concerns,High,Some concerns,FALSE,TRUE,
+bente-2014,bja-prehab,D3,Low,Some concerns,Some concerns,TRUE,Low,High,Low,Some concerns,FALSE,FALSE,
+boedt-2023,hru-preconception,D3,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Low,Some concerns,FALSE,TRUE,
+cadet,lancet-clopidogrel,D3,Low,Some concerns,Some concerns,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+castoldi-2020,ajsm-acl-leap,D3,Low,Some concerns,High,TRUE,High,High,High,High,TRUE,TRUE,High
+chiba-2021,ajsm-acl-leap,D3,Low,Some concerns,Some concerns,TRUE,High,High,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+chua-2022,lrm-preox,D3,High,Low,Low,TRUE,High,Some concerns,High,Low,FALSE,FALSE,
+ferreira-2021,bja-prehab,D3,Low,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+freeman-2020,lpsych-cannabinoids,D3,Low,Some concerns,Some concerns,TRUE,High,High,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+fulop-2021,bja-prehab,D3,Low,Some concerns,High,TRUE,High,Some concerns,High,Some concerns,FALSE,TRUE,
+gillis-2014,bja-prehab,D3,Low,Some concerns,Some concerns,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+hanafiah-2022,hru-preconception,D3,Some concerns,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+hill-2017,lpsych-cannabinoids,D3,Some concerns,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+levin-2016,lpsych-cannabinoids,D3,Low,Some concerns,Some concerns,TRUE,High,High,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+rosen-2021,lrm-preox,D3,High,Some concerns,Low,TRUE,High,Some concerns,High,Some concerns,FALSE,TRUE,
+stopdapt-2,lancet-clopidogrel,D3,Low,Some concerns,Low,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+sung-2020,jamapeds-pda,D3,Low,Low,Some concerns,TRUE,Low,Low,Low,Low,TRUE,TRUE,Low
+ashar-2022,lrheum-lbp,D4,Some concerns,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
+bendix-2000,lrheum-lbp,D4,Some concerns,Some concerns,High,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+bente-2014,bja-prehab,D4,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+boeree-2017,cid-rifampin,D4,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+castoldi-2020,ajsm-acl-leap,D4,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+clyman-2019,jamapeds-pda,D4,Low,Some concerns,Low,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+fulop-2021,bja-prehab,D4,Low,Some concerns,Some concerns,TRUE,Some concerns,High,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+hamido-2021,ajsm-acl-leap,D4,Some concerns,Some concerns,High,TRUE,Some concerns,High,Some concerns,High,FALSE,TRUE,
+hanafiah-2022,hru-preconception,D4,Some concerns,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+host-exam,lancet-clopidogrel,D4,Low,Low,Some concerns,TRUE,High,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+hundscheid-2022,jamapeds-pda,D4,Some concerns,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+ibrahim-2017,ajsm-acl-leap,D4,Low,Low,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+levin-2011,lpsych-cannabinoids,D4,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+potsiurko-2022,jamapeds-pda,D4,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+stop-igan,cjasn-iga,D4,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
+allen-2014,lneurol-neuropathic,D5,Some concerns,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+allsop-2014,lpsych-cannabinoids,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+amini-2022,lneurol-neuropathic,D5,High,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+an-2021,bja-prehab,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+apalla-2013,lneurol-neuropathic,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+arezzo-2008,lneurol-neuropathic,D5,High,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+ascet,lancet-clopidogrel,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+ashar-2022,lrheum-lbp,D5,Some concerns,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+atli-2005,lneurol-neuropathic,D5,High,Some concerns,High,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+attal-2016,lneurol-neuropathic,D5,Some concerns,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+attal-2021,lneurol-neuropathic,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+award-1-2014,gastro-glp1,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+baillard-2006,lrm-preox,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+banovic26-avatar-2024,jacc-avr,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+bente-2014,bja-prehab,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+boedt-2023,hru-preconception,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+cadet,lancet-clopidogrel,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+castoldi-2020,ajsm-acl-leap,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+chiba-2021,ajsm-acl-leap,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+de-waal-2021,jamapeds-pda,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+dian-2018,cid-rifampin,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+duration-8-2016,gastro-glp1,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+einarsson-2017,hru-preconception,D5,Some concerns,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+el-khuffash-2021,jamapeds-pda,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+envision,cjasn-iga,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,High,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+ferreira-2021,bja-prehab,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+freeman-2020,lpsych-cannabinoids,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+fulop-2021,bja-prehab,D5,Low,Some concerns,Some concerns,TRUE,High,High,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+getgoal-duo1-2013,gastro-glp1,D5,Some concerns,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+getgoal-f1-2013,gastro-glp1,D5,Some concerns,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+grant-2017,bja-prehab,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+hamido-2021,ajsm-acl-leap,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+hill-2017,lpsych-cannabinoids,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+ibrahim-2017,ajsm-acl-leap,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+jaber-2016,lrm-preox,D5,Low,Some concerns,Low,TRUE,Some concerns,Low,Some concerns,Low,FALSE,TRUE,
+jindani-2016,cid-rifampin,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+levin-2011,lpsych-cannabinoids,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+lv-2023,cjasn-iga,D5,Some concerns,Low,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+nefigard,cjasn-iga,D5,Low,Some concerns,High,TRUE,Some concerns,High,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+potsiurko-2022,jamapeds-pda,D5,Low,Some concerns,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,TRUE,Some concerns
+rosen-2021,lrm-preox,D5,Low,Some concerns,Some concerns,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns
+stop-igan,cjasn-iga,D5,Some concerns,Low,Low,TRUE,Some concerns,Low,Some concerns,Low,FALSE,FALSE,
+stopdapt-3,lancet-clopidogrel,D5,Low,Low,Some concerns,TRUE,Some concerns,Low,Some concerns,Low,FALSE,TRUE,
+sung-2020,jamapeds-pda,D5,Low,Low,Some concerns,TRUE,Some concerns,Low,Some concerns,Low,FALSE,TRUE,
+testing,cjasn-iga,D5,Some concerns,Low,Low,TRUE,Some concerns,Some concerns,Some concerns,Some concerns,TRUE,FALSE,Some concerns

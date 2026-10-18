@@ -1,0 +1,88 @@
+metric,estimate,lower,upper,valid_replicates,arm,status,n,count,missing,domain
+share,1,1,1,10000,ARBITER-Haiku,Consistent,101,101,1,Overall
+share,0,0,0,10000,ARBITER-Haiku,Permitted escalation,101,0,1,Overall
+share,0,0,0,10000,ARBITER-Haiku,Violation,101,0,1,Overall
+share,0.9901960784313726,0.9705882352941176,1,10000,ARBITER-Sonnet,Consistent,102,101,0,Overall
+share,0.00980392156862745,0,0.029411764705882353,10000,ARBITER-Sonnet,Permitted escalation,102,1,0,Overall
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,Overall
+share,1,1,1,10000,Baseline-Haiku,Consistent,102,102,0,Overall
+share,0,0,0,10000,Baseline-Haiku,Permitted escalation,102,0,0,Overall
+share,0,0,0,10000,Baseline-Haiku,Violation,102,0,0,Overall
+share,1,1,1,10000,Baseline-Sonnet,Consistent,102,102,0,Overall
+share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,102,0,0,Overall
+share,0,0,0,10000,Baseline-Sonnet,Violation,102,0,0,Overall
+share,0.9135802469135802,0.8765432098765432,0.9506172839506173,10000,Meta,Consistent,81,74,21,Overall
+share,0.07407407407407407,0.04938271604938271,0.08641975308641975,10000,Meta,Permitted escalation,81,6,21,Overall
+share,0.012345679012345678,0,0.037037037037037035,10000,Meta,Violation,81,1,21,Overall
+share,0.998019801980198,0.994059405940594,1,10000,ARBITER-Haiku,Consistent,505,504,5,D1-D5
+share,0,0,0,10000,ARBITER-Haiku,Permitted escalation,505,0,5,D1-D5
+share,0.0019801980198019802,0,0.005940594059405941,10000,ARBITER-Haiku,Violation,505,1,5,D1-D5
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,510,510,0,D1-D5
+share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,510,0,0,D1-D5
+share,0,0,0,10000,ARBITER-Sonnet,Violation,510,0,0,D1-D5
+share,0.7142857142857143,0.6805251641137856,0.7477880957925789,10000,Baseline-Haiku,Consistent,462,330,48,D1-D5
+share,0,0,0,10000,Baseline-Haiku,Permitted escalation,462,0,48,D1-D5
+share,0.2857142857142857,0.2522119042074212,0.31947483588621445,10000,Baseline-Haiku,Violation,462,132,48,D1-D5
+share,0.9426751592356688,0.9224318658280922,0.9617021276595744,10000,Baseline-Sonnet,Consistent,471,444,39,D1-D5
+share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,471,0,39,D1-D5
+share,0.05732484076433121,0.03829787234042553,0.07756813417190776,10000,Baseline-Sonnet,Violation,471,27,39,D1-D5
+share,0.9900990099009901,0.9702970297029703,1,10000,ARBITER-Haiku,Consistent,101,100,1,D1
+share,0,0,0,10000,ARBITER-Haiku,Permitted escalation,101,0,1,D1
+share,0.009900990099009901,0,0.0297029702970297,10000,ARBITER-Haiku,Violation,101,1,1,D1
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D1
+share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,102,0,0,D1
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D1
+share,0.9019607843137255,0.8431372549019608,0.9509803921568627,10000,Baseline-Haiku,Consistent,102,92,0,D1
+share,0,0,0,10000,Baseline-Haiku,Permitted escalation,102,0,0,D1
+share,0.09803921568627451,0.049019607843137254,0.1568627450980392,10000,Baseline-Haiku,Violation,102,10,0,D1
+share,0.9504950495049505,0.9108910891089109,0.99,10000,Baseline-Sonnet,Consistent,101,96,1,D1
+share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,101,0,1,D1
+share,0.04950495049504951,0.01,0.0891089108910891,10000,Baseline-Sonnet,Violation,101,5,1,D1
+share,1,1,1,10000,ARBITER-Haiku,Consistent,101,101,1,D2
+share,0,0,0,10000,ARBITER-Haiku,Permitted escalation,101,0,1,D2
+share,0,0,0,10000,ARBITER-Haiku,Violation,101,0,1,D2
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D2
+share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,102,0,0,D2
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D2
+share,0.746031746031746,0.6499780701754386,0.8387096774193549,10000,Baseline-Haiku,Consistent,63,47,39,D2
+share,0,0,0,10000,Baseline-Haiku,Permitted escalation,63,0,39,D2
+share,0.25396825396825395,0.16129032258064516,0.35002192982456104,10000,Baseline-Haiku,Violation,63,16,39,D2
+share,0.9693877551020408,0.9387755102040817,0.9900990099009901,10000,Baseline-Sonnet,Consistent,98,95,4,D2
+share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,98,0,4,D2
+share,0.030612244897959183,0.009900990099009901,0.061224489795918366,10000,Baseline-Sonnet,Violation,98,3,4,D2
+share,1,1,1,10000,ARBITER-Haiku,Consistent,101,101,1,D3
+share,0,0,0,10000,ARBITER-Haiku,Permitted escalation,101,0,1,D3
+share,0,0,0,10000,ARBITER-Haiku,Violation,101,0,1,D3
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D3
+share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,102,0,0,D3
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D3
+share,0.8316831683168316,0.7676767676767676,0.8921568627450981,10000,Baseline-Haiku,Consistent,101,84,1,D3
+share,0,0,0,10000,Baseline-Haiku,Permitted escalation,101,0,1,D3
+share,0.16831683168316833,0.10784313725490197,0.23232323232323232,10000,Baseline-Haiku,Violation,101,17,1,D3
+share,0.9603960396039604,0.9215686274509803,0.9901960784313726,10000,Baseline-Sonnet,Consistent,101,97,1,D3
+share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,101,0,1,D3
+share,0.039603960396039604,0.00980392156862745,0.0784313725490196,10000,Baseline-Sonnet,Violation,101,4,1,D3
+share,1,1,1,10000,ARBITER-Haiku,Consistent,101,101,1,D4
+share,0,0,0,10000,ARBITER-Haiku,Permitted escalation,101,0,1,D4
+share,0,0,0,10000,ARBITER-Haiku,Violation,101,0,1,D4
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D4
+share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,102,0,0,D4
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D4
+share,0.631578947368421,0.5376344086021505,0.7216494845360825,10000,Baseline-Haiku,Consistent,95,60,7,D4
+share,0,0,0,10000,Baseline-Haiku,Permitted escalation,95,0,7,D4
+share,0.3684210526315789,0.27835051546391754,0.46236559139784944,10000,Baseline-Haiku,Violation,95,35,7,D4
+share,0.9571428571428572,0.9090909090909091,1,10000,Baseline-Sonnet,Consistent,70,67,32,D4
+share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,70,0,32,D4
+share,0.04285714285714286,0,0.09090909090909091,10000,Baseline-Sonnet,Violation,70,3,32,D4
+share,1,1,1,10000,ARBITER-Haiku,Consistent,101,101,1,D5
+share,0,0,0,10000,ARBITER-Haiku,Permitted escalation,101,0,1,D5
+share,0,0,0,10000,ARBITER-Haiku,Violation,101,0,1,D5
+share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D5
+share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,102,0,0,D5
+share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D5
+share,0.46534653465346537,0.38,0.5544554455445545,10000,Baseline-Haiku,Consistent,101,47,1,D5
+share,0,0,0,10000,Baseline-Haiku,Permitted escalation,101,0,1,D5
+share,0.5346534653465347,0.44554455445544555,0.62,10000,Baseline-Haiku,Violation,101,54,1,D5
+share,0.8811881188118812,0.82,0.9405940594059405,10000,Baseline-Sonnet,Consistent,101,89,1,D5
+share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,101,0,1,D5
+share,0.1188118811881188,0.0594059405940594,0.18,10000,Baseline-Sonnet,Violation,101,12,1,D5

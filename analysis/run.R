@@ -1,0 +1,110 @@
+# Rebuild all numerical outputs from read-only inputs. Run from analysis/.
+source('R/load.R')
+for(f in setdiff(list.files('R',full.names=TRUE),c('R/load.R','R/figures.R','R/materials.R'))) source(f)
+SEED <- 20261018L
+B <- 10000L
+inputs <- load_inputs()
+checks <- domain_checks(inputs)
+validate_gate(checks)
+weights <- stratified_cluster_weights(inputs$trials,B,SEED)
+cells <- adjudication_cells(inputs)
+dir.create('output/tables',recursive=TRUE,showWarnings=FALSE)
+save_table <- function(x,name) readr::write_csv(x,paste0('output/tables/',name,'.csv'),na='')
+save_table(tibble(seed=SEED,replicates=B,coding_sample_seed=20261019L,
+  rng_kind=RNGkind()[1],quantile_type=7),'reproducibility')
+primary <- bind_rows(lapply(c('Consensus','A','Z','Split sensitivity'),function(s) win_share(cells,weights,s)))
+save_table(primary,'primary-endpoint')
+
+agreement_outputs <- function(labels,reference,exclude_missing=FALSE) {
+  all_low <- labels |> filter(arm=='ARBITER-Sonnet') |> mutate(arm='All-Low',label='Low')
+  labels <- bind_rows(labels,all_low)
+  groups <- c('D1-D5',paste0('D',1:5),'Overall')
+  results <- differences <- list()
+  for(g in groups) {
+    x <- if(g=='D1-D5') filter(labels,domain!='Overall') else filter(labels,domain==g)
+    if(!nrow(x)) next
+    reps <- list()
+    for(a in unique(x$arm)) {
+      d <- x |> filter(arm==a,!is.na(meta))
+      if(!nrow(d)) next
+      reps[[a]] <- agreement_replicates(d,weights,exclude_missing)
+      if(a=='All-Low') reps[[a]][c('kappa','AC2','sensitivity'),] <- NA_real_
+      results[[paste(g,a)]] <- interval_table(reps[[a]]) |>
+        mutate(arm=a,domain=g,reference=reference,n=sum(!exclude_missing|!is.na(d$label)),
+          missing=sum(is.na(d$label)))
+    }
+    for(model in c('Sonnet','Haiku')) {
+      aa <- paste0('ARBITER-',model); bb <- paste0('Baseline-',model)
+      if(all(c(aa,bb) %in% names(reps))) differences[[paste(g,model)]] <-
+        interval_table(reps[[aa]]-reps[[bb]]) |> mutate(comparison=paste(aa,'minus',bb),
+          domain=g,reference=reference)
+    }
+  }
+  list(estimates=bind_rows(results),differences=bind_rows(differences))
+}
+meta_agreement <- agreement_outputs(inputs$labels,'Meta')
+save_table(meta_agreement$estimates,'agreement-meta')
+save_table(meta_agreement$differences,'agreement-meta-differences')
+composite <- agreement_outputs(composite_reference(inputs),'Composite')
+save_table(composite$estimates,'agreement-composite')
+save_table(composite$differences,'agreement-composite-differences')
+for(a in c('A','Z')) {
+  out <- agreement_outputs(composite_reference(inputs,a),paste('Adjudicator',a))
+  save_table(out$estimates,paste0('composite-',a))
+  save_table(out$differences,paste0('composite-',a,'-differences'))
+}
+# Pairwise deletion uses the same retained cells in both Haiku arms.
+missing_keys <- inputs$labels |> filter(arm=='ARBITER-Haiku',is.na(label)) |> select(slug,domain)
+observed <- inputs$labels |> filter(grepl('Haiku',arm)) |> anti_join(missing_keys,by=c('slug','domain'))
+missing_sensitivity <- agreement_outputs(observed,'Meta; missing Haiku cells excluded',TRUE)
+save_table(missing_sensitivity$estimates,'missing-sensitivity')
+save_table(missing_sensitivity$differences,'missing-sensitivity-differences')
+
+save_table(checks,'domain-consistency-cells')
+save_table(checks |> filter(startsWith(arm,'ARBITER'),status=='Violation'),'algorithm-mismatches')
+save_table(checks |> count(arm,status),'algorithm-validation-summary')
+save_table(question_map(),'question-map')
+overall <- overall_checks(inputs$labels)
+save_table(overall,'overall-consistency-cells')
+overall_rates <- consistency_rates(overall,weights) |> mutate(domain='Overall')
+domain_rates <- bind_rows(lapply(c('D1-D5',paste0('D',1:5)),function(d) {
+  x <- if(d=='D1-D5') checks else filter(checks,domain==d)
+  consistency_rates(x,weights) |> mutate(domain=d)
+}))
+consistency <- bind_rows(overall_rates,domain_rates)
+save_table(consistency,'table3-supplement')
+save_table(consistency |> filter(arm %in% c('Meta','ARBITER-Sonnet','Baseline-Sonnet')),'table3')
+
+reliability_pair <- function(x,y,name) {
+  d <- cells |> transmute(slug,meta=.data[[x]],label=.data[[y]])
+  interval_table(agreement_replicates(d,weights)) |> filter(metric %in% c('kappa','AC2','accuracy')) |>
+    mutate(comparison=name,n=nrow(d))
+}
+reliability <- bind_rows(reliability_pair('own_A','own_Z','A vs Z independent'),
+  reliability_pair('chosen_label_A','chosen_label_Z','A vs Z preferred'),
+  bind_rows(lapply(c('A','Z'),function(a) bind_rows(lapply(c('meta','kit','nokit'),function(s)
+    reliability_pair(s,paste0('own_',a),paste(a,'independent vs',s)))))))
+save_table(reliability,'table4-reliability')
+leniency <- meta_leniency(cells,weights)
+save_table(leniency,'meta-leniency')
+save_table(cells |> filter(consensus) |> count(meta,preferred) |>
+  complete(meta=LABELS,preferred=LABELS,fill=list(n=0)),'meta-consensus-confusion')
+grounding <- bind_rows(lapply(names(ARMS),function(a)
+  grounding_share(filter(inputs$signals,arm==a),weights) |> mutate(arm=a)))
+save_table(grounding,'grounding')
+save_table(signalling_agreement(inputs,weights),'signalling-agreement')
+
+confusion <- inputs$labels |> filter(!is.na(meta)) |>
+  mutate(predicted=coalesce(label,'Missing')) |> count(arm,domain,meta,predicted) |>
+  complete(arm,domain,meta=LABELS,predicted=c(LABELS,'Missing'),fill=list(n=0))
+save_table(confusion,'confusion-matrices')
+forest <- bind_rows(lapply(split(filter(inputs$labels,domain!='Overall'),
+  interaction(filter(inputs$labels,domain!='Overall')$meta_id,
+    filter(inputs$labels,domain!='Overall')$arm,drop=TRUE)),function(d) {
+      interval_table(agreement_replicates(d,weights)) |> filter(metric=='kappa') |>
+        mutate(meta_id=d$meta_id[1],arm=d$arm[1],n=nrow(d))
+    }))
+save_table(forest,'forest-meta')
+save_table(cells,'adjudication-analysis-cells')
+if(file.exists('R/materials.R')) { source('R/materials.R'); build_materials(inputs,cells) }
+if(file.exists('R/figures.R')) { source('R/figures.R'); build_figures() }
