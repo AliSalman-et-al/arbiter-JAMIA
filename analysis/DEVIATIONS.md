@@ -122,3 +122,5 @@ No Python is used. This file records conservative resolutions as they arise.
 13. **Round 4 P1 trace presentation.** Default award-10-2018 D2 illustrates a more-severe ARBITER judgement preferred by consensus while Baseline matches meta. Four such candidates and levin-2016 D2 are listed. The selected 25-word contiguous excerpt omits the leading fragment "study.". Workflow rows now align. Bundles record verification.json result="verified" and named checks including content_hashes, but no individual passage-match status. Figure 1 quotes the actual bundle-level status and explicitly states that scope; no passage-specific verification claim is inferred.
 
 14. **Round 4 P2 flow presentation.** Removed the repeated discordant-cell count from the consensus parent box; the child retains 62 differing cells and the unchanged 54/7/1 breakdown.
+
+15. **Round 4 P3 adjudication presentation.** Figure 3 has A/B tags, parallel departure-row labels, and nearly white zero-count tiles with grey zero labels. Nonzero counts retain the original outcome colours; counts and intervals are unchanged.

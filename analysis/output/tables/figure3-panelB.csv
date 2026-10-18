@@ -4,18 +4,18 @@ ARBITER only departed from meta,Adjudicators split,7
 ARBITER only departed from meta,Baseline's label preferred (and not ARBITER's),2
 ARBITER only departed from meta,Both arms' label preferred,0
 ARBITER only departed from meta,Meta label only preferred,0
-Baseline only,ARBITER's label preferred (and not the baseline's),21
-Baseline only,Adjudicators split,6
-Baseline only,Baseline's label preferred (and not ARBITER's),3
-Baseline only,Both arms' label preferred,0
-Baseline only,Meta label only preferred,0
-"Both, different labels",ARBITER's label preferred (and not the baseline's),3
-"Both, different labels",Adjudicators split,5
-"Both, different labels",Baseline's label preferred (and not ARBITER's),2
-"Both, different labels",Both arms' label preferred,0
-"Both, different labels",Meta label only preferred,1
-"Both, same label",ARBITER's label preferred (and not the baseline's),0
-"Both, same label",Adjudicators split,7
-"Both, same label",Baseline's label preferred (and not ARBITER's),0
-"Both, same label",Both arms' label preferred,62
-"Both, same label",Meta label only preferred,5
+Baseline only departed from meta,ARBITER's label preferred (and not the baseline's),21
+Baseline only departed from meta,Adjudicators split,6
+Baseline only departed from meta,Baseline's label preferred (and not ARBITER's),3
+Baseline only departed from meta,Both arms' label preferred,0
+Baseline only departed from meta,Meta label only preferred,0
+"Both departed, different labels",ARBITER's label preferred (and not the baseline's),3
+"Both departed, different labels",Adjudicators split,5
+"Both departed, different labels",Baseline's label preferred (and not ARBITER's),2
+"Both departed, different labels",Both arms' label preferred,0
+"Both departed, different labels",Meta label only preferred,1
+"Both departed, same label",ARBITER's label preferred (and not the baseline's),0
+"Both departed, same label",Adjudicators split,7
+"Both departed, same label",Baseline's label preferred (and not ARBITER's),0
+"Both departed, same label",Both arms' label preferred,62
+"Both departed, same label",Meta label only preferred,5

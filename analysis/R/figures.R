@@ -11,7 +11,9 @@ combine_panels <- function(top,bottom) {
   grDevices::pdf(NULL); on.exit(grDevices::dev.off())
   grid::grobTree(
     grid::grobTree(ggplotGrob(top),vp=grid::viewport(y=.76,height=.48)),
-    grid::grobTree(ggplotGrob(bottom),vp=grid::viewport(y=.26,height=.52)))
+    grid::grobTree(ggplotGrob(bottom),vp=grid::viewport(y=.26,height=.52)),
+    grid::textGrob('A',x=.012,y=.985,just=c('left','top'),gp=grid::gpar(fontface='bold',fontsize=14)),
+    grid::textGrob('B',x=.012,y=.505,just=c('left','top'),gp=grid::gpar(fontface='bold',fontsize=14)))
 }
 
 draft_architecture <- function(inputs,candidates) {
@@ -77,7 +79,8 @@ build_figures <- function() {
   categories <- c("ARBITER's label preferred (and not the baseline's)",
     "Baseline's label preferred (and not ARBITER's)","Both arms' label preferred",
     'Meta label only preferred','Adjudicators split')
-  departure_order <- c('ARBITER only departed from meta','Baseline only','Both, different labels','Both, same label')
+  departure_order <- c('ARBITER only departed from meta','Baseline only departed from meta',
+    'Both departed, different labels','Both departed, same label')
   counts <- cells |> mutate(departure=case_when(kit!=meta & nokit==meta~departure_order[1],
     kit==meta & nokit!=meta~departure_order[2],kit!=nokit~departure_order[3],TRUE~departure_order[4]),
     outcome=case_when(!consensus~categories[5],preferred==kit & preferred==nokit~categories[3],
@@ -86,9 +89,11 @@ build_figures <- function() {
     mutate(departure=factor(departure,levels=rev(departure_order)),outcome=factor(outcome,levels=categories))
   save_table(counts,'figure3-panelB')
   colors <- setNames(c('#007f86','#c76b13','#6c8d68','#d7ad32','#dedede'),categories)
-  pB <- ggplot(counts,aes(outcome,departure,fill=outcome))+
-    geom_tile(color='white',linewidth=1)+geom_text(aes(label=n),size=4)+
-    scale_fill_manual(values=colors,guide='none')+
+  pB <- ggplot(counts,aes(outcome,departure))+
+    geom_tile(aes(fill=if_else(n>0,as.character(outcome),NA_character_)),color='white',linewidth=1)+
+    geom_text(aes(label=n,color=n==0),size=4)+
+    scale_color_manual(values=c('FALSE'='black','TRUE'='grey55'),guide='none')+
+    scale_fill_manual(values=colors,na.value='#fafafa',guide='none')+
     scale_x_discrete(labels=c('ARBITER only\npreferred','Baseline only\npreferred',
       'Both arms\npreferred','Meta only\npreferred','Adjudicators\nsplit'))+
     labs(x=NULL,y=NULL)+theme(panel.grid=element_blank(),axis.text.x=element_text(size=10))
