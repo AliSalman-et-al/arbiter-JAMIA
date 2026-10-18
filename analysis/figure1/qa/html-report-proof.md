@@ -1,3 +1,7 @@
+# Superseded proof attempt
+
+The earlier ARBITER 1.0.0 attempt below is retained as history. The required exact-run-build render now succeeds; see [html-report-relabel.md](html-report-relabel.md). Figures now include the HTML report.
+
 # AVATAR HTML-report proof: failed, no HTML wording used
 
 Run on 2026-10-18 from the assigned worktree. ARBITER source was read-only at `2f549ae30f056ff441ea61a04b719968716f2219`; installed distribution reports version 1.0.0. A non-editable wheel was built with uv in an isolated temporary venv. No source-tree environment or files were changed.

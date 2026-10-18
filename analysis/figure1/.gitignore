@@ -1,3 +1,6 @@
 .venv/
 __pycache__/
 .inspection/
+
+# The exact trial report and product-name-only copy are deliberate figure inputs.
+!html-report/**/*.html

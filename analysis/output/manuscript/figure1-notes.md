@@ -6,7 +6,7 @@ The workflow uses plain labels above representative real MCP calls. Tool definit
 
 The registry title identifies aortic valve replacement versus conservative treatment in asymptomatic severe aortic stenosis (AVATAR). Early surgery versus watchful waiting is the reader-facing description of this comparison. The requested outcome is all-cause death. Source letters: A = Circulation 2022 report; B = Eur Heart J 2024 report; C = ClinicalTrials.gov NCT02436655 (first submitted 2015); D = surgical-delay protocol amendment dated 4 Jan 2021. Page numbers refer to the respective stored source record.
 
-Source quotations are verbatim selections with ellipses for omissions and normalized extraction whitespace. Two extraction breaks are joined: assign-↵ment and cen↵sored. Questions and plain reasons are paraphrased; official wording is retained below and in eTable 31.
+Source quotations are verbatim selections with ellipses for omissions and normalized extraction whitespace. Two extraction breaks are joined: assign-↵ment and cen↵sored. Questions are paraphrased; official wording is retained below and in eTable 31. Model reasons are verbatim excerpts, with ellipses for omissions.
 
 Every manifest hash and source-version binding is checked at build time. The archive stores source identities and evidence quotations, rather than complete trial PDFs. The fingerprint is the first six hex characters of evidence.source_version (the source projection hash), not the original-file hash; it identifies the stored text copy to which each quote binds. Archived independent-verifier receipt: verified; this is a structure/evidence-binding check, not a clinical judgement.
 
@@ -40,13 +40,30 @@ Bundle SHA-256: `d6d683efd3acce82f9e0ee233d194223c569ffb7ac76ab74e45c6c4071fb665
   "domains_final_call_rejected": []
 }
 
+## Fixed recorded-rule display mapping
+
+Algorithm text is read from rob2-kit commit 2848c7926a2acc25402345a42be39d695a99861a, the exact run build. No model-generated clinical interpretation is placed in the ARBITER column. Each domain trace ID is asserted to match its adopted result; driver question IDs select the outlined chip and its official number.
+
+- `randomization.md:83–92`: - **High:** 1.2 is No or Probably no; or 1.2 is No information and 1.3 is Yes   or Probably yes. - **Some concerns:** 1.1 is No or Probably no; or 1.2 is No information; or 1.3   is Yes or Probably yes. - **Low:** otherwise.  Use [Build a Domain answer](evidence.md#build-a-domain-answer) for the submission shape.
+
+- `deviations.md:92–105`: - **High:** 2.3 Yes/Probably yes, 2.4 Yes/Probably yes/No information and 2.5   No/Probably no/No information; or 2.6 No/Probably no/No information and 2.7   Yes/Probably yes/No information. - **Some concerns:** 2.3 No information; or 2.4 No/Probably no; or 2.5   Yes/Probably yes; or 2.7 No/Probably no. - **Low:** otherwise (for example participants and carers blinded, or no   context deviations, with an appropriate analysis).  When counts help 2.3 or 2.6, `missing_data` rows can carry them; see [Missing outcome data](missing.md#participant-count-rows). Use [Build a Domain answer](evidence.md#build-a-domain-answer) for the submission shape.
+
+- `missing.md:102–107`: - **Low:** 3.1 Yes/Probably yes; or 3.2 Yes/Probably yes; or 3.3 No/Probably no. - **High:** 3.4 Yes/Probably yes/No information. - **Some concerns:** otherwise (3.4 No/Probably no).
+
+- `measurement.md:91–102`: - **High:** 4.1 Yes/Probably yes; or 4.2 Yes/Probably yes; or 4.5 Yes/Probably   yes/No information. - **Some concerns:** 4.2 No information; or 4.5 No/Probably no. - **Low:** otherwise (for example assessors blinded, or influence not possible).  Do not count one mechanism in both Domains 2 and 4: a change in care that changes the true outcome belongs to Domain 2; a change in how the outcome is measured, recorded or decided belongs here. Use [Build a Domain answer](evidence.md#build-a-domain-answer) for the submission shape.
+
+- `selection.md:108–114`: - **High:** 5.2 Yes/Probably yes; or 5.3 Yes/Probably yes. - **Some concerns:** 5.1 No/Probably no/No information; or 5.2 No information;   or 5.3 No information. - **Low:** otherwise (5.1 Yes/Probably yes and 5.2, 5.3 No/Probably no).
+
+- `src/rob2_kit/logic/evaluator.py:361`: recorded `overall.any_concerns`; plain-language wording agrees with `src/rob2_kit/application/report.py:47` (at least one Some concerns and no High).
+- Four Low trace IDs map only to “Official RoB 2 rule → Low”; `selection.some_concerns` maps only to “Official RoB 2 rule → Some concerns”. The additional D5 line is “decided by question 5.1”, mapped from recorded driver_questions. The complete semantic SVG text audit is analysis/figure1/figure2-text-provenance.csv; every row string in the source, AI and software/result columns is covered, with only the fixed Weighed against/Open point structural labels exempted.
+
 ## Domain 1
 
 Did baseline differences between intervention groups suggest a problem with the randomization process?
 
 Displayed source quotation(s): Table 2 Selected baseline characteristics … / Diabetes mellitus 14 (17.9%) 23 (29.1%) .07 …
 
-Displayed model justification (plain-language summary): Baseline differences compatible with chance.
+Displayed model justification (verbatim excerpt): …This is compatible with chance…
 
 Full recorded selected-answer justification: Group sizes were 78 vs 79. Of about 25 baseline comparisons in Table 2, only age (P=.02) and haemoglobin (P=.01) were nominally significant, and diabetes was P=.07. The age difference is 1 year in medians. This is compatible with chance and none approaches P<0.001.
 
@@ -201,7 +218,7 @@ If Y/PY/NI to 2.1 or 2.2: Were there deviations from the intended intervention t
 
 Displayed source quotation(s): 3-year follow-up … available for all patients. … / delayed surgery … due to COVID -19 … / referred … onset of AS-related symptoms … / physical visits … substituted by phone follow-up. …
 
-Displayed model justification (plain-language summary): Changes followed the protocol or arose from the pandemic.
+Displayed model justification (verbatim excerpt): …protocol-defined indications … COVID-19 public-health emergency…
 
 Full recorded selected-answer justification: Crossover from conservative care to surgery (35/79) was driven by protocol-defined indications (symptom onset, AS progression, LVEF decline), as Table 3 and the protocol show, so it is consistent with the protocol rather than trial-context driven. Surgical delays beyond 8 weeks arose from the COVID-19 public-health emergency and were documented as an anticipated minor deviation in the SAP amendment. Four early-surgery patients did not receive surgery as assigned, for reasons like infection or declining, which could occur outside a trial.
 
@@ -464,7 +481,7 @@ Were data for this outcome available for all, or nearly all, participants random
 
 Displayed source quotation(s): All patients were included in the analysis. … One patient … lost to follow-up … censored …
 
-Displayed model justification (plain-language summary): 1 of 157 (0.6%) incomplete.
+Displayed model justification (verbatim excerpt): …so 1/157 (0.6%) has incomplete outcome data.…
 
 Full recorded selected-answer justification: All 157 randomized patients were analysed and median follow-up was 63 months. Only one patient (early-surgery arm) was lost to follow-up and censored at last contact, so 1/157 (0.6%) has incomplete outcome data. This is far fewer than the observed deaths, so any outcome for that patient could not materially change the HR of 0.44.
 
@@ -548,7 +565,7 @@ If N/PN/NI to 4.1 and 4.2: Were outcome assessors aware of the intervention rece
 
 Displayed source quotation(s): members were not blinded to … the treatment allocation during events review. …
 
-Displayed model justification (plain-language summary): Death involves no judgement.
+Displayed model justification (verbatim excerpt): …involves no judgement…
 
 Full recorded selected-answer justification: The trial was open-label (registry masking: none), and the report states that DSMB members were not blinded to allocation when reviewing events. Site investigators recording deaths were also aware of the allocation.
 
@@ -678,7 +695,7 @@ Were the data that produced this result analysed in accordance with a pre-specif
 
 Displayed source quotation(s): all cause death, … (MACE) including: … / Prespecified secondary … Time to death … / all analyses … intention-to-treat principle, … / -Amendment to surgical delays- …
 
-Displayed model justification (plain-language summary): No dated plan lists this analysis; death appears inside a combined registry outcome.
+Displayed model justification (verbatim excerpt): …No dated source therefore specifies this measurement and analysis.…
 
 Full recorded selected-answer justification: The registry entry (first submitted 30 Apr 2015, before enrolment began in June 2015) names all-cause death only as a component of composite outcomes. It does not list time to all-cause death as a separate outcome. The Circulation 2022 and EHJ 2024 reports describe 'time to death' as a prespecified secondary end point analysed with Kaplan-Meier and Cox models, citing a published protocol. That protocol is not among the captured Sources, and the report statements are not date-stamped before unblinded data. The only SAP-type document is an amendment dated 4 Jan 2021 about COVID surgical delays. No dated source therefore specifies this measurement and analysis.
 
@@ -912,4 +929,4 @@ Full selected-answer evidence:
   }
 ]
 
-HTML-report proof failed: see analysis/figure1/qa/html-report-proof.md. No HTML output is claimed.
+The exact run-build HTML render succeeded. Product-name-only substitutions are proved in analysis/figure1/qa/html-report-relabel.md; the original and relabelled renders are retained. Figure 1 shows a crop of the actual one-trial domain summary, whose table includes the AVATAR title; the trial-page screenshot is retained separately.

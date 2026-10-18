@@ -10,6 +10,9 @@ def files():
     for n in [1,2]:
         paths.extend(OUT/'qa'/f'Figure{n}-{suffix}.png' for suffix in ['final-size','grayscale','deuteranopia','protanopia','tritanopia','pdf'])
     paths.append(HERE/'avatar-tool-counts.json')
+    paths.append(HERE/'figure2-text-provenance.csv')
+    paths.extend(sorted((HERE/'html-report').rglob('*.html')))
+    paths.extend(HERE/'qa'/n for n in ['html-report-relabel.md','html-report-relabel.diff','avatar-html-report.png','avatar-html-report-table.png'])
     paths.append(OUT/'legends-fig1-2.md')
     return sorted(paths)
 

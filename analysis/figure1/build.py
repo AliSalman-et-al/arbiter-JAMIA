@@ -5,6 +5,7 @@ The scene is in quarter-millimetres: 696 units = 174 mm.
 """
 from __future__ import annotations
 
+import base64
 import argparse
 import csv
 import hashlib
@@ -237,89 +238,53 @@ class Scene:
 
 
 def draw_workflow(data):
-    s = Scene()
-    # Panel A: four horizontal lanes, four left-to-right phases.
-    # Each heading is centered on the same column as its agent/server content.
-    centers = [216, 348, 480, 612]
-    for i, (phase, cx) in enumerate(zip(PHASES, centers), 1):
-        s.text(cx, 53, phase, 12.4, "bold", anchor="middle")
-        if i < 4:
-            midpoint = (cx + centers[i]) / 2
-            s.line(midpoint-7, 49, midpoint+7, 49, arrow=True, sw=1.4)
-    s.rect(14, 31, 12, 17, "white", 2, INK, 1)
-    s.line(17, 37, 23, 37, sw=.6)
-    s.line(17, 41, 23, 41, sw=.6)
-    s.text(39, 44, "Trial reports + registry", 10)
-    s.line(144, 40, 180, 40, sw=1)
-    s.add('<path d="M180,40 Q205,40 216,34" fill="none" stroke="#171717" stroke-width="1"/>')
-    s.line(210,37,216,34,arrow=True,sw=1)
-    # The single human icon uses only geometric strokes.
-    s.rect(12, 68, 672, 61, "#F5F5F3", 11)
-    s.add('<circle cx="30" cy="88" r="6" fill="white" stroke="#171717" stroke-width="2"/>')
-    s.add('<path d="M19 112 Q19 98 30 98 Q41 98 41 112 Z" fill="white" stroke="#171717" stroke-width="2"/>')
-    s.text(49, 94, "Reviewer", 12.5, "bold")
-    s.text(49, 111, "Person", 10.5, color=GREY)
-    s.text(216, 94, "Chooses the trial", 11.5, anchor="middle")
-    s.text(216, 110, "and outcome", 11.5, anchor="middle")
-    s.rect(284, 76, 128, 45, "white", 8, sw=2.3)
-    s.text(348, 94, "Approve the result", 12, "bold", anchor="middle")
-    s.text(348, 111, "arbiter review", 10.5, "mono", anchor="middle")
-    s.text(612, 94, "Receives the", 11.5, "bold", anchor="middle")
-    s.text(612, 111, "audit file", 11.5, "bold", anchor="middle")
-    s.line(412, 99, 480, 99)
-    s.line(480, 99, 480, 146, arrow=True)
-    s.text(490, 140, "unlocks domain work", 10.2)
-
-    s.rect(12, 146, 672, 70, LAVENDER, 11, sw=2.3)
-    s.text(25, 166, "AI model (LLM agent)", 12, "bold", LLM)
-    s.text(25, 184, "follows the ARBITER", 10, color=GREY)
-    s.text(25, 201, "assessment guide", 10, color=GREY)
-    for cx, top, bottom in zip(centers,
-            ["Read the reports", "Pick the result to assess", "Answer signalling", "Inspect the"],
-            ["and registry", "(outcome + analysis)", "questions + cite", "assessment"]):
-        s.text(cx, 174, top, 11, "bold", LLM, "middle")
-        s.text(cx, 193, bottom, 11, "bold", LLM, "middle")
-    for x in [282, 414, 546]:
-        s.line(x, 155, x, 207, dotted=True, sw=1)
-
-    # Paired arrows: requests down the left, responses up the right of each column.
-    visible = [["prepare_batch", "list_sources"], ["validate_proposal", "save_proposal"],
-               ["get_domain_context", "save_domain_judgment"], ["review_trial", "finalize_batch"]]
-    responses = ["source list", "validation result", "proposed judgement", "review report"]
-    for cx, calls, response in zip(centers, visible, responses):
-        request_x = cx-52 if cx==612 else cx-56
-        response_x = cx+56
-        s.line(request_x, 216, request_x, 302, arrow=True, sw=1.4)
-        s.line(response_x, 302, response_x, 216, arrow=True, sw=1.4)
-        for y, call in zip([239, 262], calls):
-            assert s.width(call, 10.2, "mono") * .92 < 118
-            s.text(cx, y, call, 10.2, "mono", color=GREY, anchor="middle", stretch=.84 if cx==480 else .92)
-        s.text(cx, 281, response, 10.5, anchor="middle", italic=True)
-
-    s.rect(12, 302, 672, 77, MINT, 11, sw=2.3)
-    s.text(25, 324, "ARBITER server", 13.5, "bold")
-    s.text(25, 343, "rule-based software,", 10.5)
-    s.text(25, 359, "no AI", 10.5)
-    for cx, phrase in zip(centers, ["Store an unchangeable copy of each source", "Check and record the choice", "Check every quote · Apply the RoB 2 rules", "Keep the full record · Package the audit file"]):
-        s.wrap(cx-55, 324, phrase, 110, size=11, face="bold", leading=16)
-    for x in [282, 414, 546]:
-        s.line(x, 313, x, 367, dotted=True, sw=1)
-    s.line(612, 379, 612, 403, arrow=True)
-    s.rect(12, 403, 672, 43, YELLOW, 10, sw=2)
-    s.text(25, 429, "Audit file", 13, "bold")
-    s.text(155, 420, "Every source, quote, answer and decision", 11.5)
-    s.text(155, 438, "Checkable by an independent verifier", 11.5)
-    s.text(612, 429, ".arbiter.zip", 10.5, "mono", anchor="middle")
-
-    s.height = 456
-    # Remove the former panel-heading margin from both variants.
-    s.parts=['<g transform="translate(0 -28)">',*s.parts,'</g>']
-    for record in s.pdf_text:record['y']-=28
-    for record in s.text_records:
-        record['baseline']-=28
-        record['bbox'][1]-=28;record['bbox'][3]-=28
-    s.arrow_tips=[(x,y-28) for x,y in s.arrow_tips]
-    s.height-=28
+    s=Scene();s.height=500
+    s.description='Reviewer, AI model, rule-based server and audit file, ending in the actual AVATAR HTML report.'
+    centers=[216,348,480,612]
+    for phase,cx in zip(PHASES,centers):s.text(cx,16,phase,11,'bold',anchor='middle')
+    s.rect(12,5,11,16,'white',2,INK,.8)
+    s.line(15,11,20,11,sw=.6);s.line(15,15,20,15,sw=.6)
+    s.text(29,15,'Trial reports + registry',10)
+    s.line(150,13,188,13,arrow=True,sw=1)
+    s.rect(12,28,672,43,'#F5F5F3',6,INK,1.5)
+    s.add('<circle cx="30" cy="42" r="4" fill="white" stroke="#171717" stroke-width="1"/>')
+    s.add('<path d="M23 59 Q23 48 30 48 Q37 48 37 59 Z" fill="white" stroke="#171717" stroke-width="1"/>')
+    s.text(47,47,'Reviewer',11,'bold');s.text(47,61,'Person',10,color=GREY)
+    for cx,first,second in [(216,'Chooses the trial','and outcome'),(348,'Approves the result','arbiter review'),(612,'Receives','HTML report + audit file')]:
+        s.text(cx,46,first,11,'bold',anchor='middle')
+        s.text(cx,61,second,10,'mono' if cx==348 else 'regular',GREY if cx==348 else INK,anchor='middle')
+    s.line(412,49,480,49,sw=1);s.line(480,49,480,80,arrow=True,sw=1)
+    s.rect(12,84,672,49,LAVENDER,6,INK,1.5)
+    s.text(25,99,'AI model (LLM agent)',11,'bold',LLM)
+    s.text(25,113,'follows the ARBITER',10,color=GREY);s.text(25,126,'assessment guide',10,color=GREY)
+    for cx,top,bottom in zip(centers,['Read the reports','Pick the result to assess','Answer signalling','Inspect the'],['and registry','(outcome + analysis)','questions + cite','assessment']):
+        s.text(cx,103,top,10,'bold',LLM,anchor='middle');s.text(cx,120,bottom,10,'bold',LLM,anchor='middle')
+    for x in [282,414,546]:s.line(x,91,x,126,dotted=True,sw=.6)
+    for cx,tool in zip(centers,['prepare_batch','save_proposal','save_domain_judgment','finalize_batch']):
+        s.line(cx-57,133,cx-57,161,arrow=True,sw=1)
+        s.line(cx+57,161,cx+57,133,arrow=True,sw=1)
+        s.text(cx,151,tool,10,'mono',GREY,anchor='middle',stretch=.84 if cx==480 else .92)
+    s.rect(12,163,672,60,MINT,6,INK,1.5)
+    s.text(25,179,'ARBITER server',11,'bold')
+    s.text(25,195,'rule-based software,',10);s.text(25,210,'no AI',10)
+    for cx,phrases in zip(centers,[['Store an unchangeable','copy of each source'],['Check and record','the choice'],['Check every quote','Apply the RoB 2 rules'],['Keep the full record','Package the audit file','Write the HTML report']]):
+        for j,phrase in enumerate(phrases):s.text(cx,178+j*12,phrase,10,'bold',anchor='middle')
+    s.text(612,216,'arbiter report',10,'mono',GREY,anchor='middle')
+    for x in [282,414,546]:s.line(x,170,x,216,dotted=True,sw=.6)
+    s.rect(12,229,672,20,YELLOW,5,INK,1.2)
+    s.text(23,243,'Audit file',10,'bold')
+    s.text(94,243,'Every source, quote, answer and decision · checkable by an independent verifier',10)
+    s.text(638,243,'.arbiter.zip',10,'mono',anchor='middle')
+    # A faithful crop of the one-trial report's domain summary table. No HTML restyling.
+    path=HERE/'qa/avatar-html-report-table.png'
+    image=Image.open(path);iw=644;ih=iw*image.height/image.width
+    assert 12*iw/740*72/101.6>=7  # smallest captured DOM font is 12 CSS px
+    s.rect(24,255,648,16+ih,'#F5F5F3',4,INK,1)
+    s.text(34,265,'ARBITER · AVATAR · HTML assessment report',10,'bold')
+    encoded=base64.b64encode(path.read_bytes()).decode()
+    s.add(f'<image x="26" y="269" width="644" height="{ih}" href="data:image/png;base64,{encoded}"/>')
+    s.report_image=dict(path=path,x=26,y=269,w=644,h=ih,min_text_pt=12*644/740*72/101.6)
+    s.wrap(12,487,"What the reviewer receives: ARBITER's HTML report for AVATAR (and the verifiable audit file, .arbiter.zip)",672,size=10,leading=11)
     return s
 
 # Figure 2: verbatim selections are asserted against archived evidence/reasoning.
@@ -452,6 +417,13 @@ def export_scene(scene,out,name,geometry):
     for face,filename in [('regular','FiraSansCondensed-Regular.ttf'),('bold','FiraSansCondensed-Bold.ttf'),('mono','FiraCode-Regular.ttf')]:
         pdfmetrics.registerFont(PDFont('Fira-'+face,str(HERE/'fonts'/filename)))
     svg=scene.svg()
+    # Grep the final SVG's semantic strings, not merely the drawing inputs.
+    svg_labels=[html.unescape(label) for label in re.findall(r'aria-label="(.*?)"',svg)]
+    assert svg_labels==[r['text'] for r in scene.text_records]
+    if name=='Figure2':
+        traced=list(csv.DictReader((HERE/'figure2-text-provenance.csv').open(encoding='utf8')))
+        for p in traced:
+            for line in json.loads(p['svg_text_lines']):assert line in svg_labels,(line,'missing from final SVG')
     assert not re.search('rob2',svg,re.I),'Legacy name in rendered text'
     png=resvg_py.svg_to_bytes(svg_string=svg,width=1644,dpi=96,skip_system_fonts=True)
     (out/f'{name}.png').write_bytes(png)
@@ -461,6 +433,7 @@ def export_scene(scene,out,name,geometry):
     from reportlab.pdfgen.canvas import Canvas
     from reportlab.lib.colors import HexColor
     pdf_svg=re.sub(r'<g aria-label=.*?</g>','',svg,flags=re.S)
+    pdf_svg=re.sub(r'<image .*?/>','',pdf_svg)
     pdf_svg=re.sub(r'<defs>.*?</defs>','',pdf_svg,flags=re.S).replace('url(#not-asked)','#F7F7F5')
     rl_config.invariant=True
     factor=72/101.6
@@ -484,6 +457,10 @@ def export_scene(scene,out,name,geometry):
         canvas.setFont('Fira-'+r['face'],r['size']*factor)
         canvas.drawString(0,0,r['text'])
         canvas.restoreState()
+    if hasattr(scene,'report_image'):
+        from reportlab.lib.utils import ImageReader
+        r=scene.report_image
+        canvas.drawImage(ImageReader(str(r['path'])),r['x']*factor,(scene.height-r['y']-r['h'])*factor,width=r['w']*factor,height=r['h']*factor)
     canvas.showPage();canvas.save()
     with fitz.open(out/f'{name}.pdf') as doc:
         page=doc[0]
@@ -498,7 +475,8 @@ def export_scene(scene,out,name,geometry):
     with fitz.open(out/f'{name}.pdf') as pdf:
         page=pdf[0]
         assert abs(page.rect.width-174*72/25.4)<.02
-        assert len(page.get_images())==0
+        image_count=len(page.get_images())
+        assert image_count==(1 if hasattr(scene,'report_image') else 0)
         fonts=page.get_fonts(full=True)
         assert fonts and all('Fira' in f[3] and f[1]=='ttf' for f in fonts),fonts
         assert all(len(pdf.extract_font(f[0])[3])>0 for f in fonts),'Missing embedded font bytes'
@@ -513,7 +491,7 @@ def export_scene(scene,out,name,geometry):
         Image.frombytes('RGB',(proof.width,proof.height),proof.samples).save(proof_dir/f'{name}-pdf.png')
     preview=Image.open(io.BytesIO(png)).convert('RGB')
     diagnostic_proofs(preview,proof_dir,name,scene.height)
-    return dict(geometry=geometry,width_mm=174,height_mm=scene.height/4,min_text_pt=min(r['size_pt'] for r in scene.text_records),vector_pdf=True,embedded_fonts=[f[3] for f in fonts],tiff_dpi=600,tiff_compression='LZW',text_elements=len(scene.text_records))
+    return dict(geometry=geometry,width_mm=174,height_mm=scene.height/4,min_text_pt=min(r['size_pt'] for r in scene.text_records),vector_pdf=not hasattr(scene,'report_image'),vector_diagram=True,raster_images=image_count,embedded_fonts=[f[3] for f in fonts],tiff_dpi=600,tiff_compression='LZW',text_elements=len(scene.text_records))
 
 
 def diagnostic_proofs(preview,directory,name,height):
@@ -530,26 +508,36 @@ def write_notes(data,rows,out):
           'The workflow uses plain labels above representative real MCP calls. Tool definitions and the public audit-file extension are checked against ARBITER source commit `'+data['source_commit']+'`. The frozen rejection audit remains in save-rejections.csv and its summary JSON.',
           '', '## AVATAR storyboard', '',
           'The registry title identifies aortic valve replacement versus conservative treatment in asymptomatic severe aortic stenosis (AVATAR). Early surgery versus watchful waiting is the reader-facing description of this comparison. The requested outcome is all-cause death. Source letters: A = Circulation 2022 report; B = Eur Heart J 2024 report; C = ClinicalTrials.gov NCT02436655 (first submitted 2015); D = surgical-delay protocol amendment dated 4 Jan 2021. Page numbers refer to the respective stored source record.',
-          '', 'Source quotations are verbatim selections with ellipses for omissions and normalized extraction whitespace. Two extraction breaks are joined: assign-↵ment and cen↵sored. Questions and plain reasons are paraphrased; official wording is retained below and in eTable 31.',
+          '', 'Source quotations are verbatim selections with ellipses for omissions and normalized extraction whitespace. Two extraction breaks are joined: assign-↵ment and cen↵sored. Questions are paraphrased; official wording is retained below and in eTable 31. Model reasons are verbatim excerpts, with ellipses for omissions.',
           '', 'Every manifest hash and source-version binding is checked at build time. The archive stores source identities and evidence quotations, rather than complete trial PDFs. The fingerprint is the first six hex characters of evidence.source_version (the source projection hash), not the original-file hash; it identifies the stored text copy to which each quote binds. Archived independent-verifier receipt: '+data['verification']['result']+'; this is a structure/evidence-binding check, not a clinical judgement.',
           '', 'D5 rule checked against the scientific-pack selection.md Algorithm section: High if 5.2 or 5.3 is Yes/Probably yes; otherwise Some concerns if 5.1 is No/Probably no/No information, or 5.2/5.3 is No information. NI/PN/PN therefore yields Some concerns. The overall.any_concerns rule is asserted from the bundle; the figure describes this trial, where no domain is High.',
           '', 'Both adjudicators preferred D5 Some concerns; Published D5 is Low. Overall was not adjudicated. The Without ARBITER comparison strip has been removed.',
           '', 'Bundle SHA-256: `'+data['bundle_sha256']+'`. AVATAR is illustrative, not representative.',
           '', '## Save-call rejection audit', '',json.dumps(json.loads((HERE/'save-rejections-summary.json').read_text()),indent=2)]
+    text += ['', '## Fixed recorded-rule display mapping', '', 'Algorithm text is read from rob2-kit commit 2848c7926a2acc25402345a42be39d695a99861a, the exact run build. No model-generated clinical interpretation is placed in the ARBITER column. Each domain trace ID is asserted to match its adopted result; driver question IDs select the outlined chip and its official number.']
+    pack=Path('C:/Users/Ali-Salman/Documents/Code/rob2-kit/src/rob2_kit/skills/rob2-assess/references')
+    for domain in DOMAINS:
+        path=pack/(domain+'.md');content=path.read_text(encoding='utf8').splitlines()
+        begin=content.index('## Algorithm')+1
+        end=next((j for j in range(begin,len(content)) if content[j].startswith('## ')),len(content))
+        text += ['', f'- `{domain}.md:{begin}–{end}`: '+ ' '.join(content[begin:end]).strip()]
+    text += ['', '- `src/rob2_kit/logic/evaluator.py:361`: recorded `overall.any_concerns`; plain-language wording agrees with `src/rob2_kit/application/report.py:47` (at least one Some concerns and no High).', '- Four Low trace IDs map only to “Official RoB 2 rule → Low”; `selection.some_concerns` maps only to “Official RoB 2 rule → Some concerns”. The additional D5 line is “decided by question 5.1”, mapped from recorded driver_questions. The complete semantic SVG text audit is analysis/figure1/figure2-text-provenance.csv; every row string in the source, AI and software/result columns is covered, with only the fixed Weighed against/Open point structural labels exempted.']
     for i,r in enumerate(rows,1):
         text += ['',f'## Domain {i}', '',r['question'],'',
                  'Displayed source quotation(s): '+r['summary_quote'],'',
-                 'Displayed model justification (plain-language summary): '+r['displayed_justification'],'','Full recorded selected-answer justification: '+r['a']['justification'],'',
+                 'Displayed model justification (verbatim excerpt): '+r['displayed_justification'],'','Full recorded selected-answer justification: '+r['a']['justification'],'',
                  'Unknowns: '+json.dumps(r['a']['unknowns'],ensure_ascii=False),'',
                  'Complete answers, inactive branches and decision:',json.dumps(dict(answers=r['d']['answers'],inactive=r['d']['inactive_questions'],decision=r['d']['decision']),ensure_ascii=False,indent=2),'',
                  'Full selected-answer evidence:',json.dumps(r['bases'],ensure_ascii=False,indent=2)]
         if i==4:text += ['', '4.4 reasoning basis: '+json.dumps(r['inference_basis'],ensure_ascii=False),'',r['inference']]
-        if i==5:text += ['', 'HTML-report proof failed: see analysis/figure1/qa/html-report-proof.md. No HTML output is claimed.']
+        if i==5:text += ['', 'The exact run-build HTML render succeeded. Product-name-only substitutions are proved in analysis/figure1/qa/html-report-relabel.md; the original and relabelled renders are retained. Figure 1 shows a crop of the actual one-trial domain summary, whose table includes the AVATAR title; the trial-page screenshot is retained separately.']
     (out/'figure1-notes.md').write_text('\n'.join(text)+'\n',encoding='utf8')
 
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--data-root',type=Path,default=ROOT);p.add_argument('--logs-root',type=Path,required=True);p.add_argument('--arbiter-root',type=Path,required=True);args=p.parse_args()
+    from relabel_report import main as relabel_report
+    relabel_report()
     data=load(args.data_root,args.arbiter_root);rows=trace_data(data,args.data_root,args.logs_root)
     from figure2 import draw_trace, tool_audit
     data['tool_audit']=tool_audit(args.logs_root)
@@ -557,7 +545,7 @@ def main():
     from geometry import check
     workflow=draw_workflow(data)
     workflow_geometry=check(workflow)
-    assert workflow.height/4<=110
+    assert workflow.height/4<=125
     assert workflow_geometry['passed'],json.dumps(workflow_geometry,indent=2)
     scene=draw_trace(data,rows);geometry=check(scene)
     if not geometry['passed']:
@@ -569,6 +557,8 @@ def main():
     qa['Figure2']['bundle_facts']=data['bundle_facts']
     qa['Figure2']['reader_jargon_guard']=True
     qa['Figure2']['all_quotes_answers_labels_asserted']=True
+    qa['Figure1']['raster_report_thumbnail']=workflow.report_image['min_text_pt']
+    qa['Figure2']['text_provenance_asserted']=True
     write_notes(data,rows,out)
     (HERE/'qa.json').write_text(json.dumps(qa,indent=2)+'\n')
     print(json.dumps(qa['Figure2'],indent=2))
