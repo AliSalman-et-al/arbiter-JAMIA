@@ -99,6 +99,12 @@ Report Overall against the meta label for each arm (section 5.1 metrics), on the
   - Resolved 2026-10-18 from the run bundles. The exception is a recorded model override, not an export error. ARBITER's server proposes the algorithm judgement. The assessing model may adopt a different judgement only through a reasoned override, which the bundle records with its rationale and evidence (`decision.proposed`, `decision.adopted`, `decision.adjudication`). Across the analysis set, the bundles record 0 overrides in 510 ARBITER-Sonnet domains and 1 in 505 ARBITER-Haiku domains (hill-2017 D1, Low → Some concerns). The reported labels are kept as the system produced them.
   - Table 3 therefore reports two rates for each ARBITER arm. The first is agreement of the proposed judgement with the official algorithm, which should be 100%; check it from the bundles. The second is the override rate, with every override listed in the supplement with its recorded rationale. Do not describe ARBITER judgements as algorithm-determined "by construction". Describe them as algorithm-proposed, with any departure recorded and auditable. For the baseline arms, an algorithm violation is an unrecorded departure, because no rationale or trace exists.
 - Report the violation rate per arm and per domain. Meta labels have no signalling answers, so the meta labels get the overall check only.
+- Amended 2026-10-18: each baseline domain cell gets one of three statuses:
+  - **Consistent:** the reported label equals the algorithm's output.
+  - **Violation:** the answer path is complete, and the reported label differs from the algorithm's output.
+  - **Invalid answer path:** a question that the RoB 2 path requires was answered NA or not answered, so the algorithm cannot reach a judgement. For example, 4.3=NA after 4.1=N and 4.2=N.
+
+  Report each rate, and their sum as "departure from RoB 2 structure". Run a sensitivity analysis that resolves each invalid NA first as N/PN and then as NI, and report the violation counts under each. For the ARBITER arms, confirm from the bundles that every required question was answered.
 
 ### 5.5 Reliability of the reference standard (Table 4)
 
@@ -122,6 +128,8 @@ Until the coding is filled in, the report shows a placeholder for this analysis.
 ### 5.7 Grounding metric
 
 Report the share of signalling answers whose justification contains a verbatim quotation, for each Sonnet arm. A quotation is text inside straight or curly double quotes with at least 5 words. Only answers marked `active` count. Report this as descriptive only. It is not a measure of whether the quotes were verified.
+
+Amended 2026-10-18: this metric goes to the supplement only. ARBITER stores cited passages as evidence records in the bundle, not as quotations inside its justification text, so the share of quoted justifications understates its grounding. The main grounding measures are evidence coverage and bundle verification (section 5.8).
 
 ### 5.8 Process and audit metrics (added 2026-10-18; Table 5 or supplement)
 
@@ -157,13 +165,14 @@ Baseline arms have no evidence trace. Report them as "not available" rather than
 
 | Item | Content |
 |---|---|
-| Fig 1 | The ARBITER architecture with one worked trace. The trace runs from a quoted passage to a signalling answer, then through the algorithm to a domain judgement, then to the verifiable bundle. Use a consensus cell where ARBITER beat the meta label. The pipeline drafts the diagram and lists 3 to 5 candidate cells. The authors pick one. |
+| Fig 1 | The ARBITER workflow, with one worked trace built from a bundle. Steps: trial sources captured → the assessed result is proposed and the user approves it → the model answers each signalling question and cites passages → the server checks each cited passage against the captured sources → the server applies the RoB 2 algorithm (proposed judgement; any override is recorded with its rationale) → a verifiable bundle is exported. The trace uses a real cited passage with its page locator, the answers abbreviated Y/PY/PN/N/NI/NA, the proposed judgement, the meta label and the consensus preferred judgement. Use a consensus cell where ARBITER beat the meta label. The pipeline drafts the figure and lists 3 to 5 candidate cells. The authors pick one. |
 | Fig 2 | Flow diagram: 16 metas → 105 trials → 3 excluded (unsupported design) → 102 → 510 D1 to D5 cells → 154 disputed → 129 consensus and 25 split. |
 | Fig 3 | Panel A: the primary endpoint, with win shares and CIs for consensus, adjudicator A, adjudicator Z and the split-cell sensitivity. Panel B: all 154 disputed cells grouped by which arm departed from the meta label, coloured by whose label the adjudicators preferred. |
-| Fig 4 | By domain: weighted κ against the meta label and against the composite reference, for both Sonnet arms, with all-Low accuracy marked. |
+| Fig 4 | By domain: weighted κ against the meta label and against the composite reference, for both Sonnet arms. Show κ only. Do not plot accuracy on the same axis as κ. Mark the all-Low rule as a reference line at κ = 0. Accuracy stays in Table 2. |
 | Table 1 | Benchmark set: one row per meta with field, journal, trial count and meta-label distribution by domain. |
 | Table 2 | Agreement with meta labels (section 5.1) for ARBITER-Sonnet, baseline-Sonnet and all-Low, on D1 to D5 pooled and Overall. |
-| Table 3 | Algorithm consistency (section 5.4). |
+| Table 3 | Algorithm consistency and audit (sections 5.4 and 5.8). Per arm: consistent, violation and invalid-answer-path rates, with overrides for the ARBITER arms; Overall consistency; evidence coverage; bundle verification. |
+| Table 5 | Process metrics (section 5.8), per Sonnet arm: time per trial in minutes, cost per trial in USD, tokens per trial, agent steps and continue prompts. Show the median [IQR] and paired differences. The Haiku arms go in the supplement. If the journal's display-item limit binds, Table 5 moves to the supplement. |
 | Table 4 | Reliability of the reference standard (section 5.5), and the error taxonomy (section 5.6) if space allows. |
 
 ### Supplement
