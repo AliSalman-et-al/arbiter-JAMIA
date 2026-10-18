@@ -37,6 +37,7 @@ MINT = "#E4F2EA"
 YELLOW = "#FFF7D6"
 HILITE = "#FFEA83"
 GREY = "#626262"
+UNASSISTED = "#DF8F44"
 DISPLAY = {"low": "Low", "some_concerns": "Some concerns", "high": "High",
            "no_information": "No information", "probably_no": "Probably no",
            "probably_yes": "Probably yes", "yes": "Yes", "no": "No"}
@@ -252,8 +253,10 @@ def draw_workflow(data):
                ["get_domain_context", "save_domain_judgment"], ["review_trial", "finalize_batch"]]
     responses = ["source list", "validation result", "proposed judgement", "review report"]
     for cx, calls, response in zip(centers, visible, responses):
-        s.line(cx-61, 216, cx-61, 300, arrow=True, sw=1.4)
-        s.line(cx+61, 300, cx+61, 216, arrow=True, sw=1.4)
+        request_x = cx-66 if cx==480 else cx-61
+        response_x = cx+66 if cx==480 else cx+61
+        s.line(request_x, 216, request_x, 300, arrow=True, sw=1.4)
+        s.line(response_x, 300, response_x, 216, arrow=True, sw=1.4)
         for y, call in zip([239, 262], calls):
             assert s.width(call, 10.2, "mono") * .92 < 118
             s.text(cx-7 if cx==480 else cx, y, call, 10.2, "mono", anchor="middle", stretch=.84 if cx==480 else .92)
@@ -278,12 +281,11 @@ def draw_workflow(data):
     s.text(612, 451, ".arbiter.zip", 10.5, "mono", anchor="middle")
 
     red = "#B32624"
-    # A short return inside the assessment column, beside the normal response.
-    s.add(f'<path d="M532 300 Q529 257 532 216" fill="none" stroke="{red}" stroke-width="2.2"/>')
-    s.add(f'<polygon points="532,216 528,224 536,224" fill="{red}"/>')
+    # One continuous return connects the pill through the server lane to the agent.
+    s.add(f'<path d="M535 386 L535 216" fill="none" stroke="{red}" stroke-width="2.2"/>')
+    s.add(f'<polygon points="535,216 531,224 539,224" fill="{red}"/>')
     s.rect(307, 386, 276, 23, "white", 6, stroke=red, sw=1.1)
     s.text(315, 402, "invalid or unbound answer → not saved", 11, "bold", red)
-    s.add(f'<path d="M532 377 L532 386" fill="none" stroke="{red}" stroke-width="1.2"/>')
     # Remove the former panel-heading margin from both variants.
     s.parts=['<g transform="translate(0 -28)">',*s.parts,'</g>']
     for record in s.pdf_text:record['y']-=28
@@ -458,7 +460,7 @@ def draw_trace(data,rows,with_unassisted=True):
             if start>=0 and hi>lo:
                 xx=x+s.width(line[:lo-offset],10.6,face)
                 ww=s.width(line[lo-offset:hi-offset],10.6,face)
-                s.rect(xx-2,y-10,ww+4,13,fill or 'none',3,stroke='#B35B22' if outline else 'none',sw=1.1)
+                s.rect(xx-2,y-10,ww+4,13,fill or 'none',3,stroke=UNASSISTED if outline else 'none',sw=1.1)
             s.text(x,y,line,10.6,face)
             y+=13;offset+=len(line)+1
         return y
@@ -492,7 +494,8 @@ def draw_trace(data,rows,with_unassisted=True):
         yy=block(s,80,yy+2,r['reason']+('…' if not r['reason'].endswith('.') else ''),width-58,fill=HILITE if i<5 else LAVENDER,size=10.6,leading=13)
         if i==1:
             s.text(22,yy+4,'Unknown:',10.6,'bold',GREY)
-            yy=block(s,66,yy+4,r['a']['unknowns'][0],width-148,size=10.6,leading=13,color=GREY)
+            unknown_x=22+s.width('Unknown:',10.6,'bold')+5
+            yy=block(s,unknown_x,yy+4,r['a']['unknowns'][0],width-148,size=10.6,leading=13,color=GREY)
             last=s.text_records[-1]
             callout(right-99,last['baseline'],4,'Recorded gap',(last['x']+last['width']+2,last['baseline']+3))
         if i==2:
@@ -516,7 +519,7 @@ def draw_trace(data,rows,with_unassisted=True):
             ua_index=len(s.parts)
             uy=marked_text(528,y+17,r['unassisted_answers'],146,'4.3 NA' if i==4 else None,outline=i==4,face='bold')
             phrase={4:'Assessors were not blinded to allocation',5:'registered 5-year time frame'}.get(i)
-            uy=marked_text(528,uy+5,r['unassisted'],146,phrase,HILITE if i==4 else LAVENDER)
+            uy=marked_text(528,uy+5,r['unassisted'],146,phrase,outline=bool(phrase))
             if i==4:
                 uy=block(s,528,uy+6,'4.3 skipped despite this → invalid answer path',146,size=10.6,face='bold',leading=13)
             if i==5:
@@ -619,7 +622,7 @@ def write_notes(data,rows,out):
     '', '## Save-call rejection audit','',json.dumps(json.loads((HERE/'save-rejections-summary.json').read_text()),indent=2),
     '', 'The CSV has one row per unique tool-use ID, matched to its tool result across all turn logs. Trials come from the Sonnet domain-label file with the three design exclusions; exactly 102 are required. Rejected means an error flag or an explicit not-saved/error result. Reasons are classified from actual error details, not the scientific validity of a judgement. Accepted includes repeat successful saves. Chronology uses numeric turn ordering and unique call insertion order. All 47 trial-domain assessments with rejections ended with successful saves; none of the 510 domains lacked one. All 53 rejected calls have a later accepted save for their domain. One PALOMA-2 call omitted the domain entirely; its attribution to D1 is inferred from the explicit D1 retries immediately before and after it, asserted by the audit and marked in the CSV. One malformed JSON input retains a literal domain_id in its raw input. Counts describe Sonnet only; they are not a failure rate across all ARBITER models.',
     '', '## Figure 2','',f'Bundle SHA-256: `{data["bundle_sha256"]}`. Manifest content hashes checked at every build. Archived verifier: `{data["verification"]["result"]}`; this does not certify clinical correctness. Source hash prefixes identify searchable projections, not PDF bytes. Quotes preserve source text; whitespace wraps are collapsed. Two extraction line breaks are joined for legibility: assign-↵ment → assignment and cen↵sored → censored. No words are substituted. Ellipses denote omissions. Official question excerpts are shortened, with ellipses, from the RoB 2 wording.',
-    '', 'AVATAR log correction: the rejected D3 save (`toolu_01CTHBEhdF5BAGdpapeh9D5F`) flattened the locator fields directly into the basis. The accepted retry (`toolu_01PN3CESV3Hj5VbcRRWKbc5E`) nested source/page/lines under `bases[].evidence`, an accepted source-span reference form; it did **not** submit an `eh_…` string. The server bound it as `eh_e66d374e838e8c6d`. Therefore the figure illustrates schema/binding validation, not a claim that literal handles are the only accepted syntax.\n\nThe four numbered callouts identify span binding, branching, the server algorithm and unknowns. Yellow links direct-support source text to the corresponding recorded reasoning. Lavender links context text to the recorded composite-outcome interpretation. The missing dated plan remains plain text: a context quotation does not itself prove absence. Inline Unassisted annotations identify the invalid path and registry comparison without arrows. Their requested wording wraps to two lines to keep type at least 7 pt in the narrow column. Answer pills follow questions; Justification labels identify agent text. D5 and Overall use pale blue judgement chips; D5 has a heavier border. Unknown text is grey with a bold label and an adjacent curved callout. The footer compares **D5**, the domain adjudicated for this trial; the same Published/Unassisted labels also apply to Overall, but Overall was not adjudicated.','']
+    '', 'AVATAR log correction: the rejected D3 save (`toolu_01CTHBEhdF5BAGdpapeh9D5F`) flattened the locator fields directly into the basis. The accepted retry (`toolu_01PN3CESV3Hj5VbcRRWKbc5E`) nested source/page/lines under `bases[].evidence`, an accepted source-span reference form; it did **not** submit an `eh_…` string. The server bound it as `eh_e66d374e838e8c6d`. Therefore the figure illustrates schema/binding validation, not a claim that literal handles are the only accepted syntax.\n\nThe four numbered callouts identify span binding, branching, the server algorithm and unknowns. Yellow links direct-support source text to the corresponding recorded reasoning. Lavender links context text to the recorded composite-outcome interpretation. The missing dated plan remains plain text: a context quotation does not itself prove absence. Orange outlines mark the three issues flagged by the authors in the Unassisted output: 4.3 NA, the unblinding phrase and the registered-time-frame phrase. They do not encode evidence types. Their requested wording wraps to two lines to keep type at least 7 pt in the narrow column. Answer pills follow questions; Justification labels identify agent text. D5 and Overall use pale blue judgement chips; D5 has a heavier border. Unknown text is grey with a bold label and an adjacent curved callout. The footer compares **D5**, the domain adjudicated for this trial; the same Published/Unassisted labels also apply to Overall, but Overall was not adjudicated.','']
     tool_notes=['## Workflow tool provenance','',f'ARBITER source commit: `{data["source_commit"]}`. Definitions: `src/arbiter/interfaces/mcp/server.py`.','']
     for phase,names in PHASES.items():
         tool_notes.append(phase+': '+', '.join(f'`{name}` (line {data["tool_lines"][name]})' for name in names)+'.')
