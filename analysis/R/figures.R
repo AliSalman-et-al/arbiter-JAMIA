@@ -52,7 +52,7 @@ build_figures <- function() {
     label=c('16 meta-analyses','105 benchmark trials',
       '3 excluded: unsupported design\natwine-2020\nhaney-2004\nherrmann-2016',
       '102 analysis-set trials','510 D1-D5 cells per arm\n81 meta Overall labels',
-      '154 disputed cells','129 consensus cells\n62 cells where Sonnet arms differ',
+      '154 disputed cells','129 consensus cells',
       '25 split cells\n18 cells where Sonnet arms differ',
       '62 differing consensus cells:\n54 ARBITER; 7 Baseline; 1 neither'))
   edges <- tibble(x=c(0,0,0,0,0,0,0,-1.6),xend=c(0,0,2.1,0,0,-1.6,1.6,-1.6),
