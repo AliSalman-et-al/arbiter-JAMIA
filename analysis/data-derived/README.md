@@ -31,3 +31,12 @@ bundle-trace-evidence.csv (eligible consensus cells with linked cited passages,
 source/page locators, evidence identifiers and abbreviated answers). Regenerate
 both with `Rscript extract-bundle-review.R`. This bundle-only extractor fails
 on missing bundles and invalid ARBITER paths and does not require raw logs.
+
+The binding cost amendment is implemented by `Rscript extract-api-costs.R`.
+It streams raw logs and requires every terminal result. api-cost-turns.csv and
+api-cost-trials.csv retain request, terminal, side-call and signed residual token
+components, tier counts, compaction flags, API point/lower/upper equivalents,
+five-minute side-write sensitivity and unusable harness cost. Table 5 uses the
+API point estimate. The reconciliation and complete cost summaries are exported
+by run.R. Rates are frozen to plan section 5.8. Synthetic zero-usage messages
+are excluded. Reports read derived CSVs and never stream raw logs during render.

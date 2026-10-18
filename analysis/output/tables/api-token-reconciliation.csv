@@ -1,0 +1,5 @@
+arm,request_input,request_write1,request_write5,request_read,result_input,result_write1,result_write5,result_read,result_output,side_input,side_write1,side_write5,side_read,side_output,gap_input,gap_write1,gap_write5,gap_read,requests,high_requests,compaction_events,turns_with_side_calls,turns_with_request_excess,side_without_compaction
+ARBITER-Sonnet,9794,50698919,0,512761030,9794,50695878,0,512867801,2237043,5777447,13464429,0,203137779,2388538,0,-3041,0,106771,4897,3272,322,122,3,0
+Baseline-Sonnet,644,1910531,0,3585005,644,1910531,0,3585005,248579,0,0,0,0,0,0,0,0,0,322,0,0,0,0,0
+ARBITER-Haiku,11760,57557731,0,584364182,11792,57619249,0,586216581,5718801,4772002,19882918,0,237650013,4457402,32,61518,0,1852399,5878,3620,356,140,0,5
+Baseline-Haiku,872,4432900,0,8581878,872,4432900,0,8581878,1258831,0,0,0,0,0,0,0,0,0,436,10,0,0,0,0

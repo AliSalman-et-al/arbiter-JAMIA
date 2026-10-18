@@ -103,3 +103,18 @@ No Python is used. This file records conservative resolutions as they arise.
     explicitly restricted to the disputed set and cannot estimate overall
     meta-label accuracy. Provenance placeholders are removed except the ARBITER
     1.0.0 Zenodo DOI; human coding and checklist fields remain empty.
+
+12. **Binding cost amendment 69c73c6 incorporated.** API list-price equivalents
+    replace harness cost in Table 5; harness figures are supplementary only and
+    unusable (unrecognized_model; unknown cost basis). Request events are deduplicated
+    by message ID within turn; synthetic zero-usage messages are not requests.
+    Input-side result-minus-request residuals can be negative after retries.
+    We retain signed residuals, applying the plan's low-tier, request-share and
+    high-tier pricing allocations without silently dropping request tokens.
+    Side calls are modelUsage minus result.usage; compaction events are counted
+    separately. Turns with side tokens but no compaction boundary are flagged,
+    using low/high bounds and request-share point allocation. One-hour side-call
+    writes are primary; five-minute writes are a separate sensitivity. All trial
+    bounds are ordered; Sonnet bounds coincide. Thinking tokens are not added
+    to output again. The rate card is frozen to the binding plan, not inferred
+    from the unusable harness price. No geography multiplier applies.

@@ -9,6 +9,11 @@ validate_gate(checks)
 weights <- stratified_cluster_weights(inputs$trials,B,SEED)
 cells <- adjudication_cells(inputs)
 run_metrics <- load_run_metrics()
+api_trials <- readr::read_csv('data-derived/api-cost-trials.csv',show_col_types=FALSE)
+api_turns <- readr::read_csv('data-derived/api-cost-turns.csv',show_col_types=FALSE)
+run_metrics <- run_metrics |> rename(harness_cost_usd=cost_usd) |>
+  left_join(api_trials |> select(arm,slug,cost_usd=point),by=c('arm','slug'))
+stopifnot(nrow(run_metrics)==408L,!anyNA(run_metrics$cost_usd))
 bundle_decisions <- bundle_decision_cells(run_metrics)
 validate_proposed_gate(bundle_decisions,inputs$labels)
 bundle_paths <- readr::read_csv('data-derived/bundle-path-checks.csv',show_col_types=FALSE)
@@ -24,6 +29,17 @@ save_table <- function(x,name) {
     'All-Low','ARBITER-Haiku','Baseline-Haiku','Meta'))),,drop=FALSE]
   readr::write_csv(x,paste0('output/tables/',name,'.csv'),na='')
 }
+cost_summary <- api_trials |> group_by(arm) |> summarise(across(
+  c(point,lower,upper,harness,side_5m_point,side_5m_lower,side_5m_upper),
+  list(total=sum,median=median)),.groups='drop')
+save_table(cost_summary,'api-cost-summary')
+save_table(api_turns |> mutate(has_side=side_input+side_write1+side_write5+side_read+side_output>0,
+  request_excess=gap_input<0|gap_write1<0|gap_write5<0|gap_read<0) |> group_by(arm) |> summarise(across(
+  matches('^(request|result|side|gap)_(input|write1|write5|read|output)$'),sum),
+  requests=sum(requests),high_requests=sum(high_requests),compaction_events=sum(compaction_events),
+  turns_with_side_calls=sum(has_side),
+  turns_with_request_excess=sum(request_excess),
+  side_without_compaction=sum(side_without_compaction),.groups='drop'),'api-token-reconciliation')
 save_table(process_summary(run_metrics),'process-summary')
 save_table(process_display(run_metrics,weights),'table5')
 save_table(process_display(run_metrics,weights,'Haiku'),'table5-haiku')

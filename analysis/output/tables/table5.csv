@@ -1,6 +1,6 @@
 Metric,ARBITER-Sonnet,Baseline-Sonnet,Paired mean difference (95% CI)
 Time (minutes/trial),7.6 [6.1 to 10.5],0.5 [0.4 to 0.5],11.0 (8.4 to 14.1)
-Cost (USD/trial),11.11 [10.38 to 12.07],0.24 [0.17 to 0.34],10.91 (10.71 to 11.11)
+Cost (USD/trial),3.78 [3.46 to 4.10],0.09 [0.07 to 0.13],3.68 (3.61 to 3.75)
 Input tokens (thousands/trial),0.096 [0.086 to 0.104],0.006 [0.006 to 0.006],0.090 (0.088 to 0.092)
 Cache creation tokens (thousands/trial),493.973 [459.698 to 544.387],16.790 [10.759 to 25.805],478.288 (469.390 to 487.124)
 Cache read tokens (thousands/trial),4964.973 [4483.251 to 5585.994],24.690 [24.563 to 24.957],4992.969 (4867.215 to 5117.104)

@@ -27,3 +27,16 @@ for(path in c('results.html','supplement.html')) {
 }
 coding <- readr::read_csv('output/coding/coding-sheet.csv',show_col_types=FALSE)
 stopifnot(all(is.na(coding$code_author1)),all(is.na(coding$code_author2)),all(is.na(coding$final_code)))
+cost <- readr::read_csv('data-derived/api-cost-trials.csv',show_col_types=FALSE)
+stopifnot(nrow(cost)==408L,all(cost$lower<=cost$point),all(cost$point<=cost$upper),
+  all(cost$point[grepl('Sonnet',cost$arm)]==cost$lower[grepl('Sonnet',cost$arm)]),
+  all(cost$point[grepl('Sonnet',cost$arm)]==cost$upper[grepl('Sonnet',cost$arm)]))
+turns <- readr::read_csv('data-derived/api-cost-turns.csv',show_col_types=FALSE)
+reconciliation <- readr::read_csv('output/tables/api-token-reconciliation.csv',show_col_types=FALSE)
+for(a in reconciliation$arm) {
+  t <- turns[turns$arm==a,]
+  stopifnot(reconciliation$turns_with_side_calls[reconciliation$arm==a]==
+    sum(t$side_input+t$side_write1+t$side_write5+t$side_read+t$side_output>0))
+  for(component in c('input','write1','write5','read')) stopifnot(all(
+    t[[paste0('request_',component)]]+t[[paste0('gap_',component)]]==t[[paste0('result_',component)]]))
+}

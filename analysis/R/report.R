@@ -1,4 +1,13 @@
 options(scipen=999)
+cost_summary_display <- function(x,side_5m=FALSE) {
+  columns <- if(side_5m) grep('^side_5m_',names(x),value=TRUE) else
+    grep('^(point|lower|upper|harness)_',names(x),value=TRUE)
+  x |> select(arm,all_of(columns)) |>
+    rename_with(~sub('^side_5m_','',.x),-arm) |>
+    pivot_longer(-arm,names_to=c('Basis','.value'),names_sep='_') |>
+    mutate(across(c(total,median),~sprintf('%.2f',.x))) |>
+    rename(`Total (USD)`=total,`Median per trial (USD)`=median)
+}
 table_data <- function(name) readr::read_csv(paste0('output/tables/',name,'.csv'),show_col_types=FALSE)
 number <- function(x) ifelse(is.finite(x),sprintf('%.3f',x),'—')
 percent <- function(x) ifelse(is.finite(x),sprintf('%.1f%%',100*x),'—')

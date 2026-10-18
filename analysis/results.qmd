@@ -100,7 +100,7 @@ Evidence coverage and structural bundle verification are the main grounding evid
 show_table(table_data('table5'))
 ```
 
-Values are median [IQR], with paired mean ARBITER-Sonnet minus Baseline-Sonnet differences (95% CI), over 102 trials. Time is minutes per trial; tokens are thousands per trial. Costs are as reported by the harness in USD per trial; their cost basis is unknown. Thinking tokens are part of output tokens. Totals and Haiku results are in the supplement.
+Values are median [IQR], with paired mean ARBITER-Sonnet minus Baseline-Sonnet differences (95% CI), over 102 trials. Time is minutes per trial; tokens are thousands per trial. Cost is a reconstructed API list-price equivalent in USD per trial under the frozen rate card in plan section 5.8; it is not expenditure. Thinking tokens are part of output tokens. Totals and Haiku results are in the supplement.
 
 ## Table 4: reliability of the reference standard
 
@@ -130,4 +130,4 @@ if(file.exists('output/tables/coding-counts.csv')) {
 
 ## Limitations facts and author completion
 
-Adjudicators could only choose among the three offered labels. Unadjudicated cells where both Sonnet arms matched the meta label are assumed correct in the composite. These features inflate absolute composite values. Each arm assessed each trial once; run-to-run variability is not estimated. The final worked-trace selection, human taxonomy coding and checklist page/section references require author completion. Process times and costs are harness measurements; thinking tokens are reported separately and are part of output tokens. Trial PDFs are not redistributed; source DOIs and FILES.csv hashes identify them.
+Adjudicators could only choose among the three offered labels. Unadjudicated cells where both Sonnet arms matched the meta label are assumed correct in the composite. These features inflate absolute composite values. Each arm assessed each trial once; run-to-run variability is not estimated. The final worked-trace selection, human taxonomy coding and checklist page/section references require author completion. Process times are harness measurements; costs are reconstructed API list-price equivalents; thinking tokens are reported separately and are part of output tokens. Trial PDFs are not redistributed; source DOIs and FILES.csv hashes identify them.

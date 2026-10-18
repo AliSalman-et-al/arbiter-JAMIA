@@ -39,3 +39,10 @@ bundles, not raw turn logs. It checks every domain history record's active
 questions and answers, then extracts trace candidates from cited evidence.
 `round3-report.md` records review fixes and verification. Table CSVs retain
 numeric precision; rendered tables format percentages and confidence intervals.
+
+The author amendment 69c73c6 supersedes harness pricing. Run
+`Rscript extract-api-costs.R` to reconstruct the frozen API list-price equivalents
+from raw logs. Table 5 uses per-trial point estimates. The supplement contains
+Haiku bounds, five-minute side-write sensitivity, unusable harness figures and
+request/result/side-call token reconciliation. Re-run `Rscript report-round3.R`
+after rendering to update the round 3 report from the committed table outputs.
