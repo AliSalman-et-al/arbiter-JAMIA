@@ -76,7 +76,7 @@ The primary localisation population contains 10 ARBITER and 47 Unassisted losses
 ## Time and reconstructed cost
 
 ```{r}
-proc <- manuscript_data('table5')
+proc <- manuscript_data('table5') |> mutate(across(where(is.character),fmt_process_text))
 ```
 
 Time per trial was `r proc[[2]][1]` minutes for ARBITER and `r proc[[3]][1]` minutes for Unassisted (median [IQR]); the paired mean difference was `r proc[[4]][1]` minutes (95% CI). Reconstructed API list-price cost per trial was US$`r proc[[2]][2]` and US$`r proc[[3]][2]`, respectively; the paired mean difference was US$`r proc[[4]][2]` (95% CI). These are list-price equivalents, not expenditure. The supplement gives process metrics, cost bounds and Haiku analyses.

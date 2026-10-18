@@ -1,0 +1,13 @@
+88 CSV files byte-identical (including Git newline normalisation) to 44a29a82fcfb8319555594869e24c8dde90635be
+Supplement.docx : 29 real Word table(s); text scan clean
+TRIPOD-LLM.docx : 1 real Word table(s); text scan clean
+Table1.docx : 1 real Word table(s); text scan clean
+Table2.docx : 1 real Word table(s); text scan clean
+Table3.docx : 1 real Word table(s); text scan clean
+Table4.docx : 1 real Word table(s); text scan clean
+Figure2 : embedded Fira Sans; min text 8.678091 pt; width 174 mm; 600-dpi LZW TIFF
+Figure3 : embedded Fira Sans; min text 7.5 pt; width 174 mm; 600-dpi LZW TIFF
+Figure4 : embedded Fira Sans; min text 8 pt; width 174 mm; 600-dpi LZW TIFF
+Figure5 : embedded Fira Sans; min text 7.966772 pt; width 174 mm; 600-dpi LZW TIFF
+eFigure1 : embedded Fira Sans; min text 8 pt; width 174 mm; 600-dpi LZW TIFF
+Reader-facing text scan clean; unchanged Figure 1 slot is explicitly excluded.

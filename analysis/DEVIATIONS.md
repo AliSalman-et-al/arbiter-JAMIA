@@ -223,3 +223,17 @@ No Python is used. This file records conservative resolutions as they arise.
     rounded for display. The override rationale retains the clinical phrase
     'baseline balance' verbatim; it is not an internal source label. The separate
     TRIPOD-LLM.docx remains an author-completion skeleton, with GRRAS IDs.
+
+28. **Round 8a legends and QA scope.** Legends are written to both the plan's
+    output/figure-legends.md and the requested output/manuscript/figure-legends.md.
+    Figure 1's legend follows the AVATAR plan; its old report slot, code and images
+    remain untouched for the other worktree. The prohibited-name scan therefore
+    explicitly excludes that unchanged slot, and scans all newly produced Word,
+    PDF and HTML reader-facing text plus both legend copies. Frozen statistical
+    CSVs retain machine identifiers to meet exact invariance. Composite displays
+    use the three section 5.2 metrics. Word table footers stay with the final row;
+    wide rationale text uses Field/Value rows. All regenerated figures were viewed
+    in colour, actual PDF rendition, greyscale and severity-1 protanopia,
+    deuteranopia and tritanopia. Raster mapping preserves raster storage order.
+    Real Word cells/fonts, PDF embedded fonts/minimum text and TIFF resolution/
+    LZW compression are verified. No numerical or methodological deviation occurs.

@@ -38,10 +38,10 @@ agreement_display <- function(x,ids=c('arm','domain'),difference=FALSE) {
 }
 main_table2 <- function() {
   pub <- manuscript_data('table2') |> mutate(Row=paste('Published',domain,reader_label(arm),sep='\n'))
-  comp <- manuscript_data('agreement-composite') |> filter(domain=='D1-D5',arm %in% c('ARBITER-Sonnet','Baseline-Sonnet')) |>
+  comp <- manuscript_data('agreement-composite') |> filter(domain=='D1-D5',arm %in% c('ARBITER-Sonnet','Baseline-Sonnet'),metric %in% c('kappa','AC2','accuracy')) |>
     mutate(Row=paste('Composite',domain,reader_label(arm),sep='\n'))
   dif <- bind_rows(manuscript_data('table2-differences'),manuscript_data('agreement-composite-differences') |>
-      filter(domain=='D1-D5')) |>
+      filter(domain=='D1-D5',metric %in% c('kappa','AC2','accuracy'))) |>
     filter(comparison=='ARBITER-Sonnet minus Baseline-Sonnet') |>
     mutate(Row=paste(if_else(reference=='Meta','Published','Composite'),domain,'ARBITER \u2212 Unassisted',sep='\n'))
   block <- function(x,label) {
@@ -73,7 +73,7 @@ main_table3 <- function() {
 }
 main_table4 <- function() {
   manuscript_data('table4-reliability') |> agreement_display('comparison') |>
-    mutate(comparison=reader_label(comparison)) |> rename(Comparison=comparison)
+    mutate(comparison=reader_label(comparison)) |> rename(Comparison=comparison,`Raw agreement`=`Exact agreement`)
 }
 main_table_notes <- function() list(
   paste('RoB 2, risk of bias tool for randomised trials. Counts are published labels pooled across D1\u2013D5.',

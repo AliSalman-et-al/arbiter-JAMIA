@@ -32,6 +32,11 @@ fmt_fraction <- function(n,N) {
   out <- paste0(n,'/',N,' (',fmt_number(100*n/N,1),'%)')
   out[!is.finite(n)|!is.finite(N)|N<=0] <- '\u2014'; out
 }
+fmt_process_text <- function(x) {
+  x <- gsub('\\(([0-9.,]+) to ([0-9.,]+)\\)','(\\1\u2013\\2)',x)
+  x <- sub('^-([0-9])','\u2212\\1',x)
+  gsub('([ (])-([0-9])','\\1\u2212\\2',x)
+}
 fmt_estimate <- function(x,proportion=FALSE) {
   out <- fmt_number(x$estimate)
   if(proportion && all(c('count','n') %in% names(x))) out <- fmt_fraction(x$count,x$n)
@@ -41,9 +46,10 @@ fmt_estimate <- function(x,proportion=FALSE) {
 display_frame <- function(x,supplement=TRUE) {
   x <- as.data.frame(x)
   for(n in names(x)) {
-    if(is.character(x[[n]]) || is.factor(x[[n]])) x[[n]] <- reader_label(as.character(x[[n]]),supplement)
+    if(is.character(x[[n]]) || is.factor(x[[n]])) x[[n]] <- fmt_process_text(reader_label(as.character(x[[n]]),supplement))
     else if(is.numeric(x[[n]])) x[[n]] <- vapply(x[[n]],function(v)
-      if(!is.finite(v)) '\u2014' else if(v==trunc(v)) format(v,trim=TRUE,scientific=FALSE,big.mark=',') else fmt_number(v,2),character(1))
+      if(!is.finite(v)) '\u2014' else if(n=='question') sprintf('%.1f',v)
+      else if(v==trunc(v)) fmt_process_text(format(v,trim=TRUE,scientific=FALSE,big.mark=',')) else fmt_number(v,2),character(1))
     x[[n]][is.na(x[[n]])] <- '\u2014'
   }
   names(x) <- reader_label(names(x),supplement)
@@ -68,7 +74,7 @@ house_table <- function(x,footnote=NULL,width=6.85) {
   if(!is.null(footnote)) ft <- ft |> flextable::add_footer_lines(footnote) |>
     flextable::font(fontname='Arial',part='footer') |>
     flextable::fontsize(size=9,part='footer')
-  ft
+  flextable::paginate(ft,init=FALSE,hdr_ftr=TRUE)
 }
 manuscript_doc <- function() {
   doc <- officer::read_docx() |>

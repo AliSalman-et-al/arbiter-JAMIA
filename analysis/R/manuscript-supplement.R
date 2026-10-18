@@ -66,8 +66,9 @@ supplement_registry <- function(inputs) {
   }
   metadata <- readr::read_csv('data-curated/meta-analyses.csv',show_col_types=FALSE)
   add('Published label distributions by domain',manuscript_data('table1') |>
-    select(meta_id,Trials=trials,D1:D5) |> left_join(metadata |> select(meta_id,specialty),by='meta_id') |>
-    arrange(specialty) |> select(Specialty=specialty,Trials,D1:D5),
+    select(meta_id,Trials=trials,D1:D5) |> left_join(metadata |> select(meta_id,specialty,journal,year),by='meta_id') |>
+    arrange(specialty,journal) |> mutate(`Journal; year`=paste0(journal,'; ',year)) |>
+    select(Specialty=specialty,`Journal; year`,Trials,D1:D5),
     'Domain cells show Low / Some concerns / High counts; 102 analysis-set trials. See main Table 1 for source journals and topics.')
   add('Process metrics: Sonnet 5.5',manuscript_data('table5'),paste('Median [IQR]; paired mean ARBITER minus Unassisted difference (95% CI).',
     'USD denotes API list-price equivalents, not expenditure. Thinking is part of output.',CI_NOTE))
@@ -86,18 +87,22 @@ supplement_registry <- function(inputs) {
     if(ref=='composite') x <- filter(x,metric %in% c('kappa','AC2','accuracy'))
     add(if(ref=='meta') 'Agreement against Published, all arms and domains' else 'Agreement against the composite reference, Sonnet only',
       agreement_display(x),paste(AGREEMENT_NOTE,if(ref=='composite') COMPOSITE_NOTE else '',CI_NOTE))
+    differences <- manuscript_data(paste0('agreement-',ref,'-differences'))
+    if(ref=='composite') differences <- filter(differences,metric %in% c('kappa','AC2','accuracy'))
     add(paste('Paired differences against',if(ref=='meta') 'Published' else 'the composite reference'),
-      agreement_display(manuscript_data(paste0('agreement-',ref,'-differences')),c('comparison','domain'),TRUE),
+      agreement_display(differences,c('comparison','domain'),TRUE),
       paste('ARBITER minus Unassisted; original coefficient/proportion units.',if(ref=='composite') COMPOSITE_NOTE else '',CI_NOTE))
   }
   add('Per-adjudicator and split-cell win-share sensitivity',supplement_estimates(manuscript_data('primary-endpoint'),c('analysis','metric')),
     paste('Split discordant cells are forced ARBITER losses, without fabricating an Unassisted win; Neither includes these forced losses.',CI_NOTE))
   for(a in c('A','Z')) {
-    add(paste('Composite sensitivity using',reader_label(a)),agreement_display(manuscript_data(paste0('composite-',a))),
+    add(paste('Composite sensitivity using',reader_label(a)),agreement_display(manuscript_data(paste0('composite-',a)) |>
+        filter(metric %in% c('kappa','AC2','accuracy'))),
       paste('510 cells per Sonnet arm; the adjudicator preferred judgement replaces Published on every disputed cell.',
         'Only three labels were offered. Unadjudicated concordant cells are assumed correct; absolute values are inflated.',CI_NOTE))
     add(paste('Composite paired differences using',reader_label(a)),
-      agreement_display(manuscript_data(paste0('composite-',a,'-differences')),c('comparison','domain'),TRUE),
+      agreement_display(manuscript_data(paste0('composite-',a,'-differences')) |>
+        filter(metric %in% c('kappa','AC2','accuracy')),c('comparison','domain'),TRUE),
       paste('Original coefficient/proportion units; 510 cells per arm; no consensus split exclusion.',CI_NOTE))
   }
   add('Missing-judgement sensitivity: paired observed Haiku cells',agreement_display(manuscript_data('missing-sensitivity')),
@@ -116,7 +121,8 @@ supplement_registry <- function(inputs) {
   add('Invalid answer path sensitivity',manuscript_data('invalid-path-sensitivity'),
     'Required invalid answers recursively resolve as N/PN then NI, including newly required questions. No off-path imputation; counts are not new assessments.')
   add('Recorded model override',manuscript_data('recorded-overrides') |>
-    select(arm,slug,domain,proposed,adopted,rationale),
+    select(arm,slug,domain,proposed,adopted,rationale) |>
+    pivot_longer(everything(),names_to='Field',values_to='Value'),
     'hill-2017 D1: 1.1 = NI, 1.2 = PY, 1.3 = N. Rationale is verbatim model text, not endorsed guidance. Proposed Low; adopted Some concerns. Evidence identities remain in the accompanying CSV. The proposed-algorithm validation gate passes.')
   add('API cost reconstruction: point estimates and bounds',manuscript_data('api-cost-summary') |>
     mutate(across(where(is.numeric),~fmt_number(.x,2))),
@@ -149,9 +155,13 @@ supplement_table <- function(entry) {
   names(x)[names(x)=='arm'] <- 'Source'
   names(x)[names(x)=='meta id'] <- 'Meta-analysis'
   names(x)[names(x)=='n'] <- 'N'
+  if('Measure' %in% names(x)) x$Measure <- gsub('_',' ',x$Measure,fixed=TRUE)
   ft <- house_table(x,entry$note)
+  if(entry$caption=='Published label distributions by domain')
+    ft <- flextable::width(ft,j=1:8,width=c(.9,1.65,.4,rep(.78,5)))
   if('short text' %in% names(x)) ft <- flextable::width(ft,j=seq_len(ncol(x)),width=c(.8,1.35,.4,.55,3.35,.4))
   if(ncol(x)==3) ft <- flextable::width(ft,j=1:3,width=c(1.4,2.5,2.95))
+  if(ncol(x)==2) ft <- flextable::width(ft,j=1:2,width=c(1.4,5.45))
   ft
 }
 build_supplement <- function(inputs) {

@@ -7,10 +7,14 @@ testthat::test_that('display punctuation follows the manuscript standard', {
   testthat::expect_identical(fmt_fraction(54,62),'54/62 (87.1%)')
   testthat::expect_identical(fmt_fraction(0,0),'\u2014')
   testthat::expect_identical(fmt_ci(NA_real_,1),'\u2014')
+  testthat::expect_identical(fmt_process_text('11.0 (8.4 to 14.1)'),'11.0 (8.4\u201314.1)')
+  testthat::expect_identical(fmt_process_text('-0.1 (-0.3 to 0.2)'),'\u22120.1 (\u22120.3 to 0.2)')
 })
 testthat::test_that('reader labels translate sources without changing data', {
   testthat::expect_identical(reader_label(c('ARBITER-Sonnet','Baseline-Sonnet','A','Z')),
     c('ARBITER','Unassisted','Adjudicator 1','Adjudicator 2'))
   testthat::expect_identical(reader_label('ARBITER-Haiku',TRUE),'ARBITER (Haiku 5.5)')
   testthat::expect_identical(unname(JAMA_ROLES[1:3]),c('#00A1D5','#DF8F44','#374E55'))
+  testthat::expect_identical(display_frame(data.frame(question=1.1))$question,'1.1')
+  testthat::expect_identical(display_frame(data.frame(count=-3041))$count,'\u22123,041')
 })

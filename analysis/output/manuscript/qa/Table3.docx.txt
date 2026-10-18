@@ -1,0 +1,47 @@
+Table 3. RoB 2 rule consistency and audit (95% CI)
+Measure
+ARBITER
+Unassisted
+D1-D5: Consistent
+510/510 (100.0%) (1.00–1.00)
+444/509 (87.2%) (0.84–0.90)
+D1-D5: Violation
+0/510 (0.0%) (0.00–0.00)
+26/509 (5.1%) (0.03–0.07)
+D1-D5: Invalid answer path
+0/510 (0.0%) (0.00–0.00)
+39/509 (7.7%) (0.06–0.10)
+D1-D5: Departure
+0/510 (0.0%) (0.00–0.00)
+65/509 (12.8%) (0.10–0.16)
+D1-D5: Proposed agreement
+510/510 (100.0%) (1.00–1.00)
+Not available
+D1-D5: Recorded override
+0/510 (0.0%) (0.00–0.00)
+Not available
+Overall: Consistent
+101/102 (99.0%) (0.97–1.00)
+102/102 (100.0%) (1.00–1.00)
+Overall: Permitted escalation
+1/102 (1.0%) (0.00–0.03)
+0/102 (0.0%) (0.00–0.00)
+Overall: Violation
+0/102 (0.0%) (0.00–0.00)
+0/102 (0.0%) (0.00–0.00)
+Audit: Evidence coverage
+1538/1538 (100.0%) (1.00–1.00)
+Not available
+Audit: Text-span evidence binding
+1407/1407 (100.0%) (1.00–1.00)
+Not available
+Audit: Visual evidence binding
+14/14 (100.0%) (1.00–1.00)
+Not available
+Audit: Structural evidence binding (overall)
+1421/1421 (100.0%) (1.00–1.00)
+Not available
+Audit: Bundle verification
+102/102 (100.0%) (1.00–1.00)
+Not available
+Values are n/N (%) (95% CI, bounds as proportions). Domain consistency for ARBITER refers to proposals; recorded overrides are separate. Departure = violation + invalid path. One Unassisted domain has no evaluable label/answer set and is excluded (509 evaluable). Overall consistency is exact worst-domain agreement; permitted escalations are separate. Evidence binding counts distinct identities cited by current active answers. Text spans are server-extracted; visual regions are server-rendered and hash-bound, but transcriptions are model-written and not checked against images. Bundle verification is structural, not evidence of clinical correctness or completion. Unassisted evidence traces, proposed judgements and recorded overrides are not available. RoB 2, risk of bias tool for randomised trials. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.
