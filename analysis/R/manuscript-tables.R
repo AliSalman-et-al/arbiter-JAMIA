@@ -1,3 +1,8 @@
+MAIN_TABLE_TITLES <- c(
+  'Sixteen meta-analyses across 15 specialties supplied the benchmark',
+  'ARBITER detected more of the risk the published reviews flagged, with lower specificity',
+  'Without ARBITER, 1 in 8 domain ratings broke the RoB 2 rules',
+  'Before seeing any label, both adjudicators’ own ratings agreed with ARBITER far more than with the unassisted model or the published review')
 manuscript_data <- function(name) readr::read_csv(paste0('output/tables/',name,'.csv'),show_col_types=FALSE)
 COMPOSITE_NOTE <- paste('Composite reference: consensus preferred judgement on consensus cells,',
   'Published on other cells; 25 split cells excluded (485 cells per arm).',
@@ -10,7 +15,7 @@ TOPIC_ABBREVIATIONS <- paste('ACL, anterior cruciate ligament; CDK4/6, cyclin-de
 CI_NOTE <- 'CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.'
 AGREEMENT_NOTE <- paste('Linearly weighted Cohen\u2019s \u03ba and Gwet\u2019s AC2.',
   'Exact agreement, sensitivity and specificity are n/N (%); their CI bounds are percentages.',
-  'Not Low means Some concerns or High. All-Low rule has no variance; only accuracy and specificity are reported.',
+  'Some concerns or High is the positive class. All-Low rule has no variance; only accuracy and specificity are reported.',
   'Paired differences are on the coefficient scale or in percentage points; \u2014 indicates undefined or not applicable.')
 benchmark_table <- function(inputs,per_domain=FALSE) {
   meta <- readr::read_csv('data-curated/meta-analyses.csv',show_col_types=FALSE)
@@ -41,60 +46,56 @@ agreement_display <- function(x,ids=c('arm','domain'),difference=FALSE) {
   },character(1))
   x |> select(all_of(ids),metric,value) |> pivot_wider(names_from=metric,values_from=value) |>
     rename_with(~c(kappa='Weighted \u03ba',AC2='AC2',accuracy='Exact agreement',
-      sensitivity='Sensitivity for Not Low',specificity='Specificity for Not Low')[.x],all_of(metrics))
+      sensitivity='Sensitivity¹',specificity='Specificity')[.x],all_of(metrics))
 }
 main_table2 <- function() {
   pub <- manuscript_data('table2')
-  comp <- manuscript_data('agreement-composite') |> filter(domain=='D1-D5',arm %in% c('ARBITER-Sonnet','Baseline-Sonnet'),metric %in% c('kappa','AC2','accuracy'))
   block <- function(x,label) {
-    if(any(x$metric=='sensitivity')) label <- paste0(label,'; Not Low N = ',unique(x$n[x$metric=='sensitivity'])[1],'; Low N = ',unique(x$n[x$metric=='specificity'])[1])
-    x$count <- NULL; x$n <- NULL
+    if(any(x$metric=='sensitivity')) label <- paste0(label,'; positive N = ',unique(x$n[x$metric=='sensitivity'])[1],'; Low N = ',unique(x$n[x$metric=='specificity'])[1])
+    x <- filter(x,metric!='AC2'); x$count <- NULL; x$n <- NULL
     x <- agreement_display(x,'arm') |> mutate(arm=reader_label(arm)) |> rename(Source=arm)
     x[] <- lapply(x,function(v) gsub('%','',v,fixed=TRUE))
     group_row(x,label)
   }
-  dif <- bind_rows(manuscript_data('table2-differences'),manuscript_data('agreement-composite-differences') |>
-      filter(domain=='D1-D5',metric %in% c('kappa','AC2','accuracy'))) |>
+  dif <- manuscript_data('table2-differences') |> filter(metric!='AC2') |>
     filter(comparison=='ARBITER-Sonnet minus Baseline-Sonnet') |>
     mutate(Row=paste(if_else(reference=='Meta','Published','Composite'),reader_label(domain),sep=': ')) |>
     agreement_display('Row',TRUE) |> rename(Source=Row)
   bind_rows(block(filter(pub,domain=='D1-D5'),'Against Published labels — D1–D5 (510 cells)'),
     block(filter(pub,domain=='Overall'),'Against Published labels — Overall (81 trials)'),
-    block(comp,'Against composite reference — D1–D5 (485 cells)'),
-    group_row(dif,'Paired difference, ARBITER − Unassisted')) |> replace_na(as.list(setNames(rep('',6),names(dif))))
+    group_row(dif,'Paired difference, ARBITER − Unassisted')) |> replace_na(as.list(setNames(rep('',5),names(dif))))
 }
-MEASURE_LABELS <- c('Consistent'='Consistent with RoB 2 algorithm',
-  'Violation'='Contradicts own answers (violation)', 'Invalid answer path'='Required question skipped (invalid path)',
+MEASURE_LABELS <- c('Consistent'='Consistent with RoB 2',
+  'Violation'='Algorithm violation', 'Invalid answer path'='Invalid answer path',
   'Departure'='Any departure','Proposed agreement'='Proposed judgement matches algorithm',
   'Recorded override'='Recorded override','Permitted escalation'='Permitted escalation',
-  'Evidence coverage'='Signalling answers citing ≥1 evidence record',
+  'Evidence coverage'='Answers citing ≥1 evidence record',
   'Text-span evidence binding'='Text spans bound to captured source',
   'Visual evidence binding'='Visual regions bound to rendered page',
   'Structural evidence binding (overall)'='All evidence bound','Bundle verification'='Bundle passes independent verification')
 main_table3 <- function() {
   x <- manuscript_data('table3')
-  wanted <- tibble(domain=c(rep('D1-D5',5),rep('Overall',2),rep('Audit',4)),
-    status=c('Consistent','Violation','Invalid answer path','Departure','Recorded override',
-      'Consistent','Permitted escalation','Evidence coverage','Text-span evidence binding',
-      'Visual evidence binding','Bundle verification'))
-  out <- wanted |> mutate(Measure=unname(MEASURE_LABELS[status]))
+  wanted <- tibble(domain=c(rep('D1-D5',3),paste0('D',1:5),rep('Overall',2),rep('Audit',4)),
+    status=c('Violation','Invalid answer path','Departure',rep('Departure',5),'Consistent','Permitted escalation',
+      'Evidence coverage','Text-span evidence binding','Visual evidence binding','Bundle verification'))
+  out <- wanted |> mutate(Measure=if_else(domain %in% paste0('D',1:5),paste(domain,'total departures'),unname(MEASURE_LABELS[status])))
   for(a in c('ARBITER-Sonnet','Baseline-Sonnet')) {
     d <- x |> filter(arm==a) |> select(domain,status,estimate,lower,upper,n,count)
     d$value <- fmt_fraction(d$count,d$n)
     if(a=='Baseline-Sonnet') d$value <- ifelse(d$status %in% c('Violation','Invalid answer path','Departure'),
       sub('[)]$','',d$value) |> paste0('; ',sub('^[(]','',fmt_ci(100*d$lower,100*d$upper,1,suppress_degenerate=TRUE))),d$value)
-    if(a=='ARBITER-Sonnet') d$value <- ifelse(d$domain=='D1-D5' & d$status %in% c('Consistent','Violation','Invalid answer path','Departure'),paste0(d$value,'*'),d$value)
+    if(a=='ARBITER-Sonnet') d$value <- ifelse(d$status %in% c('Violation','Invalid answer path','Departure') & d$domain!='Overall','0 by design',d$value)
     out <- left_join(out,d |> select(domain,status,value),by=c('domain','status'))
     names(out)[names(out)=='value'] <- reader_label(a)
   }
   out <- out |> mutate(Unassisted=if_else(domain=='Audit'|is.na(Unassisted),'Not available',Unassisted))
-  bind_rows(group_row(filter(out,domain=='D1-D5') |> select(Measure,ARBITER,Unassisted),'Domain judgements (D1–D5)'),
-    group_row(filter(out,domain=='Overall') |> select(Measure,ARBITER,Unassisted),'Overall judgement'),
-    group_row(filter(out,domain=='Audit') |> select(Measure,ARBITER,Unassisted),'Evidence and audit'))
+  bind_rows(group_row(filter(out,domain %in% c('D1-D5',paste0('D',1:5))) |> select(Measure,Unassisted,ARBITER),'Domain judgements (D1–D5)'),
+    group_row(filter(out,domain=='Overall') |> select(Measure,Unassisted,ARBITER),'Overall judgement'),
+    group_row(filter(out,domain=='Audit') |> select(Measure,Unassisted,ARBITER),'Evidence and audit'))
 }
 
 main_table4 <- function() {
-  x <- manuscript_data('table4-reliability') |> agreement_display('comparison')
+  x <- manuscript_data('table4-reliability') |> filter(metric!='AC2') |> agreement_display('comparison')
   between <- filter(x,startsWith(comparison,'A vs Z')) |>
     mutate(comparison=if_else(grepl('independent',comparison),'Independent judgements','Preferred judgements'))
   parts <- lapply(c('A','Z'),function(a) {
@@ -105,13 +106,15 @@ main_table4 <- function() {
   bind_rows(group_row(between,'Between adjudicators'),parts[[1]],parts[[2]]) |>
     rename(Comparison=comparison,`Raw agreement`=`Exact agreement`)
 }
-main_table_notes <- function() list(
+main_table_notes <- function() {
+  notes <- list(
   paste('SC, Some concerns; RoB 2, risk of bias tool for randomised trials. Counts are published labels pooled across D1\u2013D5.',
+    paste0('Per-domain distributions: eTable ',supplement_number('Published label distributions by domain'),'.'),
     'Overall given indicates whether published Overall labels are available; total is labelled trials/all trials.',
     'The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses.',TOPIC_ABBREVIATIONS),
-  paste('Values are coefficients or percentages (95% CI); denominators are in block labels. Not Low means Some concerns or High. All-Low rule has no variance; only accuracy and specificity are reported. Paired differences are coefficients or percentage points; — indicates undefined or not applicable.',COMPOSITE_NOTE,'Overall judgements were not adjudicated. Published labels were frequently less severe than the adjudicators’ preferred judgement (Figure 4).',CI_NOTE),
-  paste('Values are n/N (%); in Unassisted departure-type cells, the range after the semicolon is the 95% CI in percent. * Guaranteed by design: the server computes domain judgements with the official algorithm and rejects incomplete answer paths; reported to confirm the implementation, not as an empirical finding. Domain consistency for ARBITER refers to proposals;',
-    'recorded overrides are separate. Departure = violation + invalid path.',
+  paste('Published means published review label. Values are coefficients or percentages (95% CI); denominators are in block labels. ¹ Sensitivity for Some concerns or High; specificity uses Low as negative. All-Low rule has no variance; only accuracy and specificity are reported. Paired differences are coefficients or percentage points; — indicates undefined or not applicable.',paste0('AC2 and composite-reference results: eTables ',supplement_number('Agreement against Published, all sources and domains'),' and ',supplement_number('Agreement against the composite reference, Sonnet only'),'. Full paired differences: eTables ',supplement_number('Paired differences against Published'),'–',supplement_number('Paired differences against the composite reference'),'.'),'Overall judgements were not adjudicated. Published labels were frequently less severe than the adjudicators’ preferred judgement (Figure 4).',CI_NOTE),
+  paste('Values are n/N (%); in Unassisted departure-type cells, the range after the semicolon is the 95% CI in percent. ARBITER: no departures by design — the server computes every rating with the official algorithm and rejects incomplete answer paths. These rows concern Sonnet proposals; recorded model overrides are reported in the supplement. ',
+    paste0('Full consistency, invalid-path sensitivity and recorded overrides: eTables ',supplement_number('RoB 2 consistency and structural audit, all sources and domains'),'–',supplement_number('Recorded model override'),'. Departure = violation + invalid path.'),
     'One Unassisted domain has no evaluable label/answer set and is excluded (509 evaluable).',
     'Overall consistency is exact worst-domain agreement; permitted escalations are separate.',
     'Evidence coverage uses active signalling answers as the denominator and answers citing at least one evidence record as the numerator.',
@@ -122,12 +125,13 @@ main_table_notes <- function() list(
   paste('All comparisons use the 154 disputed cells, selected because at least one Sonnet arm differed from Published.',
     'These comparisons cannot estimate agreement or published-label accuracy in the full benchmark.',
       'Independent judgements preceded blinded label presentation; preferred judgements selected among the three offered labels.',
-      'Linearly weighted Cohen\u2019s \u03ba; Gwet\u2019s AC2; raw agreement as n/N (%) with CI bounds in %.',CI_NOTE))
+      'Linearly weighted Cohen\u2019s \u03ba; AC2 is in eTable PLACEHOLDER_RELIABILITY; raw agreement as n/N (%) with CI bounds in %.',CI_NOTE))
+  lapply(notes,function(x) reader_label(gsub('PLACEHOLDER_RELIABILITY',supplement_number('Independent and selected ratings: full agreement including AC2'),x,fixed=TRUE)))
+}
 build_main_tables <- function(inputs) {
   dir.create('output/manuscript',recursive=TRUE,showWarnings=FALSE)
   tables <- list(benchmark_table(inputs),main_table2(),main_table3(),main_table4())
-  captions <- c('Table 1. Benchmark set','Table 2. Agreement (95% CI)',
-    'Table 3. RoB 2 rule consistency and audit','Table 4. Reliability of the reference standard (95% CI)')
+  captions <- paste0('Table ',1:4,'. ',MAIN_TABLE_TITLES)
   notes <- main_table_notes()
   for(i in seq_along(tables)) {
     doc <- manuscript_doc() |> officer::body_add_par(captions[i],style='heading 1') |>
@@ -137,8 +141,8 @@ build_main_tables <- function(inputs) {
   invisible(tables)
 }
 main_table_widths <- function(i) {
-  list(c(1.61,1.60,.35,1.67,.40,.77,.54),c(1.17,1.15,1.23,1.08,1.05,1.23),
-    c(3.05,1.6,2.2),c(2.3,1.3833,1.3833,1.77))[[i]]
+  list(c(1.61,1.60,.35,1.67,.40,.77,.54),c(1.35,1.35,1.35,1.35,1.45),
+    c(2.95,2.2,1.7),c(3.1,1.65,2.1))[[i]]
 }
 # Word joiners preserve the en dash while prohibiting a line break on either side.
 main_table_no_break_ranges <- function(x) {

@@ -3,7 +3,7 @@ title: "ARBITER manuscript results"
 ---
 
 ```{r}
-source('run.R')
+if(Sys.getenv('ARBITER_PRESENTATION_ONLY')=='1') source('build-round12.R') else source('run.R')
 source('R/report.R')
 main_tables <- list(benchmark_table(inputs),main_table2(),main_table3(),main_table4())
 legends <- figure_legend_sections()
@@ -22,7 +22,7 @@ for(i in 1:6) {
 
 ```{r}
 for(i in 1:4) {
-  cat('\n## Table ',i,'. ',c('Benchmark set','Agreement (95% CI)','RoB 2 rule consistency and audit','Reliability of the reference standard (95% CI)')[i],'\n\n',sep='')
+  cat('\n## Table ',i,'. ',MAIN_TABLE_TITLES[i],'\n\n',sep='')
   cat(flextable::flextable_to_rmd(main_table_flextable(main_tables[[i]],i)),sep='\n')
 }
 ```
@@ -30,14 +30,7 @@ for(i in 1:4) {
 ## Key results
 
 ```{r}
-p <- manuscript_data('primary-endpoint') |> filter(analysis=='Consensus',metric=='ARBITER')
-```
-
-Among the 62 consensus cells where the Sonnet arms differed, ARBITER won 54, Unassisted won 7, and neither won 1. The ARBITER win share was `r fmt_number(100*p$estimate,1)`% (95% CI `r fmt_number(100*p$lower,1)`–`r fmt_number(100*p$upper,1)`%). Only this endpoint is confirmatory. Intervals use 10,000 trial-cluster resamples stratified by meta-analysis (seed 20261018). No p-values or multiplicity corrections are used.
-
-```{r}
-process <- manuscript_data('table5')
-for(j in 1:2) cat(paste0(if(j==1) 'Median time (minutes per trial)' else 'Median API list-price equivalent (USD per trial)',': ARBITER ',fmt_process_text(process[['ARBITER-Sonnet']][j]),'; Unassisted ',fmt_process_text(process[['Baseline-Sonnet']][j]),'. Paired mean difference (95% CI): ',fmt_process_text(process[['Paired mean difference (95% CI)']][j]),'.\n\n'))
+cat(readLines('output/manuscript/results-sentences.md',encoding='UTF-8'),sep='\n')
 ```
 
 ## How to reproduce

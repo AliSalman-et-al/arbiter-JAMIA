@@ -33,7 +33,17 @@ reader_html_text <- function(path) {
 }
 
 reader_label <- function(x, supplement=FALSE) {
-  replacements <- c('ARBITER-Sonnet'=if(supplement) 'ARBITER (Sonnet 5.5)' else 'ARBITER',
+  replacements <- c('Not Low'='Some concerns or High','not low'='Some concerns or High',
+    'consensus preferred judgement'='the adjudicators’ agreed choice',
+    'consensus preferred'='the adjudicators’ agreed choice',
+    'discordant cells'='cells where the two arms disagreed','discordant'='differing',
+    'Vindicated'='Adjudicators agreed with it','vindicated'='adjudicators agreed with it',
+    'Decisive-question'='Questions that alone changed the rating:',
+    'individually decisive questions'='questions that alone changed the rating',
+    'single decisive question'='one question alone changed the rating',
+    'several decisive questions'='several questions each changed the rating alone',
+    'decisive questions'='questions that alone changed the rating',
+    'decisive question'='question that alone changed the rating','ARBITER-Sonnet'=if(supplement) 'ARBITER (Sonnet 5.5)' else 'ARBITER',
     'Baseline-Sonnet'=if(supplement) 'Unassisted (Sonnet 5.5)' else 'Unassisted',
     'ARBITER-Haiku'='ARBITER (Haiku 5.5)','Baseline-Haiku'='Unassisted (Haiku 5.5)',
     'A vs Z'='Adjudicator 1 vs Adjudicator 2','Adjudicator A'='Adjudicator 1',

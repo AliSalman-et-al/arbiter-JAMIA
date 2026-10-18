@@ -37,5 +37,6 @@ disagreement_pattern_counts <- function(cells) {
     kit==meta & nokit!=meta~patterns[2],kit!=nokit~patterns[3],TRUE~patterns[4]),
     outcome=case_when(!consensus~outcomes[5],preferred==kit & preferred==nokit~outcomes[3],
       preferred==kit~outcomes[1],preferred==nokit~outcomes[2],TRUE~outcomes[4])) |>
-    count(disagreement,outcome) |> complete(disagreement=patterns,outcome=outcomes,fill=list(n=0))
+    count(disagreement,outcome) |> complete(disagreement=patterns,outcome=outcomes,fill=list(n=0)) |>
+    arrange(disagreement,outcome,.locale='en')
 }

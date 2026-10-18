@@ -18,8 +18,8 @@ study_flow_nodes <- function() {
       '4 arms each assessed 102 trials:\nARBITER and Unassisted with Sonnet 5.5 (main);\nwith Haiku 5.5 (supplement)',
       '510 D1–D5 cells per arm\n81 Published Overall labels','154 disputed cells',
       '129 consensus cells','25 split cells',
-      '62 cells where arms differ\n54 ARBITER; 7 Unassisted;\n1 neither',
-      '18 cells where arms differ'))
+      '62 consensus cells\nwhere the arms differ',
+      '18 split cells\nwhere the arms differ'))
 }
 study_flow_plot <- function() {
   nodes <- study_flow_nodes()
@@ -62,7 +62,7 @@ disagreement_matrix_plot <- function(cells) {
 
 published_reference_plot <- function() {
   x <- manuscript_data('agreement-meta') |> filter(arm %in% c('ARBITER-Sonnet','Baseline-Sonnet'),
-    domain!='Overall',metric=='kappa') |> mutate(arm=reader_label(arm),
+    domain %in% paste0('D',1:5),metric=='kappa') |> mutate(arm=reader_label(arm),
       domain=factor(domain,levels=c(paste0('D',1:5),'D1-D5'),labels=c(paste0('D',1:5),'Pooled\nD1\u2013D5')))
   pA <- ggplot2::ggplot(x,ggplot2::aes(domain,estimate,color=arm,shape=arm))+
     ggplot2::geom_hline(yintercept=0,linetype='dashed',color='grey70')+
@@ -80,7 +80,7 @@ published_reference_plot <- function() {
     ggplot2::scale_color_manual(values=c('TRUE'='white','FALSE'='black'),guide='none')+
     ggplot2::scale_fill_manual(values=c('Less severe'='#374E55','Equal'='#94A1A6','More severe'='#DCE1E3'))+
     ggplot2::scale_x_continuous(breaks=seq(0,1,.25),labels=scales::label_percent())+
-    ggplot2::labs(x="Published relative to consensus preferred judgement",y=NULL,fill=NULL)+theme_manuscript()
+    ggplot2::labs(x="Published relative to the adjudicators’ agreed choice",y=NULL,fill=NULL)+theme_manuscript()
   patchwork::wrap_plots(pA,pB,ncol=1,heights=c(1.15,1))+
     patchwork::plot_annotation(tag_levels='A')
 }
@@ -88,31 +88,25 @@ decisive_question_plot <- function() {
   x <- manuscript_data('error-localisation-frequency') |> filter(population=='Primary') |> mutate(question=as.character(question))
   shown <- x |> group_by(question) |> summarise(n=sum(n),.groups='drop') |> filter(n>0)
   remainder <- manuscript_data('no-decisive-counts')
-  losses <- remainder |> select(domain,source,eligible) |> pivot_wider(names_from=source,values_from=eligible) |>
-    mutate(facet=paste0(domain,' losses: ARBITER n = ',`ARBITER-Sonnet`,'; Unassisted n = ',`Baseline-Sonnet`))
-  remainder <- remainder |> group_by(domain) |> filter(any(n>0)) |> ungroup() |> transmute(domain,source,n,question='remainder',short_text='No single decisive question')
-  x <- bind_rows(x |> filter(question %in% shown$question),remainder) |>
+  losses <- remainder |> select(domain,source,eligible,n) |>
+    pivot_wider(names_from=source,values_from=c(eligible,n)) |>
+    mutate(facet=paste0(domain,' · ARBITER ',`eligible_ARBITER-Sonnet`,if_else(`eligible_ARBITER-Sonnet`==1,' loss (',' losses ('),`n_ARBITER-Sonnet`,
+      ' without a single deciding question) · Unassisted ',`eligible_Baseline-Sonnet`,' (',`n_Baseline-Sonnet`,')'))
+  x <- x |> filter(question %in% shown$question) |>
     left_join(losses |> select(domain,facet),by='domain') |>
     mutate(source=factor(reader_label(source),levels=c('ARBITER','Unassisted')),
-      label=stringr::str_wrap(if_else(question=='remainder',short_text,paste(question,short_text)),width=50),
-      bar_fill=if_else(question=='remainder',paste0(source,' remainder'),as.character(source)),
+      label=stringr::str_wrap(paste(question,short_text),width=50),bar_fill=as.character(source),
       label=factor(label,levels=rev(unique(label[order(question)]))))
   dodge <- ggplot2::position_dodge(width=.7,reverse=TRUE)
   ggplot2::ggplot(x,ggplot2::aes(n,label,fill=bar_fill,group=source))+
-    ggplot2::geom_col(width=.6,position=dodge,orientation='y',key_glyph=function(data,params,size) {
-      if(identical(data$fill,'#B2E3F2')) grid::grobTree(
-        grid::rectGrob(x=.24,width=.44,gp=grid::gpar(fill='#B2E3F2',col=NA)),
-        grid::rectGrob(x=.76,width=.44,gp=grid::gpar(fill='#F5DDC7',col=NA)))
-      else ggplot2::draw_key_rect(data,params,size)
-    })+
+    ggplot2::geom_col(width=.6,position=dodge,orientation='y')+
     ggplot2::geom_text(ggplot2::aes(label=if_else(n>0,as.character(n),'')),position=dodge,
       hjust=-.25,family='Fira Sans',size=2.8)+
     ggplot2::facet_wrap(~facet,ncol=1,scales='free_y',space='free_y')+
-    ggplot2::scale_fill_manual(values=c(JAMA_ROLES[c('ARBITER','Unassisted')],'ARBITER remainder'='#B2E3F2','Unassisted remainder'='#F5DDC7'),breaks=c('ARBITER','Unassisted','ARBITER remainder'),
-      labels=c('ARBITER','Unassisted','No individually decisive question (cells)'))+
+    ggplot2::scale_fill_manual(values=JAMA_ROLES[c('ARBITER','Unassisted')])+
     ggplot2::guides(fill=ggplot2::guide_legend(nrow=1,byrow=TRUE))+
     ggplot2::scale_x_continuous(limits=c(0,20),breaks=c(0,5,10,15,20),expand=ggplot2::expansion(mult=c(0,.02)))+
-    ggplot2::labs(x='Count',y=NULL,fill=NULL)+theme_manuscript()+
+    ggplot2::labs(x='Loss cells',y=NULL,fill=NULL)+theme_manuscript()+
     ggplot2::theme(legend.justification='left',legend.key.width=grid::unit(3,'mm'),
       legend.key.height=grid::unit(3,'mm'),legend.key.spacing.x=grid::unit(2,'mm'),
       plot.caption=ggplot2::element_text(size=8,hjust=0),strip.text=ggplot2::element_text(size=8),axis.text.y=ggplot2::element_text(size=8),panel.spacing=grid::unit(1.5,'mm'))
@@ -165,8 +159,8 @@ adjudication_plot <- function(cells) {
   v <- manuscript_data('vindicated-disagreements')
   splits <- filter(v,outcome=='Split')
   d <- v |> filter(outcome!='Split') |> mutate(
-    row=paste(source,tolower(direction),sep=': '),
-    row=factor(row,levels=rev(c('ARBITER: more severe','ARBITER: less severe','Unassisted: more severe','Unassisted: less severe'))),
+    row=paste0(source,', ',if_else(direction=='More severe','stricter than published','more lenient than published')),
+    row=factor(row,levels=rev(c('ARBITER, stricter than published','ARBITER, more lenient than published','Unassisted, stricter than published','Unassisted, more lenient than published'))),
     fill=if_else(outcome=='Vindicated',source,outcome),
     outcome=factor(outcome,levels=c('Vindicated','Published upheld','Other label')))
   outcomes <- v |> filter(outcome %in% c('Published upheld','Other label')) |> select(source,direction,outcome,n) |> pivot_wider(names_from=outcome,values_from=n)
@@ -175,13 +169,13 @@ adjudication_plot <- function(cells) {
     ggplot2::geom_col(position=ggplot2::position_stack(reverse=TRUE),width=.6)+
     ggplot2::geom_text(ggplot2::aes(label=if_else(n>=3,as.character(n),''),color=outcome=='Published upheld'),
       position=ggplot2::position_stack(vjust=.5,reverse=TRUE),size=2.7,family='Fira Sans',show.legend=FALSE)+
-    ggplot2::geom_text(data=totals,ggplot2::aes(x=1.04,label=paste0(n,'/',consensus_n,' vindicated · ',split,' split')),
+    ggplot2::geom_text(data=totals,ggplot2::aes(x=1.04,label=paste0(n,' of ',consensus_n,' · ',split,' split')),
       hjust=0,color='black',size=2.6,family='Fira Sans',inherit.aes=TRUE,show.legend=FALSE)+
     ggplot2::scale_color_manual(values=c('TRUE'='white','FALSE'='black'),guide='none')+
     ggplot2::scale_fill_manual(values=c(ARBITER=JAMA_ROLES[['ARBITER']],Unassisted=JAMA_ROLES[['Unassisted']],
       'Published upheld'=JAMA_ROLES[['Published']],'Other label'='#D9D9D9'),
       breaks=c('ARBITER','Unassisted','Published upheld','Other label'),
-      labels=c('Vindicated: ARBITER','Vindicated: Unassisted','Published upheld','Other label'))+
+      labels=c('Adjudicators agreed with it: ARBITER','Adjudicators agreed with it: Unassisted','Published upheld','Other label'))+
     ggplot2::scale_x_continuous(breaks=seq(0,1,.25),labels=scales::label_percent())+
     ggplot2::coord_cartesian(xlim=c(0,1.7),clip='off')+
     ggplot2::labs(x='Consensus disagreements with Published (split cells excluded)',y=NULL,fill=NULL)+theme_manuscript()+

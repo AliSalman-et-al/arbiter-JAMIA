@@ -50,7 +50,7 @@ METHODS_APPENDIX <- c(
     'Anthropic. Claude API pricing. Accessed 18 October 2026. https://platform.claude.com/docs/en/about-claude/pricing.'))
 
 SUPPLEMENT_ABBREVIATIONS <- paste('CI, confidence interval; IQR, interquartile range; USD, US dollars;',
-  'RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains;',
+  'AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains;',
   'Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable.',
   'All counts are numbers of the units named in the headers; — means undefined or not applicable.')
 trial_display <- function(x) {
@@ -109,16 +109,16 @@ supplement_registry <- function(inputs) {
     select(meta_id,Trials=trials,D1:D5) |> left_join(metadata |> select(meta_id,specialty,topic),by='meta_id') |>
     arrange(specialty!='General medicine',specialty,topic) |> select(Specialty=specialty,Topic=topic,Trials,D1:D5),
     paste('Each D1–D5 cell gives Low / Some concerns / High counts; 102 trials. Source journals and years are in main Table 1.',TOPIC_ABBREVIATIONS))
-  add('Process metrics: Sonnet 5.5',manuscript_data('table5'),paste('Per trial: median [IQR]; paired mean ARBITER minus Unassisted difference (95% CI).',
-    'USD denotes API list-price equivalents, not expenditure. Thinking is included in output.',CI_NOTE))
-  add('Process metrics: Haiku 5.5',manuscript_data('table5-haiku'),paste('Exploratory; per-trial median [IQR] and paired mean difference (95% CI).',
-    'USD denotes API list-price equivalents. Reconstruction bounds are in the cost table below.',CI_NOTE))
+  add('Time, cost and token use per trial by model',bind_rows(
+    manuscript_data('table5') |> rename(ARBITER=`ARBITER-Sonnet`,Unassisted=`Baseline-Sonnet`) |> mutate(Model='Sonnet 5.5',.before=1),
+    manuscript_data('table5-haiku') |> rename(ARBITER=`ARBITER-Haiku`,Unassisted=`Baseline-Haiku`) |> mutate(Model='Haiku 5.5',.before=1)),
+    paste('102 trials per arm; per-trial median [IQR] and paired mean ARBITER minus Unassisted difference (95% CI). USD denotes API list-price equivalent, not expenditure; thinking is included in output.',CI_NOTE))
   # Redundant process-summary export is deliberately not a reader table.
   for(ref in c('meta','composite')) {
     x <- manuscript_data(paste0('agreement-',ref))
     if(ref=='composite') x <- filter(x,metric %in% c('kappa','AC2','accuracy'))
     add(if(ref=='meta') 'Agreement against Published, all sources and domains' else 'Agreement against the composite reference, Sonnet only',
-      agreement_display(x),paste(AGREEMENT_NOTE,if(ref=='composite') COMPOSITE_NOTE else '',CI_NOTE))
+      agreement_display(x),if(ref=='meta') paste(AGREEMENT_NOTE,CI_NOTE) else paste('Linearly weighted κ and AC2; exact agreement is n/N (%), with CI bounds in percent. The composite uses the adjudicators’ agreed choice on consensus disputed cells and Published elsewhere; split cells are excluded. Adjudicators chose among three offered labels. Cells where both arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values.',CI_NOTE))
   }
   consistency <- manuscript_data('table3-supplement') |> mutate(status=coalesce(unname(MEASURE_LABELS[status]),status))
   consistency$value <- fmt_fraction(consistency$count,consistency$n)
@@ -163,29 +163,32 @@ supplement_registry <- function(inputs) {
       pivot_wider(names_from=arm,values_from=`Estimate (95% CI)`) |> arrange(specialty!='General medicine',specialty,topic),
     paste(TOPIC_ABBREVIATIONS,'Weighted κ (95% CI). eFigure 1 displays the defined nondegenerate estimates. A coefficient with no variance, or a degenerate bootstrap interval, is shown as —.',CI_NOTE))
   add('Post hoc severity-stratified win share',supplement_estimates(manuscript_data('severity-win-share'),c('direction','metric')),
-    paste('Post hoc Sonnet 5.5 analysis of the 62 consensus discordant cells, stratified by ARBITER severity relative to Unassisted. ARBITER more severe: 44 ARBITER wins, 1 Unassisted, 0 neither (45 cells); less severe: 10, 6, 1 (17 cells).',CI_NOTE))
-  add('Vindicated disagreements with Published, including split cells',manuscript_data('vindicated-disagreements') |>
-    select(source,direction,outcome,n,consensus_n,all_n),
-    'Both sources use Sonnet 5.5. Figure 5B uses consensus disagreements as the denominator; split cells are displayed separately. Vindicated means preferred equals the source label; Published upheld means preferred equals Published; Other label means neither. Counts, consensus denominator and all-cell denominator are shown.')
+    paste('Post hoc Sonnet 5.5 analysis of consensus cells where the two arms disagreed, stratified by ARBITER severity relative to Unassisted. Fractions are label-based wins / cells in that severity stratum.',CI_NOTE))
+  add('Adjudicators usually agreed with ARBITER when it disagreed with Published',manuscript_data('vindicated-disagreements') |>
+    select(source,direction,outcome,Count=n,consensus_n,all_n),
+    'Both sources use Sonnet 5.5. Figure 5B uses consensus disagreements as the denominator; split cells are displayed separately. Adjudicators agreed with it means their agreed choice equals the source label; Published upheld means their agreed choice equals the published review label; Other label means neither. Count is the outcome count; consensus n excludes split cells and All n includes them.')
   add('Per-adjudicator and split-cell win-share sensitivity',supplement_estimates(manuscript_data('primary-endpoint'),c('analysis','metric')),
-    paste('Consensus is primary. Split discordant cells are forced ARBITER losses; the residual Neither category includes these forced losses.',CI_NOTE))
+    paste('Fractions are label-based wins / cells where the two arms disagreed. Consensus is primary and includes only cells with the same choice from both adjudicators; each single-adjudicator analysis includes split cells. Split cells are forced ARBITER losses in the split sensitivity; Neither includes these forced losses.',CI_NOTE))
   for(ref in c('meta','composite')) {
     x <- manuscript_data(paste0('agreement-',ref,'-differences'))
     if(ref=='composite') x <- filter(x,metric %in% c('kappa','AC2','accuracy'))
     add(paste('Paired differences against',if(ref=='meta') 'Published' else 'the composite reference'),agreement_display(x,c('comparison','domain'),TRUE),
       paste('ARBITER minus Unassisted; coefficients in original units, proportions in percentage points.',if(ref=='composite') COMPOSITE_NOTE else '',CI_NOTE))
   }
-  for(a in c('A','Z')) {
-    add(paste('Composite sensitivity using',reader_label(a)),agreement_display(manuscript_data(paste0('composite-',a)) |>
-      filter(metric %in% c('kappa','AC2','accuracy'))),paste('510 cells per Sonnet arm; this preferred judgement replaces Published on disputed cells.','Only three labels were offered; unadjudicated concordant cells are assumed correct, inflating absolute values.',CI_NOTE))
-    add(paste('Composite paired differences using',reader_label(a)),agreement_display(manuscript_data(paste0('composite-',a,'-differences')) |>
-      filter(metric %in% c('kappa','AC2','accuracy')),c('comparison','domain'),TRUE),
-      paste('Coefficient units or percentage points; 510 cells per arm; no split exclusion. Only offered labels could be preferred; concordant cells are assumed correct.',CI_NOTE))
-  }
-  add('Missing-judgement sensitivity: paired observed Haiku cells',agreement_display(manuscript_data('missing-sensitivity')),
-    paste('The same five absent domain cells and any absent Overall cell are removed from both Haiku arms.',AGREEMENT_NOTE,CI_NOTE))
-  add('Missing-judgement sensitivity: paired Haiku differences',agreement_display(manuscript_data('missing-sensitivity-differences'),c('comparison','domain'),TRUE),
-    paste('Coefficient units or percentage points; same observed cells in each arm.',CI_NOTE))
+  sensitivity <- function(difference=FALSE) bind_rows(lapply(c('A','Z'),function(a) {
+    x <- manuscript_data(paste0('composite-',a,if(difference) '-differences' else '')) |>
+      filter(metric %in% c('kappa','AC2','accuracy'))
+    agreement_display(x,if(difference) c('comparison','domain') else c('arm','domain'),difference) |>
+      mutate(Adjudicator=reader_label(a),.before=1)
+  }))
+  add('Composite-reference sensitivity estimates by adjudicator',sensitivity(),
+    paste('510 cells per Sonnet arm. Each adjudicator’s selected label replaces Published on disputed cells. Only three labels were offered; unadjudicated cells are assumed correct.',CI_NOTE))
+  add('Composite-reference paired differences by adjudicator',sensitivity(TRUE),
+    paste('ARBITER minus Unassisted, coefficient units or percentage points; 510 paired cells per arm. Only offered labels could be chosen; unadjudicated cells are assumed correct.',CI_NOTE))
+  add('Haiku agreement after excluding missing judgements',NULL,
+    paste('Both Haiku arms exclude the same missing domain and Overall cells. Fractions give eligible-cell denominators. Sensitivity uses Some concerns or High as positive; specificity uses Low. κ and AC2 are linearly weighted. Paired differences use coefficient units or percentage points.',CI_NOTE),
+    list(list(title='Estimates',data=agreement_display(manuscript_data('missing-sensitivity'))),
+      list(title='Paired ARBITER minus Unassisted differences',data=agreement_display(manuscript_data('missing-sensitivity-differences'),c('comparison','domain'),TRUE))))
   add('Localisation population eligibility',manuscript_data('error-localisation-eligibility'),
     'Primary requires both independent judgements equal to consensus preferred; sensitivity requires at least one. Published losses lack signalling answers. Haiku was not adjudicated.')
   add('Error-localisation classes, both populations',manuscript_data('error-localisation-counts') |>
@@ -217,14 +220,36 @@ supplement_registry <- function(inputs) {
     paste('Correct collapsed answers / eligible questions (95% CI) on disputed domains. Independent answers define reference; Y/PY, N/PN, NI/NA collapse. Missing predictions are wrong. Includes Haiku without a preferred-judgement endpoint.',CI_NOTE),blocks)
 
   add('AVATAR complete trace',NULL,
-    'Illustrative all-cause-death assessment, Banovic 2024. All ARBITER answers, full evidence-record quotes, basis types, justifications, unknowns and source locations are shown alongside Unassisted answers and verbatim domain rationale. Inactive questions follow branching. Part A lists each of the 22 questions once, with inactive questions marked Not asked. In the Unknowns and Counterevidence columns, — means none recorded. Part B lists each of the 16 archived evidence records (15 cited by the current answers; one additional captured record retained) once. Full quotes retain every word; original line breaks are collapsed to spaces for compactness in this display. Machine-readable full trace: analysis/data-derived/avatar-trace.json. This eTable alone uses landscape pages and Arial 8 pt. Figure and table numbers inside verbatim quotations refer to the original source documents. Source hashes identify captured source versions. Original clinical wording in quotations and rationale is retained verbatim; it does not name an analysis arm.',avatar_trace_blocks(inputs))
-  entries
+    'Illustrative all-cause-death assessment (Banovic 2024). Part A gives all questions, answers, evidence types, justifications, unknowns, counterevidence and Unassisted rationales. — means none recorded in those fields; inactive questions follow branching. Part B preserves 16 archived records (15 cited by current answers). Quotes and rationales are verbatim; quote line breaks display as spaces. Source locations and hashes identify captured versions. References within quotations concern original documents. Full trace: analysis/data-derived/avatar-trace.json.',avatar_trace_blocks(inputs))
+  add('Independent and selected ratings: full agreement including AC2',
+    agreement_display(manuscript_data('table4-reliability'),'comparison'),
+    paste('154 disputed cells per comparison, selected because at least one Sonnet arm differed from the published review label. Independent ratings preceded label presentation; selected ratings chose among three offered labels. κ and AC2 are linearly weighted; raw agreement is n/N (%), with CI bounds in percent. This selected population cannot estimate full-benchmark agreement.',CI_NOTE))
+  for(i in seq_along(entries)) {
+    entries[[i]]$caption <- reader_label(entries[[i]]$caption)
+    entries[[i]]$note <- reader_label(entries[[i]]$note)
+  }
+  # Citation order in the main figures, main tables, then time/cost results.
+  first <- c('AVATAR complete trace','Adjudicators usually agreed with ARBITER when it disagreed with Published',
+    'Post hoc severity-stratified win share','Per-adjudicator and split-cell win-share sensitivity',
+    'Decisive-question frequencies, both populations','Localisation population eligibility',
+    'Error-localisation classes, both populations','Published label distributions by domain',
+    'Agreement against Published, all sources and domains','Agreement against the composite reference, Sonnet only',
+    'Paired differences against Published','Paired differences against the composite reference',
+    'RoB 2 consistency and structural audit, all sources and domains','Invalid answer path sensitivity',
+    'Recorded model override','Independent and selected ratings: full agreement including AC2',
+    'Time, cost and token use per trial by model')
+  captions <- vapply(entries,`[[`,character(1),'caption')
+  cited <- match(reader_label(first),captions)
+  stopifnot(!anyNA(cited))
+  entries[c(cited,setdiff(seq_along(entries),cited))]
+
 }
 supplement_table <- function(entry,data=entry$data) {
   x <- if(entry$caption=='AVATAR complete trace') as.data.frame(data) else display_frame(data,TRUE)
   if(entry$caption=='AVATAR complete trace' && 'Full verbatim quote' %in% names(x))
     x[['Full verbatim quote']] <- gsub('\n',' ',x[['Full verbatim quote']],fixed=TRUE)
   names(x) <- reader_field(names(x))
+  names(x) <- gsub('¹','',names(x),fixed=TRUE)
   if(entry$caption=='Exploratory signalling-answer agreement') {
     names(x)[names(x)=='Question'] <- 'SQ'
     entry$note <- paste('SQ, signalling question.',entry$note)
@@ -232,6 +257,7 @@ supplement_table <- function(entry,data=entry$data) {
   if('Measure' %in% names(x)) x$Measure <- gsub('_',' ',x$Measure,fixed=TRUE)
   grouped <- FALSE
   group_col <- if('Group' %in% names(x)) 'Group' else if('Weighted κ' %in% names(x) && 'Domain' %in% names(x)) names(x)[1] else NULL
+  if(startsWith(entry$caption,'Composite-reference')) group_col <- NULL
   if(!is.null(group_col)) {
     keys <- unique(x[[group_col]])
     x <- bind_rows(lapply(keys,function(k) group_row(x[x[[group_col]]==k,setdiff(names(x),group_col),drop=FALSE],k)))
@@ -240,14 +266,15 @@ supplement_table <- function(entry,data=entry$data) {
   ft <- house_table(x,entry$note)
   widths <- rep(6.85/ncol(x),ncol(x))
   if(entry$caption=='Published label distributions by domain') widths <- c(1.15,2,.5,rep(.64,5))
-  else if(grepl('^Process metrics',entry$caption)) widths <- c(2.4,1.3,1.3,1.85)
+  else if(startsWith(entry$caption,'Composite-reference')) widths <- c(.9,1.8,.55,1.05,1.05,1.5)
+  else if(entry$caption=='Time, cost and token use per trial by model') widths <- c(.9,2,1.25,1.25,1.45)
   else if(grepl('^Confusion',entry$caption)) widths <- c(2.05,rep(4.8/(ncol(x)-1),ncol(x)-1))
   else if(entry$caption=='Per-meta-analysis weighted κ') widths <- c(1.1,2.15,rep(.9,4))
   else if(entry$caption=='Exploratory signalling-answer agreement') widths <- c(.5,2.15,rep(1.05,4))
   else if(entry$caption=='Recorded model override') widths <- c(1.25,5.6)
   else if(entry$caption=='Token reconciliation and compaction diagnostics' || startsWith(entry$caption,'API cost')) widths <- c(2.65,rep(1.05,4))
   else if(grepl('^RoB 2 consistency',entry$caption)) widths <- c(.65,1.9,rep(.86,ncol(x)-2))
-  else if(grepl('Decisive-question frequencies',entry$caption)) widths <- c(.8,.65,.65,2.45,1.15,1.15)
+  else if(startsWith(entry$caption,'Questions that alone changed the rating: frequencies')) widths <- c(.8,.65,.65,2.45,1.15,1.15)
   else if(grepl('Error-localisation classes',entry$caption)) widths <- c(1,3.25,1.3,1.3)
   else if(entry$caption=='Unresolved independent answer') widths <- c(.8,.65,.85,.75,1.9,1.9)
   else if(entry$caption=='Invalid answer path sensitivity') widths <- c(.65,.8,1.35,1.2,1.45,1.4)
@@ -269,24 +296,24 @@ supplement_end_section <- function(doc,landscape=FALSE) {
     page_margins=officer::page_mar(top=.6,bottom=.6,left=.65,right=.65))))
 }
 build_supplement <- function(inputs) {
+  METHODS_APPENDIX <- reader_label(METHODS_APPENDIX)
   entries <- supplement_registry(inputs)
   doc <- manuscript_doc() |> manuscript_par('ARBITER: Supplementary material',style='heading 1')
   doc <- manuscript_par(doc,'Contents',style='heading 2')
   doc <- manuscript_par(doc,'Methods appendix · Supplementary results · Prompt templates and example · Run provenance')
   for(i in seq_along(entries)) doc <- manuscript_par(doc,paste0('eTable ',i,'. ',entries[[i]]$caption))
-  doc <- manuscript_par(doc,'eFigure 1. Agreement against Published by meta-analysis')
-  doc <- manuscript_par(doc,'eFigure 2. Disagreement patterns and preferred judgements')
+  doc <- manuscript_par(doc,'eFigure 1. Agreement with Published varied across meta-analyses')
+  doc <- manuscript_par(doc,'eFigure 2. ARBITER-only choices outnumbered Unassisted-only choices')
   doc <- officer::body_add_break(doc)
   doc <- manuscript_par(doc,'Methods appendix',style='heading 1')
   for(i in seq_along(METHODS_APPENDIX)) {
     if(i==3L) doc <- officer::body_add_break(doc)
     doc <- doc |> manuscript_par(names(METHODS_APPENDIX)[i],style='heading 2') |> manuscript_par(METHODS_APPENDIX[i])
   }
-  doc <- manuscript_par(doc,'Supplementary results',style='heading 1')
   for(i in seq_along(entries)) {
     e <- entries[[i]]
     if(e$caption=='AVATAR complete trace') doc <- supplement_end_section(doc)
-    else doc <- officer::body_add_break(doc)
+    else if(i==1L || entries[[i-1L]]$caption!='AVATAR complete trace') doc <- officer::body_add_break(doc)
     doc <- manuscript_par(doc,paste0('eTable ',i,'. ',e$caption),style='heading 2')
     if(is.null(e$blocks)) doc <- flextable::body_add_flextable(doc,supplement_table(e))
     else for(k in seq_along(e$blocks)) {
@@ -303,15 +330,15 @@ build_supplement <- function(inputs) {
     }
     if(e$caption=='AVATAR complete trace') doc <- supplement_end_section(doc,TRUE)
     if(e$caption=='Per-meta-analysis weighted κ') {
-      doc <- officer::body_add_break(doc) |> manuscript_par('eFigure 1. Agreement against Published by meta-analysis',style='heading 2') |>
+      doc <- officer::body_add_break(doc) |> manuscript_par('eFigure 1. Agreement with Published varied across meta-analyses',style='heading 2') |>
         officer::body_add_img(src='output/manuscript/eFigure1.png',width=6.7,height=6.7*200/174) |>
         manuscript_par(paste('Weighted kappa and 95% CIs; source symbols distinguish model and assistance.',
           'Undefined coefficients are omitted. Specialty and topic identify each meta-analysis. Descriptive estimates only; no statistical tests.',CI_NOTE))
     }
   }
-  doc <- doc |> manuscript_par('eFigure 2. Disagreement patterns and preferred judgements',style='heading 2') |>
+  doc <- doc |> manuscript_par('eFigure 2. ARBITER-only choices outnumbered Unassisted-only choices',style='heading 2') |>
     officer::body_add_img(src='output/manuscript/eFigure2.png',width=6.7,height=6.7*95/174) |>
-    manuscript_par('All 154 disputed cells, grouped by disagreement with Published and preferred-label outcome. Counts use label equality; split cells are separate. Shared labels count as both arms preferred.')
+    manuscript_par('ARBITER-only choices were more frequent than Unassisted-only choices. Rows group disputed cells by disagreement with the published review label; columns show the adjudicators’ agreed choice or split. Counts use label equality; shared labels count as both arms preferred. A cell is one trial × domain.')
   prompts <- manuscript_data('prompt-template-example')
   doc <- officer::body_add_break(doc)
   doc <- manuscript_par(doc,'Prompt templates and a filled example',style='heading 1')
@@ -340,3 +367,17 @@ build_supplement <- function(inputs) {
   print(doc,target='output/manuscript/TRIPOD-LLM.docx')
   invisible(entries)
 }
+
+# Resolve numbers once per R build; each lookup otherwise reloads all raw inputs.
+supplement_number <- local({
+  numbers <- NULL
+  function(caption) {
+    if(is.null(numbers)) {
+      entries <- supplement_registry(load_inputs())
+      numbers <<- setNames(seq_along(entries),vapply(entries,`[[`,character(1),'caption'))
+    }
+    number <- unname(numbers[reader_label(caption)])
+    stopifnot(!is.na(number))
+    number
+  }
+})

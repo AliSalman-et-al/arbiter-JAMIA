@@ -337,3 +337,18 @@ No Python is used. This file records conservative resolutions as they arise.
     records, of which 15 are cited by current answers; the additional captured
     record is retained and that distinction is stated in the footnote. No
     statistical methods, source data or estimates change.
+
+37. **Round 12 manuscript polish.** Presentation-only: shortened Figures 3–6 legends,
+    removed flow outcome duplication and the pooled Figure 4A point, made Figure 6
+    bars uniformly count loss cells, and moved AC2/composite details out of main
+    Tables 2/4. Table 3 foregrounds Unassisted departures and retains Sonnet proposal
+    design guarantees separately from recorded adoption overrides. Supplement merges
+    reduce 31 eTables to 28, numbered in main-text citation order. Data-driven checks
+    corrected 16 specialties to 15, replaced “small cost in specificity” with “lower
+    specificity”, restricted the Figure 4 leniency claim to disputed-label errors,
+    and restricted the Figure 6 majority claim to localised losses (18/29, rather
+    than all 47 eligible losses). Generated results prose reads analysis CSVs.
+    Figure 1/2 protected files remain owned by the parallel task; the legend loader
+    resolves the AVATAR eTable placeholder and legacy number without editing them.
+    No statistical estimate or method changes. See round12-report.md for the full
+    legends, numbering map, checks and visual QA.

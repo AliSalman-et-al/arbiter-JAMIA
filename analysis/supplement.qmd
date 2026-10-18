@@ -12,6 +12,7 @@ source('R/avatar-trace.R')
 if(!file.exists('output/manuscript/Supplement.docx')) source('run.R')
 if(!exists('inputs')) inputs <- load_inputs()
 entries <- supplement_registry(inputs)
+METHODS_APPENDIX <- reader_label(METHODS_APPENDIX)
 ```
 
 [Download Supplement.docx](output/manuscript/Supplement.docx). The Word document and this working view use the same display objects and numbering. [TRIPOD-LLM and GRRAS checklist](output/manuscript/TRIPOD-LLM.docx) is a separate author-completion skeleton.
@@ -33,16 +34,19 @@ for(i in seq_along(entries)) {
     cat('\n#### ',block$title,'\n\n',sep='')
     cat(flextable::flextable_to_rmd(supplement_table(e,block$data)),sep='\n')
   }
-  if(entries[[i]]$caption=='Per-meta-analysis weighted κ')
-    cat('\n### eFigure 1. Agreement against Published by meta-analysis\n\n![Weighted kappa with 95% CIs; undefined coefficients omitted.](output/manuscript/eFigure1.png)\n\n')
+  if(entries[[i]]$caption=='Per-meta-analysis weighted κ') {
+    cat('\n### eFigure 1. Agreement with Published varied across meta-analyses\n\n![Agreement varies across meta-analyses, with overlapping uncertainty intervals for the assessment arms.](output/manuscript/eFigure1.png)\n\n')
+    cat(paste('Weighted kappa and 95% CIs; source symbols distinguish model and assistance.',
+      'Undefined coefficients are omitted. Specialty and topic identify each meta-analysis. Descriptive estimates only; no statistical tests.',CI_NOTE),'\n\n')
+  }
 }
 ```
 
-## eFigure 2. Disagreement patterns and preferred judgements
+## eFigure 2. ARBITER-only choices outnumbered Unassisted-only choices
 
-![All 154 disputed cells by disagreement with Published and preferred judgement; split cells are separate.](output/manuscript/eFigure2.png)
+![Disagreement patterns and the adjudicators’ agreed choices form a count matrix; split cells appear separately.](output/manuscript/eFigure2.png)
 
-Counts use label equality; shared labels count as both arms preferred.
+ARBITER-only choices were more frequent than Unassisted-only choices. Rows group disputed cells by disagreement with the published review label; columns show the adjudicators’ agreed choice or split. Counts use label equality; shared labels count as both arms preferred. A cell is one trial × domain.
 
 ## Prompt templates and filled example
 

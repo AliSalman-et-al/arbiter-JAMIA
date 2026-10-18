@@ -90,12 +90,12 @@ testthat::test_that('AVATAR trace includes all questions and original rationale'
 testthat::test_that('main tables retain requested denominators and slim audit layout', {
   old <- getwd(); setwd(analysis_dir); on.exit(setwd(old))
   t2 <- main_table2(); t3 <- main_table3()
-  testthat::expect_true(any(grepl('Not Low N = 83',t2$Source,fixed=TRUE)))
+  testthat::expect_true(any(grepl('positive N = 83',t2$Source,fixed=TRUE)))
   testthat::expect_false(any(grepl('[0-9]/[0-9]',unlist(t2))))
   testthat::expect_true(any(grepl('66.3 (57.3–74.7)',unlist(t2),fixed=TRUE)))
-  testthat::expect_identical(names(t3),c('Measure','ARBITER','Unassisted'))
+  testthat::expect_identical(names(t3),c('Measure','Unassisted','ARBITER'))
   testthat::expect_false(any(t3$Measure %in% c('All evidence bound','Proposed judgement matches algorithm')))
-  testthat::expect_equal(sum(grepl('*',t3$ARBITER,fixed=TRUE)),4)
+  testthat::expect_equal(sum(t3$ARBITER=='0 by design'),8)
 })
 
 testthat::test_that('all primary figure rows retain label-based counts and CIs', {
@@ -136,8 +136,8 @@ testthat::test_that('revised figure layouts and supplied legends retain their co
   testthat::expect_gt(nodes$x[3],0)
   p <- decisive_question_plot()
   testthat::expect_false(any(p$data$domain=='D1' & p$data$question=='remainder'))
-  testthat::expect_identical(p$labels$x,'Count')
-  testthat::expect_equal(unname(p$scales$get_scales('fill')$palette(4)[3:4]),c('#B2E3F2','#F5DDC7'))
+  testthat::expect_identical(p$labels$x,'Loss cells')
+  testthat::expect_equal(unname(p$scales$get_scales('fill')$palette(2)),unname(JAMA_ROLES[c('ARBITER','Unassisted')]))
   direction <- published_reference_plot()[[2]]
   scale <- direction$scales$get_scales('fill')
   testthat::expect_equal(unname(scale$palette(3)),c('#374E55','#94A1A6','#DCE1E3'))
@@ -146,7 +146,7 @@ testthat::test_that('revised figure layouts and supplied legends retain their co
   testthat::expect_equal(built[[2]]$x,(built[[1]]$xmin+built[[1]]$xmax)/2)
   primary <- adjudication_plot(NULL)
   testthat::expect_gt(primary[[1]]$layers[[5]]$data$x,.5)
-  testthat::expect_true(all(grepl('vindicated · ',rlang::eval_tidy(primary[[2]]$layers[[3]]$mapping$label,primary[[2]]$layers[[3]]$data),fixed=TRUE)))
+  testthat::expect_true(all(grepl(' · ',rlang::eval_tidy(primary[[2]]$layers[[3]]$mapping$label,primary[[2]]$layers[[3]]$data),fixed=TRUE)))
   sections <- figure_legend_sections()
   supplied <- supplied_figure_legends()
   testthat::expect_identical(sections[1:2],supplied)
@@ -176,7 +176,7 @@ testthat::test_that('portrait Tables 1–4 fit labels and non-free-text values a
     }
   }
   labels <- main_table_no_break_ranges(main_table2())$Source
-  testthat::expect_true('Composite: D1\u2060–\u2060D5' %in% labels)
+  testthat::expect_false(any(grepl('Composite',labels)))
   testthat::expect_false(any(grepl('D1–D5',labels,fixed=TRUE)))
   testthat::expect_true('26/509 (5.1%; 3.3–6.9)' %in% main_table3()$Unassisted)
   testthat::expect_false(any(grepl('%) (',unlist(main_table3()),fixed=TRUE)))
