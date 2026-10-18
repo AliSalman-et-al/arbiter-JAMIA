@@ -103,9 +103,16 @@ bundle_decision_rates <- function(decisions,labels,weights) {
 binding_summary <- function(bindings,weights) {
   bind_rows(lapply(split(bindings,bindings$arm),function(x) {
     w <- bootstrap_rows(x,weights)
-    interval_table(rbind(share=colSums(w*x$bound_records)/colSums(w*x$cited_records))) |>
-      mutate(arm=x$arm[1],metric='Structural evidence binding',n=sum(x$cited_records),
-        count=sum(x$bound_records),note='')
+    labels <- c('Structural evidence binding (overall)','Text-span evidence binding',
+      'Visual evidence binding','Other evidence records','Trials using visual evidence')
+    numerators <- c('bound_records','text_bound','visual_bound','other_records','visual_trial')
+    denominators <- c('cited_records','text_records','visual_records','cited_records',NA_character_)
+    bind_rows(lapply(seq_along(labels),function(i) {
+      numerator <- x[[numerators[i]]]
+      denominator <- if(is.na(denominators[i])) rep(1,nrow(x)) else x[[denominators[i]]]
+      interval_table(rbind(share=colSums(w*numerator)/colSums(w*denominator))) |>
+        mutate(arm=x$arm[1],metric=labels[i],n=sum(denominator),count=sum(numerator),note='')
+    }))
   }))
 }
 

@@ -23,7 +23,9 @@ arm_order <- function(x) {
 format_estimates <- function(x) {
   rate <- rep(FALSE,nrow(x))
   if('metric' %in% names(x)) rate <- x$metric %in% c('accuracy','sensitivity','specificity',
-    'ARBITER','Baseline','Neither','Evidence coverage','Bundle verification','share')
+    'ARBITER','Baseline','Neither','Evidence coverage','Bundle verification','share',
+    'Structural evidence binding (overall)','Text-span evidence binding','Visual evidence binding',
+    'Other evidence records','Trials using visual evidence')
   if(any(c('status','direction','quoted','correct') %in% names(x))) rate[] <- TRUE
   fmt <- function(v) ifelse(rate,percent(v),number(v))
   value <- fmt(x$estimate)

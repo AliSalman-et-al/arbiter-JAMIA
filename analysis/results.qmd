@@ -22,7 +22,7 @@ Adjudicators could only choose among the three labels offered. Cells where both 
 
 ## Figure 1: architecture and draft trace
 
-![ARBITER workflow and provisional worked trace from a committed assessment bundle. Source locators refer to captured PDF pages. Passages are server-extracted spans cited by handle, so the model cannot cite text that is not in the captured sources.](output/figures/figure1.png)
+![ARBITER workflow and provisional worked trace from a committed assessment bundle. Source locators refer to captured PDF pages. Text-span quotes are server-extracted spans cited by handle, so the model cannot cite text that is not in the captured sources. For visual evidence, the image region is server-rendered and hash-bound; its transcription is written by the model and is not machine-checked against the image.](output/figures/figure1.png)
 
 The trace uses a consensus cell where ARBITER-Sonnet matched the preferred judgement and differed from the meta label. Four more-severe candidates where only ARBITER departed from meta, plus levin-2016 D2, with cited bundle passages, evidence identifiers, source/page locators, verification status and abbreviated answer sets are in [worked-trace-candidates.csv](output/tables/worked-trace-candidates.csv). The default is award-10-2018 D2. The trace shows the span binding to its hash-identified captured source and the recorded independent bundle verifier result. The displayed selection is provisional for author review.
 
@@ -87,7 +87,8 @@ Domain algorithms use effect of assignment for D2. A required NA or missing answ
 
 ```{r}
 show_table(table_data('table3') |> filter(domain %in% c('D1-D5','Overall','Audit')) |>
-  select(arm,domain,status,n,count,missing,estimate,lower,upper))
+  select(arm,domain,status,n,count,missing,estimate,lower,upper),
+  caption='Algorithm consistency and audit. Text-span quotes are server-extracted; visual image regions are server-rendered and hash-bound, while their model-written transcriptions are not machine-checked against the image.')
 ```
 
 The proposed judgement agrees with the official domain algorithm in 510/510 ARBITER-Sonnet domains and 505/505 observed ARBITER-Haiku domains. The recorded override rates are 0/510 and 1/505 (0.2%), respectively. The hill-2017 D1 bundle records a Low to Some concerns override with rationale and evidence. Its adopted-label agreement with the algorithm is therefore 504/505 (99.8%). Five award-1-2014 domain labels remain missing. The amended gate passes. Judgements are algorithm-proposed; any model departure is recorded and auditable. Baseline violations are unrecorded departures.
@@ -95,12 +96,16 @@ The proposed judgement agrees with the official domain algorithm in 510/510 ARBI
 Evidence coverage and structural bundle verification are the main grounding evidence. Baseline evidence traces are not available. Verification does not establish assessment correctness or completion. Required active answers were checked in every domain history record of the ARBITER bundles; both arms have zero invalid paths. Invalid-path sensitivity counts, resolving required NA/missing answers first as N/PN and then as NI, are in the supplement.
 
 ```{r}
-binding <- table_data('audit-summary') |> filter(metric=='Structural evidence binding')
-for(i in seq_len(nrow(binding))) cat(sprintf('\n%s structural evidence binding: %d/%d (%.1f%%).\n',
-  binding$arm[i],binding$count[i],binding$n[i],100*binding$estimate[i]))
+binding <- table_data('audit-summary') |> filter(metric %in% c(
+  'Structural evidence binding (overall)','Text-span evidence binding','Visual evidence binding',
+  'Other evidence records','Trials using visual evidence'))
+for(i in seq_len(nrow(binding))) cat(sprintf('\n%s — %s: %d/%d (%.1f%%).\n',
+  binding$arm[i],binding$metric[i],binding$count[i],binding$n[i],100*binding$estimate[i]))
 ```
 
-Structural evidence binding requires a non-empty quote, a source identifier matching a captured source in the same bundle, a source version, a page and character offsets with start < end. Each distinct evidence record cited by a current active answer is counted once per bundle. This metric does not re-extract PDF text or establish that the passage supports the answer.
+Text-span quotes are server-extracted. Text-span binding requires a non-empty quote, a source identifier matching a captured source in the same bundle, a source version, a finite page and character offsets with start < end. Visual evidence uses a server-rendered, hash-bound image region: render.source_id must match the record source_id and a captured source in the same bundle; render.page must be a positive integer; render.png_sha256 must be non-empty; region must contain four finite numbers in [0, 1], ordered x0 < x1 and y0 < y1; and transcription must be non-empty. The transcription is written by the model and is not machine-checked against the image.
+
+Each distinct evidence identity cited in bases or counterevidence by current active answers is counted once per bundle; superseded histories are excluded. Records with kind figure or a render field are visual (taking precedence for hybrid records); remaining narrative records or records with quote/start/end fields are text spans. Unmatched or missing cited records are reported as other and remain in the overall denominator as unbound. Overall counts include text, visual and other records. Trials using any visual evidence are counted over all 102 analysis-set trials per arm. These are structural checks, without PDF text re-extraction or a judgement of whether evidence supports an answer. Baseline evidence traces are not available.
 
 ## Table 5: process metrics
 

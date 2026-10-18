@@ -95,7 +95,7 @@ Reports read the committed per-arm CSVs in data-derived/. The separate extractor
 show_table(table_data('table5-haiku'))
 show_table(table_data('process-summary'))
 show_table(table_data('process-differences'))
-show_table(table_data('audit-summary'))
+show_table(table_data('audit-summary'),caption='Audit metrics. Text-span quotes are server-extracted; visual image regions are server-rendered and hash-bound, while their model-written transcriptions are not machine-checked against the image.')
 show_table(table_data('evidence-bases-distribution'))
 ```
 
@@ -103,12 +103,16 @@ The Haiku Table 5 uses median [IQR] and paired mean differences (95% CI). Input 
 
 ## Structural evidence binding
 ```{r}
-binding <- table_data('audit-summary') |> filter(metric=='Structural evidence binding')
-for(i in seq_len(nrow(binding))) cat(sprintf('\n%s structural evidence binding: %d/%d (%.1f%%).\n',
-  binding$arm[i],binding$count[i],binding$n[i],100*binding$estimate[i]))
+binding <- table_data('audit-summary') |> filter(metric %in% c(
+  'Structural evidence binding (overall)','Text-span evidence binding','Visual evidence binding',
+  'Other evidence records','Trials using visual evidence'))
+for(i in seq_len(nrow(binding))) cat(sprintf('\n%s — %s: %d/%d (%.1f%%).\n',
+  binding$arm[i],binding$metric[i],binding$count[i],binding$n[i],100*binding$estimate[i]))
 ```
 
-Structural evidence binding requires a non-empty quote, a source identifier matching a captured source in the same bundle, a source version, a page and character offsets with start < end. Each distinct evidence record cited in bases or counterevidence by current active answers is counted once per bundle; superseded domain histories are excluded and missing cited records fail the check. The denominator contains cited evidence records, not answers or all stored evidence. Fourteen ARBITER-Sonnet records and five ARBITER-Haiku records instead contain visual evidence fields (region, render, transcription and provenance) and lack the required text-span fields; they remain in the denominator and fail this check. This metric does not re-extract PDF text or establish that the passage supports the answer. It is reported for ARBITER arms only.
+Text-span quotes are server-extracted. Text-span binding requires a non-empty quote, a source identifier matching a captured source in the same bundle, a source version, a finite page and character offsets with start < end. Visual evidence uses a server-rendered, hash-bound image region: render.source_id must match the record source_id and a captured source in the same bundle; render.page must be a positive integer; render.png_sha256 must be non-empty; region must contain four finite numbers in [0, 1], ordered x0 < x1 and y0 < y1; and transcription must be non-empty. The transcription is written by the model and is not machine-checked against the image.
+
+Each distinct evidence identity cited in bases or counterevidence by current active answers is counted once per bundle; superseded histories are excluded. Records with kind figure or a render field are visual (taking precedence for hybrid records); remaining narrative records or records with quote/start/end fields are text spans. Unmatched or missing cited records are reported as other and remain in the overall denominator as unbound. Overall counts include text, visual and other records. Trials using any visual evidence are counted over all 102 analysis-set trials per arm. These are structural checks, without PDF text re-extraction or a judgement of whether evidence supports an answer. Baseline evidence traces are not available.
 
 ## API list-price reconstruction and reconciliation
 

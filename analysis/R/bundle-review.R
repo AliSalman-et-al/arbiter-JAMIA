@@ -2,11 +2,33 @@
 answer_abbreviation <- function(x) unname(c(yes='Y',probably_yes='PY',probably_no='PN',
   no='N',no_information='NI',not_applicable='NA')[x])
 
+evidence_kind <- function(e) {
+  if(!is.list(e)) return('other')
+  # Visual takes precedence for hybrid records, so each citation counts once.
+  if(identical(e$kind,'figure') || 'render' %in% names(e)) return('visual')
+  if(identical(e$kind,'narrative') || any(c('quote','start','end') %in% names(e))) return('text')
+  'other'
+}
+
 evidence_is_bound <- function(e,source_ids) {
   text_present <- function(x) is.character(x) && length(x)==1L && !is.na(x) && nzchar(trimws(x))
   number_present <- function(x) is.numeric(x) && length(x)==1L && is.finite(x)
-  text_present(e$quote) && text_present(e$source_id) && e$source_id %in% source_ids &&
-    text_present(e$source_version) && number_present(e$page) &&
+  kind <- evidence_kind(e)
+  if(kind=='other') return(FALSE)
+  source_matches <- text_present(e$source_id) && e$source_id %in% source_ids
+  if(kind=='visual') {
+    r <- e$render
+    if(!is.list(r)) return(FALSE)
+    region <- e$region
+    if(is.list(region) && length(region)==4L && all(vapply(region,number_present,logical(1))))
+      region <- unlist(region,use.names=FALSE)
+    return(source_matches && text_present(r$source_id) && r$source_id==e$source_id &&
+      number_present(r$page) && r$page>0 && r$page==floor(r$page) && text_present(r$png_sha256) &&
+      is.numeric(region) && length(region)==4L && all(is.finite(region)) &&
+      all(region>=0 & region<=1) && region[1]<region[3] && region[2]<region[4] &&
+      text_present(e$transcription))
+  }
+  text_present(e$quote) && source_matches && text_present(e$source_version) && number_present(e$page) &&
     number_present(e$start) && number_present(e$end) && e$start < e$end
 }
 
@@ -20,9 +42,13 @@ bundle_binding_counts <- function(canonical,evidence) {
   cited <- cited[!is.na(cited)]
   sources <- unlist(lapply(canonical$batch$trials,function(t)
     vapply(t$sources,function(s) s$id,character(1))),use.names=FALSE)
-  # A missing cited evidence record stays in the denominator and fails.
-  c(cited_records=length(cited),bound_records=sum(vapply(cited,function(id)
-    evidence_is_bound(evidence[[id]],sources),logical(1))))
+  # Missing cited records remain unbound and are counted explicitly as other.
+  kinds <- vapply(cited,function(id) evidence_kind(evidence[[id]]),character(1))
+  bound <- vapply(cited,function(id) evidence_is_bound(evidence[[id]],sources),logical(1))
+  c(cited_records=length(cited),bound_records=sum(bound),
+    text_records=sum(kinds=='text'),text_bound=sum(bound & kinds=='text'),
+    visual_records=sum(kinds=='visual'),visual_bound=sum(bound & kinds=='visual'),
+    other_records=sum(kinds=='other'),visual_trial=as.integer(any(kinds=='visual')))
 }
 
 bundle_review_records <- function(canonical,arm,slug) {
@@ -93,7 +119,7 @@ extract_bundle_review <- function(inputs,root='..',output='data-derived') {
     }
     counts <- bundle_binding_counts(canonical,evidence)
     bindings[[paste(arm,slug)]] <- tibble(arm=arm,slug=slug,
-      cited_records=unname(counts['cited_records']),bound_records=unname(counts['bound_records']))
+      !!!as.list(counts))
     paths[[paste(arm,slug)]] <- bundle_review_records(canonical,arm,slug)
     eligible <- filter(cells,.data$slug==.env$slug)
     if(arm=='ARBITER-Sonnet' && nrow(eligible)) {
