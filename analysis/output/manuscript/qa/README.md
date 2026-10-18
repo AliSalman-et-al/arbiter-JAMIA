@@ -32,3 +32,12 @@ and trial slugs in Word text. It confirms editable Arial 9 pt table runs,
 figure fonts/sizes and TIFF metadata. Figure 1's technical provenance notes
 retain historical input paths and are unchanged; their legend/alt text alone
 is incorporated into the canonical legend file.
+
+## Round 10 table corrections
+
+Run `Rscript verify-round10.R` for the same publication checks against round 10's
+starting HEAD (8e0215b), including all 88 CSVs. Regenerated native Word PDFs,
+page PNGs and contact sheets were inspected for Table 2, Table 3 and supplement
+pages 7–8, 10–11, 28 and 36 (eTables 4, 6, 19 and 26). Page counts and page bounds
+are unchanged. The coverage label names active signalling answers, and collapsed
+proportion intervals are omitted. See round10-report.md for the changed cells.

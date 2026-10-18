@@ -42,7 +42,7 @@ Contradicts own answers (violation)
 0/102 (0.0%)
 
 Evidence and audit
-Cited evidence records with ≥1 basis (coverage)
+Signalling answers citing ≥1 evidence record
 1538/1538 (100.0%)
 Not available
 
@@ -62,4 +62,4 @@ Bundle passes independent verification
 102/102 (100.0%)
 Not available
 
-Values are n/N (%). Separate 95% CI column gives Unassisted departure-type rates in %. Domain consistency for ARBITER refers to proposals; recorded overrides are separate. Departure = violation + invalid path. One Unassisted domain has no evaluable label/answer set and is excluded (509 evaluable). Overall consistency is exact worst-domain agreement; permitted escalations are separate. Evidence binding counts distinct identities cited by current active answers. Text spans are server-extracted; visual regions are server-rendered and hash-bound, but transcriptions are model-written and not checked against images. Bundle verification is structural, not evidence of clinical correctness or completion. Unassisted evidence traces, proposed judgements and recorded overrides are not available. RoB 2, risk of bias tool for randomised trials. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.
+Values are n/N (%). Separate 95% CI column gives Unassisted departure-type rates in %. Domain consistency for ARBITER refers to proposals; recorded overrides are separate. Departure = violation + invalid path. One Unassisted domain has no evaluable label/answer set and is excluded (509 evaluable). Overall consistency is exact worst-domain agreement; permitted escalations are separate. Evidence coverage uses active signalling answers as the denominator and answers citing at least one evidence record as the numerator. Evidence binding counts distinct identities cited by current active answers. Text spans are server-extracted; visual regions are server-rendered and hash-bound, but transcriptions are model-written and not checked against images. Bundle verification is structural, not evidence of clinical correctness or completion. Unassisted evidence traces, proposed judgements and recorded overrides are not available. RoB 2, risk of bias tool for randomised trials. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.

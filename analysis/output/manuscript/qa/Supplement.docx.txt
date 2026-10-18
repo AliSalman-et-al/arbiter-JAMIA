@@ -511,43 +511,43 @@ D1–D5
 —
 427/510 (83.7%) (81.0–86.5)
 —
-427/427 (100.0%) (100.0–100.0)
+427/427 (100.0%)
 D1
 —
 —
 84/102 (82.4%) (76.5–88.2)
 —
-84/84 (100.0%) (100.0–100.0)
+84/84 (100.0%)
 D2
 —
 —
 86/102 (84.3%) (78.4–90.2)
 —
-86/86 (100.0%) (100.0–100.0)
+86/86 (100.0%)
 D3
 —
 —
 83/102 (81.4%) (76.5–86.3)
 —
-83/83 (100.0%) (100.0–100.0)
+83/83 (100.0%)
 D4
 —
 —
 93/102 (91.2%) (86.3–96.1)
 —
-93/93 (100.0%) (100.0–100.0)
+93/93 (100.0%)
 D5
 —
 —
 81/102 (79.4%) (74.5–84.3)
 —
-81/81 (100.0%) (100.0–100.0)
+81/81 (100.0%)
 Overall
 —
 —
 42/81 (51.9%) (44.4–59.3)
 —
-42/42 (100.0%) (100.0–100.0)
+42/42 (100.0%)
 ARBITER (Haiku 5.5)
 D1–D5
 0.29 (0.22–0.36)
@@ -589,7 +589,7 @@ Overall
 0.37 (0.26–0.48)
 0.34 (0.20–0.48)
 43/81 (53.1%) (44.4–61.7)
-39/39 (100.0%) (100.0–100.0)
+39/39 (100.0%)
 15/42 (35.7%) (27.7–44.7)
 Unassisted (Haiku 5.5)
 D1–D5
@@ -996,7 +996,7 @@ Any departure
 55/102 (53.9%)
 —
 Audit
-Cited evidence records with ≥1 basis (coverage)
+Signalling answers citing ≥1 evidence record
 1538/1538 (100.0%)
 —
 1552/1552 (100.0%)
@@ -1044,7 +1044,7 @@ Trials using visual evidence
 4/102 (3.9%)
 —
 —
-Values are n/N (%). Proposed judgements determine ARBITER domain consistency; adopted overrides are separate. Overall exact worst-domain agreement and permitted escalation are separate. Unassisted and Published evidence traces are unavailable. Binding and independent verification are structural checks, not clinical correctness. Visual transcriptions are model-written and not checked against images. CI, confidence interval; IQR, interquartile range; USD, US dollars; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
+Values are n/N (%). Proposed judgements determine ARBITER domain consistency; adopted overrides are separate. Overall exact worst-domain agreement and permitted escalation are separate. Evidence coverage uses active signalling answers as the denominator and answers citing at least one evidence record as the numerator. Unassisted and Published evidence traces are unavailable. Binding and independent verification are structural checks, not clinical correctness. Visual transcriptions are model-written and not checked against images. CI, confidence interval; IQR, interquartile range; USD, US dollars; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Domain
 Evaluable (n)
 Original violations (n)
@@ -2347,7 +2347,7 @@ Overall
 0.38 (0.27–0.49)
 0.36 (0.22–0.50)
 43/80 (53.8%) (45.0–62.5)
-39/39 (100.0%) (100.0–100.0)
+39/39 (100.0%)
 15/41 (36.6%) (28.6–45.7)
 Unassisted (Haiku 5.5)
 D1–D5
@@ -2817,7 +2817,7 @@ Estimate (95% CI)
 ARBITER (Sonnet 5.5)
 34/1538 (2.2%) (1.1–3.5)
 Unassisted (Sonnet 5.5)
-0/1459 (0.0%) (0.0–0.0)
+0/1459 (0.0%)
 ARBITER (Haiku 5.5)
 47/1552 (3.0%) (1.7–4.6)
 Unassisted (Haiku 5.5)
@@ -2922,15 +2922,15 @@ Missingness likely depends on true outcome
 15/31 (48.4%) (32.0–65.2)
 4.1
 Inappropriate measurement method
-15/15 (100.0%) (100.0–100.0)
-15/15 (100.0%) (100.0–100.0)
-15/15 (100.0%) (100.0–100.0)
+15/15 (100.0%)
+15/15 (100.0%)
+15/15 (100.0%)
 14/15 (93.3%) (80.0–100.0)
 4.2
 Measurement differs across groups
-15/15 (100.0%) (100.0–100.0)
-15/15 (100.0%) (100.0–100.0)
-15/15 (100.0%) (100.0–100.0)
+15/15 (100.0%)
+15/15 (100.0%)
+15/15 (100.0%)
 7/15 (46.7%) (23.1–72.7)
 4.3
 Assessors aware of received intervention
@@ -2989,7 +2989,7 @@ Concealment until enrolment and assignment
 17/22 (77.3%) (60.0–93.8)
 1.3
 Preintervention imbalance suggesting a randomisation problem
-22/22 (100.0%) (100.0–100.0)
+22/22 (100.0%)
 19/21 (90.5%) (78.3–100.0)
 18/22 (81.8%) (65.4–95.5)
 15/22 (68.2%) (50.0–85.7)
@@ -3061,15 +3061,15 @@ Missingness likely depends on true outcome
 14/31 (45.2%) (28.1–62.1)
 4.1
 Inappropriate measurement method
-15/15 (100.0%) (100.0–100.0)
-15/15 (100.0%) (100.0–100.0)
-15/15 (100.0%) (100.0–100.0)
+15/15 (100.0%)
+15/15 (100.0%)
+15/15 (100.0%)
 14/15 (93.3%) (80.0–100.0)
 4.2
 Measurement differs across groups
-15/15 (100.0%) (100.0–100.0)
-15/15 (100.0%) (100.0–100.0)
-15/15 (100.0%) (100.0–100.0)
+15/15 (100.0%)
+15/15 (100.0%)
+15/15 (100.0%)
 7/15 (46.7%) (23.1–72.7)
 4.3
 Assessors aware of received intervention

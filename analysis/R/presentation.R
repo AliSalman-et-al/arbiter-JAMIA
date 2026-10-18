@@ -24,9 +24,11 @@ fmt_number <- function(x,digits=2L) {
   out[out==paste0('\u2212',sprintf(paste0('%.',digits,'f'),0))] <- sprintf(paste0('%.',digits,'f'),0)
   out
 }
-fmt_ci <- function(lower,upper,digits=2L) {
+fmt_ci <- function(lower,upper,digits=2L,suppress_degenerate=FALSE) {
   sep <- ifelse(lower<0 | upper<0,' to ','\u2013')
   out <- paste0('(',fmt_number(lower,digits),sep,fmt_number(upper,digits),')')
+  if(suppress_degenerate) out[is.finite(lower) & is.finite(upper) &
+    fmt_number(lower,digits)==fmt_number(upper,digits)] <- ''
   out[!is.finite(lower)|!is.finite(upper)] <- '\u2014'; out
 }
 fmt_fraction <- function(n,N) {
@@ -44,7 +46,8 @@ fmt_estimate <- function(x,proportion=FALSE) {
   if(proportion) {
     out <- if(all(c('count','n') %in% names(x))) fmt_fraction(x$count,x$n) else paste0(fmt_number(100*x$estimate,1),'%')
   }
-  value <- paste0(out,' ',fmt_ci(x$lower*if(proportion) 100 else 1,x$upper*if(proportion) 100 else 1,if(proportion) 1L else 2L))
+  value <- trimws(paste0(out,' ',fmt_ci(x$lower*if(proportion) 100 else 1,x$upper*if(proportion) 100 else 1,if(proportion) 1L else 2L,
+    suppress_degenerate=proportion)))
   value[!is.finite(x$estimate)] <- '\u2014'; value
 }
 display_frame <- function(x,supplement=TRUE) {

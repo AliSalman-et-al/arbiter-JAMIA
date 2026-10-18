@@ -287,3 +287,11 @@ No Python is used. This file records conservative resolutions as they arise.
     machine exports remain exact. Topic abbreviations are defined in table notes.
     Tests, clean Quarto rendering, publication-name scans and all 88 CSV hashes
     pass. No statistical or methodological change was made.
+
+33. **Round 10 presentation corrections.** Evidence coverage is the fraction of
+    active signalling answers with at least one evidence basis, as implemented
+    by the extractor and audit summary; Table 3 and eTable 6 now name answers
+    and explicitly define this denominator. Proportion intervals with identical
+    displayed bounds are omitted while retaining estimates and counts, including
+    supplementary tables. The All-Low no-variance note remains. No statistical
+    object, CSV, input, analysis plan or glossary changes.

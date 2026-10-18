@@ -35,7 +35,7 @@ agreement_display <- function(x,ids=c('arm','domain'),difference=FALSE) {
   x <- x |> filter(metric %in% metrics)
   x$value <- vapply(seq_len(nrow(x)),function(i) {
     r <- x[i,]; prop <- r$metric %in% c('accuracy','sensitivity','specificity')
-    if(difference && prop) paste0(fmt_number(100*r$estimate,1),' ',fmt_ci(100*r$lower,100*r$upper,1))
+    if(difference && prop) trimws(paste0(fmt_number(100*r$estimate,1),' ',fmt_ci(100*r$lower,100*r$upper,1,suppress_degenerate=TRUE)))
     else if(r$metric=='kappa' && is.finite(r$lower) && r$lower==r$upper) '\u2014'
     else fmt_estimate(r,prop)
   },character(1))
@@ -64,7 +64,7 @@ MEASURE_LABELS <- c('Consistent'='Consistent with RoB 2 algorithm',
   'Violation'='Contradicts own answers (violation)', 'Invalid answer path'='Required question skipped (invalid path)',
   'Departure'='Any departure','Proposed agreement'='Proposed judgement matches algorithm',
   'Recorded override'='Recorded override','Permitted escalation'='Permitted escalation',
-  'Evidence coverage'='Cited evidence records with ≥1 basis (coverage)',
+  'Evidence coverage'='Signalling answers citing ≥1 evidence record',
   'Text-span evidence binding'='Text spans bound to captured source',
   'Visual evidence binding'='Visual regions bound to rendered page',
   'Structural evidence binding (overall)'='All evidence bound','Bundle verification'='Bundle passes independent verification')
@@ -110,6 +110,7 @@ main_table_notes <- function() list(
     'recorded overrides are separate. Departure = violation + invalid path.',
     'One Unassisted domain has no evaluable label/answer set and is excluded (509 evaluable).',
     'Overall consistency is exact worst-domain agreement; permitted escalations are separate.',
+    'Evidence coverage uses active signalling answers as the denominator and answers citing at least one evidence record as the numerator.',
     'Evidence binding counts distinct identities cited by current active answers.',
     'Text spans are server-extracted; visual regions are server-rendered and hash-bound, but transcriptions are model-written and not checked against images.',
     'Bundle verification is structural, not evidence of clinical correctness or completion.',

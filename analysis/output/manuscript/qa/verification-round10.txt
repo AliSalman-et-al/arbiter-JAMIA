@@ -1,0 +1,25 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed
+2: Setting LC_CTYPE=C.UTF-8 failed
+3: Setting LC_MONETARY=C.UTF-8 failed
+4: Setting LC_TIME=C.UTF-8 failed
+88 CSV files byte-identical (including Git newline normalisation) to 8e0215bb35f681cfe24879a5ab8757e9e6e5475c
+Supplement.docx : 52 real Word table(s); text scan clean
+TRIPOD-LLM.docx : 1 real Word table(s); text scan clean
+Table1.docx : 1 real Word table(s); text scan clean
+Table2.docx : 1 real Word table(s); text scan clean
+Table3.docx : 1 real Word table(s); text scan clean
+Table4.docx : 1 real Word table(s); text scan clean
+Figure2 : embedded Fira Sans; min text 7.966772 pt; width 174 mm; 600-dpi LZW TIFF
+Figure3 : embedded Fira Sans; min text 7.5 pt; width 174 mm; 600-dpi LZW TIFF
+Figure4 : embedded Fira Sans; min text 8 pt; width 174 mm; 600-dpi LZW TIFF
+Figure5 : embedded Fira Sans; min text 7.966772 pt; width 174 mm; 600-dpi LZW TIFF
+eFigure1 : embedded Fira Sans; min text 8 pt; width 174 mm; 600-dpi LZW TIFF
+Complete Word, publication PDF/SVG, HTML and canonical legend scans clean.
+Figure 1 PDF/PNG/SVG and renamed TIFF bytes unchanged.
+Table1 : 1 pages; rendered text within page bounds.
+Table2 : 1 pages; rendered text within page bounds.
+Table3 : 1 pages; rendered text within page bounds.
+Table4 : 1 pages; rendered text within page bounds.
+Supplement : 40 pages; rendered text within page bounds.
+TRIPOD-LLM : 2 pages; rendered text within page bounds.

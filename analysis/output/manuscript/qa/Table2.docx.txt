@@ -23,7 +23,7 @@ All-Low rule
 —
 427/510 (83.7%) (81.0–86.5)
 —
-427/427 (100.0%) (100.0–100.0)
+427/427 (100.0%)
 Against Published labels — Overall (81 trials)
 ARBITER
 0.44 (0.32–0.56)
@@ -42,7 +42,7 @@ All-Low rule
 —
 42/81 (51.9%) (44.4–59.3)
 —
-42/42 (100.0%) (100.0–100.0)
+42/42 (100.0%)
 Against composite reference — D1–D5 (485 cells)
 ARBITER
 0.94 (0.91–0.97)

@@ -26,6 +26,17 @@ testthat::test_that('proportion intervals use the percentage scale', {
   testthat::expect_identical(fmt_estimate(x,TRUE),'386/510 (75.7%) (72.4\u201379.0)')
   testthat::expect_identical(reader_label('D1-D5'),'D1\u2013D5')
 })
+testthat::test_that('proportion formatters omit collapsed intervals and retain estimates', {
+  x <- data.frame(estimate=c(1,0,.5,1,NA),lower=c(1,0,.4,.99999,NA),
+    upper=c(1,0,.6,1,NA),count=c(10,0,5,10,NA),n=10)
+  testthat::expect_identical(fmt_estimate(x,TRUE),
+    c('10/10 (100.0%)','0/10 (0.0%)','5/10 (50.0%) (40.0\u201360.0)',
+      '10/10 (100.0%)','\u2014'))
+  testthat::expect_identical(fmt_ci(0,0,1,suppress_degenerate=TRUE),'')
+  testthat::expect_identical(fmt_ci(1,1),'(1.00\u20131.00)')
+  testthat::expect_identical(fmt_estimate(x[1,],FALSE),'1.00 (1.00\u20131.00)')
+})
+
 testthat::test_that('group rows have an empty measure area', {
   x <- data.frame(Source=c('ARBITER','Unassisted'),Value=c('1','2'))
   testthat::expect_identical(group_row(x,'Group')$Value,c('','1','2'))

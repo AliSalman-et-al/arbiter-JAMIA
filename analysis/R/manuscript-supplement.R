@@ -123,7 +123,7 @@ supplement_registry <- function(inputs) {
   consistency <- manuscript_data('table3-supplement') |> mutate(status=coalesce(unname(MEASURE_LABELS[status]),status))
   consistency$value <- fmt_fraction(consistency$count,consistency$n)
   add('RoB 2 consistency and structural audit, all sources and domains',consistency |>
-    select(domain,status,arm,value) |> pivot_wider(names_from=arm,values_from=value),paste('Values are n/N (%). Proposed judgements determine ARBITER domain consistency; adopted overrides are separate. Overall exact worst-domain agreement and permitted escalation are separate. Unassisted and Published evidence traces are unavailable. Binding and independent verification are structural checks, not clinical correctness. Visual transcriptions are model-written and not checked against images.'))
+    select(domain,status,arm,value) |> pivot_wider(names_from=arm,values_from=value),paste('Values are n/N (%). Proposed judgements determine ARBITER domain consistency; adopted overrides are separate. Overall exact worst-domain agreement and permitted escalation are separate. Evidence coverage uses active signalling answers as the denominator and answers citing at least one evidence record as the numerator. Unassisted and Published evidence traces are unavailable. Binding and independent verification are structural checks, not clinical correctness. Visual transcriptions are model-written and not checked against images.'))
   add('Invalid answer path sensitivity',manuscript_data('invalid-path-sensitivity') |>
     mutate(Group=paste(reader_label(arm,TRUE),'— replacement:',resolution)) |>
     select(Group,Domain=domain,`Evaluable (n)`=n,`Original violations (n)`=original_violations,`Invalid paths (n)`=invalid_paths,
