@@ -9,20 +9,26 @@ No Python is used. This file records conservative resolutions as they arise.
    Five additional Haiku cells (award-1-2014 D1-D5) have no labels or answers.
    The amended gate permits this single independently established exception.
    It is listed in the supplement and footnoted on the Haiku consistency rate;
-   the authors must check the run bundle. The five missing cells belong to an
+   the bundle now confirms a recorded model override (see resolution below). The five missing cells belong to an
    unfinished run (continues=1), count as wrong, and have an exclusion sensitivity.
    No algorithm or input label was changed. This entry folds in the retired
    VALIDATION-HALT.md. Guidance: https://www.cochrane.de/sites/cochrane.de/files/uploads/RoB_2.0_guidance_2019.pdf
    (Tables 3–4, printed pp. 19–20); source cross-check:
    https://github.com/AliSalman-et-al/ARBITER/blob/2f549ae30f056ff441ea61a04b719968716f2219/src/arbiter/logic/evaluator.py
    (randomization branch); question locators: src/arbiter/packs/scientific.py.
-   These sources both give Low for NI/PY/N. The available CSVs do not establish
-   whether the exception is an intended override, an export issue, or another cause.
-2. **Unverifiable run provenance.** The retrieved ARBITER commit is
-   2f549ae30f056ff441ea61a04b719968716f2219. It is recorded as the source
-   cross-check commit only; the benchmark-run commit, exact model IDs and run
-   dates have not been established from the available CSVs. They are not
-   inferred from directory names or filesystem modification dates.
+   These sources both give Low for NI/PY/N. The later author amendment and supplied
+   bundles resolve this as a recorded model override, with proposed=Low,
+   adopted=Some concerns, rationale and evidence. It is not an algorithm violation.
+   Table 3 distinguishes proposed-algorithm agreement from recorded overrides.
+2. **Run provenance resolved after the initial CSV-only stage.** Author commits
+   supplied run READMEs, metadata and bundles during this implementation. Models
+   are claude-sonnet-5-5 and claude-haiku-5-5, effort medium; Claude Code 2.1.278
+   used isolated homes. ARBITER-Sonnet ran 12 October 2026 (12:12–19:17 EDT),
+   the other arms 14 October 2026, per READMEs. The author amendment identifies
+   ARBITER 1.0.0, public commit 2f549ae30f056ff441ea61a04b719968716f2219,
+   as the run version. Earlier internal names/commit IDs are not published in
+   report outputs. The requested AUTHORS placeholder remains for confirmation
+   alongside these documented facts; no date is inferred from file timestamps.
 3. **Missing ordinal judgements.** The plan requires missing arm labels to count
    as wrong but does not define ordinal coefficients for missing predictions.
    For Haiku only, missing predictions are assigned the opposite extreme of the
@@ -35,9 +41,10 @@ No Python is used. This file records conservative resolutions as they arise.
    percentile type-7 intervals. The full 102-trial cohort is resampled within each
    meta; endpoint subsets are then selected. Every paired contrast uses identical
    replicate weights. Undefined replicates are omitted metric by metric, with the
-   valid count exported; an entirely undefined interval is blank. Predictions
-   with no variance have undefined kappa as directed by the plan; All-Low reports
-   only accuracy and specificity, with other metrics blank.
+   valid count exported; an entirely undefined interval is blank. The All-Low
+   kappa is suppressed as explicitly directed by the plan; All-Low reports only
+   accuracy and specificity. Other coefficients follow their usual formulas,
+   including zero kappa for constant predictions when its denominator is nonzero.
 5. **Split sensitivity.** Split discordant cells are forced ARBITER losses, without
    fabricating a baseline win. They join the residual Neither/forced-loss category.
 6. **Grounding and exploratory answers.** Quotation words are whitespace-separated
@@ -51,6 +58,35 @@ No Python is used. This file records conservative resolutions as they arise.
    eligible cells have an active justification meeting the five-word double-quote
    criterion; those are prioritised and flagged, and the draft trace uses one.
    The other three preserve the source justifications without inventing quotations.
-   Newly available raw run folders, logs, runner scripts and local settings are
-   ignored by git; the tracked exported inputs remain unchanged. No raw bundles,
-   settings or trial PDFs are added to the public analysis commit.
+   Raw logs and local untracked run files are ignored by git; run artefacts
+   committed concurrently by the author remain tracked. The exported scoring
+   inputs remain unchanged. This implementation adds no raw bundles, settings
+   or trial PDFs to its analysis commits.
+8. **Consistency denominators and codebook.** Missing reported labels or required
+   active signalling answers make a cell not evaluable; no answer is inferred.
+   Consistency rates use evaluable cells, and tables expose not-evaluable counts
+   (including incomplete baseline answer paths). The deductive codebook uses one
+   primary human-assigned code per losing source; second-author sample size is
+   ceiling(20% of rows), fixed before coding. Author codes remain separate from
+   optional reconciled final codes. The checklist is an abbreviated item-ID
+   skeleton, with author applicability/page/section entries blank.
+9. **Concurrent binding amendments incorporated.** Author commits added section
+   5.8, resolved the recorded override, supplied provenance, and specified distinct
+   baseline prompts during milestones 3–5. The last milestone incorporates these
+   amendments. R streams JSONL in bounded chunks and cross-checks terminal usage
+   against metadata. Four per-arm derived CSVs are committed; reports do not read
+   raw logs/bundles. Extraction fails on absent logs and writes only after all
+   inputs validate. No Python is needed. UTF-8 JSON is explicitly tagged when
+   parsing strings on Windows; bytes and numeric fields are not altered.
+10. **Process estimands and bundle denominators.** Section 5.8 does not specify
+   the statistic for paired process differences. We report the mean paired
+   per-trial difference and total difference, with the shared bootstrap; per-arm
+   medians, quartiles and totals are also shown. Thinking tokens are a subset of
+   output tokens and are not added again. Cost is harness-reported with unknown
+   basis. Baseline approval/evidence/verification are not available, not zero.
+   All 102 ARBITER-Haiku bundles exist, but award-1-2014 has no assessed domains;
+   its empty bundle can verify structurally without supplying any judgement.
+   Domain scoring remains missing/wrong; proposal and override denominators are
+   505 observed Haiku domains. Bundle verification uses all available bundles,
+   while evidence coverage uses their active answers. A pass is structural
+   verification, not proof of assessment correctness or completion.

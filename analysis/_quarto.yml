@@ -4,6 +4,9 @@ project:
     - results.qmd
     - supplement.qmd
 engine: knitr
+knitr:
+  opts_chunk:
+    results: asis
 format:
   html:
     toc: true

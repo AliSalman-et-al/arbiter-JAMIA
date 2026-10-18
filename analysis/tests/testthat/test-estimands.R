@@ -34,6 +34,8 @@ test_that('linear kappa and AC2 reproduce a hand-worked table', {
   expect_equal(exact_accuracy(c),4/6)
   expect_equal(not_low_sensitivity(c),1)
   expect_equal(not_low_specificity(c),2/3)
+  expect_equal(weighted_kappa(matrix(c(1,0,1,rep(0,6)),nrow=1)),0)
+  expect_true(is.na(weighted_kappa(matrix(c(2,rep(0,8)),nrow=1))))
 })
 
 test_that('missing judgements fail exact and binary scoring', {
@@ -54,6 +56,13 @@ test_that('composite excludes all split cells', {
   x <- composite_reference(inputs)
   expect_equal(as.integer(table(x$arm)),c(485L,485L))
   expect_equal(nrow(composite_reference(inputs,'A')),1020L)
+})
+
+test_that('consensus endpoint reproduces label-based sanity counts', {
+  w <- stratified_cluster_weights(inputs$trials,100,20261018)
+  x <- win_share(adjudication_cells(inputs),w)
+  expect_equal(x$n,rep(62L,3))
+  expect_equal(x$count,c(54L,7L,1L))
 })
 
 test_that('amended gate rejects a second Haiku exception or unexpected missingness', {

@@ -8,8 +8,22 @@ checks <- domain_checks(inputs)
 validate_gate(checks)
 weights <- stratified_cluster_weights(inputs$trials,B,SEED)
 cells <- adjudication_cells(inputs)
+run_metrics <- load_run_metrics()
+bundle_decisions <- bundle_decision_cells(run_metrics)
+validate_proposed_gate(bundle_decisions,inputs$labels)
 dir.create('output/tables',recursive=TRUE,showWarnings=FALSE)
-save_table <- function(x,name) readr::write_csv(x,paste0('output/tables/',name,'.csv'),na='')
+save_table <- function(x,name) {
+  # Internal source-column names are translated before publication.
+  names(x)[names(x)=='kit'] <- 'ARBITER_label'
+  names(x)[names(x)=='nokit'] <- 'Baseline_label'
+  readr::write_csv(x,paste0('output/tables/',name,'.csv'),na='')
+}
+save_table(process_summary(run_metrics),'process-summary')
+save_table(paired_process_difference(run_metrics,weights),'process-differences')
+save_table(audit_summary(run_metrics,weights),'audit-summary')
+save_table(evidence_distribution(run_metrics),'evidence-bases-distribution')
+save_table(bundle_decisions,'bundle-domain-checks')
+save_table(bundle_decisions |> filter(override),'recorded-overrides')
 save_table(tibble(seed=SEED,replicates=B,coding_sample_seed=20261019L,
   rng_kind=RNGkind()[1],quantile_type=7),'reproducibility')
 primary <- bind_rows(lapply(c('Consensus','A','Z','Split sensitivity'),function(s) win_share(cells,weights,s)))
@@ -61,7 +75,7 @@ save_table(missing_sensitivity$estimates,'missing-sensitivity')
 save_table(missing_sensitivity$differences,'missing-sensitivity-differences')
 
 save_table(checks,'domain-consistency-cells')
-save_table(checks |> filter(startsWith(arm,'ARBITER'),status=='Violation'),'algorithm-mismatches')
+save_table(checks |> filter(startsWith(arm,'ARBITER'),status=='Reported departure'),'algorithm-mismatches')
 save_table(checks |> count(arm,status),'algorithm-validation-summary')
 save_table(question_map(),'question-map')
 overall <- overall_checks(inputs$labels)
@@ -69,9 +83,10 @@ save_table(overall,'overall-consistency-cells')
 overall_rates <- consistency_rates(overall,weights) |> mutate(domain='Overall')
 domain_rates <- bind_rows(lapply(c('D1-D5',paste0('D',1:5)),function(d) {
   x <- if(d=='D1-D5') checks else filter(checks,domain==d)
+  x <- filter(x,!startsWith(arm,'ARBITER'))
   consistency_rates(x,weights) |> mutate(domain=d)
 }))
-consistency <- bind_rows(overall_rates,domain_rates)
+consistency <- bind_rows(overall_rates,domain_rates,bundle_decision_rates(bundle_decisions,inputs$labels,weights))
 save_table(consistency,'table3-supplement')
 save_table(consistency |> filter(arm %in% c('Meta','ARBITER-Sonnet','Baseline-Sonnet')),'table3')
 
@@ -83,7 +98,8 @@ reliability_pair <- function(x,y,name) {
 reliability <- bind_rows(reliability_pair('own_A','own_Z','A vs Z independent'),
   reliability_pair('chosen_label_A','chosen_label_Z','A vs Z preferred'),
   bind_rows(lapply(c('A','Z'),function(a) bind_rows(lapply(c('meta','kit','nokit'),function(s)
-    reliability_pair(s,paste0('own_',a),paste(a,'independent vs',s)))))))
+    reliability_pair(s,paste0('own_',a),paste(a,'independent vs',
+      c(meta='meta label',kit='ARBITER-Sonnet',nokit='Baseline-Sonnet')[[s]])))))))
 save_table(reliability,'table4-reliability')
 leniency <- meta_leniency(cells,weights)
 save_table(leniency,'meta-leniency')

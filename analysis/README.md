@@ -14,3 +14,21 @@ quarto render
 ```
 
 Rendering results.qmd rebuilds outputs; supplement.qmd reads those outputs in project render order. No cached computations are required. Inputs in the parent directory are read-only. HTML is local review material and ignored by git. Human coding belongs in output/coding/coding-sheet.csv; the pipeline preserves that file and checks row identities before use. Bootstrap seed: 20261018; 10,000 replicates. Coding-sample seed: 20261019.
+
+The analysis uses R only. `R/` contains pure estimands and resampling functions;
+`run.R` orchestrates numerical exports, materials and figures. Tables retain
+full precision, interval bounds and valid bootstrap counts. All missing-data
+and denominator choices are documented in DEVIATIONS.md. Re-render after human
+coding is complete to replace the taxonomy placeholder. Do not delete a filled
+working coding sheet when cleaning generated outputs.
+
+The binding section 5.8 amendment is included. `data-derived/` contains four
+committed per-arm process/audit CSVs. To regenerate them with the raw logs and
+bundles present, run `Rscript R/extract-run-metrics.R` from analysis/. It streams
+JSONL, validates usage against metadata and stops if logs are absent. Rendering
+reads only those derived CSVs, never raw logs or bundles. ARBITER proposals are
+checked independently against the official algorithms; recorded overrides are
+listed separately from baseline algorithm violations.
+
+`round2-report.md` records all requested headline numbers and the complete
+deviation log. Generate it after rendering with `Rscript report-round2.R`.

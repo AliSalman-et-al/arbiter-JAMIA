@@ -6,7 +6,16 @@ save_figure <- function(plot,name,width=9,height=6) {
   ggsave(paste0('output/figures/',name,'.png'),plot,width=width,height=height,dpi=600,bg='white')
 }
 
+combine_panels <- function(top,bottom) {
+  grDevices::pdf(NULL)
+  on.exit(grDevices::dev.off())
+  grid::grobTree(
+    grid::grobTree(ggplotGrob(top),vp=grid::viewport(y=.75,height=.5)),
+    grid::grobTree(ggplotGrob(bottom),vp=grid::viewport(y=.25,height=.5)))
+}
+
 draft_architecture <- function(inputs,candidates) {
+  candidates <- candidates |> rename(kit=ARBITER_label,nokit=Baseline_label)
   selected <- inputs$signals |> filter(arm=='ARBITER-Sonnet',active) |>
     semi_join(candidates,by=c('slug','domain')) |> filter(has_quotation(justification)) |>
     arrange(slug,domain,question) |> slice_head(n=1)
@@ -19,12 +28,12 @@ draft_architecture <- function(inputs,candidates) {
   trace <- c(paste0(selected$slug,' / ',selected$domain,'\n',quote),
     paste0('Signalling answer ',selected$question,' = ',selected$answer),
     cell$signalling_answers,
-    paste0('Official domain algorithm → ',cell$kit,'\nMeta label: ',cell$meta,
+    paste0('Official domain algorithm proposes ',cell$kit,'\nMeta label: ',cell$meta,
       '; consensus preferred judgement: ',cell$preferred),
     'Verifiable bundle: answers, quoted justifications, domain judgement and source locators')
   nodes <- tibble(y=5:1,
     architecture=c('Trial reports and specified outcome','LLM + arbiter-assess skill',
-      'ARBITER MCP: structured signalling questions','Deterministic RoB 2 domain algorithm','Auditable assessment bundle'),
+      'ARBITER MCP: structured signalling questions','RoB 2 algorithm proposes judgement','Auditable assessment bundle, including any override'),
     trace=vapply(trace,stringr::str_wrap,character(1),width=67))
   p <- ggplot(nodes,aes(y=y)) +
     geom_rect(aes(xmin=0,xmax=3,ymin=y-.38,ymax=y+.38),fill='#e5f2f5',color='#347080') +
@@ -50,8 +59,8 @@ build_figures <- function() {
   save_figure(draft_architecture(inputs,candidates),'figure1',11,8.5)
   nodes <- tibble(y=7:1,label=c('16 meta-analyses\n105 benchmark trials',
     '3 excluded: unsupported designs\natwine-2020; haney-2004; herrmann-2016',
-    '102 analysis-set trials','510 D1–D5 cells per arm\n81 trials with meta Overall labels',
-    '154 disputed D1–D5 cells','129 consensus cells\n62 discordant between Sonnet arms',
+    '102 analysis-set trials','510 D1-D5 cells per arm\n81 trials with meta Overall labels',
+    '154 disputed D1-D5 cells','129 consensus cells\n62 discordant between Sonnet arms',
     '25 split cells\n18 discordant between Sonnet arms'))
   # Branch consensus and split from the disputed-cell node.
   nodes$x <- c(0,0,0,0,0,-1.5,1.5); nodes$y <- c(7,6,5,4,3,1.5,1.5)
@@ -81,9 +90,7 @@ build_figures <- function() {
     scale_fill_brewer(palette='Set2')+coord_flip()+labs(title='B. All disputed cells, by preferred label',
       x=NULL,y='Cells',fill=NULL)
   # Compose panels with base grid, without an additional package dependency.
-  combined <- grid::grobTree(
-    grid::grobTree(ggplotGrob(pA),vp=grid::viewport(y=.75,height=.5)),
-    grid::grobTree(ggplotGrob(pB),vp=grid::viewport(y=.25,height=.5)))
+  combined <- combine_panels(pA,pB)
   save_figure(combined,'figure3',10,9)
   comparison <- bind_rows(read_table('agreement-meta'),read_table('agreement-composite')) |>
     filter(domain %in% paste0('D',1:5)) |>
@@ -95,11 +102,11 @@ build_figures <- function() {
     facet_wrap(~reference)+scale_color_manual(values=c('ARBITER-Sonnet'='#007f86',
       'Baseline-Sonnet'='#c76b13','All-Low accuracy'='#777777'))+
     scale_shape_manual(values=c('ARBITER-Sonnet'=16,'Baseline-Sonnet'=17,'All-Low accuracy'=4))+
-    labs(title='Figure 4. Domain agreement by reference',y='Weighted kappa; All-Low exact accuracy (×)',x=NULL,
+    labs(title='Figure 4. Domain agreement by reference',y='Weighted kappa; All-Low exact accuracy (x)',x=NULL,
       color=NULL,shape=NULL,caption='Bars: 95% stratified trial-cluster bootstrap intervals. Composite excludes split cells.')
   save_figure(p,'figure4',10,5)
   forest <- read_table('forest-meta')
-  p <- ggplot(forest,aes(estimate,meta_id,color=arm))+geom_vline(xintercept=0,color='grey70')+
+  p <- ggplot(filter(forest,is.finite(estimate)),aes(estimate,meta_id,color=arm))+geom_vline(xintercept=0,color='grey70')+
     geom_point(position=position_dodge(width=.65),size=1.8)+
     geom_errorbar(aes(xmin=lower,xmax=upper),width=.2,position=position_dodge(width=.65))+
     labs(title='Supplement. Agreement by meta-analysis',x='Weighted kappa against meta labels',y=NULL,color=NULL,

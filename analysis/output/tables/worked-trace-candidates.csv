@@ -1,4 +1,4 @@
-slug,meta_id,domain,meta,kit,nokit,preferred,has_qualifying_quotation,signalling_answers,arbiter_justifications
+slug,meta_id,domain,meta,ARBITER_label,Baseline_label,preferred,has_qualifying_quotation,signalling_answers,arbiter_justifications
 freeman-2020,lpsych-cannabinoids,D3,Low,Some concerns,Some concerns,Some concerns,TRUE,3.1=no_information; 3.2=probably_no; 3.3=probably_yes; 3.4=probably_no,"3.1: Figure 1 shows all randomised participants (23 placebo, 24 400 mg, 23 800 mg) in the final ITT analysis, and 77 of 82 (94%) completed the 4-week treatment, but no report gives how many participants had an observed Cannabis Withdrawal Scale score at week 16 (a follow-up site visit). Table S5 gives raw means without denominators, and the report says missing data were handled by Bayesian multiple imputation, which counts as missing.
 
 3.2: Missing data were handled by Bayesian multiple imputation assuming missing at random within a model with time, baseline score and participant random intercept; no sensitivity analysis to missing-not-at-random assumptions is reported, and such imputation is not assumed to correct bias.

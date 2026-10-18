@@ -60,11 +60,11 @@ domain_checks <- function(inputs) {
   inputs$labels |> filter(domain!='Overall') |>
     left_join(calculated,by=c('arm','slug','domain')) |>
     mutate(status=case_when(is.na(label)|is.na(algorithm)~'Not evaluable',
-      label==algorithm~'Consistent',TRUE~'Violation'))
+      label==algorithm~'Consistent',startsWith(arm,'ARBITER')~'Reported departure',TRUE~'Violation'))
 }
 validate_gate <- function(checks) {
   sonnet <- checks |> filter(arm=='ARBITER-Sonnet',status!='Consistent')
-  haiku <- checks |> filter(arm=='ARBITER-Haiku',status=='Violation')
+  haiku <- checks |> filter(arm=='ARBITER-Haiku',!status %in% c('Consistent','Not evaluable'))
   missing <- checks |> filter(arm=='ARBITER-Haiku',status=='Not evaluable')
   # The amended gate allows only the independently established exception.
   isolated <- nrow(haiku)==0L || (nrow(haiku)==1L && haiku$slug=='hill-2017' &&

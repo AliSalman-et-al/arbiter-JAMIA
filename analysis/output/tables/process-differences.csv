@@ -1,0 +1,21 @@
+estimand,estimate,lower,upper,valid_replicates,metric
+Mean paired trial difference,660.1078431372549,504.6185049019608,846.6157598039216,10000,wall_seconds
+Total paired difference,67331,51471.08750000001,86354.8075,10000,wall_seconds
+Mean paired trial difference,89.70588235294117,87.66666666666667,91.72549019607843,10000,input_tokens
+Total paired difference,9150,8942,9356,10000,input_tokens
+Mean paired trial difference,478287.7156862745,469390.0090686275,487123.9225490196,10000,cache_creation_tokens
+Total paired difference,48785347,47877780.925000004,49686640.1,10000,cache_creation_tokens
+Mean paired trial difference,4992968.588235294,4867214.616911765,5117103.509313726,10000,cache_read_tokens
+Total paired difference,509282796,496455890.925,521944557.95,10000,cache_read_tokens
+Mean paired trial difference,19494.745098039217,18829.473774509806,20144.38970588235,10000,output_tokens
+Total paired difference,1988464,1920606.325,2054727.75,10000,output_tokens
+Mean paired trial difference,2497.7450980392155,2318.9370098039212,2679.226960784313,10000,thinking_tokens
+Total paired difference,254770,236531.57499999998,273281.14999999997,10000,thinking_tokens
+Mean paired trial difference,10.913953112745098,10.710911688970588,11.109421216727943,10000,cost_usd
+Total paired difference,1113.2232175,1092.512992275,1133.16096410625,10000,cost_usd
+Mean paired trial difference,1,1,1,10000,turns
+Total paired difference,102,102,102,10000,turns
+Mean paired trial difference,58.568627450980394,56.85294117647059,60.27450980392157,10000,agent_steps
+Total paired difference,5974,5799,6148,10000,agent_steps
+Mean paired trial difference,0,0,0,10000,continues
+Total paired difference,0,0,0,10000,continues

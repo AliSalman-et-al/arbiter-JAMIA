@@ -1,0 +1,65 @@
+guideline,item,topic,page,section,applicability_and_notes,source
+TRIPOD-LLM,1,Title,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,2,Abstract,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,3a,Context,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,3b,Intended users,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,4,Objectives,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,5a,Data sources,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,5b,Data distribution,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,5c,Text dates,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,5d,Preprocessing,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,5e,Missingness,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,6a,Model identity,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,6b,Development,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,6c,Inference settings,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,6d,Outputs,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,6e,Classification,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,7a,Generative metrics,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,7b,Metric relevance,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,7c,Outcome definition,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,7d,Assessors,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,7e,Comparators,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,8a,Annotation guidance,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,8b,Annotation agreement,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,8c,Annotator experience,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,9a,Prompt design,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,9b,Prompt data,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,10,Summarization preprocessing,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,11,Alignment evaluation,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,12,Compute,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,13,Ethics,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,14a,Funding,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,14b,Conflicts,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,14c,Protocol,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,14d,Registration,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,14e,Data access,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,14f,Code access,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,15,Public involvement,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,16a,Data flow,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,16b,Data characteristics,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,16c,Clinical distributions,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,16d,Analysis counts,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,17,Performance,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,18,Model updating,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,19a,Interpretation,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,19b,Limitations,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,19c,Data challenges,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,19d,Implementation scope,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,19e,Poor inputs,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,19f,User expertise,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+TRIPOD-LLM,19g,Future research,,,,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
+GRRAS,1,Title/abstract identification,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,2,Measurement instrument,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,3,Subject population,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,4,Rater population,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,5,Rationale,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,6,Sample size rationale,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,7,Sampling,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,8,Rating process and blinding,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,9,Independent ratings,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,10,Statistical methods,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,11,Actual sample counts,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,12,Sample/rater characteristics,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,13,Estimates and uncertainty,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,14,Practical relevance,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf
+GRRAS,15,Detailed results,,,,https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf

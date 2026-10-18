@@ -126,6 +126,9 @@ build_materials <- function(inputs,cells) {
   example <- inputs$targets |> arrange(slug) |> slice_head(n=1)
   filled <- paste0('/arbiter-assess Assess risk of bias for ',example$assess_outcome,
     ' defined as ',example$assess_values_as_printed,' in ',example$slug,'.')
-  save_table(tibble(type=c('Template','Example'),slug=c('',example$slug),prompt=c(template_text,filled)),
+  baseline_template <- 'Assess risk of bias for {outcome} defined as {definition} in {trial}.'
+  format_instruction <- paste(readLines('../no-kit-sonnet-5.5/nokit-format.txt',warn=FALSE),collapse='\n')
+  save_table(tibble(type=c('ARBITER template','ARBITER example','Baseline template','Baseline output-format instruction'),
+    slug=c('',example$slug,'',''),prompt=c(template_text,filled,baseline_template,format_instruction)),
     'prompt-template-example')
 }

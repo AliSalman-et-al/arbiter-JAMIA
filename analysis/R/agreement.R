@@ -8,8 +8,9 @@ weighted_kappa <- function(counts) {
   observed <- as.numeric(p %*% as.vector(linear_weights()))
   expected <- rowSums((rows %*% linear_weights())*cols)
   out <- (observed-expected)/(1-expected)
-  # Plan requires a dash for a prediction with no variance.
-  out[rowSums(cols>0)<2 | !is.finite(out)] <- NA_real_
+  # Ordinary Cohen kappa is undefined only when its denominator vanishes.
+  # The plan's separate All-Low reporting restriction is applied by run.R.
+  out[!is.finite(out)] <- NA_real_
   out
 }
 

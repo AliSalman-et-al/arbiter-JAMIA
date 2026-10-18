@@ -12,7 +12,9 @@ source('R/report.R')
 
 [AUTHORS: model IDs, effort setting, run dates, ARBITER commit used for runs]
 
-The source `kit-sonnet-5.5/accuracy.md` describes “Claude Code, Sonnet 5.5 (Medium)”. This is the source of the recorded effort setting; exact model IDs and run provenance require author completion. Each arm ran each trial once. Run-to-run variability is not estimated.
+The run READMEs and harness metadata identify models `claude-sonnet-5-5` and `claude-haiku-5-5`, effort medium, and Claude Code 2.1.278 with isolated configuration homes. ARBITER 1.0.0 ([public commit 2f549ae](https://github.com/AliSalman-et-al/ARBITER/commit/2f549ae30f056ff441ea61a04b719968716f2219)) was used for the runs, as specified by the author amendment. ARBITER-Sonnet ran on 12 October 2026 (12:12–19:17 EDT); the other arms ran on 14 October 2026, per their READMEs. The placeholder above is retained for author confirmation of these now-documented facts. Each arm ran each trial once. Run-to-run variability is not estimated.
+
+The ARBITER prompt invokes `/arbiter-assess`. The baseline uses the same minimal assessment request without the skill, followed by a fixed output-format instruction; the two prompts are not identical. Both templates and the verbatim baseline format instruction are quoted in the supplement. The ARBITER harness approved the proposed result unchanged and resumed with “Approved.” The protocol permitted uncoached “Continue.” replies at most twice per phase; observed counts are reported in the supplement. Baseline access was limited to Read, Glob and Grep, with no MCP server, skills or web tools; the supplied registry Markdown and acquired protocol/SAP documents preserved input parity.
 
 The analysis includes 102 trials, after excluding atwine-2020, haney-2004 and herrmann-2016 for unsupported designs. Only the win share on consensus discordant cells is confirmatory. All other estimates are secondary or exploratory. Intervals use 10,000 percentile bootstrap replicates, resampling trials within each meta-analysis, seed `r SEED`. All estimates and paired contrasts use the same replicate weights. Blank CSV estimates and em dashes indicate undefined values. Metrics and differences are expressed on the 0–1 scale, except that agreement coefficients and differences can be negative. No p-values or multiplicity adjustment are used.
 
@@ -90,7 +92,17 @@ show_table(table_data('table3') |> filter(domain %in% c('D1-D5','Overall')) |>
   select(arm,domain,status,n,count,missing,estimate,lower,upper))
 ```
 
-ARBITER-Sonnet reproduced 510/510 reported domain labels. ARBITER-Haiku reproduced 504/505 observed labels (99.80%); hill-2017 D1 is the single consistency exception: NI/PY/N gives Low, whereas the reported label is Some concerns. Five award-1-2014 domain labels are missing. The amended gate passes. The supplement lists the exception and all domain-specific rates for author run-bundle review.
+The proposed judgement agrees with the official domain algorithm in 510/510 ARBITER-Sonnet domains and 505/505 observed ARBITER-Haiku domains. The recorded override rates are 0/510 and 1/505 (0.20%), respectively. The hill-2017 D1 bundle records a Low to Some concerns override with rationale and evidence. Its adopted-label agreement with the algorithm is therefore 504/505 (99.80%). Five award-1-2014 domain labels remain missing. The amended gate passes. Judgements are algorithm-proposed; any model departure is recorded and auditable. Baseline violations are unrecorded departures.
+
+## Process and audit metrics
+
+```{r}
+show_table(table_data('process-summary') |> filter(grepl('Sonnet',arm)))
+show_table(table_data('process-differences'))
+show_table(table_data('audit-summary') |> filter(grepl('Sonnet',arm)))
+```
+
+Time is the sum of harness-recorded turn seconds. Tokens, agent steps and costs are summed across turns; costs are harness-reported and their basis is unknown. Each arm has 102 analysis-set trials. Per-arm medians, quartiles and totals, paired mean-per-trial and total Sonnet differences, evidence-basis distributions and verification outcomes are provided in the supplement. The baseline has no evidence trace, so its audit metrics are not available.
 
 ## Table 4: reliability of the reference standard
 
@@ -127,4 +139,4 @@ A quotation of at least five words appeared in `r g$quoted[g$arm=='ARBITER-Sonne
 
 ## Limitations facts and author completion
 
-Adjudicators could only choose among the three offered labels. Unadjudicated cells where both Sonnet arms matched the meta label are assumed correct in the composite. These features inflate absolute composite values. Each arm assessed each trial once; run-to-run variability is not estimated. Exact model IDs, run dates, benchmark-run ARBITER commit, the hill-2017 bundle check, final worked-trace selection, human taxonomy coding and the checklist page/section references require author completion. Trial PDFs are not redistributed; source DOIs and FILES.csv hashes identify them. [AUTHORS: public code/data repository and Zenodo DOI].
+Adjudicators could only choose among the three offered labels. Unadjudicated cells where both Sonnet arms matched the meta label are assumed correct in the composite. These features inflate absolute composite values. Each arm assessed each trial once; run-to-run variability is not estimated. The final worked-trace selection, human taxonomy coding and checklist page/section references require author completion. Process times and costs are harness measurements; thinking tokens are reported separately and are part of output tokens. Trial PDFs are not redistributed; source DOIs and FILES.csv hashes identify them. [AUTHORS: public code/data repository and Zenodo DOI].

@@ -1,5 +1,6 @@
 *.html
 *_files/
+Rplots.pdf
 
 /.quarto/
 **/*.quarto_ipynb

@@ -8,39 +8,39 @@ share,0,0,0,10000,Baseline-Sonnet,Violation,102,0,0,Overall
 share,0.9135802469135802,0.8765432098765432,0.9506172839506173,10000,Meta,Consistent,81,74,21,Overall
 share,0.07407407407407407,0.04938271604938271,0.08641975308641975,10000,Meta,Permitted escalation,81,6,21,Overall
 share,0.012345679012345678,0,0.037037037037037035,10000,Meta,Violation,81,1,21,Overall
-share,1,1,1,10000,ARBITER-Sonnet,Consistent,510,510,0,D1-D5
-share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,510,0,0,D1-D5
-share,0,0,0,10000,ARBITER-Sonnet,Violation,510,0,0,D1-D5
 share,0.9426751592356688,0.9224318658280922,0.9617021276595744,10000,Baseline-Sonnet,Consistent,471,444,39,D1-D5
 share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,471,0,39,D1-D5
 share,0.05732484076433121,0.03829787234042553,0.07756813417190776,10000,Baseline-Sonnet,Violation,471,27,39,D1-D5
-share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D1
-share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,102,0,0,D1
-share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D1
 share,0.9504950495049505,0.9108910891089109,0.99,10000,Baseline-Sonnet,Consistent,101,96,1,D1
 share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,101,0,1,D1
 share,0.04950495049504951,0.01,0.0891089108910891,10000,Baseline-Sonnet,Violation,101,5,1,D1
-share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D2
-share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,102,0,0,D2
-share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D2
 share,0.9693877551020408,0.9387755102040817,0.9900990099009901,10000,Baseline-Sonnet,Consistent,98,95,4,D2
 share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,98,0,4,D2
 share,0.030612244897959183,0.009900990099009901,0.061224489795918366,10000,Baseline-Sonnet,Violation,98,3,4,D2
-share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D3
-share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,102,0,0,D3
-share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D3
 share,0.9603960396039604,0.9215686274509803,0.9901960784313726,10000,Baseline-Sonnet,Consistent,101,97,1,D3
 share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,101,0,1,D3
 share,0.039603960396039604,0.00980392156862745,0.0784313725490196,10000,Baseline-Sonnet,Violation,101,4,1,D3
-share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D4
-share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,102,0,0,D4
-share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D4
 share,0.9571428571428572,0.9090909090909091,1,10000,Baseline-Sonnet,Consistent,70,67,32,D4
 share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,70,0,32,D4
 share,0.04285714285714286,0,0.09090909090909091,10000,Baseline-Sonnet,Violation,70,3,32,D4
-share,1,1,1,10000,ARBITER-Sonnet,Consistent,102,102,0,D5
-share,0,0,0,10000,ARBITER-Sonnet,Permitted escalation,102,0,0,D5
-share,0,0,0,10000,ARBITER-Sonnet,Violation,102,0,0,D5
 share,0.8811881188118812,0.82,0.9405940594059405,10000,Baseline-Sonnet,Consistent,101,89,1,D5
 share,0,0,0,10000,Baseline-Sonnet,Permitted escalation,101,0,1,D5
 share,0.1188118811881188,0.0594059405940594,0.18,10000,Baseline-Sonnet,Violation,101,12,1,D5
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,510,510,0,D1-D5
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,510,0,0,D1-D5
+share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,510,0,0,D1-D5
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D1
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D1
+share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,102,0,0,D1
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D2
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D2
+share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,102,0,0,D2
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D3
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D3
+share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,102,0,0,D3
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D4
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D4
+share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,102,0,0,D4
+share,1,1,1,10000,ARBITER-Sonnet,Proposed agreement,102,102,0,D5
+share,0,0,0,10000,ARBITER-Sonnet,Recorded override,102,0,0,D5
+share,0,0,0,10000,ARBITER-Sonnet,Unrecorded violation,102,0,0,D5
