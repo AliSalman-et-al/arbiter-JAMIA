@@ -23,11 +23,13 @@ draft_architecture <- function(inputs,candidates) {
     'Verifiable bundle exported')
   right <- c(paste0(cell$slug,' / ',cell$domain,'\nSource: ',cell$source,'; page ',cell$page),
     'Specified result proposed and approved unchanged',
-    paste0('"',cell$passage,'"\n',cell$question,' = ',cell$answer),
-    paste0('Active domain answer set:\n',cell$signalling_answers),
-    paste0('Proposed judgement: ',cell$proposed,'\nMeta label: ',cell$meta,
-      '\nConsensus preferred judgement: ',cell$preferred),
-    'Answers, evidence, source locators, decisions\nand verification record retained in the bundle')
+    paste0('"',cell$passage,'"\nPage ',cell$page,'; ',cell$question,' = ',cell$answer),
+    paste0('verification.json: result = "',cell$verification_status,'"\n',
+      'Bundle checks include "content_hashes"\n',cell$verification_scope),
+    paste0('Active domain answer set: ',cell$signalling_answers,
+      '\nProposed judgement: ',cell$proposed),
+    paste0('Meta label: ',cell$meta,'; consensus preferred: ',cell$preferred,
+      '\nBundle retains answers, evidence, source locators,\ndecisions and verification record'))
   wrap_lines <- function(x) paste(vapply(strsplit(x,'\n',fixed=TRUE)[[1]],
     stringr::str_wrap,character(1),width=63),collapse='\n')
   nodes <- tibble(y=6:1,left=left,right=vapply(right,wrap_lines,character(1)))

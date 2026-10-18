@@ -69,7 +69,11 @@ extract_bundle_review <- function(inputs,root='..',output='data-derived') {
         e <- json_zip(path,entry)
         canonical$proposal$evidence[[e$identity]] <- e
       }
-      traces[[slug]] <- bundle_trace_records(canonical,slug,eligible)
+      verification <- json_zip(path,'verification.json')
+      traces[[slug]] <- bundle_trace_records(canonical,slug,eligible) |>
+        mutate(verification_status=verification$result,
+          verification_checks=paste(unlist(verification$checks),collapse='; '),
+          verification_scope='Bundle-level; no passage-level match status recorded')
     }
   }
   checks <- bind_rows(paths)

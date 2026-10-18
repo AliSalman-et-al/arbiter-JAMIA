@@ -118,3 +118,5 @@ No Python is used. This file records conservative resolutions as they arise.
     bounds are ordered; Sonnet bounds coincide. Thinking tokens are not added
     to output again. The rate card is frozen to the binding plan, not inferred
     from the unusable harness price. No geography multiplier applies.
+
+13. **Round 4 P1 trace presentation.** Default award-10-2018 D2 illustrates a more-severe ARBITER judgement preferred by consensus while Baseline matches meta. Four such candidates and levin-2016 D2 are listed. The selected 25-word contiguous excerpt omits the leading fragment "study.". Workflow rows now align. Bundles record verification.json result="verified" and named checks including content_hashes, but no individual passage-match status. Figure 1 quotes the actual bundle-level status and explicitly states that scope; no passage-specific verification claim is inferred.

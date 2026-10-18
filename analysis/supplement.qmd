@@ -177,11 +177,11 @@ for(i in seq_len(nrow(p))) cat('\n**',p$type[i],'**\n\n',p$prompt[i],'\n',sep=''
 
 ## Worked-trace candidates
 
-Five consensus cells where ARBITER was preferred over the meta label are exported from bundle evidence. Passages are contiguous excerpts of at most 30 words, with source and page locators, evidence identifiers, abbreviated answers and proposed judgements. The first candidate is the provisional Figure 1 trace.
+Four consensus cells where only ARBITER departed from meta with a more severe preferred judgement, plus the levin-2016 D2 alternative, are exported from bundle evidence. Passages are contiguous excerpts of at most 30 words, with source and page locators, evidence identifiers, abbreviated answers and proposed judgements. The first candidate is the provisional Figure 1 trace.
 
 ```{r}
 show_table(table_data('worked-trace-candidates') |>
-  select(slug,domain,question,answer,passage,source,page,signalling_answers,proposed,meta,preferred))
+  select(slug,domain,question,answer,passage,source,page,signalling_answers,proposed,meta,preferred,verification_status,verification_checks,verification_scope))
 ```
 
 ## TRIPOD-LLM and GRRAS checklist skeleton
