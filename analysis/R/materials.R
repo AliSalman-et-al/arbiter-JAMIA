@@ -1,3 +1,13 @@
+trace_binding_text <- function(cell) {
+  checks <- strsplit(cell$verification_checks,'; ',fixed=TRUE)[[1]]
+  stopifnot(all(c('content_hashes','claims','domain_lineage') %in% checks),
+    grepl('^sha256:[0-9a-f]{64}$',cell$source_version))
+  paste0('Span bound to captured source: ',cell$source,', page ',cell$page,
+    ', lines ',cell$start_line,'\u2013',cell$end_line,'; source hash ',
+    substr(sub('^sha256:','',cell$source_version),1,8),'\u2026\n',
+    'Independent bundle verifier: ',cell$verification_status,' (content hashes, claims, lineage)')
+}
+
 worked_trace_candidates <- function(evidence) {
   # Fixed evidence identities make the presentation choice reproducible.
   choices <- tibble(slug=c('award-10-2018','clyman-2019','boedt-2023','potsiurko-2022','levin-2016'),
@@ -83,7 +93,7 @@ build_materials <- function(inputs,cells) {
   readr::write_csv(codebook,'output/coding/codebook-draft.csv')
   writeLines(c('# Error-taxonomy codebook draft',
     'Humans only. No LLM assigns, proposes, or fills row-level codes.',
-    'Concepts derive from RoB 2 full guidance (22 August 2019), domain tables 3–14.',
+    'Concepts derive from RoB 2 full guidance (22 August 2019), domain tables 3\u201314.',
     'One row is one losing source on one consensus cell. Read both explanations and the trial evidence.',
     'Choose one primary code. Prefer the specific evidence error over X_algorithm when the error is upstream.',
     'Use X_algorithm only when the source own answers contradict its reported judgement.',

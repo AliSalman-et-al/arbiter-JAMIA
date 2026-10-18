@@ -22,9 +22,9 @@ Adjudicators could only choose among the three labels offered. Cells where both 
 
 ## Figure 1: architecture and draft trace
 
-![ARBITER workflow and provisional worked trace from a committed assessment bundle. Source locators refer to captured PDF pages.](output/figures/figure1.png)
+![ARBITER workflow and provisional worked trace from a committed assessment bundle. Source locators refer to captured PDF pages. Passages are server-extracted spans cited by handle, so the model cannot cite text that is not in the captured sources.](output/figures/figure1.png)
 
-The trace uses a consensus cell where ARBITER-Sonnet matched the preferred judgement and differed from the meta label. Four more-severe candidates where only ARBITER departed from meta, plus levin-2016 D2, with cited bundle passages, evidence identifiers, source/page locators, verification status and abbreviated answer sets are in [worked-trace-candidates.csv](output/tables/worked-trace-candidates.csv). The default is award-10-2018 D2. The bundle records verification.json result = "verified", including content_hashes among its checks; it does not record a separate passage-level match status. The displayed selection is provisional for author review.
+The trace uses a consensus cell where ARBITER-Sonnet matched the preferred judgement and differed from the meta label. Four more-severe candidates where only ARBITER departed from meta, plus levin-2016 D2, with cited bundle passages, evidence identifiers, source/page locators, verification status and abbreviated answer sets are in [worked-trace-candidates.csv](output/tables/worked-trace-candidates.csv). The default is award-10-2018 D2. The trace shows the span binding to its hash-identified captured source and the recorded independent bundle verifier result. The displayed selection is provisional for author review.
 
 ## Figure 2: study flow
 

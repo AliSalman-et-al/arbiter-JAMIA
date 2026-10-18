@@ -48,7 +48,8 @@ bundle_trace_records <- function(canonical,slug,eligible) {
         question=question_map()$question[match(a$question_id,question_map()$question_id)],
         answer=answer_abbreviation(a$answer),signalling_answers=answer_set,
         proposed=unname(labels[d$decision$proposed]),passage=passage,
-        source=s[[1]]$label,page=e$page,evidence_id=e$identity,full_passage=quote,
+        source=s[[1]]$label,page=e$page,start_line=e$start_line,end_line=e$end_line,
+        source_version=e$source_version,evidence_id=e$identity,full_passage=quote,
         passage_words=min(length(words),30L))
     }))))
   }))
@@ -73,7 +74,7 @@ extract_bundle_review <- function(inputs,root='..',output='data-derived') {
       traces[[slug]] <- bundle_trace_records(canonical,slug,eligible) |>
         mutate(verification_status=verification$result,
           verification_checks=paste(unlist(verification$checks),collapse='; '),
-          verification_scope='Bundle-level; no passage-level match status recorded')
+          verification_scope='Independent bundle verifier')
     }
   }
   checks <- bind_rows(paths)

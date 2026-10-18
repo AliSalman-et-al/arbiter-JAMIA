@@ -34,5 +34,7 @@ test_that('worked trace uses more-severe consensus candidates and retains the al
   expect_true(all(x$passage_words<=30))
   expect_true(all(mapply(function(p,f) grepl(p,f,fixed=TRUE),x$passage,x$full_passage)))
   expect_true(all(x$verification_status=='verified'))
-  expect_true(all(grepl('Bundle-level',x$verification_scope)))
+  expect_equal(trace_binding_text(x[1,]),paste0(
+    'Span bound to captured source: S2213-8587-18-30023-8.pdf, page 5, lines 45\u201347; source hash 6fecb407\u2026\n',
+    'Independent bundle verifier: verified (content hashes, claims, lineage)'))
 })

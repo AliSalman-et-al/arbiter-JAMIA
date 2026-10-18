@@ -126,3 +126,5 @@ No Python is used. This file records conservative resolutions as they arise.
 15. **Round 4 P3 adjudication presentation.** Figure 3 has A/B tags, parallel departure-row labels, and nearly white zero-count tiles with grey zero labels. Nonzero counts retain the original outcome colours; counts and intervals are unchanged.
 
 16. **Round 4 P4 token display units.** Supersedes entry 11 token units: Table 5 and its Haiku counterpart show input counts with thousands separators and zero decimals, cache creation/read in millions (two decimals), and output/thinking in thousands (one decimal). Identical formatting applies to medians, IQRs, paired means and CI bounds. Raw process CSV values and estimands remain unchanged; rounding is display-only.
+
+17. **Round 5 F1 source binding.** Supersedes entry 13. Row 4 derives source label, page, lines and source_version hash prefix from the selected evidence record, and verifier status/checks from verification.json. The source_version matches the canonical source projection_hash, rather than the PDF byte hash. The caption explains server-extracted spans cited by handle. No passage-support judgement is claimed.
