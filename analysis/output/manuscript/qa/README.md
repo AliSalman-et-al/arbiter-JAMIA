@@ -41,3 +41,22 @@ page PNGs and contact sheets were inspected for Table 2, Table 3 and supplement
 pages 7–8, 10–11, 28 and 36 (eTables 4, 6, 19 and 26). Page counts and page bounds
 are unchanged. The coverage label names active signalling answers, and collapsed
 proportion intervals are omitted. See round10-report.md for the changed cells.
+
+
+## Round 11B-2 (current)
+
+From analysis/: `quarto render`, `Rscript qa-round11.R`,
+`& ./render-word-qa.ps1` in PowerShell 7, `Rscript render-qa-pages.R`,
+`Rscript verify-round11.R`, and `testthat::test_dir('tests/testthat')`.
+Final Figure 1/2 artwork, analysis/figure1/** and legends-fig1-2.md are read-only;
+this round does not rebuild them. The two supplied legends load at build time.
+
+The native Word supplement has 52 pages and 56 editable tables. The AVATAR
+trace occupies nine landscape pages (42–50), with Arial 8 pt only in its two
+parts; other tables use Arial 9 pt. All 16 complete evidence-record quotes are
+verified in the PDF. Figures 3–6 and both eFigures have refreshed PDF rasters,
+greyscale and colour-vision simulations, and round11-pdf-contact.png. The four
+main Word tables remain one page each; the checklist remains two pages.
+Tests: 414 passing assertions, 54 blocks, no failures/errors/skips/test warnings.
+See analysis/round11-report.md, “Round 11B-2”, for details and the archive's
+16-record/15-currently-cited distinction.
