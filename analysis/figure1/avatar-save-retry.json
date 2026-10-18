@@ -1,0 +1,21 @@
+{
+  "rejected_call": "toolu_01CTHBEhdF5BAGdpapeh9D5F",
+  "rejected_basis": {
+    "source_id": "sh_7f7b055eb93e03bc",
+    "page": 6,
+    "start_line": 26,
+    "end_line": 32,
+    "role": "direct_support"
+  },
+  "accepted_retry": "toolu_01PN3CESV3Hj5VbcRRWKbc5E",
+  "accepted_basis": {
+    "role": "direct_support",
+    "evidence": {
+      "source_id": "sh_7f7b055eb93e03bc",
+      "page": 6,
+      "start_line": 26,
+      "end_line": 32
+    }
+  },
+  "finding": "Retry nested the source span under evidence; it did not send a literal eh_ handle string."
+}

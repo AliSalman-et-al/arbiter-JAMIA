@@ -1,50 +1,58 @@
-# Figure 1: ARBITER workflow and trace
+# Figures 1 and 2: workflow and AVATAR trace
 
-Round 8b-2. Reproducible, programmatic book-style illustration, 174 × 204 mm.
+Reproducible SVG illustration sources with bundled OFL Fira fonts. Figure 1 is a standalone workflow at 174 × 112.5 mm; Figure 2 is an AVATAR trace at 174 × 229 mm, with a provisional Unassisted column. No titles or panel tags appear inside either image.
 
 ## Build
 
-From the repository root, with uv installed:
+From the repository root:
 
 ```powershell
 uv sync --project analysis/figure1 --locked
 uv run --project analysis/figure1 --locked python analysis/figure1/build.py --data-root C:/Users/Ali-Salman/Documents/Analysis/arbiter-JAMIA --arbiter-root C:/Users/Ali-Salman/Documents/Code/ARBITER
 ```
 
-`--data-root` defaults to this repository. This worktree uses the main checkout's existing data in place. `--arbiter-root` must point to the ARBITER 1.0.0 checkout used to inspect the MCP definitions. No changes are made to either input checkout. Output paths always resolve to this worktree.
+The main checkout is read-only. `--data-root` defaults to this worktree, but untracked run logs must be available there. The command fails if any analysis-set trial log is absent. `--arbiter-root` identifies the public ARBITER source checkout used to verify the tool definitions, CLI and bundle extension. Outputs always go to this worktree. No R code, unrelated figures, shared legends, tables or supplement files are changed.
 
-Inputs read at runtime:
+The build reads and checks:
 
-- AVATAR `canonical.json`, all manifest-listed contents, cited evidence JSON and archived `verification.json`, directly from its ZIP.
-- Published, ARBITER and Unassisted domain CSVs and the adjudication analysis cells CSV.
-- MCP server definitions and the skill's Domain 5 guidance in ARBITER.
+- All AVATAR manifest content hashes, canonical domain decisions, answer/basis types, bound evidence/source linkage and archived verifier receipt.
+- Official question wording from archived MCP responses in AVATAR's logs, including the branching IDs for 2.4, 2.5 and 2.7.
+- Exact selected quotes, justification excerpts, unknowns and Unassisted rationale from the bundle and final.md. Only whitespace and two PDF extraction word breaks are joined; omissions use ellipses.
+- Published, ARBITER and Unassisted label CSVs, the consensus D5 adjudication cell and the Unassisted D4 invalid-path classification.
+- All Sonnet save calls in exactly 102 analysis-set trial logs, matched by unique tool-use ID to results. The three unsupported-design trials are excluded. `count_save_rejections.py` can also run independently with `--data-root`.
 
-The build checks the public `arbiter review` CLI entry point and `.arbiter.zip` extension against the ARBITER checkout, rejects case-insensitive `rob2` anywhere in the generated SVG, and verifies manifest content hashes, evidence/source linkage, all six ARBITER strip labels against canonical records, D5's driver, the absence of an override and the adjudicators' preferred-label agreement. It checks required tool definitions and obtains their source line numbers dynamically. Clinical reasoning is faithfully summarized from the recorded justification; it is not independently re-adjudicated.
+## Outputs
 
-## Outputs and editing
+`analysis/output/manuscript/`:
 
-`analysis/output/manuscript/` receives `Figure1.svg`, `Figure1.pdf`, `Figure1.tiff`, `Figure1.png` and `figure1-notes.md`. Notes include all 18 tools, source references, the exact excerpt and locator, proposed/adopted judgements, a draft legend and alt text. The shared figure-legends document is outside this agent's ownership and is intentionally not edited; the lead can copy the draft legend there.
+- `Figure1.{svg,pdf,png,tiff}`: workflow, without benchmark count.
+- `Figure2.{svg,pdf,png,tiff}`: trace with Unassisted column.
+- `qa/Figure1-with-rejection-count.png`: count annotation variant.
+- `qa/Figure2-without-unassisted.png`: wider evidence rows with a shorter page, not a blanked column.
+- `qa/Figure{1,2}-{final-size,grayscale,deuteranopia,protanopia,tritanopia,pdf}.png`: visual proofs.
+- `figure1-notes.md`: both figures' provenance, every displayed quote, full bound spans, handles, source IDs, pages, line ranges and complete hashes.
+- `legends-fig1-2.md`: legends and alt text for integration by the parent task.
 
-Edit `build.py` to change the scene. Coordinates are quarter-millimetres. Tool-call text uses 92% horizontal width to clear both traffic arrows while retaining its 7.23 pt height and fixed character spacing. Italic response summaries use a 12-degree oblique outline transform. All text is converted to vector paths with fontTools from the bundled Fira Sans Condensed Regular/Bold and Fira Code Regular OFL fonts. SVG includes accessible text labels and titles for each outlined text run. The PDF contains only vector paths, with no font or raster dependencies. The SVG is converted to PDF with svglib/ReportLab; resvg independently renders the PNG; PyMuPDF renders the vector PDF at 600 dpi for the RGB LZW TIFF. PDF metadata is invariant for repeatable builds.
+`analysis/figure1/`:
 
-Font provenance:
+- `save-rejections.csv`: one row per call, including successful calls so the denominator is auditable. Error excerpts exclude generic recovery/example boilerplate.
+- `save-rejections-summary.json`: 637 calls, 53 rejections (32 evidence/basis construction; 21 other validation/input errors); AVATAR 1/7.
+- `avatar-save-retry.json`: failed and accepted AVATAR basis objects and exact tool-use IDs.
+- `qa.json`: physical dimensions, text minima, vector PDF and embedded font checks.
+- `verify.py`, `reproducibility.json`: two-build byte comparison and artifact hashes.
 
-- Fira Sans Condensed Regular/Bold and `OFL.txt`: `https://github.com/google/fonts/tree/main/ofl/firasanscondensed`.
-- Fira Code Regular: locally installed OFL distribution, bundled here with the upstream license from `https://github.com/tonsky/FiraCode/blob/master/LICENSE`.
-- Fonts are versioned here so rebuilds never need a font download or installation.
+## Rendering and QA
 
-## QA evidence
+Coordinates are quarter-millimetres. All text is at least 7 pt at final width (Figure 1 minimum 7.23 pt; Figure 2 minimum 7.09 pt). SVG text is outlined from bundled Fira Sans Condensed Regular/Bold and Fira Code Regular, with accessible labels. PDF uses the identical glyph positions and subset-embedded Fira TrueType fonts; no raster images or system-font dependency. ReportLab draws the vector SVG shapes and text; PyMuPDF renders the vector PDF at 600 dpi for LZW TIFF. An independent resvg rendering supplies PNG previews. Standard-font resources introduced by the converter are unused and removed.
 
-- `qa.json`: physical dimensions, minimum text size (7.23 pt), TIFF dimensions/metadata and trace identities.
-- `qa-pdf.png`: 240-dpi render of the vector PDF, visually inspected against the independent resvg preview.
-- `qa-final-size.png`: 658-pixel-wide proof, equivalent to 174 mm on a 96-dpi display. Screen scaling varies; physical dimensions and point sizes are checked numerically.
-- `qa-grayscale.png`: no meaning depends on colour; all judgements and phase/actor distinctions have text and outlines.
-- `qa-deuteranopia.png`: approximate diagnostic using the Machado deuteranopia matrix on display RGB, not a calibrated vision simulation. Together with grayscale it checks that colour shifts do not lose information.
+Accessible SVG text and extracted PDF text are checked for the forbidden legacy product-name substring. A 658-pixel proof approximates 174 mm on a 96-dpi display; the numeric dimension and point-size checks are authoritative. Greyscale and approximate Machado full-severity deuteranopia, protanopia and tritanopia proofs retain written evidence types, domain/answer labels and dashed inference borders. These RGB diagnostic transforms are not calibrated clinical simulations.
 
-Round 8b-2 visual checks passed: no clipped/overlapping text; phase headings share the column centers; evenly spaced header arrows; the labelled approval arrow enters domain work; paired tool arrows show downward requests and upward italic response summaries; the final arrow represents packaging. The strip label is vertically centered on the D1 box. Yellow in Panel B links the quoted source excerpt to the passage-referencing reasoning phrase; the answer pill is neutral. The linked phrases remain outlined in grayscale. The source hash and verifier status occupy a single footer row inside the green box. Source locator and hash prefix are readable at final size. Pastel lanes, heavy rounded outlines, a single human icon, blue/lavender LLM typography, and dotted dividers follow the supplied book references. There is no overall title inside the figure; A/B have the requested panel headings.
+The supplied book pages 000202, 000090 and 000110 were inspected. Heavy rounded outlines, pastel role lanes, linked highlighting and curved keyword callouts follow their visual vocabulary. Final-size proofs, independent PDF proofs and all four diagnostic views were inspected after layout iteration.
 
-## Trace interpretation
+Font provenance: Fira Sans Condensed Regular/Bold from the Google Fonts OFL distribution; Fira Code Regular from the local upstream OFL distribution. Fonts and licenses remain versioned in `fonts/`; rebuilding does not download fonts.
 
-AVATAR 5.1 is No information. The 11-word excerpt is context, explicitly identified as such in the figure. A report describing an endpoint as prespecified does not itself date the analysis plan before unblinded data. The recorded answer considers the registry, reports and protocol amendment together. The displayed SHA-256 prefix identifies the searchable source projection, not PDF bytes. The archive's verifier receipt says verified; that result does not certify clinical correctness. No ASCET fallback was necessary.
+## Important interpretation
 
-Rebuild byte identity is checked over SVG, PDF, PNG, TIFF, notes and all QA outputs. `reproducibility.json` records their SHA-256 values from two consecutive builds. The archived input retains its original filename; the figure presents the public 1.0.0 bundle extension.
+AVATAR's rejected D3 save flattened the span locator into the basis. The accepted retry nested that locator under `bases[].evidence`; it did **not** send a literal `eh_…` handle string. The server bound the reference and archived a handle. This corrects the brief's narrower account without changing the intended validation mechanism.
+
+Context is lavender, direct support yellow, and inference an unfilled dashed outline. D5's missing dated source remains plain text because a context quotation cannot itself prove an absence. The footer compares D5 preferred judgements; Overall was not adjudicated. The verifier status is read from the archive, not re-executed, and does not establish clinical validity. See `DEVIATIONS.md` for scope and display decisions.
