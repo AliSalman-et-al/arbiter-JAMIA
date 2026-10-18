@@ -67,6 +67,16 @@ def load(data_root, source_root):
             assert "sha256:" + hashlib.sha256(z.read(entry["path"])).hexdigest() == entry["sha256"]
         c = json.loads(z.read("canonical.json"))
         verification = json.loads(z.read("verification.json"))
+        evidence_members=[n for n in z.namelist() if n.startswith('evidence/') and n.endswith('.json')]
+        assert len(evidence_members)==len(c['proposal']['evidence'])==16
+        source_records={src['id']:src for src in c['batch']['trials'][0]['sources']}
+        for member in evidence_members:
+            item=json.loads(z.read(member))
+            assert item==c['proposal']['evidence'][item['identity']]
+            assert item['source_version']==source_records[item['source_id']]['projection_hash']
+            assert item['page']>=1 and 1<=item['start_line']<=item['end_line']
+        assert c['report_format']=='none'
+
         history = c["domain_history_records"][f"{SLUG}:domain:selection"]
         d = history[-1]
         a = next(a for a in d["answers"] if a["question_id"] == "sq:selection:prespecified-analysis")
@@ -240,8 +250,9 @@ def draw_workflow(data):
     s.line(17, 37, 23, 37, sw=.6)
     s.line(17, 41, 23, 41, sw=.6)
     s.text(39, 44, "Trial reports + registry", 10)
-    s.line(144, 40, 162, 40, sw=1)
-    s.line(162, 40, 162, 53, arrow=True, sw=1)
+    s.line(144, 40, 180, 40, sw=1)
+    s.add('<path d="M180,40 Q205,40 216,34" fill="none" stroke="#171717" stroke-width="1"/>')
+    s.line(210,37,216,34,arrow=True,sw=1)
     # The single human icon uses only geometric strokes.
     s.rect(12, 68, 672, 61, "#F5F5F3", 11)
     s.add('<circle cx="30" cy="88" r="6" fill="white" stroke="#171717" stroke-width="2"/>')
@@ -253,7 +264,7 @@ def draw_workflow(data):
     s.rect(284, 76, 128, 45, "white", 8, sw=2.3)
     s.text(348, 94, "Approve the result", 12, "bold", anchor="middle")
     s.text(348, 111, "arbiter review", 10.5, "mono", anchor="middle")
-    s.text(612, 94, "Report +", 11.5, "bold", anchor="middle")
+    s.text(612, 94, "Receives the", 11.5, "bold", anchor="middle")
     s.text(612, 111, "audit file", 11.5, "bold", anchor="middle")
     s.line(412, 99, 480, 99)
     s.line(480, 99, 480, 146, arrow=True)
@@ -313,9 +324,9 @@ def draw_workflow(data):
 
 # Figure 2: verbatim selections are asserted against archived evidence/reasoning.
 DOMAINS=['randomization','deviations','missing','measurement','selection']
-SELECTED=['concealment','participants-aware','data-available','assessor-aware','prespecified-analysis']
-QUESTIONS=['1.2 Was the allocation sequence concealed until participants were enrolled and assigned to interventions?',
-'2.1 Were participants aware of their assigned intervention during the trial?',
+SELECTED=['baseline-imbalance','context-deviations','data-available','assessor-aware','prespecified-analysis']
+QUESTIONS=['1.3 Did baseline differences between intervention groups suggest a problem with the randomization process?',
+'2.3 Were there deviations from the intended intervention that arose because of the trial context?',
 '3.1 Were data for this outcome available for all, or nearly all, participants randomized?',
 '4.3 Were outcome assessors aware of the intervention received by study participants?',
 '5.1 Were the data that produced this result analysed in accordance with a pre-specified analysis plan that was finalized before unblinded outcome data were available for analysis?']
@@ -355,13 +366,16 @@ def trace_data(data,root,logs_root=None):
         for i,(domain,suffix) in enumerate(zip(DOMAINS,SELECTED)):
             d=c['domain_records'][f'{SLUG}:domain:{domain}']
             a=next(a for a in d['answers'] if a['question_id']==f'sq:{domain}:{suffix}')
-            assert a['answer']==['yes','yes','yes','yes','no_information'][i]
+            assert a['answer']==['no','probably_no','yes','yes','no_information'][i]
             assert d['decision']['proposed']==d['decision']['adopted'] and d['decision']['adjudication'] is None
             bases=[]
             for b in a['bases']:
                 ev=json.loads(z.read('evidence/'+b['evidence'].split(':')[1]+'.json'))
                 src=next(s for s in c['batch']['trials'][0]['sources'] if s['id']==ev['source_id'])
                 assert src['projection_hash']==ev['source_version']
+                assert c['proposal']['evidence'][b['evidence']]==ev
+                assert norm(b['source'])==norm(ev['quote'])
+                assert 1<=ev['start_line']<=ev['end_line'] and ev['page']>=1
                 bases.append(dict(basis=b,ev=ev,src=src))
             assert official[a['question_id']].endswith(QUESTIONS[i].split(' ',1)[1]), (QUESTIONS[i],official[a['question_id']])
             numbers={}
@@ -372,10 +386,8 @@ def trace_data(data,root,logs_root=None):
             assert len(set(numbers.values()))==len(numbers)
             rows.append(dict(d=d,a=a,bases=bases,question=official[a['question_id']],numbers=numbers))
     r=rows
-    r[0]['shown']=[(0,'… '+excerpt(r[0]['bases'][0]['ev']['quote'],['web-based interactive response system. The assignment to each treatment group was computer-generated and','by means of a permuted-block sequence with variable block size.']))]
-    r[0]['reason']=excerpt(r[0]['a']['justification'],['web-based interactive response system'])
-    r[1]['shown']=[(0,excerpt(r[1]['bases'][0]['ev']['quote'],['Masking: NONE']))]
-    r[1]['reason']=excerpt(r[1]['a']['justification'],['The registry lists masking as NONE'])
+    r[0]['reason']=r[0]['a']['justification']
+    r[1]['reason']=r[1]['a']['justification']
     for suffix,number in [('affected-outcome','2.4'),('balanced','2.5'),('substantial-impact','2.7')]:
         assert number in locators[f'sq:deviations:{suffix}']
     assert r[1]['d']['inactive_questions']==['sq:deviations:affected-outcome','sq:deviations:balanced','sq:deviations:substantial-impact']
@@ -389,9 +401,7 @@ def trace_data(data,root,logs_root=None):
     r[3]['inference_question']=official[inf['question_id']]
     r[3]['inference_basis']=inf['bases'][0]
     r[3]['inference']=excerpt(inf['justification'],['All-cause death is an observer-reported outcome that involves no judgement'])
-    r[4]['shown']=[(1,excerpt(r[4]['bases'][1]['ev']['quote'],['Prespecified secondary end points included the following:','Time to death'])),(0,excerpt(r[4]['bases'][0]['ev']['quote'],['Primary outcome 1: all cause death, Major Adverse Cardiac Event (MACE) including:'])+' …')]
-    r[4]['reason']=excerpt(r[4]['a']['justification'],['names all-cause death only as a component of composite outcomes.'])
-    r[4]['gap']=excerpt(r[4]['a']['justification'],['No dated source therefore specifies this measurement and analysis.'])
+    r[4]['reason']=r[4]['a']['justification']
     final=(logs_root/f'no-kit-sonnet-5.5/logs/{SLUG}/final.md').read_text(encoding='utf8')
     rationale={int(n):t for n,t in re.findall(r'- \*\*D(\d):\*\* (.*)',final)}
     answers={}
@@ -417,7 +427,8 @@ def trace_data(data,root,logs_root=None):
     assert all(re.fullmatch(r'sha256:[0-9a-f]{64}',src['projection_hash']) for src in sources)
     answered=sum(len(r['d']['answers']) for r in rows)
     inactive=sum(len(r['d']['inactive_questions']) for r in rows)
-    assert (answered,inactive)==(15,7)
+    assert (answered,inactive,evidence_count,len(sources))==(15,7,16,7)
+    assert len({ev['source_id'] for ev in c['proposal']['evidence'].values()})==4
     data['bundle_facts']=dict(sources=len(sources),evidence_records=evidence_count,answered=answered,not_asked=inactive,verifier=data['verification']['result'])
     return rows
 
@@ -461,7 +472,7 @@ def export_scene(scene,out,name,geometry):
         canvas.translate(0,scene.height*factor);canvas.scale(factor,-factor)
         clip=canvas.beginPath();clip.roundRect(x,y,w,h,5)
         canvas.clipPath(clip,stroke=0,fill=0)
-        canvas.setStrokeColor(HexColor('#CECECA'));canvas.setLineWidth(.65)
+        canvas.setStrokeColor(HexColor('#DDDDDA'));canvas.setLineWidth(.4)
         for offset in range(-24,int(w)+24,6):
             canvas.line(x+offset,y+h,x+offset+h,y)
         canvas.restoreState()
@@ -518,22 +529,22 @@ def write_notes(data,rows,out):
     text=['# Figures 1–2: provenance and display notes','',
           'The workflow uses plain labels above representative real MCP calls. Tool definitions and the public audit-file extension are checked against ARBITER source commit `'+data['source_commit']+'`. The frozen rejection audit remains in save-rejections.csv and its summary JSON.',
           '', '## AVATAR storyboard', '',
-          'The registry title identifies aortic valve replacement versus conservative treatment in asymptomatic severe aortic stenosis (AVATAR). Early surgery versus watchful waiting is the reader-facing description of this comparison. The requested outcome is all-cause death. Paper page numbers refer to CIRCULATIONAHA.121.057639.pdf; the registry is NCT02436655.',
+          'The registry title identifies aortic valve replacement versus conservative treatment in asymptomatic severe aortic stenosis (AVATAR). Early surgery versus watchful waiting is the reader-facing description of this comparison. The requested outcome is all-cause death. Source letters: A = Circulation 2022 report; B = Eur Heart J 2024 report; C = ClinicalTrials.gov NCT02436655 (first submitted 2015); D = surgical-delay protocol amendment dated 4 Jan 2021. Page numbers refer to the respective stored source record.',
           '', 'Source quotations are verbatim selections with ellipses for omissions and normalized extraction whitespace. Two extraction breaks are joined: assign-↵ment and cen↵sored. Questions and plain reasons are paraphrased; official wording is retained below and in eTable 31.',
-          '', 'Every manifest hash and source-version binding is checked at build time. The archive stores source identities and evidence quotations, rather than complete trial PDFs. Its stored evidence is the unchangeable source copy referenced by the illustration. Archived independent-verifier receipt: '+data['verification']['result']+'; this is a structure/evidence-binding check, not a clinical judgement.',
+          '', 'Every manifest hash and source-version binding is checked at build time. The archive stores source identities and evidence quotations, rather than complete trial PDFs. The fingerprint is the first six hex characters of evidence.source_version (the source projection hash), not the original-file hash; it identifies the stored text copy to which each quote binds. Archived independent-verifier receipt: '+data['verification']['result']+'; this is a structure/evidence-binding check, not a clinical judgement.',
           '', 'D5 rule checked against the scientific-pack selection.md Algorithm section: High if 5.2 or 5.3 is Yes/Probably yes; otherwise Some concerns if 5.1 is No/Probably no/No information, or 5.2/5.3 is No information. NI/PN/PN therefore yields Some concerns. The overall.any_concerns rule is asserted from the bundle; the figure describes this trial, where no domain is High.',
-          '', 'All six Without ARBITER labels are asserted against both results-102/model-domain-labels.csv and the versioned model-domain-labels.csv. The quoted 5.1 claim is asserted against the ignored final run log. Both adjudicators preferred D5 Some concerns; Published D5 is Low. Overall was not adjudicated. Check/cross mean agreement/disagreement with this consensus preferred D5 judgement.',
+          '', 'Both adjudicators preferred D5 Some concerns; Published D5 is Low. Overall was not adjudicated. The Without ARBITER comparison strip has been removed.',
           '', 'Bundle SHA-256: `'+data['bundle_sha256']+'`. AVATAR is illustrative, not representative.',
           '', '## Save-call rejection audit', '',json.dumps(json.loads((HERE/'save-rejections-summary.json').read_text()),indent=2)]
     for i,r in enumerate(rows,1):
         text += ['',f'## Domain {i}', '',r['question'],'',
                  'Displayed source quotation(s): '+r['summary_quote'],'',
-                 'Full recorded selected-answer justification: '+r['a']['justification'],'',
+                 'Displayed model justification (plain-language summary): '+r['displayed_justification'],'','Full recorded selected-answer justification: '+r['a']['justification'],'',
                  'Unknowns: '+json.dumps(r['a']['unknowns'],ensure_ascii=False),'',
                  'Complete answers, inactive branches and decision:',json.dumps(dict(answers=r['d']['answers'],inactive=r['d']['inactive_questions'],decision=r['d']['decision']),ensure_ascii=False,indent=2),'',
                  'Full selected-answer evidence:',json.dumps(r['bases'],ensure_ascii=False,indent=2)]
         if i==4:text += ['', '4.4 reasoning basis: '+json.dumps(r['inference_basis'],ensure_ascii=False),'',r['inference']]
-        if i==5:text += ['', 'Without ARBITER: '+r['unassisted_full']]
+        if i==5:text += ['', 'HTML-report proof failed: see analysis/figure1/qa/html-report-proof.md. No HTML output is claimed.']
     (out/'figure1-notes.md').write_text('\n'.join(text)+'\n',encoding='utf8')
 
 

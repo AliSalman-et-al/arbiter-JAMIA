@@ -1,42 +1,45 @@
 # Visual review: Figures 1–2
 
-Reviewed the actual vector-PDF-derived 600-dpi TIFFs at 4× final size and the 174 mm print-size proofs. This is an agent's clinician-perspective walkthrough, not a clinician user study.
+This is an agent's walkthrough from the perspective of a clinician unfamiliar with ARBITER, not a clinician user study. Reviewed the actual 600-dpi PDF-derived TIFFs at 4× final size and both 174 mm print-size proofs.
 
 ## As a clinician who has never heard of ARBITER
 
-**First:** I read AVATAR's population, early surgery versus watchful waiting, and all-cause death. The next line tells me that RoB 2 asks questions about risk of bias. The answer key defines Yes/Probably/No information and the hatching. The evidence key explains quotation support, context and reasoning. I do not need to know an AI tool or software term before starting.
+I first learn the population, treatment comparison and all-cause-death outcome. The next line explains that RoB 2 asks questions about risk of bias. Answer abbreviations and hatching have a key. The evidence key names direct support, context and inference. Four source cards tell me which report, registry or amendment I am reading, its year and the fingerprint that connects the snippet to a fixed stored copy. The legend identifies the registry trial and explains the fingerprint without requiring a hashing vocabulary.
 
-**Second:** I read each domain row from left to right. The full domain name and ordinary question tell me the clinical issue; the small number lets me locate the official question. I can compare the paper or registry words with the model's answer. The software header explicitly says “rule-based software, no AI”. Its cells tell me that quotations were found, record an unresolved point about allocation staff, show why three deviations questions are unnecessary, and separate evidence of assessor awareness from reasoning about death recording. I can distinguish the model's answer from the filled risk-of-bias result. Every question position is present; hatching has an explicit key.
+Each row reads left to right: the full domain name and plain question; letter/page-tagged snippets; the model's answer and summarized justification; quotation checks, the complete answer chips and rule; and the risk-of-bias result. The model's own reasoning is explicit in its column rather than being mistaken for a software check. Official numbers allow a link to the full questions in eTable 31.
 
-In the expanded final row, “prespecified” by itself does not establish a dated plan for this analysis. The registry quotation names death within a combined outcome. “No information” explains the missing documentation; it does not guess that the analysis was fixed in advance. The NI/PN/PN chips lead to a plain rule and Some concerns. I then read the Overall rule and its adjacent Some concerns pill. The curved-arrow notes reinforce that the software computes ratings and checks quotations.
+For baseline imbalance, the table and diabetes numbers do not alone prove the answer. I see the model's chance explanation and the recorded counter-evidence that fewer early-surgery patients had diabetes. For departures from treatment, all four cited snippets are visible. The model distinguishes protocol/pandemic changes from trial-driven changes. The Weighed against line acknowledges clinical risk, while the Open point says reasons for declining surgery are not described in detail. Those unresolved facts remain visible next to a Probably no answer.
 
-**Third:** I read the orange Without ARBITER strip. The same model gave every domain Low and made an uncited registered-time-frame claim. The comparison identifies both adjudicators' Some concerns judgement, with a check for ARBITER and a cross for Without ARBITER; the published review was Low. The legend makes clear that these marks compare the consensus preferred D5 judgement, and that the verifier checks audit structure/evidence rather than clinical correctness. Finally I see that the audit can be independently checked.
+For missing data, the numerator and denominator explain the Yes answer. For measurement, the unblinded-assessor quote is separate from the dashed inference that death involves no judgement. The Yes and Probably no pills correspond to 4.3 and 4.4, whose answers also appear in the chips.
 
-## What I would not understand, and fixes made
+In D5 I see all four context snippets: the registry's combined outcome, the report's prespecified statement, the analysis method and the surgical-delay amendment. The model explains why these do not establish a dated plan for this analysis. Its Open point names exactly what it could not establish about the published protocol. No information is an explicit uncertainty answer. NI/PN/PN leads through the rule to Some concerns. The overall sentence explains this trial's result, with no domain High. The footer tells me the trial totals, archived verified audit receipt and Published/expert D5 judgements. There is no Without ARBITER strip to interrupt the evidence trace.
 
-- “Low” initially left the object implicit. Added “Results describe risk of bias” beside the RoB 2 introduction.
-- Grey D5 evidence could lose its role in greyscale. Added “context” to both source labels, so that meaning is also written in words.
-- The Overall output initially sat below its sentence. Aligned its pill with the Overall rule.
-- Early geometry review found crowded quote/branching chips. Shortened the allocation quotation using only ellipses, placed question number and answer together inside each chip, and adjusted row spacing. No font size or clearance threshold was reduced.
-- The printed registry term MACE remains inside a verbatim quotation; its own expansion (“Major Adverse Cardiac Event”) is shown. The AI reason uses the ordinary term “combined outcome”. All remaining codes have keys. Official wording and the full trace belong in eTable 31, as explained by the legend.
+Figure 1 presents a clear division of work: the reviewer chooses and approves; the model reads and answers; the server stores, checks and applies rules; the audit file keeps the record. The input curve enters the top of Capture and clears its heading. The reviewer receives the audit file. HTML-report wording is deliberately absent because the required render proof failed on this older bundle's schema; the exact command and error are in qa/html-report-proof.md.
 
-Figure 1 now reads as a division of responsibilities: the reviewer chooses and approves, the model reads and answers, the software stores/checks/applies rules, and the audit file retains the record. Technical calls are visually secondary in grey. The source glyph and approval connector are clear; no red rejection arrow appears.
+## Findings and fixes
+
+- The initial complete-evidence layout exceeded 230 mm. Kept every cited basis, shortened excerpts with ordered verbatim omissions, tightened chip/rule layout, and sized rows to content. No font or clearance threshold was reduced.
+- Explicitly labelled the model column “answer + justification” and checked summary anchors against the full recorded justifications. Full reasoning remains in figure1-notes.md and the audit record.
+- Named the actual evidence types: direct support, context and inference (no quote). The greyscale inspection found yellow and grey luminances too similar. Added dark outlines to direct-support snippets and named that redundant cue in the key. Dashed inference remains distinguishable by shape.
+- Counter-evidence and open points have bold grey labels, with the recorded text preserved (counter-evidence trimmed with ellipses; unknowns verbatim). Labels remain legible at print size.
+- Curved arrows terminate beside a quote-check line, the ARBITER rule column and the No information pill. They clear actual text and borders. The optional fourth annotation was omitted to avoid crowding.
+- Lightened hatching behind grey inactive question numbers in both SVG and PDF. Numbers are readable at 4× and print size.
+- Removed tall empty header boxes, repeated rule labels below Low results, the comparison strip and empty D5 bottom space. All five headers share bold text and small vector icons.
 
 ## Actual inspection
 
-Opened all 20 unique book reference images in an indexed contact sheet: 000166, 000191, 000192, 000193, 000097, 000143, 000168, 000170, 000203, 000202, 000037, 000230, 000226, 000228, 000139, 000098, 000014, 000171, 000172 and 000188. Used the lavender model block, mint software block, document/actor line glyphs, filled results, highlighting and italic curved-arrow notes.
+Opened all six Figure 1 tiles (r1–r2 × c1–c3) and all twelve final Figure 2 tiles (r1–r4 × c1–c3), generated from the final TIFFs at 384 dpi, equivalent to 4× at a 96-dpi view. Reopened the full final Figure 2 tile set after adding direct-support outlines and full domain names. Checked source letters, page tags, fingerprints, snippet punctuation, all answers and hatching, model reasons, counter-evidence/open points, arrow endpoints, rule text, result pills, footer and margins. Tile-boundary cuts are crops rather than figure clipping.
 
-Opened all six Figure 1 tiles (r1–r2 × c1–c3) and all twelve Figure 2 tiles (r1–r4 × c1–c3), derived from the 600-dpi TIFFs at 384 dpi, equivalent to 4× final size at a 96-dpi view. Inspected lettering, quotation punctuation, chip answers/order, hatching, borders, icons, rule text, bottom strip, footer and margins. Tile cuts through text are crop boundaries, not clipping in the figure. After the last wording changes, reopened the four changed tiles (Figure2 r1c1, r1c2, r3c1, r3c2); the other fourteen tile files remained byte-identical. Reopened the final Figure 2 print-size proof. Figure 1's final render was unchanged after its six-tile review.
-
-Viewed both complete print-size proofs and greyscale/deuteranopia/protanopia/tritanopia sheets. Information remains readable through words, hatching, outlines and check/cross shapes. Context is also labelled in words. No clipping, overlapping text, broken glyphs, accidental collision or ambiguous answer-key mapping remained. The final TIFF hashes and complete crop coverage are in visual-inspection.json.
+Opened both complete print-size proofs. Viewed greyscale, deuteranopia, protanopia and tritanopia sheets for both figures; reopened the final Figure 2 sheet after the outline fix. The redundant outline/dash/hatch cues preserve meaning without colour. No clipping, overlap, broken glyph, ambiguous question-key mapping or stray border collision remained. Figure 1 did not change after its complete six-tile and colour-proof review.
 
 ## Final gates
 
-- Figure1: 174 × 107 mm; minimum type 7.0866 pt; geometry passed with zero violations; minimum text/stroke clearance 0.5263 mm and arrow/text clearance 1.8447 mm. Vector PDF, embedded Fira fonts, PNG/SVG and 600-dpi LZW TIFF passed.
-- Figure2: 174 × 230 mm; minimum type 7.0866 pt; geometry passed with zero violations; minimum text/stroke clearance 0.4775 mm and arrow/text clearance 3.4725 mm. Vector PDF, embedded Fira fonts, PNG/SVG and 600-dpi LZW TIFF passed.
-- Seven geometry regression fixtures passed. No geometry thresholds were relaxed.
-- Bundle/manifest hashes, every displayed ordered quote, answer/branch, domain/Overall result, both Without ARBITER CSV exports, quoted run-log claim, consensus adjudicators and Published D5 assertions passed. D5's rule was checked against the scientific-pack algorithm and evaluator.
-- Figure 2 reader-facing jargon guard passed for the scene and extracted PDF; both figures passed the legacy rob2-name guard.
-- 27 artifacts were byte-identical across two independent builds. Frozen rejection audit/log-derived counts were retained and AVATAR log hashes rechecked.
-- Final Figure1 TIFF SHA-256: `9e1279ebab43d0f80cceeb6b51faf34b305dae501bb54cc6250cd122e39e8ebc`.
-- Final Figure2 TIFF SHA-256: `e9b8f4e812f533f7aa592583f1fb1adc5d8a5de514844847c958d97841be5f61`.
+- Figure1: 174 × 107 mm; minimum type 7.0866 pt; geometry passed with zero violations; minimum text/stroke clearance 0.5263 mm and arrow/text clearance 1.8447 mm. Vector PDF with embedded Fira fonts, SVG/PNG and 600-dpi LZW TIFF passed.
+- Figure2: 174 × 229.75 mm; minimum type 7.0866 pt; geometry passed with zero violations; minimum text/stroke clearance 0.4475 mm and arrow/text clearance 1.5369 mm. Vector PDF with embedded Fira fonts, SVG/PNG and 600-dpi LZW TIFF passed.
+- Seven geometry fixtures passed. All thresholds are unchanged.
+- All manifest hashes, all 16 proposal/archive evidence identities and source_version bindings, ordered displayed snippets (≤15 words), basis kinds, selected answers, all 22 question positions, recorded unknowns/counter-evidence, domain/Overall results, Published/expert labels and log-derived audits passed. Historical comparator CSV/log assertions are retained even though the comparison strip is removed.
+- Scene and extracted-PDF jargon/legacy-name guards passed; fingerprints are the permitted six-character source-version prefixes.
+- 27 artifacts were byte-identical across two builds. Final TIFF hashes and complete tile coverage are recorded in visual-inspection.json.
+- Final Figure1 TIFF SHA-256: `ec6ff0b05633331a06a363d32f026664ed298c95397cd81485a92f3e17d6a125`.
+- Final Figure2 TIFF SHA-256: `9398d079e286d96466021276e5be1b08b5e58431432f896724ff8351f1cdeac0`.
+- HTML-report proof: failed at ARBITER 1.0.0 finalization.py:4472 (legacy manifest schema). No report screenshot or HTML-output wording is claimed. See qa/html-report-proof.md. This is the required fallback, not a relaxed gate.
