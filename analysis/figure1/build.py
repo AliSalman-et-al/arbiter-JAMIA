@@ -261,8 +261,8 @@ def draw_workflow(data):
     for x in (29,35):s.add(f'<circle cx="{x}" cy="90" r=".8" fill="#171717"/>')
     s.line(29,94,35,94,sw=.8)
     s.line(23,89,23,94,sw=.8);s.line(41,89,41,94,sw=.8)
-    s.text(47,94,'AI model',11,'bold',LLM)
-    s.text(47,107,'LLM agent; follows',10,color=GREY);s.text(47,119,'the assessment guide',10,color=GREY)
+    s.text(47,94,'LLM agent',11,'bold',LLM)
+    s.text(47,107,'Follows the',10,color=GREY);s.text(47,119,'assessment guide',10,color=GREY)
     for cx,top,bottom in zip(centers,['Locate trial reports','Specify the outcome','Read text or page images','Review the answers'],['and registry records','and analysis to assess','Select and cite evidence','and supporting evidence']):
         if cx==476:
             for y,label in zip([92,105,118],[top,bottom,'Answer RoB 2 questions']):s.text(cx,y,label,10,'bold',LLM,anchor='middle')

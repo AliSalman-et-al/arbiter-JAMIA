@@ -33,7 +33,9 @@ The report is the actual exact-run-build render. Raw and product-name-only HTML 
 - 75 text-provenance rows; every semantic source/AI/software/result row string is asserted and matched to the final SVG. All 16 archived evidence identities/source bindings, all 22 answer positions, counter-evidence and unknowns, domain/Overall results and log-derived counts passed.
 - Legacy-name and jargon guards passed in the scene, final SVG and extracted PDF text. No displayed fingerprints remain.
 - 38 artifacts were byte-identical across two builds.
-- Figure1 inspected TIFF SHA-256: `8744ba49debeafb7722dc78c97096446a62f6b5d552aa1c292c6c4ea5f801ccf`.
+- Figure1 inspected TIFF SHA-256: `fa476ae82242aba450f6222ccb25021943ac6cbe89aa7c00ce90270ec0997c1d`.
 - Figure2 inspected TIFF SHA-256: `e21197be3e55e01e8d0edfe54633d2a77f3de66980c29a3ac105c7bce3100e5f`.
 
 The left-hand identity strip now uses one icon gutter (x=25, 14 units wide) and one text edge (x=47) for source, reviewer, model, server and verification. Actor subtitles share their heading’s left edge; centred audit-card content remains intentional.
+
+The model’s actor heading is now simply “LLM agent”, with “Follows the assessment guide” beneath it.
