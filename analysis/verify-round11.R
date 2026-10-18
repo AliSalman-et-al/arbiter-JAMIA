@@ -42,13 +42,28 @@ for(p in c('results.html','supplement.html')) {
 scan_text(readLines('output/manuscript/figure-legends.md',warn=FALSE,encoding='UTF-8'),'legends')
 source('R/load.R')
 source('R/manuscript-tables.R')
-for(i in 2:3) {
-  x <- get(paste0('main_table',i))()
+tables <- list(benchmark_table(load_inputs()),main_table2(),main_table3(),main_table4())
+for(i in 1:4) {
+  x <- tables[[i]]
   pages <- pdftools::pdf_data(paste0('output/manuscript/qa/Table',i,'-word.pdf'))
   stopifnot(length(pages)==1L)
   dat <- pages[[1]]
-  for(j in 2:ncol(x)) for(value in unique(x[[j]][nzchar(x[[j]])])) {
-    words <- strsplit(value,' ',fixed=TRUE)[[1]]
+  dat$text <- gsub('\u2060','',dat$text,fixed=TRUE)
+  dat <- dat[nzchar(dat$text),]
+  # Word emits separate PDF glyph runs around joiners. Rejoin only adjacent
+  # runs without a space on the same baseline; wrapped lines cannot coalesce.
+  for(k in rev(seq_len(nrow(dat)-1L))) {
+    if(!dat$space[k] && abs(dat$y[k]-dat$y[k+1L])<1 &&
+       abs(dat$x[k+1L]-dat$x[k]-dat$width[k])<2) {
+      dat$text[k] <- paste0(dat$text[k],dat$text[k+1L])
+      dat$width[k] <- dat$x[k+1L]+dat$width[k+1L]-dat$x[k]
+      dat$space[k] <- dat$space[k+1L]
+      dat <- dat[-(k+1L),]
+    }
+  }
+  # Table 1 topics are long free text; all labels, merged labels and values must fit.
+  for(j in setdiff(seq_len(ncol(x)),if(i==1) 4L else integer())) for(value in unique(x[[j]][nzchar(x[[j]])])) {
+    words <- strsplit(as.character(value),' ',fixed=TRUE)[[1]]
     starts <- which(dat$text==words[1])
     found <- any(vapply(starts,function(k) {
       rows <- k+seq_along(words)-1L
@@ -57,7 +72,7 @@ for(i in 2:3) {
     if(!found) stop('Missing or wrapped Table ',i,' value: ',value)
   }
   scan_text(pdftools::pdf_text(paste0('output/manuscript/qa/Table',i,'-word.pdf')),paste('Word Table',i))
-  cat('Table',i,': every value stays on one line in native Word PDF\n')
+  cat('Table',i,': every label and non-free-text value stays on one line in native Word PDF\n')
 }
 scan_text(pdftools::pdf_text('output/manuscript/qa/Supplement-word.pdf'),'Word supplement PDF')
 html <- xml2::read_html('results.html')

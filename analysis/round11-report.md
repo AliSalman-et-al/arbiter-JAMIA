@@ -308,3 +308,27 @@ regenerated publication/QA outputs are committed separately. No push performed.
 No methodological or numerical deviation. Main tables remain Arial 9 pt;
 the earlier AVATAR landscape/8 pt exception is unchanged. Used the repository's
 native Microsoft Word export workflow requested for this task.
+
+## Round 11B-4
+
+Date: 18 October 2026. Started on `main` at `37418d3`.
+
+- Rebalanced Table 2 Source/κ/AC2/exact/sensitivity/specificity widths to
+  1.17/1.15/1.23/1.08/1.05/1.23 inches (6.91 inches total). Horizontal cell
+  padding is 1 pt; Arial 9 pt is retained. Every body label and numerical value
+  now occupies one line; headers occupy at most two lines. Invisible word
+  joiners on both sides of the en dash prevent D1–D5 from breaking.
+- Extended font-metric and actual native Word PDF baseline checks to all labels,
+  merged group labels and non-free-text values in Tables 1–4. Only Table 1 topics
+  are exempt. Widened Table 1 specialty/journal columns and adjusted horizontal
+  and vertical padding; rebalanced Table 4 to fit raw-agreement values. Table 3
+  labels already fit. Word PDF checks account for separate glyph runs around
+  zero-width joiners without joining across cell gaps or wrapped baselines.
+- Rebuilt all four DOCX tables, reran the full test suite and native Microsoft
+  Word QA export, and personally inspected the final table page images,
+  including Table 2. All four tables remain one-page portrait documents.
+  `verify-round11.R` passes all four no-wrap checks, protected-file checks and
+  existing numerical/evidence checks. Full suite: 512 passing assertions in
+  57 test blocks; no failures, test warnings or skips. R startup locale warnings
+  remain environmental.
+- Numerical CSVs and all protected Figure 1/2 paths are unchanged. No push.

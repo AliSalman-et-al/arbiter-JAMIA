@@ -1,13 +1,3 @@
-Warning message:
-renv took longer than expected (60 seconds) to activate the sandbox.
-
-The sandbox can be disabled by setting:
-
-    RENV_CONFIG_SANDBOX_ENABLED = FALSE
-
-within an appropriate start-up .Renviron file.
-
-See `?renv::config` for more details.
 During startup - Warning messages:
 1: Setting LC_COLLATE=C.UTF-8 failed
 2: Setting LC_CTYPE=C.UTF-8 failed
@@ -34,9 +24,6 @@ invalid-paths: .................
 materials: ............
 presentation: .................................
 process: ...............
-round11: ....................................................................................................................................................................................................................................
+round11: .......................................................................................................................................................................................................................................................
 
 ══ DONE ════════════════════════════════════════════════════════════════════════
-     nb  failed skipped   error warning  passed
-    493       0       0       0       0     493
-Blocks: 57

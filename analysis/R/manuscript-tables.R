@@ -137,12 +137,21 @@ build_main_tables <- function(inputs) {
   invisible(tables)
 }
 main_table_widths <- function(i) {
-  list(c(1.14,1.18,.43,1.95,.46,1.02,.67),c(1.02,1.18,1.26,1.11,1.08,1.26),
-    c(3.05,1.6,2.2),c(2.7,rep(1.3833,3)))[[i]]
+  list(c(1.61,1.60,.35,1.67,.40,.77,.54),c(1.17,1.15,1.23,1.08,1.05,1.23),
+    c(3.05,1.6,2.2),c(2.3,1.3833,1.3833,1.77))[[i]]
 }
+# Word joiners preserve the en dash while prohibiting a line break on either side.
+main_table_no_break_ranges <- function(x) {
+  x[] <- lapply(x,function(v) gsub('D1[–-]D5','D1\u2060–\u2060D5',v))
+  x
+}
+main_table_padding <- function(i) if(i %in% 1:2) 1 else 3
 main_table_flextable <- function(x,i,note=main_table_notes()[[i]]) {
+  x <- main_table_no_break_ranges(x)
   ft <- house_table(x,note) |> flextable::width(j=seq_len(ncol(x)),width=main_table_widths(i))
-  if(i==2) ft <- flextable::padding(ft,padding.left=2,padding.right=2,part='all')
+  ft <- flextable::padding(ft,padding.left=main_table_padding(i),
+    padding.right=main_table_padding(i),part='all')
+  if(i==1) ft <- flextable::padding(ft,padding.top=2,padding.bottom=2,part='all')
   if(i>1) ft <- style_group_rows(ft,x)
   ft
 }

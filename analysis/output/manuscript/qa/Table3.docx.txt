@@ -2,7 +2,7 @@ Table 3. RoB 2 rule consistency and audit
 Measure
 ARBITER
 Unassisted
-Domain judgements (D1–D5)
+Domain judgements (D1⁠–⁠D5)
 Consistent with RoB 2 algorithm
 510/510 (100.0%)*
 444/509 (87.2%)

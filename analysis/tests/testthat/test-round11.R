@@ -154,20 +154,30 @@ testthat::test_that('revised figure layouts and supplied legends retain their co
   testthat::expect_false(any(grepl('Legend supplied',unlist(sections),fixed=TRUE)))
 })
 
-testthat::test_that('portrait Tables 2 and 3 fit every value at Arial 9 pt', {
+testthat::test_that('portrait Tables 1–4 fit labels and non-free-text values at Arial 9 pt', {
   old <- getwd(); setwd(analysis_dir); on.exit(setwd(old))
-  for(i in 2:3) {
-    x <- get(paste0('main_table',i))()
+  tables <- list(benchmark_table(inputs),main_table2(),main_table3(),main_table4())
+  for(i in 1:4) {
+    x <- main_table_no_break_ranges(tables[[i]])
     widths <- main_table_widths(i)
     testthat::expect_lte(sum(widths),8.27-2*.65)
-    for(j in 2:ncol(x)) {
-      # 720 dpi avoids whole-point rounding. Include both paddings and a
-      # 0.025-inch allowance for Word's layout/font-metric differences.
-      need <- systemfonts::string_width(x[[j]],family='Arial',size=9,res=720)/720+
-        (if(i==2) 4 else 6)/72+.025
+    groups <- if(i==1) rep(FALSE,nrow(x)) else rowSums(x[-1]!='')==0
+    for(j in seq_len(ncol(x))) {
+      if(i==1 && names(x)[j]=='Topic') next # Long free text may wrap.
+      # Merged group labels use the whole table width and are bold.
+      need <- systemfonts::string_width(gsub('\u2060','',x[[j]][!groups],fixed=TRUE),family='Arial',size=9,res=720)/720+
+        2*main_table_padding(i)/72+.025
       testthat::expect_true(all(need<=widths[j]),info=paste('Table',i,names(x)[j]))
     }
+    if(any(groups)) {
+      need <- systemfonts::string_width(gsub('\u2060','',x[[1]][groups],fixed=TRUE),family='Arial',weight='bold',size=9,res=720)/720+
+        2*main_table_padding(i)/72+.025
+      testthat::expect_true(all(need<=sum(widths)),info=paste('Table',i,'merged labels'))
+    }
   }
+  labels <- main_table_no_break_ranges(main_table2())$Source
+  testthat::expect_true('Composite: D1\u2060–\u2060D5' %in% labels)
+  testthat::expect_false(any(grepl('D1–D5',labels,fixed=TRUE)))
   testthat::expect_true('26/509 (5.1%; 3.3–6.9)' %in% main_table3()$Unassisted)
   testthat::expect_false(any(grepl('%) (',unlist(main_table3()),fixed=TRUE)))
 })

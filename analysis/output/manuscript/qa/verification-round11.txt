@@ -1,13 +1,3 @@
-Warning message:
-renv took longer than expected (11 seconds) to activate the sandbox.
-
-The sandbox can be disabled by setting:
-
-    RENV_CONFIG_SANDBOX_ENABLED = FALSE
-
-within an appropriate start-up .Renviron file.
-
-See `?renv::config` for more details.
 During startup - Warning messages:
 1: Setting LC_COLLATE=C.UTF-8 failed
 2: Setting LC_CTYPE=C.UTF-8 failed
@@ -38,8 +28,10 @@ The following objects are masked from 'package:base':
 
     intersect, setdiff, setequal, union
 
-Table 2 : every value stays on one line in native Word PDF
-Table 3 : every value stays on one line in native Word PDF
+Table 1 : every label and non-free-text value stays on one line in native Word PDF
+Table 2 : every label and non-free-text value stays on one line in native Word PDF
+Table 3 : every label and non-free-text value stays on one line in native Word PDF
+Table 4 : every label and non-free-text value stays on one line in native Word PDF
 All six HTML figures embed the current PNG bytes and have full alt text
 Existing numerical results unchanged; legacy matrix relabelled; protected Figure 1/2 files unchanged
 16 complete distinct evidence quotes verified in Word-rendered PDF
