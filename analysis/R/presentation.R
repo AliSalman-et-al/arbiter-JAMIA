@@ -16,7 +16,11 @@ raw_reader_codes <- function(text) {
   text <- gsub('\\b[A-Za-z0-9_.-]+[.](pdf|csv|json|jsonl|md|txt|R|py|docx|png|tiff)\\b','',text,perl=TRUE)
   tokens <- unique(unlist(regmatches(text,gregexpr('\\b[A-Za-z][A-Za-z0-9]*_[A-Za-z0-9_]+\\b',text,perl=TRUE))))
   tokens <- setdiff(tokens,c('test_dir','save_domain_judgment','capture_source','create_evidence',
-    'propose_result','approve_result','save_signalling_answer','verify_bundle'))
+    'propose_result','approve_result','save_signalling_answer','verify_bundle',
+    # ARBITER MCP tool names cited in the Figure 1 legend
+    'prepare_batch','list_sources','search_sources','search_sources_batch','validate_proposal',
+    'save_proposal','get_domain_context','read_pages','render_page','select_text_evidence',
+    'select_visual_evidence','review_trial','finalize_batch'))
   tokens[!grepl('^eh_[a-f0-9]+$',tokens)]
 }
 
