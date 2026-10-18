@@ -5,7 +5,7 @@
   "figures": [
     {
       "figure": "Figure1",
-      "tiff_sha256": "fa476ae82242aba450f6222ccb25021943ac6cbe89aa7c00ce90270ec0997c1d",
+      "tiff_sha256": "101a367b09cc6a78d33797549898d71b0f185010d44607381ed33cdb4ace2fda",
       "source_size_600dpi": [
         4111,
         2953
@@ -98,7 +98,7 @@
     },
     {
       "figure": "Figure2",
-      "tiff_sha256": "e21197be3e55e01e8d0edfe54633d2a77f3de66980c29a3ac105c7bce3100e5f",
+      "tiff_sha256": "dc025aef7d66666f19ce880a5d54b57e9b3ec752e249146e777bec9ea9ea006d",
       "source_size_600dpi": [
         4111,
         5327

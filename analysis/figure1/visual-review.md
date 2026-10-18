@@ -27,15 +27,17 @@ Figure 1 was inspected in nine tiles (r1–r3 × c1–c3), Figure 2 in twelve (r
 The report is the actual exact-run-build render. Raw and product-name-only HTML copies, substitution counts, byte-replay assertions and a full diff are retained. The final thumbnail is a native responsive AVATAR trial-page crop of domain navigation and the first domain card, not the batch page’s summary table. The trial page has no summary table; the full trial-page and batch-table screenshots remain in QA. No HTML/CSS layout was edited. Figure 1 has one required raster screenshot, while its diagram and text remain vector with embedded Fira fonts. Figure 2 is entirely vector. The only content omissions/shortenings are documented, ordered verbatim excerpts; no evidence identity, answer or judgement changes.
 
 - Figure1: 174 × 125.0 mm; minimum diagram text 7.0866 pt; zero geometry violations; minimum text/stroke clearance 0.3304 mm. SVG/PDF/PNG, embedded fonts and 600-dpi LZW TIFF passed.
-- Figure2: 174 × 225.5 mm; minimum diagram text 7.0866 pt; zero geometry violations; minimum text/stroke clearance 0.37 mm. SVG/PDF/PNG, embedded fonts and 600-dpi LZW TIFF passed.
+- Figure2: 174 × 225.5 mm; minimum diagram text 7.0866 pt; zero geometry violations; minimum text/stroke clearance 0.32 mm. SVG/PDF/PNG, embedded fonts and 600-dpi LZW TIFF passed.
 - Figure 2 primary questions/AI text: 7.5118 pt; three type sizes maximum. Report thumbnail minimum: 7.0753 pt.
 - All seven geometry fixtures passed with unchanged clearance thresholds.
 - 75 text-provenance rows; every semantic source/AI/software/result row string is asserted and matched to the final SVG. All 16 archived evidence identities/source bindings, all 22 answer positions, counter-evidence and unknowns, domain/Overall results and log-derived counts passed.
 - Legacy-name and jargon guards passed in the scene, final SVG and extracted PDF text. No displayed fingerprints remain.
 - 38 artifacts were byte-identical across two builds.
-- Figure1 inspected TIFF SHA-256: `fa476ae82242aba450f6222ccb25021943ac6cbe89aa7c00ce90270ec0997c1d`.
-- Figure2 inspected TIFF SHA-256: `e21197be3e55e01e8d0edfe54633d2a77f3de66980c29a3ac105c7bce3100e5f`.
+- Figure1 inspected TIFF SHA-256: `101a367b09cc6a78d33797549898d71b0f185010d44607381ed33cdb4ace2fda`.
+- Figure2 inspected TIFF SHA-256: `dc025aef7d66666f19ce880a5d54b57e9b3ec752e249146e777bec9ea9ea006d`.
 
 The left-hand identity strip now uses one icon gutter (x=25, 14 units wide) and one text edge (x=47) for source, reviewer, model, server and verification. Actor subtitles share their heading’s left edge; centred audit-card content remains intentional.
 
 The model’s actor heading is now simply “LLM agent”, with “Follows the assessment guide” beneath it.
+
+Robot and server glyphs now span their actor label blocks. Both figures call the same icon drawing functions, scaled for the compact Figure 2 headers. Document/source icons are shared as well.

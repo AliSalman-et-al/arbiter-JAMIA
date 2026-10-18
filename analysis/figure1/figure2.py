@@ -2,7 +2,7 @@
 import csv,hashlib,json,re
 from pathlib import Path
 from collections import Counter
-from build import (Scene,HERE,SLUG,INK,LLM,LAVENDER,MINT,HILITE,CONTEXT,GREY,DISPLAY,excerpt,lines_for,row,norm)
+from build import (Scene,HERE,SLUG,INK,LLM,LAVENDER,MINT,HILITE,CONTEXT,GREY,DISPLAY,excerpt,lines_for,row,norm,draw_actor_icon,draw_source_icon)
 
 def tool_audit(root):
     calls={};results={};log_hashes={}
@@ -91,32 +91,8 @@ def draw_trace(data,rows):
         return wrap(x+14,y,t,w-14,font_size=10)
     def pill(x,y,t,w,fill=LAVENDER):
         s.rect(x,y,w,20,fill,5,INK,1.1,'pill');text(x+6,y+14,t,'bold')
-    def icon(x,y,kind):
-        s.rect(x,y+2,12,11,'white',2,INK,.8)
-        if kind=='model':
-            s.line(x+6,y-1,x+6,y+2,sw=.8)
-            s.add(f'<circle cx="{x+6}" cy="{y-2}" r="1" fill="{INK}"/>')
-            for cx in (x+4,x+8):s.add(f'<circle cx="{cx}" cy="{y+6}" r=".8" fill="{INK}"/>')
-            s.line(x+4,y+10,x+8,y+10,sw=.8)
-            s.line(x-1.5,y+6,x-1.5,y+10,sw=.8)
-            s.line(x+13.5,y+6,x+13.5,y+10,sw=.8)
-        else:
-            for dy in (6,10):s.line(x+3,y+dy,x+9,y+dy,sw=.6)
-    def source_icon(x,y,kind):
-        if kind=='registry':
-            s.rect(x,y+1,14,17,'white',2,INK,.8)
-            s.line(x+1,y+6,x+13,y+6,sw=.7)
-            for dy in (9,13):
-                s.add(f'<circle cx="{x+3}" cy="{y+dy}" r=".65" fill="{INK}"/>')
-                s.line(x+6,y+dy,x+11,y+dy,sw=.65)
-        else:
-            s.add(f'<path d="M{x},{y} H{x+9} L{x+14},{y+5} V{y+18} H{x} Z" fill="white" stroke="{INK}" stroke-width=".8" stroke-linejoin="round"/>')
-            s.add(f'<path d="M{x+9},{y} V{y+5} H{x+14}" fill="none" stroke="{INK}" stroke-width=".8"/>')
-            if kind=='amendment':
-                s.add(f'<path d="M{x+3},{y+10} l2,2 l5,-5" fill="none" stroke="{INK}" stroke-width=".8"/>')
-                s.line(x+3,y+15,x+11,y+15,sw=.8)
-            else:
-                for dy,length in [(9,8),(12,8),(15,5)]:s.line(x+3,y+dy,x+3+length,y+dy,sw=.65)
+    def icon(x,y,kind):draw_actor_icon(s,x+2,y-6,kind,.7)
+    def source_icon(x,y,kind):draw_source_icon(s,x,y,kind)
     def quote(x,y,q,w,src):
         label=src['letter']+' · p '+str(src['ev']['page'])
         ls=lines_for(s,'“'+q+'”',w-55,10)

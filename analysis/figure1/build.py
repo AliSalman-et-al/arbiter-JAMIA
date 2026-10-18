@@ -237,13 +237,45 @@ class Scene:
                 '<rect width="100%" height="100%" fill="white"/>' + ''.join(self.parts) + '</svg>')
 
 
+def draw_actor_icon(s,x,y,kind,scale=1):
+    def rect(dx,dy,w,h):s.rect(x+dx*scale,y+dy*scale,w*scale,h*scale,'white',scale,INK,.8*scale)
+    def line(x1,y1,x2,y2):s.line(x+x1*scale,y+y1*scale,x+x2*scale,y+y2*scale,sw=.8*scale)
+    def dot(dx,dy,r):s.add(f'<circle cx="{x+dx*scale}" cy="{y+dy*scale}" r="{r*scale}" fill="{INK}"/>')
+    if kind=='model':
+        rect(0,3,14,11);line(7,0,7,3);dot(7,-1,1)
+        for dx in (4,10):dot(dx,7,.8)
+        line(4,11,10,11);line(-2,6,-2,11);line(16,6,16,11)
+        line(7,14,7,18);rect(1,18,12,10)
+        line(-2,20,-2,27);line(16,20,16,27)
+        line(4,28,4,31);line(10,28,10,31)
+    elif kind=='server':
+        for dy in (0,11,22):
+            rect(0,dy,14,7);dot(3,dy+3.5,.65);line(6,dy+3.5,11,dy+3.5)
+    else:raise ValueError(kind)
+
+
+def draw_source_icon(s,x,y,kind):
+    if kind=='registry':
+        s.rect(x,y+1,14,17,'white',2,INK,.8)
+        s.line(x+1,y+6,x+13,y+6,sw=.7)
+        for dy in (9,13):
+            s.add(f'<circle cx="{x+3}" cy="{y+dy}" r=".65" fill="{INK}"/>')
+            s.line(x+6,y+dy,x+11,y+dy,sw=.65)
+    else:
+        s.add(f'<path d="M{x},{y} H{x+9} L{x+14},{y+5} V{y+18} H{x} Z" fill="white" stroke="{INK}" stroke-width=".8" stroke-linejoin="round"/>')
+        s.add(f'<path d="M{x+9},{y} V{y+5} H{x+14}" fill="none" stroke="{INK}" stroke-width=".8"/>')
+        if kind=='amendment':
+            s.add(f'<path d="M{x+3},{y+10} l2,2 l5,-5" fill="none" stroke="{INK}" stroke-width=".8"/>')
+            s.line(x+3,y+15,x+11,y+15,sw=.8)
+        else:
+            for dy,length in [(9,8),(12,8),(15,5)]:s.line(x+3,y+dy,x+3+length,y+dy,sw=.65)
+
 def draw_workflow(data):
     s=Scene();s.height=500
     s.description='Reviewer, AI model, rule-based server and audit file, ending in the actual AVATAR HTML report.'
     centers=[196,336,476,616]
     for phase,cx in zip(PHASES,centers):s.text(cx,16,phase,11,'bold',anchor='middle')
-    s.rect(25,5,14,16,'white',2,INK,.8)
-    s.line(28,11,36,11,sw=.6);s.line(28,15,36,15,sw=.6)
+    draw_source_icon(s,25,3,'paper')
     s.text(47,15,'Trial reports + registry',10)
     s.line(150,13,168,13,arrow=True,sw=1)
     s.rect(12,28,672,38,'#F5F5F3',6,INK,1.5)
@@ -255,12 +287,7 @@ def draw_workflow(data):
         s.text(cx,61,second,10,'mono' if cx==336 else 'regular',GREY if cx==336 else INK,anchor='middle')
     s.line(402,49,476,49,sw=1);s.line(476,49,476,73,arrow=True,sw=1)
     s.rect(12,77,672,49,LAVENDER,6,INK,1.5)
-    s.rect(25,85,14,12,'white',2,INK,.8)
-    s.line(32,82,32,85,sw=.8)
-    s.add('<circle cx="32" cy="81" r="1" fill="#171717"/>')
-    for x in (29,35):s.add(f'<circle cx="{x}" cy="90" r=".8" fill="#171717"/>')
-    s.line(29,94,35,94,sw=.8)
-    s.line(23,89,23,94,sw=.8);s.line(41,89,41,94,sw=.8)
+    draw_actor_icon(s,25,88,'model')
     s.text(47,94,'LLM agent',11,'bold',LLM)
     s.text(47,107,'Follows the',10,color=GREY);s.text(47,119,'assessment guide',10,color=GREY)
     for cx,top,bottom in zip(centers,['Locate trial reports','Specify the outcome','Read text or page images','Review the answers'],['and registry records','and analysis to assess','Select and cite evidence','and supporting evidence']):
@@ -278,10 +305,7 @@ def draw_workflow(data):
         for y,tool in zip({2:[148,180],4:[140,156,172,188],6:[136,147,158,169,180,191]}[len(tools)],tools):
             s.text(cx,y,tool,10,'mono',GREY,anchor='middle')
     s.rect(12,196,672,60,MINT,6,INK,1.5)
-    for y in (208,218):
-        s.rect(25,y,14,6,'white',1,INK,.8)
-        s.add(f'<circle cx="28" cy="{y+3}" r=".65" fill="#171717"/>')
-        s.line(31,y+3,36,y+3,sw=.6)
+    draw_actor_icon(s,25,210,'server')
     s.text(47,217,'ARBITER server',11,'bold')
     s.text(47,230,'Rule-based software',10);s.text(47,242,'No AI',10)
     for cx,phrases in zip(centers,[['Store an unchangeable','copy of each source'],['Check and record','the choice'],['Check every quote','Apply the RoB 2 rules'],['Keep the full record','Package the audit file','Write the HTML report']]):

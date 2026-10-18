@@ -45,3 +45,5 @@ Four evenly spaced bidirectional tool-exchange arrows replace unequal down/up pa
 The audit card has centred, stacked text. Robot, server-stack and shield/check icons identify the model, server and shared verification node. The server’s two-line action cells are vertically centred in the mint lane.
 
 Source/actor/verifier icons and labels now share a fixed icon gutter and text edge. Server subtitles use the same left alignment as reviewer/model subtitles, eliminating the previous mixed alignment. Audit-card text remains centred.
+
+Shared icon functions unify the robot, server-stack and source-document glyphs across both figures. Figure 1 uses full actor-height robot/server icons; Figure 2 scales those same glyphs to its compact headers.

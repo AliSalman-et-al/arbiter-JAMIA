@@ -8,14 +8,14 @@
       "minimum_text_stroke_clearance_mm": 0.3304,
       "minimum_arrow_text_clearance_mm": 1.9839,
       "text_elements": 58,
-      "shape_elements": 68,
+      "shape_elements": 79,
       "arrow_tips": 14,
       "checks": {
-        "text_stroke_pairs": 3654,
-        "box_pairs": 120,
+        "text_stroke_pairs": 4234,
+        "box_pairs": 153,
         "arrow_text_pairs": 812,
-        "arrow_box_pairs": 224,
-        "frame_elements": 126,
+        "arrow_box_pairs": 252,
+        "frame_elements": 137,
         "text_pairs": 1653
       },
       "violations": []
@@ -42,17 +42,17 @@
       "clearance_mm": 0.3,
       "arrow_tip_clearance_mm": 0.8,
       "curve_sampling_max_mm": 0.0375,
-      "minimum_text_stroke_clearance_mm": 0.37,
+      "minimum_text_stroke_clearance_mm": 0.32,
       "minimum_arrow_text_clearance_mm": null,
       "text_elements": 148,
-      "shape_elements": 104,
+      "shape_elements": 116,
       "arrow_tips": 0,
       "checks": {
-        "text_stroke_pairs": 11544,
-        "box_pairs": 3240,
+        "text_stroke_pairs": 12876,
+        "box_pairs": 3741,
         "arrow_text_pairs": 0,
         "arrow_box_pairs": 0,
-        "frame_elements": 252,
+        "frame_elements": 264,
         "text_pairs": 10878
       },
       "violations": []
