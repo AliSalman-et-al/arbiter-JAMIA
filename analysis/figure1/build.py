@@ -206,7 +206,7 @@ class Scene:
                 '<rect width="100%" height="100%" fill="white"/>' + ''.join(self.parts) + '</svg>')
 
 
-def draw_workflow(data, count=False):
+def draw_workflow(data):
     s = Scene()
     # Panel A: four horizontal lanes, four left-to-right phases.
     # Each heading is centered on the same column as its agent/server content.
@@ -256,7 +256,7 @@ def draw_workflow(data, count=False):
         s.line(cx+61, 300, cx+61, 216, arrow=True, sw=1.4)
         for y, call in zip([239, 262], calls):
             assert s.width(call, 10.2, "mono") * .92 < 118
-            s.text(cx, y, call, 10.2, "mono", anchor="middle", stretch=.92)
+            s.text(cx-7 if cx==480 else cx, y, call, 10.2, "mono", anchor="middle", stretch=.84 if cx==480 else .92)
         s.text(cx, 287, response, 10.5, anchor="middle", italic=True)
 
     s.rect(12, 300, 672, 77, MINT, 11, sw=2.3)
@@ -278,14 +278,12 @@ def draw_workflow(data, count=False):
     s.text(612, 451, ".arbiter.zip", 10.5, "mono", anchor="middle")
 
     red = "#B32624"
-    s.add(f'<path d="M540 377 L540 407 Q692 407 692 290 L692 225 Q692 222 680 222 L550 222 Q542 222 542 216" fill="none" stroke="{red}" stroke-width="2.2"/>')
-    s.add(f'<polygon points="542,216 538,224 546,224" fill="{red}"/>')
-    s.rect(194, 387, 345, 21, "white", 6, stroke=red, sw=1.1)
-    s.text(201, 402, "uncited or unbound answer → not saved", 11, "bold", red)
-    if count:
-        s.height=498
-        summary=json.loads((HERE/"save-rejections-summary.json").read_text())
-        s.text(348,486,f"102 trials: {summary['rejected']}/{summary['total_calls']} save calls rejected; corrected submissions can follow",10.5,anchor="middle")
+    # A short return inside the assessment column, beside the normal response.
+    s.add(f'<path d="M532 300 Q529 257 532 216" fill="none" stroke="{red}" stroke-width="2.2"/>')
+    s.add(f'<polygon points="532,216 528,224 536,224" fill="{red}"/>')
+    s.rect(307, 386, 276, 23, "white", 6, stroke=red, sw=1.1)
+    s.text(315, 402, "invalid or unbound answer → not saved", 11, "bold", red)
+    s.add(f'<path d="M532 377 L532 386" fill="none" stroke="{red}" stroke-width="1.2"/>')
     # Remove the former panel-heading margin from both variants.
     s.parts=['<g transform="translate(0 -28)">',*s.parts,'</g>']
     for record in s.pdf_text:record['y']-=28
@@ -395,13 +393,13 @@ def lines_for(s,text,width,size=10.3,face='regular'):
     return result
 
 
-def block(s,x,y,text,width,fill=None,size=10.3,face='regular',dashed=False,leading=12.5):
+def block(s,x,y,text,width,fill=None,size=10.3,face='regular',dashed=False,leading=12.5,color=INK):
     lines=lines_for(s,text,width-10 if fill or dashed else width,size,face)
     if dashed:
         s.add(f'<rect x="{x}" y="{y-10}" width="{width}" height="{len(lines)*leading+5}" rx="6" fill="none" stroke="{INK}" stroke-width="1.2" stroke-dasharray="4 3"/>')
     for line in lines:
         if fill:s.rect(x,y-10,s.width(line,size,face)+8,leading+1,fill,5,sw=.6)
-        s.text(x+4 if fill or dashed else x,y,line,size,face)
+        s.text(x+4 if fill or dashed else x,y,line,size,face,color)
         y+=leading
     return y
 
@@ -416,102 +414,131 @@ def curve(s,x1,y1,x2,y2):
 
 
 def draw_trace(data,rows,with_unassisted=True):
-    s=Scene();s.height=916 if with_unassisted else 876
+    s=Scene()
     s.title='AVATAR, all-cause death: five domains and Overall'
-    s.description='Verbatim evidence and reasoning; D1–D4 Low, D5 and Overall Some concerns. Optional Unassisted comparison.'
+    s.description='Verbatim evidence and labelled agent justification; D1–D4 Low, D5 and Overall Some concerns.'
     right=506 if with_unassisted else 684
-    width=right-24
-    # A compact key uses labels as well as colour; no meaning depends on hue.
+    width=right-44
     s.text(12,18,'ARBITER',12,'bold',BLUE)
     s.pill(92,17,'Direct support',10.1,HILITE,'regular')
     s.pill(184,17,'Context',10.1,LAVENDER,'regular')
     block(s,250,18,'Inference',61,dashed=True,size=10.1)
-    if with_unassisted:s.text(526,18,'Unassisted',12,'bold','#DF8F44')
-    starts=[36,214,348,479,643] if with_unassisted else [36,204,338,455,606]
-    heights=[170,126,123,156,188] if with_unassisted else [160,126,109,143,190]
-    for i,(r,y,h) in enumerate(zip(rows,starts,heights),1):
-        s.rect(12,y,right-12,h,'#FBFBF8',10,sw=2)
-        s.pill(22,y+17,f'D{i}',11,'#DFF2F8')
-        s.pill(57,y+17,DISPLAY[r['d']['decision']['adopted']],10.6,'white')
-        # Short official question excerpts are exact substrings, with omissions.
-        short=['1.2 … concealed until participants were enrolled …?',
-               '2.1 Were participants aware of their assigned intervention …?',
-               '3.1 Were data for this outcome available for all, or nearly all, …?',
-               '4.3 Were outcome assessors aware of the intervention received …?',
-               '5.1 … pre-specified analysis plan … before unblinded outcome data …?'][i-1]
-        # Excerpts are checked word-for-word against the official wording above.
-        for part in re.split(r' … |…',short.split(' ',1)[1].removesuffix('?')):
-            if part.strip():assert part.strip() in QUESTIONS[i-1]
-        s.text(22,y+38,short,10.3,'bold')
-        answer=DISPLAY[r['a']['answer']]
-        s.pill(right-s.width(answer,10.6,'bold')-30,y+17,answer,10.6,'#F4F3FA')
-        yy=y+55
-        card_start=len(s.parts)
-        for index,quote in r['shown']:
-            b=r['bases'][index];ev=b['ev'];src=b['src']
-            # Keep source labels verbatim; hash prefix is the source projection hash.
-            label=src['label']
-            kind_label={"direct_support":"Direct support","context":"Context"}[b["basis"]["kind"]]
-            provenance=f"{kind_label} · {label} · p {ev['page']} · L{ev['start_line']}–{ev['end_line']} · {ev['source_version'].split(':')[1][:10]}"
-            yy=block(s,22,yy,provenance,width-10,size=10.0,leading=12)
-            yy=block(s,22,yy+1,quote,width-10,fill=HILITE if b['basis']['kind']=='direct_support' else LAVENDER,size=10.3,leading=12.5)+3
-        card_end=yy
-        s.parts.insert(card_start,f'<rect x="18" y="{y+43}" width="{right-24}" height="{card_end-y-54}" rx="6" fill="white" stroke="#888888" stroke-width=".7"/>')
-        yy=block(s,22,yy+2,r['reason']+('…' if not r['reason'].endswith('.') else ''),width-10,fill=HILITE if i<5 else LAVENDER,size=10.3,leading=12.5)
-        if i==1:
-            yy=block(s,22,yy+3,r['a']['unknowns'][0],width-10,size=10.3,leading=12.5)
-        if i==2:
-            s.text(22,yy+4,'2.4, 2.5, 2.7 not asked — RoB 2 branching',10.3,'bold')
-        if i==4:
-            s.text(22,yy+6,'4.4 … influenced by knowledge …?  Probably no',10.3,'bold')
-            yy=block(s,22,yy+23,r['inference']+'…',width-10,dashed=True,size=10.3,leading=12.5)
-        if i==5:
-            yy=block(s,22,yy+1,r['gap'],width-10,size=10.3,leading=12.5)
-            assert [a['answer'] for a in r['d']['answers']]==['no_information','probably_no','probably_no']
-            yy=block(s,22,yy+5,'5.1 NI · 5.2 PN · 5.3 PN → official algorithm',width-10,size=10.3,face='bold')
-            yy=block(s,22,yy,'Proposed Some concerns → Adopted Some concerns (no override)',width-10,size=10.3,face='bold')
-        assert yy<y+h+2,(i,yy,y+h)
-        if with_unassisted:
-            s.rect(518,y,166,h,'#FFF8F0',10,sw=1.5)
-            ua=r['unassisted_answers']
-            uy=block(s,528,y+17,ua,146,size=10.3,face='bold')
-            uy=block(s,528,uy+6,r['unassisted'],146,size=10.3,leading=13)
-            if i==4:
-                uy=block(s,528,uy+7,'Invalid answer path',146,size=10.3,face='bold')
-                s.add(f'<path d="M524 {uy-12} C508 {uy-22} 508 {y+20} 528 {y+20}" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-                s.add(f'<path d="M523 {y+17} L528 {y+20} L523 {y+23}" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-            if i==5:
-                uy=block(s,528,uy+9,'Compare the registered composite outcome',146,size=10.3,face='bold')
-                curve(s,524,uy-12,498,y+87)
-            assert uy<y+h,(i,uy,y+h)
-    # Four numbered book-style mechanism notes; arrows identify relevant text.
-    # Numerals in circles are drawn geometrically so font coverage is reproducible.
-    def callout(x,y,n,keyword,tail,target):
+    if with_unassisted:
+        s.text(526,15,'Unassisted',12,'bold','#DF8F44')
+        s.text(526,29,'same prompt, no ARBITER',10,color=GREY)
+
+    def callout(x,y,n,label,target):
         s.add(f'<circle cx="{x+6}" cy="{y-3}" r="7" fill="white" stroke="{INK}" stroke-width="1.2"/>')
         s.text(x+3,y,str(n),10,'bold')
-        s.text(x+18,y,keyword,10.3,'bold')
-        s.text(x+18+s.width(keyword,10.3,'bold')+3,y,tail,10.3)
-        if target:curve(s,x+10,y-11,*target)
-    # Curved arrows end at the mechanism, with labels in reserved row whitespace.
-    callout(22,starts[0]+heights[0]-12,4,'Unknown','records the gap',(110,155))
-    # Locator callout stays beside the locator instead of crossing the quote.
-    callout(350,91,1,'Bound span','',None)
-    s.add(f'<path d="M346 87 Q335 75 323 87" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-    s.add(f'<path d="M323 82 L323 87 L328 86" fill="none" stroke="{INK}" stroke-width="1.2"/>')
-    callout(230,starts[1]+heights[1]-11,2,'Branching','switches questions off',None)
-    curve(s,228,starts[1]+heights[1]-15,192,starts[1]+108)
-    algorithm_y=next(t['baseline'] for t in s.text_records if t['text'].startswith('Proposed Some concerns'))
-    callout(22,starts[4]+heights[4]-13,3,'Algorithm','computes the proposal',None)
-    curve(s,245,starts[4]+heights[4]-17,306,algorithm_y+6)
-    bottom=852 if with_unassisted else 812
-    s.rect(12,bottom,672,37,MINT,9,sw=2)
+        s.text(x+18,y,label,10.6,'bold')
+        curve(s,x-2,y-3,*target)
+
+    def question(y,text,answer):
+        # Keep Q→A order, moving the last question words with the answer if needed.
+        lines=lines_for(s,text,width,10.6,'bold')
+        aw=s.width(answer,10.6,'bold')+14
+        if s.width(lines[-1],10.6,'bold')+aw+8>width:
+            words=lines[-1].split();last=[]
+            while words and s.width(' '.join(words),10.6,'bold')+aw+8>width:
+                last.insert(0,words.pop())
+            lines[-1]=' '.join(words)
+            lines.append(' '.join(last))
+        for line in lines:
+            s.text(22,y,line,10.6,'bold');y+=15
+        s.pill(22+s.width(lines[-1],10.6,'bold')+8,y-16,answer,10.6,'#F4F3FA')
+        return y+3
+
+    def marked_text(x,y,text,limit,phrase=None,fill=None,outline=False,face='regular'):
+        # Split exact verbatim text into wrapped lines, preserving phrase-level marks.
+        start=text.find(phrase) if phrase else -1
+        assert not phrase or start>=0,(phrase,text)
+        offset=0
+        for line in lines_for(s,text,limit,10.6,face):
+            lo=max(offset,start);hi=min(offset+len(line),start+len(phrase or ''))
+            if start>=0 and hi>lo:
+                xx=x+s.width(line[:lo-offset],10.6,face)
+                ww=s.width(line[lo-offset:hi-offset],10.6,face)
+                s.rect(xx-2,y-10,ww+4,13,fill or 'none',3,stroke='#B35B22' if outline else 'none',sw=1.1)
+            s.text(x,y,line,10.6,face)
+            y+=13;offset+=len(line)+1
+        return y
+
+    y=42
+    for i,r in enumerate(rows,1):
+        row_index=len(s.parts)
+        s.pill(22,y+16,f'D{i}',11,'#DFF2F8')
+        s.pill(57,y+16,DISPLAY[r['d']['decision']['adopted']],10.6,'#DFF2F8' if i==5 else 'white')
+        short=['1.2 … concealed until participants were enrolled …?',
+               '2.1 Were participants aware of their assigned intervention …?',
+               '3.1 Were data … available for all, or nearly all, participants …?',
+               '4.3 Were outcome assessors aware of the intervention received …?',
+               '5.1 … pre-specified analysis plan … before unblinded outcome data …?'][i-1]
+        for part in re.split(r' … |…',short.split(' ',1)[1].removesuffix('?')):
+            if part.strip():assert part.strip() in QUESTIONS[i-1]
+        yy=question(y+38,short,DISPLAY[r['a']['answer']])
+        card_start=len(s.parts);card_top=yy-11
+        for index,quote in r['shown']:
+            b=r['bases'][index];ev=b['ev'];src=b['src']
+            kind_label={'direct_support':'Direct support','context':'Context'}[b['basis']['kind']]
+            provenance=f"{kind_label} · {src['label']} · p {ev['page']} · L{ev['start_line']}–{ev['end_line']} · {ev['source_version'].split(':')[1][:10]}"
+            yy=block(s,22,yy,provenance,width,size=10,leading=12)
+            if i==1:
+                metadata=s.text_records[-1]
+                end=metadata['x']+metadata['width']
+                callout(right-94,metadata['baseline'],1,'Bound span',(end,metadata['baseline']+3))
+            yy=block(s,22,yy+2,quote,width,fill=HILITE if b['basis']['kind']=='direct_support' else LAVENDER,size=10.6,leading=13)+3
+        s.parts.insert(card_start,f'<rect x="18" y="{card_top}" width="{right-24}" height="{yy-card_top-8}" rx="6" fill="white" stroke="#888888" stroke-width=".7"/>')
+        s.text(22,yy+2,'Justification',10,color=GREY)
+        yy=block(s,80,yy+2,r['reason']+('…' if not r['reason'].endswith('.') else ''),width-58,fill=HILITE if i<5 else LAVENDER,size=10.6,leading=13)
+        if i==1:
+            s.text(22,yy+4,'Unknown:',10.6,'bold',GREY)
+            yy=block(s,66,yy+4,r['a']['unknowns'][0],width-148,size=10.6,leading=13,color=GREY)
+            last=s.text_records[-1]
+            callout(right-99,last['baseline'],4,'Recorded gap',(last['x']+last['width']+2,last['baseline']+3))
+        if i==2:
+            s.text(22,yy+4,'2.4, 2.5, 2.7 not asked — RoB 2 branching',10.6,'bold')
+            callout(right-105,yy+4,2,'Branching',(22+s.width('2.4, 2.5, 2.7 not asked — RoB 2 branching',10.6,'bold'),yy+7))
+            yy+=15
+        if i==4:
+            yy=question(yy+6,'4.4 … influenced by knowledge …?','Probably no')
+            yy=block(s,22,yy,r['inference']+'…',width,dashed=True,size=10.6,leading=13)+4
+        if i==5:
+            yy=block(s,22,yy+1,r['gap'],width,size=10.6,leading=13)
+            assert [a['answer'] for a in r['d']['answers']]==['no_information','probably_no','probably_no']
+            algorithm='5.1 NI · 5.2 PN · 5.3 PN → official algorithm'
+            s.text(22,yy+4,algorithm,10.6,'bold')
+            target=(22+s.width(algorithm,10.6,'bold'),yy+7)
+            callout(right-89,yy+4,3,'Algorithm',target)
+            yy=block(s,22,yy+20,'Proposed Some concerns → Adopted Some concerns (no override)',width,size=10.6,face='bold')
+            yy+=1
+        uy=y
+        if with_unassisted:
+            ua_index=len(s.parts)
+            uy=marked_text(528,y+17,r['unassisted_answers'],146,'4.3 NA' if i==4 else None,outline=i==4,face='bold')
+            phrase={4:'Assessors were not blinded to allocation',5:'registered 5-year time frame'}.get(i)
+            uy=marked_text(528,uy+5,r['unassisted'],146,phrase,HILITE if i==4 else LAVENDER)
+            if i==4:
+                uy=block(s,528,uy+6,'4.3 skipped despite this → invalid answer path',146,size=10.6,face='bold',leading=13)
+            if i==5:
+                uy=block(s,528,uy+6,'Registry lists death only within a composite (cf. ARBITER 5.1)',146,size=10.6,face='bold',leading=13)
+        h=max(yy,uy)-y+4
+        s.parts.insert(row_index,f'<rect x="12" y="{y}" width="{right-12}" height="{h}" rx="10" fill="#FBFBF8" stroke="{INK}" stroke-width="{2.8 if i==5 else 1.7}"/>')
+        if with_unassisted:
+            # Insert before Unassisted text, allowing for the main row insertion.
+            s.parts.insert(ua_index+1,f'<rect x="518" y="{y}" width="166" height="{h}" rx="10" fill="#FFF8F0" stroke="{INK}" stroke-width="1.5"/>')
+        y+=h+8
+    bottom=y+1
+    s.rect(12,bottom,672,44,MINT,9,sw=2)
     s.text(22,bottom+16,'Overall',11,'bold')
-    s.text(90,bottom+16,'D1–D4 Low · D5 Some concerns → any Some concerns → Some concerns',10.5,'bold')
-    s.text(22,bottom+30,'overall.any_concerns',10.1,'mono')
-    s.text(480,bottom+30,'Bundle verifier: '+data['verification']['result'],10.3,'bold')
-    s.text(12,bottom+56,'Published: '+data['published']['D5'],10.8,'bold','#374E55')
-    s.text(165,bottom+56,'Adjudicators: '+data['adjud']['preferred'],10.8,'bold')
-    s.text(411,bottom+56,'Unassisted: '+data['unassisted']['model_D5'],10.8,'bold','#DF8F44')
+    s.text(88,bottom+16,'D1–D4 Low · D5 Some concerns →',10.5,'bold')
+    s.pill(254,bottom+15,'Some concerns',10.6,'#DFF2F8')
+    s.text(22,bottom+34,'Official RoB 2 overall rule: any Some concerns; applied by the server',10.6)
+    s.text(480,bottom+34,'Bundle verifier: '+data['verification']['result'],10.6,'bold')
+    s.text(12,bottom+63,'Published: '+data['published']['D5'],10.8,'bold','#374E55')
+    s.text(165,bottom+63,'Adjudicators: '+data['adjud']['preferred'],10.8,'bold')
+    s.text(411,bottom+63,'Unassisted: '+data['unassisted']['model_D5'],10.8,'bold','#DF8F44')
+    s.height=bottom+72
+    assert s.height<=920, s.height
     return s
 
 
@@ -524,7 +551,10 @@ def export_scene(scene,out,name,deliver=True):
     assert not re.search('rob2',svg,re.I),'Legacy name in rendered text'
     png=resvg_py.svg_to_bytes(svg_string=svg,width=1644,dpi=96,skip_system_fonts=True)
     (out/f'{name}.png').write_bytes(png)
-    if not deliver:return
+    if not deliver:
+        preview=Image.open(io.BytesIO(png)).convert('RGB')
+        diagnostic_proofs(preview,out,name,scene.height)
+        return dict(width_mm=174,height_mm=scene.height/4,min_text_pt=min(r['size_pt'] for r in scene.text_records))
     (out/f'{name}.svg').write_text(svg,encoding='utf8')
     # PDF uses the same positions with subset-embedded TrueType fonts. SVG remains outlined.
     from reportlab.pdfgen.canvas import Canvas
@@ -570,22 +600,26 @@ def export_scene(scene,out,name,deliver=True):
         Image.frombytes('RGB',(proof.width,proof.height),proof.samples).save(out/'qa'/f'{name}-pdf.png')
     preview=Image.open(io.BytesIO(png)).convert('RGB')
     qa=out/'qa'
-    ImageOps.grayscale(preview).save(qa/f'{name}-grayscale.png')
+    diagnostic_proofs(preview,qa,name,scene.height)
+    return dict(width_mm=174,height_mm=scene.height/4,min_text_pt=min(r['size_pt'] for r in scene.text_records),vector_pdf=True,embedded_fonts=[f[3] for f in fonts],tiff_dpi=600,tiff_compression='LZW',text_elements=len(scene.text_records))
+
+
+def diagnostic_proofs(preview,directory,name,height):
+    ImageOps.grayscale(preview).save(directory/f'{name}-grayscale.png')
     matrices={'deuteranopia':(.367322,.860646,-.227968,0,.280085,.672501,.047413,0,-.011820,.042940,.968881,0),
     'protanopia':(.152286,1.052583,-.204868,0,.114503,.786281,.099216,0,-.003882,-.048116,1.051998,0),
     'tritanopia':(1.255528,-.076749,-.178779,0,-.078411,.930809,.147602,0,.004733,.691367,.303900,0)}
-    for label,matrix in matrices.items():preview.convert('RGB',matrix).save(qa/f'{name}-{label}.png')
-    preview.resize((658,round(658*scene.height/W)),Image.Resampling.LANCZOS).save(qa/f'{name}-final-size.png')
-    return dict(width_mm=174,height_mm=scene.height/4,min_text_pt=min(r['size_pt'] for r in scene.text_records),vector_pdf=True,embedded_fonts=[f[3] for f in fonts],tiff_dpi=600,tiff_compression='LZW',text_elements=len(scene.text_records))
+    for label,matrix in matrices.items():preview.convert('RGB',matrix).save(directory/f'{name}-{label}.png')
+    preview.resize((658,round(658*height/W)),Image.Resampling.LANCZOS).save(directory/f'{name}-final-size.png')
 
 
 def write_notes(data,rows,out):
     text=['# Figures 1–2: provenance and display notes','','## Figure 1','',
     'The workflow is a functional grouping of representative real MCP tools. Response labels and the rejection arrow are explanatory summaries. Approval uses the public `arbiter review` command; archived inputs retain their historical names. The server proposes judgements from the official algorithm; adopted judgements may differ through a recorded override. AVATAR has no override.',
     '', '## Save-call rejection audit','',json.dumps(json.loads((HERE/'save-rejections-summary.json').read_text()),indent=2),
-    '', 'The CSV has one row per unique tool-use ID, matched to its tool result across all turn logs. Trials come from the Sonnet domain-label file with the three design exclusions; exactly 102 are required. Rejected means an error flag or an explicit not-saved/error result. Reasons are classified from actual error details, not the scientific validity of a judgement. Accepted includes repeat successful saves. Counts describe Sonnet only; they are not a failure rate across all ARBITER models.',
+    '', 'The CSV has one row per unique tool-use ID, matched to its tool result across all turn logs. Trials come from the Sonnet domain-label file with the three design exclusions; exactly 102 are required. Rejected means an error flag or an explicit not-saved/error result. Reasons are classified from actual error details, not the scientific validity of a judgement. Accepted includes repeat successful saves. Chronology uses numeric turn ordering and unique call insertion order. All 47 trial-domain assessments with rejections ended with successful saves; none of the 510 domains lacked one. All 53 rejected calls have a later accepted save for their domain. One PALOMA-2 call omitted the domain entirely; its attribution to D1 is inferred from the explicit D1 retries immediately before and after it, asserted by the audit and marked in the CSV. One malformed JSON input retains a literal domain_id in its raw input. Counts describe Sonnet only; they are not a failure rate across all ARBITER models.',
     '', '## Figure 2','',f'Bundle SHA-256: `{data["bundle_sha256"]}`. Manifest content hashes checked at every build. Archived verifier: `{data["verification"]["result"]}`; this does not certify clinical correctness. Source hash prefixes identify searchable projections, not PDF bytes. Quotes preserve source text; whitespace wraps are collapsed. Two extraction line breaks are joined for legibility: assign-↵ment → assignment and cen↵sored → censored. No words are substituted. Ellipses denote omissions. Official question excerpts are shortened, with ellipses, from the RoB 2 wording.',
-    '', 'AVATAR log correction: the rejected D3 save (`toolu_01CTHBEhdF5BAGdpapeh9D5F`) flattened the locator fields directly into the basis. The accepted retry (`toolu_01PN3CESV3Hj5VbcRRWKbc5E`) nested source/page/lines under `bases[].evidence`, an accepted source-span reference form; it did **not** submit an `eh_…` string. The server bound it as `eh_e66d374e838e8c6d`. Therefore the figure illustrates schema/binding validation, not a claim that literal handles are the only accepted syntax.\n\nThe four numbered callouts identify span binding, branching, the server algorithm and unknowns. Yellow links direct-support source text to the corresponding recorded reasoning. Lavender links context text to the recorded composite-outcome interpretation. The missing dated plan remains plain text: a context quotation does not itself prove absence. Unnumbered comparison callouts identify the Unassisted invalid path and the registry comparison. The footer compares **D5**, the domain adjudicated for this trial; the same Published/Unassisted labels also apply to Overall, but Overall was not adjudicated.','']
+    '', 'AVATAR log correction: the rejected D3 save (`toolu_01CTHBEhdF5BAGdpapeh9D5F`) flattened the locator fields directly into the basis. The accepted retry (`toolu_01PN3CESV3Hj5VbcRRWKbc5E`) nested source/page/lines under `bases[].evidence`, an accepted source-span reference form; it did **not** submit an `eh_…` string. The server bound it as `eh_e66d374e838e8c6d`. Therefore the figure illustrates schema/binding validation, not a claim that literal handles are the only accepted syntax.\n\nThe four numbered callouts identify span binding, branching, the server algorithm and unknowns. Yellow links direct-support source text to the corresponding recorded reasoning. Lavender links context text to the recorded composite-outcome interpretation. The missing dated plan remains plain text: a context quotation does not itself prove absence. Inline Unassisted annotations identify the invalid path and registry comparison without arrows. Their requested wording wraps to two lines to keep type at least 7 pt in the narrow column. Answer pills follow questions; Justification labels identify agent text. D5 and Overall use pale blue judgement chips; D5 has a heavier border. Unknown text is grey with a bold label and an adjacent curved callout. The footer compares **D5**, the domain adjudicated for this trial; the same Published/Unassisted labels also apply to Overall, but Overall was not adjudicated.','']
     tool_notes=['## Workflow tool provenance','',f'ARBITER source commit: `{data["source_commit"]}`. Definitions: `src/arbiter/interfaces/mcp/server.py`.','']
     for phase,names in PHASES.items():
         tool_notes.append(phase+': '+', '.join(f'`{name}` (line {data["tool_lines"][name]})' for name in names)+'.')
@@ -609,8 +643,7 @@ def main():
     out=ROOT/'analysis/output/manuscript';out.mkdir(parents=True,exist_ok=True);(out/'qa').mkdir(exist_ok=True)
     qa={}
     for name,scene in [('Figure1',draw_workflow(data)),('Figure2',draw_trace(data,rows))]:qa[name]=export_scene(scene,out,name)
-    export_scene(draw_workflow(data,True),out/'qa','Figure1-with-rejection-count',False)
-    export_scene(draw_trace(data,rows,False),out/'qa','Figure2-without-unassisted',False)
+    qa['Figure2-without-unassisted']=export_scene(draw_trace(data,rows,False),out/'qa','Figure2-without-unassisted',False)
     write_notes(data,rows,out)
     (HERE/'qa.json').write_text(json.dumps(qa,indent=2)+'\n')
     print(json.dumps(qa,indent=2))

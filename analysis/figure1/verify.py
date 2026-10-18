@@ -9,7 +9,9 @@ def files():
     paths=[*OUT.glob('Figure1.*'),*OUT.glob('Figure2.*'),OUT/'figure1-notes.md',HERE/'qa.json',HERE/'save-rejections.csv',HERE/'save-rejections-summary.json',HERE/'avatar-save-retry.json']
     for n in [1,2]:
         paths.extend(OUT/'qa'/f'Figure{n}-{suffix}.png' for suffix in ['final-size','grayscale','deuteranopia','protanopia','tritanopia','pdf'])
-    paths.extend([OUT/'qa/Figure1-with-rejection-count.png',OUT/'qa/Figure2-without-unassisted.png'])
+    paths.extend([OUT/'qa/Figure2-without-unassisted.png'])
+    paths.extend(OUT/'qa'/f'Figure2-without-unassisted-{suffix}.png' for suffix in ['final-size','grayscale','deuteranopia','protanopia','tritanopia'])
+    paths.append(OUT/'legends-fig1-2.md')
     return sorted(paths)
 
 def hashes():

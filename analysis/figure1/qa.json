@@ -15,16 +15,20 @@
   },
   "Figure2": {
     "width_mm": 174,
-    "height_mm": 229.0,
+    "height_mm": 223.875,
     "min_text_pt": 7.086614173228347,
     "vector_pdf": true,
     "embedded_fonts": [
       "AAAAAA+FiraSansCondensed-Bold",
-      "AAAAAA+FiraSansCondensed-Regular",
-      "AAAAAA+FiraCode-Regular"
+      "AAAAAA+FiraSansCondensed-Regular"
     ],
     "tiff_dpi": 600,
     "tiff_compression": "LZW",
-    "text_elements": 102
+    "text_elements": 110
+  },
+  "Figure2-without-unassisted": {
+    "width_mm": 174,
+    "height_mm": 214.125,
+    "min_text_pt": 7.086614173228347
   }
 }

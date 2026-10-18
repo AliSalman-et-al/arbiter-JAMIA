@@ -1,6 +1,6 @@
 # Figures 1 and 2: workflow and AVATAR trace
 
-Reproducible SVG illustration sources with bundled OFL Fira fonts. Figure 1 is a standalone workflow at 174 × 112.5 mm; Figure 2 is an AVATAR trace at 174 × 229 mm, with a provisional Unassisted column. No titles or panel tags appear inside either image.
+Reproducible SVG illustration sources with bundled OFL Fira fonts. Figure 1 is a standalone workflow at 174 × 112.5 mm; Figure 2 is an AVATAR trace at 174 × 223.875 mm, with a provisional Unassisted column. No titles or panel tags appear inside either image.
 
 ## Build
 
@@ -27,16 +27,15 @@ The build reads and checks:
 
 - `Figure1.{svg,pdf,png,tiff}`: workflow, without benchmark count.
 - `Figure2.{svg,pdf,png,tiff}`: trace with Unassisted column.
-- `qa/Figure1-with-rejection-count.png`: count annotation variant.
-- `qa/Figure2-without-unassisted.png`: wider evidence rows with a shorter page, not a blanked column.
+- `qa/Figure2-without-unassisted.png`: wider evidence rows at 174 × 214.125 mm; matching final-size, greyscale and CVD proofs use the same filename prefix.
 - `qa/Figure{1,2}-{final-size,grayscale,deuteranopia,protanopia,tritanopia,pdf}.png`: visual proofs.
 - `figure1-notes.md`: both figures' provenance, every displayed quote, full bound spans, handles, source IDs, pages, line ranges and complete hashes.
 - `legends-fig1-2.md`: legends and alt text for integration by the parent task.
 
 `analysis/figure1/`:
 
-- `save-rejections.csv`: one row per call, including successful calls so the denominator is auditable. Error excerpts exclude generic recovery/example boilerplate.
-- `save-rejections-summary.json`: 637 calls, 53 rejections (32 evidence/basis construction; 21 other validation/input errors); AVATAR 1/7.
+- `save-rejections.csv`: one row per call, including successful calls so the denominator is auditable, with domain and attribution source. Turn files are sorted numerically; unique call insertion order records chronology. One malformed JSON call retains its literal domain; one domain-less call is attributed only after asserting that both flanking retries name D1. Error excerpts exclude generic recovery/example boilerplate.
+- `save-rejections-summary.json`: 637 calls, 53 rejections (32 evidence/basis construction; 21 other validation/input errors); AVATAR 1/7. All 47 trial-domain assessments with rejections ended successfully; 0/510 domains lacked an accepted save. All 53 rejected calls have a later accepted save in that domain, including one domain-less PALOMA-2 call contextually attributed to D1 and flagged in the CSV.
 - `avatar-save-retry.json`: failed and accepted AVATAR basis objects and exact tool-use IDs.
 - `qa.json`: physical dimensions, text minima, vector PDF and embedded font checks.
 - `verify.py`, `reproducibility.json`: two-build byte comparison and artifact hashes.
@@ -56,3 +55,9 @@ Font provenance: Fira Sans Condensed Regular/Bold from the Google Fonts OFL dist
 AVATAR's rejected D3 save flattened the span locator into the basis. The accepted retry nested that locator under `bases[].evidence`; it did **not** send a literal `eh_…` handle string. The server bound the reference and archived a handle. This corrects the brief's narrower account without changing the intended validation mechanism.
 
 Context is lavender, direct support yellow, and inference an unfilled dashed outline. D5's missing dated source remains plain text because a context quotation cannot itself prove an absence. The footer compares D5 preferred judgements; Overall was not adjudicated. The verifier status is read from the archive, not re-executed, and does not establish clinical validity. See `DEVIATIONS.md` for scope and display decisions.
+
+## PI revision
+
+Answer pills follow questions, including 4.4; labelled Justification lines distinguish the agent’s words from source quotations. D5 and Overall chips have pale ARBITER-blue fill, and D5 has a heavier border. All four numbered curved arrows touch their targets without crossing glyphs. The unknown is grey with a bold label and an adjacent callout. The Unassisted comparison uses inline highlights and a 4.3 NA outline, with no gutter-crossing arrows. Its explanatory notes wrap to two lines to preserve ≥7 pt type in the narrow column. Main quote, question and justification type increased from 7.30 to 7.51 pt.
+
+Figure 1 uses an internal short red return and the broader invalid-or-unbound wording. The count variant has been removed; the legend holds the precise rejection and recovery counts. The Overall rule uses plain language.

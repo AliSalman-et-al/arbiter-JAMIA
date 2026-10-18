@@ -11,7 +11,7 @@ def extract(root):
     assert len(slugs)==102,len(slugs)
     rows=[]
     for slug in sorted(slugs):
-        files=sorted((root/'kit-sonnet-5.5/logs'/slug).glob('turn*.jsonl'))
+        files=sorted((root/'kit-sonnet-5.5/logs'/slug).glob('turn*.jsonl'),key=lambda p:int(re.search(r'turn(\d+)',p.name)[1]))
         if not files: raise FileNotFoundError(f'No logs for {slug}')
         calls={};results={}
         for path in files:
@@ -30,7 +30,18 @@ def extract(root):
             details=body.split('Complete answer syntax example')[0].strip()
             if failed:
                 reason='evidence_or_basis_schema' if re.search(r'/bases|/evidence|evidence handle|bound evidence|basis|SourceQuoteReference',details,re.I) else 'other_validation'
-            rows.append(dict(slug=slug,turn=file,tool_use_id=tid,status='rejected' if failed else 'accepted',reason=reason,result_excerpt=details if failed else ''))
+            domain=args.get('domain_id', args.get('domain', ''))
+            domain_source='explicit'
+            if not domain:
+                raw=args.get('__unparsedToolInput',{}).get('raw','')
+                match=re.search(r'"domain_id"\s*:\s*"([^"]+)"',raw)
+                if match: domain=match[1];domain_source='malformed_input_literal'
+            if not domain and tid=='toolu_01SEACoGACFkmrTarcdeV4oH':
+                sequence=list(calls);pos=sequence.index(tid)
+                assert calls[sequence[pos-1]][1]['domain_id']==calls[sequence[pos+1]][1]['domain_id']=='domain:randomization'
+                domain='domain:randomization';domain_source='inferred_from_flanking_randomization_retries'
+            if not domain and args.get('answers'): domain=args['answers'][0].get('question_id','').split(':')[1]
+            rows.append(dict(slug=slug,domain=domain.removeprefix('domain:'),domain_source=domain_source,turn=file,tool_use_id=tid,status='rejected' if failed else 'accepted',reason=reason,result_excerpt=details if failed else ''))
         if slug=='banovic26-avatar-2024':
             failed_id='toolu_01CTHBEhdF5BAGdpapeh9D5F';retry_id='toolu_01PN3CESV3Hj5VbcRRWKbc5E'
             failed_basis=calls[failed_id][1]['answers'][0]['bases'][0]
@@ -49,6 +60,18 @@ def write_outputs(root):
         w=csv.DictWriter(f,fieldnames=rows[0].keys());w.writeheader();w.writerows(rows)
     counts=Counter(r['reason'] for r in rows)
     summary=dict(trials=102,total_calls=len(rows),rejected=sum(r['status']=='rejected' for r in rows),by_reason=dict(counts),avatar_calls=sum(r['slug']=='banovic26-avatar-2024' for r in rows),avatar_rejected=sum(r['slug']=='banovic26-avatar-2024' and r['status']=='rejected' for r in rows))
+    groups={}
+    for r in rows: groups.setdefault((r['slug'],r['domain']),[]).append(r)
+    rejected_groups={k:v for k,v in groups.items() if any(r['status']=='rejected' for r in v)}
+    assert all(k[1] for k in groups), 'Unidentified domain'
+    summary['trial_domains_audited']=len(groups)
+    assert len(groups)==510,len(groups)
+    summary['domain_attribution_inferred_calls']=[r['tool_use_id'] for r in rows if r['domain_source'].startswith('inferred')]
+    summary['domains_with_rejection']=len(rejected_groups)
+    summary['domains_final_save_succeeded_after_rejection']=sum(v[-1]['status']=='accepted' for v in rejected_groups.values())
+    summary['rejections_followed_by_success_same_domain']=sum(any(t['status']=='accepted' for t in v[i+1:]) for v in groups.values() for i,r in enumerate(v) if r['status']=='rejected')
+    summary['domains_without_successful_save']=[list(k) for k,v in groups.items() if not any(r['status']=='accepted' for r in v)]
+    summary['domains_final_call_rejected']=[list(k) for k,v in groups.items() if v[-1]['status']=='rejected']
     assert summary['avatar_calls']==7 and summary['avatar_rejected']==1
     (HERE/'save-rejections-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     return summary
