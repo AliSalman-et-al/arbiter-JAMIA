@@ -35,5 +35,47 @@ class GeometryChecks(unittest.TestCase):
         scene=Scene();scene.text(20,40,'One');scene.text(21,40,'Two')
         self.assertTrue(any('text/text' in s for s in check(scene)['violations']))
 
+    def test_arrow_shaft_requires_one_mm_clearance(self):
+        scene=Scene();scene.text(80,80,'Clearance')
+        y=scene.text_records[-1]['bbox'][1]-3
+        scene.line(20,y,180,y,arrow=True,sw=1)
+        self.assertTrue(any('text/arrow clearance' in v for v in check(scene)['violations']))
+
+    def test_arrow_shaft_at_one_mm_passes(self):
+        scene=Scene();scene.text(80,80,'Clearance')
+        y=scene.text_records[-1]['bbox'][1]-4.5
+        scene.line(20,y,180,y,arrow=True,sw=1)
+        self.assertTrue(check(scene)['passed'])
+
+    def test_old_domain_stack_hits_flanking_arrows(self):
+        scene=Scene();scene.text(476,180,'select_visual_evidence',10,'mono',anchor='middle')
+        for x in (406,546):scene.line(x,126,x,194,arrow=True,sw=1)
+        self.assertTrue(any('text/arrow clearance' in v for v in check(scene)['violations']))
+
+    def test_old_report_connector_doubles_server_border(self):
+        scene=Scene();scene.rect(12,196,672,60,sw=1.5)
+        scene.line(616,260,340,260,sw=1,kind='connector')
+        self.assertTrue(any('parallel to box border' in v for v in check(scene)['violations']))
+
+    def test_vertical_connector_parallel_border(self):
+        scene=Scene();scene.rect(20,20,80,80)
+        scene.line(105,30,105,90,kind='connector')
+        self.assertTrue(any('parallel to box border' in v for v in check(scene)['violations']))
+
+    def test_parallel_connector_two_mm_clear_passes(self):
+        scene=Scene();scene.rect(20,20,80,80)
+        scene.line(30,109.9,90,109.9,kind='connector')
+        self.assertTrue(check(scene)['passed'])
+
+    def test_short_parallel_run_passes(self):
+        scene=Scene();scene.rect(20,20,80,80)
+        scene.line(30,105,50,105,kind='connector')
+        self.assertTrue(check(scene)['passed'])
+
+    def test_perpendicular_departure_passes(self):
+        scene=Scene();scene.rect(20,20,80,80)
+        scene.line(60,100,60,130,kind='connector')
+        self.assertTrue(check(scene)['passed'])
+
 
 if __name__=='__main__':unittest.main()

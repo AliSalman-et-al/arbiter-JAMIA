@@ -20,7 +20,12 @@ def main():
     for name,path in [(f'Figure{n}',OUT/f'Figure{n}.tiff') for n in (1,2)]:
         image=Image.open(path).convert('RGB')
         source_size=image.size
+        image.resize((658,round(658*image.height/image.width)),Image.Resampling.LANCZOS).save(DEST/f'{name}-print-size.png')
         image=image.resize((round(image.width*384/600),round(image.height*384/600)),Image.Resampling.LANCZOS)
+        if name=='Figure1':
+            for label,bounds in [('domain-stack',(390,120,562,209)),('report-connector',(350,260,684,320))]:
+                pixels=tuple(round(v*384/101.6) for v in bounds)
+                image.crop(pixels).save(DEST/f'{name}-{label}-4x.png')
         cols=3;rows=math.ceil(image.height/900);tiles=[]
         for row in range(rows):
             for col in range(cols):

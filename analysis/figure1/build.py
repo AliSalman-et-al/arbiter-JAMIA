@@ -160,9 +160,10 @@ class Scene:
     def rect(self, x, y, w, h, fill="white", r=10, stroke=INK, sw=2, kind="container"):
         self.add(f'<rect data-kind="{kind}" x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>')
 
-    def line(self, x1, y1, x2, y2, dotted=False, arrow=False, sw=1.8):
+    def line(self, x1, y1, x2, y2, dotted=False, arrow=False, sw=1.8, kind=None):
+        role = f' data-kind="{kind or "arrow"}"' if kind or arrow else ""
         dash = ' stroke-dasharray="1 6" stroke-linecap="round"' if dotted else ""
-        self.add(f'<path d="M{x1},{y1} L{x2},{y2}" fill="none" stroke="{INK}" stroke-width="{sw}"{dash}/>')
+        self.add(f'<path d="M{x1},{y1} L{x2},{y2}" fill="none" stroke="{INK}" stroke-width="{sw}"{role}{dash}/>')
         if arrow:
             self.arrow_tips.append((x2, y2))
             import math
@@ -271,7 +272,7 @@ def draw_source_icon(s,x,y,kind):
             for dy,length in [(9,8),(12,8),(15,5)]:s.line(x+3,y+dy,x+3+length,y+dy,sw=.65)
 
 def draw_workflow(data):
-    s=Scene();s.height=500
+    s=Scene();s.height=528
     s.description='Reviewer, AI model, rule-based server and audit file, ending in the actual AVATAR HTML report.'
     centers=[196,336,476,616]
     for phase,cx in zip(PHASES,centers):s.text(cx,16,phase,11,'bold',anchor='middle')
@@ -285,7 +286,7 @@ def draw_workflow(data):
     for cx,first,second in [(196,'Chooses the trial','and outcome'),(336,'Approves the result','arbiter review'),(616,'Receives','HTML report + audit file')]:
         s.text(cx,46,first,11,'bold',anchor='middle')
         s.text(cx,61,second,10,'mono' if cx==336 else 'regular',GREY if cx==336 else INK,anchor='middle')
-    s.line(402,49,476,49,sw=1);s.line(476,49,476,73,arrow=True,sw=1)
+    s.line(402,49,476,49,sw=1,kind="connector");s.line(476,49,476,73,arrow=True,sw=1)
     s.rect(12,77,672,49,LAVENDER,6,INK,1.5)
     draw_actor_icon(s,25,88,'model')
     s.text(47,94,'LLM agent',11,'bold',LLM)
@@ -299,24 +300,22 @@ def draw_workflow(data):
     visible=[['prepare_batch','list_sources','search_sources','search_sources_batch'],['validate_proposal','save_proposal'],['get_domain_context','read_pages','render_page','select_text_evidence','select_visual_evidence','save_domain_judgment'],['review_trial','finalize_batch']]
     assert all(data['tool_audit']['counts'].get(t,0)>0 for t in ['search_sources','search_sources_batch','read_pages'])
     for cx,tools in zip(centers,visible):
-        track=cx-70
-        s.line(track,126,track,194,arrow=True,sw=1)
-        s.line(track,194,track,126,arrow=True,sw=1)
-        for y,tool in zip({2:[148,180],4:[140,156,172,188],6:[136,147,158,169,180,191]}[len(tools)],tools):
+        track={476:398,616:554}.get(cx,cx-70)
+        s.line(track,126,track,202,arrow=True,sw=1)
+        s.line(track,202,track,126,arrow=True,sw=1)
+        for y,tool in zip({2:[148,180],4:[140,156,172,188],6:[140,151,162,173,184,195]}[len(tools)],tools):
             s.text(cx,y,tool,10,'mono',GREY,anchor='middle')
-    s.rect(12,196,672,60,MINT,6,INK,1.5)
-    draw_actor_icon(s,25,210,'server')
-    s.text(47,217,'ARBITER server',11,'bold')
-    s.text(47,230,'Rule-based software',10);s.text(47,242,'No AI',10)
+    s.rect(12,204,672,60,MINT,6,INK,1.5)
+    draw_actor_icon(s,25,218,'server')
+    s.text(47,225,'ARBITER server',11,'bold')
+    s.text(47,238,'Rule-based software',10);s.text(47,250,'No AI',10)
     for cx,phrases in zip(centers,[['Store an unchangeable','copy of each source'],['Check and record','the choice'],['Check every quote','Apply the RoB 2 rules'],['Keep the full record','Package the audit file','Write the HTML report']]):
-        for j,phrase in enumerate(phrases):s.text(cx,(223 if len(phrases)==2 else 210)+j*12,phrase,10,'bold',anchor='middle')
-    s.text(616,248,'arbiter report',10,'mono',GREY,anchor='middle')
-    for x in [266,406,546]:s.line(x,203,x,249,dotted=True,sw=.6)
+        for j,phrase in enumerate(phrases):s.text(cx,(231 if len(phrases)==2 else 218)+j*12,phrase,10,'bold',anchor='middle')
+    s.text(616,256,'arbiter report',10,'mono',GREY,anchor='middle')
+    for x in [266,406,546]:s.line(x,211,x,257,dotted=True,sw=.6)
     # Export gives the reviewer two concrete outputs; the fork remains below all text.
-    s.line(616,256,616,260,sw=1)
-    s.line(616,260,340,260,sw=1);s.line(340,260,340,280,sw=1)
-    s.line(340,280,360,280,arrow=True,sw=1)
-    s.line(340,260,165,260,sw=1);s.line(165,260,165,330,arrow=True,sw=1)
+    s.line(616,264,616,286,arrow=True,sw=1)
+    s.line(616,277,165,277,sw=1,kind="connector");s.line(165,277,165,330,arrow=True,sw=1)
     visual_source=Path('C:/Users/Ali-Salman/Documents/Code/rob2-kit/src/rob2_kit/application/evidence.py').read_text(encoding='utf8')
     for tool in ('render_page','select_visual_evidence','select_text_evidence'):
         assert 'def '+tool+'(' in visual_source
@@ -332,18 +331,19 @@ def draw_workflow(data):
     image=Image.open(path);iw=312;ih=iw*image.height/image.width
     min_font=meta['min_font_css_px']*iw/meta['clip_css_px']['width']*72/101.6
     assert min_font>=7
-    s.rect(364,264,320,28+ih,'#F5F5F3',5,INK,1.2)
-    s.text(375,279,'ARBITER · AVATAR · HTML report',10,'bold')
+    s.rect(364,290,320,28+ih,'#F5F5F3',5,INK,1.2)
+    s.text(375,305,'ARBITER · AVATAR · HTML report',10,'bold')
     encoded=base64.b64encode(path.read_bytes()).decode()
-    s.add(f'<image x="368" y="288" width="312" height="{ih}" href="data:image/png;base64,{encoded}"/>')
-    s.report_image=dict(path=path,x=368,y=288,w=312,h=ih,min_text_pt=min_font)
+    s.add(f'<image x="368" y="314" width="312" height="{ih}" href="data:image/png;base64,{encoded}"/>')
+    s.report_image=dict(path=path,x=368,y=314,w=312,h=ih,min_text_pt=min_font)
     s.rect(12,461,306,33,'white',5,INK,1.2)
     s.add('<path d="M25 469 L32 467 L39 469 V476 Q39 481 32 485 Q25 481 25 476 Z" fill="white" stroke="#171717" stroke-width=".9" stroke-linejoin="round"/>')
     s.add('<path d="M28 475 l3 3 l5 -6" fill="none" stroke="#171717" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>')
     s.text(47,482,'Checkable by an independent verifier',10,'bold')
     s.line(165,412,165,457,arrow=True,sw=1)
-    s.line(364,445,340,445,sw=1);s.line(340,445,340,477,sw=1)
+    s.line(364,445,340,445,sw=1,kind="connector");s.line(340,445,340,477,sw=1,kind="connector")
     s.line(340,477,322,477,arrow=True,sw=1)
+    s.tool_stack=visible[2]
     return s
 
 # Figure 2: verbatim selections are asserted against archived evidence/reasoning.
@@ -607,7 +607,7 @@ def main():
     from geometry import check
     workflow=draw_workflow(data)
     workflow_geometry=check(workflow)
-    assert workflow.height/4<=125
+    assert workflow.height/4<=132
     assert workflow_geometry['passed'],json.dumps(workflow_geometry,indent=2)
     scene=draw_trace(data,rows);geometry=check(scene)
     if not geometry['passed']:

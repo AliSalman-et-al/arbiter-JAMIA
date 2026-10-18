@@ -9,6 +9,7 @@ import re
 import xml.etree.ElementTree as ET
 from shapely.geometry import box, Point, LineString, Polygon
 from shapely.affinity import translate
+from shapely.ops import unary_union
 from svgpathtools import parse_path
 
 
@@ -50,8 +51,27 @@ def check(scene):
         for child in element:visit(child,dy)
     visit(ET.fromstring(scene.svg()))
     texts=[(r,box(*r['bbox'])) for r in scene.text_records]
-    issues=[];counts=dict(text_stroke_pairs=0,box_pairs=0,arrow_text_pairs=0,arrow_box_pairs=0,frame_elements=0,text_pairs=0)
+    issues=[];counts=dict(text_stroke_pairs=0,box_pairs=0,arrow_text_pairs=0,arrow_box_pairs=0,frame_elements=0,text_pairs=0,connector_border_pairs=0)
     min_stroke_clearance=float("inf");min_tip_clearance=float("inf")
+    # Include full shafts and solid heads, rather than only the terminal points.
+    connectors=[sh for sh in shapes if sh['kind'] in ('connector','arrow')]
+    arrows=[sh for sh in shapes if sh['tag']=='polygon']
+    arrow_shapes=connectors+arrows
+    min_arrow_clearance=float("inf")
+    for r,t in texts:
+        for sh in arrow_shapes:
+            distance=t.distance(sh['stroke'])
+            min_arrow_clearance=min(min_arrow_clearance,distance)
+            if distance<4-1e-5:
+                issues.append(f"text/arrow clearance {r['text']!r} vs {sh['id']}: {distance/4:.3f} mm")
+    stack_metrics={}
+    if hasattr(scene,'tool_stack'):
+        stack=[t for r,t in texts if r['text'] in scene.tool_stack]
+        arrow_gap=min(t.distance(sh['stroke'])/4 for t in stack for sh in arrow_shapes)
+        lane_gap=min(t.distance(sh['stroke'])/4 for t in stack for sh in shapes if sh['tag']=='rect' and sh['stroke'] is not None)
+        stack_metrics=dict(minimum_arrow_clearance_mm=round(arrow_gap,4),minimum_lane_clearance_mm=round(lane_gap,4))
+        if arrow_gap<1.5-1e-5:issues.append('domain tool stack arrow clearance below 1.5 mm')
+        if lane_gap<1-1e-5:issues.append('domain tool stack lane clearance below 1 mm')
     for r,t in texts:
         for sh in shapes:
             if sh['stroke'] is None:continue
@@ -68,6 +88,22 @@ def check(scene):
             if (a['kind']=='container' and a['geom'].contains(b['geom'])) or (b['kind']=='container' and b['geom'].contains(a['geom'])):continue
             if a['geom'].buffer(a['sw']/2+.6).intersects(b['geom'].buffer(b['sw']/2+.6)):
                 issues.append(f"overlapping boxes {a['id']}/{b['id']}")
+    for connector in connectors:
+        coords=list(connector['geom'].coords)
+        for sh in containers:
+            x0,y0,x1,y1=sh['geom'].bounds
+            for axis,edge,lo,hi in [('h',y0,x0,x1),('h',y1,x0,x1),('v',x0,y0,y1),('v',x1,y0,y1)]:
+                counts['connector_border_pairs']+=1
+                runs=[]
+                for a,b in zip(coords,coords[1:]):
+                    fixed,along=(1,0) if axis=='h' else (0,1)
+                    if abs(a[fixed]-b[fixed])>1e-6:continue
+                    gap=abs(a[fixed]-edge)-(connector['sw']+sh['sw'])/2
+                    if gap>=8-1e-5:continue
+                    start=max(lo,min(a[along],b[along]));end=min(hi,max(a[along],b[along]))
+                    if end>start:runs.append(LineString([(start,0),(end,0)]))
+                if runs and unary_union(runs).length>20+1e-5:
+                    issues.append(f"connector parallel to box border {connector['id']}/{sh['id']} {axis}: {unary_union(runs).length/4:.3f} mm within 2 mm")
     for tip in scene.arrow_tips:
         point=Point(tip)
         for r,t in texts:
@@ -92,7 +128,8 @@ def check(scene):
     for label,g in [(r['text'],t) for r,t in texts]+[(str(v['id']),v['geom'].buffer(v['sw']/2)) for v in shapes]:
         counts['frame_elements']+=1
         if not frame.covers(g):issues.append(f"outside frame: {label}")
-    return dict(passed=not issues,clearance_mm=.3,arrow_tip_clearance_mm=.8,curve_sampling_max_mm=.0375,
+    return dict(passed=not issues,clearance_mm=.3,arrow_tip_clearance_mm=.8,text_arrow_clearance_mm=1.0,connector_border_clearance_mm=2.0,connector_parallel_max_mm=5.0,curve_sampling_max_mm=.0375,
                 minimum_text_stroke_clearance_mm=round(min_stroke_clearance/4,4) if math.isfinite(min_stroke_clearance) else None,
+                minimum_text_arrow_clearance_mm=round(min_arrow_clearance/4,4) if math.isfinite(min_arrow_clearance) else None,
                 minimum_arrow_text_clearance_mm=round(min_tip_clearance/4,4) if math.isfinite(min_tip_clearance) else None,
-                text_elements=len(texts),shape_elements=len(shapes),arrow_tips=len(scene.arrow_tips),checks=counts,violations=issues)
+                tool_stack=stack_metrics,text_elements=len(texts),shape_elements=len(shapes),arrow_tips=len(scene.arrow_tips),checks=counts,violations=issues)
