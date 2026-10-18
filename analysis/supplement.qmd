@@ -62,7 +62,7 @@ show_table(table_data('confusion-matrices') |>
 
 ## Forest plot by meta-analysis
 
-![](output/figures/supplement-forest.png)
+![Descriptive agreement by meta-analysis with 95% bootstrap CIs; undefined coefficients are omitted. No statistical tests.](output/figures/supplement-forest.png)
 
 ```{r}
 show_table(table_data('forest-meta') |> select(meta_id,arm,n,estimate,lower,upper,valid_replicates))
@@ -77,17 +77,22 @@ show_table(table_data('table3-supplement') |> select(arm,domain,status,n,count,m
 show_table(table_data('algorithm-mismatches') |> select(arm,slug,domain,label,algorithm,status))
 show_table(table_data('recorded-overrides') |> select(arm,slug,domain,proposed,adopted,rationale,evidence))
 show_table(table_data('question-map'))
+show_table(table_data('invalid-path-sensitivity'))
+show_table(readr::read_csv('data-derived/bundle-path-checks.csv',show_col_types=FALSE) |>
+  group_by(arm) |> summarise(history_records=n(),final_domains=sum(final),
+    invalid_paths=sum(invalid_path),unanswered_active=sum(active_questions-active_answered),.groups='drop'))
 ```
 
-**ARBITER-Haiku consistency footnote:** all 505 observed proposed domain judgements agree with the official algorithm (100%); one recorded override (1/505, 0.20%) gives adopted-label agreement of 504/505 (99.80%). Five additional domain labels are not evaluable. The hill-2017 D1 bundle records 1.1=NI, 1.2=PY, 1.3=N, a Low proposal and adoption of Some concerns, with the rationale and evidence listed above. This is a recorded model override, not an algorithm violation or export error. ARBITER-Sonnet has 510/510 proposed agreement and no overrides. The gate checks proposals against the official algorithm and adopted labels against the exported labels. Missing labels and missing required answers are excluded from consistency denominators. Permitted Overall escalations are not violations.
+**ARBITER-Haiku consistency footnote:** all 505 observed proposed domain judgements agree with the official algorithm (100%); one recorded override (1/505, 0.2%) gives adopted-label agreement of 504/505 (99.8%). Five additional domain labels are not evaluable. The hill-2017 D1 bundle records 1.1=NI, 1.2=PY, 1.3=N, a Low proposal and adoption of Some concerns, with the rationale and evidence listed above. This is a recorded model override, not an algorithm violation or export error. ARBITER-Sonnet has 510/510 proposed agreement and no overrides. The gate checks proposals against the official algorithm and adopted labels against the exported labels. Missing labels and wholly absent answer sets are excluded from consistency denominators. Required NA or missing answers in a nonempty path are invalid and remain in the denominator. Departure sums violations and invalid paths. Permitted Overall escalations are not violations.
 
 Algorithms were transcribed from [RoB 2 full guidance, 22 August 2019](https://www.cochrane.de/sites/cochrane.de/files/uploads/RoB_2.0_guidance_2019.pdf), tables 4, 6, 10, 12 and 14, and cross-checked against [ARBITER 1.0.0, source commit 2f549ae](https://github.com/AliSalman-et-al/ARBITER/tree/2f549ae30f056ff441ea61a04b719968716f2219), identified as the run version by the author amendment.
 
-## Process and audit metrics (section 5.8)
+## Table 5 supplement: process and audit metrics (section 5.8)
 
 Reports read the committed per-arm CSVs in data-derived/. The separate extractor streams raw JSONL, cross-checks terminal usage against metadata, and reads bundle decisions and verification results. It stops if logs are absent. It is not run during rendering.
 
 ```{r}
+show_table(table_data('table5-haiku'))
 show_table(table_data('process-summary'))
 show_table(table_data('process-differences'))
 show_table(table_data('audit-summary'))
@@ -98,8 +103,10 @@ Per-arm summaries are median, first/third quartiles, and total over 102 trials. 
 
 ## Reference reliability and meta-label direction
 
+Disputed cells only (selected for disagreement with the meta label); not an estimate of overall meta-label accuracy. All comparisons of independent adjudicator judgements with source labels use this selected set.
+
 ```{r}
-show_table(metric_table(table_data('table4-reliability'),c('comparison','n')))
+show_table(metric_table(table_data('table4-reliability'),c('comparison','population','n')))
 show_table(table_data('meta-leniency') |> select(direction,n,count,estimate,lower,upper))
 show_table(table_data('meta-consensus-confusion') |> pivot_wider(names_from=preferred,values_from=n))
 ```
@@ -108,9 +115,13 @@ show_table(table_data('meta-consensus-confusion') |> pivot_wider(names_from=pref
 
 ```{r}
 show_table(table_data('grounding') |> select(arm,n,quoted,estimate,lower,upper))
+bc <- table_data('baseline-justification-content')
+show_table(bc)
 ```
 
-Only active signalling answers count. The detector requires paired straight or curly double quotes around at least five whitespace-separated words. It detects quotation syntax and does not verify quotations against trial documents.
+In the exported active-answer justification fields, `r bc$answer_code_only[bc$arm=='Baseline-Sonnet']`/`r bc$n[bc$arm=='Baseline-Sonnet']` Baseline-Sonnet entries and `r bc$answer_code_only[bc$arm=='Baseline-Haiku']`/`r bc$n[bc$arm=='Baseline-Haiku']` Baseline-Haiku entries consist only of an answer code (Y/PY/PN/N/NI/NA). The remaining fields contain other text or are empty; these counts describe the supplied exports.
+
+Only active signalling answers count. The detector requires paired straight or curly double quotes around at least five whitespace-separated words. It detects quotation syntax and does not verify quotations against trial documents. ARBITER stores cited passages as evidence records in its bundles, rather than as quotations inside justification text; this syntax metric understates its grounding. The main grounding evidence is evidence coverage and structural bundle verification in Table 3.
 
 ## Exploratory signalling-answer agreement
 
@@ -149,11 +160,11 @@ for(i in seq_len(nrow(p))) cat('\n**',p$type[i],'**\n\n',p$prompt[i],'\n',sep=''
 
 ## Worked-trace candidates
 
-Five cells are exported with the full ARBITER justifications verbatim. The two eligible cells with an explicit five-word double quotation are prioritised. Other candidate justifications are retained without fabricating source quotations.
+Five consensus cells where ARBITER was preferred over the meta label are exported from bundle evidence. Passages are contiguous excerpts of at most 30 words, with source and page locators, evidence identifiers, abbreviated answers and proposed judgements. The first candidate is the provisional Figure 1 trace.
 
 ```{r}
 show_table(table_data('worked-trace-candidates') |>
-  select(slug,domain,meta,ARBITER_label,Baseline_label,preferred,has_qualifying_quotation))
+  select(slug,domain,question,answer,passage,source,page,signalling_answers,proposed,meta,preferred))
 ```
 
 ## TRIPOD-LLM and GRRAS checklist skeleton
@@ -172,4 +183,4 @@ show_table(checklist |> select(-source))
 show_table(table_data('reproducibility'))
 ```
 
-[AUTHORS: model IDs, effort setting, run dates, ARBITER commit used for runs]. For author confirmation: `claude-sonnet-5-5` and `claude-haiku-5-5`, medium effort, Claude Code 2.1.278, isolated homes; ARBITER 1.0.0 (public commit 2f549ae). ARBITER-Sonnet ran on 12 October 2026 (12:12–19:17 EDT), and the other arms on 14 October 2026, per READMEs. The harness approved proposed results unchanged and resumed with “Approved.”; uncoached “Continue.” replies were permitted at most twice per phase. Each arm assessed each trial once; run-to-run variability is not estimated. [AUTHORS: repository and Zenodo DOI]. Trial PDFs are not redistributed; metadata provide DOIs and FILES.csv hashes.
+The run READMEs and metadata identify `claude-sonnet-5-5` and `claude-haiku-5-5`, medium effort, Claude Code 2.1.278, isolated homes; ARBITER 1.0.0 (public commit 2f549ae). ARBITER-Sonnet ran on 12 October 2026 (12:12–19:17 EDT), and the other arms on 14 October 2026, per READMEs. The harness approved proposed results unchanged and resumed with “Approved.”; uncoached “Continue.” replies were permitted at most twice per phase. Each arm assessed each trial once; run-to-run variability is not estimated. [AUTHORS: ARBITER 1.0.0 Zenodo DOI]. Trial PDFs are not redistributed; metadata provide DOIs and FILES.csv hashes.

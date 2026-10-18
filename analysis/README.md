@@ -32,3 +32,10 @@ listed separately from baseline algorithm violations.
 
 `round2-report.md` records all requested headline numbers and the complete
 deviation log. Generate it after rendering with `Rscript report-round2.R`.
+
+Round 3 additionally reads two committed bundle-review CSVs. Regenerate these
+with `Rscript extract-bundle-review.R` from analysis/; this needs committed
+bundles, not raw turn logs. It checks every domain history record's active
+questions and answers, then extracts trace candidates from cited evidence.
+`round3-report.md` records review fixes and verification. Table CSVs retain
+numeric precision; rendered tables format percentages and confidence intervals.

@@ -24,3 +24,10 @@ recorded override rationale/evidence). Baseline trace fields are unavailable.
 The empty award-1-2014 Haiku bundle has no assessed domains; its presence or
 structural verification supplies no missing judgement. Scoring remains governed
 by the frozen exported labels.
+
+Round 3 adds bundle-path-checks.csv (all domain history records, final flags,
+required-path validity and active-answer completeness) and
+bundle-trace-evidence.csv (eligible consensus cells with linked cited passages,
+source/page locators, evidence identifiers and abbreviated answers). Regenerate
+both with `Rscript extract-bundle-review.R`. This bundle-only extractor fails
+on missing bundles and invalid ARBITER paths and does not require raw logs.

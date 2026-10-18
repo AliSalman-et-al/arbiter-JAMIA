@@ -27,8 +27,8 @@ No Python is used. This file records conservative resolutions as they arise.
    the other arms 14 October 2026, per READMEs. The author amendment identifies
    ARBITER 1.0.0, public commit 2f549ae30f056ff441ea61a04b719968716f2219,
    as the run version. Earlier internal names/commit IDs are not published in
-   report outputs. The requested AUTHORS placeholder remains for confirmation
-   alongside these documented facts; no date is inferred from file timestamps.
+   report outputs. Round 3 removes the provenance placeholder; no date is
+   inferred from file timestamps.
 3. **Missing ordinal judgements.** The plan requires missing arm labels to count
    as wrong but does not define ordinal coefficients for missing predictions.
    For Haiku only, missing predictions are assigned the opposite extreme of the
@@ -53,23 +53,23 @@ No Python is used. This file records conservative resolutions as they arise.
    question eligibility, including explicit NA; missing arm answers count as wrong.
    Haiku is included in this non-adjudication-derived-arm comparison to independent
    signalling answers, but never in preferred-judgement endpoints or composites.
-7. **Worked-trace candidates and raw bundles.** Five consensus cells where ARBITER
-   beat the meta label are exported with verbatim ARBITER justifications. Only two
-   eligible cells have an active justification meeting the five-word double-quote
-   criterion; those are prioritised and flagged, and the draft trace uses one.
-   The other three preserve the source justifications without inventing quotations.
-   Raw logs and local untracked run files are ignored by git; run artefacts
-   committed concurrently by the author remain tracked. The exported scoring
-   inputs remain unchanged. This implementation adds no raw bundles, settings
-   or trial PDFs to its analysis commits.
-8. **Consistency denominators and codebook.** Missing reported labels or required
-   active signalling answers make a cell not evaluable; no answer is inferred.
-   Consistency rates use evaluable cells, and tables expose not-evaluable counts
-   (including incomplete baseline answer paths). The deductive codebook uses one
-   primary human-assigned code per losing source; second-author sample size is
-   ceiling(20% of rows), fixed before coding. Author codes remain separate from
-   optional reconciled final codes. The checklist is an abbreviated item-ID
-   skeleton, with author applicability/page/section entries blank.
+7. **Worked-trace candidates from bundle evidence (round 3).** This supersedes
+   the initial justification-based draft. Candidate passages are contiguous
+   excerpts of at most 30 words from evidence records linked to active answers,
+   with captured source labels, PDF page locators and evidence identities. Five
+   consensus cells where ARBITER was preferred over meta are exported. The first
+   is a provisional selection for author review. No trial PDF is redistributed.
+8. **Consistency denominators and codebook (round 3 amendment).** A nonempty
+   answer set with a required NA or missing answer is an Invalid answer path;
+   this includes an earlier required answer even if later answers could shortcut
+   to a label. Only absent labels or entirely absent answers are Not evaluable.
+   Consistent, Violation, Invalid and Departure rates share the denominator of
+   all other cells (509 Baseline-Sonnet; 510 Baseline-Haiku). Departure is
+   Violation + Invalid. ARBITER consistency uses proposals; recorded overrides
+   are separate. Sensitivities replace required invalid answers recursively as
+   N/PN (implemented as N, algorithmically equivalent to PN), then as NI,
+   including newly required questions. Answers off the resolved path are not imputed. The
+   codebook and empty human coding fields are unchanged.
 9. **Concurrent binding amendments incorporated.** Author commits added section
    5.8, resolved the recorded override, supplied provenance, and specified distinct
    baseline prompts during milestones 3–5. The last milestone incorporates these
@@ -90,3 +90,16 @@ No Python is used. This file records conservative resolutions as they arise.
    505 observed Haiku domains. Bundle verification uses all available bundles,
    while evidence coverage uses their active answers. A pass is structural
    verification, not proof of assessment correctness or completion.
+
+11. **Round 3 presentation and interpretation.** Main grounding evidence is
+    evidence coverage and structural bundle verification in Table 3; quotation
+    syntax is supplementary and understates bundle-based grounding. Baseline
+    justification fields are checked for code-only content, without inferring
+    absent reasoning. Table 5 uses minutes, USD (two decimals) and thousands of
+    tokens per trial, median [IQR] and paired mean differences. Haiku paired
+    process contrasts are exploratory, using the same weights. Figure 4 marks
+    zero as the requested all-Low reference; tables retain the plan's suppressed
+    constant-rule kappa convention. Independent-judgement/source reliability is
+    explicitly restricted to the disputed set and cannot estimate overall
+    meta-label accuracy. Provenance placeholders are removed except the ARBITER
+    1.0.0 Zenodo DOI; human coding and checklist fields remain empty.
