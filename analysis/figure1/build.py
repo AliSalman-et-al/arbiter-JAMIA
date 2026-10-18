@@ -593,6 +593,9 @@ def write_notes(data,rows,out):
                  'Full selected-answer evidence:',json.dumps(r['bases'],ensure_ascii=False,indent=2)]
         if i==4:text += ['', '4.4 reasoning basis: '+json.dumps(r['inference_basis'],ensure_ascii=False),'',r['inference']]
         if i==5:text += ['', 'The exact run-build HTML render succeeded. Product-name-only substitutions are proved in analysis/figure1/qa/html-report-relabel.md; the original and relabelled renders are retained. Figure 1 shows the actual trial page’s five domain-navigation results and first domain card in a framed detail. The full trial page and full summary table are retained separately. The responsive viewport is native HTML, with no injected styling.']
+    text += ['', '## Archived legends and alt text before Round 12', '',
+             'Internal provenance only. The following text is preserved verbatim; reader-facing legends are in legends-fig1-2.md.', '',
+             (HERE/'legend-provenance.md').read_text(encoding='utf8').rstrip()]
     (out/'figure1-notes.md').write_text('\n'.join(text)+'\n',encoding='utf8')
 
 
