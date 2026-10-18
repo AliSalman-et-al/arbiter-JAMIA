@@ -27,3 +27,5 @@ Figure 1 now retains the original eight tool names and adds search_sources, sear
 The assessment tool column includes render_page and select_visual_evidence. Both are present in the exact run source (application/evidence.py:4625 and :4735), and both have zero AVATAR calls. Visual tools are integrated into the main workflow rather than shown separately. The build asserts source availability and the absent calls; the legend distinguishes this general capability from the AVATAR trace.
 
 Light grey tool highlights group text search/reading/selection; lavender groups page-image inspection and visual selection. select_text_evidence is now explicit as well. The repeated output caption below the audit card is removed at the author’s request; the reviewer lane and report title already identify the deliverables.
+
+At the author’s request, text/visual tool highlights are removed. All tool names use the same grey style; the model action “Read text or page images” and the explicit render_page/select_visual_evidence names convey visual capability.

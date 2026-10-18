@@ -262,10 +262,6 @@ def draw_workflow(data):
     for x in [282,414,546]:s.line(x,91,x,126,dotted=True,sw=.6)
     visible=[['prepare_batch','list_sources','search_sources','search_sources_batch','select_text_evidence'],['validate_proposal','save_proposal'],['get_domain_context','read_pages','render_page','select_visual_evidence','save_domain_judgment'],['review_trial','finalize_batch']]
     assert all(data['tool_audit']['counts'].get(t,0)>0 for t in ['search_sources','search_sources_batch','read_pages'])
-    # Subtle fills distinguish text search/selection from page-image evidence.
-    s.rect(162,158,108,35,CONTEXT,3,stroke='none',sw=0)
-    s.rect(426,146,108,11,CONTEXT,3,stroke='none',sw=0)
-    s.rect(426,159,108,23,LAVENDER,3,stroke='none',sw=0)
     for cx,tools in zip(centers,visible):
         s.line(cx-57,133,cx-57,193,arrow=True,sw=1)
         s.line(cx+57,193,cx+57,133,arrow=True,sw=1)
