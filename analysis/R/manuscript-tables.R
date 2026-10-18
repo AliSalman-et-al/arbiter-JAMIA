@@ -44,8 +44,14 @@ main_table2 <- function() {
       filter(domain=='D1-D5')) |>
     filter(comparison=='ARBITER-Sonnet minus Baseline-Sonnet') |>
     mutate(Row=paste(if_else(reference=='Meta','Published','Composite'),domain,'ARBITER \u2212 Unassisted',sep='\n'))
-  bind_rows(agreement_display(pub,'Row'),agreement_display(comp,'Row'),agreement_display(dif,'Row',TRUE)) |>
-    rename(`Reference / population / source`=Row)
+  block <- function(x,label) {
+    header <- x[1,,drop=FALSE]; header[] <- ''; header$Row <- label
+    bind_rows(header,x)
+  }
+  bind_rows(block(agreement_display(pub,'Row'),'1. Published reference'),
+    block(agreement_display(comp,'Row'),'2. Composite reference'),
+    block(agreement_display(dif,'Row',TRUE),'3. Paired differences')) |>
+      rename(`Reference / population / source`=Row)
 }
 main_table3 <- function() {
   x <- manuscript_data('table3')
@@ -62,6 +68,7 @@ main_table3 <- function() {
   }
   out <- out |> select(Measure,ARBITER,Unassisted)
   out$Unassisted[is.na(out$Unassisted)] <- 'Not available'
+  out$Unassisted[startsWith(out$Measure,'Audit:')] <- 'Not available'
   out
 }
 main_table4 <- function() {
@@ -83,13 +90,24 @@ main_table_notes <- function() list(
     'Unassisted evidence traces, proposed judgements and recorded overrides are not available. RoB 2, risk of bias tool for randomised trials.',CI_NOTE),
   paste('All comparisons use the 154 disputed cells, selected because at least one Sonnet arm differed from Published.',
     'These comparisons cannot estimate agreement or published-label accuracy in the full benchmark.',
-    'Independent judgements preceded blinded label presentation; preferred judgements selected among the three offered labels.',AGREEMENT_NOTE,CI_NOTE))
+      'Independent judgements preceded blinded label presentation; preferred judgements selected among the three offered labels.',
+      'Linearly weighted Cohen\u2019s \u03ba; Gwet\u2019s AC2; raw agreement as n/N (%) with CI bounds on the proportion scale.',CI_NOTE))
 build_main_tables <- function(inputs) {
   dir.create('output/manuscript',recursive=TRUE,showWarnings=FALSE)
   tables <- list(benchmark_table(inputs),main_table2(),main_table3(),main_table4())
   captions <- c('Table 1. Benchmark set','Table 2. Agreement (95% CI)',
     'Table 3. RoB 2 rule consistency and audit (95% CI)','Table 4. Reliability of the reference standard (95% CI)')
   notes <- main_table_notes()
-  for(i in seq_along(tables)) write_word_table(tables[[i]],paste0('output/manuscript/Table',i,'.docx'),captions[i],notes[[i]])
+  for(i in seq_along(tables)) {
+    doc <- manuscript_doc() |> officer::body_add_par(captions[i],style='heading 1') |>
+      flextable::body_add_flextable(main_table_flextable(tables[[i]],i,notes[[i]]))
+    print(doc,target=paste0('output/manuscript/Table',i,'.docx'))
+  }
   invisible(tables)
+}
+main_table_flextable <- function(x,i,note=main_table_notes()[[i]]) {
+  widths <- list(c(.95,1.15,2.2,.45,1.2,.9),c(1.6,rep(1.05,5)),c(2.7,2.075,2.075),c(2.7,rep(1.3833,3)))
+  ft <- house_table(x,note) |> flextable::width(j=seq_len(ncol(x)),width=widths[[i]])
+  if(i==2) ft <- flextable::bold(ft,i=c(1,8,11),part='body')
+  ft
 }

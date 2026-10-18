@@ -178,3 +178,5 @@ if(file.exists('R/materials.R')) { source('R/materials.R'); build_materials(inpu
 # Figure 1 is maintained separately. Its code and outputs are not regenerated here.
 build_main_tables(inputs)
 build_manuscript_figures(cells)
+build_supplement(inputs)
+build_figure_legends()

@@ -21,7 +21,6 @@ Only consensus-discordant win share is confirmatory. Intervals use 10,000 percen
 
 The trace uses a consensus cell where ARBITER-Sonnet matched the preferred judgement and differed from the meta label. Four more-severe candidates where only ARBITER departed from meta, plus levin-2016 D2, with cited bundle passages, evidence identifiers, source/page locators, verification status and abbreviated answer sets are in [worked-trace-candidates.csv](output/tables/worked-trace-candidates.csv). The default is award-10-2018 D2. The trace shows the span binding to its hash-identified captured source and the recorded independent bundle verifier result. The displayed selection is provisional for author review.
 
-
 ## Figure 2. Study flow
 
 ![Benchmark inclusion and adjudication flow.](output/manuscript/Figure2.png)
@@ -29,9 +28,7 @@ The trace uses a consensus cell where ARBITER-Sonnet matched the preferred judge
 ## Table 1. Benchmark set
 
 ```{r}
-main_ft <- house_table(main_tables[[1]],notes[[1]])
-main_ft <- flextable::width(main_ft,j=1:6,width=c(.95,1.15,2.2,.45,1.2,.9))
-main_ft
+main_table_flextable(main_tables[[1]],1)
 ```
 
 ## Figure 3. Blinded adjudication
@@ -49,7 +46,7 @@ Among 62 consensus cells where the arms differed, ARBITER won 54, Unassisted won
 Blocks are: Published reference; composite reference; paired ARBITER − Unassisted differences.
 
 ```{r}
-house_table(main_tables[[2]],notes[[2]])
+main_table_flextable(main_tables[[2]],2)
 ```
 
 ## Figure 4. Published-label agreement and direction of error
@@ -59,7 +56,7 @@ house_table(main_tables[[2]],notes[[2]])
 ## Table 3. RoB 2 rule consistency and audit (95% CI)
 
 ```{r}
-house_table(main_tables[[3]],notes[[3]])
+main_table_flextable(main_tables[[3]],3)
 ```
 
 ARBITER proposals reproduce all 510 Sonnet and 505 observed Haiku domain judgements from the official algorithms. Sonnet has no recorded override. Haiku has one recorded override (hill-2017 D1, Low to Some concerns); its rationale is in the supplement. Evidence binding and bundle verification are structural checks and do not establish clinical correctness.
@@ -67,7 +64,7 @@ ARBITER proposals reproduce all 510 Sonnet and 505 observed Haiku domain judgeme
 ## Table 4. Reliability of the reference standard (95% CI)
 
 ```{r}
-house_table(main_tables[[4]],notes[[4]])
+main_table_flextable(main_tables[[4]],4)
 ```
 
 ## Figure 5. Decisive signalling questions

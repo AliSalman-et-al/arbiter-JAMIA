@@ -210,3 +210,16 @@ No Python is used. This file records conservative resolutions as they arise.
     fonts were loaded into the Windows font session. install-fonts.ps1 now calls
     AddFontResourceEx; embedded PDF fonts are checked during final verification.
     Figure 1's old builder is no longer invoked by this worktree's pipeline.
+
+27. **Round 8a supplement production.** Supplement.docx and supplement.html use
+    the same 29 ordered eTable objects and one eFigure, with captions and notes.
+    The appendix describes algorithms/validation, frozen API cost reconstruction,
+    localisation and structural evidence criteria. Former Table 5, localisation
+    classes, both populations, all-arm non-adjudication analyses, matrices, forest,
+    sensitivities, override rationale, quotation syntax, exploratory questions,
+    prompt templates/example and run provenance are supplementary. Wide diagnostic
+    exports are pivoted to measure/value rows, preserving text at 9 pt. Native
+    process totals remain supplementary, with time converted to minutes and USD
+    rounded for display. The override rationale retains the clinical phrase
+    'baseline balance' verbatim; it is not an internal source label. The separate
+    TRIPOD-LLM.docx remains an author-completion skeleton, with GRRAS IDs.

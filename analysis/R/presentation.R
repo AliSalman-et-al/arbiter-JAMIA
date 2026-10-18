@@ -9,7 +9,7 @@ reader_label <- function(x, supplement=FALSE) {
     'ARBITER-Haiku'='ARBITER (Haiku 5.5)','Baseline-Haiku'='Unassisted (Haiku 5.5)',
     'A vs Z'='Adjudicator 1 vs Adjudicator 2','Adjudicator A'='Adjudicator 1',
     'Adjudicator Z'='Adjudicator 2','A independent'='Adjudicator 1 independent',
-    'Z independent'='Adjudicator 2 independent','meta-label'='published-label',
+    'Z independent'='Adjudicator 2 independent','Baseline imbalance'='Preintervention imbalance','meta-label'='published-label',
     'Meta label'='Published label','meta label'='published label','Baseline'='Unassisted',
     'All-Low'='All-Low rule')
   for(k in names(replacements)) x <- gsub(k,replacements[[k]],x,fixed=TRUE)
@@ -42,7 +42,8 @@ display_frame <- function(x,supplement=TRUE) {
   x <- as.data.frame(x)
   for(n in names(x)) {
     if(is.character(x[[n]]) || is.factor(x[[n]])) x[[n]] <- reader_label(as.character(x[[n]]),supplement)
-    else if(is.numeric(x[[n]])) x[[n]] <- ifelse(is.na(x[[n]]),'\u2014',format(x[[n]],trim=TRUE,scientific=FALSE,digits=8))
+    else if(is.numeric(x[[n]])) x[[n]] <- vapply(x[[n]],function(v)
+      if(!is.finite(v)) '\u2014' else if(v==trunc(v)) format(v,trim=TRUE,scientific=FALSE,big.mark=',') else fmt_number(v,2),character(1))
     x[[n]][is.na(x[[n]])] <- '\u2014'
   }
   names(x) <- reader_label(names(x),supplement)
@@ -70,10 +71,17 @@ house_table <- function(x,footnote=NULL,width=6.85) {
   ft
 }
 manuscript_doc <- function() {
-  officer::read_docx() |> officer::body_set_default_section(officer::prop_section(
+  doc <- officer::read_docx() |>
+    officer::docx_set_paragraph_style('ManuscriptBody','Manuscript body',fp_t=officer::fp_text(font.family='Arial',font.size=10)) |>
+    officer::docx_set_paragraph_style('Titre1','heading 1',fp_p=officer::fp_par(keep_with_next=TRUE,padding.top=8,padding.bottom=6),
+      fp_t=officer::fp_text(font.family='Arial',font.size=12,bold=TRUE)) |>
+    officer::docx_set_paragraph_style('Titre2','heading 2',fp_p=officer::fp_par(keep_with_next=TRUE,padding.top=6,padding.bottom=4),
+      fp_t=officer::fp_text(font.family='Arial',font.size=10,bold=TRUE))
+  officer::body_set_default_section(doc,officer::prop_section(
     page_size=officer::page_size(width=8.27,height=11.69),
     page_margins=officer::page_mar(top=.6,bottom=.6,left=.65,right=.65)))
 }
+manuscript_par <- function(x,value,style='Manuscript body') officer::body_add_par(x,value,style=style)
 write_word_table <- function(x,file,caption,footnote) {
   doc <- manuscript_doc() |> officer::body_add_par(caption,style='heading 1') |>
     flextable::body_add_flextable(house_table(x,footnote))
