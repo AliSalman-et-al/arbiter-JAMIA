@@ -162,6 +162,11 @@ supplement_registry <- function(inputs) {
   add('Per-meta-analysis weighted κ',supplement_estimates(forest,c('specialty','topic','arm')) |>
       pivot_wider(names_from=arm,values_from=`Estimate (95% CI)`) |> arrange(specialty!='General medicine',specialty,topic),
     paste(TOPIC_ABBREVIATIONS,'Weighted κ (95% CI). eFigure 1 displays the defined nondegenerate estimates. A coefficient with no variance, or a degenerate bootstrap interval, is shown as —.',CI_NOTE))
+  add('Post hoc severity-stratified win share',supplement_estimates(manuscript_data('severity-win-share'),c('direction','metric')),
+    paste('Post hoc Sonnet 5.5 analysis of the 62 consensus discordant cells, stratified by ARBITER severity relative to Unassisted. ARBITER more severe: 44 ARBITER wins, 1 Unassisted, 0 neither (45 cells); less severe: 10, 6, 1 (17 cells).',CI_NOTE))
+  add('Vindicated disagreements with Published, including split cells',manuscript_data('vindicated-disagreements') |>
+    select(source,direction,outcome,n,consensus_n,all_n),
+    'Both sources use Sonnet 5.5. Figure 5B uses consensus disagreements as the denominator; split cells are displayed separately. Vindicated means preferred equals the source label; Published upheld means preferred equals Published; Other label means neither. Counts, consensus denominator and all-cell denominator are shown.')
   add('Per-adjudicator and split-cell win-share sensitivity',supplement_estimates(manuscript_data('primary-endpoint'),c('analysis','metric')),
     paste('Consensus is primary. Split discordant cells are forced ARBITER losses; the residual Neither category includes these forced losses.',CI_NOTE))
   for(ref in c('meta','composite')) {
@@ -211,10 +216,12 @@ supplement_registry <- function(inputs) {
   add('Exploratory signalling-answer agreement',NULL,
     paste('Correct collapsed answers / eligible questions (95% CI) on disputed domains. Independent answers define reference; Y/PY, N/PN, NI/NA collapse. Missing predictions are wrong. Includes Haiku without a preferred-judgement endpoint.',CI_NOTE),blocks)
 
+  add('AVATAR complete trace',NULL,
+    'Illustrative all-cause-death assessment, Banovic 2024. All ARBITER answers, full evidence-record quotes, basis types, justifications, unknowns and source locations are shown alongside Unassisted answers and verbatim domain rationale. Inactive questions follow branching. Quote chunks concatenate without omissions. Source hashes identify captured source versions. Original clinical wording in quotations and rationale is retained verbatim; it does not name an analysis arm.',avatar_trace_blocks(inputs))
   entries
 }
 supplement_table <- function(entry,data=entry$data) {
-  x <- display_frame(data,TRUE)
+  x <- if(entry$caption=='AVATAR complete trace') as.data.frame(data) else display_frame(data,TRUE)
   names(x) <- reader_field(names(x))
   if(entry$caption=='Exploratory signalling-answer agreement') {
     names(x)[names(x)=='Question'] <- 'SQ'
@@ -245,6 +252,7 @@ supplement_table <- function(entry,data=entry$data) {
   else if(grouped && ncol(x)==6) widths <- c(.6,.85,.85,1.5,1.55,1.5)
   else if(grouped && ncol(x)==4) widths <- c(.65,1.55,1.55,3.1)
   else if(ncol(x)==2) widths <- c(2.5,4.35)
+  else if(entry$caption=='AVATAR complete trace') widths <- c(1.1,3.65,2.1)
   else if(ncol(x)==3) widths <- c(1.8,2.4,2.65)
   ft <- flextable::width(ft,j=seq_len(ncol(x)),width=widths)
   if(grouped) ft <- style_group_rows(ft,x)
@@ -257,6 +265,7 @@ build_supplement <- function(inputs) {
   doc <- manuscript_par(doc,'Methods appendix · Supplementary results · Prompt templates and example · Run provenance')
   for(i in seq_along(entries)) doc <- manuscript_par(doc,paste0('eTable ',i,'. ',entries[[i]]$caption))
   doc <- manuscript_par(doc,'eFigure 1. Agreement against Published by meta-analysis')
+  doc <- manuscript_par(doc,'eFigure 2. Disagreement patterns and preferred judgements')
   doc <- officer::body_add_break(doc)
   doc <- manuscript_par(doc,'Methods appendix',style='heading 1')
   for(i in seq_along(METHODS_APPENDIX)) {
@@ -270,7 +279,7 @@ build_supplement <- function(inputs) {
     doc <- manuscript_par(doc,paste0('eTable ',i,'. ',e$caption),style='heading 2')
     if(is.null(e$blocks)) doc <- flextable::body_add_flextable(doc,supplement_table(e))
     else for(k in seq_along(e$blocks)) {
-      per_page <- if(startsWith(e$caption,'Confusion')) 6L else 1L
+      per_page <- if(startsWith(e$caption,'Confusion')) 6L else if(e$caption=='AVATAR complete trace') 1000L else 1L
       if(k>1 && (k-1)%%per_page==0) {
         doc <- officer::body_add_break(doc)
         doc <- manuscript_par(doc,paste0('eTable ',i,' (continued). ',e$caption),style='heading 2')
@@ -288,6 +297,9 @@ build_supplement <- function(inputs) {
           'Undefined coefficients are omitted. Specialty and topic identify each meta-analysis. Descriptive estimates only; no statistical tests.',CI_NOTE))
     }
   }
+  doc <- officer::body_add_break(doc) |> manuscript_par('eFigure 2. Disagreement patterns and preferred judgements',style='heading 2') |>
+    officer::body_add_img(src='output/manuscript/eFigure2.png',width=6.7,height=6.7*95/174) |>
+    manuscript_par('All 154 disputed cells, grouped by disagreement with Published and preferred-label outcome. Counts use label equality; split cells are separate. Shared labels count as both arms preferred.')
   prompts <- manuscript_data('prompt-template-example')
   doc <- officer::body_add_break(doc)
   doc <- manuscript_par(doc,'Prompt templates and a filled example',style='heading 1')

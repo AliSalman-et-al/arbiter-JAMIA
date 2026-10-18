@@ -176,6 +176,11 @@ for(name in c('cells','counts','frequency','issues','eligibility'))
 save_table(localisation$candidates,'discussion-quote-candidates')
 if(file.exists('R/materials.R')) { source('R/materials.R'); build_materials(inputs,cells) }
 # Figure 1 is maintained separately. Its code and outputs are not regenerated here.
+save_table(disagreement_pattern_counts(cells),'efigure2-disagreement-patterns')
+save_table(published_direction_counts(cells),'published-direction-domain')
+save_table(vindicated_disagreements(cells),'vindicated-disagreements')
+save_table(severity_win_share(cells,weights),'severity-win-share')
+save_table(no_decisive_counts(localisation$cells),'no-decisive-counts')
 build_main_tables(inputs)
 build_manuscript_figures(cells)
 build_supplement(inputs)

@@ -295,3 +295,31 @@ No Python is used. This file records conservative resolutions as they arise.
     displayed bounds are omitted while retaining estimates and counts, including
     supplementary tables. The All-Low no-variance note remains. No statistical
     object, CSV, input, analysis plan or glossary changes.
+
+34. **Round 11 post hoc severity stratification.** Added the requested post hoc
+    stratification of the 62 consensus discordant Sonnet cells by ARBITER severity
+    relative to Unassisted. This was not a prespecified estimand. It uses the
+    unchanged label-equality scoring and the existing 10,000 trial-cluster bootstrap
+    weights stratified by meta-analysis, seed 20261018. The more-severe stratum has
+    44 ARBITER / 1 Unassisted / 0 neither wins among 45 cells; the less-severe stratum
+    has 10 / 6 / 1 among 17. It is labelled post hoc throughout. The binding round-11
+    section 7 explicitly requests this addition; no analysis-plan edit is needed.
+
+35. **Round 11 presentation and trace choices.** Figure 5B bars use consensus-only
+    denominators; split counts are printed separately and retained in the complete
+    supplementary table. Small segments below three are counted in the right-hand
+    summary rather than labelled inside narrow segments. Figure 6 remainders count
+    cells without any individually decisive question; unique cells with at least
+    one decisive question plus the remainder equal the eligible loss denominator.
+    They must not be reconciled by summing question frequencies. Complete AVATAR
+    evidence quotes are divided into contiguous character- and line-limited chunks
+    for editable portrait Word tables, with no omission; tests check exact
+    concatenation. Verbatim clinical uses of “baseline” in quotes and the Unassisted
+    rationale are retained under the explicit full-quote/verbatim instruction and
+    do not name an analysis arm. The requested Unassisted results-102 signalling
+    CSV is byte-identical to the versioned root export: the trace reads the
+    requested path when present, checks byte equality, and falls back to the
+    versioned copy in a fresh checkout. Source filenames, page/line ranges and source and
+    evidence hash prefixes are provenance. The existing native Word PDF renderer
+    is retained as explicitly requested. Figures 1/2, their builder and their
+    separate legend file remain owned by the parallel task and untouched here.

@@ -1,0 +1,17 @@
+source,direction,outcome,n,consensus_n,all_n
+ARBITER,Less severe,Other label,0,28,36
+ARBITER,Less severe,Published upheld,6,28,36
+ARBITER,Less severe,Split,8,28,36
+ARBITER,Less severe,Vindicated,22,28,36
+ARBITER,More severe,Other label,2,77,88
+ARBITER,More severe,Published upheld,2,77,88
+ARBITER,More severe,Split,11,77,88
+ARBITER,More severe,Vindicated,73,77,88
+Unassisted,Less severe,Other label,2,38,46
+Unassisted,Less severe,Published upheld,17,38,46
+Unassisted,Less severe,Split,8,38,46
+Unassisted,Less severe,Vindicated,19,38,46
+Unassisted,More severe,Other label,1,59,69
+Unassisted,More severe,Published upheld,10,59,69
+Unassisted,More severe,Split,10,59,69
+Unassisted,More severe,Vindicated,48,59,69

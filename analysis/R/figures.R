@@ -78,15 +78,15 @@ build_figures <- function() {
   categories <- c("ARBITER's label preferred (and not the baseline's)",
     "Baseline's label preferred (and not ARBITER's)","Both arms' label preferred",
     'Meta label only preferred','Adjudicators split')
-  departure_order <- c('ARBITER only departed from meta','Baseline only departed from meta',
-    'Both departed, different labels','Both departed, same label')
+  departure_order <- c('ARBITER only disagreed with Published','Baseline only disagreed with Published',
+    'Both disagreed, different labels','Both disagreed, same label')
   counts <- cells |> mutate(departure=case_when(kit!=meta & nokit==meta~departure_order[1],
     kit==meta & nokit!=meta~departure_order[2],kit!=nokit~departure_order[3],TRUE~departure_order[4]),
     outcome=case_when(!consensus~categories[5],preferred==kit & preferred==nokit~categories[3],
       preferred==kit~categories[1],preferred==nokit~categories[2],TRUE~categories[4])) |>
     count(departure,outcome) |> complete(departure=departure_order,outcome=categories,fill=list(n=0)) |>
     mutate(departure=factor(departure,levels=rev(departure_order)),outcome=factor(outcome,levels=categories))
-  save_table(counts,'figure3-panelB')
+  save_table(counts,'efigure2-disagreement-patterns')
   colors <- setNames(c('#007f86','#c76b13','#6c8d68','#d7ad32','#dedede'),categories)
   pB <- ggplot(counts,aes(outcome,departure))+
     geom_tile(aes(fill=if_else(n>0,as.character(outcome),NA_character_)),color='white',linewidth=1)+

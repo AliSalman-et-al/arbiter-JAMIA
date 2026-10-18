@@ -1,0 +1,11 @@
+domain,source,eligible,with_decisive,n
+D1,ARBITER-Sonnet,1,1,0
+D1,Baseline-Sonnet,3,3,0
+D2,ARBITER-Sonnet,4,4,0
+D2,Baseline-Sonnet,8,6,2
+D3,ARBITER-Sonnet,2,0,2
+D3,Baseline-Sonnet,8,1,7
+D4,ARBITER-Sonnet,1,0,1
+D4,Baseline-Sonnet,6,1,5
+D5,ARBITER-Sonnet,2,2,0
+D5,Baseline-Sonnet,22,18,4

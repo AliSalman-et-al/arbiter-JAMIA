@@ -8,6 +8,7 @@ source('R/presentation.R')
 source('R/manuscript-tables.R')
 source('R/manuscript-supplement.R')
 source('R/checklist.R')
+source('R/avatar-trace.R')
 if(!file.exists('output/manuscript/Supplement.docx')) source('run.R')
 if(!exists('inputs')) inputs <- load_inputs()
 entries <- supplement_registry(inputs)
@@ -36,6 +37,12 @@ for(i in seq_along(entries)) {
     cat('\n### eFigure 1. Agreement against Published by meta-analysis\n\n![Weighted kappa with 95% CIs; undefined coefficients omitted.](output/manuscript/eFigure1.png)\n\n')
 }
 ```
+
+## eFigure 2. Disagreement patterns and preferred judgements
+
+![All 154 disputed cells by disagreement with Published and preferred judgement; split cells are separate.](output/manuscript/eFigure2.png)
+
+Counts use label equality; shared labels count as both arms preferred.
 
 ## Prompt templates and filled example
 

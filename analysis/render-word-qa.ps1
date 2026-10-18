@@ -4,12 +4,15 @@ $word = New-Object -ComObject Word.Application
 $word.Visible = $false
 $word.DisplayAlerts = 0
 try {
-  Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot 'output/manuscript') -Filter '*.docx' | ForEach-Object {
-    $source = $_.FullName
-    $target = Join-Path $_.DirectoryName ('qa/' + $_.BaseName + '-word.pdf')
-    $doc = $word.Documents.Open($source,$false,$true)
-    try { $doc.ExportAsFixedFormat($target,17); Write-Output $target }
-    finally { $doc.Close(0); [void][Runtime.InteropServices.Marshal]::ReleaseComObject($doc) }
+  # A native foreach loop avoids COM calls from a pipeline callback.
+  $documentsQa = Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot 'output/manuscript') -Filter '*.docx' | Sort-Object { if ($_.BaseName -eq 'Supplement') { 1 } else { 0 } }, Name
+  foreach ($fileQa in $documentsQa) {
+    $sourceQa = $fileQa.FullName
+    $targetQa = Join-Path $fileQa.DirectoryName ('qa/' + $fileQa.BaseName + '-word.pdf')
+    Write-Output ('Opening ' + $fileQa.Name)
+    $docQa = $word.Documents.Open($sourceQa,$false,$true)
+    try { Write-Output ('Exporting ' + $fileQa.Name); $docQa.ExportAsFixedFormat($targetQa,17); Write-Output $targetQa }
+    finally { $docQa.Close(0); [void][Runtime.InteropServices.Marshal]::ReleaseComObject($docQa) }
   }
 }
 finally { $word.Quit(); [void][Runtime.InteropServices.Marshal]::ReleaseComObject($word) }

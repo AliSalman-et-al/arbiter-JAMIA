@@ -1,0 +1,7 @@
+{
+  "D1": "Allocation used a computer-generated, centre-stratified permuted-block sequence delivered through a web-based interactive response system, so concealment was adequate. The baseline differences in age (P = .02) and haemoglobin (P = .01) are consistent with chance across about 25 variables.",
+  "D2": "The trial was open label, so participants and clinicians knew the assignments. Surgery in the conservative arm followed protocol-defined triggers such as symptom onset. Six of 78 early-surgery patients did not receive surgery, and some surgeries were delayed by COVID-19. These are not deviations likely to affect the outcome. The analysis was intention-to-treat.",
+  "D3": "All 157 patients were analysed. One patient lost to follow-up was censored.",
+  "D4": "Death is an objective outcome. Assessors were not blinded to allocation, but this cannot plausibly bias an all-cause death count.",
+  "D5": "Time to death was a prespecified secondary endpoint with a registered 5-year time frame. It was analysed with a single Cox model, and the SAP amendment only addresses COVID-19 delays. I found no sign of selective reporting. A small concern is that the extended follow-up was a later analysis, but it matches the registered time frame."
+}

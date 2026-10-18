@@ -47,7 +47,10 @@ main_table2 <- function() {
   pub <- manuscript_data('table2')
   comp <- manuscript_data('agreement-composite') |> filter(domain=='D1-D5',arm %in% c('ARBITER-Sonnet','Baseline-Sonnet'),metric %in% c('kappa','AC2','accuracy'))
   block <- function(x,label) {
+    if(any(x$metric=='sensitivity')) label <- paste0(label,'; Not Low N = ',unique(x$n[x$metric=='sensitivity'])[1],'; Low N = ',unique(x$n[x$metric=='specificity'])[1])
+    x$count <- NULL; x$n <- NULL
     x <- agreement_display(x,'arm') |> mutate(arm=reader_label(arm)) |> rename(Source=arm)
+    x[] <- lapply(x,function(v) gsub('%','',v,fixed=TRUE))
     group_row(x,label)
   }
   dif <- bind_rows(manuscript_data('table2-differences'),manuscript_data('agreement-composite-differences') |>
@@ -70,25 +73,26 @@ MEASURE_LABELS <- c('Consistent'='Consistent with RoB 2 algorithm',
   'Structural evidence binding (overall)'='All evidence bound','Bundle verification'='Bundle passes independent verification')
 main_table3 <- function() {
   x <- manuscript_data('table3')
-  wanted <- tibble(domain=c(rep('D1-D5',6),rep('Overall',3),rep('Audit',5)),
-    status=c('Consistent','Violation','Invalid answer path','Departure','Proposed agreement','Recorded override',
-      'Consistent','Permitted escalation','Violation','Evidence coverage','Text-span evidence binding',
-      'Visual evidence binding','Structural evidence binding (overall)','Bundle verification'))
+  wanted <- tibble(domain=c(rep('D1-D5',5),rep('Overall',2),rep('Audit',4)),
+    status=c('Consistent','Violation','Invalid answer path','Departure','Recorded override',
+      'Consistent','Permitted escalation','Evidence coverage','Text-span evidence binding',
+      'Visual evidence binding','Bundle verification'))
   out <- wanted |> mutate(Measure=unname(MEASURE_LABELS[status]))
   for(a in c('ARBITER-Sonnet','Baseline-Sonnet')) {
     d <- x |> filter(arm==a) |> select(domain,status,estimate,lower,upper,n,count)
     d$value <- fmt_fraction(d$count,d$n)
-    if(a=='Baseline-Sonnet') d$CI <- ifelse(d$status %in% c('Violation','Invalid answer path','Departure') & d$lower!=d$upper,
-      fmt_ci(100*d$lower,100*d$upper,1),'')
-    out <- left_join(out,d |> select(domain,status,value,any_of('CI')),by=c('domain','status'))
+    if(a=='Baseline-Sonnet') d$value <- ifelse(d$status %in% c('Violation','Invalid answer path','Departure'),
+      trimws(paste(d$value,fmt_ci(100*d$lower,100*d$upper,1,suppress_degenerate=TRUE))),d$value)
+    if(a=='ARBITER-Sonnet') d$value <- ifelse(d$domain=='D1-D5' & d$status %in% c('Consistent','Violation','Invalid answer path','Departure'),paste0(d$value,'*'),d$value)
+    out <- left_join(out,d |> select(domain,status,value),by=c('domain','status'))
     names(out)[names(out)=='value'] <- reader_label(a)
   }
-  out <- out |> mutate(Unassisted=if_else(domain=='Audit'|is.na(Unassisted),'Not available',Unassisted),CI=replace_na(CI,''))
-  bind_rows(group_row(filter(out,domain=='D1-D5') |> select(Measure,ARBITER,Unassisted,CI),'Domain judgements (D1–D5)'),
-    group_row(filter(out,domain=='Overall') |> select(Measure,ARBITER,Unassisted,CI),'Overall judgement'),
-    group_row(filter(out,domain=='Audit') |> select(Measure,ARBITER,Unassisted,CI),'Evidence and audit')) |>
-    rename(`Unassisted 95% CI (%)`=CI)
+  out <- out |> mutate(Unassisted=if_else(domain=='Audit'|is.na(Unassisted),'Not available',Unassisted))
+  bind_rows(group_row(filter(out,domain=='D1-D5') |> select(Measure,ARBITER,Unassisted),'Domain judgements (D1–D5)'),
+    group_row(filter(out,domain=='Overall') |> select(Measure,ARBITER,Unassisted),'Overall judgement'),
+    group_row(filter(out,domain=='Audit') |> select(Measure,ARBITER,Unassisted),'Evidence and audit'))
 }
+
 main_table4 <- function() {
   x <- manuscript_data('table4-reliability') |> agreement_display('comparison')
   between <- filter(x,startsWith(comparison,'A vs Z')) |>
@@ -105,8 +109,8 @@ main_table_notes <- function() list(
   paste('SC, Some concerns; RoB 2, risk of bias tool for randomised trials. Counts are published labels pooled across D1\u2013D5.',
     'Overall given indicates whether published Overall labels are available; total is labelled trials/all trials.',
     'The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses.',TOPIC_ABBREVIATIONS),
-  paste(AGREEMENT_NOTE,COMPOSITE_NOTE,CI_NOTE),
-  paste('Values are n/N (%). Separate 95% CI column gives Unassisted departure-type rates in %. Domain consistency for ARBITER refers to proposals;',
+  paste('Values are coefficients or percentages (95% CI); denominators are in block labels. Not Low means Some concerns or High. All-Low rule has no variance; only accuracy and specificity are reported. Paired differences are coefficients or percentage points; — indicates undefined or not applicable.',COMPOSITE_NOTE,'Overall judgements were not adjudicated. Published labels were frequently less severe than the adjudicators’ preferred judgement (Figure 4).',CI_NOTE),
+  paste('Values are n/N (%) with 95% CI inside Unassisted departure-type cells. * Guaranteed by design: the server computes domain judgements with the official algorithm and rejects incomplete answer paths; reported to confirm the implementation, not as an empirical finding. Domain consistency for ARBITER refers to proposals;',
     'recorded overrides are separate. Departure = violation + invalid path.',
     'One Unassisted domain has no evaluable label/answer set and is excluded (509 evaluable).',
     'Overall consistency is exact worst-domain agreement; permitted escalations are separate.',
@@ -133,7 +137,7 @@ build_main_tables <- function(inputs) {
   invisible(tables)
 }
 main_table_flextable <- function(x,i,note=main_table_notes()[[i]]) {
-  widths <- list(c(1.14,1.18,.43,1.95,.46,1.02,.67),c(1.15,.8,.8,1.35,1.35,1.1),c(2.9,1.35,1.35,1.25),c(2.7,rep(1.3833,3)))
+  widths <- list(c(1.14,1.18,.43,1.95,.46,1.02,.67),c(1.15,.8,.8,1.35,1.35,1.1),c(3.05,1.6,2.2),c(2.7,rep(1.3833,3)))
   ft <- house_table(x,note) |> flextable::width(j=seq_len(ncol(x)),width=widths[[i]])
   if(i>1) ft <- style_group_rows(ft,x)
   ft
