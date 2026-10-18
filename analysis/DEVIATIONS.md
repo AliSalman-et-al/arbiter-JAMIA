@@ -134,3 +134,45 @@ No Python is used. This file records conservative resolutions as they arise.
 19. **Round 6 evidence-kind binding (replaces round 5 visual failures).** Supersedes the pooled text-span definition in entry 18. Visual records (kind figure or any render field) take precedence over text-span records (kind narrative or any quote/start/end field). Text-span criteria are unchanged. Visual binding requires a render source matching the record source and a captured bundle source, a positive integer render page, nonblank PNG hash, four finite region coordinates in [0,1] with x0 < x1 and y0 < y1, and nonblank transcription. Text-span quotes are server-extracted; visual regions are server-rendered and hash-bound, but transcriptions are model-written and not machine-checked against the image. Report each kind and overall binding, plus trials citing visual evidence. Unknown or missing cited records are other, counted explicitly and unbound in the overall denominator. Distinct current-active cited identities and bootstrap rules are unchanged. No provenance, recipe, receipt or image-content checks are added beyond the requested definition. See round6-report.md for observed counts and validation.
 
 20. **Round 5 F3 validation.** Clean Quarto render, testthat suite, artifact checks, Figure 1 PNG inspection and prohibited-name scan completed. verify-round5.R compares every tracked CSV to pre-round HEAD 499ef07, permits only audit/trace changes and the new per-trial binding counts, and checks that all earlier audit rows are preserved. Generated PDF text is unchanged from the committed figures; timestamp-only changes are discarded. The pre-existing Windows conversion in the generated coding README is discarded. See round5-report.md for results and denominator limitations.
+
+21. **Round 7 replaces human coding with plan 5.6 localisation.** The six classes
+    follow plan order and the existing validated algorithms/required-path checks.
+    Eligibility uses independent-judgement equality with consensus preferred;
+    parsing quality does not remove eligible cells. Primary needs both adjudicators,
+    sensitivity at least one. Meta losses are counted only; Haiku is excluded.
+    Workbook row orders were checked identical. Labels, never letters, are scored.
+
+22. **Round 7 parsing and counterfactual choices.** Numbered assignments delimit
+    answers; whitespace/trailing separators are allowed. Duplicate, missing,
+    out-of-domain, unrecognised or qualified answers are reported per cell/question.
+    Exact Y/PY and N/PN collapse; NI and NA stay separate. The sole observed issue
+    is chiba-2021 D3, A, question 3.4: NI at 6 months; PY at 12 months. Neither
+    independent judgement equals preferred, so this cell is outside both populations.
+    Comparison requires parsed answers from every usable adjudicator; disagreements
+    are separately recorded, never errors. Unresolved questions cannot be discordant
+    or decisive. The no-discordance class requires complete reference and losing
+    comparisons, avoiding false agreement after parse failure; adjudicator-differ
+    questions still meet the plan's no-discordant criterion and remain flagged.
+    Reference-judgement departures include invalid paths, flagged by adjudicator.
+    All stored answers, including inactive NA, stay fixed during substitution;
+    newly required questions are not filled. Invalid substituted paths have no
+    judgement and are not decisive. Any valid changed judgement counts, even if
+    not preferred. Joint substitutions must reach preferred. Frequencies include
+    every individually decisive question regardless of first cell class; joint sets
+    contribute no individual counts. No imputation or time-point choice is made.
+
+23. **Round 7 presentation and quotation selection.** Primary counts fit as six
+    additional rows in Table 4. Both populations, all 22 question frequencies
+    including zeros, a title-free horizontal-bar figure and parse issues are in
+    the supplement. The primary-count figure omits questions zero in both sources;
+    ARBITER is teal and Baseline orange. Optional short text in the existing question
+    map abbreviates official 2019 questions (Sterne et al., BMJ 2019;366:l4898,
+    Table 1; D2 effect of assignment). The default map and existing CSV stay unchanged.
+    Five Discussion candidates per source are selected by primary eligibility first,
+    single-decisive class first within eligibility, then other class order, then
+    slug/domain ascending. Explanation content never determines selection. Both
+    full adjudication explanations are retained verbatim, including repeated text.
+    Removed the obsolete codebook, blank/working sheets including embedded second-
+    coder sample, instructions, coding functions/tests and QMD placeholders. The
+    historical coding_sample_seed field in reproducibility.csv is retained solely
+    to preserve that CSV; it is unused. Historical round reports remain provenance.

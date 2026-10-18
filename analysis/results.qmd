@@ -134,14 +134,15 @@ len <- table_data('meta-leniency')
 
 Adjudicator A–Z weighted κ was `r estimate_ci(filter(rel,comparison=='A vs Z independent',metric=='kappa'))` on independent judgements and `r estimate_ci(filter(rel,comparison=='A vs Z preferred',metric=='kappa'))` on preferred judgements. Among consensus disputed cells, meta labels were less severe in `r len$count[len$direction=='Less severe']`/`r len$n[1]` cells (`r percent(len$estimate[len$direction=='Less severe'])`).
 
+The primary error-localisation analysis uses consensus losses where both independent judgements equal the preferred judgement (10 ARBITER-Sonnet and 47 Baseline-Sonnet cells). Counts follow the six ordered classes in plan section 5.6.
+
 ```{r}
-#| results: asis
-if(file.exists('output/tables/coding-counts.csv')) {
-  print(show_table(table_data('coding-reliability')))
-  print(show_table(table_data('coding-counts')))
-} else cat('**Human error-taxonomy coding pending.** An empty coding sheet and draft codebook are supplied. No row-level codes have been assigned by an LLM.\n')
+show_table(table_data('error-localisation-counts') |> filter(population=='Primary') |>
+  arrange(class_order) |> select(class,source,n) |> pivot_wider(names_from=source,values_from=n))
 ```
+
+Among all consensus cells, ARBITER-Sonnet lost 13, Baseline-Sonnet 60 and the meta label 100. Meta losses cannot be localised because published meta labels have no signalling answers; their direction is reported above. The supplement gives sensitivity counts (12 and 57 eligible losses), question frequencies, parse issues and a figure. The deterministic [Discussion quote candidates](output/tables/discussion-quote-candidates.csv) preserve both adjudicators' full adjudication explanations.
 
 ## Limitations facts and author completion
 
-Adjudicators could only choose among the three offered labels. Unadjudicated cells where both Sonnet arms matched the meta label are assumed correct in the composite. These features inflate absolute composite values. Each arm assessed each trial once; run-to-run variability is not estimated. The final worked-trace selection, human taxonomy coding and checklist page/section references require author completion. Process times are harness measurements; costs are reconstructed API list-price equivalents; thinking tokens are reported separately and are part of output tokens. Trial PDFs are not redistributed; source DOIs and FILES.csv hashes identify them.
+Adjudicators could only choose among the three offered labels. Unadjudicated cells where both Sonnet arms matched the meta label are assumed correct in the composite. These features inflate absolute composite values. Each arm assessed each trial once; run-to-run variability is not estimated. The final worked-trace selection and checklist page/section references require author completion. Process times are harness measurements; costs are reconstructed API list-price equivalents; thinking tokens are reported separately and are part of output tokens. Trial PDFs are not redistributed; source DOIs and FILES.csv hashes identify them.

@@ -13,14 +13,14 @@ $env:QUARTO_R = 'C:/Program Files/R/R-4.6.1/bin'
 quarto render
 ```
 
-Rendering results.qmd rebuilds outputs; supplement.qmd reads those outputs in project render order. No cached computations are required. Inputs in the parent directory are read-only. HTML is local review material and ignored by git. Human coding belongs in output/coding/coding-sheet.csv; the pipeline preserves that file and checks row identities before use. Bootstrap seed: 20261018; 10,000 replicates. Coding-sample seed: 20261019.
+Rendering results.qmd rebuilds outputs; supplement.qmd reads those outputs in project render order. No cached computations are required. Inputs in the parent directory are read-only. HTML is local review material and ignored by git. Bootstrap seed: 20261018; 10,000 replicates. Section 5.6 localises losses through independent signalling answers and the validated algorithms; no human coding is required.
 
 The analysis uses R only. `R/` contains pure estimands and resampling functions;
 `run.R` orchestrates numerical exports, materials and figures. Tables retain
 full precision, interval bounds and valid bootstrap counts. All missing-data
-and denominator choices are documented in DEVIATIONS.md. Re-render after human
-coding is complete to replace the taxonomy placeholder. Do not delete a filled
-working coding sheet when cleaning generated outputs.
+and denominator choices are documented in DEVIATIONS.md. Localisation audit rows,
+parse issues, class counts, question frequencies and fixed-rule Discussion quote
+candidates are exported under output/tables/.
 
 The binding section 5.8 amendment is included. `data-derived/` contains four
 committed per-arm process/audit CSVs. To regenerate them with the raw logs and

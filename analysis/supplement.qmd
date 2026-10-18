@@ -155,28 +155,43 @@ Only active signalling answers count. The detector requires paired straight or c
 
 ## Exploratory signalling-answer agreement
 
-Independent adjudicator answers define the questions evaluated, restricted to disputed domains. Answers collapse to Y/PY, N/PN, and NI/NA. Missing arm answers count as wrong. Haiku is included in this comparison with independent answers; it has no preferred-judgement endpoint, composite or taxonomy analysis.
+Independent adjudicator answers define the questions evaluated, restricted to disputed domains. Answers collapse to Y/PY, N/PN, and NI/NA. Missing arm answers count as wrong. Haiku is included in this comparison with independent answers; it has no preferred-judgement endpoint, composite or error-localisation analysis.
 
 ```{r}
 show_table(table_data('signalling-agreement') |>
   select(arm,adjudicator,question,n,correct,estimate,lower,upper))
 ```
 
-## Human error-taxonomy coding
+## Error localisation by signalling question
+
+Consensus losses are defined by label equality. An adjudicator is usable only when their independent judgement equals the consensus preferred judgement. Primary requires both adjudicators; sensitivity requires at least one. Parsing does not change population eligibility. Haiku was not adjudicated and is excluded. Meta losses (100) cannot be localised; their direction is reported under reference reliability.
 
 ```{r}
-#| results: asis
-if(file.exists('output/tables/coding-counts.csv')) {
-  print(show_table(table_data('coding-reliability')))
-  print(show_table(table_data('coding-counts')))
-} else cat('**Human coding pending.** No row-level error codes have been assigned by an LLM.\n')
+show_table(table_data('error-localisation-eligibility'))
+show_table(table_data('error-localisation-counts') |> arrange(population,class_order) |>
+  select(population,class,source,n) |> pivot_wider(names_from=source,values_from=n))
 ```
 
-The [draft codebook](output/coding/codebook-draft.csv), [instructions](output/coding/README.md), [empty sheet](output/coding/coding-sheet-empty.csv) and [working sheet](output/coding/coding-sheet.csv) are supplied. Every row is a losing source on a consensus cell and includes both adjudicators' explanations. Author 1 codes every row. Author 2 independently codes the fixed random 20% sample, rounded upward, seed 20261019. The pipeline preserves the working sheet, validates fixed row content, and reports unweighted Cohen κ when required codes are complete. A partial sheet retains this placeholder.
+Y/PY collapse to Y and N/PN to N; NI and NA remain separate. A discordant question requires every usable adjudicator to supply the same parsed reference answer, different from the losing answer. Questions where usable adjudicators differ are recorded separately and are not errors. Missing or ambiguous values are unresolved, without choosing a time point or imputing an answer. A decisive question changes the official algorithm's judgement when that reference answer alone is substituted; it need not reach the preferred judgement. An invalid substituted path has no judgement and is not counted as decisive. All other answers, including recorded NA values, stay unchanged.
+
+Cells receive the first applicable class: departure from own answers (including invalid paths or an ARBITER override); single decisive question; several individually decisive questions; jointly decisive (all discordant substitutions reach the preferred judgement); no discordant questions; otherwise not attributable. The no-discordance class requires complete comparisons, and can include questions where adjudicators differ. Such disagreement remains separately flagged. Adjudicator judgements that differ from their own algorithm output, including invalid reference paths, are flagged in the [cell audit](output/tables/error-localisation-cells.csv). Frequencies count every individually decisive question in eligible cells, regardless of the ordered cell class; jointly decisive sets contribute no individually decisive questions.
 
 ```{r}
-show_table(readr::read_csv('output/coding/codebook-draft.csv',show_col_types=FALSE))
+show_table(table_data('error-localisation-frequency') |>
+  select(population,source,domain,question,short_text,n))
 ```
+
+Short texts abbreviate the official RoB 2 questions, using the effect-of-assignment version for D2 ([Sterne et al., Table 1](https://researchmgt.monash.edu/ws/files/283730678/283729907_oa.pdf); [22 August 2019 guidance](https://www.riskofbias.info/welcome/rob-2-0-tool/current-version-of-rob-2)). All 22 questions, including zero frequencies, are retained in the table.
+
+![Individually decisive questions among primary-population consensus losses. Each bar counts eligible losing cells for that source and question; a cell can contribute more than one question. Only questions with at least one count across sources are shown. ARBITER is teal and Baseline is orange. Jointly decisive sets are excluded from these individual-question counts.](output/figures/supplement-decisive-questions.png)
+
+```{r}
+show_table(table_data('error-localisation-issues'))
+```
+
+The only ambiguous recorded answer is adjudicator A's chiba-2021 D3 question 3.4: NI at 6 months and PY at 12 months. Both values are preserved in the issue export; no time point is chosen. That cell is outside both localisation populations because neither independent judgement equals the consensus preferred judgement.
+
+[Discussion quote candidates](output/tables/discussion-quote-candidates.csv) contain five cells per losing source. The fixed selection rule orders primary before sensitivity-only cells, then single-decisive-question cells before the other ordered classes, then slug and domain alphabetically; the first five per source are selected. Explanation content is never used for ranking. Both adjudicators' complete adjudication explanations are retained verbatim, including repeated full-trial text. The CSV is author review material, not a selection of endorsed quotations.
 
 ## Prompt template and one filled example
 

@@ -11,7 +11,7 @@ clean_label <- function(x) {
 }
 read_input <- function(path) readr::read_csv(path, show_col_types=FALSE, progress=FALSE,
   col_types=readr::cols(.default=readr::col_character()))
-question_map <- function() {
+question_map <- function(include_short_text=FALSE) {
   names <- c('randomization:sequence','randomization:concealment','randomization:baseline-imbalance',
     'deviations:participants-aware','deviations:personnel-aware','deviations:context-deviations',
     'deviations:affected-outcome','deviations:balanced','deviations:appropriate-analysis',
@@ -20,8 +20,24 @@ question_map <- function() {
     'measurement:differential','measurement:assessor-aware','measurement:influence-possible',
     'measurement:influence-likely','selection:prespecified-analysis','selection:multiple-measurements',
     'selection:multiple-analyses')
-  tibble(question_id=paste0('sq:',names), question=unlist(lapply(seq_len(5),
+  map <- tibble(question_id=paste0('sq:',names), question=unlist(lapply(seq_len(5),
     function(i) paste0(i,'.',seq_len(c(3,7,4,5,3)[i])))))
+  # Abbreviations of official 2019 signalling questions (effect of assignment).
+  # Sterne et al., BMJ 2019;366:l4898, Table 1 (official question wording).
+  if(include_short_text) map$short_text <- c(
+    'Random allocation sequence','Concealment until enrolment and assignment',
+    'Baseline imbalance suggesting a randomisation problem',
+    'Participants aware of assignment','Carers or intervention providers aware of assignment',
+    'Deviations arising from trial context','Deviations affecting the outcome',
+    'Deviations balanced across groups','Appropriate analysis of assignment effect',
+    'Substantial impact of analysing outside assigned groups',
+    'Outcome data available for nearly everyone','Evidence against bias from missing data',
+    'Missingness potentially depends on true outcome','Missingness likely depends on true outcome',
+    'Inappropriate measurement method','Measurement differs across groups',
+    'Assessors aware of received intervention','Assessment potentially influenced by awareness',
+    'Assessment likely influenced by awareness','Analysis plan finalised before unblinding',
+    'Result selected from eligible outcome measurements','Result selected from eligible analyses')
+  map
 }
 load_inputs <- function(root='..') {
   labels <- signals <- list()

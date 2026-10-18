@@ -170,5 +170,9 @@ forest <- bind_rows(lapply(split(filter(inputs$labels,domain!='Overall'),
     }))
 save_table(forest,'forest-meta')
 save_table(cells,'adjudication-analysis-cells')
+localisation <- localise_errors(inputs,cells)
+for(name in c('cells','counts','frequency','issues','eligibility'))
+  save_table(localisation[[name]],paste0('error-localisation-',name))
+save_table(localisation$candidates,'discussion-quote-candidates')
 if(file.exists('R/materials.R')) { source('R/materials.R'); build_materials(inputs,cells) }
 if(file.exists('R/figures.R')) { source('R/figures.R'); build_figures() }

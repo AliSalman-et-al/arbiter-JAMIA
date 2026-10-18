@@ -116,4 +116,19 @@ build_figures <- function() {
     scale_color_manual(values=ARM_COLORS)+scale_shape_manual(values=c(16,17,1,2))+
     labs(x='Weighted kappa against meta labels',y=NULL,color=NULL,shape=NULL)
   save_figure(p,'supplement-forest',10,10)
+  frequency <- read_table('error-localisation-frequency') |> filter(population=='Primary')
+  shown <- frequency |> group_by(question) |> summarise(n=sum(n),.groups='drop') |>
+    filter(n>0) |> arrange(n,question)
+  frequency <- frequency |> filter(question %in% shown$question) |>
+    mutate(question_label=paste(question,short_text),
+      question_label=factor(question_label,levels=paste(shown$question,
+        frequency$short_text[match(shown$question,frequency$question)])),
+      source=factor(source,levels=c('ARBITER-Sonnet','Baseline-Sonnet')))
+  p <- ggplot(frequency,aes(n,question_label,fill=source))+
+    geom_col(width=.65)+geom_text(aes(label=n),hjust=-.3,size=3.2)+
+    facet_wrap(~source,nrow=1)+scale_fill_manual(values=ARM_COLORS)+
+    scale_x_continuous(breaks=c(0,5,10,15,20),limits=c(0,20),expand=expansion(mult=c(0,.02)))+
+    labs(x='Decisive-question count (primary population)',y=NULL)+
+    theme(legend.position='none',axis.text.y=element_text(size=9))
+  save_figure(p,'supplement-decisive-questions',10,5.5)
 }

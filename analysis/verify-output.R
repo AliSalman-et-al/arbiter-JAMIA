@@ -25,8 +25,15 @@ for(path in c('results.html','supplement.html')) {
   td <- regmatches(html,gregexpr('<td[^>]*>.*?</td>',html,perl=TRUE))[[1]]
   stopifnot(!any(grepl('[0-9][eE][+-][0-9]+',td)))
 }
-coding <- readr::read_csv('output/coding/coding-sheet.csv',show_col_types=FALSE)
-stopifnot(all(is.na(coding$code_author1)),all(is.na(coding$code_author2)),all(is.na(coding$final_code)))
+stopifnot(!length(list.files('output/coding')))
+for(name in c('cells','counts','frequency','issues','eligibility'))
+  stopifnot(file.exists(paste0('output/tables/error-localisation-',name,'.csv')))
+stopifnot(file.exists('output/tables/discussion-quote-candidates.csv'))
+new_png <- file('output/figures/supplement-decisive-questions.png','rb')
+seek(new_png,16)
+stopifnot(all(readBin(new_png,'integer',2,size=4,endian='big')==c(6000,3300)))
+close(new_png)
+stopifnot(pdftools::pdf_info('output/figures/supplement-decisive-questions.pdf')$pages==1L)
 cost <- readr::read_csv('data-derived/api-cost-trials.csv',show_col_types=FALSE)
 stopifnot(nrow(cost)==408L,all(cost$lower<=cost$point),all(cost$point<=cost$upper),
   all(cost$point[grepl('Sonnet',cost$arm)]==cost$lower[grepl('Sonnet',cost$arm)]),
