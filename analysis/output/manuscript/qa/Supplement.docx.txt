@@ -12,32 +12,34 @@ eTable 8. API cost reconstruction: estimates and bounds
 eTable 9. Token reconciliation and compaction diagnostics
 eTable 10. Confusion matrices against Published
 eTable 11. Per-meta-analysis weighted κ
-eTable 12. Per-adjudicator and split-cell win-share sensitivity
-eTable 13. Paired differences against Published
-eTable 14. Paired differences against the composite reference
-eTable 15. Composite sensitivity using Adjudicator 1
-eTable 16. Composite paired differences using Adjudicator 1
-eTable 17. Composite sensitivity using Adjudicator 2
-eTable 18. Composite paired differences using Adjudicator 2
-eTable 19. Missing-judgement sensitivity: paired observed Haiku cells
-eTable 20. Missing-judgement sensitivity: paired Haiku differences
-eTable 21. Localisation population eligibility
-eTable 22. Error-localisation classes, both populations
-eTable 23. Decisive-question frequencies, both populations
-eTable 24. Unresolved independent answer
-eTable 25. Recorded model override
-eTable 26. Quotation syntax in active justifications
-eTable 27. Unassisted justification content
-eTable 28. Exploratory signalling-answer agreement
+eTable 12. Post hoc severity-stratified win share
+eTable 13. Vindicated disagreements with Published, including split cells
+eTable 14. Per-adjudicator and split-cell win-share sensitivity
+eTable 15. Paired differences against Published
+eTable 16. Paired differences against the composite reference
+eTable 17. Composite sensitivity using Adjudicator 1
+eTable 18. Composite paired differences using Adjudicator 1
+eTable 19. Composite sensitivity using Adjudicator 2
+eTable 20. Composite paired differences using Adjudicator 2
+eTable 21. Missing-judgement sensitivity: paired observed Haiku cells
+eTable 22. Missing-judgement sensitivity: paired Haiku differences
+eTable 23. Localisation population eligibility
+eTable 24. Error-localisation classes, both populations
+eTable 25. Decisive-question frequencies, both populations
+eTable 26. Unresolved independent answer
+eTable 27. Recorded model override
+eTable 28. Quotation syntax in active justifications
+eTable 29. Unassisted justification content
+eTable 30. Exploratory signalling-answer agreement
+eTable 31. AVATAR complete trace
 eFigure 1. Agreement against Published by meta-analysis
-
+eFigure 2. Disagreement patterns and preferred judgements
 
 Methods appendix
 Algorithms and validation
 The official 22 August 2019 RoB 2 algorithms were implemented for D1 randomisation, D2 deviations (effect of assignment), D3 missing outcome data, D4 outcome measurement and D5 selection of the reported result. Numbered questions map to the 22 exported signalling questions. Required NA or missing answers make a nonempty path invalid; absent labels or wholly absent answer sets are not evaluable. Overall is the worst domain judgement, with High permitted when at least two domains have Some concerns. The guidance was cross-checked with ARBITER 1.0.0 source (commit 2f549ae). Unit tests cover the decision paths and required-answer checks. Bundle proposals reproduce 510/510 Sonnet and 505/505 observed Haiku domain outputs. One Haiku adoption overrides a Low proposal to Some concerns; rationale and evidence are retained. All required active answers in the ARBITER domain histories are present. Unassisted invalid-path sensitivity recursively resolves required invalid answers as N/PN, then NI; off-path answers are not imputed.
 API list-price reconstruction
 Costs are frozen-rate API list-price equivalents, not expenditure. USD rates per million tokens are: Sonnet input 2.00, 1-hour cache write 4.00, 5-minute write 2.50, cache read 0.10, output 10.00; Haiku at prompts of at most 100,000 tokens: 0.10, 0.20, 0.125, 0.01, 0.50; above 100,000: 0.50, 1.00, 0.625, 0.05, 2.50. Rates were frozen from the provider pricing documentation on 18 October 2026. Main-thread assistant events are deduplicated by message identity within turn; synthetic zero-usage events are excluded. Prompt length is input plus cache creation plus cache read. Terminal output is allocated by request share for the point estimate and wholly to lower/higher tiers for bounds. Thinking tokens are already included in output. Signed terminal-minus-request input residuals, including negative retry residuals, are retained and allocated at lower-tier, request-share and higher-tier rates. Side calls are total recorded model usage minus terminal usage. Compaction uses high-tier pricing and one-hour writes; five-minute writes are a sensitivity. Side-call turns without a compaction boundary are flagged and bounded. All trial bounds are ordered; Sonnet bounds coincide. Routing was global, with no geography multiplier. Harness costs are unusable: unrecognised model and unknown cost basis; retained only as supplementary diagnostics.
-
 
 Error localisation
 Losses are consensus cells where a source label differs from preferred. A reference adjudicator is usable only when their independent judgement equals consensus preferred. Primary requires both; sensitivity at least one. Haiku is excluded. Y/PY collapse to Y and N/PN to N; NI and NA remain separate. Discordance requires all usable adjudicators to agree on a parsed answer different from the losing answer. Adjudicator disagreements are separately flagged, never errors. A single replacement is decisive if it changes a valid algorithm output, even if the new output is not preferred. Other answers, including inactive NA, stay fixed; invalid substituted paths are not decisive. First applicable cell class: judgement departs from own answers; single decisive question; several decisive questions; jointly decisive (all discordant replacements reach preferred); no discordant questions with complete comparisons; not attributable. The no-discordance class can contain adjudicator-disagreement questions. Reference-judgement departures from their own answers are flagged. Frequencies count all individually decisive questions regardless of cell class; joint sets contribute none. Ambiguous or qualified answers are not imputed. Published losses cannot be localised without signalling answers.
@@ -47,33 +49,23 @@ Inference and references
 All estimates use the fixed 102-trial set. CIs use 10,000 trial-cluster bootstrap replicates stratified by meta-analysis, percentile intervals (quantile type 7), seed 20261018; the same weights support paired differences. Missing predictions count as wrong. For ordinal coefficients a missing prediction receives maximal disagreement; a paired observed-cell Haiku sensitivity is reported. Independent signalling-answer agreement uses the earlier exploratory Y/PY, N/PN and NI/NA collapse. Higgins JPT, Savović J, Page MJ, Sterne JAC, editors. Revised Cochrane risk-of-bias tool for randomized trials (RoB 2), 22 August 2019. https://www.riskofbias.info/welcome/rob-2-0-tool/current-version-of-rob-2. Salman A et al. ARBITER 1.0.0, public source release, commit 2f549ae. https://github.com/AliSalman-et-al/ARBITER/tree/2f549ae30f056ff441ea61a04b719968716f2219. Anthropic. Claude API pricing. Accessed 18 October 2026. https://platform.claude.com/docs/en/about-claude/pricing.
 Supplementary results
 
-
 eTable 1. Published label distributions by domain
-
 
 eTable 2. Process metrics: Sonnet 5.5
 
-
 eTable 3. Process metrics: Haiku 5.5
-
 
 eTable 4. Agreement against Published, all sources and domains
 
-
 eTable 5. Agreement against the composite reference, Sonnet only
-
 
 eTable 6. RoB 2 consistency and structural audit, all sources and domains
 
-
 eTable 7. Invalid answer path sensitivity
-
 
 eTable 8. API cost reconstruction: estimates and bounds
 
-
 eTable 9. Token reconciliation and compaction diagnostics
-
 
 eTable 10. Confusion matrices against Published
 ARBITER (Sonnet 5.5) — D1
@@ -83,7 +75,6 @@ ARBITER (Sonnet 5.5) — D4
 ARBITER (Sonnet 5.5) — D5
 ARBITER (Sonnet 5.5) — Overall
 
-
 eTable 10 (continued). Confusion matrices against Published
 Unassisted (Sonnet 5.5) — D1
 Unassisted (Sonnet 5.5) — D2
@@ -91,7 +82,6 @@ Unassisted (Sonnet 5.5) — D3
 Unassisted (Sonnet 5.5) — D4
 Unassisted (Sonnet 5.5) — D5
 Unassisted (Sonnet 5.5) — Overall
-
 
 eTable 10 (continued). Confusion matrices against Published
 ARBITER (Haiku 5.5) — D1
@@ -101,7 +91,6 @@ ARBITER (Haiku 5.5) — D4
 ARBITER (Haiku 5.5) — D5
 ARBITER (Haiku 5.5) — Overall
 
-
 eTable 10 (continued). Confusion matrices against Published
 Unassisted (Haiku 5.5) — D1
 Unassisted (Haiku 5.5) — D2
@@ -110,70 +99,87 @@ Unassisted (Haiku 5.5) — D4
 Unassisted (Haiku 5.5) — D5
 Unassisted (Haiku 5.5) — Overall
 
-
 eTable 11. Per-meta-analysis weighted κ
-
 
 eFigure 1. Agreement against Published by meta-analysis
 
 Weighted kappa and 95% CIs; source symbols distinguish model and assistance. Undefined coefficients are omitted. Specialty and topic identify each meta-analysis. Descriptive estimates only; no statistical tests. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.
 
+eTable 12. Post hoc severity-stratified win share
 
-eTable 12. Per-adjudicator and split-cell win-share sensitivity
+eTable 13. Vindicated disagreements with Published, including split cells
 
+eTable 14. Per-adjudicator and split-cell win-share sensitivity
 
-eTable 13. Paired differences against Published
+eTable 15. Paired differences against Published
 
+eTable 16. Paired differences against the composite reference
 
-eTable 14. Paired differences against the composite reference
+eTable 17. Composite sensitivity using Adjudicator 1
 
+eTable 18. Composite paired differences using Adjudicator 1
 
-eTable 15. Composite sensitivity using Adjudicator 1
+eTable 19. Composite sensitivity using Adjudicator 2
 
+eTable 20. Composite paired differences using Adjudicator 2
 
-eTable 16. Composite paired differences using Adjudicator 1
+eTable 21. Missing-judgement sensitivity: paired observed Haiku cells
 
+eTable 22. Missing-judgement sensitivity: paired Haiku differences
 
-eTable 17. Composite sensitivity using Adjudicator 2
+eTable 23. Localisation population eligibility
 
+eTable 24. Error-localisation classes, both populations
 
-eTable 18. Composite paired differences using Adjudicator 2
+eTable 25. Decisive-question frequencies, both populations
 
+eTable 26. Unresolved independent answer
 
-eTable 19. Missing-judgement sensitivity: paired observed Haiku cells
+eTable 27. Recorded model override
 
+eTable 28. Quotation syntax in active justifications
 
-eTable 20. Missing-judgement sensitivity: paired Haiku differences
+eTable 29. Unassisted justification content
 
-
-eTable 21. Localisation population eligibility
-
-
-eTable 22. Error-localisation classes, both populations
-
-
-eTable 23. Decisive-question frequencies, both populations
-
-
-eTable 24. Unresolved independent answer
-
-
-eTable 25. Recorded model override
-
-
-eTable 26. Quotation syntax in active justifications
-
-
-eTable 27. Unassisted justification content
-
-
-eTable 28. Exploratory signalling-answer agreement
+eTable 30. Exploratory signalling-answer agreement
 Adjudicator 1
 
-
-eTable 28 (continued). Exploratory signalling-answer agreement
+eTable 30 (continued). Exploratory signalling-answer agreement
 Adjudicator 2
 
+eTable 31. AVATAR complete trace
+D1 judgements and rationale
+Question 1.1
+Question 1.2
+Question 1.3
+D2 judgements and rationale
+Question 2.1
+Question 2.2
+Question 2.3
+Question 2.4
+Question 2.5
+Question 2.6
+Question 2.7
+D3 judgements and rationale
+Question 3.1
+Question 3.2
+Question 3.3
+Question 3.4
+D4 judgements and rationale
+Question 4.1
+Question 4.2
+Question 4.3
+Question 4.4
+Question 4.5
+D5 judgements and rationale
+Question 5.1
+Question 5.2
+Question 5.3
+Overall
+
+eFigure 2. Disagreement patterns and preferred judgements
+
+All 154 disputed cells, grouped by disagreement with Published and preferred-label outcome. Counts use label equality; split cells are separate. Shared labels count as both arms preferred.
 
 Prompt templates and a filled example
 ARBITER template
@@ -1917,6 +1923,131 @@ Home-based prehabilitation before surgery
 −0.04 (−0.20 to 0.14)
 −0.01 (−0.13 to 0.11)
 ACL, anterior cruciate ligament; CDK4/6, cyclin-dependent kinases 4 and 6; eGFR, estimated glomerular filtration rate; GLP-1, glucagon-like peptide-1; HER2, human epidermal growth factor receptor 2; HR, hormone receptor; IgA, immunoglobulin A; SGLT2, sodium-glucose cotransporter 2. Weighted κ (95% CI). eFigure 1 displays the defined nondegenerate estimates. A coefficient with no variance, or a degenerate bootstrap interval, is shown as —. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
+Direction
+Measure
+Estimate (95% CI)
+ARBITER more severe
+ARBITER
+44/45 (97.8%) (92.7–100.0)
+ARBITER more severe
+Unassisted
+1/45 (2.2%) (0.0–7.3)
+ARBITER more severe
+Neither
+0/45 (0.0%)
+ARBITER less severe
+ARBITER
+10/17 (58.8%) (35.7–80.0)
+ARBITER less severe
+Unassisted
+6/17 (35.3%) (14.3–57.9)
+ARBITER less severe
+Neither
+1/17 (5.9%) (0.0–18.2)
+Post hoc Sonnet 5.5 analysis of the 62 consensus discordant cells, stratified by ARBITER severity relative to Unassisted. ARBITER more severe: 44 ARBITER wins, 1 Unassisted, 0 neither (45 cells); less severe: 10, 6, 1 (17 cells). CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
+Source
+Direction
+Outcome
+Eligible cells (n)
+Consensus n
+All n
+ARBITER
+Less severe
+Other label
+0
+28
+36
+ARBITER
+Less severe
+Published upheld
+6
+28
+36
+ARBITER
+Less severe
+Split
+8
+28
+36
+ARBITER
+Less severe
+Vindicated
+22
+28
+36
+ARBITER
+More severe
+Other label
+2
+77
+88
+ARBITER
+More severe
+Published upheld
+2
+77
+88
+ARBITER
+More severe
+Split
+11
+77
+88
+ARBITER
+More severe
+Vindicated
+73
+77
+88
+Unassisted
+Less severe
+Other label
+2
+38
+46
+Unassisted
+Less severe
+Published upheld
+17
+38
+46
+Unassisted
+Less severe
+Split
+8
+38
+46
+Unassisted
+Less severe
+Vindicated
+19
+38
+46
+Unassisted
+More severe
+Other label
+1
+59
+69
+Unassisted
+More severe
+Published upheld
+10
+59
+69
+Unassisted
+More severe
+Split
+10
+59
+69
+Unassisted
+More severe
+Vindicated
+48
+59
+69
+Both sources use Sonnet 5.5. Figure 5B uses consensus disagreements as the denominator; split cells are displayed separately. Vindicated means preferred equals the source label; Published upheld means preferred equals Published; Other label means neither. Counts, consensus denominator and all-cell denominator are shown. CI, confidence interval; IQR, interquartile range; USD, US dollars; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Analysis
 Measure
 Estimate (95% CI)
@@ -3108,3 +3239,1691 @@ Result selected from eligible analyses
 19/44 (43.2%) (30.8–54.5)
 22/45 (48.9%) (35.7–62.2)
 SQ, signalling question. Correct collapsed answers / eligible questions (95% CI) on disputed domains. Independent answers define reference; Y/PY, N/PN, NI/NA collapse. Missing predictions are wrong. Includes Haiku without a preferred-judgement endpoint. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Proposed / adopted
+Low / Low
+Low
+Domain rationale
+Per-question justifications follow.
+Allocation used a computer-generated, centre-stratified permuted-block sequence delivered through a web-based interactive response system, so concealment was adequate. The baseline differences in age (P = .02) and haemoglobin (P = .01) are consistent with chance across about 25 variables.
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+yes; active
+yes
+Justification
+The original AVATAR paper states the assignment was computer-generated and stratified by centre using a permuted-block sequence with variable block size, which is a random component.
+
+Unknowns
+None recorded
+
+Basis 1
+direct support
+
+Source
+CIRCULATIONAHA.121.057639.pdf; page 3; lines 46–50; source hash 592b9a6c531c; evidence hash d6c269341c7d
+
+Full quote 1
+randomly assigned to early surgery or conservative treatment
+using a web-based interactive response system. The assign-
+ment to each treatment group was computer-generated and
+stratified according to the participating centers by means of
+a permuted-block sequence with variable block size. Details
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+yes; active
+yes
+Justification
+Patients were randomized using a web-based interactive response system, a central remote allocation method independent of enrolment staff. Variable block size limits predictability of the last allocations in a block.
+
+Unknowns
+Whether the central system was run by a unit independent of enrolling staff is not stated explicitly.
+
+Basis 1
+direct support
+
+Source
+CIRCULATIONAHA.121.057639.pdf; page 3; lines 46–50; source hash 592b9a6c531c; evidence hash d6c269341c7d
+
+Full quote 1
+randomly assigned to early surgery or conservative treatment
+using a web-based interactive response system. The assign-
+ment to each treatment group was computer-generated and
+stratified according to the participating centers by means of
+a permuted-block sequence with variable block size. Details
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+no; active
+probably no
+Justification
+Group sizes were 78 vs 79. Of about 25 baseline comparisons in Table 2, only age (P=.02) and haemoglobin (P=.01) were nominally significant, and diabetes was P=.07. The age difference is 1 year in medians. This is compatible with chance and none approaches P<0.001.
+
+Unknowns
+None recorded
+
+Basis 1
+direct support
+
+Source
+ehae585.pdf; page 5; lines 26–136; source hash a890f771fd05; evidence hash 92eed84c7b98
+
+Full quote 1 (1/7)
+Table 2 Selected baseline characteristics of the study population
+Early surgery group (n = 78)
+Conservative treatment group (n = 79)
+P-value
+Demographics and comorbidities
+Age, years, median (IQR)
+68 (63-73)
+69 (64-75)
+.02
+Sex (female)
+32 (41.0%)
+35 (44.3%)
+.67
+STS score, median (IQR)
+1.6 (1.1-2.2)
+1.8 (1.2-2.7)
+.67
+Days from randomization to surgery, median (IQR)
+
+Full quote 1 (2/7)
+55 (36-79)
+476 (226-1098)
+<.001
+Diabetes mellitus
+14 (17.9%)
+23 (29.1%)
+.07
+Hypertension
+69 (88.4%)
+70 (88.6%)
+.44
+History of PCI
+1 (1.3%)
+2 (2.5%)
+.44
+History of stroke
+2 (2.5%)
+2 (2.5%)
+
+Full quote 1 (3/7)
+.92
+Peripheral arterial disease
+0 (0%)
+1 (1.36%)
+.80
+Laboratory parameters
+BNP, pg/mLa, median (IQR)
+83 (53-127)
+89 (58-149)
+.61
+NT-proBNP, pg/mLa, median (IQR)
+381 (153-660)
+347 (186-722)
+.45
+Haemoglobin, g/L, median (IQR)
+141 (131-150)
+134 (128-141)
+.01
+
+Full quote 1 (4/7)
+Creatinine, μmol/L, median (IQR)
+80 (66-94)
+76 (67-92)
+.27
+Blood glucose, mmol/L, median (IQR)
+5.6 (5.3-6.7)
+5.6 (5.1-6.8)
+.70
+Echocardiography
+LVESV, mL, median (IQR)
+28 (20-41)
+33 (22-42)
+.96
+LVEDV, mL, median (IQR)
+113 (89-142)
+113 (96-126)
+.54
+LV mass index, g/m2, median (IQR)
+
+Full quote 1 (5/7)
+152 (133-175)
+160 (139-183)
+.67
+Left atrium, cm
+4.1 (3.8-4.4)
+4.2 (3.9-4.4)
+.68
+SVi, mL/m2, median (IQR)
+39 (33-48)
+42 (34-51)
+.58
+PA systolic pressure, mmHg, median (IQR)
+30 (26-36)
+30 (27-37)
+.82
+Vmax, m/s, median (IQR)
+4.5 (4.3-4.8)
+4.5 (4.2-4.7)
+
+Full quote 1 (6/7)
+.13
+Pmean, mmHg, median (IQR)
+51 (44-58)
+50 (43-59)
+.16
+Pmax, mmHg, median (IQR)
+82 (74-90)
+79 (70-90)
+.18
+AVA, cm2, median (IQR)
+0.73 (0.55-0.84)
+0.74 (0.59-0.89)
+.29
+AVAi, cm2/m2, median (IQR)
+0.37 (0.3-0.42)
+0.37 (0.31-0.46)
+.08
+E/eʹ, median (IQR)
+
+Full quote 1 (7/7)
+12.2 (9.6-16.3)
+12.2 (8.8-18.1)
+.54
+
+Basis 2
+context
+
+Source
+ehae585.pdf; page 5; lines 47–50; source hash a890f771fd05; evidence hash 58abdac52262
+
+Full quote 2
+Diabetes mellitus
+14 (17.9%)
+23 (29.1%)
+.07
+
+Counterevidence
+Basis 1: Diabetes was less common in early surgery (17.9% vs 29.1%), which could favour surgery, but P=.07 is compatible with chance and the 2022 paper attributes it to chance.
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Proposed / adopted
+Low / Low
+Low
+Domain rationale
+Per-question justifications follow.
+The trial was open label, so participants and clinicians knew the assignments. Surgery in the conservative arm followed protocol-defined triggers such as symptom onset. Six of 78 early-surgery patients did not receive surgery, and some surgeries were delayed by COVID-19. These are not deviations likely to affect the outcome. The analysis was intention-to-treat.
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+yes; active
+yes
+Justification
+The registry lists masking as NONE, and the comparison is surgical valve replacement versus watchful waiting, which cannot be hidden from participants.
+
+Unknowns
+None recorded
+
+Basis 1
+direct support
+
+Source
+ClinicalTrials.gov NCT02436655; page 1; lines 67–68; source hash d32e23eb2a1e; evidence hash 975aac320210
+
+Full quote 1
+#### Masking info
+- Masking: NONE
+
+Basis 2
+context
+
+Source
+ehae585.pdf; page 3; lines 1–116; source hash a890f771fd05; evidence hash 3ce4199af9d4
+
+Full quote 2 (1/9)
+Introduction
+Aortic stenosis (AS) is the single most common valvular heart disease re
+quiring intervention in developed countries and is projected to double by
+2050 in both the USA and Europe.1 The approach to symptomatic pa
+tients with severe AS is straightforward. Surgical aortic valve replacement
+(AVR) and, more recently, transcatheter aortic valve implantation (TAVI)
+procedures are Class I recommendation to relieve symptoms and im
+prove survival in symptomatic patients with severe AS.2,3
+Conversely, the question of when and how to treat truly asymptom
+atic patients with severe AS and normal left ventricular (LV) systolic
+function is still subject to debate and ongoing research. To date, two
+randomized trials have demonstrated benefit of early AVR in compari
+son with conservative strate
+
+Full quote 2 (2/9)
+gy in asymptomatic patients with severe
+and very severe AS patients.4,5 In addition, there are several ongoing
+randomized trials investigating the role of early TAVI and/or early sur
+gical AVR in asymptomatic AS.
+The Aortic Valve Replacement Versus Conservative Treatment in
+Asymptomatic Severe Aortic Stenosis (AVATAR) trial is an investigator-
+initiated, prospective, multinational, randomized, controlled, parallel-group,
+event-driven trial that compared the safety and efficacy of early surgery in
+the treatment of truly asymptomatic patients with severe AS and LV ejec
+tion fraction (LVEF) ≥ 50% vs. conservative treatment with watchful wait
+ing strategy and AVR only after symptom onset, or other guidelines
+directed Class I or II indications for AVR.3,6 In the primary analysis of the
+AVATAR t
+
+Full quote 2 (3/9)
+rial, asymptomatic AS patients randomized to early surgery
+had a lower incidence of the composite primary outcome comprising all-
+cause death, acute myocardial infarction, stroke, or unplanned hospitaliza
+tion for heart failure (HF), compared with patients who were randomized
+to conservative treatment.5 We now report the results of the AVATAR
+trial after extended follow-up at 5 years.
+Methods
+Study design and oversight
+The AVATAR trial (ClinicalTrials.gov identifier NCT02436655) protocol
+and protocol update were designed by the first co-authors and steering
+committee co-chairmen and was approved by the steering committee of
+the AVATAR trial.7,8 The clinical and outcomes data were collected by per
+sonnel at the participating sites and were sent directly to the data coordinat
+ing centre at t
+
+Full quote 2 (4/9)
+he University Clinical Center of Serbia. No extramural funding
+was used to support this work. The authors, members of the steering com
+mittee, and investigators are solely responsible for the design and conduct of
+this trial, all analyses, drafting and editing of the article, and its final contents.
+Independent statistician conducted the long-term data analyses.
+The trial was conducted in accordance with the Declaration of Helsinki. All
+participants provided written informed consent. An independent data and
+safety monitoring board (DSMB) adjudicated all serious adverse events and
+oversaw the safety of the trial. The article was prepared by the first author
+and steering committee co-chairmen and was reviewed and edited by mem
+bers of the steering committee and authors. All authors reviewed
+
+Full quote 2 (5/9)
+the article,
+approved its submission for publication, and vouched for the accuracy and
+completeness of the data and for the fidelity of the trial to the protocol.
+Study population
+The study inclusion and exclusion criteria are shown in Table 1; trial flowchart
+is shown in Figure 1. Briefly, a total of 157 patients with severe AS according to
+the guidelines were enrolled in the trial: 79 were randomized to conservative
+treatment and 78 were randomized to early surgery. To prove truly asymp
+tomatic status, exercise testing was performed in all candidates to evaluate
+symptom status according to a standardized protocol using treadmill or semi-
+supine ergo-bicycle. To consider exercise testing negative, which was manda
+tory for inclusion, all candidates needed to reach a projected submaximal
+he
+
+Full quote 2 (6/9)
+art rate. Positive exercise test included onset of AS-related symptoms,
+fall in systolic blood pressure (≥20 mmHg from the baseline values), or
+Electrocardiography (ECG) or stress echocardiography signs of myocardial
+ischaemia.9
+Follow-up and trial endpoints
+Patients were followed according to the protocol every 6 months for the
+first year and then yearly with the in-person visits at the participating study
+centre. As the trial was affected by the Covid-19 pandemic, contact with
+patients who could not come in person was made by phone. For any event
+that was registered, the medical records were asked for and reviewed.
+Adverse clinical events were adjudicated by the DSMB per protocol defini
+tions.7,8 Data and safety monitoring board members were not blinded to
+the treatment allocation during
+
+Full quote 2 (7/9)
+ events review. They adjudicated the events
+by consensus.
+Table 1 Eligibility inclusion/exclusion criteria
+Inclusion criteria
+• Men and women of any ethnic origin aged ≥18 years
+• Written informed consent
+• Vmax across the aortic valve > 4 m/s or P mean ≥ 40 mmHg and AVA ≤
+1 cm2 or AVAi ≤ 0.6 cm2/m2 at rest
+• Without reported symptoms
+• Society of Thoracic Surgeons score < 8%
+Exclusion criteria
+Participation in another clinical trial within 30 days prior to
+randomization
+• Pregnant or nursing women
+• Mental condition rendering the patient unable to understand the
+nature, scope, and possible consequences of the study or to follow the
+protocol
+• Positive stress-test defined as follows:
+
+Full quote 2 (8/9)
+(a)
+Anginal chest pain during testing
+(b)
+Syncope or dizziness during testing
+(c)
+Decrease in systolic blood pressure during exercise ≥ 20 mmHg
+(d)
+Malignant arrhythmia during exercise testing (VT or VF)
+• Left ventricular ejection fraction < 50% at rest
+• Very severe AS defined as Vmax > 5.5 m/s at rest
+• Significant disease of other valves: mitral stenosis with Pmean > 5 mg, or
+any significant regurgitation ≥ 3+
+• Recent previous myocardial infarction (<1 year)
+• Need for additional aortic root replacement (i.e. Bentall) or ascending
+aorta surgery in asymptomatic patients undergoing AVR
+• Previous coronary bypass surgery
+• Previous any heart valve surgery
+• Impaired renal function, i.e. creatinine > 200 μmol/L or glomerular
+
+Full quote 2 (9/9)
+filtration rate < 30 mL/min/1.73 m2
+• Significant pulmonary hypertension at rest (systolic pulmonary artery
+pressure > 50 mmHg)
+• Uncontrolled hypertension at rest (systolic blood pressure >
+180 mmHg and diastolic blood pressure > 100 mmHg)
+• Significant comorbidity with reduced life expectancy (<3 years)
+• Uncontrolled diabetes mellitus (HbA1c > 9%)
+• Significant chronic obstructive pulmonary disease (FEV1 < 70% of
+predicted value)
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+yes; active
+yes
+Justification
+Open-label surgery versus conservative care means clinicians and surgeons delivering care knew the assignment. Allocation was concealed until assignment, but blinding afterwards was impossible.
+
+Unknowns
+None recorded
+
+Basis 1
+direct support
+
+Source
+ClinicalTrials.gov NCT02436655; page 1; lines 67–68; source hash d32e23eb2a1e; evidence hash 975aac320210
+
+Full quote 1
+#### Masking info
+- Masking: NONE
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+probably no; active
+probably no
+Justification
+Crossover from conservative care to surgery (35/79) was driven by protocol-defined indications (symptom onset, AS progression, LVEF decline), as Table 3 and the protocol show, so it is consistent with the protocol rather than trial-context driven. Surgical delays beyond 8 weeks arose from the COVID-19 public-health emergency and were documented as an anticipated minor deviation in the SAP amendment. Four early-surgery patients did not receive surgery as assigned, for reasons like infection or declining, which could occur outside a trial.
+
+Unknowns
+Reasons for declining surgery are not described in detail.
+
+Basis 1
+direct support
+
+Source
+ehae585.pdf; page 6; lines 1–99; source hash a890f771fd05; evidence hash c8e095884063
+
+Full quote 1 (1/7)
+3-year follow-up information available for all patients. For binary outcomes,
+we used a generalized linear model assuming a binomial distribution with a
+log link function to report risk ratios and 95% CI. We conducted subgroup
+analyses accompanied by a P for interaction to assess the consistency of the
+treatment effect on the primary outcome according to the following pre-
+defined variables: age (<65 vs. ≥65), sex, baseline ejection fraction (<60%
+vs. ≥60%), and country of trial site. P-values and 95% CI for secondary out
+comes and secondary analyses of the primary outcome were not adjusted
+for multiple testing and are considered exploratory. For the post hoc ana
+lyses of echocardiography readouts of valve severity and LVEF in patients
+in the conservative group, we calculated the mean chan
+
+Full quote 1 (2/7)
+ge from baseline
+to 12-month follow-up for all patients in the conservative group with avail
+able data and the mean change from baseline to final follow-up for all pa
+tients in the conservative group that underwent surgery and had available
+data. We conducted paired t-tests to derive P-values and 95% CI for the
+mean changes from baseline.11 This analysis was repeated for patients in
+the conservative group that underwent AVR. Analyses were performed
+using Stata, version 18.0.
+Results
+Patients and follow-up
+Main patient characteristics at baseline are summarized in Table 2. The
+average age of enrolled patients was 67 years, 57% were men, the ma
+jority of patients had a degenerative aetiology of AS (84.7%), and the
+median estimated operative mortality according to the Society of
+Thoracic Surg
+
+Full quote 1 (3/7)
+eons predicted risk of mortality score was 1.7%. No sig
+nificant heterogeneity between both groups was noted. All patients
+were included in the analysis. Median follow-up for all patients was
+63 months [interquartile range (IQR) 48-75). Median follow-up in sur
+vivors was 68 months (IQR 58-79). One patient, who was randomized
+to early surgery, has been lost to follow-up, and this patient was cen
+sored when the last follow-up information was available and included
+in the intention-to-treat analysis (Figure 1).
+Aortic valve replacement procedures
+In the early surgery group, AVR was performed in 72 of the 78 patients
+(92.3%). Among the six patients that did not undergo AVR per random
+ization, one patient, as above mentioned, was lost to follow-up, and one
+died prior to valve surgery. Four pati
+
+Full quote 1 (4/7)
+ents were available for the extended
+follow-up. Among them, one patient died unoperated after 2113 days;
+two became symptomatic and underwent intervention after 691 and
+791 days, respectively; and one remained asymptomatic and AVR free
+throughout the entire follow-up (Figure 1). The median time from ran
+domization to AVR in the early surgery group was 55 days (IQR 36-79).
+Thirty-five out of the 79 patients (44.3%) in the conservative treatment
+group had surgery during follow-up. Median time from randomization
+to surgery in the conservative treatment group was 476 days (IQR
+226-1098). At the time of AVR, the mean age of patients in the control
+p = 0.002
+HR = 0.42 (95% CI 0.24 to 0.73)
+0%
+10%
+20%
+30%
+40%
+50%
+
+Full quote 1 (5/7)
+60%
+Primary composite endpoint
+incidence
+79
+61
+52
+29
+11
+Control
+78
+69
+67
+48
+13
+Early surgery
+Participants, n
+0
+20
+
+Full quote 1 (6/7)
+40
+60
+80
+Time (Months)
+Early surgery
+Conservative treatment
+Figure 2 Cumulative incidence of primary composite outcome (intention-to-treat population)
+Table 3 Indications for aortic valve replacement in the
+conservative treatment group
+Symptom onset (including increased fatigue)
+18 (51.4%)
+AS progression
+6 (17.1%)
+Decrease in LVEF
+3 (8.6%)
+Combination of factors
+8 (22.9%)
+AS, aortic stenosis; LVEF, left ventricular ejection fraction.
+
+Full quote 1 (7/7)
+Aortic valve replacement vs. conservative treatment 4531
+Downloaded from academic.oup.com/eurheartj/article/45/42/4526/7742145 by guest on 03 October 2026
+
+[Extracted table 1]
+|Symptom onset (including increased fatigue) 1|8 (51.4%)|
+|---|---|
+|AS progression 6 (17.1%)||
+|Decrease in LVEF|3 (8.6%)|
+|Combination of factors 8 (22.9%)||
+
+Basis 2
+context
+
+Source
+Current registry-linked sap: SAP_000.pdf; page 2; lines 1–12; source hash ba0a93294998; evidence hash 22d01d9384e1
+
+Full quote 2
+Amendmen to statystical analysis
+
+
+1. Patients randomized to AVR surgery who received delayed surgery
+(more than 8 weeks after randomization) due to COVID -19 public
+health emergency will be documented and this delay will be defined
+as an anticipated minor deviation from the clinical protocol
+2. Appropriate statistical procedures will be performed and results
+will be published according to the FDA guidance "Conduct of Clinical
+Trials of Medical Products During the COVID-19 Public Health
+Emergency Guidance for Industry, investigators, and Institutional
+Review Boards"
+
+Basis 3
+context
+
+Source
+CIRCULATIONAHA.121.057639.pdf; page 4; lines 8–15; source hash 592b9a6c531c; evidence hash 4b5761bf573c
+
+Full quote 3
+Patients in the conservative treatment group were referred
+for surgery in case of onset of AS-related symptoms, if the
+LVEF decreased to <50%, or if the peak aortic jet velocity
+increased each year by >0.3 m/s on follow-up echocardiog-
+raphy, according to European Society of Cardiology guide-
+lines on valvular disease at the time the study was designed.11
+Conservative treatment included the treatment of risk factors
+and comorbidities.
+
+Basis 4
+context
+
+Source
+ehae585.pdf; page 9; lines 76–83; source hash a890f771fd05; evidence hash 05e667d2d41d
+
+Full quote 4
+follow-up and lengthening AVR delays. Pre-defined physical visits were
+substituted by phone follow-up. Such surveillance within the watchful
+waiting may hypothetically impact timely detection of symptoms conse
+quently leading to increased clinical risk, including sudden death.
+Nevertheless, in the conservative group, none of the patients experi
+enced MACE or died while awaiting the scheduled surgery. It is of
+note that in the small number of patients undergoing TAVR, delays ap
+peared shorter as compared with the surgical intervention.
+
+Counterevidence
+Basis 3: The authors note pandemic-related follow-up substitution by phone and lengthened AVR delays could have increased clinical risk. These arose from the pandemic, not the trial context, and no deaths occurred while awaiting scheduled surgery in the conservative group.
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+Not applicable; inactive (branching)
+not_applicable
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+Not applicable; inactive (branching)
+not_applicable
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+yes; active
+yes
+Justification
+All analyses were intention-to-treat as randomized, and all 157 patients were included. One early-surgery patient lost to follow-up was censored and still analysed.
+
+Unknowns
+None recorded
+
+Basis 1
+direct support
+
+Source
+ehae585.pdf; page 5; lines 13–24; source hash a890f771fd05; evidence hash 30fa222ec552
+
+Full quote 1
+Statistical analysis
+We conducted all analyses according to the intention-to-treat principle,
+where all patients were included in the analysis as they were randomized.
+For the analysis of the primary outcome, we built a Kaplan-Meier graph
+with a log rank P-value to test for a difference between early surgery and
+control intervention at a two-sided α value of 0.05 and used a Cox propor
+tional hazards model to derive hazard ratios (HRs) with 95% confidence in
+tervals (CIs) for treatment effect estimation.
+Time-to-event secondary outcomes were analysed using the same meth
+ods applied for the analysis of the primary outcome. For MACE, all-cause
+death, HF hospitalization, and cardiovascular death, we repeated the ana
+lysis as described above restricted to a 3-year follow-up, with complete
+
+Basis 2
+direct support
+
+Source
+ehae585.pdf; page 6; lines 1–99; source hash a890f771fd05; evidence hash c8e095884063
+
+Full quote 2 (1/7)
+3-year follow-up information available for all patients. For binary outcomes,
+we used a generalized linear model assuming a binomial distribution with a
+log link function to report risk ratios and 95% CI. We conducted subgroup
+analyses accompanied by a P for interaction to assess the consistency of the
+treatment effect on the primary outcome according to the following pre-
+defined variables: age (<65 vs. ≥65), sex, baseline ejection fraction (<60%
+vs. ≥60%), and country of trial site. P-values and 95% CI for secondary out
+comes and secondary analyses of the primary outcome were not adjusted
+for multiple testing and are considered exploratory. For the post hoc ana
+lyses of echocardiography readouts of valve severity and LVEF in patients
+in the conservative group, we calculated the mean chan
+
+Full quote 2 (2/7)
+ge from baseline
+to 12-month follow-up for all patients in the conservative group with avail
+able data and the mean change from baseline to final follow-up for all pa
+tients in the conservative group that underwent surgery and had available
+data. We conducted paired t-tests to derive P-values and 95% CI for the
+mean changes from baseline.11 This analysis was repeated for patients in
+the conservative group that underwent AVR. Analyses were performed
+using Stata, version 18.0.
+Results
+Patients and follow-up
+Main patient characteristics at baseline are summarized in Table 2. The
+average age of enrolled patients was 67 years, 57% were men, the ma
+jority of patients had a degenerative aetiology of AS (84.7%), and the
+median estimated operative mortality according to the Society of
+Thoracic Surg
+
+Full quote 2 (3/7)
+eons predicted risk of mortality score was 1.7%. No sig
+nificant heterogeneity between both groups was noted. All patients
+were included in the analysis. Median follow-up for all patients was
+63 months [interquartile range (IQR) 48-75). Median follow-up in sur
+vivors was 68 months (IQR 58-79). One patient, who was randomized
+to early surgery, has been lost to follow-up, and this patient was cen
+sored when the last follow-up information was available and included
+in the intention-to-treat analysis (Figure 1).
+Aortic valve replacement procedures
+In the early surgery group, AVR was performed in 72 of the 78 patients
+(92.3%). Among the six patients that did not undergo AVR per random
+ization, one patient, as above mentioned, was lost to follow-up, and one
+died prior to valve surgery. Four pati
+
+Full quote 2 (4/7)
+ents were available for the extended
+follow-up. Among them, one patient died unoperated after 2113 days;
+two became symptomatic and underwent intervention after 691 and
+791 days, respectively; and one remained asymptomatic and AVR free
+throughout the entire follow-up (Figure 1). The median time from ran
+domization to AVR in the early surgery group was 55 days (IQR 36-79).
+Thirty-five out of the 79 patients (44.3%) in the conservative treatment
+group had surgery during follow-up. Median time from randomization
+to surgery in the conservative treatment group was 476 days (IQR
+226-1098). At the time of AVR, the mean age of patients in the control
+p = 0.002
+HR = 0.42 (95% CI 0.24 to 0.73)
+0%
+10%
+20%
+30%
+40%
+50%
+
+Full quote 2 (5/7)
+60%
+Primary composite endpoint
+incidence
+79
+61
+52
+29
+11
+Control
+78
+69
+67
+48
+13
+Early surgery
+Participants, n
+0
+20
+
+Full quote 2 (6/7)
+40
+60
+80
+Time (Months)
+Early surgery
+Conservative treatment
+Figure 2 Cumulative incidence of primary composite outcome (intention-to-treat population)
+Table 3 Indications for aortic valve replacement in the
+conservative treatment group
+Symptom onset (including increased fatigue)
+18 (51.4%)
+AS progression
+6 (17.1%)
+Decrease in LVEF
+3 (8.6%)
+Combination of factors
+8 (22.9%)
+AS, aortic stenosis; LVEF, left ventricular ejection fraction.
+
+Full quote 2 (7/7)
+Aortic valve replacement vs. conservative treatment 4531
+Downloaded from academic.oup.com/eurheartj/article/45/42/4526/7742145 by guest on 03 October 2026
+
+[Extracted table 1]
+|Symptom onset (including increased fatigue) 1|8 (51.4%)|
+|---|---|
+|AS progression 6 (17.1%)||
+|Decrease in LVEF|3 (8.6%)|
+|Combination of factors 8 (22.9%)||
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+Not applicable; inactive (branching)
+not_applicable
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Proposed / adopted
+Low / Low
+Low
+Domain rationale
+Per-question justifications follow.
+All 157 patients were analysed. One patient lost to follow-up was censored.
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+yes; active
+yes
+Justification
+All 157 randomized patients were analysed and median follow-up was 63 months. Only one patient (early-surgery arm) was lost to follow-up and censored at last contact, so 1/157 (0.6%) has incomplete outcome data. This is far fewer than the observed deaths, so any outcome for that patient could not materially change the HR of 0.44.
+
+Unknowns
+None recorded
+
+Basis 1
+direct support
+
+Source
+ehae585.pdf; page 6; lines 26–32; source hash a890f771fd05; evidence hash e66d374e838e
+
+Full quote 1
+nificant heterogeneity between both groups was noted. All patients
+were included in the analysis. Median follow-up for all patients was
+63 months [interquartile range (IQR) 48-75). Median follow-up in sur
+vivors was 68 months (IQR 58-79). One patient, who was randomized
+to early surgery, has been lost to follow-up, and this patient was cen
+sored when the last follow-up information was available and included
+in the intention-to-treat analysis (Figure 1).
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+Not applicable; inactive (branching)
+not_applicable
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+Not applicable; inactive (branching)
+not_applicable
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+Not applicable; inactive (branching)
+not_applicable
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Proposed / adopted
+Low / Low
+Low
+Domain rationale
+Per-question justifications follow.
+Death is an objective outcome. Assessors were not blinded to allocation, but this cannot plausibly bias an all-cause death count.
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+probably no; active
+no
+Justification
+All-cause death is a pre-specified, objective event ascertained through scheduled follow-up (6-monthly in year 1, then yearly), phone contact when in-person visits were not possible, and review of medical records for any registered event. Nothing suggests an insensitive method or an instrument with poor validity.
+
+Unknowns
+None recorded
+
+Basis 1
+direct support
+
+Source
+ehae585.pdf; page 3; lines 1–116; source hash a890f771fd05; evidence hash 3ce4199af9d4
+
+Full quote 1 (1/9)
+Introduction
+Aortic stenosis (AS) is the single most common valvular heart disease re
+quiring intervention in developed countries and is projected to double by
+2050 in both the USA and Europe.1 The approach to symptomatic pa
+tients with severe AS is straightforward. Surgical aortic valve replacement
+(AVR) and, more recently, transcatheter aortic valve implantation (TAVI)
+procedures are Class I recommendation to relieve symptoms and im
+prove survival in symptomatic patients with severe AS.2,3
+Conversely, the question of when and how to treat truly asymptom
+atic patients with severe AS and normal left ventricular (LV) systolic
+function is still subject to debate and ongoing research. To date, two
+randomized trials have demonstrated benefit of early AVR in compari
+son with conservative strate
+
+Full quote 1 (2/9)
+gy in asymptomatic patients with severe
+and very severe AS patients.4,5 In addition, there are several ongoing
+randomized trials investigating the role of early TAVI and/or early sur
+gical AVR in asymptomatic AS.
+The Aortic Valve Replacement Versus Conservative Treatment in
+Asymptomatic Severe Aortic Stenosis (AVATAR) trial is an investigator-
+initiated, prospective, multinational, randomized, controlled, parallel-group,
+event-driven trial that compared the safety and efficacy of early surgery in
+the treatment of truly asymptomatic patients with severe AS and LV ejec
+tion fraction (LVEF) ≥ 50% vs. conservative treatment with watchful wait
+ing strategy and AVR only after symptom onset, or other guidelines
+directed Class I or II indications for AVR.3,6 In the primary analysis of the
+AVATAR t
+
+Full quote 1 (3/9)
+rial, asymptomatic AS patients randomized to early surgery
+had a lower incidence of the composite primary outcome comprising all-
+cause death, acute myocardial infarction, stroke, or unplanned hospitaliza
+tion for heart failure (HF), compared with patients who were randomized
+to conservative treatment.5 We now report the results of the AVATAR
+trial after extended follow-up at 5 years.
+Methods
+Study design and oversight
+The AVATAR trial (ClinicalTrials.gov identifier NCT02436655) protocol
+and protocol update were designed by the first co-authors and steering
+committee co-chairmen and was approved by the steering committee of
+the AVATAR trial.7,8 The clinical and outcomes data were collected by per
+sonnel at the participating sites and were sent directly to the data coordinat
+ing centre at t
+
+Full quote 1 (4/9)
+he University Clinical Center of Serbia. No extramural funding
+was used to support this work. The authors, members of the steering com
+mittee, and investigators are solely responsible for the design and conduct of
+this trial, all analyses, drafting and editing of the article, and its final contents.
+Independent statistician conducted the long-term data analyses.
+The trial was conducted in accordance with the Declaration of Helsinki. All
+participants provided written informed consent. An independent data and
+safety monitoring board (DSMB) adjudicated all serious adverse events and
+oversaw the safety of the trial. The article was prepared by the first author
+and steering committee co-chairmen and was reviewed and edited by mem
+bers of the steering committee and authors. All authors reviewed
+
+Full quote 1 (5/9)
+the article,
+approved its submission for publication, and vouched for the accuracy and
+completeness of the data and for the fidelity of the trial to the protocol.
+Study population
+The study inclusion and exclusion criteria are shown in Table 1; trial flowchart
+is shown in Figure 1. Briefly, a total of 157 patients with severe AS according to
+the guidelines were enrolled in the trial: 79 were randomized to conservative
+treatment and 78 were randomized to early surgery. To prove truly asymp
+tomatic status, exercise testing was performed in all candidates to evaluate
+symptom status according to a standardized protocol using treadmill or semi-
+supine ergo-bicycle. To consider exercise testing negative, which was manda
+tory for inclusion, all candidates needed to reach a projected submaximal
+he
+
+Full quote 1 (6/9)
+art rate. Positive exercise test included onset of AS-related symptoms,
+fall in systolic blood pressure (≥20 mmHg from the baseline values), or
+Electrocardiography (ECG) or stress echocardiography signs of myocardial
+ischaemia.9
+Follow-up and trial endpoints
+Patients were followed according to the protocol every 6 months for the
+first year and then yearly with the in-person visits at the participating study
+centre. As the trial was affected by the Covid-19 pandemic, contact with
+patients who could not come in person was made by phone. For any event
+that was registered, the medical records were asked for and reviewed.
+Adverse clinical events were adjudicated by the DSMB per protocol defini
+tions.7,8 Data and safety monitoring board members were not blinded to
+the treatment allocation during
+
+Full quote 1 (7/9)
+ events review. They adjudicated the events
+by consensus.
+Table 1 Eligibility inclusion/exclusion criteria
+Inclusion criteria
+• Men and women of any ethnic origin aged ≥18 years
+• Written informed consent
+• Vmax across the aortic valve > 4 m/s or P mean ≥ 40 mmHg and AVA ≤
+1 cm2 or AVAi ≤ 0.6 cm2/m2 at rest
+• Without reported symptoms
+• Society of Thoracic Surgeons score < 8%
+Exclusion criteria
+Participation in another clinical trial within 30 days prior to
+randomization
+• Pregnant or nursing women
+• Mental condition rendering the patient unable to understand the
+nature, scope, and possible consequences of the study or to follow the
+protocol
+• Positive stress-test defined as follows:
+
+Full quote 1 (8/9)
+(a)
+Anginal chest pain during testing
+(b)
+Syncope or dizziness during testing
+(c)
+Decrease in systolic blood pressure during exercise ≥ 20 mmHg
+(d)
+Malignant arrhythmia during exercise testing (VT or VF)
+• Left ventricular ejection fraction < 50% at rest
+• Very severe AS defined as Vmax > 5.5 m/s at rest
+• Significant disease of other valves: mitral stenosis with Pmean > 5 mg, or
+any significant regurgitation ≥ 3+
+• Recent previous myocardial infarction (<1 year)
+• Need for additional aortic root replacement (i.e. Bentall) or ascending
+aorta surgery in asymptomatic patients undergoing AVR
+• Previous coronary bypass surgery
+• Previous any heart valve surgery
+• Impaired renal function, i.e. creatinine > 200 μmol/L or glomerular
+
+Full quote 1 (9/9)
+filtration rate < 30 mL/min/1.73 m2
+• Significant pulmonary hypertension at rest (systolic pulmonary artery
+pressure > 50 mmHg)
+• Uncontrolled hypertension at rest (systolic blood pressure >
+180 mmHg and diastolic blood pressure > 100 mmHg)
+• Significant comorbidity with reduced life expectancy (<3 years)
+• Uncontrolled diabetes mellitus (HbA1c > 9%)
+• Significant chronic obstructive pulmonary disease (FEV1 < 70% of
+predicted value)
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+probably no; active
+no
+Justification
+Both arms followed the same protocol schedule, and COVID-related phone follow-up applied to patients regardless of arm. Death is hard to miss, so any difference in contact opportunities (e.g. surgery visits) is unlikely to change ascertainment of death.
+
+Unknowns
+Whether vital status was verified from registries in both arms is not stated.
+
+Basis 1
+direct support
+
+Source
+ehae585.pdf; page 3; lines 1–116; source hash a890f771fd05; evidence hash 3ce4199af9d4
+
+Full quote 1 (1/9)
+Introduction
+Aortic stenosis (AS) is the single most common valvular heart disease re
+quiring intervention in developed countries and is projected to double by
+2050 in both the USA and Europe.1 The approach to symptomatic pa
+tients with severe AS is straightforward. Surgical aortic valve replacement
+(AVR) and, more recently, transcatheter aortic valve implantation (TAVI)
+procedures are Class I recommendation to relieve symptoms and im
+prove survival in symptomatic patients with severe AS.2,3
+Conversely, the question of when and how to treat truly asymptom
+atic patients with severe AS and normal left ventricular (LV) systolic
+function is still subject to debate and ongoing research. To date, two
+randomized trials have demonstrated benefit of early AVR in compari
+son with conservative strate
+
+Full quote 1 (2/9)
+gy in asymptomatic patients with severe
+and very severe AS patients.4,5 In addition, there are several ongoing
+randomized trials investigating the role of early TAVI and/or early sur
+gical AVR in asymptomatic AS.
+The Aortic Valve Replacement Versus Conservative Treatment in
+Asymptomatic Severe Aortic Stenosis (AVATAR) trial is an investigator-
+initiated, prospective, multinational, randomized, controlled, parallel-group,
+event-driven trial that compared the safety and efficacy of early surgery in
+the treatment of truly asymptomatic patients with severe AS and LV ejec
+tion fraction (LVEF) ≥ 50% vs. conservative treatment with watchful wait
+ing strategy and AVR only after symptom onset, or other guidelines
+directed Class I or II indications for AVR.3,6 In the primary analysis of the
+AVATAR t
+
+Full quote 1 (3/9)
+rial, asymptomatic AS patients randomized to early surgery
+had a lower incidence of the composite primary outcome comprising all-
+cause death, acute myocardial infarction, stroke, or unplanned hospitaliza
+tion for heart failure (HF), compared with patients who were randomized
+to conservative treatment.5 We now report the results of the AVATAR
+trial after extended follow-up at 5 years.
+Methods
+Study design and oversight
+The AVATAR trial (ClinicalTrials.gov identifier NCT02436655) protocol
+and protocol update were designed by the first co-authors and steering
+committee co-chairmen and was approved by the steering committee of
+the AVATAR trial.7,8 The clinical and outcomes data were collected by per
+sonnel at the participating sites and were sent directly to the data coordinat
+ing centre at t
+
+Full quote 1 (4/9)
+he University Clinical Center of Serbia. No extramural funding
+was used to support this work. The authors, members of the steering com
+mittee, and investigators are solely responsible for the design and conduct of
+this trial, all analyses, drafting and editing of the article, and its final contents.
+Independent statistician conducted the long-term data analyses.
+The trial was conducted in accordance with the Declaration of Helsinki. All
+participants provided written informed consent. An independent data and
+safety monitoring board (DSMB) adjudicated all serious adverse events and
+oversaw the safety of the trial. The article was prepared by the first author
+and steering committee co-chairmen and was reviewed and edited by mem
+bers of the steering committee and authors. All authors reviewed
+
+Full quote 1 (5/9)
+the article,
+approved its submission for publication, and vouched for the accuracy and
+completeness of the data and for the fidelity of the trial to the protocol.
+Study population
+The study inclusion and exclusion criteria are shown in Table 1; trial flowchart
+is shown in Figure 1. Briefly, a total of 157 patients with severe AS according to
+the guidelines were enrolled in the trial: 79 were randomized to conservative
+treatment and 78 were randomized to early surgery. To prove truly asymp
+tomatic status, exercise testing was performed in all candidates to evaluate
+symptom status according to a standardized protocol using treadmill or semi-
+supine ergo-bicycle. To consider exercise testing negative, which was manda
+tory for inclusion, all candidates needed to reach a projected submaximal
+he
+
+Full quote 1 (6/9)
+art rate. Positive exercise test included onset of AS-related symptoms,
+fall in systolic blood pressure (≥20 mmHg from the baseline values), or
+Electrocardiography (ECG) or stress echocardiography signs of myocardial
+ischaemia.9
+Follow-up and trial endpoints
+Patients were followed according to the protocol every 6 months for the
+first year and then yearly with the in-person visits at the participating study
+centre. As the trial was affected by the Covid-19 pandemic, contact with
+patients who could not come in person was made by phone. For any event
+that was registered, the medical records were asked for and reviewed.
+Adverse clinical events were adjudicated by the DSMB per protocol defini
+tions.7,8 Data and safety monitoring board members were not blinded to
+the treatment allocation during
+
+Full quote 1 (7/9)
+ events review. They adjudicated the events
+by consensus.
+Table 1 Eligibility inclusion/exclusion criteria
+Inclusion criteria
+• Men and women of any ethnic origin aged ≥18 years
+• Written informed consent
+• Vmax across the aortic valve > 4 m/s or P mean ≥ 40 mmHg and AVA ≤
+1 cm2 or AVAi ≤ 0.6 cm2/m2 at rest
+• Without reported symptoms
+• Society of Thoracic Surgeons score < 8%
+Exclusion criteria
+Participation in another clinical trial within 30 days prior to
+randomization
+• Pregnant or nursing women
+• Mental condition rendering the patient unable to understand the
+nature, scope, and possible consequences of the study or to follow the
+protocol
+• Positive stress-test defined as follows:
+
+Full quote 1 (8/9)
+(a)
+Anginal chest pain during testing
+(b)
+Syncope or dizziness during testing
+(c)
+Decrease in systolic blood pressure during exercise ≥ 20 mmHg
+(d)
+Malignant arrhythmia during exercise testing (VT or VF)
+• Left ventricular ejection fraction < 50% at rest
+• Very severe AS defined as Vmax > 5.5 m/s at rest
+• Significant disease of other valves: mitral stenosis with Pmean > 5 mg, or
+any significant regurgitation ≥ 3+
+• Recent previous myocardial infarction (<1 year)
+• Need for additional aortic root replacement (i.e. Bentall) or ascending
+aorta surgery in asymptomatic patients undergoing AVR
+• Previous coronary bypass surgery
+• Previous any heart valve surgery
+• Impaired renal function, i.e. creatinine > 200 μmol/L or glomerular
+
+Full quote 1 (9/9)
+filtration rate < 30 mL/min/1.73 m2
+• Significant pulmonary hypertension at rest (systolic pulmonary artery
+pressure > 50 mmHg)
+• Uncontrolled hypertension at rest (systolic blood pressure >
+180 mmHg and diastolic blood pressure > 100 mmHg)
+• Significant comorbidity with reduced life expectancy (<3 years)
+• Uncontrolled diabetes mellitus (HbA1c > 9%)
+• Significant chronic obstructive pulmonary disease (FEV1 < 70% of
+predicted value)
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+yes; active
+not applicable
+Justification
+The trial was open-label (registry masking: none), and the report states that DSMB members were not blinded to allocation when reviewing events. Site investigators recording deaths were also aware of the allocation.
+
+Unknowns
+None recorded
+
+Basis 1
+direct support
+
+Source
+ehae585.pdf; page 3; lines 1–116; source hash a890f771fd05; evidence hash 3ce4199af9d4
+
+Full quote 1 (1/9)
+Introduction
+Aortic stenosis (AS) is the single most common valvular heart disease re
+quiring intervention in developed countries and is projected to double by
+2050 in both the USA and Europe.1 The approach to symptomatic pa
+tients with severe AS is straightforward. Surgical aortic valve replacement
+(AVR) and, more recently, transcatheter aortic valve implantation (TAVI)
+procedures are Class I recommendation to relieve symptoms and im
+prove survival in symptomatic patients with severe AS.2,3
+Conversely, the question of when and how to treat truly asymptom
+atic patients with severe AS and normal left ventricular (LV) systolic
+function is still subject to debate and ongoing research. To date, two
+randomized trials have demonstrated benefit of early AVR in compari
+son with conservative strate
+
+Full quote 1 (2/9)
+gy in asymptomatic patients with severe
+and very severe AS patients.4,5 In addition, there are several ongoing
+randomized trials investigating the role of early TAVI and/or early sur
+gical AVR in asymptomatic AS.
+The Aortic Valve Replacement Versus Conservative Treatment in
+Asymptomatic Severe Aortic Stenosis (AVATAR) trial is an investigator-
+initiated, prospective, multinational, randomized, controlled, parallel-group,
+event-driven trial that compared the safety and efficacy of early surgery in
+the treatment of truly asymptomatic patients with severe AS and LV ejec
+tion fraction (LVEF) ≥ 50% vs. conservative treatment with watchful wait
+ing strategy and AVR only after symptom onset, or other guidelines
+directed Class I or II indications for AVR.3,6 In the primary analysis of the
+AVATAR t
+
+Full quote 1 (3/9)
+rial, asymptomatic AS patients randomized to early surgery
+had a lower incidence of the composite primary outcome comprising all-
+cause death, acute myocardial infarction, stroke, or unplanned hospitaliza
+tion for heart failure (HF), compared with patients who were randomized
+to conservative treatment.5 We now report the results of the AVATAR
+trial after extended follow-up at 5 years.
+Methods
+Study design and oversight
+The AVATAR trial (ClinicalTrials.gov identifier NCT02436655) protocol
+and protocol update were designed by the first co-authors and steering
+committee co-chairmen and was approved by the steering committee of
+the AVATAR trial.7,8 The clinical and outcomes data were collected by per
+sonnel at the participating sites and were sent directly to the data coordinat
+ing centre at t
+
+Full quote 1 (4/9)
+he University Clinical Center of Serbia. No extramural funding
+was used to support this work. The authors, members of the steering com
+mittee, and investigators are solely responsible for the design and conduct of
+this trial, all analyses, drafting and editing of the article, and its final contents.
+Independent statistician conducted the long-term data analyses.
+The trial was conducted in accordance with the Declaration of Helsinki. All
+participants provided written informed consent. An independent data and
+safety monitoring board (DSMB) adjudicated all serious adverse events and
+oversaw the safety of the trial. The article was prepared by the first author
+and steering committee co-chairmen and was reviewed and edited by mem
+bers of the steering committee and authors. All authors reviewed
+
+Full quote 1 (5/9)
+the article,
+approved its submission for publication, and vouched for the accuracy and
+completeness of the data and for the fidelity of the trial to the protocol.
+Study population
+The study inclusion and exclusion criteria are shown in Table 1; trial flowchart
+is shown in Figure 1. Briefly, a total of 157 patients with severe AS according to
+the guidelines were enrolled in the trial: 79 were randomized to conservative
+treatment and 78 were randomized to early surgery. To prove truly asymp
+tomatic status, exercise testing was performed in all candidates to evaluate
+symptom status according to a standardized protocol using treadmill or semi-
+supine ergo-bicycle. To consider exercise testing negative, which was manda
+tory for inclusion, all candidates needed to reach a projected submaximal
+he
+
+Full quote 1 (6/9)
+art rate. Positive exercise test included onset of AS-related symptoms,
+fall in systolic blood pressure (≥20 mmHg from the baseline values), or
+Electrocardiography (ECG) or stress echocardiography signs of myocardial
+ischaemia.9
+Follow-up and trial endpoints
+Patients were followed according to the protocol every 6 months for the
+first year and then yearly with the in-person visits at the participating study
+centre. As the trial was affected by the Covid-19 pandemic, contact with
+patients who could not come in person was made by phone. For any event
+that was registered, the medical records were asked for and reviewed.
+Adverse clinical events were adjudicated by the DSMB per protocol defini
+tions.7,8 Data and safety monitoring board members were not blinded to
+the treatment allocation during
+
+Full quote 1 (7/9)
+ events review. They adjudicated the events
+by consensus.
+Table 1 Eligibility inclusion/exclusion criteria
+Inclusion criteria
+• Men and women of any ethnic origin aged ≥18 years
+• Written informed consent
+• Vmax across the aortic valve > 4 m/s or P mean ≥ 40 mmHg and AVA ≤
+1 cm2 or AVAi ≤ 0.6 cm2/m2 at rest
+• Without reported symptoms
+• Society of Thoracic Surgeons score < 8%
+Exclusion criteria
+Participation in another clinical trial within 30 days prior to
+randomization
+• Pregnant or nursing women
+• Mental condition rendering the patient unable to understand the
+nature, scope, and possible consequences of the study or to follow the
+protocol
+• Positive stress-test defined as follows:
+
+Full quote 1 (8/9)
+(a)
+Anginal chest pain during testing
+(b)
+Syncope or dizziness during testing
+(c)
+Decrease in systolic blood pressure during exercise ≥ 20 mmHg
+(d)
+Malignant arrhythmia during exercise testing (VT or VF)
+• Left ventricular ejection fraction < 50% at rest
+• Very severe AS defined as Vmax > 5.5 m/s at rest
+• Significant disease of other valves: mitral stenosis with Pmean > 5 mg, or
+any significant regurgitation ≥ 3+
+• Recent previous myocardial infarction (<1 year)
+• Need for additional aortic root replacement (i.e. Bentall) or ascending
+aorta surgery in asymptomatic patients undergoing AVR
+• Previous coronary bypass surgery
+• Previous any heart valve surgery
+• Impaired renal function, i.e. creatinine > 200 μmol/L or glomerular
+
+Full quote 1 (9/9)
+filtration rate < 30 mL/min/1.73 m2
+• Significant pulmonary hypertension at rest (systolic pulmonary artery
+pressure > 50 mmHg)
+• Uncontrolled hypertension at rest (systolic blood pressure >
+180 mmHg and diastolic blood pressure > 100 mmHg)
+• Significant comorbidity with reduced life expectancy (<3 years)
+• Uncontrolled diabetes mellitus (HbA1c > 9%)
+• Significant chronic obstructive pulmonary disease (FEV1 < 70% of
+predicted value)
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+probably no; active
+not applicable
+Justification
+All-cause death is an observer-reported outcome that involves no judgement, so knowledge of the intervention is unlikely to influence its assessment, even though the assessors were aware of the allocation.
+
+Unknowns
+None recorded
+
+Basis 1
+inference
+
+Source
+ehae585.pdf; page 3; lines 1–116; source hash a890f771fd05; evidence hash 3ce4199af9d4
+
+Full quote 1 (1/9)
+Introduction
+Aortic stenosis (AS) is the single most common valvular heart disease re
+quiring intervention in developed countries and is projected to double by
+2050 in both the USA and Europe.1 The approach to symptomatic pa
+tients with severe AS is straightforward. Surgical aortic valve replacement
+(AVR) and, more recently, transcatheter aortic valve implantation (TAVI)
+procedures are Class I recommendation to relieve symptoms and im
+prove survival in symptomatic patients with severe AS.2,3
+Conversely, the question of when and how to treat truly asymptom
+atic patients with severe AS and normal left ventricular (LV) systolic
+function is still subject to debate and ongoing research. To date, two
+randomized trials have demonstrated benefit of early AVR in compari
+son with conservative strate
+
+Full quote 1 (2/9)
+gy in asymptomatic patients with severe
+and very severe AS patients.4,5 In addition, there are several ongoing
+randomized trials investigating the role of early TAVI and/or early sur
+gical AVR in asymptomatic AS.
+The Aortic Valve Replacement Versus Conservative Treatment in
+Asymptomatic Severe Aortic Stenosis (AVATAR) trial is an investigator-
+initiated, prospective, multinational, randomized, controlled, parallel-group,
+event-driven trial that compared the safety and efficacy of early surgery in
+the treatment of truly asymptomatic patients with severe AS and LV ejec
+tion fraction (LVEF) ≥ 50% vs. conservative treatment with watchful wait
+ing strategy and AVR only after symptom onset, or other guidelines
+directed Class I or II indications for AVR.3,6 In the primary analysis of the
+AVATAR t
+
+Full quote 1 (3/9)
+rial, asymptomatic AS patients randomized to early surgery
+had a lower incidence of the composite primary outcome comprising all-
+cause death, acute myocardial infarction, stroke, or unplanned hospitaliza
+tion for heart failure (HF), compared with patients who were randomized
+to conservative treatment.5 We now report the results of the AVATAR
+trial after extended follow-up at 5 years.
+Methods
+Study design and oversight
+The AVATAR trial (ClinicalTrials.gov identifier NCT02436655) protocol
+and protocol update were designed by the first co-authors and steering
+committee co-chairmen and was approved by the steering committee of
+the AVATAR trial.7,8 The clinical and outcomes data were collected by per
+sonnel at the participating sites and were sent directly to the data coordinat
+ing centre at t
+
+Full quote 1 (4/9)
+he University Clinical Center of Serbia. No extramural funding
+was used to support this work. The authors, members of the steering com
+mittee, and investigators are solely responsible for the design and conduct of
+this trial, all analyses, drafting and editing of the article, and its final contents.
+Independent statistician conducted the long-term data analyses.
+The trial was conducted in accordance with the Declaration of Helsinki. All
+participants provided written informed consent. An independent data and
+safety monitoring board (DSMB) adjudicated all serious adverse events and
+oversaw the safety of the trial. The article was prepared by the first author
+and steering committee co-chairmen and was reviewed and edited by mem
+bers of the steering committee and authors. All authors reviewed
+
+Full quote 1 (5/9)
+the article,
+approved its submission for publication, and vouched for the accuracy and
+completeness of the data and for the fidelity of the trial to the protocol.
+Study population
+The study inclusion and exclusion criteria are shown in Table 1; trial flowchart
+is shown in Figure 1. Briefly, a total of 157 patients with severe AS according to
+the guidelines were enrolled in the trial: 79 were randomized to conservative
+treatment and 78 were randomized to early surgery. To prove truly asymp
+tomatic status, exercise testing was performed in all candidates to evaluate
+symptom status according to a standardized protocol using treadmill or semi-
+supine ergo-bicycle. To consider exercise testing negative, which was manda
+tory for inclusion, all candidates needed to reach a projected submaximal
+he
+
+Full quote 1 (6/9)
+art rate. Positive exercise test included onset of AS-related symptoms,
+fall in systolic blood pressure (≥20 mmHg from the baseline values), or
+Electrocardiography (ECG) or stress echocardiography signs of myocardial
+ischaemia.9
+Follow-up and trial endpoints
+Patients were followed according to the protocol every 6 months for the
+first year and then yearly with the in-person visits at the participating study
+centre. As the trial was affected by the Covid-19 pandemic, contact with
+patients who could not come in person was made by phone. For any event
+that was registered, the medical records were asked for and reviewed.
+Adverse clinical events were adjudicated by the DSMB per protocol defini
+tions.7,8 Data and safety monitoring board members were not blinded to
+the treatment allocation during
+
+Full quote 1 (7/9)
+ events review. They adjudicated the events
+by consensus.
+Table 1 Eligibility inclusion/exclusion criteria
+Inclusion criteria
+• Men and women of any ethnic origin aged ≥18 years
+• Written informed consent
+• Vmax across the aortic valve > 4 m/s or P mean ≥ 40 mmHg and AVA ≤
+1 cm2 or AVAi ≤ 0.6 cm2/m2 at rest
+• Without reported symptoms
+• Society of Thoracic Surgeons score < 8%
+Exclusion criteria
+Participation in another clinical trial within 30 days prior to
+randomization
+• Pregnant or nursing women
+• Mental condition rendering the patient unable to understand the
+nature, scope, and possible consequences of the study or to follow the
+protocol
+• Positive stress-test defined as follows:
+
+Full quote 1 (8/9)
+(a)
+Anginal chest pain during testing
+(b)
+Syncope or dizziness during testing
+(c)
+Decrease in systolic blood pressure during exercise ≥ 20 mmHg
+(d)
+Malignant arrhythmia during exercise testing (VT or VF)
+• Left ventricular ejection fraction < 50% at rest
+• Very severe AS defined as Vmax > 5.5 m/s at rest
+• Significant disease of other valves: mitral stenosis with Pmean > 5 mg, or
+any significant regurgitation ≥ 3+
+• Recent previous myocardial infarction (<1 year)
+• Need for additional aortic root replacement (i.e. Bentall) or ascending
+aorta surgery in asymptomatic patients undergoing AVR
+• Previous coronary bypass surgery
+• Previous any heart valve surgery
+• Impaired renal function, i.e. creatinine > 200 μmol/L or glomerular
+
+Full quote 1 (9/9)
+filtration rate < 30 mL/min/1.73 m2
+• Significant pulmonary hypertension at rest (systolic pulmonary artery
+pressure > 50 mmHg)
+• Uncontrolled hypertension at rest (systolic blood pressure >
+180 mmHg and diastolic blood pressure > 100 mmHg)
+• Significant comorbidity with reduced life expectancy (<3 years)
+• Uncontrolled diabetes mellitus (HbA1c > 9%)
+• Significant chronic obstructive pulmonary disease (FEV1 < 70% of
+predicted value)
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+Not applicable; inactive (branching)
+not_applicable
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Proposed / adopted
+Some concerns / Some concerns
+Low
+Domain rationale
+Per-question justifications follow.
+Time to death was a prespecified secondary endpoint with a registered 5-year time frame. It was analysed with a single Cox model, and the SAP amendment only addresses COVID-19 delays. I found no sign of selective reporting. A small concern is that the extended follow-up was a later analysis, but it matches the registered time frame.
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+no information; active
+probably yes
+Justification
+The registry entry (first submitted 30 Apr 2015, before enrolment began in June 2015) names all-cause death only as a component of composite outcomes. It does not list time to all-cause death as a separate outcome. The Circulation 2022 and EHJ 2024 reports describe 'time to death' as a prespecified secondary end point analysed with Kaplan-Meier and Cox models, citing a published protocol. That protocol is not among the captured Sources, and the report statements are not date-stamped before unblinded data. The only SAP-type document is an amendment dated 4 Jan 2021 about COVID surgical delays. No dated source therefore specifies this measurement and analysis.
+
+Unknowns
+Whether the published protocol listed time to all-cause death and its Cox analysis, and its date relative to unblinded data.
+
+Basis 1
+context
+
+Source
+ClinicalTrials.gov NCT02436655; page 1; lines 95–101; source hash d32e23eb2a1e; evidence hash d54a2600ddc7
+
+Full quote 1 (1/2)
+### Primary outcome 1: all cause death, Major Adverse Cardiac Event (MACE) including: ( Acute Myocardial Infarction - AMI, Stroke - CVI, unplanned hospitalization for Heart failure (HF) needing intravenous treatment
+- Measure: all cause death, Major Adverse Cardiac Event (MACE) including: ( Acute Myocardial Infarction - AMI, Stroke - CVI, unplanned hospitalization for Heart failure (HF) needing intravenous treatment
+- Time frame: 36 months
+
+### Primary outcome 2: all cause death, Major Adverse Cardiac Event (MACE) including: ( Acute Myocardial Infarction - AMI, Stroke - CVI, unplanned hospitalization for Heart failure (HF) needing intravenous treatment
+- Measure: all cause death, Major Adverse Cardiac Event (MACE) including: ( Acute Myocardial Infarction - AMI, Stroke - CVI, unplanned hosp
+
+Full quote 1 (2/2)
+italization for Heart failure (HF) needing intravenous treatment
+- Time frame: 5 years
+
+Basis 2
+context
+
+Source
+CIRCULATIONAHA.121.057639.pdf; page 4; lines 16–35; source hash 592b9a6c531c; evidence hash 7ad155913c1c
+
+Full quote 2 (1/2)
+Trial End Points
+The primary end point was a composite of all-cause mortality
+or major adverse cardiovascular events (MACEs) composed of
+acute myocardial infarction, stroke, and unplanned HF hospital-
+ization needing intravenous treatment with diuretics or inotro-
+pes. Prespecified secondary end points included the following:
+• In-hospital and 30-day postoperative mortality in oper-
+ated patients in both groups
+• Repeat aortic valve surgery in operated patients in both
+groups
+• Repeated MACEs, including stroke, acute myocardial
+infarction, or unplanned HF hospitalization needing IV
+diuretic treatment
+• Major bleeding defined as types 3, 4, and 5 according
+to the consensus report from the Bleeding Academic
+Research Consortium13
+• Thromboembolic complications on the basis of clinical
+symptom
+
+Full quote 2 (2/2)
+s, signs, and imaging studies
+• Time to death
+• Time to first HF hospitalization
+
+Basis 3
+context
+
+Source
+ehae585.pdf; page 5; lines 13–24; source hash a890f771fd05; evidence hash 30fa222ec552
+
+Full quote 3
+Statistical analysis
+We conducted all analyses according to the intention-to-treat principle,
+where all patients were included in the analysis as they were randomized.
+For the analysis of the primary outcome, we built a Kaplan-Meier graph
+with a log rank P-value to test for a difference between early surgery and
+control intervention at a two-sided α value of 0.05 and used a Cox propor
+tional hazards model to derive hazard ratios (HRs) with 95% confidence in
+tervals (CIs) for treatment effect estimation.
+Time-to-event secondary outcomes were analysed using the same meth
+ods applied for the analysis of the primary outcome. For MACE, all-cause
+death, HF hospitalization, and cardiovascular death, we repeated the ana
+lysis as described above restricted to a 3-year follow-up, with complete
+
+Basis 4
+context
+
+Source
+Current registry-linked sap: SAP_000.pdf; page 1; lines 1–8; source hash ba0a93294998; evidence hash 7961ea668016
+
+Full quote 4
+Avatar trial protocol
+-Amendment to surgical delays-
+
+
+Aortic Valve Replacement Versus Conservative Treatment in
+Asymptomatic Severe Aortic Stenosis (AVATAR trial)
+NCT number : NCT02436655.
+Date of amendment: 04.01.2021
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+probably no; active
+probably no
+Justification
+All-cause death is a single, unambiguous event, so there is essentially one way to measure the outcome domain. The registered time frames were 36 months and 5 years. The 2024 report states that all-cause death was analysed over the full follow-up and also restricted to 3 years, so no eligible time point appears to have been omitted in favour of a more favourable one.
+
+Unknowns
+None recorded
+
+Basis 1
+direct support
+
+Source
+ehae585.pdf; page 5; lines 13–24; source hash a890f771fd05; evidence hash 30fa222ec552
+
+Full quote 1
+Statistical analysis
+We conducted all analyses according to the intention-to-treat principle,
+where all patients were included in the analysis as they were randomized.
+For the analysis of the primary outcome, we built a Kaplan-Meier graph
+with a log rank P-value to test for a difference between early surgery and
+control intervention at a two-sided α value of 0.05 and used a Cox propor
+tional hazards model to derive hazard ratios (HRs) with 95% confidence in
+tervals (CIs) for treatment effect estimation.
+Time-to-event secondary outcomes were analysed using the same meth
+ods applied for the analysis of the primary outcome. For MACE, all-cause
+death, HF hospitalization, and cardiovascular death, we repeated the ana
+lysis as described above restricted to a 3-year follow-up, with complete
+
+Basis 2
+context
+
+Source
+ClinicalTrials.gov NCT02436655; page 1; lines 95–101; source hash d32e23eb2a1e; evidence hash d54a2600ddc7
+
+Full quote 2 (1/2)
+### Primary outcome 1: all cause death, Major Adverse Cardiac Event (MACE) including: ( Acute Myocardial Infarction - AMI, Stroke - CVI, unplanned hospitalization for Heart failure (HF) needing intravenous treatment
+- Measure: all cause death, Major Adverse Cardiac Event (MACE) including: ( Acute Myocardial Infarction - AMI, Stroke - CVI, unplanned hospitalization for Heart failure (HF) needing intravenous treatment
+- Time frame: 36 months
+
+### Primary outcome 2: all cause death, Major Adverse Cardiac Event (MACE) including: ( Acute Myocardial Infarction - AMI, Stroke - CVI, unplanned hospitalization for Heart failure (HF) needing intravenous treatment
+- Measure: all cause death, Major Adverse Cardiac Event (MACE) including: ( Acute Myocardial Infarction - AMI, Stroke - CVI, unplanned hosp
+
+Full quote 2 (2/2)
+italization for Heart failure (HF) needing intravenous treatment
+- Time frame: 5 years
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Answer / activity
+probably no; active
+probably no
+Justification
+Time-to-event secondary outcomes were analysed with the same Kaplan-Meier, log-rank and Cox model (treatment only) used for the primary outcome, and the same method was used in the 2022 paper. No covariate-adjusted or alternative models are described, and the long-term and 3-year analyses are both reported.
+
+Unknowns
+None recorded
+
+Basis 1
+direct support
+
+Source
+ehae585.pdf; page 5; lines 13–24; source hash a890f771fd05; evidence hash 30fa222ec552
+
+Full quote 1
+Statistical analysis
+We conducted all analyses according to the intention-to-treat principle,
+where all patients were included in the analysis as they were randomized.
+For the analysis of the primary outcome, we built a Kaplan-Meier graph
+with a log rank P-value to test for a difference between early surgery and
+control intervention at a two-sided α value of 0.05 and used a Cox propor
+tional hazards model to derive hazard ratios (HRs) with 95% confidence in
+tervals (CIs) for treatment effect estimation.
+Time-to-event secondary outcomes were analysed using the same meth
+ods applied for the analysis of the primary outcome. For MACE, all-cause
+death, HF hospitalization, and cardiovascular death, we repeated the ana
+lysis as described above restricted to a 3-year follow-up, with complete
+
+Basis 2
+context
+
+Source
+CIRCULATIONAHA.121.057639.pdf; page 4; lines 62–69; source hash 592b9a6c531c; evidence hash f625637d366d
+
+Full quote 2
+were compared by using 2-sample t tests. A Kaplan-Meier
+estimator was used to estimate the distribution of time to pri-
+mary and time-to-event secondary end points (eg, survival and
+time to first HF hospitalization) and a log-rank test to compare
+them between the 2 treatment groups. A Cox proportional-
+hazards regression model that included treatment was used
+to estimate the hazard ratio comparing the early surgery and
+the conservative treatment groups. For dichotomous second-
+
+Field
+ARBITER (Sonnet 5.5)
+Unassisted (Sonnet 5.5)
+Proposed / adopted
+Some concerns / Some concerns / overall.any_concerns
+Low

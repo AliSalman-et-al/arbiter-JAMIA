@@ -5,55 +5,55 @@ AC2
 Exact agreement
 Sensitivity for Not Low
 Specificity for Not Low
-Against Published labels — D1–D5 (510 cells)
+Against Published labels — D1–D5 (510 cells); Not Low N = 83; Low N = 427
 ARBITER
 0.34 (0.26–0.42)
 0.81 (0.78–0.84)
-386/510 (75.7%) (72.4–79.0)
-55/83 (66.3%) (57.3–74.7)
-347/427 (81.3%) (77.7–84.7)
+75.7 (72.4–79.0)
+66.3 (57.3–74.7)
+81.3 (77.7–84.7)
 Unassisted
 0.28 (0.21–0.35)
 0.82 (0.79–0.85)
-395/510 (77.5%) (74.1–80.8)
-42/83 (50.6%) (40.3–60.2)
-366/427 (85.7%) (82.1–89.3)
+77.5 (74.1–80.8)
+50.6 (40.3–60.2)
+85.7 (82.1–89.3)
 All-Low rule
 —
 —
-427/510 (83.7%) (81.0–86.5)
+83.7 (81.0–86.5)
 —
-427/427 (100.0%)
-Against Published labels — Overall (81 trials)
+100.0
+Against Published labels — Overall (81 trials); Not Low N = 39; Low N = 42
 ARBITER
 0.44 (0.32–0.56)
 0.50 (0.39–0.60)
-47/81 (58.0%) (49.4–66.7)
-36/39 (92.3%) (83.7–100.0)
-23/42 (54.8%) (44.2–67.4)
+58.0 (49.4–66.7)
+92.3 (83.7–100.0)
+54.8 (44.2–67.4)
 Unassisted
 0.42 (0.27–0.56)
 0.53 (0.43–0.64)
-48/81 (59.3%) (50.6–67.9)
-25/39 (64.1%) (50.0–77.8)
-32/42 (76.2%) (65.9–86.8)
+59.3 (50.6–67.9)
+64.1 (50.0–77.8)
+76.2 (65.9–86.8)
 All-Low rule
 —
 —
-42/81 (51.9%) (44.4–59.3)
+51.9 (44.4–59.3)
 —
-42/42 (100.0%)
+100.0
 Against composite reference — D1–D5 (485 cells)
 ARBITER
 0.94 (0.91–0.97)
 0.98 (0.97–0.99)
-472/485 (97.3%) (95.9–98.6)
+97.3 (95.9–98.6)
 
 
 Unassisted
 0.69 (0.62–0.76)
 0.91 (0.88–0.93)
-425/485 (87.6%) (85.2–90.0)
+87.6 (85.2–90.0)
 
 
 Paired difference, ARBITER − Unassisted
@@ -75,4 +75,4 @@ Composite: D1–D5
 9.7 (7.0–12.4)
 
 
-Linearly weighted Cohen’s κ and Gwet’s AC2. Exact agreement, sensitivity and specificity are n/N (%); their CI bounds are percentages. Not Low means Some concerns or High. All-Low rule has no variance; only accuracy and specificity are reported. Paired differences are on the coefficient scale or in percentage points; — indicates undefined or not applicable. Composite reference: consensus preferred judgement on consensus cells, Published on other cells; 25 split cells excluded (485 cells per arm). Adjudicators could only choose among the three labels offered. Cells where both Sonnet arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.
+Values are coefficients or percentages (95% CI); denominators are in block labels. Not Low means Some concerns or High. All-Low rule has no variance; only accuracy and specificity are reported. Paired differences are coefficients or percentage points; — indicates undefined or not applicable. Composite reference: consensus preferred judgement on consensus cells, Published on other cells; 25 split cells excluded (485 cells per arm). Adjudicators could only choose among the three labels offered. Cells where both Sonnet arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values. Overall judgements were not adjudicated. Published labels were frequently less severe than the adjudicators’ preferred judgement (Figure 4). CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.

@@ -45,7 +45,8 @@ stopifnot(all(mapply(function(p,x) grepl(p,x,fixed=TRUE),paste0('Figure ',1:6),h
 stopifnot(all(mapply(function(p,x) grepl(p,x,fixed=TRUE),paste0('Table ',1:4),heads[7:10])))
 # All legacy statistics stay frozen; the mislabeled old matrix CSV is replaced.
 changed <- system2('git',c('diff','--name-only','9792c55','--','output/tables'),stdout=TRUE)
-stopifnot(all(changed=='analysis/output/tables/figure3-panelB.csv'))
+allowed <- paste0('analysis/output/tables/',c('figure3-panelB.csv','efigure2-disagreement-patterns.csv','no-decisive-counts.csv','published-direction-domain.csv','severity-win-share.csv','vindicated-disagreements.csv'))
+stopifnot(setequal(changed,allowed))
 protected <- system2('git',c('diff','--name-only','9792c55','--','figure1','output/manuscript/Figure1.*','output/manuscript/Figure2.*','output/manuscript/legends-fig1-2.md'),stdout=TRUE)
 stopifnot(length(protected)==0)
 cat('Existing numerical results unchanged; legacy matrix relabelled; protected Figure 1/2 files unchanged\n')
