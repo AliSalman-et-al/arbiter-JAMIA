@@ -1,6 +1,6 @@
 # Figure 1: ARBITER workflow and trace
 
-Round 8b. Reproducible, programmatic book-style illustration, 174 × 204 mm.
+Round 8b-2. Reproducible, programmatic book-style illustration, 174 × 204 mm.
 
 ## Build
 
@@ -19,13 +19,13 @@ Inputs read at runtime:
 - Published, ARBITER and Unassisted domain CSVs and the adjudication analysis cells CSV.
 - MCP server definitions and the skill's Domain 5 guidance in ARBITER.
 
-The build verifies manifest content hashes, evidence/source linkage, all six ARBITER strip labels against canonical records, D5's driver, the absence of an override and the adjudicators' preferred-label agreement. It checks required tool definitions and obtains their source line numbers dynamically. Clinical reasoning is faithfully summarized from the recorded justification; it is not independently re-adjudicated.
+The build checks the public `arbiter review` CLI entry point and `.arbiter.zip` extension against the ARBITER checkout, rejects case-insensitive `rob2` anywhere in the generated SVG, and verifies manifest content hashes, evidence/source linkage, all six ARBITER strip labels against canonical records, D5's driver, the absence of an override and the adjudicators' preferred-label agreement. It checks required tool definitions and obtains their source line numbers dynamically. Clinical reasoning is faithfully summarized from the recorded justification; it is not independently re-adjudicated.
 
 ## Outputs and editing
 
 `analysis/output/manuscript/` receives `Figure1.svg`, `Figure1.pdf`, `Figure1.tif`, `Figure1.png` and `figure1-notes.md`. Notes include all 18 tools, source references, the exact excerpt and locator, proposed/adopted judgements, a draft legend and alt text. The shared figure-legends document is outside this agent's ownership and is intentionally not edited; the lead can copy the draft legend there.
 
-Edit `build.py` to change the scene. Coordinates are quarter-millimetres. All text is converted to vector paths with fontTools from the bundled Fira Sans Condensed Regular/Bold and Fira Code Regular OFL fonts. SVG includes accessible text labels and titles for each outlined text run. The PDF contains only vector paths, with no font or raster dependencies. The SVG is converted to PDF with svglib/ReportLab; resvg independently renders the PNG; PyMuPDF renders the vector PDF at 600 dpi for the RGB LZW TIFF. PDF metadata is invariant for repeatable builds.
+Edit `build.py` to change the scene. Coordinates are quarter-millimetres. Tool-call text uses 92% horizontal width to clear both traffic arrows while retaining its 7.23 pt height and fixed character spacing. Italic response summaries use a 12-degree oblique outline transform. All text is converted to vector paths with fontTools from the bundled Fira Sans Condensed Regular/Bold and Fira Code Regular OFL fonts. SVG includes accessible text labels and titles for each outlined text run. The PDF contains only vector paths, with no font or raster dependencies. The SVG is converted to PDF with svglib/ReportLab; resvg independently renders the PNG; PyMuPDF renders the vector PDF at 600 dpi for the RGB LZW TIFF. PDF metadata is invariant for repeatable builds.
 
 Font provenance:
 
@@ -41,8 +41,10 @@ Font provenance:
 - `qa-grayscale.png`: no meaning depends on colour; all judgements and phase/actor distinctions have text and outlines.
 - `qa-deuteranopia.png`: approximate diagnostic using the Machado deuteranopia matrix on display RGB, not a calibrated vision simulation. Together with grayscale it checks that colour shifts do not lose information.
 
-Visual checks passed: no clipped/overlapping text; clear phase separation; approval arrow enters the domain phase; tool arrows represent requests and the final arrow represents packaging. The source excerpt and answer share yellow highlighting and remain linked by outlines in grayscale. Source locator and hash prefix are readable at final size. Pastel lanes, heavy rounded outlines, a single human icon, blue/lavender LLM typography, and dotted dividers follow the supplied book references. There is no overall title inside the figure; A/B have the requested panel headings.
+Round 8b-2 visual checks passed: no clipped/overlapping text; phase headings share the column centers; evenly spaced header arrows; the labelled approval arrow enters domain work; paired tool arrows show downward requests and upward italic response summaries; the final arrow represents packaging. The strip label is vertically centered on the D1 box. Yellow in Panel B links the quoted source excerpt to the passage-referencing reasoning phrase; the answer pill is neutral. The linked phrases remain outlined in grayscale. The source hash and verifier status occupy a single footer row inside the green box. Source locator and hash prefix are readable at final size. Pastel lanes, heavy rounded outlines, a single human icon, blue/lavender LLM typography, and dotted dividers follow the supplied book references. There is no overall title inside the figure; A/B have the requested panel headings.
 
 ## Trace interpretation
 
 AVATAR 5.1 is No information. The 11-word excerpt is context, explicitly identified as such in the figure. A report describing an endpoint as prespecified does not itself date the analysis plan before unblinded data. The recorded answer considers the registry, reports and protocol amendment together. The displayed SHA-256 prefix identifies the searchable source projection, not PDF bytes. The archive's verifier receipt says verified; that result does not certify clinical correctness. No ASCET fallback was necessary.
+
+Rebuild byte identity is checked over SVG, PDF, PNG, TIFF, notes and all QA outputs. `reproducibility.json` records their SHA-256 values from two consecutive builds. The archived input retains its original filename; the figure presents the public 1.0.0 bundle extension.

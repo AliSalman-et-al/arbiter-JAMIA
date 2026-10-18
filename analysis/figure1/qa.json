@@ -2,7 +2,8 @@
   "width_mm": 174,
   "height_mm": 204.0,
   "min_text_pt": 7.228346456692914,
-  "text_elements": 90,
+  "text_elements": 96,
+  "no_legacy_names": true,
   "pdf_vector_only": true,
   "tiff_pixels": [
     4111,

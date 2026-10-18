@@ -1,0 +1,15 @@
+{
+  "consecutive_builds_byte_identical": true,
+  "files": {
+    "analysis/output/manuscript/Figure1.pdf": "7f56fec77229c80a6517d3e625b086391db346ea6821b55d93b088c148939a69",
+    "analysis/output/manuscript/Figure1.png": "0493a71ca1d9e7b7936eaabf556da0bb371325f585a93c74e4b50db6b6b86146",
+    "analysis/output/manuscript/Figure1.svg": "a3c569ce860286a3773a8e1262e50dea7a0db8675c24032b44ff816b7935c3a3",
+    "analysis/output/manuscript/Figure1.tif": "4ed81835bdd4ad0b76618e16b2d77d9585ff52184e63f91b36168916b25c60f6",
+    "analysis/output/manuscript/figure1-notes.md": "cb3c2f3bd33ba1ab2af09e9b906f5a3690b7c24f1fbacefad5e61a222905f6be",
+    "analysis/figure1/qa-deuteranopia.png": "579b66722a46db8c532336f8df493d5238d0e0864a403a8fce1f5c2312f6a224",
+    "analysis/figure1/qa-final-size.png": "089106617e46b2c5ac0f08f9ab2f306d924899d1ef2103d325f36c204b78b45a",
+    "analysis/figure1/qa-grayscale.png": "842c1568b0b56207a87fd95fb9269f8d269e3e325d2b2161985c7da6f33eff91",
+    "analysis/figure1/qa-pdf.png": "4442c111519d9859afdc32456c9b26930c4879290e566e712fef4e3906abfb1a",
+    "analysis/figure1/qa.json": "1f88e3e1d77b90a34941ef5588b5321a895a4f5788c74ac3c18e59140c6f94ec"
+  }
+}

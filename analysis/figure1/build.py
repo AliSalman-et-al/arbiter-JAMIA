@@ -99,6 +99,11 @@ def load(data_root, source_root):
     assert verification["result"] == "verified"
     server_path = source_root / "src/arbiter/interfaces/mcp/server.py"
     server = server_path.read_text(encoding="utf-8")
+    cli = (source_root / "src/arbiter/interfaces/cli/app.py").read_text(encoding="utf-8")
+    project = (source_root / "pyproject.toml").read_text(encoding="utf-8")
+    finalization = (source_root / "src/arbiter/application/finalization.py").read_text(encoding="utf-8")
+    assert 'arbiter = "arbiter.interfaces.cli.app:main"' in project
+    assert '"review"' in cli and ".arbiter.zip" in cli and ".arbiter.zip" in finalization
     lines = {}
     for tools in PHASES.values():
         for tool in tools:
@@ -148,12 +153,12 @@ class Scene:
         cmap = font.getBestCmap()
         return sum(font["hmtx"][cmap[ord(ch)]][0] for ch in value) * size / font["head"].unitsPerEm
 
-    def text(self, x, y, value, size=11.5, face="regular", color=INK, anchor="start"):
+    def text(self, x, y, value, size=11.5, face="regular", color=INK, anchor="start", italic=False, stretch=1):
         assert size * 174 / W * 72 / 25.4 >= 7, (value, size)
         font = self.fonts[face]
         cmap, glyphs = font.getBestCmap(), font.getGlyphSet()
         scale = size / font["head"].unitsPerEm
-        width = self.width(value, size, face)
+        width = self.width(value, size, face) * stretch
         if anchor == "middle":
             x -= width / 2
         assert x >= 0 and x + width <= W, (value, x, width)
@@ -164,8 +169,9 @@ class Scene:
             pen = SVGPathPen(glyphs)
             glyphs[name].draw(pen)
             if pen.getCommands():
-                self.add(f'<path transform="translate({x:.5f} {y}) scale({scale:.7f} {-scale:.7f})" d="{pen.getCommands()}"/>')
-            x += font["hmtx"][name][0] * scale
+                shear = " skewX(12)" if italic else ""
+                self.add(f'<path transform="translate({x:.5f} {y}) scale({scale*stretch:.7f} {-scale:.7f}){shear}" d="{pen.getCommands()}"/>')
+            x += font["hmtx"][name][0] * scale * stretch
         self.add('</g>')
 
     def wrap(self, x, y, value, max_width, size=11.5, face="regular", color=INK, leading=15):
@@ -200,11 +206,13 @@ def draw(data):
     # Panel A: four horizontal lanes, four left-to-right phases.
     s.text(12, 23, "A", 19, "bold")
     s.text(35, 23, "How ARBITER works", 17, "bold")
+    # Each heading is centered on the same column as its agent/server content.
     centers = [216, 348, 480, 612]
     for i, (phase, cx) in enumerate(zip(PHASES, centers), 1):
         s.text(cx, 53, phase, 12.4, "bold", anchor="middle")
         if i < 4:
-            s.line(cx+58, 49, cx+74, 49, arrow=True, sw=1.4)
+            midpoint = (cx + centers[i]) / 2
+            s.line(midpoint-7, 49, midpoint+7, 49, arrow=True, sw=1.4)
     # The single human icon uses only geometric strokes.
     s.rect(12, 68, 672, 61, "#F5F5F3", 11)
     s.add('<circle cx="30" cy="88" r="6" fill="white" stroke="#171717" stroke-width="2"/>')
@@ -215,11 +223,14 @@ def draw(data):
     s.text(216, 110, "requested outcome", 11.5, anchor="middle")
     s.rect(284, 76, 128, 45, "white", 8, sw=2.3)
     s.text(348, 94, "Approve the result", 12, "bold", anchor="middle")
-    s.text(348, 111, "rob2 review", 10.5, "mono", anchor="middle")
-    s.text(450, 99, "Approval required before domain work", 11.2, "bold")
-    s.line(348, 121, 348, 137)
-    s.line(348, 137, 480, 137)
-    s.line(480, 137, 480, 146, arrow=True)
+    s.text(348, 111, "arbiter review", 10.5, "mono", anchor="middle")
+    s.text(612, 94, "Report +", 11.5, "bold", anchor="middle")
+    s.text(612, 111, "verifiable bundle", 11.5, "bold", anchor="middle")
+    s.line(412, 99, 420, 99)
+    s.line(420, 99, 420, 119)
+    s.line(420, 119, 480, 119)
+    s.line(480, 119, 480, 146, arrow=True)
+    s.text(480, 111, "unlocks domain work", 10.2, anchor="middle")
 
     s.rect(12, 146, 672, 70, LAVENDER, 11, sw=2.3)
     s.text(25, 168, "LLM agent", 14, "bold", LLM)
@@ -233,15 +244,17 @@ def draw(data):
     for x in [282, 414, 546]:
         s.line(x, 155, x, 207, dotted=True, sw=1)
 
-    # Tool labels sit beside continuous request arrows, between the two lanes.
-    visible = [["prepare_batch", "read_pages"], ["validate_proposal", "save_proposal"],
+    # Paired arrows: requests down the left, responses up the right of each column.
+    visible = [["prepare_batch", "list_sources"], ["validate_proposal", "save_proposal"],
                ["get_domain_context", "save_domain_judgment"], ["review_trial", "finalize_batch"]]
-    for cx, calls in zip(centers, visible):
-        s.line(cx, 216, cx, 300, arrow=True)
-        for y, call in zip([244, 274], calls):
-            width = s.width(call, 10.2, "mono") + 8
-            s.rect(cx-width/2, y-12, width, 18, "white", 3, stroke="white", sw=0)
-            s.text(cx, y, call, 10.2, "mono", anchor="middle")
+    responses = ["source list", "validation result", "proposed judgement", "review report"]
+    for cx, calls, response in zip(centers, visible, responses):
+        s.line(cx-61, 216, cx-61, 300, arrow=True, sw=1.4)
+        s.line(cx+61, 300, cx+61, 216, arrow=True, sw=1.4)
+        for y, call in zip([239, 262], calls):
+            assert s.width(call, 10.2, "mono") * .92 < 118
+            s.text(cx, y, call, 10.2, "mono", anchor="middle", stretch=.92)
+        s.text(cx, 287, response, 10.5, anchor="middle", italic=True)
 
     s.rect(12, 300, 672, 77, MINT, 11, sw=2.3)
     s.text(25, 322, "ARBITER server", 13.5, "bold")
@@ -255,17 +268,18 @@ def draw(data):
     for x in [282, 414, 546]:
         s.line(x, 311, x, 365, dotted=True, sw=1)
     s.line(612, 377, 612, 395, arrow=True)
-    s.rect(12, 395, 672, 39, YELLOW, 10, sw=2)
-    s.text(25, 420, "Bundle", 13, "bold")
-    s.text(155, 420, "Source identities + bound evidence + complete assessment history", 11.5)
-    s.text(612, 420, ".rob2.zip", 11.2, "mono", anchor="middle")
+    s.rect(12, 395, 672, 43, YELLOW, 10, sw=2)
+    s.text(25, 421, "Bundle", 13, "bold")
+    s.text(155, 412, "Source identities + bound evidence + complete history", 11.5)
+    s.text(155, 430, "Checked by an independent verifier", 11.5)
+    s.text(612, 421, ".arbiter.zip", 10.5, "mono", anchor="middle")
     s.line(12, 452, 684, 452, dotted=True)
 
     # Panel B: source, answer and algorithm are separate visual objects.
     s.text(12, 479, "B", 19, "bold")
     s.text(35, 479, "One answer, traced", 17, "bold")
     s.text(684-s.width(data["trace_title"], 12), 479, data["trace_title"], 12, color=GREY)
-    s.text(12, 506, "ARBITER", 12, "bold", BLUE)
+    s.text(12, 517, "ARBITER", 12, "bold", BLUE)
     positions = [130, 212, 294, 376, 470, 616]
     for name, cx in zip(["D1", "D2", "D3", "D4", "D5", "Overall"], positions):
         value = data["labels"][f"rob2kit_{name}"]
@@ -276,12 +290,12 @@ def draw(data):
         s.text(cx, 524, value, 11.6, "bold", anchor="middle")
     s.line(527, 513, 548, 513, arrow=True, sw=1.4)
 
-    s.rect(12, 549, 321, 144, YELLOW, 11, sw=2.2)
+    s.rect(12, 549, 321, 144, "#F5F5F3", 11, sw=2.2)
     s.text(25, 571, "Cited passage", 12.5, "bold")
     s.text(25, 588, data["source"]["label"], 10.5, color=GREY)
     ev = data["evidence"]
     s.text(25, 604, f"Page {ev['page']} · bound span: lines {ev['start_line']}–{ev['end_line']}", 10.5, color=GREY)
-    # Two short pills are one excerpt; its colour is repeated by the answer.
+    # Yellow is reserved for source text and its reference within the reasoning.
     s.pill(25, 631, data["first"], 11.2, face="regular")
     s.pill(25, 657, "… " + data["last"], 11.2, face="regular")
     s.text(25, 682, "Context cited for 5.1; excerpt shortened", 10.5, color=GREY)
@@ -289,13 +303,13 @@ def draw(data):
     s.line(333, 624, 352, 624, arrow=True)
     s.rect(352, 549, 332, 144, LAVENDER, 11, sw=2.2)
     s.text(365, 571, "5.1  Was the analysis prespecified?", 12.5, "bold", LLM)
-    s.pill(365, 595, DISPLAY[data["answer"]["answer"]], 12)
-    s.text(365, 624, "Report calls the endpoint prespecified.", 11.5)
-    s.text(365, 643, "No captured, dated plan establishes", 11.5, "bold")
-    s.text(365, 660, "this measurement and analysis before", 11.5, "bold")
-    s.text(365, 677, "unblinded data were available.", 11.5, "bold")
+    s.pill(365, 595, DISPLAY[data["answer"]["answer"]], 12, fill="#F4F3FA")
+    s.text(365, 634, "Report", 11.5)
+    s.pill(400, 633, "calls the endpoint prespecified", 11.5, face="regular")
+    s.text(365, 661, "No dated analysis plan captured → 5.1 = NI.", 11.5, "bold")
 
-    s.rect(12, 707, 672, 43, MINT, 10, sw=2)
+    s.rect(12, 707, 672, 74, MINT, 10, sw=2)
+    s.line(25, 752, 671, 752, sw=.6)
     answers = data["d"]["answers"]
     answer_short = {"no_information": "NI", "probably_no": "PN", "probably_yes": "PY", "yes": "Y", "no": "N"}
     answer_set = " · ".join(f"5.{i} {answer_short[a['answer']]}" for i, a in enumerate(answers, 1))
@@ -307,8 +321,9 @@ def draw(data):
     s.text(488, 724, "Adopted judgement", 10.5, color=GREY)
     s.text(488, 741, DISPLAY[data["d"]["decision"]["adopted"]] + " (no override)", 12, "bold")
 
-    s.text(12, 770, f"Span bound to source version · SHA-256 {ev['source_version'].split(':')[1][:12]}…", 10.5)
-    s.text(470, 770, "Bundle verifier: " + data["verification"]["result"], 11.5, "bold")
+    s.text(25, 770, f"Span bound to source version · SHA-256 {ev['source_version'].split(':')[1][:12]}…", 10.5)
+    verifier = "Bundle verifier: " + data["verification"]["result"]
+    s.text(671-s.width(verifier, 10.5, "bold"), 770, verifier, 10.5, "bold")
     footer = [("Published:", data["published"]["D5"], "#374E55"),
               ("Adjudicators:", data["adjud"]["preferred"], INK),
               ("Unassisted:", data["unassisted"]["model_D5"], "#DF8F44")]
@@ -330,7 +345,7 @@ def notes(data):
              "ARBITER 1.0.0. Line references below are to `src/arbiter/interfaces/mcp/server.py` in the ARBITER source checkout. The figure shows representative tools, without server prefixes. This is a functional grouping, not an assertion that tools can run only in one phase.", ""]
     for phase, tools in PHASES.items():
         lines.append(f"- **{phase}:** " + ", ".join(f"`{t}` (line {data['tool_lines'][t]})" for t in tools) + ".")
-    lines += ["", "Capture freezes source bytes and searchable projections. Companion acquisition/admission can also occur later; admission invalidates the affected review. `read_pages`, `search_sources`, `list_sources`, `read_guidance`, `get_status`, and working checkpoints support more than one phase. `calculate_arithmetic` is optional stateless arithmetic, not judgement generation. `save_domain_judgment` accepts the agent's answers, binds evidence and invokes the official algorithm. `review_trial` computes/reviews the overall result; `close_trial` closes its current review; `finalize_batch` packages already-final trial records. `request_proposal_approval` requests human approval through MCP elicitation; the runs used the host `rob2 review` route. It is not an agent self-approval. The drawing's arrows represent agent requests and a packaged artifact, not a complete call sequence.",
+    lines += ["", "Capture freezes source bytes and searchable projections. Companion acquisition/admission can also occur later; admission invalidates the affected review. `read_pages`, `search_sources`, `list_sources`, `read_guidance`, `get_status`, and working checkpoints support more than one phase. `calculate_arithmetic` is optional stateless arithmetic, not judgement generation. `save_domain_judgment` accepts the agent's answers, binds evidence and invokes the official algorithm. `review_trial` computes/reviews the overall result; `close_trial` closes its current review; `finalize_batch` packages already-final trial records. `request_proposal_approval` requests human approval through MCP elicitation; the figure uses the public `arbiter review` command (the archived run used its pre-rename equivalent). It is not an agent self-approval. Downward arrows carry representative tool calls; upward arrows carry short illustrative response labels: source list, validation result, proposed judgement and review report. These are response summaries, not literal response payloads. A separate arrow leads to the packaged `.arbiter.zip` artifact. `list_sources` is shown in Capture; `read_pages` remains grouped with assessment because it supports repeated reading.",
               "", "Skill reference: `src/arbiter/skills/arbiter-assess/references/selection.md`, question 5.1. The skill supplies the question-by-question guidance; the server makes no model calls.",
               "", "## Exact trace", "",
               f"- Trial: `{SLUG}`; outcome: all-cause death, long-term follow-up. Bundle SHA-256: `{data['bundle_sha256']}`.",
@@ -341,7 +356,7 @@ def notes(data):
               f"- Evidence: `{ev['identity']}` / `{ev['handle']}`; source ID `{ev['source_id']}`.",
               f"- Source version (searchable projection SHA-256): `{ev['source_version']}`. The figure displays its first 12 hex characters, not the PDF byte hash.",
               f"- Captured PDF byte SHA-256: `{data['source']['sha256']}`.",
-              "- Binding semantics: this basis is recorded as **context**, not direct support. The report's use of 'prespecified' does not establish when the plan was finalized. The repeated yellow pills link the context passage to the answer's reasoning, not proof of missing information from one quote alone.",
+              "- Binding semantics: this basis is recorded as **context**, not direct support. The report's use of 'prespecified' does not establish when the plan was finalized. Yellow links the quoted passage to the words “calls the endpoint prespecified” in the recorded-reasoning summary. The No information answer has a neutral pill. The context quote alone does not prove that a plan is missing.",
               "", "Recorded justification:", "", data["answer"]["justification"], "",
               "Full server-extracted passage:", "", "> " + ev["quote"].replace("\n", "\n> "), "",
               "D5 answer set: " + "; ".join(f"5.{i}: {DISPLAY[a['answer']]}" for i,a in enumerate(data['d']['answers'],1)) + ". NI = No information; PN = Probably no.",
@@ -349,9 +364,9 @@ def notes(data):
               "", "Label sources: `rob2-meta-benchmark-set/LABEL-TARGETS.csv`; `kit-sonnet-5.5/rob2kit-domain-labels.csv`; `no-kit-sonnet-5.5/model-domain-labels.csv`; `analysis/output/tables/adjudication-analysis-cells.csv` (both adjudicators' preferred labels agree). All are loaded at build time; the ARBITER D5 label is checked against the bundle.",
               f"ARBITER source commit inspected: `{data['source_commit']}`. The build checks all archived manifest content hashes; it reads, rather than re-runs, the archived verifier receipt.",
               "", "## Draft legend", "",
-              "**Figure 1. ARBITER workflow and evidence trace.** (A) A reviewer approves the result to be assessed before domain assessment starts. The LLM agent uses the arbiter-assess skill to read sources and answer RoB 2 signalling questions. The model-free ARBITER MCP server captures and versions sources, binds cited text spans, computes domain and overall judgements using the official RoB 2 algorithms, records the assessment history and exports a verifiable bundle. Representative MCP calls are shown in monospace; tools used across phases are grouped by function in these notes. (B) AVATAR, all-cause death at long-term follow-up: the report describes time to death as prespecified, but the agent records no information for question 5.1 because the captured sources do not establish a plan for this measurement and analysis finalized before unblinded outcome data were available. Yellow highlighting links the report excerpt, recorded as context, to that answer. The complete D5 answer set produces Some concerns, adopted without override. The hash prefix identifies the captured source projection; archived bundle verification confirms binding and structural checks, not the clinical correctness of the answer. Published and Unassisted judgements are Low; both adjudicators prefer Some concerns. D1–D5, RoB 2 domains; NI, no information; PN, probably no; MCP, Model Context Protocol.",
+              "**Figure 1. ARBITER workflow and evidence trace.** (A) A reviewer approves the result to be assessed before domain assessment starts. The LLM agent uses the arbiter-assess skill to read sources and answer RoB 2 signalling questions. The model-free ARBITER MCP server captures and versions sources, binds cited text spans, computes domain and overall judgements using the official RoB 2 algorithms, records the assessment history and exports a verifiable bundle. Representative MCP calls are shown in monospace on downward request arrows; upward arrows carry italic response summaries. Approval through `arbiter review` unlocks domain work; the reviewer receives a report and a `.arbiter.zip` bundle checked by an independent verifier. Tools used across phases are grouped by function in these notes. (B) AVATAR, all-cause death at long-term follow-up: the report describes time to death as prespecified, but the agent records no information for question 5.1 because the captured sources do not establish a plan for this measurement and analysis finalized before unblinded outcome data were available. Yellow highlighting links the report excerpt, recorded as context, to the passage-referencing words in the reasoning; the answer pill is neutral. The complete D5 answer set produces Some concerns, adopted without override. The hash prefix identifies the captured source projection; archived bundle verification confirms binding and structural checks, not the clinical correctness of the answer. Published and Unassisted judgements are Low; both adjudicators prefer Some concerns. D1–D5, RoB 2 domains; NI, no information; PN, probably no; MCP, Model Context Protocol.",
               "", "## Alt text", "",
-              "Two panels. A: Reviewer, lavender LLM agent, mint deterministic ARBITER server and pale-yellow bundle lanes span Capture, Propose and approve, Assess each domain, and Review and export. Reviewer approval precedes assessment. The agent supplies cited answers; the server checks spans and computes judgements. B: AVATAR has Low judgements for D1–D4 and Some concerns for D5 and Overall. A cited passage calls time to death a prespecified secondary endpoint. Question 5.1 is No information because a dated plan is not established by captured sources. D5 answers NI, PN, PN yield Some concerns, adopted unchanged. The passage is bound to a hashed captured source; archived bundle verification is verified. Published Low; adjudicators Some concerns; Unassisted Low.", ""]
+              "Two panels. A: Reviewer, lavender LLM agent, mint deterministic ARBITER server and pale-yellow bundle lanes span Capture, Propose and approve, Assess each domain, and Review and export. Reviewer approval via arbiter review unlocks domain work. The reviewer receives a report and verifiable .arbiter.zip bundle. Downward tool-call arrows and upward response arrows connect agent and server. The agent supplies cited answers; the server checks spans and computes judgements. B: AVATAR has Low judgements for D1–D4 and Some concerns for D5 and Overall. A cited passage calls time to death a prespecified secondary endpoint. Yellow links that quoted passage to the reasoning phrase “calls the endpoint prespecified”. A neutral pill gives question 5.1 as No information because a dated plan is not established by captured sources. D5 answers NI, PN, PN yield Some concerns, adopted unchanged. The passage is bound to a hashed captured source; archived bundle verification is verified. Published Low; adjudicators Some concerns; Unassisted Low.", ""]
     return "\n".join(lines)
 
 
@@ -365,6 +380,7 @@ def main():
     out = ROOT / "analysis/output/manuscript"
     out.mkdir(parents=True, exist_ok=True)
     svg = scene.svg()
+    assert not re.search("rob2", svg, re.I), "Pre-rename identifier in SVG text"
     (out / "Figure1.svg").write_text(svg, encoding="utf-8")
     rl_config.invariant = True
     drawing = svg2rlg(io.BytesIO(svg.encode()))
@@ -402,7 +418,7 @@ def main():
     preview.resize((658, round(658*H/W)), Image.Resampling.LANCZOS).save(HERE / "qa-final-size.png")
     (out / "figure1-notes.md").write_text(notes(data), encoding="utf-8")
     qa = dict(width_mm=174, height_mm=H/4, min_text_pt=min(r["size_pt"] for r in scene.text_records),
-              text_elements=len(scene.text_records), pdf_vector_only=True, tiff_pixels=image.size,
+              text_elements=len(scene.text_records), no_legacy_names=True, pdf_vector_only=True, tiff_pixels=image.size,
               tiff_dpi=[600,600], tiff_compression="LZW", font_strategy="all text outlined from bundled OFL fonts",
               bundle_sha256=data["bundle_sha256"], evidence=data["evidence"]["identity"],
               source_projection=data["evidence"]["source_version"], verification=data["verification"]["result"])
