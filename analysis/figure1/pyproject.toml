@@ -1,0 +1,15 @@
+[project]
+name = "arbiter-figure1"
+version = "1.0.0"
+requires-python = ">=3.12"
+dependencies = [
+  "fonttools==4.60.1",
+  "pillow==12.0.0",
+  "pymupdf==1.26.5",
+  "reportlab==4.4.4",
+  "svglib==1.6.0",
+  "resvg-py==0.2.4",
+]
+
+[tool.uv]
+package = false
