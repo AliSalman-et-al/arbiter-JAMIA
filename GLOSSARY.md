@@ -36,4 +36,6 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 **Algorithm violation**: A domain or Overall judgement that differs from what the official algorithm gives from the source's own answers or domain labels, with no override recorded. Only baseline arms and meta labels can have one.
 
+**Decisive question**: A signalling question where a losing source's answer contradicts the adjudicators' independent answer, and where substituting the adjudicators' answer alone changes the algorithm's judgement.
+
 **All-Low baseline**: A reference rule that predicts Low for every cell. It shows how much of an accuracy figure comes from Low being the most common label.
