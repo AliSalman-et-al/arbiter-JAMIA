@@ -1,0 +1,6 @@
+source('R/load.R')
+source('R/algorithms.R')
+source('R/win-share.R')
+source('R/extract-run-metrics.R')
+source('R/bundle-review.R')
+extract_bundle_review(load_inputs())

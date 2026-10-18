@@ -9,10 +9,14 @@ overall_checks <- function(labels) {
 consistency_rates <- function(checks,weights) {
   bind_rows(lapply(split(checks,checks$arm),function(x) {
     evaluable <- x$status!='Not evaluable'
-    bind_rows(lapply(c('Consistent','Permitted escalation','Violation'),function(s)
-      interval_table(share_estimate(x,x$status==s,weights,evaluable)) |>
-        mutate(arm=x$arm[1],status=s,n=sum(evaluable),count=sum(x$status==s),
-          missing=sum(!evaluable))))
+    statuses <- if('domain' %in% names(x)) c('Consistent','Violation','Invalid answer path','Departure') else
+      c('Consistent','Permitted escalation','Violation')
+    bind_rows(lapply(statuses,function(s) {
+      event <- if(s=='Departure') x$status %in% c('Violation','Invalid answer path') else x$status==s
+      interval_table(share_estimate(x,event,weights,evaluable)) |>
+        mutate(arm=x$arm[1],status=s,n=sum(evaluable),count=sum(event),
+          missing=sum(!evaluable))
+    }))
   }))
 }
 
