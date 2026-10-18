@@ -6,7 +6,7 @@
       "arrow_tip_clearance_mm": 0.8,
       "curve_sampling_max_mm": 0.0375,
       "minimum_text_stroke_clearance_mm": 0.5804,
-      "minimum_arrow_text_clearance_mm": 1.6797,
+      "minimum_arrow_text_clearance_mm": 2.2091,
       "text_elements": 57,
       "shape_elements": 52,
       "arrow_tips": 14,

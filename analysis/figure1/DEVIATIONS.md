@@ -33,3 +33,7 @@ At the author’s request, text/visual tool highlights are removed. All tool nam
 The export-to-report arrow now approaches the browser frame from its left, with a 20-unit final horizontal segment. This replaces the cramped 5-unit arrow in the gap below the server; the output fork still leads to both deliverables.
 
 Independent checkability is a shared output node, with incoming arrows from the HTML report and audit file. The label is removed from the audit card. The legend retains the verifier’s archive/evidence-binding scope.
+
+Reading text/page images now belongs to Assess each domain, alongside text and visual evidence selection. Capture prepares source records and locates reports/registry records. read_pages and render_page share one tool line to keep all names readable within the existing height.
+
+All model-lane wording is revised to concrete verbs and plain clinical objects: locate reports/registry records, specify the outcome/analysis, read text/page images and cite evidence to answer RoB 2 questions, then review answers/supporting evidence.

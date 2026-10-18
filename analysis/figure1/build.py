@@ -257,16 +257,19 @@ def draw_workflow(data):
     s.rect(12,84,672,49,LAVENDER,6,INK,1.5)
     s.text(25,99,'AI model (LLM agent)',11,'bold',LLM)
     s.text(25,113,'follows the ARBITER',10,color=GREY);s.text(25,126,'assessment guide',10,color=GREY)
-    for cx,top,bottom in zip(centers,['Find relevant evidence','Pick the result to assess','Select evidence + answer','Inspect the'],['Read text or page images','(outcome + analysis)','signalling questions','assessment']):
-        s.text(cx,103,top,10,'bold',LLM,anchor='middle');s.text(cx,120,bottom,10,'bold',LLM,anchor='middle')
+    for cx,top,bottom in zip(centers,['Locate trial reports','Specify the outcome','Read text or page images','Review the answers'],['and registry records','and analysis to assess','Select and cite evidence','and supporting evidence']):
+        if cx==480:
+            for y,label in zip([99,112,125],[top,bottom,'Answer RoB 2 questions']):s.text(cx,y,label,10,'bold',LLM,anchor='middle')
+        else:
+            s.text(cx,103,top,10,'bold',LLM,anchor='middle');s.text(cx,120,bottom,10,'bold',LLM,anchor='middle')
     for x in [282,414,546]:s.line(x,91,x,126,dotted=True,sw=.6)
-    visible=[['prepare_batch','list_sources','search_sources','search_sources_batch','select_text_evidence'],['validate_proposal','save_proposal'],['get_domain_context','read_pages','render_page','select_visual_evidence','save_domain_judgment'],['review_trial','finalize_batch']]
+    visible=[['prepare_batch','list_sources','search_sources','search_sources_batch'],['validate_proposal','save_proposal'],['get_domain_context','read_pages / render_page','select_text_evidence','select_visual_evidence','save_domain_judgment'],['review_trial','finalize_batch']]
     assert all(data['tool_audit']['counts'].get(t,0)>0 for t in ['search_sources','search_sources_batch','read_pages'])
     for cx,tools in zip(centers,visible):
         s.line(cx-57,133,cx-57,193,arrow=True,sw=1)
         s.line(cx+57,193,cx+57,133,arrow=True,sw=1)
         for y,tool in zip({2:[151,177],3:[145,163,181],4:[144,156,168,180],5:[144,155,166,177,188]}[len(tools)],tools):
-            s.text(cx,y,tool,10,'mono',GREY,anchor='middle',stretch=.8 if cx==480 else .84 if cx==216 else .92)
+            s.text(cx,y,tool,10,'mono',GREY,anchor='middle',stretch=.74 if '/' in tool else .8 if cx==480 else .84 if cx==216 else .92)
     s.rect(12,195,672,60,MINT,6,INK,1.5)
     s.text(25,211,'ARBITER server',11,'bold')
     s.text(25,227,'rule-based software,',10);s.text(25,242,'no AI',10)
