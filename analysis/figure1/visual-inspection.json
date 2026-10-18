@@ -1,0 +1,394 @@
+{
+  "source_dpi": 600,
+  "inspection_dpi": 384,
+  "magnification_at_96dpi": 4,
+  "figures": [
+    {
+      "figure": "Figure1",
+      "tiff_sha256": "481440b883ba7a1cbd53f1d4e105432b5e56534a3779beb875bd804d359d99c3",
+      "source_size_600dpi": [
+        4111,
+        2953
+      ],
+      "rows": 3,
+      "columns": 3,
+      "tiles": [
+        {
+          "tile": "Figure1-r1c1.png",
+          "bounds_384dpi": [
+            0,
+            0,
+            877,
+            630
+          ]
+        },
+        {
+          "tile": "Figure1-r1c2.png",
+          "bounds_384dpi": [
+            877,
+            0,
+            1754,
+            630
+          ]
+        },
+        {
+          "tile": "Figure1-r1c3.png",
+          "bounds_384dpi": [
+            1754,
+            0,
+            2631,
+            630
+          ]
+        },
+        {
+          "tile": "Figure1-r2c1.png",
+          "bounds_384dpi": [
+            0,
+            630,
+            877,
+            1260
+          ]
+        },
+        {
+          "tile": "Figure1-r2c2.png",
+          "bounds_384dpi": [
+            877,
+            630,
+            1754,
+            1260
+          ]
+        },
+        {
+          "tile": "Figure1-r2c3.png",
+          "bounds_384dpi": [
+            1754,
+            630,
+            2631,
+            1260
+          ]
+        },
+        {
+          "tile": "Figure1-r3c1.png",
+          "bounds_384dpi": [
+            0,
+            1260,
+            877,
+            1890
+          ]
+        },
+        {
+          "tile": "Figure1-r3c2.png",
+          "bounds_384dpi": [
+            877,
+            1260,
+            1754,
+            1890
+          ]
+        },
+        {
+          "tile": "Figure1-r3c3.png",
+          "bounds_384dpi": [
+            1754,
+            1260,
+            2631,
+            1890
+          ]
+        }
+      ]
+    },
+    {
+      "figure": "Figure2",
+      "tiff_sha256": "d5c650ed815cc01ca9f0dd89f9e8f7979581a18e83e6b08ab9cfc1a26d3ad58c",
+      "source_size_600dpi": [
+        4111,
+        6827
+      ],
+      "rows": 5,
+      "columns": 3,
+      "tiles": [
+        {
+          "tile": "Figure2-r1c1.png",
+          "bounds_384dpi": [
+            0,
+            0,
+            877,
+            874
+          ]
+        },
+        {
+          "tile": "Figure2-r1c2.png",
+          "bounds_384dpi": [
+            877,
+            0,
+            1754,
+            874
+          ]
+        },
+        {
+          "tile": "Figure2-r1c3.png",
+          "bounds_384dpi": [
+            1754,
+            0,
+            2631,
+            874
+          ]
+        },
+        {
+          "tile": "Figure2-r2c1.png",
+          "bounds_384dpi": [
+            0,
+            873,
+            877,
+            1748
+          ]
+        },
+        {
+          "tile": "Figure2-r2c2.png",
+          "bounds_384dpi": [
+            877,
+            873,
+            1754,
+            1748
+          ]
+        },
+        {
+          "tile": "Figure2-r2c3.png",
+          "bounds_384dpi": [
+            1754,
+            873,
+            2631,
+            1748
+          ]
+        },
+        {
+          "tile": "Figure2-r3c1.png",
+          "bounds_384dpi": [
+            0,
+            1747,
+            877,
+            2622
+          ]
+        },
+        {
+          "tile": "Figure2-r3c2.png",
+          "bounds_384dpi": [
+            877,
+            1747,
+            1754,
+            2622
+          ]
+        },
+        {
+          "tile": "Figure2-r3c3.png",
+          "bounds_384dpi": [
+            1754,
+            1747,
+            2631,
+            2622
+          ]
+        },
+        {
+          "tile": "Figure2-r4c1.png",
+          "bounds_384dpi": [
+            0,
+            2621,
+            877,
+            3496
+          ]
+        },
+        {
+          "tile": "Figure2-r4c2.png",
+          "bounds_384dpi": [
+            877,
+            2621,
+            1754,
+            3496
+          ]
+        },
+        {
+          "tile": "Figure2-r4c3.png",
+          "bounds_384dpi": [
+            1754,
+            2621,
+            2631,
+            3496
+          ]
+        },
+        {
+          "tile": "Figure2-r5c1.png",
+          "bounds_384dpi": [
+            0,
+            3495,
+            877,
+            4369
+          ]
+        },
+        {
+          "tile": "Figure2-r5c2.png",
+          "bounds_384dpi": [
+            877,
+            3495,
+            1754,
+            4369
+          ]
+        },
+        {
+          "tile": "Figure2-r5c3.png",
+          "bounds_384dpi": [
+            1754,
+            3495,
+            2631,
+            4369
+          ]
+        }
+      ]
+    },
+    {
+      "figure": "Figure2-without-unassisted",
+      "tiff_sha256": "b10dbc0e4289847a7b040a65110fae909437554590a637c63cf2b44e38e09249",
+      "source_size_600dpi": [
+        4111,
+        6538
+      ],
+      "rows": 5,
+      "columns": 3,
+      "tiles": [
+        {
+          "tile": "Figure2-without-unassisted-r1c1.png",
+          "bounds_384dpi": [
+            0,
+            0,
+            877,
+            837
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r1c2.png",
+          "bounds_384dpi": [
+            877,
+            0,
+            1754,
+            837
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r1c3.png",
+          "bounds_384dpi": [
+            1754,
+            0,
+            2631,
+            837
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r2c1.png",
+          "bounds_384dpi": [
+            0,
+            836,
+            877,
+            1674
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r2c2.png",
+          "bounds_384dpi": [
+            877,
+            836,
+            1754,
+            1674
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r2c3.png",
+          "bounds_384dpi": [
+            1754,
+            836,
+            2631,
+            1674
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r3c1.png",
+          "bounds_384dpi": [
+            0,
+            1673,
+            877,
+            2511
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r3c2.png",
+          "bounds_384dpi": [
+            877,
+            1673,
+            1754,
+            2511
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r3c3.png",
+          "bounds_384dpi": [
+            1754,
+            1673,
+            2631,
+            2511
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r4c1.png",
+          "bounds_384dpi": [
+            0,
+            2510,
+            877,
+            3348
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r4c2.png",
+          "bounds_384dpi": [
+            877,
+            2510,
+            1754,
+            3348
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r4c3.png",
+          "bounds_384dpi": [
+            1754,
+            2510,
+            2631,
+            3348
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r5c1.png",
+          "bounds_384dpi": [
+            0,
+            3347,
+            877,
+            4184
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r5c2.png",
+          "bounds_384dpi": [
+            877,
+            3347,
+            1754,
+            4184
+          ]
+        },
+        {
+          "tile": "Figure2-without-unassisted-r5c3.png",
+          "bounds_384dpi": [
+            1754,
+            3347,
+            2631,
+            4184
+          ]
+        }
+      ]
+    }
+  ]
+}

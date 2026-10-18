@@ -19,6 +19,7 @@ from pathlib import Path
 import fitz
 import resvg_py
 from fontTools.pens.svgPathPen import SVGPathPen
+from fontTools.pens.boundsPen import BoundsPen
 from fontTools.ttLib import TTFont
 from PIL import Image, ImageOps
 from reportlab.graphics import renderPDF
@@ -133,6 +134,7 @@ class Scene:
         self.title = "ARBITER workflow"
         self.description = "Reviewer approval, agent tool calls, deterministic server validation and verifiable bundle."
         self.pdf_text = []
+        self.arrow_tips = []
         self.fonts = {k: TTFont(HERE / "fonts" / filename) for k, filename in {
             "regular": "FiraSansCondensed-Regular.ttf", "bold": "FiraSansCondensed-Bold.ttf",
             "mono": "FiraCode-Regular.ttf"}.items()}
@@ -140,13 +142,14 @@ class Scene:
     def add(self, s):
         self.parts.append(s)
 
-    def rect(self, x, y, w, h, fill="white", r=10, stroke=INK, sw=2):
-        self.add(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>')
+    def rect(self, x, y, w, h, fill="white", r=10, stroke=INK, sw=2, kind="container"):
+        self.add(f'<rect data-kind="{kind}" x="{x}" y="{y}" width="{w}" height="{h}" rx="{r}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>')
 
     def line(self, x1, y1, x2, y2, dotted=False, arrow=False, sw=1.8):
         dash = ' stroke-dasharray="1 6" stroke-linecap="round"' if dotted else ""
         self.add(f'<path d="M{x1},{y1} L{x2},{y2}" fill="none" stroke="{INK}" stroke-width="{sw}"{dash}/>')
         if arrow:
+            self.arrow_tips.append((x2, y2))
             import math
             angle = math.atan2(y2-y1, x2-x1)
             pts = [(x2, y2)] + [(x2-7*math.cos(angle)+s*3.2*math.sin(angle),
@@ -168,7 +171,19 @@ class Scene:
             x -= width / 2
         assert x >= 0 and x + width <= W, (value, x, width)
         self.pdf_text.append(dict(x=x,y=y,text=value,size=size,face=face,color=color,stretch=stretch,italic=italic))
-        self.text_records.append(dict(text=value, size_pt=size * 72/101.6, x=x, baseline=y, width=width))
+        bounds = []
+        cursor = x
+        for char in value:
+            pen = BoundsPen(glyphs)
+            glyphs[cmap[ord(char)]].draw(pen)
+            if pen.bounds:
+                a,b,c,d = pen.bounds
+                bounds.append((cursor+a*scale*stretch, y-d*scale, cursor+c*scale*stretch, y-b*scale))
+            cursor += font["hmtx"][cmap[ord(char)]][0]*scale*stretch
+        bbox = [min(b[0] for b in bounds),min(b[1] for b in bounds),max(b[2] for b in bounds),max(b[3] for b in bounds)]
+        if italic:
+            bbox[2] += size*.21256
+        self.text_records.append(dict(text=value, size_pt=size * 72/101.6, x=x, baseline=y, width=width, bbox=bbox))
         self.add(f'<g aria-label="{html.escape(value, quote=True)}" fill="{color}"><title>{html.escape(value)}</title>')
         for char in value:
             name = cmap[ord(char)]
@@ -196,7 +211,7 @@ class Scene:
 
     def pill(self, x, y, text, size=11.5, fill=HILITE, face="bold"):
         width = self.width(text, size, face) + 14
-        self.rect(x, y-13, width, 21, fill, 8, sw=1.2)
+        self.rect(x, y-13, width, 21, fill, 8, sw=1.2,kind="pill")
         self.text(x+7, y+1, text, size, face)
         return width
 
@@ -230,11 +245,9 @@ def draw_workflow(data):
     s.text(348, 111, "arbiter review", 10.5, "mono", anchor="middle")
     s.text(612, 94, "Report +", 11.5, "bold", anchor="middle")
     s.text(612, 111, "verifiable bundle", 11.5, "bold", anchor="middle")
-    s.line(412, 99, 420, 99)
-    s.line(420, 99, 420, 119)
-    s.line(420, 119, 480, 119)
-    s.line(480, 119, 480, 146, arrow=True)
-    s.text(480, 111, "unlocks domain work", 10.2, anchor="middle")
+    s.line(412, 99, 480, 99)
+    s.line(480, 99, 480, 146, arrow=True)
+    s.text(490, 140, "unlocks domain work", 10.2)
 
     s.rect(12, 146, 672, 70, LAVENDER, 11, sw=2.3)
     s.text(25, 168, "LLM agent", 14, "bold", LLM)
@@ -253,43 +266,47 @@ def draw_workflow(data):
                ["get_domain_context", "save_domain_judgment"], ["review_trial", "finalize_batch"]]
     responses = ["source list", "validation result", "proposed judgement", "review report"]
     for cx, calls, response in zip(centers, visible, responses):
-        request_x = cx-66 if cx==480 else cx-61
-        response_x = cx+66 if cx==480 else cx+61
-        s.line(request_x, 216, request_x, 300, arrow=True, sw=1.4)
-        s.line(response_x, 300, response_x, 216, arrow=True, sw=1.4)
+        request_x = cx-52 if cx==612 else cx-56
+        response_x = cx+56
+        s.line(request_x, 216, request_x, 350, arrow=True, sw=1.4)
+        s.line(response_x, 350, response_x, 216, arrow=True, sw=1.4)
         for y, call in zip([239, 262], calls):
             assert s.width(call, 10.2, "mono") * .92 < 118
-            s.text(cx-7 if cx==480 else cx, y, call, 10.2, "mono", anchor="middle", stretch=.84 if cx==480 else .92)
+            s.text(cx, y, call, 10.2, "mono", anchor="middle", stretch=.84 if cx==480 else .92)
         s.text(cx, 287, response, 10.5, anchor="middle", italic=True)
 
-    s.rect(12, 300, 672, 77, MINT, 11, sw=2.3)
-    s.text(25, 322, "ARBITER server", 13.5, "bold")
-    s.text(25, 341, "deterministic;", 10.5)
-    s.text(25, 357, "no model calls", 10.5)
+    s.rect(12, 350, 672, 77, MINT, 11, sw=2.3)
+    s.text(25, 372, "ARBITER server", 13.5, "bold")
+    s.text(25, 391, "deterministic;", 10.5)
+    s.text(25, 407, "no model calls", 10.5)
     for cx, top, bottom in zip(centers,
             ["Capture sources", "Validate & store", "Check cited spans", "Record history"],
             ["Bind their versions", "the result proposal", "Compute judgements", "Verify & package"]):
-        s.text(cx, 328, top, 11.5, "bold", anchor="middle")
-        s.text(cx, 348, bottom, 11.2, anchor="middle")
+        s.text(cx, 378, top, 11.5, "bold", anchor="middle")
+        s.text(cx, 398, bottom, 11.2, anchor="middle")
     for x in [282, 414, 546]:
-        s.line(x, 311, x, 365, dotted=True, sw=1)
-    s.line(612, 377, 612, 425, arrow=True)
-    s.rect(12, 425, 672, 43, YELLOW, 10, sw=2)
-    s.text(25, 451, "Bundle", 13, "bold")
-    s.text(155, 442, "Source identities + bound evidence + complete history", 11.5)
-    s.text(155, 460, "Checked by an independent verifier", 11.5)
-    s.text(612, 451, ".arbiter.zip", 10.5, "mono", anchor="middle")
+        s.line(x, 361, x, 415, dotted=True, sw=1)
+    s.line(612, 427, 612, 475, arrow=True)
+    s.rect(12, 475, 672, 43, YELLOW, 10, sw=2)
+    s.text(25, 501, "Bundle", 13, "bold")
+    s.text(155, 492, "Source identities + bound evidence + complete history", 11.5)
+    s.text(155, 510, "Checked by an independent verifier", 11.5)
+    s.text(612, 501, ".arbiter.zip", 10.5, "mono", anchor="middle")
 
     red = "#B32624"
-    # One continuous return connects the pill through the server lane to the agent.
-    s.add(f'<path d="M535 386 L535 216" fill="none" stroke="{red}" stroke-width="2.2"/>')
-    s.add(f'<polygon points="535,216 531,224 539,224" fill="{red}"/>')
-    s.rect(307, 386, 276, 23, "white", 6, stroke=red, sw=1.1)
-    s.text(315, 402, "invalid or unbound answer → not saved", 11, "bold", red)
+    s.line(548, 350, 548, 216, arrow=True, sw=1.6)
+    s.parts[-2:] = [part.replace(INK, red) for part in s.parts[-2:]]
+    s.rect(566, 301, 92, 43, "white", 6, stroke=red, sw=1.1,kind="pill")
+    for yy, label in zip([313, 326, 339], ["invalid or", "unbound answer", "→ not saved"]):
+        s.text(612, yy, label, 10.2, "bold", red, anchor="middle")
+    s.height += 50
     # Remove the former panel-heading margin from both variants.
     s.parts=['<g transform="translate(0 -28)">',*s.parts,'</g>']
     for record in s.pdf_text:record['y']-=28
-    for record in s.text_records:record['baseline']-=28
+    for record in s.text_records:
+        record['baseline']-=28
+        record['bbox'][1]-=28;record['bbox'][3]-=28
+    s.arrow_tips=[(x,y-28) for x,y in s.arrow_tips]
     s.height-=28
     return s
 
@@ -380,39 +397,65 @@ def trace_data(data,root):
               ['Time to death was a prespecified secondary endpoint with a registered 5-year time frame.']]
     for i,item in enumerate(r,1):
         item['unassisted']=excerpt(rationale[i],excerpts[i-1]);item['unassisted_full']=rationale[i]
-        item['unassisted_answers']=' · '.join(f'{q} {a}' for q,a in answers.items() if q.startswith(str(i)+'.'))
+        item['unassisted_answers']=' · '.join(f'{q}\u00a0{a}' for q,a in answers.items() if q.startswith(str(i)+'.'))
     assert c['snapshots'][SLUG]['aggregation']['rule']=='overall.any_concerns'
     return rows
 
 
 def lines_for(s,text,width,size=10.3,face='regular'):
     result=[];line=''
-    for word in text.split():
-        trial=(line+' '+word).strip()
+    answer_list=bool(re.match(r'^\d\.\d\u00a0',text))
+    units=text.split(' · ') if answer_list else text.split(' ')
+    for unit_index,word in enumerate(units):
+        if answer_list and unit_index: word='· '+word
+        trial=(line+' '+word).strip(' ')
         if s.width(trial,size,face)>width and line:result.append(line);line=word
         else:line=trial
     if line:result.append(line)
     return result
 
 
-def block(s,x,y,text,width,fill=None,size=10.3,face='regular',dashed=False,leading=12.5,color=INK):
+def block(s,x,y,text,width,fill=None,size=10.3,face='regular',dashed=False,leading=16,color=INK):
+    if fill: leading=max(leading,18)
     lines=lines_for(s,text,width-10 if fill or dashed else width,size,face)
     if dashed:
-        s.add(f'<rect x="{x}" y="{y-10}" width="{width}" height="{len(lines)*leading+5}" rx="6" fill="none" stroke="{INK}" stroke-width="1.2" stroke-dasharray="4 3"/>')
+        top=y-11;bottom=top+len(lines)*leading+4;r=6
+        s.rect(x,top,width,bottom-top,'none',r,stroke='none',sw=0,kind='outline')
+        # Each straight run begins and ends with a full dash, joined to solid
+        # corners. Fit the dash length to the run rather than clipping a cycle.
+        for x1,y1,x2,y2 in [(x+r,top,x+width-r,top),(x+r,bottom,x+width-r,bottom),
+                              (x,top+r,x,bottom-r),(x+width,top+r,x+width,bottom-r)]:
+            length=abs(x2-x1)+abs(y2-y1);n=max(1,round((length+3)/7))
+            dash=(length-3*(n-1))/n
+            s.add(f'<path d="M{x1} {y1} L{x2} {y2}" fill="none" stroke="{INK}" stroke-width="1.2" stroke-dasharray="{dash} 3"/>')
+        for path in [f'M{x+r} {top} Q{x} {top} {x} {top+r}',
+                     f'M{x+width-r} {top} Q{x+width} {top} {x+width} {top+r}',
+                     f'M{x} {bottom-r} Q{x} {bottom} {x+r} {bottom}',
+                     f'M{x+width-r} {bottom} Q{x+width} {bottom} {x+width} {bottom-r}']:
+            s.add(f'<path d="{path}" fill="none" stroke="{INK}" stroke-width="1.2"/>')
     for line in lines:
-        if fill:s.rect(x,y-10,s.width(line,size,face)+8,leading+1,fill,5,sw=.6)
-        s.text(x+4 if fill or dashed else x,y,line,size,face,color)
+        if fill:s.rect(x,y-11.6,s.width(line,size,face)+10,16,fill,3,sw=.6,kind="pill")
+        s.text(x+5 if fill or dashed else x,y,line,size,face,color)
         y+=leading
     return y
 
 
 def curve(s,x1,y1,x2,y2):
     import math
-    cx=x2;cy=y1
-    s.add(f'<path d="M{x1} {y1} Q{cx} {cy} {x2} {y2}" fill="none" stroke="{INK}" stroke-width="1.3"/>')
-    angle=math.atan2(y2-cy,x2-cx)
-    pts=[(x2,y2)]+[(x2-5*math.cos(angle)+sign*2.4*math.sin(angle),y2-5*math.sin(angle)-sign*2.4*math.cos(angle)) for sign in [-1,1]]
+    # A visible bow approaches the target from below; the head follows its tangent.
+    c1=(x1-18,y1+14);c2=(x2+5,y2+17)
+    from svgpathtools import CubicBezier, Path as SVGPath
+    bezier=CubicBezier(complex(x1,y1),complex(*c1),complex(*c2),complex(x2,y2))
+    shaft=SVGPath(bezier.cropped(0,bezier.ilength(bezier.length()-4))).d()
+    s.add(f'<path d="{shaft}" fill="none" stroke="{INK}" stroke-width="1.4" stroke-linecap="round"/>')
+    angle=math.atan2(y2-c2[1],x2-c2[0])
+    pts=[(x2,y2)]+[(x2-6*math.cos(angle)+sign*2.6*math.sin(angle),y2-6*math.sin(angle)-sign*2.6*math.cos(angle)) for sign in [-1,1]]
     s.add('<polygon points="'+' '.join(f'{x},{y}' for x,y in pts)+f'" fill="{INK}"/>')
+    s.arrow_tips.append((x2,y2))
+
+
+def text_target(record):
+    return (record['bbox'][2]-5, record['bbox'][3]+4.2)
 
 
 def draw_trace(data,rows,with_unassisted=True):
@@ -448,21 +491,31 @@ def draw_trace(data,rows,with_unassisted=True):
         for line in lines:
             s.text(22,y,line,10.6,'bold');y+=15
         s.pill(22+s.width(lines[-1],10.6,'bold')+8,y-16,answer,10.6,'#F4F3FA')
-        return y+3
+        return y+10
 
     def marked_text(x,y,text,limit,phrase=None,fill=None,outline=False,face='regular'):
         # Split exact verbatim text into wrapped lines, preserving phrase-level marks.
+        if outline and phrase:
+            pos=text.index(phrase)+len(phrase)
+            if pos<len(text) and text[pos] in ',.': phrase+=text[pos]
+            text=text.replace(phrase,'\u00a0\u00a0'+phrase+'\u00a0\u00a0')
         start=text.find(phrase) if phrase else -1
         assert not phrase or start>=0,(phrase,text)
         offset=0
         for line in lines_for(s,text,limit,10.6,face):
+            offset=text.index(line,offset)
             lo=max(offset,start);hi=min(offset+len(line),start+len(phrase or ''))
             if start>=0 and hi>lo:
                 xx=x+s.width(line[:lo-offset],10.6,face)
                 ww=s.width(line[lo-offset:hi-offset],10.6,face)
-                s.rect(xx-2,y-10,ww+4,13,fill or 'none',3,stroke=UNASSISTED if outline else 'none',sw=1.1)
-            s.text(x,y,line,10.6,face)
-            y+=13;offset+=len(line)+1
+                s.rect(xx-3.5,y-11.6,ww+7,16,fill or 'none',2,stroke=UNASSISTED if outline else 'none',sw=1.1,kind='outline')
+            if start>=0 and hi>lo:
+                for begin,end in [(0,lo-offset),(lo-offset,hi-offset),(hi-offset,len(line))]:
+                    chunk=line[begin:end]
+                    if chunk.strip(): s.text(x+s.width(line[:begin],10.6,face),y,chunk,10.6,face)
+            else:
+                s.text(x,y,line,10.6,face)
+            y+=19;offset+=len(line)
         return y
 
     y=42
@@ -486,10 +539,10 @@ def draw_trace(data,rows,with_unassisted=True):
             yy=block(s,22,yy,provenance,width,size=10,leading=12)
             if i==1:
                 metadata=s.text_records[-1]
-                end=metadata['x']+metadata['width']
-                callout(right-94,metadata['baseline'],1,'Bound span',(end,metadata['baseline']+3))
-            yy=block(s,22,yy+2,quote,width,fill=HILITE if b['basis']['kind']=='direct_support' else LAVENDER,size=10.6,leading=13)+3
-        s.parts.insert(card_start,f'<rect x="18" y="{card_top}" width="{right-24}" height="{yy-card_top-8}" rx="6" fill="white" stroke="#888888" stroke-width=".7"/>')
+                callout(min(right-108,metadata['bbox'][2]+70),metadata['baseline']+23,1,'Bound span',text_target(metadata))
+                yy+=28
+            yy=block(s,22,yy+6,quote,width,fill=HILITE if b['basis']['kind']=='direct_support' else LAVENDER,size=10.6,leading=13)+3
+        s.parts.insert(card_start,f'<rect x="18" y="{card_top}" width="{right-24}" height="{yy-card_top-14}" rx="6" fill="white" stroke="#888888" stroke-width=".7"/>')
         s.text(22,yy+2,'Justification',10,color=GREY)
         yy=block(s,80,yy+2,r['reason']+('…' if not r['reason'].endswith('.') else ''),width-58,fill=HILITE if i<5 else LAVENDER,size=10.6,leading=13)
         if i==1:
@@ -497,11 +550,12 @@ def draw_trace(data,rows,with_unassisted=True):
             unknown_x=22+s.width('Unknown:',10.6,'bold')+5
             yy=block(s,unknown_x,yy+4,r['a']['unknowns'][0],width-148,size=10.6,leading=13,color=GREY)
             last=s.text_records[-1]
-            callout(right-99,last['baseline'],4,'Recorded gap',(last['x']+last['width']+2,last['baseline']+3))
+            callout(min(right-112,last['bbox'][2]+70),last['baseline']+24,4,'Recorded gap',text_target(last))
+            yy+=30
         if i==2:
             s.text(22,yy+4,'2.4, 2.5, 2.7 not asked — RoB 2 branching',10.6,'bold')
-            callout(right-105,yy+4,2,'Branching',(22+s.width('2.4, 2.5, 2.7 not asked — RoB 2 branching',10.6,'bold'),yy+7))
-            yy+=15
+            callout(min(right-112,s.text_records[-1]['bbox'][2]+70),yy+28,2,'Branching',text_target(s.text_records[-1]))
+            yy+=44
         if i==4:
             yy=question(yy+6,'4.4 … influenced by knowledge …?','Probably no')
             yy=block(s,22,yy,r['inference']+'…',width,dashed=True,size=10.6,leading=13)+4
@@ -510,14 +564,14 @@ def draw_trace(data,rows,with_unassisted=True):
             assert [a['answer'] for a in r['d']['answers']]==['no_information','probably_no','probably_no']
             algorithm='5.1 NI · 5.2 PN · 5.3 PN → official algorithm'
             s.text(22,yy+4,algorithm,10.6,'bold')
-            target=(22+s.width(algorithm,10.6,'bold'),yy+7)
-            callout(right-89,yy+4,3,'Algorithm',target)
-            yy=block(s,22,yy+20,'Proposed Some concerns → Adopted Some concerns (no override)',width,size=10.6,face='bold')
+            target=text_target(s.text_records[-1])
+            callout(min(right-112,target[0]+75),yy+28,3,'Algorithm',target)
+            yy=block(s,22,yy+49,'Proposed Some concerns → Adopted Some concerns (no override)',width,size=10.6,face='bold')
             yy+=1
         uy=y
         if with_unassisted:
             ua_index=len(s.parts)
-            uy=marked_text(528,y+17,r['unassisted_answers'],146,'4.3 NA' if i==4 else None,outline=i==4,face='bold')
+            uy=marked_text(528,y+17,r['unassisted_answers'],146,'4.3\u00a0NA' if i==4 else None,outline=i==4,face='bold')
             phrase={4:'Assessors were not blinded to allocation',5:'registered 5-year time frame'}.get(i)
             uy=marked_text(528,uy+5,r['unassisted'],146,phrase,outline=bool(phrase))
             if i==4:
@@ -541,11 +595,11 @@ def draw_trace(data,rows,with_unassisted=True):
     s.text(165,bottom+63,'Adjudicators: '+data['adjud']['preferred'],10.8,'bold')
     s.text(411,bottom+63,'Unassisted: '+data['unassisted']['model_D5'],10.8,'bold','#DF8F44')
     s.height=bottom+72
-    assert s.height<=920, s.height
+    assert s.height<=1200, s.height
     return s
 
 
-def export_scene(scene,out,name,deliver=True):
+def export_scene(scene,out,name,geometry):
     from reportlab.pdfbase import pdfmetrics
     from reportlab.pdfbase.ttfonts import TTFont as PDFont
     for face,filename in [('regular','FiraSansCondensed-Regular.ttf'),('bold','FiraSansCondensed-Bold.ttf'),('mono','FiraCode-Regular.ttf')]:
@@ -554,10 +608,7 @@ def export_scene(scene,out,name,deliver=True):
     assert not re.search('rob2',svg,re.I),'Legacy name in rendered text'
     png=resvg_py.svg_to_bytes(svg_string=svg,width=1644,dpi=96,skip_system_fonts=True)
     (out/f'{name}.png').write_bytes(png)
-    if not deliver:
-        preview=Image.open(io.BytesIO(png)).convert('RGB')
-        diagnostic_proofs(preview,out,name,scene.height)
-        return dict(width_mm=174,height_mm=scene.height/4,min_text_pt=min(r['size_pt'] for r in scene.text_records))
+    proof_dir=out if out.name=='qa' else out/'qa'
     (out/f'{name}.svg').write_text(svg,encoding='utf8')
     # PDF uses the same positions with subset-embedded TrueType fonts. SVG remains outlined.
     from reportlab.pdfgen.canvas import Canvas
@@ -600,11 +651,10 @@ def export_scene(scene,out,name,deliver=True):
         with Image.open(out/f'{name}.tiff') as tif:
             assert tif.tag_v2[259]==5 and tuple(tif.info['dpi'])==(600,600)
         proof=page.get_pixmap(dpi=160,alpha=False)
-        Image.frombytes('RGB',(proof.width,proof.height),proof.samples).save(out/'qa'/f'{name}-pdf.png')
+        Image.frombytes('RGB',(proof.width,proof.height),proof.samples).save(proof_dir/f'{name}-pdf.png')
     preview=Image.open(io.BytesIO(png)).convert('RGB')
-    qa=out/'qa'
-    diagnostic_proofs(preview,qa,name,scene.height)
-    return dict(width_mm=174,height_mm=scene.height/4,min_text_pt=min(r['size_pt'] for r in scene.text_records),vector_pdf=True,embedded_fonts=[f[3] for f in fonts],tiff_dpi=600,tiff_compression='LZW',text_elements=len(scene.text_records))
+    diagnostic_proofs(preview,proof_dir,name,scene.height)
+    return dict(geometry=geometry,width_mm=174,height_mm=scene.height/4,min_text_pt=min(r['size_pt'] for r in scene.text_records),vector_pdf=True,embedded_fonts=[f[3] for f in fonts],tiff_dpi=600,tiff_compression='LZW',text_elements=len(scene.text_records))
 
 
 def diagnostic_proofs(preview,directory,name,height):
@@ -634,7 +684,7 @@ def write_notes(data,rows,out):
             text += [f'**{b["basis"]["kind"]}**: `{b["src"]["label"]}`, page {ev["page"]}, bound lines {ev["start_line"]}–{ev["end_line"]}.',f'Handle `{ev["handle"]}`; evidence `{ev["identity"]}`; source `{ev["source_id"]}`; source projection `{ev["source_version"]}`.','',f'Displayed quote: {quote}','','Full bound span:','',ev['quote'],'']
         if i==5:text+=['Displayed gap (plain text, not highlighted as evidence): '+r['gap'],'']
         if i==4:text+=['Inference (no quotation displayed): '+r['inference']+'…','The inference basis still references the same bound evidence as 4.3; a dashed outline distinguishes the reasoning from quoted direct support. The bound 4.3 span explicitly includes the DSMB unblinding sentence; there is no citation mismatch.','']
-        text += ['Unassisted answers: '+r['unassisted_answers'],'','Unassisted displayed excerpt: '+r['unassisted'],'','Unassisted full rationale: '+r['unassisted_full'],'']
+        text += ['Unassisted answers: '+r['unassisted_answers'].replace('\u00a0',' '),'','Unassisted displayed excerpt: '+r['unassisted'],'','Unassisted full rationale: '+r['unassisted_full'],'']
     (out/'figure1-notes.md').write_text('\n'.join(text),encoding='utf8')
 
 
@@ -644,9 +694,14 @@ def main():
     write_outputs(args.data_root)
     data=load(args.data_root,args.arbiter_root);rows=trace_data(data,args.data_root)
     out=ROOT/'analysis/output/manuscript';out.mkdir(parents=True,exist_ok=True);(out/'qa').mkdir(exist_ok=True)
-    qa={}
-    for name,scene in [('Figure1',draw_workflow(data)),('Figure2',draw_trace(data,rows))]:qa[name]=export_scene(scene,out,name)
-    qa['Figure2-without-unassisted']=export_scene(draw_trace(data,rows,False),out/'qa','Figure2-without-unassisted',False)
+    from geometry import check
+    scenes={'Figure1':draw_workflow(data),'Figure2':draw_trace(data,rows),
+            'Figure2-without-unassisted':draw_trace(data,rows,False)}
+    preflight={name:dict(geometry=check(scene)) for name,scene in scenes.items()}
+    if not all(v['geometry']['passed'] for v in preflight.values()):
+        (HERE/'qa.json').write_text(json.dumps(preflight,indent=2)+'\n')
+        raise AssertionError(json.dumps(preflight,indent=2))
+    qa={name:export_scene(scene,out/'qa' if 'without' in name else out,name,preflight[name]['geometry']) for name,scene in scenes.items()}
     write_notes(data,rows,out)
     (HERE/'qa.json').write_text(json.dumps(qa,indent=2)+'\n')
     print(json.dumps(qa,indent=2))

@@ -1,7 +1,27 @@
 {
   "Figure1": {
+    "geometry": {
+      "passed": true,
+      "clearance_mm": 0.3,
+      "arrow_tip_clearance_mm": 0.8,
+      "curve_sampling_max_mm": 0.0375,
+      "minimum_text_stroke_clearance_mm": 0.5263,
+      "minimum_arrow_text_clearance_mm": 1.8447,
+      "text_elements": 54,
+      "shape_elements": 43,
+      "arrow_tips": 14,
+      "checks": {
+        "text_stroke_pairs": 2322,
+        "box_pairs": 21,
+        "arrow_text_pairs": 756,
+        "arrow_box_pairs": 98,
+        "frame_elements": 97,
+        "text_pairs": 1431
+      },
+      "violations": []
+    },
     "width_mm": 174,
-    "height_mm": 112.5,
+    "height_mm": 125.0,
     "min_text_pt": 7.228346456692914,
     "vector_pdf": true,
     "embedded_fonts": [
@@ -11,11 +31,31 @@
     ],
     "tiff_dpi": 600,
     "tiff_compression": "LZW",
-    "text_elements": 52
+    "text_elements": 54
   },
   "Figure2": {
+    "geometry": {
+      "passed": true,
+      "clearance_mm": 0.3,
+      "arrow_tip_clearance_mm": 0.8,
+      "curve_sampling_max_mm": 0.0375,
+      "minimum_text_stroke_clearance_mm": 0.3591,
+      "minimum_arrow_text_clearance_mm": 1.05,
+      "text_elements": 113,
+      "shape_elements": 84,
+      "arrow_tips": 4,
+      "checks": {
+        "text_stroke_pairs": 9266,
+        "box_pairs": 1770,
+        "arrow_text_pairs": 452,
+        "arrow_box_pairs": 240,
+        "frame_elements": 197,
+        "text_pairs": 6328
+      },
+      "violations": []
+    },
     "width_mm": 174,
-    "height_mm": 223.875,
+    "height_mm": 289.0,
     "min_text_pt": 7.086614173228347,
     "vector_pdf": true,
     "embedded_fonts": [
@@ -24,11 +64,39 @@
     ],
     "tiff_dpi": 600,
     "tiff_compression": "LZW",
-    "text_elements": 110
+    "text_elements": 113
   },
   "Figure2-without-unassisted": {
+    "geometry": {
+      "passed": true,
+      "clearance_mm": 0.3,
+      "arrow_tip_clearance_mm": 0.8,
+      "curve_sampling_max_mm": 0.0375,
+      "minimum_text_stroke_clearance_mm": 0.3591,
+      "minimum_arrow_text_clearance_mm": 1.05,
+      "text_elements": 73,
+      "shape_elements": 73,
+      "arrow_tips": 4,
+      "checks": {
+        "text_stroke_pairs": 5183,
+        "box_pairs": 1176,
+        "arrow_text_pairs": 292,
+        "arrow_box_pairs": 196,
+        "frame_elements": 146,
+        "text_pairs": 2628
+      },
+      "violations": []
+    },
     "width_mm": 174,
-    "height_mm": 214.125,
-    "min_text_pt": 7.086614173228347
+    "height_mm": 276.75,
+    "min_text_pt": 7.086614173228347,
+    "vector_pdf": true,
+    "embedded_fonts": [
+      "AAAAAA+FiraSansCondensed-Bold",
+      "AAAAAA+FiraSansCondensed-Regular"
+    ],
+    "tiff_dpi": 600,
+    "tiff_compression": "LZW",
+    "text_elements": 73
   }
 }
