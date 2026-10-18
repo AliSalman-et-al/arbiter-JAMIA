@@ -16,7 +16,7 @@ METHODS_APPENDIX <- c(
     'Prompt length is input plus cache creation plus cache read. Terminal output is allocated by request share for the point estimate',
     'and wholly to lower/higher tiers for bounds. Thinking tokens are already included in output.',
     'Signed terminal-minus-request input residuals, including negative retry residuals, are retained and allocated at lower-tier,',
-    'request-share and higher-tier rates. Side calls are modelUsage minus terminal usage. Compaction uses high-tier pricing and',
+    'request-share and higher-tier rates. Side calls are total recorded model usage minus terminal usage. Compaction uses high-tier pricing and',
     'one-hour writes; five-minute writes are a sensitivity. Side-call turns without a compaction boundary are flagged and bounded.',
     'All trial bounds are ordered; Sonnet bounds coincide. Routing was global, with no geography multiplier.',
     'Harness costs are unusable: unrecognised model and unknown cost basis; retained only as supplementary diagnostics.'),
@@ -108,7 +108,7 @@ supplement_registry <- function(inputs) {
   add('Published label distributions by domain',manuscript_data('table1') |>
     select(meta_id,Trials=trials,D1:D5) |> left_join(metadata |> select(meta_id,specialty,topic),by='meta_id') |>
     arrange(specialty!='General medicine',specialty,topic) |> select(Specialty=specialty,Topic=topic,Trials,D1:D5),
-    'Each D1–D5 cell gives Low / Some concerns / High counts; 102 trials. Source journals and years are in main Table 1.')
+    paste('Each D1–D5 cell gives Low / Some concerns / High counts; 102 trials. Source journals and years are in main Table 1.',TOPIC_ABBREVIATIONS))
   add('Process metrics: Sonnet 5.5',manuscript_data('table5'),paste('Per trial: median [IQR]; paired mean ARBITER minus Unassisted difference (95% CI).',
     'USD denotes API list-price equivalents, not expenditure. Thinking is included in output.',CI_NOTE))
   add('Process metrics: Haiku 5.5',manuscript_data('table5-haiku'),paste('Exploratory; per-trial median [IQR] and paired mean difference (95% CI).',
@@ -161,7 +161,7 @@ supplement_registry <- function(inputs) {
   forest <- manuscript_data('forest-meta') |> left_join(metadata |> select(meta_id,specialty,topic),by='meta_id')
   add('Per-meta-analysis weighted κ',supplement_estimates(forest,c('specialty','topic','arm')) |>
       pivot_wider(names_from=arm,values_from=`Estimate (95% CI)`) |> arrange(specialty!='General medicine',specialty,topic),
-    paste('Weighted κ (95% CI). eFigure 1 displays the defined nondegenerate estimates. A coefficient with no variance, or a degenerate bootstrap interval, is shown as —.',CI_NOTE))
+    paste(TOPIC_ABBREVIATIONS,'Weighted κ (95% CI). eFigure 1 displays the defined nondegenerate estimates. A coefficient with no variance, or a degenerate bootstrap interval, is shown as —.',CI_NOTE))
   add('Per-adjudicator and split-cell win-share sensitivity',supplement_estimates(manuscript_data('primary-endpoint'),c('analysis','metric')),
     paste('Consensus is primary. Split discordant cells are forced ARBITER losses; the residual Neither category includes these forced losses.',CI_NOTE))
   for(ref in c('meta','composite')) {
@@ -197,19 +197,29 @@ supplement_registry <- function(inputs) {
   # Clinical wording retained in the machine export; reader text avoids an internal arm-name collision.
   override$Value <- gsub('baseline balance','preintervention balance',override$Value,fixed=TRUE)
   add('Recorded model override',override,
-    'Hill 2017 D1: 1.1 = NI, 1.2 = PY, 1.3 = N. Proposed Low; adopted Some concerns. Clinical balance terminology is expanded for readability; no clinical meaning is changed. The rationale is model text, not endorsed guidance. Evidence identities remain in the accompanying CSV.')
+    'Hill 2017 D1: 1.1 = NI, 1.2 = PY, 1.3 = N. Proposed Low; adopted Some concerns. Answer codes and clinical balance terminology are expanded for readability; the original rationale remains in the accompanying CSV. The rationale is model text, not endorsed guidance. Evidence identities remain in the accompanying CSV.')
   add('Quotation syntax in active justifications',supplement_estimates(manuscript_data('grounding'),'arm'),
     paste('Quoted active answers / all active answers. Paired double quotes enclose at least five words. Syntax is not verification and understates ARBITER bundle-based grounding.',CI_NOTE))
   add('Unassisted justification content',manuscript_data('baseline-justification-content') |>
     transmute(arm,`Answer-code-only / exported fields (%)`=fmt_fraction(answer_code_only,n)),
     'Codes are Y, PY, PN, N, NI or NA. This describes exported fields without inferring absent reasoning.')
-  add('Exploratory signalling-answer agreement',supplement_estimates(manuscript_data('signalling-agreement'),c('arm','adjudicator','question')),
-    paste('Correct collapsed answers / eligible questions on disputed domains. Independent answers define reference; Y/PY, N/PN, NI/NA collapse. Missing predictions are wrong. Includes Haiku without a preferred-judgement endpoint.',CI_NOTE))
+  signals <- supplement_estimates(manuscript_data('signalling-agreement'),c('arm','adjudicator','question')) |>
+    mutate(question=as.character(question)) |> left_join(question_map(TRUE) |> select(question,short_text),by='question')
+  blocks <- lapply(c('A','Z'),function(a) list(title=reader_label(a),data=signals |> filter(adjudicator==a) |>
+    select(Question=question,`Signalling question`=short_text,arm,`Estimate (95% CI)`) |>
+    pivot_wider(names_from=arm,values_from=`Estimate (95% CI)`)))
+  add('Exploratory signalling-answer agreement',NULL,
+    paste('Correct collapsed answers / eligible questions (95% CI) on disputed domains. Independent answers define reference; Y/PY, N/PN, NI/NA collapse. Missing predictions are wrong. Includes Haiku without a preferred-judgement endpoint.',CI_NOTE),blocks)
+
   entries
 }
 supplement_table <- function(entry,data=entry$data) {
   x <- display_frame(data,TRUE)
   names(x) <- reader_field(names(x))
+  if(entry$caption=='Exploratory signalling-answer agreement') {
+    names(x)[names(x)=='Question'] <- 'SQ'
+    entry$note <- paste('SQ, signalling question.',entry$note)
+  }
   if('Measure' %in% names(x)) x$Measure <- gsub('_',' ',x$Measure,fixed=TRUE)
   grouped <- FALSE
   group_col <- if('Group' %in% names(x)) 'Group' else if('Weighted κ' %in% names(x) && 'Domain' %in% names(x)) names(x)[1] else NULL
@@ -224,6 +234,7 @@ supplement_table <- function(entry,data=entry$data) {
   else if(grepl('^Process metrics',entry$caption)) widths <- c(2.4,1.3,1.3,1.85)
   else if(grepl('^Confusion',entry$caption)) widths <- c(2.05,rep(4.8/(ncol(x)-1),ncol(x)-1))
   else if(entry$caption=='Per-meta-analysis weighted κ') widths <- c(1.1,2.15,rep(.9,4))
+  else if(entry$caption=='Exploratory signalling-answer agreement') widths <- c(.5,2.15,rep(1.05,4))
   else if(entry$caption=='Recorded model override') widths <- c(1.25,5.6)
   else if(entry$caption=='Token reconciliation and compaction diagnostics' || startsWith(entry$caption,'API cost')) widths <- c(2.65,rep(1.05,4))
   else if(grepl('^RoB 2 consistency',entry$caption)) widths <- c(.65,1.9,rep(.86,ncol(x)-2))
@@ -259,11 +270,15 @@ build_supplement <- function(inputs) {
     doc <- manuscript_par(doc,paste0('eTable ',i,'. ',e$caption),style='heading 2')
     if(is.null(e$blocks)) doc <- flextable::body_add_flextable(doc,supplement_table(e))
     else for(k in seq_along(e$blocks)) {
-      if(k>1 && (k-1)%%6==0) doc <- officer::body_add_break(doc)
+      per_page <- if(startsWith(e$caption,'Confusion')) 6L else 1L
+      if(k>1 && (k-1)%%per_page==0) {
+        doc <- officer::body_add_break(doc)
+        doc <- manuscript_par(doc,paste0('eTable ',i,' (continued). ',e$caption),style='heading 2')
+      }
       block <- e$blocks[[k]]
       doc <- manuscript_par(doc,block$title,style='heading 2')
       # The note is attached once per source's six grids.
-      be <- e; be$note <- if(k%%6==0) e$note else NULL
+      be <- e; be$note <- if(k%%per_page==0) e$note else NULL
       doc <- flextable::body_add_flextable(doc,supplement_table(be,block$data))
     }
     if(e$caption=='Per-meta-analysis weighted κ') {

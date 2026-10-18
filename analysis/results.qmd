@@ -15,11 +15,9 @@ The benchmark includes 102 trials from 16 meta-analyses. Models were Claude Sonn
 
 Only consensus-discordant win share is confirmatory. Intervals use 10,000 percentile bootstrap replicates, resampling trials within meta-analysis, seed 20261018. Missing judgements count as wrong. No p-values or multiplicity corrections are used. The composite excludes split cells and substitutes consensus preferred judgements on consensus cells. Adjudicators could only choose among the three offered labels. Cells where both Sonnet arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values; composite accuracy must not be an accuracy claim in the abstract.
 
-## Figure 1: architecture and draft trace
+## Figure 1. ARBITER workflow and evidence trace
 
-![ARBITER workflow and provisional worked trace from a committed assessment bundle. Source locators refer to captured PDF pages. Text-span quotes are server-extracted spans cited by handle, so the model cannot cite text that is not in the captured sources. For visual evidence, the image region is server-rendered and hash-bound; its transcription is written by the model and is not machine-checked against the image.](output/figures/figure1.png)
-
-The trace uses a consensus cell where ARBITER-Sonnet matched the preferred judgement and differed from the meta label. Four more-severe candidates where only ARBITER departed from meta, plus levin-2016 D2, with cited bundle passages, evidence identifiers, source/page locators, verification status and abbreviated answer sets are in [worked-trace-candidates.csv](output/tables/worked-trace-candidates.csv). The default is award-10-2018 D2. The trace shows the span binding to its hash-identified captured source and the recorded independent bundle verifier result. The displayed selection is provisional for author review.
+![ARBITER workflow and AVATAR evidence trace; full legend and alt text accompany the publication files.](output/manuscript/Figure1.png)
 
 ## Figure 2. Study flow
 

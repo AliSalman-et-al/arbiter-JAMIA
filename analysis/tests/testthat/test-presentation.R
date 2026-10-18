@@ -14,6 +14,7 @@ testthat::test_that('display punctuation follows the manuscript standard', {
 testthat::test_that('reader labels translate sources without changing data', {
   testthat::expect_identical(reader_label(c('ARBITER-Sonnet','Baseline-Sonnet','A','Z')),
     c('ARBITER','Unassisted','Adjudicator 1','Adjudicator 2'))
+  testthat::expect_identical(reader_label('no_information'),'No information')
   testthat::expect_identical(reader_label('ARBITER-Haiku',TRUE),'ARBITER (Haiku 5.5)')
   testthat::expect_identical(unname(JAMA_ROLES[1:3]),c('#00A1D5','#DF8F44','#374E55'))
   testthat::expect_identical(display_frame(data.frame(question=1.1))$question,'1.1')

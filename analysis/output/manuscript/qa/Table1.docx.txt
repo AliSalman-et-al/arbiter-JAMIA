@@ -1,102 +1,119 @@
 Table 1. Benchmark set
 Specialty
-Journal; year
+Journal
+Year
 Topic
 Trials
-Low / Some concerns / High
+Published D1–D5 labels, Low / SC / High
 Overall given
-Cardiology
-Journal of the American College of Cardiology; 2025
-Early aortic valve replacement vs surveillance in asymptomatic severe aortic stenosis
-2
-10 / 0 / 0
-Yes
-Endocrinology
-The Lancet Diabetes & Endocrinology; 2025
-GLP-1 receptor agonists and kidney and cardiovascular outcomes
-7
-35 / 0 / 0
-Yes
-Gastroenterology
-Gastroenterology; 2025
-GLP-1 receptor agonists and gastrointestinal adverse events
-7
-31 / 4 / 0
-Yes
 General medicine
-JAMA; 2026
+JAMA
+2026
 SGLT2 inhibitors and kidney outcomes across eGFR and albuminuria
 7
 35 / 0 / 0
 No
 General medicine
-The Lancet; 2025
+Lancet
+2025
 Clopidogrel vs aspirin for secondary prevention of coronary artery disease
 7
 32 / 3 / 0
 Yes
+Cardiology
+J Am Coll Cardiol
+2025
+Early aortic valve replacement vs surveillance in asymptomatic severe aortic stenosis
+2
+10 / 0 / 0
+Yes
+Endocrinology
+Lancet Diabetes Endocrinol
+2025
+GLP-1 receptor agonists and kidney and cardiovascular outcomes
+7
+35 / 0 / 0
+Yes
+Gastroenterology
+Gastroenterology
+2025
+GLP-1 receptor agonists and gastrointestinal adverse events
+7
+31 / 4 / 0
+Yes
 Infectious diseases
-Clinical Infectious Diseases; 2025
+Clin Infect Dis
+2025
 Safety of high-dose rifampin in tuberculosis treatment
 6
 30 / 0 / 0
 Yes
 Nephrology
-Clinical Journal of the American Society of Nephrology; 2025
+Clin J Am Soc Nephrol
+2025
 Therapies for proteinuria and eGFR decline in IgA nephropathy
 7
 30 / 5 / 0
 No
 Neurology
-The Lancet Neurology; 2025
+Lancet Neurol
+2025
 Pharmacotherapy and non-invasive neuromodulation for neuropathic pain
 7
 24 / 7 / 4
 Yes
 Obstetrics and gynaecology
-Human Reproduction Update; 2026
+Hum Reprod Update
+2026
 Preconception lifestyle interventions for women
 7
 23 / 10 / 2
 Yes
 Oncology
-The Lancet Oncology; 2026
+Lancet Oncol
+2026
 CDK4/6 inhibitors plus endocrine therapy in HR-positive, HER2-negative advanced breast cancer
 7
 35 / 0 / 0
 Yes
 Orthopaedics
-The American Journal of Sports Medicine; 2025
+Am J Sports Med
+2025
 Lateral extra-articular procedure added to primary ACL reconstruction
 5
 20 / 3 / 2
 Yes
 Paediatrics
-JAMA Pediatrics; 2025
+JAMA Pediatr
+2025
 Active treatment vs expectant management of patent ductus arteriosus in preterm infants
 7
 29 / 6 / 0
 Yes
 Psychiatry
-The Lancet Psychiatry; 2026
+Lancet Psychiatry
+2026
 Cannabinoids for mental and substance use disorders
 5
 19 / 6 / 0
 Yes
 Pulmonary and critical care
-The Lancet Respiratory Medicine; 2025
+Lancet Respir Med
+2025
 Preoxygenation strategies for intubation in critically ill patients
 7
 32 / 0 / 3
 No
 Rheumatology
-The Lancet Rheumatology; 2025
+Lancet Rheumatol
+2025
 Long-term effectiveness of non-surgical interventions for chronic low back pain
 7
 12 / 23 / 0
 Yes
 Surgery and anaesthesia
-British Journal of Anaesthesia; 2025
+Br J Anaesth
+2025
 Home-based prehabilitation before surgery
 7
 30 / 2 / 3
@@ -104,7 +121,8 @@ Yes
 Total
 
 
+
 102
 427 / 69 / 14
 81 / 102
-RoB 2, risk of bias tool for randomised trials. Counts are published labels pooled across D1–D5. Overall given indicates whether published Overall labels are available; total is labelled trials/all trials. The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses.
+SC, Some concerns; RoB 2, risk of bias tool for randomised trials. Counts are published labels pooled across D1–D5. Overall given indicates whether published Overall labels are available; total is labelled trials/all trials. The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses. ACL, anterior cruciate ligament; CDK4/6, cyclin-dependent kinases 4 and 6; eGFR, estimated glomerular filtration rate; GLP-1, glucagon-like peptide-1; HER2, human epidermal growth factor receptor 2; HR, hormone receptor; IgA, immunoglobulin A; SGLT2, sodium-glucose cotransporter 2.

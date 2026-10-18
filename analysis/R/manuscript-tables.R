@@ -4,6 +4,9 @@ COMPOSITE_NOTE <- paste('Composite reference: consensus preferred judgement on c
   'Adjudicators could only choose among the three labels offered.',
   'Cells where both Sonnet arms matched Published were never adjudicated and are assumed correct.',
   'Both features inflate absolute composite values.')
+TOPIC_ABBREVIATIONS <- paste('ACL, anterior cruciate ligament; CDK4/6, cyclin-dependent kinases 4 and 6;',
+  'eGFR, estimated glomerular filtration rate; GLP-1, glucagon-like peptide-1; HER2, human epidermal growth factor receptor 2;',
+  'HR, hormone receptor; IgA, immunoglobulin A; SGLT2, sodium-glucose cotransporter 2.')
 CI_NOTE <- 'CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.'
 AGREEMENT_NOTE <- paste('Linearly weighted Cohen\u2019s \u03ba and Gwet\u2019s AC2.',
   'Exact agreement, sensitivity and specificity are n/N (%); their CI bounds are percentages.',
@@ -101,7 +104,7 @@ main_table4 <- function() {
 main_table_notes <- function() list(
   paste('SC, Some concerns; RoB 2, risk of bias tool for randomised trials. Counts are published labels pooled across D1\u2013D5.',
     'Overall given indicates whether published Overall labels are available; total is labelled trials/all trials.',
-    'The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses.'),
+    'The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses.',TOPIC_ABBREVIATIONS),
   paste(AGREEMENT_NOTE,COMPOSITE_NOTE,CI_NOTE),
   paste('Values are n/N (%). Separate 95% CI column gives Unassisted departure-type rates in %. Domain consistency for ARBITER refers to proposals;',
     'recorded overrides are separate. Departure = violation + invalid path.',

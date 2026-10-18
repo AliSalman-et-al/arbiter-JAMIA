@@ -10,7 +10,7 @@ reader_label <- function(x, supplement=FALSE) {
     'A vs Z'='Adjudicator 1 vs Adjudicator 2','Adjudicator A'='Adjudicator 1',
     'Adjudicator Z'='Adjudicator 2','A independent'='Adjudicator 1 independent',
     'Z independent'='Adjudicator 2 independent','Baseline imbalance'='Preintervention imbalance','meta-label'='published-label',
-    'meta_ids'='meta-analysis identifiers','Meta label'='Published label','meta label'='published label','Baseline'='Unassisted',
+    'meta_ids'='meta-analysis identifiers','no_information'='No information','Meta label'='Published label','meta label'='published label','Baseline'='Unassisted',
     'All-Low'='All-Low rule')
   for(k in names(replacements)) x <- gsub(k,replacements[[k]],x,fixed=TRUE)
   x <- gsub('All-Low rule rule','All-Low rule',x,fixed=TRUE)

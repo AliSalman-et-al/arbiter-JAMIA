@@ -269,3 +269,21 @@ No Python is used. This file records conservative resolutions as they arise.
     the original model rationale remains unchanged in the CSV. Methods cite the
     2019 RoB 2 guidance, frozen pricing documentation and ARBITER 1.0.0 commit.
     The supplement remains portrait with editable Arial 9 pt tables.
+
+32. **Round 9 R10 and final QA.** The canonical combined legend file is
+    output/manuscript/figure-legends.md, per the lead's explicit R10 request;
+    the former output/figure-legends.md duplicate is removed despite the older
+    section 7 path. The builder extracts Figure 1's legend/alt text from its
+    untouched notes, and the working HTML now displays the merged Figure 1.
+    Figure 1 was rebuilt and its PDF/PNG/SVG and renamed TIFF are byte-identical
+    to the starting files. Its technical notes retain original input-file paths
+    as provenance, under the instruction not to change its content; these paths
+    are not copied into the combined legends or publication figures/documents.
+    Every figure has colour, PDF, greyscale and three severity-1 CVD previews.
+    Every Word page was inspected. Final Supplement.docx has 40 portrait pages,
+    28 eTables (52 editable grids) and one eFigure; main tables are one page each.
+    SQ is defined in eTable 28 to avoid splitting “Question” in its narrow header.
+    Answer-code “no_information” expands to “No information” in reader text;
+    machine exports remain exact. Topic abbreviations are defined in table notes.
+    Tests, clean Quarto rendering, publication-name scans and all 88 CSV hashes
+    pass. No statistical or methodological change was made.

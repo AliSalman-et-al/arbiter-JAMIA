@@ -2,12 +2,6 @@ build_figure_legends <- function() {
   legends <- c(
     '# Figure legends',
     '',
-    '## Figure 1. How ARBITER works',
-    '',
-    'A, The reviewer, LLM agent, deterministic ARBITER server (no model calls), and exported bundle are shown across four phases: Capture; Propose and approve; Assess each domain; Review and export. Tool calls connect the agent to the server, and the reviewer approves the result. B, A worked answer trace from AVATAR D5 links a captured passage to a signalling answer, the domain answer set, the proposed judgement, source/page/line/hash binding, and bundle verification. The trial judgement strip shows Low in D1-D4 and Some concerns in D5 and Overall. Published and Unassisted judgements are Low; the adjudicators prefer Some concerns. Text spans are server-extracted. Visual regions are server-rendered and hash-bound; model-written transcriptions are not machine-checked against the image. Structural verification does not establish clinical correctness.',
-    '',
-    'Alt text: Two panels show the reviewer-agent-server-bundle workflow and an AVATAR D5 evidence-to-judgement trace. A highlighted passage reappears beside its signalling answer, with source binding and verification details. The proposed Some concerns judgement differs from the Published and Unassisted Low judgements and matches the adjudicators.',
-    '',
     '## Figure 2. Benchmark inclusion and adjudication flow',
     '',
     'Sixteen meta-analyses supplied 105 trials. Three unsupported-design trials were excluded from every arm and analysis, leaving 102 trials, 510 D1-D5 cells per arm and 81 trials with a Published Overall label. Of 154 disputed cells, 129 had consensus and 25 were split. The Sonnet arms differed on 62 consensus cells: 54 ARBITER wins, 7 Unassisted wins and 1 neither. Eighteen split cells also had differing arm judgements.',
@@ -22,16 +16,21 @@ build_figure_legends <- function() {
     '',
     '## Figure 4. Published labels are a weak reference',
     '',
-    'A, Linearly weighted Cohen\u2019s kappa against Published, by domain and pooled D1-D5, for ARBITER and Unassisted with 95% stratified trial-cluster bootstrap confidence intervals. The dashed line marks zero agreement beyond chance; it is not a reported All-Low rule kappa. B, Direction of Published relative to the consensus preferred judgement on 129 consensus disputed cells: less severe, 78/129 (60.5%); equal, 29/129 (22.5%); more severe, 22/129 (17.1%). This selected disputed set cannot estimate published-label accuracy in the full benchmark. The composite reference is reported in Table 2.',
+    'A, Linearly weighted Cohen\u2019s kappa against Published, by domain and pooled D1-D5, for ARBITER and Unassisted with 95% stratified trial-cluster bootstrap confidence intervals. The dashed line marks zero agreement beyond chance; it is not a reported All-Low rule kappa. B, Percentage bars (0–100%) show the direction of Published relative to the consensus preferred judgement on 129 consensus disputed cells: less severe, 78/129 (60.5%); equal, 29/129 (22.5%); more severe, 22/129 (17.1%). This selected disputed set cannot estimate published-label accuracy in the full benchmark. The composite reference is reported in Table 2.',
     '',
     'Alt text: The two sources have overlapping domain-level kappa intervals against Published. On consensus disputed cells, Published is less severe than preferred in 78 cells, equal in 29 and more severe in 22.',
     '',
     '## Figure 5. Individually decisive signalling questions behind consensus losses',
     '',
-    'Paired ARBITER and Unassisted bars count individually decisive questions among consensus losses for which both adjudicators\u2019 independent judgements equal the preferred judgement (10 ARBITER and 47 Unassisted losses). Domain facets give each source\u2019s eligible loss count; question numbers and abbreviated RoB 2 text identify rows. A question is decisive when substituting the unanimously agreed independent answer alone changes the official algorithm output. A cell can contribute several questions. Jointly decisive sets contribute no individual-question counts; questions with zero counts in both sources are omitted only from this figure. D2 uses effect of assignment.',
+    'Paired ARBITER and Unassisted bars count individually decisive questions among consensus losses for which both adjudicators\u2019 independent judgements equal the preferred judgement (10 ARBITER and 47 Unassisted losses). Domain facets give each source\u2019s eligible loss count; question numbers and abbreviated RoB 2 text identify rows. A question is decisive when substituting the unanimously agreed independent answer alone changes the official algorithm output. A cell can contribute several questions. Jointly decisive sets contribute no individual-question counts. Zero-count bars and labels are omitted; ARBITER is above Unassisted and first in the legend. D2 uses effect of assignment.',
     '',
     'Alt text: Domain facets compare decisive-question counts with paired bars. Question 5.1, whether the analysis plan was finalised before unblinding, contributes 18 Unassisted and 2 ARBITER counts. Question 2.3 contributes 3 for each source. Other displayed questions have counts from zero to three.'
   )
-  for(path in c('output/manuscript/figure-legends.md','output/figure-legends.md'))
-    writeLines(enc2utf8(legends),path,useBytes=TRUE)
+  notes <- readLines('output/manuscript/figure1-notes.md',encoding='UTF-8',warn=FALSE)
+  caption <- notes[startsWith(notes,'**Figure 1.') ]
+  alt <- notes[which(notes=='## Alt text')+2L]
+  stopifnot(length(caption)==1L,length(alt)==1L,nzchar(alt))
+  legends <- append(legends,c('## Figure 1. ARBITER workflow and evidence trace','',caption,'',paste('Alt text:',alt),''),after=2L)
+  legends <- gsub('D1-D5','D1\u2013D5',legends,fixed=TRUE)
+  writeLines(enc2utf8(legends),'output/manuscript/figure-legends.md',useBytes=TRUE)
 }
