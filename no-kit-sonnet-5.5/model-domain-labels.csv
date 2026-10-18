@@ -1,0 +1,103 @@
+slug,field,meta_id,model_D1,human_D1,exact_D1,binary_D1,model_D2,human_D2,exact_D2,binary_D2,model_D3,human_D3,exact_D3,binary_D3,model_D4,human_D4,exact_D4,binary_D4,model_D5,human_D5,exact_D5,binary_D5,model_Overall,human_Overall,exact_Overall,binary_Overall,continues
+aarnoutse-2017,09 ID,cid-rifampin,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+abbasi-2012,10 Rheum,lrheum-lbp,High,Low,0,0,Some concerns,Low,0,0,Some concerns,Some concerns,1,1,Some concerns,Some concerns,1,1,Some concerns,Some concerns,1,1,High,High,1,1,0
+aboelfadl-2022,10 Rheum,lrheum-lbp,Low,Low,1,1,Some concerns,Some concerns,1,1,Some concerns,Some concerns,1,1,Low,Low,1,1,Some concerns,Some concerns,1,1,Some concerns,High,0,1,0
+albert-2013,10 Rheum,lrheum-lbp,Low,Some concerns,0,0,Low,Low,1,1,Some concerns,Some concerns,1,1,Low,Low,1,1,Some concerns,Some concerns,1,1,Some concerns,High,0,1,0
+allen-2014,04 Neuro,lneurol-neuropathic,Low,Some concerns,0,0,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Some concerns,0,0,Low,Some concerns,0,0,0
+allsop-2014,05 Psych,lpsych-cannabinoids,Low,Some concerns,0,0,Low,Low,1,1,High,Some concerns,0,1,Low,Low,1,1,Some concerns,Low,0,0,High,Some concerns,0,1,0
+amini-2022,04 Neuro,lneurol-neuropathic,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,High,0,0,Low,High,0,0,0
+an-2021,11 Surg,bja-prehab,Some concerns,Low,0,0,Some concerns,Low,0,0,Low,Low,1,1,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,Low,0,0,0
+apalla-2013,04 Neuro,lneurol-neuropathic,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+arezzo-2008,04 Neuro,lneurol-neuropathic,Low,Low,1,1,Low,Low,1,1,Some concerns,Some concerns,1,1,Low,Low,1,1,Low,High,0,0,Some concerns,High,0,1,0
+ascet,01 GenMed,lancet-clopidogrel,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,0
+ashar-2022,10 Rheum,lrheum-lbp,Low,Some concerns,0,0,Low,Low,1,1,Some concerns,Some concerns,1,1,High,Some concerns,0,1,Low,Some concerns,0,0,High,High,1,1,0
+atli-2005,04 Neuro,lneurol-neuropathic,Some concerns,Low,0,0,Low,Some concerns,0,0,High,Low,0,0,Low,Low,1,1,High,High,1,1,High,High,1,1,0
+attal-2016,04 Neuro,lneurol-neuropathic,Low,Low,1,1,Low,Low,1,1,Low,High,0,0,Low,Low,1,1,Low,Some concerns,0,0,Low,High,0,0,0
+attal-2021,04 Neuro,lneurol-neuropathic,Low,Low,1,1,Low,Low,1,1,High,Low,0,0,Low,Low,1,1,Some concerns,Low,0,0,High,Low,0,0,0
+award-1-2014,06 Gastro,gastro-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+award-10-2018,06 Gastro,gastro-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+award-chn3-2023,06 Gastro,gastro-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+bagg-2022,10 Rheum,lrheum-lbp,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,0
+baillard-2006,07 PulmCC,lrm-preox,Low,Low,1,1,Some concerns,Low,0,0,Low,High,0,0,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,(not given per row),,,0
+baillard-2018,07 PulmCC,lrm-preox,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given per row),,,0
+banovic26-avatar-2024,02 Cardio,jacc-avr,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+barratt-2024,14 Neph,cjasn-iga,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given),,,0
+bausys-2023,11 Surg,bja-prehab,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,0
+becker-2015,12 ObGyn,hru-preconception,Some concerns,Low,0,0,High,Low,0,0,High,High,1,1,Low,Low,1,1,Some concerns,Some concerns,1,1,High,High,1,1,0
+beerendonk-1996,12 ObGyn,hru-preconception,Some concerns,Some concerns,1,1,Some concerns,Low,0,0,Low,Low,1,1,Low,Low,1,1,Some concerns,Some concerns,1,1,Some concerns,Some concerns,1,1,0
+beerendonk-1999,12 ObGyn,hru-preconception,Some concerns,Some concerns,1,1,High,Low,0,0,High,Low,0,0,Low,Low,1,1,Some concerns,Some concerns,1,1,High,Some concerns,0,1,0
+bendix-1996,10 Rheum,lrheum-lbp,Some concerns,Some concerns,1,1,High,Low,0,0,High,Some concerns,0,1,Some concerns,Some concerns,1,1,Some concerns,Some concerns,1,1,High,High,1,1,0
+bendix-2000,10 Rheum,lrheum-lbp,Some concerns,Some concerns,1,1,High,Some concerns,0,1,High,Some concerns,0,1,High,Some concerns,0,1,Some concerns,Some concerns,1,1,High,High,1,1,0
+bente-2014,11 Surg,bja-prehab,Low,Low,1,1,Some concerns,High,0,1,Some concerns,Low,0,0,Low,Low,1,1,Low,Low,1,1,Some concerns,High,0,1,0
+boedt-2023,12 ObGyn,hru-preconception,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+boeree-2017,09 ID,cid-rifampin,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+cadet,01 GenMed,lancet-clopidogrel,Some concerns,Low,0,0,Low,Low,1,1,Some concerns,Low,0,0,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,Low,0,0,0
+canvas-program,01 GenMed (alternate),jama-sglt2,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given),,,0
+caprie,01 GenMed,lancet-clopidogrel,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+castoldi-2020,15 Ortho,ajsm-acl-leap,Some concerns,High,0,1,Some concerns,Low,0,0,High,Low,0,0,Some concerns,Low,0,0,Some concerns,Low,0,0,High,High,1,1,0
+chiba-2021,15 Ortho,ajsm-acl-leap,Some concerns,Low,0,0,Low,Low,1,1,Some concerns,Low,0,0,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,Low,0,0,0
+chua-2022,07 PulmCC,lrm-preox,Low,Low,1,1,Low,Low,1,1,Low,High,0,0,Low,Low,1,1,Low,Low,1,1,Low,(not given per row),,,0
+clyman-2019,13 Peds,jamapeds-pda,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,0
+dapa-hf,01 GenMed (alternate),jama-sglt2,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given),,,0
+de-waal-2021,13 Peds,jamapeds-pda,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+declare-timi-58,01 GenMed (alternate),jama-sglt2,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given),,,0
+deliver,01 GenMed (alternate),jama-sglt2,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given),,,0
+dian-2018,09 ID,cid-rifampin,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,Low,0,0,0
+duration-8-2016,06 Gastro,gastro-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+einarsson-2017,12 ObGyn,hru-preconception,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,Low,Some concerns,0,0,0
+el-khuffash-2021,13 Peds,jamapeds-pda,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,0
+elixa,08 Endo,lde-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+empa-reg-outcome,01 GenMed (alternate),jama-sglt2,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given),,,0
+emperor-preserved,01 GenMed (alternate),jama-sglt2,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given),,,0
+emperor-reduced,01 GenMed (alternate),jama-sglt2,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given),,,0
+envision,14 Neph,cjasn-iga,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,(not given),,,0
+espinos-2017,12 ObGyn,hru-preconception,Some concerns,Some concerns,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Some concerns,Some concerns,1,1,Some concerns,Some concerns,1,1,0
+exscel,08 Endo,lde-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+ferreira-2021,11 Surg,bja-prehab,Some concerns,Low,0,0,Low,Low,1,1,High,Low,0,0,Low,Low,1,1,Some concerns,Low,0,0,High,Low,0,0,0
+fr-as-2018,06 Gastro,gastro-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+frat-2019,07 PulmCC,lrm-preox,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given per row),,,0
+freeman-2020,05 Psych,lpsych-cannabinoids,Low,Low,1,1,Low,Low,1,1,Some concerns,Low,0,0,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,Low,0,0,0
+fulop-2021,11 Surg,bja-prehab,Low,Some concerns,0,0,Some concerns,Low,0,0,High,Low,0,0,Some concerns,Low,0,0,Some concerns,Low,0,0,High,Some concerns,0,1,0
+getgoal-duo1-2013,06 Gastro,gastro-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,Low,Some concerns,0,0,0
+getgoal-f1-2013,06 Gastro,gastro-glp1,Some concerns,Some concerns,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,Some concerns,Some concerns,1,1,0
+getgood-2020,15 Ortho,ajsm-acl-leap,Low,Some concerns,0,0,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,0
+gillis-2014,11 Surg,bja-prehab,Low,High,0,0,Some concerns,Low,0,0,Some concerns,Low,0,0,Low,Low,1,1,Low,Low,1,1,Some concerns,High,0,1,0
+grant-2017,11 Surg,bja-prehab,Some concerns,High,0,1,Some concerns,Low,0,0,Low,Low,1,1,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,High,0,1,0
+guitton-2019,07 PulmCC,lrm-preox,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given per row),,,0
+gupta-2024,13 Peds,jamapeds-pda,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+hamido-2021,15 Ortho,ajsm-acl-leap,Some concerns,High,0,1,Low,Some concerns,0,0,Low,Low,1,1,High,Some concerns,0,1,Some concerns,Low,0,0,High,High,1,1,0
+hanafiah-2022,12 ObGyn,hru-preconception,Some concerns,High,0,1,High,Low,0,0,High,Some concerns,0,1,Low,Some concerns,0,0,Low,Low,1,1,High,High,1,1,0
+harmony-outcomes,08 Endo,lde-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+heemskerk-2016,09 ID,cid-rifampin,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+hill-2017,05 Psych,lpsych-cannabinoids,Some concerns,Low,0,0,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,Some concerns,1,1,0
+host-exam,01 GenMed,lancet-clopidogrel,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Some concerns,Low,0,0,Low,Low,1,1,Some concerns,Low,0,0,0
+hundscheid-2022,13 Peds,jamapeds-pda,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Some concerns,0,0,0
+ibrahim-2017,15 Ortho,ajsm-acl-leap,High,Low,0,0,Some concerns,Low,0,0,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,Low,0,0,High,Low,0,0,0
+jaber-2016,07 PulmCC,lrm-preox,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given per row),,,0
+jindani-2016,09 ID,cid-rifampin,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+kang25-recovery-2020,02 Cardio,jacc-avr,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+leader,08 Endo,lde-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+levin-2011,05 Psych,lpsych-cannabinoids,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Some concerns,0,0,0
+levin-2016,05 Psych,lpsych-cannabinoids,Low,Low,1,1,Low,Some concerns,0,0,Some concerns,Low,0,0,Low,Low,1,1,Low,Low,1,1,Some concerns,Some concerns,1,1,0
+lv-2023,14 Neph,cjasn-iga,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Some concerns,Some concerns,1,1,Some concerns,(not given),,,0
+monaleesa-2,03 Onc,loncol-cdk46,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+monaleesa-3,03 Onc,loncol-cdk46,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+monaleesa-7,03 Onc,loncol-cdk46,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+monarch-2,03 Onc,loncol-cdk46,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+monarch-3,03 Onc,loncol-cdk46,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+monarch-plus,03 Onc,loncol-cdk46,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+nefigard,14 Neph,cjasn-iga,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,High,Low,0,0,High,(not given),,,0
+paloma-2,03 Onc,loncol-cdk46,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+pioneer-6,08 Endo,lde-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+potsiurko-2022,13 Peds,jamapeds-pda,Some concerns,Some concerns,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Some concerns,Some concerns,1,1,0
+rewind,08 Endo,lde-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+rosen-2021,07 PulmCC,lrm-preox,Low,Low,1,1,Some concerns,Low,0,0,Low,High,0,0,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,(not given per row),,,0
+sanctuary,14 Neph,cjasn-iga,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,(not given),,,0
+smart-choice-3,01 GenMed,lancet-clopidogrel,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+stop-igan,14 Neph,cjasn-iga,Low,Low,1,1,Low,Low,1,1,Some concerns,Some concerns,1,1,Low,Some concerns,0,0,Low,Some concerns,0,0,Some concerns,(not given),,,0
+stopdapt-2,01 GenMed,lancet-clopidogrel,Low,Low,1,1,Low,Some concerns,0,0,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,0
+stopdapt-3,01 GenMed,lancet-clopidogrel,Low,Low,1,1,Some concerns,Some concerns,1,1,Low,Low,1,1,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,Some concerns,1,1,0
+sung-2020,13 Peds,jamapeds-pda,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,Low,0,0,Low,Low,1,1,Some concerns,Low,0,0,Some concerns,Low,0,0,0
+sustain-6,08 Endo,lde-glp1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0
+testing,14 Neph,cjasn-iga,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Some concerns,0,0,Low,(not given),,,0
+vel-squez-2018,09 ID,cid-rifampin,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,Low,Low,1,1,0

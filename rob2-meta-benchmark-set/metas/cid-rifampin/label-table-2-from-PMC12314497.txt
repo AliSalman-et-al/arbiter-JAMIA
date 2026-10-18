@@ -1,0 +1,20 @@
+Table 2 (Clin Infect Dis 2025, doi 10.1093/cid/ciaf004; from PMC12314497 full text). Risk of Bias by Cochrane Risk of Bias Version 2
+Domain 1 | Domain 2 | Domain 3 | Domain 4 | Domain 5
+Study, y | Randomization Process | Deviation From Intended Intervention | Missing Outcome Data | Measurement | Selection of Reported Result | Total Score
+Heemskerk et al, 2016 [ 28 ] | Low | Low | Low | Low | Low | Low
+Jindani et al, 2016 [ 21 ] | Low | Low | Low | Low | Low | Low
+Aarnoutse et al, 2017 [ 31 ] | Low | Low | Low | Low | Low | Low
+Boeree et al, 2017 [ 26 ] | Low | Low | Low | Low | Low | Low
+Dian et al, 2018 [ 27 ] | Low | Low | Low | Low | Low | Low
+Velásquez et al, 2018 [ 34 ] | Low | Low | Low | Low | Low | Low
+Atwine et al, 2020 [ 25 ] | Low | Low | Low | Low | Low | Low
+Maug et al, 2020 [ 29 ] | Some concerns | Low | Low | Low | Low | Some concerns
+Cresswell et al, 2021 [ 24 ] | Low | Low | Low | Some concerns | Low | Some concerns
+Paradkar et al, 2022 [ 23 ] | Some concerns | Low | Low | Some concerns | Low | High
+Davis et al, 2023 [ 20 ] | Low | Low | Some concerns | Some concerns | Low | High
+Jindani et al, 2023 [ 21 ] | Low | Low | Low | Some concerns | Low | Some concerns
+Paton et al, 2023 [ 7 ] | Low | High | Low | Some concerns | Low | High
+Sekaggya-Wiltshire et al, 2023 [ 22 ] | Low | Low | Some concerns | Some concerns | Low | High
+Souleymane et al, 2023 [ 8 ] | Some concerns | Some concerns | Low | High | Low | High
+Kannabiran et al, 2024 [ 30 ] | Low | Low | Low | Some concerns | High | High
+Ruslami et al, 2024 [ 33 ] | Low | Low | Low | Some concerns | Low | Some concerns

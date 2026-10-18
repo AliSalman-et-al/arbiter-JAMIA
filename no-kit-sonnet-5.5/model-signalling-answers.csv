@@ -1,0 +1,2236 @@
+slug,field,domain,question_id,answer,active,justification
+aarnoutse-2017,09 ID,D1,1.1,yes,yes,Y
+aarnoutse-2017,09 ID,D1,1.2,probably_yes,yes,PY
+aarnoutse-2017,09 ID,D1,1.3,no,yes,N
+aarnoutse-2017,09 ID,D2,2.1,no,yes,N
+aarnoutse-2017,09 ID,D2,2.2,no,yes,N
+aarnoutse-2017,09 ID,D2,2.3,not_applicable,no,NA
+aarnoutse-2017,09 ID,D2,2.4,not_applicable,no,NA
+aarnoutse-2017,09 ID,D2,2.5,not_applicable,no,NA
+aarnoutse-2017,09 ID,D2,2.6,yes,yes,Y
+aarnoutse-2017,09 ID,D2,2.7,not_applicable,no,NA
+aarnoutse-2017,09 ID,D3,3.1,yes,yes,Y
+aarnoutse-2017,09 ID,D3,3.2,not_applicable,no,NA
+aarnoutse-2017,09 ID,D3,3.3,not_applicable,no,NA
+aarnoutse-2017,09 ID,D3,3.4,not_applicable,no,NA
+aarnoutse-2017,09 ID,D4,4.1,no,yes,N
+aarnoutse-2017,09 ID,D4,4.2,no,yes,N
+aarnoutse-2017,09 ID,D4,4.3,no,yes,N
+aarnoutse-2017,09 ID,D4,4.4,not_applicable,no,NA
+aarnoutse-2017,09 ID,D4,4.5,not_applicable,no,NA
+aarnoutse-2017,09 ID,D5,5.1,probably_yes,yes,PY
+aarnoutse-2017,09 ID,D5,5.2,no,yes,N
+aarnoutse-2017,09 ID,D5,5.3,no,yes,N
+abbasi-2012,10 Rheum,D1,1.1,no,yes,N
+abbasi-2012,10 Rheum,D1,1.2,no,yes,N
+abbasi-2012,10 Rheum,D1,1.3,probably_yes,yes,PY
+abbasi-2012,10 Rheum,D2,2.1,yes,yes,Y
+abbasi-2012,10 Rheum,D2,2.2,yes,yes,Y
+abbasi-2012,10 Rheum,D2,2.3,no_information,yes,NI
+abbasi-2012,10 Rheum,D2,2.4,not_applicable,no,NA
+abbasi-2012,10 Rheum,D2,2.5,not_applicable,no,NA
+abbasi-2012,10 Rheum,D2,2.6,probably_yes,yes,PY
+abbasi-2012,10 Rheum,D2,2.7,not_applicable,no,NA
+abbasi-2012,10 Rheum,D3,3.1,probably_no,yes,PN
+abbasi-2012,10 Rheum,D3,3.2,no,yes,N
+abbasi-2012,10 Rheum,D3,3.3,probably_yes,yes,PY
+abbasi-2012,10 Rheum,D3,3.4,probably_no,yes,PN
+abbasi-2012,10 Rheum,D4,4.1,no,yes,N
+abbasi-2012,10 Rheum,D4,4.2,no,yes,N
+abbasi-2012,10 Rheum,D4,4.3,yes,yes,Y
+abbasi-2012,10 Rheum,D4,4.4,probably_yes,yes,PY
+abbasi-2012,10 Rheum,D4,4.5,probably_no,yes,PN
+abbasi-2012,10 Rheum,D5,5.1,no_information,yes,NI
+abbasi-2012,10 Rheum,D5,5.2,probably_yes,yes,PY
+abbasi-2012,10 Rheum,D5,5.3,probably_no,yes,PN
+aboelfadl-2022,10 Rheum,D1,1.1,yes,yes,Y
+aboelfadl-2022,10 Rheum,D1,1.2,yes,yes,Y
+aboelfadl-2022,10 Rheum,D1,1.3,no,yes,N
+aboelfadl-2022,10 Rheum,D2,2.1,no,yes,N
+aboelfadl-2022,10 Rheum,D2,2.2,no,yes,N
+aboelfadl-2022,10 Rheum,D2,2.3,not_applicable,no,NA
+aboelfadl-2022,10 Rheum,D2,2.4,not_applicable,no,NA
+aboelfadl-2022,10 Rheum,D2,2.5,not_applicable,no,NA
+aboelfadl-2022,10 Rheum,D2,2.6,probably_no,yes,PN
+aboelfadl-2022,10 Rheum,D2,2.7,probably_no,yes,PN
+aboelfadl-2022,10 Rheum,D3,3.1,no,yes,N
+aboelfadl-2022,10 Rheum,D3,3.2,probably_no,yes,PN
+aboelfadl-2022,10 Rheum,D3,3.3,no_information,yes,NI
+aboelfadl-2022,10 Rheum,D3,3.4,probably_no,yes,PN
+aboelfadl-2022,10 Rheum,D4,4.1,no,yes,N
+aboelfadl-2022,10 Rheum,D4,4.2,no,yes,N
+aboelfadl-2022,10 Rheum,D4,4.3,not_applicable,no,NA
+aboelfadl-2022,10 Rheum,D4,4.4,not_applicable,no,NA
+aboelfadl-2022,10 Rheum,D4,4.5,not_applicable,no,NA
+aboelfadl-2022,10 Rheum,D5,5.1,no_information,yes,NI
+aboelfadl-2022,10 Rheum,D5,5.2,probably_yes,yes,PY
+aboelfadl-2022,10 Rheum,D5,5.3,probably_no,yes,PN
+albert-2013,10 Rheum,D1,1.1,yes,yes,Y
+albert-2013,10 Rheum,D1,1.2,yes,yes,Y
+albert-2013,10 Rheum,D1,1.3,probably_no,yes,PN
+albert-2013,10 Rheum,D2,2.1,no,yes,N
+albert-2013,10 Rheum,D2,2.2,no,yes,N
+albert-2013,10 Rheum,D2,2.3,not_applicable,no,NA
+albert-2013,10 Rheum,D2,2.4,not_applicable,no,NA
+albert-2013,10 Rheum,D2,2.5,not_applicable,no,NA
+albert-2013,10 Rheum,D2,2.6,probably_yes,yes,PY
+albert-2013,10 Rheum,D2,2.7,not_applicable,no,NA
+albert-2013,10 Rheum,D3,3.1,no,yes,N
+albert-2013,10 Rheum,D3,3.2,no,yes,N
+albert-2013,10 Rheum,D3,3.3,probably_yes,yes,PY
+albert-2013,10 Rheum,D3,3.4,no_information,yes,NI
+albert-2013,10 Rheum,D4,4.1,no,yes,N
+albert-2013,10 Rheum,D4,4.2,no,yes,N
+albert-2013,10 Rheum,D4,4.3,probably_no,yes,PN
+albert-2013,10 Rheum,D4,4.4,not_applicable,no,NA
+albert-2013,10 Rheum,D4,4.5,not_applicable,no,NA
+albert-2013,10 Rheum,D5,5.1,no_information,yes,NI
+albert-2013,10 Rheum,D5,5.2,probably_no,yes,PN
+albert-2013,10 Rheum,D5,5.3,probably_no,yes,PN
+allen-2014,04 Neuro,D1,1.1,probably_yes,yes,"PY | Randomised, double-blind, placebo-controlled trial (assumed adequate sequence generation)"
+allen-2014,04 Neuro,D1,1.2,probably_yes,yes,"PY | Blinded, centrally supplied allocation (assumed)"
+allen-2014,04 Neuro,D1,1.3,probably_no,yes,"PN | Arm sizes (63–99) differ because of the dose design, and no baseline imbalance is reported"
+allen-2014,04 Neuro,D2,2.1,no,yes,N | Double-blind
+allen-2014,04 Neuro,D2,2.2,no,yes,"N | Double-blind, so carers and investigators did not know the assignment"
+allen-2014,04 Neuro,D2,2.3,not_applicable,no,NA | 
+allen-2014,04 Neuro,D2,2.4,not_applicable,no,NA | 
+allen-2014,04 Neuro,D2,2.5,not_applicable,no,NA | 
+allen-2014,04 Neuro,D2,2.6,probably_yes,yes,"PY | ITT analysis. Only 1 randomised participant was excluded in each of the placebo, 100 mg and 400 mg arms."
+allen-2014,04 Neuro,D2,2.7,not_applicable,no,NA | 
+allen-2014,04 Neuro,D3,3.1,probably_yes,yes,PY | Outcome analysed for ≥98% of those randomised (ITT 89/63/86/99/68 of 90/63/87/99/69)
+allen-2014,04 Neuro,D3,3.2,not_applicable,no,NA | 
+allen-2014,04 Neuro,D3,3.3,not_applicable,no,NA | 
+allen-2014,04 Neuro,D3,3.4,not_applicable,no,NA | 
+allen-2014,04 Neuro,D4,4.1,no,yes,"N | A patient-reported NRS pain score, with the same method in every arm"
+allen-2014,04 Neuro,D4,4.2,no,yes,N | Same measurement and timing in every arm
+allen-2014,04 Neuro,D4,4.3,not_applicable,no,"NA | Patient-reported, but participants were blinded"
+allen-2014,04 Neuro,D4,4.4,not_applicable,no,NA | 
+allen-2014,04 Neuro,D4,4.5,not_applicable,no,NA | 
+allen-2014,04 Neuro,D5,5.1,probably_yes,yes,PY | A responder analysis is a standard prespecified secondary analysis (assumed)
+allen-2014,04 Neuro,D5,5.2,probably_no,yes,PN | All four doses are reported against placebo
+allen-2014,04 Neuro,D5,5.3,probably_no,yes,"PN | A single outcome definition is used, and the results are null"
+allsop-2014,05 Psych,D1,1.1,yes,yes,Y
+allsop-2014,05 Psych,D1,1.2,probably_yes,yes,PY
+allsop-2014,05 Psych,D1,1.3,probably_no,yes,PN
+allsop-2014,05 Psych,D2,2.1,no,yes,N
+allsop-2014,05 Psych,D2,2.2,no,yes,N
+allsop-2014,05 Psych,D2,2.3,not_applicable,no,NA
+allsop-2014,05 Psych,D2,2.4,not_applicable,no,NA
+allsop-2014,05 Psych,D2,2.5,not_applicable,no,NA
+allsop-2014,05 Psych,D2,2.6,yes,yes,Y
+allsop-2014,05 Psych,D2,2.7,not_applicable,no,NA
+allsop-2014,05 Psych,D3,3.1,no,yes,N
+allsop-2014,05 Psych,D3,3.2,no,yes,N
+allsop-2014,05 Psych,D3,3.3,probably_yes,yes,PY
+allsop-2014,05 Psych,D3,3.4,probably_yes,yes,PY
+allsop-2014,05 Psych,D4,4.1,no,yes,N
+allsop-2014,05 Psych,D4,4.2,no,yes,N
+allsop-2014,05 Psych,D4,4.3,probably_no,yes,PN
+allsop-2014,05 Psych,D4,4.4,not_applicable,no,NA
+allsop-2014,05 Psych,D4,4.5,not_applicable,no,NA
+allsop-2014,05 Psych,D5,5.1,no_information,yes,NI
+allsop-2014,05 Psych,D5,5.2,probably_no,yes,PN
+allsop-2014,05 Psych,D5,5.3,probably_no,yes,PN
+amini-2022,04 Neuro,D1,1.1,yes,yes,Y
+amini-2022,04 Neuro,D1,1.2,probably_yes,yes,PY
+amini-2022,04 Neuro,D1,1.3,no,yes,N
+amini-2022,04 Neuro,D2,2.1,no,yes,N
+amini-2022,04 Neuro,D2,2.2,no,yes,N
+amini-2022,04 Neuro,D2,2.3,not_applicable,no,NA
+amini-2022,04 Neuro,D2,2.4,not_applicable,no,NA
+amini-2022,04 Neuro,D2,2.5,not_applicable,no,NA
+amini-2022,04 Neuro,D2,2.6,probably_yes,yes,PY
+amini-2022,04 Neuro,D2,2.7,not_applicable,no,NA
+amini-2022,04 Neuro,D3,3.1,no,yes,N
+amini-2022,04 Neuro,D3,3.2,probably_yes,yes,PY
+amini-2022,04 Neuro,D3,3.3,not_applicable,no,NA
+amini-2022,04 Neuro,D3,3.4,not_applicable,no,NA
+amini-2022,04 Neuro,D4,4.1,no,yes,N
+amini-2022,04 Neuro,D4,4.2,no,yes,N
+amini-2022,04 Neuro,D4,4.3,not_applicable,no,NA
+amini-2022,04 Neuro,D4,4.4,not_applicable,no,NA
+amini-2022,04 Neuro,D4,4.5,not_applicable,no,NA
+amini-2022,04 Neuro,D5,5.1,probably_yes,yes,PY
+amini-2022,04 Neuro,D5,5.2,no,yes,N
+amini-2022,04 Neuro,D5,5.3,no,yes,N
+an-2021,11 Surg,D1,1.1,probably_yes,yes,PY
+an-2021,11 Surg,D1,1.2,probably_no,yes,PN
+an-2021,11 Surg,D1,1.3,probably_no,yes,PN
+an-2021,11 Surg,D2,2.1,yes,yes,Y
+an-2021,11 Surg,D2,2.2,yes,yes,Y
+an-2021,11 Surg,D2,2.3,probably_no,yes,PN
+an-2021,11 Surg,D2,2.4,not_applicable,no,NA
+an-2021,11 Surg,D2,2.5,not_applicable,no,NA
+an-2021,11 Surg,D2,2.6,probably_no,yes,PN
+an-2021,11 Surg,D2,2.7,probably_no,yes,PN
+an-2021,11 Surg,D3,3.1,no,yes,N
+an-2021,11 Surg,D3,3.2,no,yes,N
+an-2021,11 Surg,D3,3.3,probably_no,yes,PN
+an-2021,11 Surg,D3,3.4,not_applicable,no,NA
+an-2021,11 Surg,D4,4.1,no,yes,N
+an-2021,11 Surg,D4,4.2,probably_no,yes,PN
+an-2021,11 Surg,D4,4.3,not_applicable,no,NA
+an-2021,11 Surg,D4,4.4,not_applicable,no,NA
+an-2021,11 Surg,D4,4.5,not_applicable,no,NA
+an-2021,11 Surg,D5,5.1,no_information,yes,NI
+an-2021,11 Surg,D5,5.2,probably_no,yes,PN
+an-2021,11 Surg,D5,5.3,probably_no,yes,PN
+apalla-2013,04 Neuro,D1,1.1,yes,yes,Y
+apalla-2013,04 Neuro,D1,1.2,probably_yes,yes,PY
+apalla-2013,04 Neuro,D1,1.3,no,yes,N
+apalla-2013,04 Neuro,D2,2.1,no,yes,N
+apalla-2013,04 Neuro,D2,2.2,no,yes,N
+apalla-2013,04 Neuro,D2,2.3,not_applicable,no,NA
+apalla-2013,04 Neuro,D2,2.4,not_applicable,no,NA
+apalla-2013,04 Neuro,D2,2.5,not_applicable,no,NA
+apalla-2013,04 Neuro,D2,2.6,yes,yes,Y
+apalla-2013,04 Neuro,D2,2.7,not_applicable,no,NA
+apalla-2013,04 Neuro,D3,3.1,yes,yes,Y
+apalla-2013,04 Neuro,D3,3.2,not_applicable,no,NA
+apalla-2013,04 Neuro,D3,3.3,not_applicable,no,NA
+apalla-2013,04 Neuro,D3,3.4,not_applicable,no,NA
+apalla-2013,04 Neuro,D4,4.1,no,yes,N
+apalla-2013,04 Neuro,D4,4.2,no,yes,N
+apalla-2013,04 Neuro,D4,4.3,no,yes,N
+apalla-2013,04 Neuro,D4,4.4,not_applicable,no,NA
+apalla-2013,04 Neuro,D4,4.5,not_applicable,no,NA
+apalla-2013,04 Neuro,D5,5.1,probably_yes,yes,PY
+apalla-2013,04 Neuro,D5,5.2,no,yes,N
+apalla-2013,04 Neuro,D5,5.3,no,yes,N
+arezzo-2008,04 Neuro,D1,1.1,yes,yes,Y
+arezzo-2008,04 Neuro,D1,1.2,probably_yes,yes,PY
+arezzo-2008,04 Neuro,D1,1.3,probably_no,yes,PN
+arezzo-2008,04 Neuro,D2,2.1,probably_no,yes,PN
+arezzo-2008,04 Neuro,D2,2.2,probably_no,yes,PN
+arezzo-2008,04 Neuro,D2,2.3,not_applicable,no,NA
+arezzo-2008,04 Neuro,D2,2.4,not_applicable,no,NA
+arezzo-2008,04 Neuro,D2,2.5,not_applicable,no,NA
+arezzo-2008,04 Neuro,D2,2.6,yes,yes,Y
+arezzo-2008,04 Neuro,D2,2.7,not_applicable,no,NA
+arezzo-2008,04 Neuro,D3,3.1,probably_no,yes,PN
+arezzo-2008,04 Neuro,D3,3.2,no,yes,N
+arezzo-2008,04 Neuro,D3,3.3,not_applicable,no,NA
+arezzo-2008,04 Neuro,D3,3.4,probably_yes,yes,PY
+arezzo-2008,04 Neuro,D4,4.1,no,yes,N
+arezzo-2008,04 Neuro,D4,4.2,no,yes,N
+arezzo-2008,04 Neuro,D4,4.3,probably_no,yes,PN
+arezzo-2008,04 Neuro,D4,4.4,not_applicable,no,NA
+arezzo-2008,04 Neuro,D4,4.5,not_applicable,no,NA
+arezzo-2008,04 Neuro,D5,5.1,probably_yes,yes,PY
+arezzo-2008,04 Neuro,D5,5.2,probably_no,yes,PN
+arezzo-2008,04 Neuro,D5,5.3,probably_no,yes,PN
+ascet,01 GenMed,D1,1.1,yes,yes,Y
+ascet,01 GenMed,D1,1.2,probably_yes,yes,PY
+ascet,01 GenMed,D1,1.3,no,yes,N
+ascet,01 GenMed,D2,2.1,yes,yes,Y
+ascet,01 GenMed,D2,2.2,yes,yes,Y
+ascet,01 GenMed,D2,2.3,probably_no,yes,PN
+ascet,01 GenMed,D2,2.4,not_applicable,no,NA
+ascet,01 GenMed,D2,2.5,not_applicable,no,NA
+ascet,01 GenMed,D2,2.6,yes,yes,Y
+ascet,01 GenMed,D2,2.7,not_applicable,no,NA
+ascet,01 GenMed,D3,3.1,probably_yes,yes,PY
+ascet,01 GenMed,D3,3.2,not_applicable,no,NA
+ascet,01 GenMed,D3,3.3,not_applicable,no,NA
+ascet,01 GenMed,D3,3.4,not_applicable,no,NA
+ascet,01 GenMed,D4,4.1,no,yes,N
+ascet,01 GenMed,D4,4.2,no,yes,N
+ascet,01 GenMed,D4,4.3,no,yes,N
+ascet,01 GenMed,D4,4.4,not_applicable,no,NA
+ascet,01 GenMed,D4,4.5,not_applicable,no,NA
+ascet,01 GenMed,D5,5.1,probably_yes,yes,PY
+ascet,01 GenMed,D5,5.2,probably_no,yes,PN
+ascet,01 GenMed,D5,5.3,probably_no,yes,PN
+ashar-2022,10 Rheum,D1,1.1,yes,yes,"Y | Minimisation algorithm on pain, age, sex and opioid use, with a computer-generated sequence."
+ashar-2022,10 Rheum,D1,1.2,yes,yes,"Y | One investigator, who had no patient contact, ran the allocation. Assignment was concealed from the research assistants collecting data."
+ashar-2022,10 Rheum,D1,1.3,no,yes,N | Baseline characteristics and baseline pain were balanced across the three arms.
+ashar-2022,10 Rheum,D2,2.1,yes,yes,"Y | Open-label placebo and psychotherapy, so participants knew their arm."
+ashar-2022,10 Rheum,D2,2.2,yes,yes,Y | Therapists and the injecting physician knew the arm.
+ashar-2022,10 Rheum,D2,2.3,probably_no,yes,PN | No deviations beyond usual practice are reported. Usual-care participants were told not to start new treatments.
+ashar-2022,10 Rheum,D2,2.4,not_applicable,no,NA | 
+ashar-2022,10 Rheum,D2,2.5,not_applicable,no,NA | 
+ashar-2022,10 Rheum,D2,2.6,yes,yes,"Y | Intention-to-treat analysis of all 151 randomised participants, using a mixed model."
+ashar-2022,10 Rheum,D2,2.7,not_applicable,no,NA | 
+ashar-2022,10 Rheum,D3,3.1,no,yes,"N | 12-month data were available for 45/50 PRT, 43/51 placebo and 36/50 usual care (about 72%)."
+ashar-2022,10 Rheum,D3,3.2,probably_no,yes,"PN | The mixed model assumes data are missing at random, and I found no sensitivity analysis."
+ashar-2022,10 Rheum,D3,3.3,probably_yes,yes,"PY | Dropout could depend on the participant's own pain or disability, for example people not improving on usual care."
+ashar-2022,10 Rheum,D3,3.4,probably_yes,yes,PY | Missingness differs by arm (28% in usual care versus 10% in PRT) and plausibly relates to the outcome.
+ashar-2022,10 Rheum,D4,4.1,no,yes,N | Self-reported pain and ODI are appropriate measures.
+ashar-2022,10 Rheum,D4,4.2,no,yes,N | The measurement method was the same in all arms.
+ashar-2022,10 Rheum,D4,4.3,yes,yes,Y | Participants reported their own outcomes and knew their arm.
+ashar-2022,10 Rheum,D4,4.4,probably_yes,yes,"PY | Reports could be influenced by knowing the arm. PRT teaches that pain is not dangerous, and the open-label placebo was framed as effective."
+ashar-2022,10 Rheum,D4,4.5,probably_yes,yes,PY | Influence is likely given the very large effects on subjective outcomes with no blinding.
+ashar-2022,10 Rheum,D5,5.1,probably_yes,yes,PY | The mixed-model plan was set in advance.
+ashar-2022,10 Rheum,D5,5.2,no,yes,"N | All time points are reported, and the 12-month pain result matches the prespecified follow-up."
+ashar-2022,10 Rheum,D5,5.3,no,yes,N | Pain and ODI results are reported as registered.
+atli-2005,04 Neuro,D1,1.1,no_information,yes,NI
+atli-2005,04 Neuro,D1,1.2,no_information,yes,NI
+atli-2005,04 Neuro,D1,1.3,no,yes,N
+atli-2005,04 Neuro,D2,2.1,probably_no,yes,PN
+atli-2005,04 Neuro,D2,2.2,probably_no,yes,PN
+atli-2005,04 Neuro,D2,2.3,not_applicable,no,NA
+atli-2005,04 Neuro,D2,2.4,not_applicable,no,NA
+atli-2005,04 Neuro,D2,2.5,not_applicable,no,NA
+atli-2005,04 Neuro,D2,2.6,probably_yes,yes,PY
+atli-2005,04 Neuro,D2,2.7,not_applicable,no,NA
+atli-2005,04 Neuro,D3,3.1,no,yes,N
+atli-2005,04 Neuro,D3,3.2,no,yes,N
+atli-2005,04 Neuro,D3,3.3,yes,yes,Y
+atli-2005,04 Neuro,D3,3.4,probably_yes,yes,PY
+atli-2005,04 Neuro,D4,4.1,no,yes,N
+atli-2005,04 Neuro,D4,4.2,no,yes,N
+atli-2005,04 Neuro,D4,4.3,probably_no,yes,PN
+atli-2005,04 Neuro,D4,4.4,not_applicable,no,NA
+atli-2005,04 Neuro,D4,4.5,not_applicable,no,NA
+atli-2005,04 Neuro,D5,5.1,probably_no,yes,PN
+atli-2005,04 Neuro,D5,5.2,probably_yes,yes,PY
+atli-2005,04 Neuro,D5,5.3,probably_yes,yes,PY
+attal-2016,04 Neuro,D1,1.1,yes,yes,Y
+attal-2016,04 Neuro,D1,1.2,yes,yes,Y
+attal-2016,04 Neuro,D1,1.3,no,yes,N
+attal-2016,04 Neuro,D2,2.1,no,yes,N
+attal-2016,04 Neuro,D2,2.2,no,yes,N
+attal-2016,04 Neuro,D2,2.3,not_applicable,no,NA
+attal-2016,04 Neuro,D2,2.4,not_applicable,no,NA
+attal-2016,04 Neuro,D2,2.5,not_applicable,no,NA
+attal-2016,04 Neuro,D2,2.6,probably_yes,yes,PY
+attal-2016,04 Neuro,D2,2.7,not_applicable,no,NA
+attal-2016,04 Neuro,D3,3.1,no,yes,N
+attal-2016,04 Neuro,D3,3.2,probably_yes,yes,PY
+attal-2016,04 Neuro,D3,3.3,not_applicable,no,NA
+attal-2016,04 Neuro,D3,3.4,not_applicable,no,NA
+attal-2016,04 Neuro,D4,4.1,no,yes,N
+attal-2016,04 Neuro,D4,4.2,no,yes,N
+attal-2016,04 Neuro,D4,4.3,no,yes,N
+attal-2016,04 Neuro,D4,4.4,not_applicable,no,NA
+attal-2016,04 Neuro,D4,4.5,not_applicable,no,NA
+attal-2016,04 Neuro,D5,5.1,probably_yes,yes,PY
+attal-2016,04 Neuro,D5,5.2,probably_no,yes,PN
+attal-2016,04 Neuro,D5,5.3,probably_no,yes,PN
+attal-2021,04 Neuro,D1,1.1,yes,yes,Y
+attal-2021,04 Neuro,D1,1.2,yes,yes,Y
+attal-2021,04 Neuro,D1,1.3,no,yes,N
+attal-2021,04 Neuro,D2,2.1,no,yes,N
+attal-2021,04 Neuro,D2,2.2,no,yes,N
+attal-2021,04 Neuro,D2,2.3,not_applicable,no,NA
+attal-2021,04 Neuro,D2,2.4,not_applicable,no,NA
+attal-2021,04 Neuro,D2,2.5,not_applicable,no,NA
+attal-2021,04 Neuro,D2,2.6,probably_yes,yes,PY
+attal-2021,04 Neuro,D2,2.7,not_applicable,no,NA
+attal-2021,04 Neuro,D3,3.1,no,yes,N
+attal-2021,04 Neuro,D3,3.2,no,yes,N
+attal-2021,04 Neuro,D3,3.3,yes,yes,Y
+attal-2021,04 Neuro,D3,3.4,yes,yes,Y
+attal-2021,04 Neuro,D3,3.5,not_applicable,no,NA
+attal-2021,04 Neuro,D4,4.1,no,yes,N
+attal-2021,04 Neuro,D4,4.2,no,yes,N
+attal-2021,04 Neuro,D4,4.3,probably_no,yes,PN
+attal-2021,04 Neuro,D4,4.4,not_applicable,no,NA
+attal-2021,04 Neuro,D4,4.5,not_applicable,no,NA
+attal-2021,04 Neuro,D5,5.1,no_information,yes,NI
+attal-2021,04 Neuro,D5,5.2,probably_yes,yes,PY
+attal-2021,04 Neuro,D5,5.3,probably_no,yes,PN
+award-1-2014,06 Gastro,D1,1.1,yes,yes,Y
+award-1-2014,06 Gastro,D1,1.2,yes,yes,Y
+award-1-2014,06 Gastro,D1,1.3,no,yes,N
+award-1-2014,06 Gastro,D2,2.1,probably_no,yes,PN
+award-1-2014,06 Gastro,D2,2.2,probably_no,yes,PN
+award-1-2014,06 Gastro,D2,2.3,not_applicable,no,NA
+award-1-2014,06 Gastro,D2,2.4,not_applicable,no,NA
+award-1-2014,06 Gastro,D2,2.5,not_applicable,no,NA
+award-1-2014,06 Gastro,D2,2.6,yes,yes,Y
+award-1-2014,06 Gastro,D2,2.7,not_applicable,no,NA
+award-1-2014,06 Gastro,D3,3.1,yes,yes,Y
+award-1-2014,06 Gastro,D3,3.2,not_applicable,no,NA
+award-1-2014,06 Gastro,D3,3.3,not_applicable,no,NA
+award-1-2014,06 Gastro,D3,3.4,not_applicable,no,NA
+award-1-2014,06 Gastro,D4,4.1,no,yes,N
+award-1-2014,06 Gastro,D4,4.2,no,yes,N
+award-1-2014,06 Gastro,D4,4.3,no,yes,N
+award-1-2014,06 Gastro,D4,4.4,not_applicable,no,NA
+award-1-2014,06 Gastro,D4,4.5,not_applicable,no,NA
+award-1-2014,06 Gastro,D5,5.1,probably_yes,yes,PY
+award-1-2014,06 Gastro,D5,5.2,probably_no,yes,PN
+award-1-2014,06 Gastro,D5,5.3,probably_no,yes,PN
+award-10-2018,06 Gastro,D1,1.1,yes,yes,Y
+award-10-2018,06 Gastro,D1,1.2,yes,yes,Y
+award-10-2018,06 Gastro,D1,1.3,no,yes,N
+award-10-2018,06 Gastro,D2,2.1,no,yes,N
+award-10-2018,06 Gastro,D2,2.2,no,yes,N
+award-10-2018,06 Gastro,D2,2.3,not_applicable,no,NA
+award-10-2018,06 Gastro,D2,2.4,not_applicable,no,NA
+award-10-2018,06 Gastro,D2,2.5,not_applicable,no,NA
+award-10-2018,06 Gastro,D2,2.6,probably_yes,yes,PY
+award-10-2018,06 Gastro,D2,2.7,not_applicable,no,NA
+award-10-2018,06 Gastro,D3,3.1,yes,yes,Y
+award-10-2018,06 Gastro,D3,3.2,not_applicable,no,NA
+award-10-2018,06 Gastro,D3,3.3,not_applicable,no,NA
+award-10-2018,06 Gastro,D3,3.4,not_applicable,no,NA
+award-10-2018,06 Gastro,D4,4.1,no,yes,N
+award-10-2018,06 Gastro,D4,4.2,no,yes,N
+award-10-2018,06 Gastro,D4,4.3,not_applicable,no,NA
+award-10-2018,06 Gastro,D4,4.4,not_applicable,no,NA
+award-10-2018,06 Gastro,D4,4.5,not_applicable,no,NA
+award-10-2018,06 Gastro,D5,5.1,yes,yes,Y
+award-10-2018,06 Gastro,D5,5.2,no,yes,N
+award-10-2018,06 Gastro,D5,5.3,no,yes,N
+award-chn3-2023,06 Gastro,D1,1.1,yes,yes,Y
+award-chn3-2023,06 Gastro,D1,1.2,yes,yes,Y
+award-chn3-2023,06 Gastro,D1,1.3,no,yes,N
+award-chn3-2023,06 Gastro,D2,2.1,probably_no,yes,PN
+award-chn3-2023,06 Gastro,D2,2.2,probably_no,yes,PN
+award-chn3-2023,06 Gastro,D2,2.3,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D2,2.4,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D2,2.5,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D2,2.6,yes,yes,Y
+award-chn3-2023,06 Gastro,D2,2.7,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D3,3.1,yes,yes,Y
+award-chn3-2023,06 Gastro,D3,3.2,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D3,3.3,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D3,3.4,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D4,4.1,no,yes,N
+award-chn3-2023,06 Gastro,D4,4.2,no,yes,N
+award-chn3-2023,06 Gastro,D4,4.3,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D4,4.4,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D4,4.5,not_applicable,no,NA
+award-chn3-2023,06 Gastro,D5,5.1,no_information,yes,NI
+award-chn3-2023,06 Gastro,D5,5.2,no,yes,N
+award-chn3-2023,06 Gastro,D5,5.3,no,yes,N
+bagg-2022,10 Rheum,D1,1.1,yes,yes,"Y | Computer-generated block randomization, random block sizes 2–10."
+bagg-2022,10 Rheum,D1,1.2,yes,yes,"Y | Opaque, sequentially numbered sealed envelopes, opened after baseline assessment."
+bagg-2022,10 Rheum,D1,1.3,no,yes,N | Baseline characteristics (Table 1) are balanced.
+bagg-2022,10 Rheum,D2,2.1,probably_no,yes,"PN | Participants were blinded using sham laser, sham tDCS and sham diathermy, and credibility was similar at 2 weeks."
+bagg-2022,10 Rheum,D2,2.2,yes,yes,Y | The trial clinicians were not blinded.
+bagg-2022,10 Rheum,D2,2.3,probably_no,yes,"PN | No sign of trial-context deviations. Both arms had similar session counts, and 86–88% attended at least 9 sessions."
+bagg-2022,10 Rheum,D2,2.4,not_applicable,no,NA | 
+bagg-2022,10 Rheum,D2,2.5,not_applicable,no,NA | 
+bagg-2022,10 Rheum,D2,2.6,yes,yes,"Y | Analysis was by randomized group, regardless of adherence."
+bagg-2022,10 Rheum,D2,2.7,not_applicable,no,NA | 
+bagg-2022,10 Rheum,D3,3.1,probably_yes,yes,PY | Pain data came from 257/276 (93%) at 52 weeks. Disability data came from 246/276 (89%). Missingness was similar across arms (pain 9+1 vs 8+1 lost or withdrawn).
+bagg-2022,10 Rheum,D3,3.2,not_applicable,no,NA | 
+bagg-2022,10 Rheum,D3,3.3,not_applicable,no,NA | 
+bagg-2022,10 Rheum,D3,3.4,not_applicable,no,NA | 
+bagg-2022,10 Rheum,D4,4.1,no,yes,"N | A standard 11-point NRS and the RMDQ were used, measured the same way in both arms."
+bagg-2022,10 Rheum,D4,4.2,no,yes,N | Same method and timing in both arms.
+bagg-2022,10 Rheum,D4,4.3,probably_no,yes,"PN | The outcomes are self-reported, but participants were blinded by sham and credibility was similar. The authors flag possible exaggeration as a limitation."
+bagg-2022,10 Rheum,D4,4.4,not_applicable,no,NA | 
+bagg-2022,10 Rheum,D4,4.5,not_applicable,no,NA | 
+bagg-2022,10 Rheum,D5,5.1,yes,yes,Y | The protocol and statistical analysis plan were published during the trial and the analysis followed them.
+bagg-2022,10 Rheum,D5,5.2,probably_no,yes,"PN | The 52-week mixed-model effects are prespecified, and all time points are reported."
+bagg-2022,10 Rheum,D5,5.3,probably_no,yes,PN | There is no sign of selective reporting. Disability moved from primary to secondary outcome after 15 participants were randomized. The stated reason was sample-size power.
+baillard-2006,07 PulmCC,D1,1.1,yes,yes,Y
+baillard-2006,07 PulmCC,D1,1.2,yes,yes,Y
+baillard-2006,07 PulmCC,D1,1.3,no,yes,N
+baillard-2006,07 PulmCC,D2,2.1,yes,yes,Y
+baillard-2006,07 PulmCC,D2,2.2,yes,yes,Y
+baillard-2006,07 PulmCC,D2,2.3,not_applicable,no,NA
+baillard-2006,07 PulmCC,D2,2.4,not_applicable,no,NA
+baillard-2006,07 PulmCC,D2,2.5,not_applicable,no,NA
+baillard-2006,07 PulmCC,D2,2.6,probably_no,yes,PN
+baillard-2006,07 PulmCC,D2,2.7,probably_no,yes,PN
+baillard-2006,07 PulmCC,D3,3.1,no,yes,N
+baillard-2006,07 PulmCC,D3,3.2,no,yes,N
+baillard-2006,07 PulmCC,D3,3.3,probably_no,yes,PN
+baillard-2006,07 PulmCC,D3,3.4,not_applicable,no,NA
+baillard-2006,07 PulmCC,D4,4.1,no,yes,N
+baillard-2006,07 PulmCC,D4,4.2,no,yes,N
+baillard-2006,07 PulmCC,D4,4.3,not_applicable,no,NA
+baillard-2006,07 PulmCC,D4,4.4,not_applicable,no,NA
+baillard-2006,07 PulmCC,D4,4.5,not_applicable,no,NA
+baillard-2006,07 PulmCC,D5,5.1,no_information,yes,NI
+baillard-2006,07 PulmCC,D5,5.2,probably_no,yes,PN
+baillard-2006,07 PulmCC,D5,5.3,probably_no,yes,PN
+baillard-2018,07 PulmCC,D1,1.1,yes,yes,Y
+baillard-2018,07 PulmCC,D1,1.2,yes,yes,Y
+baillard-2018,07 PulmCC,D1,1.3,no,yes,N
+baillard-2018,07 PulmCC,D2,2.1,yes,yes,Y
+baillard-2018,07 PulmCC,D2,2.2,yes,yes,Y
+baillard-2018,07 PulmCC,D2,2.3,probably_no,yes,PN
+baillard-2018,07 PulmCC,D2,2.4,not_applicable,no,NA
+baillard-2018,07 PulmCC,D2,2.5,not_applicable,no,NA
+baillard-2018,07 PulmCC,D2,2.6,probably_yes,yes,PY
+baillard-2018,07 PulmCC,D2,2.7,not_applicable,no,NA
+baillard-2018,07 PulmCC,D3,3.1,probably_yes,yes,PY
+baillard-2018,07 PulmCC,D3,3.2,not_applicable,no,NA
+baillard-2018,07 PulmCC,D3,3.3,not_applicable,no,NA
+baillard-2018,07 PulmCC,D3,3.4,not_applicable,no,NA
+baillard-2018,07 PulmCC,D4,4.1,no,yes,N
+baillard-2018,07 PulmCC,D4,4.2,no,yes,N
+baillard-2018,07 PulmCC,D4,4.3,not_applicable,no,NA
+baillard-2018,07 PulmCC,D4,4.4,not_applicable,no,NA
+baillard-2018,07 PulmCC,D4,4.5,not_applicable,no,NA
+baillard-2018,07 PulmCC,D5,5.1,no_information,yes,NI
+baillard-2018,07 PulmCC,D5,5.2,probably_no,yes,PN
+baillard-2018,07 PulmCC,D5,5.3,probably_no,yes,PN
+banovic26-avatar-2024,02 Cardio,D1,1.1,yes,yes,Y
+banovic26-avatar-2024,02 Cardio,D1,1.2,yes,yes,Y
+banovic26-avatar-2024,02 Cardio,D1,1.3,probably_no,yes,PN
+banovic26-avatar-2024,02 Cardio,D2,2.1,yes,yes,Y
+banovic26-avatar-2024,02 Cardio,D2,2.2,yes,yes,Y
+banovic26-avatar-2024,02 Cardio,D2,2.3,probably_no,yes,PN
+banovic26-avatar-2024,02 Cardio,D2,2.4,not_applicable,no,NA
+banovic26-avatar-2024,02 Cardio,D2,2.5,not_applicable,no,NA
+banovic26-avatar-2024,02 Cardio,D2,2.6,yes,yes,Y
+banovic26-avatar-2024,02 Cardio,D2,2.7,not_applicable,no,NA
+banovic26-avatar-2024,02 Cardio,D3,3.1,yes,yes,Y
+banovic26-avatar-2024,02 Cardio,D3,3.2,not_applicable,no,NA
+banovic26-avatar-2024,02 Cardio,D3,3.3,not_applicable,no,NA
+banovic26-avatar-2024,02 Cardio,D3,3.4,not_applicable,no,NA
+banovic26-avatar-2024,02 Cardio,D4,4.1,no,yes,N
+banovic26-avatar-2024,02 Cardio,D4,4.2,no,yes,N
+banovic26-avatar-2024,02 Cardio,D4,4.3,not_applicable,no,NA
+banovic26-avatar-2024,02 Cardio,D4,4.4,not_applicable,no,NA
+banovic26-avatar-2024,02 Cardio,D4,4.5,not_applicable,no,NA
+banovic26-avatar-2024,02 Cardio,D5,5.1,probably_yes,yes,PY
+banovic26-avatar-2024,02 Cardio,D5,5.2,probably_no,yes,PN
+banovic26-avatar-2024,02 Cardio,D5,5.3,probably_no,yes,PN
+barratt-2024,14 Neph,D1,1.1,yes,yes,Y
+barratt-2024,14 Neph,D1,1.2,probably_yes,yes,PY
+barratt-2024,14 Neph,D1,1.3,probably_no,yes,PN
+barratt-2024,14 Neph,D2,2.1,probably_no,yes,PN
+barratt-2024,14 Neph,D2,2.2,probably_no,yes,PN
+barratt-2024,14 Neph,D2,2.3,not_applicable,no,NA
+barratt-2024,14 Neph,D2,2.4,not_applicable,no,NA
+barratt-2024,14 Neph,D2,2.5,not_applicable,no,NA
+barratt-2024,14 Neph,D2,2.6,yes,yes,Y
+barratt-2024,14 Neph,D2,2.7,no,yes,N
+barratt-2024,14 Neph,D3,3.1,yes,yes,Y
+barratt-2024,14 Neph,D3,3.2,not_applicable,no,NA
+barratt-2024,14 Neph,D3,3.3,not_applicable,no,NA
+barratt-2024,14 Neph,D3,3.4,not_applicable,no,NA
+barratt-2024,14 Neph,D4,4.1,no,yes,N
+barratt-2024,14 Neph,D4,4.2,no,yes,N
+barratt-2024,14 Neph,D4,4.3,no,yes,N
+barratt-2024,14 Neph,D4,4.4,not_applicable,no,NA
+barratt-2024,14 Neph,D4,4.5,not_applicable,no,NA
+barratt-2024,14 Neph,D5,5.1,yes,yes,Y
+barratt-2024,14 Neph,D5,5.2,no,yes,N
+barratt-2024,14 Neph,D5,5.3,no,yes,N
+bausys-2023,11 Surg,D1,1.1,yes,yes,Y
+bausys-2023,11 Surg,D1,1.2,yes,yes,Y
+bausys-2023,11 Surg,D1,1.3,no,yes,N
+bausys-2023,11 Surg,D2,2.1,yes,yes,Y
+bausys-2023,11 Surg,D2,2.2,yes,yes,Y
+bausys-2023,11 Surg,D2,2.3,probably_no,yes,PN
+bausys-2023,11 Surg,D2,2.4,not_applicable,no,NA
+bausys-2023,11 Surg,D2,2.5,not_applicable,no,NA
+bausys-2023,11 Surg,D2,2.6,probably_yes,yes,PY
+bausys-2023,11 Surg,D2,2.7,not_applicable,no,NA
+bausys-2023,11 Surg,D3,3.1,no,yes,N
+bausys-2023,11 Surg,D3,3.2,probably_yes,yes,PY
+bausys-2023,11 Surg,D3,3.3,not_applicable,no,NA
+bausys-2023,11 Surg,D3,3.4,not_applicable,no,NA
+bausys-2023,11 Surg,D4,4.1,no,yes,N
+bausys-2023,11 Surg,D4,4.2,no,yes,N
+bausys-2023,11 Surg,D4,4.3,not_applicable,no,NA
+bausys-2023,11 Surg,D4,4.4,not_applicable,no,NA
+bausys-2023,11 Surg,D4,4.5,not_applicable,no,NA
+bausys-2023,11 Surg,D5,5.1,probably_yes,yes,PY
+bausys-2023,11 Surg,D5,5.2,probably_no,yes,PN
+bausys-2023,11 Surg,D5,5.3,probably_no,yes,PN
+becker-2015,12 ObGyn,D1,1.1,probably_yes,yes,PY
+becker-2015,12 ObGyn,D1,1.2,no_information,yes,NI
+becker-2015,12 ObGyn,D1,1.3,probably_no,yes,PN
+becker-2015,12 ObGyn,D2,2.1,yes,yes,Y
+becker-2015,12 ObGyn,D2,2.2,yes,yes,Y
+becker-2015,12 ObGyn,D2,2.3,probably_no,yes,PN
+becker-2015,12 ObGyn,D2,2.4,not_applicable,no,NA
+becker-2015,12 ObGyn,D2,2.5,not_applicable,no,NA
+becker-2015,12 ObGyn,D2,2.6,probably_no,yes,PN
+becker-2015,12 ObGyn,D2,2.7,probably_yes,yes,PY
+becker-2015,12 ObGyn,D3,3.1,no,yes,N
+becker-2015,12 ObGyn,D3,3.2,no,yes,N
+becker-2015,12 ObGyn,D3,3.3,yes,yes,Y
+becker-2015,12 ObGyn,D3,3.4,probably_yes,yes,PY
+becker-2015,12 ObGyn,D4,4.1,no,yes,N
+becker-2015,12 ObGyn,D4,4.2,probably_no,yes,PN
+becker-2015,12 ObGyn,D4,4.3,no_information,yes,NI
+becker-2015,12 ObGyn,D4,4.4,probably_no,yes,PN
+becker-2015,12 ObGyn,D4,4.5,not_applicable,no,NA
+becker-2015,12 ObGyn,D5,5.1,probably_no,yes,PN
+becker-2015,12 ObGyn,D5,5.2,probably_no,yes,PN
+becker-2015,12 ObGyn,D5,5.3,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D1,1.1,probably_yes,yes,PY
+beerendonk-1996,12 ObGyn,D1,1.2,no_information,yes,NI
+beerendonk-1996,12 ObGyn,D1,1.3,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D2,2.1,yes,yes,Y
+beerendonk-1996,12 ObGyn,D2,2.2,yes,yes,Y
+beerendonk-1996,12 ObGyn,D2,2.3,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D2,2.4,not_applicable,no,NA
+beerendonk-1996,12 ObGyn,D2,2.5,not_applicable,no,NA
+beerendonk-1996,12 ObGyn,D2,2.6,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D2,2.7,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D3,3.1,probably_yes,yes,PY
+beerendonk-1996,12 ObGyn,D3,3.2,not_applicable,no,NA
+beerendonk-1996,12 ObGyn,D3,3.3,not_applicable,no,NA
+beerendonk-1996,12 ObGyn,D3,3.4,not_applicable,no,NA
+beerendonk-1996,12 ObGyn,D4,4.1,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D4,4.2,no,yes,N
+beerendonk-1996,12 ObGyn,D4,4.3,probably_yes,yes,PY
+beerendonk-1996,12 ObGyn,D4,4.4,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D4,4.5,not_applicable,no,NA
+beerendonk-1996,12 ObGyn,D5,5.1,no_information,yes,NI
+beerendonk-1996,12 ObGyn,D5,5.2,probably_no,yes,PN
+beerendonk-1996,12 ObGyn,D5,5.3,probably_no,yes,PN
+beerendonk-1999,12 ObGyn,D1,1.1,no_information,yes,NI
+beerendonk-1999,12 ObGyn,D1,1.2,no_information,yes,NI
+beerendonk-1999,12 ObGyn,D1,1.3,no,yes,N
+beerendonk-1999,12 ObGyn,D2,2.1,yes,yes,Y
+beerendonk-1999,12 ObGyn,D2,2.2,yes,yes,Y
+beerendonk-1999,12 ObGyn,D2,2.3,probably_no,yes,PN
+beerendonk-1999,12 ObGyn,D2,2.4,not_applicable,no,NA
+beerendonk-1999,12 ObGyn,D2,2.5,not_applicable,no,NA
+beerendonk-1999,12 ObGyn,D2,2.6,no,yes,N
+beerendonk-1999,12 ObGyn,D2,2.7,yes,yes,Y
+beerendonk-1999,12 ObGyn,D3,3.1,no,yes,N
+beerendonk-1999,12 ObGyn,D3,3.2,no,yes,N
+beerendonk-1999,12 ObGyn,D3,3.3,yes,yes,Y
+beerendonk-1999,12 ObGyn,D3,3.4,probably_yes,yes,PY
+beerendonk-1999,12 ObGyn,D4,4.1,no,yes,N
+beerendonk-1999,12 ObGyn,D4,4.2,probably_no,yes,PN
+beerendonk-1999,12 ObGyn,D4,4.3,not_applicable,no,NA
+beerendonk-1999,12 ObGyn,D4,4.4,not_applicable,no,NA
+beerendonk-1999,12 ObGyn,D4,4.5,not_applicable,no,NA
+beerendonk-1999,12 ObGyn,D5,5.1,no_information,yes,NI
+beerendonk-1999,12 ObGyn,D5,5.2,no,yes,N
+beerendonk-1999,12 ObGyn,D5,5.3,no,yes,N
+bendix-1996,10 Rheum,D1,1.1,probably_yes,yes,PY
+bendix-1996,10 Rheum,D1,1.2,no_information,yes,NI
+bendix-1996,10 Rheum,D1,1.3,probably_no,yes,PN
+bendix-1996,10 Rheum,D2,2.1,yes,yes,Y
+bendix-1996,10 Rheum,D2,2.2,yes,yes,Y
+bendix-1996,10 Rheum,D2,2.3,probably_no,yes,PN
+bendix-1996,10 Rheum,D2,2.4,not_applicable,no,NA
+bendix-1996,10 Rheum,D2,2.5,not_applicable,no,NA
+bendix-1996,10 Rheum,D2,2.6,no,yes,N
+bendix-1996,10 Rheum,D2,2.7,probably_yes,yes,PY
+bendix-1996,10 Rheum,D3,3.1,no,yes,N
+bendix-1996,10 Rheum,D3,3.2,probably_no,yes,PN
+bendix-1996,10 Rheum,D3,3.3,probably_yes,yes,PY
+bendix-1996,10 Rheum,D3,3.4,probably_yes,yes,PY
+bendix-1996,10 Rheum,D4,4.1,probably_no,yes,PN
+bendix-1996,10 Rheum,D4,4.2,probably_no,yes,PN
+bendix-1996,10 Rheum,D4,4.3,probably_yes,yes,PY
+bendix-1996,10 Rheum,D4,4.4,probably_no,yes,PN
+bendix-1996,10 Rheum,D4,4.5,not_applicable,no,NA
+bendix-1996,10 Rheum,D5,5.1,no_information,yes,NI
+bendix-1996,10 Rheum,D5,5.2,probably_no,yes,PN
+bendix-1996,10 Rheum,D5,5.3,probably_no,yes,PN
+bendix-2000,10 Rheum,D1,1.1,probably_yes,yes,PY
+bendix-2000,10 Rheum,D1,1.2,no_information,yes,NI
+bendix-2000,10 Rheum,D1,1.3,probably_no,yes,PN
+bendix-2000,10 Rheum,D2,2.1,yes,yes,Y
+bendix-2000,10 Rheum,D2,2.2,yes,yes,Y
+bendix-2000,10 Rheum,D2,2.3,probably_no,yes,PN
+bendix-2000,10 Rheum,D2,2.4,not_applicable,no,NA
+bendix-2000,10 Rheum,D2,2.5,not_applicable,no,NA
+bendix-2000,10 Rheum,D2,2.6,no,yes,N
+bendix-2000,10 Rheum,D2,2.7,probably_yes,yes,PY
+bendix-2000,10 Rheum,D3,3.1,no,yes,N
+bendix-2000,10 Rheum,D3,3.2,no,yes,N
+bendix-2000,10 Rheum,D3,3.3,yes,yes,Y
+bendix-2000,10 Rheum,D3,3.4,probably_yes,yes,PY
+bendix-2000,10 Rheum,D4,4.1,no,yes,N
+bendix-2000,10 Rheum,D4,4.2,no,yes,N
+bendix-2000,10 Rheum,D4,4.3,yes,yes,Y
+bendix-2000,10 Rheum,D4,4.4,probably_yes,yes,PY
+bendix-2000,10 Rheum,D4,4.5,probably_yes,yes,PY
+bendix-2000,10 Rheum,D5,5.1,no_information,yes,NI
+bendix-2000,10 Rheum,D5,5.2,probably_no,yes,PN
+bendix-2000,10 Rheum,D5,5.3,probably_no,yes,PN
+bente-2014,11 Surg,D1,1.1,probably_yes,yes,PY
+bente-2014,11 Surg,D1,1.2,probably_yes,yes,PY
+bente-2014,11 Surg,D1,1.3,probably_no,yes,PN
+bente-2014,11 Surg,D2,2.1,yes,yes,Y
+bente-2014,11 Surg,D2,2.2,yes,yes,Y
+bente-2014,11 Surg,D2,2.3,probably_yes,yes,PY
+bente-2014,11 Surg,D2,2.4,probably_no,yes,PN
+bente-2014,11 Surg,D2,2.5,not_applicable,no,NA
+bente-2014,11 Surg,D2,2.6,probably_yes,yes,PY
+bente-2014,11 Surg,D2,2.7,not_applicable,no,NA
+bente-2014,11 Surg,D3,3.1,no,yes,N
+bente-2014,11 Surg,D3,3.2,no,yes,N
+bente-2014,11 Surg,D3,3.3,probably_yes,yes,PY
+bente-2014,11 Surg,D3,3.4,probably_no,yes,PN
+bente-2014,11 Surg,D4,4.1,no,yes,N
+bente-2014,11 Surg,D4,4.2,no,yes,N
+bente-2014,11 Surg,D4,4.3,yes,yes,Y
+bente-2014,11 Surg,D4,4.4,probably_no,yes,PN
+bente-2014,11 Surg,D4,4.5,not_applicable,no,NA
+bente-2014,11 Surg,D5,5.1,yes,yes,Y
+bente-2014,11 Surg,D5,5.2,probably_no,yes,PN
+bente-2014,11 Surg,D5,5.3,probably_no,yes,PN
+boedt-2023,12 ObGyn,D1,1.1,yes,yes,"Y | Online, password-protected programme, block randomisation stratified by clinic"
+boedt-2023,12 ObGyn,D1,1.2,yes,yes,Y | Allocation sequence not disclosed to the researchers enrolling couples
+boedt-2023,12 ObGyn,D1,1.3,no,yes,"N | Baseline differences (e.g. infertility diagnosis, alcohol intake) look like chance"
+boedt-2023,12 ObGyn,D2,2.1,yes,yes,Y | Couples knew their arm (open-label)
+boedt-2023,12 ObGyn,D2,2.2,probably_yes,yes,"PY | Clinic staff delivering IVF were probably not told the arm, but I did not find this stated."
+boedt-2023,12 ObGyn,D2,2.3,probably_no,yes,"PN | Pregnancy and live birth are objective outcomes, and an attention-control app was used. No evidence of arm-specific deviations."
+boedt-2023,12 ObGyn,D2,2.4,not_applicable,no,NA | Not asked because 2.3 is PN
+boedt-2023,12 ObGyn,D2,2.5,not_applicable,no,NA | Not asked because 2.3 is PN
+boedt-2023,12 ObGyn,D2,2.6,probably_yes,yes,"PY | Analysis was intention to treat, with all 105 and 106 couples counted"
+boedt-2023,12 ObGyn,D2,2.7,not_applicable,no,NA | Not asked because 2.6 is PY
+boedt-2023,12 ObGyn,D3,3.1,probably_yes,yes,"PY | Table 2 uses all randomised couples as denominators, with data taken from medical records. The 80 couples censored by Covid and the 24 IVF discontinuations were balanced between arms."
+boedt-2023,12 ObGyn,D3,3.2,not_applicable,no,NA | Not asked because 3.1 is PY
+boedt-2023,12 ObGyn,D3,3.3,not_applicable,no,NA | Not asked because 3.1 is PY
+boedt-2023,12 ObGyn,D3,3.4,not_applicable,no,NA | Not asked because 3.1 is PY
+boedt-2023,12 ObGyn,D4,4.1,no,yes,N | Ultrasound confirmation and live birth are not measured differently between arms
+boedt-2023,12 ObGyn,D4,4.2,probably_yes,yes,"PY | Outcome assessors were likely aware of the arm, since only the statistician was blinded"
+boedt-2023,12 ObGyn,D4,4.3,probably_no,yes,"PN | Objective outcomes from medical records, and the authors judge bias unlikely for reproductive outcomes"
+boedt-2023,12 ObGyn,D4,4.4,not_applicable,no,NA | Not asked because 4.3 is PN
+boedt-2023,12 ObGyn,D4,4.5,not_applicable,no,NA | Not asked because 4.3 is PN
+boedt-2023,12 ObGyn,D5,5.1,probably_yes,yes,"PY | The protocol and SAP were registered in 2018, before enrolment. The Covid-driven changes were made with a blinded statistician and mainly affected the primary outcome. Live birth was added later under COMMIT, which is a guideline rather than a data-driven choice."
+boedt-2023,12 ObGyn,D5,5.2,probably_no,yes,PN | Both clinical pregnancy definitions (gestational sac and fetal heartbeat) are reported in full
+boedt-2023,12 ObGyn,D5,5.3,probably_no,yes,"PN | Table 2 gives raw counts for every COMMIT outcome, with no selected analysis"
+boeree-2017,09 ID,D1,1.1,yes,yes,"Y | Central web-based computerised algorithm, minimisation with an 80% random element"
+boeree-2017,09 ID,D1,1.2,yes,yes,"Y | Central allocation, so concealed"
+boeree-2017,09 ID,D1,1.3,no,yes,N | Baseline characteristics are balanced (Table 1)
+boeree-2017,09 ID,D2,2.1,yes,yes,Y | Open-label; the orange discolouration from rifampicin prevented masking
+boeree-2017,09 ID,D2,2.2,yes,yes,Y | Carers and investigators knew the allocation
+boeree-2017,09 ID,D2,2.3,probably_no,yes,PN | No sign of deviations arising from the trial context
+boeree-2017,09 ID,D2,2.4,not_applicable,no,NA | 
+boeree-2017,09 ID,D2,2.5,not_applicable,no,NA | 
+boeree-2017,09 ID,D2,2.6,probably_yes,yes,PY | Safety counts are for 365 treated patients. Only the 3 patients randomised in error and never treated were left out.
+boeree-2017,09 ID,D2,2.7,not_applicable,no,NA | 
+boeree-2017,09 ID,D3,3.1,probably_yes,yes,"PY | AE data are reported for essentially all treated patients, with withdrawals only about 5–9% per arm"
+boeree-2017,09 ID,D3,3.2,not_applicable,no,NA | 
+boeree-2017,09 ID,D3,3.3,not_applicable,no,NA | 
+boeree-2017,09 ID,D3,3.4,not_applicable,no,NA | 
+boeree-2017,09 ID,D4,4.1,no,yes,"N | CTCAE 4.03 is a standard, appropriate grading method"
+boeree-2017,09 ID,D4,4.2,probably_no,yes,PN | Same safety schedule and grading in all arms
+boeree-2017,09 ID,D4,4.3,probably_yes,yes,PY | Clinicians and investigators grading AEs knew the allocation. Only laboratory and ECG staff were blinded.
+boeree-2017,09 ID,D4,4.4,probably_no,yes,"PN | Grade ≥3 AEs rest mostly on lab thresholds, hospitalisation and death, which are fairly objective. Lab assessors were blinded."
+boeree-2017,09 ID,D4,4.5,not_applicable,no,NA | 
+boeree-2017,09 ID,D5,5.1,probably_yes,yes,PY | The analysis plan said safety would be presented as proportions of AEs and of related AEs. The registry lists AE frequency as a secondary outcome.
+boeree-2017,09 ID,D5,5.2,probably_no,yes,"PN | AEs are reported across several measures: any AE, SAE, grade ≥3, by system organ class, and related AEs"
+boeree-2017,09 ID,D5,5.3,probably_no,yes,PN | Same reasons as 5.2
+cadet,01 GenMed,D2,2.2,probably_no,yes,PN
+cadet,01 GenMed,D2,2.3,not_applicable,no,NA
+cadet,01 GenMed,D2,2.4,not_applicable,no,NA
+cadet,01 GenMed,D2,2.5,not_applicable,no,NA
+cadet,01 GenMed,D2,2.7,not_applicable,no,NA
+cadet,01 GenMed,D3,3.2,no,yes,N
+cadet,01 GenMed,D4,4.1,no,yes,N
+cadet,01 GenMed,D4,4.2,no,yes,N
+cadet,01 GenMed,D4,4.4,not_applicable,no,NA
+cadet,01 GenMed,D4,4.5,not_applicable,no,NA
+cadet,01 GenMed,D5,5.1,no_information,yes,NI
+cadet,01 GenMed,D5,5.3,probably_no,yes,PN
+canvas-program,01 GenMed (alternate),D1,1.1,yes,yes,Y
+canvas-program,01 GenMed (alternate),D1,1.2,yes,yes,Y
+canvas-program,01 GenMed (alternate),D1,1.3,no,yes,N
+canvas-program,01 GenMed (alternate),D2,2.1,no,yes,N
+canvas-program,01 GenMed (alternate),D2,2.2,no,yes,N
+canvas-program,01 GenMed (alternate),D2,2.3,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D2,2.5,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D2,2.6,yes,yes,Y
+canvas-program,01 GenMed (alternate),D2,2.7,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D3,3.1,yes,yes,Y
+canvas-program,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D4,4.1,no,yes,N
+canvas-program,01 GenMed (alternate),D4,4.2,no,yes,N
+canvas-program,01 GenMed (alternate),D4,4.3,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D4,4.4,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D4,4.5,not_applicable,no,NA
+canvas-program,01 GenMed (alternate),D5,5.1,yes,yes,Y
+canvas-program,01 GenMed (alternate),D5,5.2,no,yes,N
+canvas-program,01 GenMed (alternate),D5,5.3,no,yes,N
+caprie,01 GenMed,D1,1.1,yes,yes,"Y | Computer-generated balanced blocks of four, stratified by centre and disease subgroup."
+caprie,01 GenMed,D1,1.2,yes,yes,Y | Allocation code held centrally by the statistical centre. Drugs came in pre-packed cartons and were allocated sequentially.
+caprie,01 GenMed,D1,1.3,no,yes,N | Table 4 shows well-matched baseline characteristics.
+caprie,01 GenMed,D2,2.1,no,yes,N | Double-blind with indistinguishable blister packs.
+caprie,01 GenMed,D2,2.2,no,yes,N | Same blinding applies to carers and investigators. Only 21 code breaks (0.11%) occurred.
+caprie,01 GenMed,D2,2.3,not_applicable,no,NA | No relevant deviations were reported.
+caprie,01 GenMed,D2,2.4,not_applicable,no,"NA | Not applicable, per 2.3."
+caprie,01 GenMed,D2,2.5,not_applicable,no,"NA | Not applicable, per 2.3."
+caprie,01 GenMed,D2,2.6,yes,yes,"Y | The primary analysis was intention-to-treat on all 19,185 randomised patients."
+caprie,01 GenMed,D2,2.7,not_applicable,no,"NA | Not applicable, because the analysis was appropriate."
+caprie,01 GenMed,D3,3.1,yes,yes,"Y | Only 42 patients (0.22%) were lost to follow-up, and 0.13% of patient-years."
+caprie,01 GenMed,D3,3.2,not_applicable,no,NA | Data were available for nearly all participants.
+caprie,01 GenMed,D3,3.3,not_applicable,no,"NA | Not applicable, per 3.1."
+caprie,01 GenMed,D3,3.4,not_applicable,no,"NA | Not applicable, per 3.1."
+caprie,01 GenMed,D4,4.1,no,yes,"N | Outcomes were objective clinical events, with fatal events and deaths classified under predefined criteria."
+caprie,01 GenMed,D4,4.2,no,yes,N | Assessment did not differ between groups.
+caprie,01 GenMed,D4,4.3,no,yes,"N | Events were validated centrally by a committee blinded to allocation, and blinding was maintained."
+caprie,01 GenMed,D4,4.4,not_applicable,no,"NA | Not applicable, per 4.3."
+caprie,01 GenMed,D4,4.5,not_applicable,no,"NA | Not applicable, per 4.3."
+caprie,01 GenMed,D5,5.1,yes,yes,"Y | The primary cluster, the ITT analysis and the log-rank (Mantel-Haenszel) test were prespecified in the protocol and analysis plan. The independent statistical centre ran the analysis."
+caprie,01 GenMed,D5,5.2,no,yes,N | A single prespecified composite was analysed as first event.
+caprie,01 GenMed,D5,5.3,no,yes,"N | The headline result is the prespecified overall analysis. The post hoc subgroup analyses (MI subgroup, prior-MI) do not drive the reported primary result."
+castoldi-2020,15 Ortho,D1,1.1,no_information,yes,NI
+castoldi-2020,15 Ortho,D1,1.2,no_information,yes,NI
+castoldi-2020,15 Ortho,D1,1.3,no,yes,N
+castoldi-2020,15 Ortho,D2,2.1,yes,yes,Y
+castoldi-2020,15 Ortho,D2,2.2,yes,yes,Y
+castoldi-2020,15 Ortho,D2,2.3,probably_no,yes,PN
+castoldi-2020,15 Ortho,D2,2.4,not_applicable,no,NA
+castoldi-2020,15 Ortho,D2,2.5,not_applicable,no,NA
+castoldi-2020,15 Ortho,D2,2.6,probably_no,yes,PN
+castoldi-2020,15 Ortho,D2,2.7,no_information,yes,NI
+castoldi-2020,15 Ortho,D3,3.1,no,yes,N
+castoldi-2020,15 Ortho,D3,3.2,probably_no,yes,PN
+castoldi-2020,15 Ortho,D3,3.3,probably_yes,yes,PY
+castoldi-2020,15 Ortho,D3,3.4,probably_yes,yes,PY
+castoldi-2020,15 Ortho,D4,4.1,no,yes,N
+castoldi-2020,15 Ortho,D4,4.2,no,yes,N
+castoldi-2020,15 Ortho,D4,4.3,yes,yes,Y
+castoldi-2020,15 Ortho,D4,4.4,probably_yes,yes,PY
+castoldi-2020,15 Ortho,D4,4.5,probably_no,yes,PN
+castoldi-2020,15 Ortho,D5,5.1,no_information,yes,NI
+castoldi-2020,15 Ortho,D5,5.2,probably_no,yes,PN
+castoldi-2020,15 Ortho,D5,5.3,probably_no,yes,PN
+chiba-2021,15 Ortho,D1,1.1,no_information,yes,NI
+chiba-2021,15 Ortho,D1,1.2,probably_yes,yes,PY
+chiba-2021,15 Ortho,D1,1.3,no,yes,N
+chiba-2021,15 Ortho,D2,2.1,yes,yes,Y
+chiba-2021,15 Ortho,D2,2.2,yes,yes,Y
+chiba-2021,15 Ortho,D2,2.3,probably_no,yes,PN
+chiba-2021,15 Ortho,D2,2.4,not_applicable,no,NA
+chiba-2021,15 Ortho,D2,2.5,not_applicable,no,NA
+chiba-2021,15 Ortho,D2,2.6,probably_yes,yes,PY
+chiba-2021,15 Ortho,D2,2.7,not_applicable,no,NA
+chiba-2021,15 Ortho,D3,3.1,no,yes,N
+chiba-2021,15 Ortho,D3,3.2,no,yes,N
+chiba-2021,15 Ortho,D3,3.3,probably_yes,yes,PY
+chiba-2021,15 Ortho,D3,3.4,probably_no,yes,PN
+chiba-2021,15 Ortho,D4,4.1,no,yes,N
+chiba-2021,15 Ortho,D4,4.2,no,yes,N
+chiba-2021,15 Ortho,D4,4.3,probably_yes,yes,PY
+chiba-2021,15 Ortho,D4,4.4,probably_no,yes,PN
+chiba-2021,15 Ortho,D4,4.5,not_applicable,no,NA
+chiba-2021,15 Ortho,D5,5.1,no_information,yes,NI
+chiba-2021,15 Ortho,D5,5.2,probably_yes,yes,PY
+chiba-2021,15 Ortho,D5,5.3,probably_no,yes,PN
+chua-2022,07 PulmCC,D1,1.1,yes,yes,Y
+chua-2022,07 PulmCC,D1,1.2,yes,yes,Y
+chua-2022,07 PulmCC,D1,1.3,no,yes,N
+chua-2022,07 PulmCC,D2,2.1,yes,yes,Y
+chua-2022,07 PulmCC,D2,2.2,yes,yes,Y
+chua-2022,07 PulmCC,D2,2.3,probably_no,yes,PN
+chua-2022,07 PulmCC,D2,2.4,not_applicable,no,NA
+chua-2022,07 PulmCC,D2,2.5,not_applicable,no,NA
+chua-2022,07 PulmCC,D2,2.6,probably_yes,yes,PY
+chua-2022,07 PulmCC,D2,2.7,not_applicable,no,NA
+chua-2022,07 PulmCC,D3,3.1,yes,yes,Y
+chua-2022,07 PulmCC,D3,3.2,not_applicable,no,NA
+chua-2022,07 PulmCC,D3,3.3,not_applicable,no,NA
+chua-2022,07 PulmCC,D3,3.4,not_applicable,no,NA
+chua-2022,07 PulmCC,D4,4.1,no,yes,N
+chua-2022,07 PulmCC,D4,4.2,no,yes,N
+chua-2022,07 PulmCC,D4,4.3,not_applicable,no,NA
+chua-2022,07 PulmCC,D4,4.4,not_applicable,no,NA
+chua-2022,07 PulmCC,D4,4.5,not_applicable,no,NA
+chua-2022,07 PulmCC,D5,5.1,probably_yes,yes,PY
+chua-2022,07 PulmCC,D5,5.2,no,yes,N
+chua-2022,07 PulmCC,D5,5.3,no,yes,N
+clyman-2019,13 Peds,D1,1.1,yes,yes,Y
+clyman-2019,13 Peds,D1,1.2,probably_yes,yes,PY
+clyman-2019,13 Peds,D1,1.3,probably_no,yes,PN
+clyman-2019,13 Peds,D2,2.1,yes,yes,Y
+clyman-2019,13 Peds,D2,2.2,yes,yes,Y
+clyman-2019,13 Peds,D2,2.3,probably_no,yes,PN
+clyman-2019,13 Peds,D2,2.4,not_applicable,no,NA
+clyman-2019,13 Peds,D2,2.5,not_applicable,no,NA
+clyman-2019,13 Peds,D2,2.6,yes,yes,Y
+clyman-2019,13 Peds,D2,2.7,not_applicable,no,NA
+clyman-2019,13 Peds,D3,3.1,yes,yes,Y
+clyman-2019,13 Peds,D3,3.2,not_applicable,no,NA
+clyman-2019,13 Peds,D3,3.3,not_applicable,no,NA
+clyman-2019,13 Peds,D3,3.4,not_applicable,no,NA
+clyman-2019,13 Peds,D4,4.1,no,yes,N
+clyman-2019,13 Peds,D4,4.2,no,yes,N
+clyman-2019,13 Peds,D4,4.3,probably_yes,yes,PY
+clyman-2019,13 Peds,D4,4.4,probably_no,yes,PN
+clyman-2019,13 Peds,D4,4.5,not_applicable,no,NA
+clyman-2019,13 Peds,D5,5.1,yes,yes,Y
+clyman-2019,13 Peds,D5,5.2,no,yes,N
+clyman-2019,13 Peds,D5,5.3,no,yes,N
+dapa-hf,01 GenMed (alternate),D1,1.1,yes,yes,Y
+dapa-hf,01 GenMed (alternate),D1,1.2,yes,yes,Y
+dapa-hf,01 GenMed (alternate),D1,1.3,no,yes,N
+dapa-hf,01 GenMed (alternate),D2,2.1,no,yes,N
+dapa-hf,01 GenMed (alternate),D2,2.2,no,yes,N
+dapa-hf,01 GenMed (alternate),D2,2.3,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D2,2.5,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D2,2.6,yes,yes,Y
+dapa-hf,01 GenMed (alternate),D2,2.7,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D3,3.1,yes,yes,Y
+dapa-hf,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D4,4.1,no,yes,N
+dapa-hf,01 GenMed (alternate),D4,4.2,no,yes,N
+dapa-hf,01 GenMed (alternate),D4,4.3,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D4,4.4,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D4,4.5,not_applicable,no,NA
+dapa-hf,01 GenMed (alternate),D5,5.1,yes,yes,Y
+dapa-hf,01 GenMed (alternate),D5,5.2,no,yes,N
+dapa-hf,01 GenMed (alternate),D5,5.3,no,yes,N
+de-waal-2021,13 Peds,D1,1.1,yes,yes,Y
+de-waal-2021,13 Peds,D1,1.2,probably_yes,yes,PY
+de-waal-2021,13 Peds,D1,1.3,no,yes,N
+de-waal-2021,13 Peds,D2,2.1,yes,yes,Y
+de-waal-2021,13 Peds,D2,2.2,yes,yes,Y
+de-waal-2021,13 Peds,D2,2.3,probably_no,yes,PN
+de-waal-2021,13 Peds,D2,2.4,not_applicable,no,NA
+de-waal-2021,13 Peds,D2,2.5,not_applicable,no,NA
+de-waal-2021,13 Peds,D2,2.6,yes,yes,Y
+de-waal-2021,13 Peds,D2,2.7,not_applicable,no,NA
+de-waal-2021,13 Peds,D3,3.1,yes,yes,Y
+de-waal-2021,13 Peds,D3,3.2,not_applicable,no,NA
+de-waal-2021,13 Peds,D3,3.3,not_applicable,no,NA
+de-waal-2021,13 Peds,D3,3.4,not_applicable,no,NA
+de-waal-2021,13 Peds,D4,4.1,no,yes,N
+de-waal-2021,13 Peds,D4,4.2,no,yes,N
+de-waal-2021,13 Peds,D4,4.3,no,yes,N
+de-waal-2021,13 Peds,D4,4.4,not_applicable,no,NA
+de-waal-2021,13 Peds,D4,4.5,not_applicable,no,NA
+de-waal-2021,13 Peds,D5,5.1,probably_yes,yes,PY
+de-waal-2021,13 Peds,D5,5.2,probably_no,yes,PN
+de-waal-2021,13 Peds,D5,5.3,probably_no,yes,PN
+declare-timi-58,01 GenMed (alternate),D1,1.1,probably_yes,yes,PY
+declare-timi-58,01 GenMed (alternate),D1,1.2,probably_yes,yes,PY
+declare-timi-58,01 GenMed (alternate),D1,1.3,no,yes,N
+declare-timi-58,01 GenMed (alternate),D2,2.1,no,yes,N
+declare-timi-58,01 GenMed (alternate),D2,2.2,no,yes,N
+declare-timi-58,01 GenMed (alternate),D2,2.3,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D2,2.5,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D2,2.6,probably_yes,yes,PY
+declare-timi-58,01 GenMed (alternate),D2,2.7,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D3,3.1,probably_yes,yes,PY
+declare-timi-58,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D4,4.1,no,yes,N
+declare-timi-58,01 GenMed (alternate),D4,4.2,no,yes,N
+declare-timi-58,01 GenMed (alternate),D4,4.3,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D4,4.4,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D4,4.5,not_applicable,no,NA
+declare-timi-58,01 GenMed (alternate),D5,5.1,yes,yes,Y
+declare-timi-58,01 GenMed (alternate),D5,5.2,no,yes,N
+declare-timi-58,01 GenMed (alternate),D5,5.3,no,yes,N
+deliver,01 GenMed (alternate),D1,1.1,yes,yes,Y
+deliver,01 GenMed (alternate),D1,1.2,probably_yes,yes,PY
+deliver,01 GenMed (alternate),D1,1.3,no,yes,N
+deliver,01 GenMed (alternate),D2,2.1,no,yes,N
+deliver,01 GenMed (alternate),D2,2.2,no,yes,N
+deliver,01 GenMed (alternate),D2,2.3,not_applicable,no,NA
+deliver,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+deliver,01 GenMed (alternate),D2,2.5,not_applicable,no,NA
+deliver,01 GenMed (alternate),D2,2.6,yes,yes,Y
+deliver,01 GenMed (alternate),D2,2.7,not_applicable,no,NA
+deliver,01 GenMed (alternate),D3,3.1,yes,yes,Y
+deliver,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+deliver,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+deliver,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+deliver,01 GenMed (alternate),D4,4.1,no,yes,N
+deliver,01 GenMed (alternate),D4,4.2,no,yes,N
+deliver,01 GenMed (alternate),D4,4.3,no,yes,N
+deliver,01 GenMed (alternate),D4,4.4,not_applicable,no,NA
+deliver,01 GenMed (alternate),D4,4.5,not_applicable,no,NA
+deliver,01 GenMed (alternate),D5,5.1,yes,yes,Y
+deliver,01 GenMed (alternate),D5,5.2,no,yes,N
+deliver,01 GenMed (alternate),D5,5.3,no,yes,N
+dian-2018,09 ID,D1,1.1,probably_yes,yes,PY
+dian-2018,09 ID,D1,1.2,no_information,yes,NI
+dian-2018,09 ID,D1,1.3,probably_no,yes,PN
+dian-2018,09 ID,D2,2.1,probably_no,yes,PN
+dian-2018,09 ID,D2,2.2,probably_no,yes,PN
+dian-2018,09 ID,D2,2.3,not_applicable,no,NA
+dian-2018,09 ID,D2,2.4,not_applicable,no,NA
+dian-2018,09 ID,D2,2.5,not_applicable,no,NA
+dian-2018,09 ID,D2,2.6,yes,yes,Y
+dian-2018,09 ID,D2,2.7,not_applicable,no,NA
+dian-2018,09 ID,D3,3.1,probably_yes,yes,PY
+dian-2018,09 ID,D3,3.2,not_applicable,no,NA
+dian-2018,09 ID,D3,3.3,not_applicable,no,NA
+dian-2018,09 ID,D3,3.4,not_applicable,no,NA
+dian-2018,09 ID,D4,4.1,probably_no,yes,PN
+dian-2018,09 ID,D4,4.2,probably_no,yes,PN
+dian-2018,09 ID,D4,4.3,probably_no,yes,PN
+dian-2018,09 ID,D4,4.4,not_applicable,no,NA
+dian-2018,09 ID,D4,4.5,not_applicable,no,NA
+dian-2018,09 ID,D5,5.1,no_information,yes,NI
+dian-2018,09 ID,D5,5.2,probably_no,yes,PN
+dian-2018,09 ID,D5,5.3,probably_yes,yes,PY
+duration-8-2016,06 Gastro,D1,1.1,yes,yes,Y
+duration-8-2016,06 Gastro,D1,1.2,yes,yes,Y
+duration-8-2016,06 Gastro,D1,1.3,no,yes,N
+duration-8-2016,06 Gastro,D2,2.1,no,yes,N
+duration-8-2016,06 Gastro,D2,2.2,no,yes,N
+duration-8-2016,06 Gastro,D2,2.3,not_applicable,no,NA
+duration-8-2016,06 Gastro,D2,2.4,not_applicable,no,NA
+duration-8-2016,06 Gastro,D2,2.5,not_applicable,no,NA
+duration-8-2016,06 Gastro,D2,2.6,probably_yes,yes,PY
+duration-8-2016,06 Gastro,D2,2.7,not_applicable,no,NA
+duration-8-2016,06 Gastro,D3,3.1,yes,yes,Y
+duration-8-2016,06 Gastro,D3,3.2,not_applicable,no,NA
+duration-8-2016,06 Gastro,D3,3.3,not_applicable,no,NA
+duration-8-2016,06 Gastro,D3,3.4,not_applicable,no,NA
+duration-8-2016,06 Gastro,D4,4.1,no,yes,N
+duration-8-2016,06 Gastro,D4,4.2,no,yes,N
+duration-8-2016,06 Gastro,D4,4.3,not_applicable,no,NA
+duration-8-2016,06 Gastro,D4,4.4,not_applicable,no,NA
+duration-8-2016,06 Gastro,D4,4.5,not_applicable,no,NA
+duration-8-2016,06 Gastro,D5,5.1,probably_yes,yes,PY
+duration-8-2016,06 Gastro,D5,5.2,probably_no,yes,PN
+duration-8-2016,06 Gastro,D5,5.3,probably_no,yes,PN
+einarsson-2017,12 ObGyn,D1,1.1,yes,yes,Y
+einarsson-2017,12 ObGyn,D1,1.2,yes,yes,Y
+einarsson-2017,12 ObGyn,D1,1.3,no,yes,N
+einarsson-2017,12 ObGyn,D2,2.1,yes,yes,Y
+einarsson-2017,12 ObGyn,D2,2.2,yes,yes,Y
+einarsson-2017,12 ObGyn,D2,2.3,probably_no,yes,PN
+einarsson-2017,12 ObGyn,D2,2.4,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D2,2.5,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D2,2.6,probably_yes,yes,PY
+einarsson-2017,12 ObGyn,D2,2.7,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D3,3.1,probably_yes,yes,PY
+einarsson-2017,12 ObGyn,D3,3.2,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D3,3.3,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D3,3.4,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D4,4.1,no,yes,N
+einarsson-2017,12 ObGyn,D4,4.2,no,yes,N
+einarsson-2017,12 ObGyn,D4,4.3,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D4,4.4,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D4,4.5,not_applicable,no,NA
+einarsson-2017,12 ObGyn,D5,5.1,probably_yes,yes,PY
+einarsson-2017,12 ObGyn,D5,5.2,no,yes,N
+einarsson-2017,12 ObGyn,D5,5.3,no,yes,N
+el-khuffash-2021,13 Peds,D1,1.1,yes,yes,Y
+el-khuffash-2021,13 Peds,D1,1.2,yes,yes,Y
+el-khuffash-2021,13 Peds,D1,1.3,probably_no,yes,PN
+el-khuffash-2021,13 Peds,D2,2.1,no,yes,N
+el-khuffash-2021,13 Peds,D2,2.2,no,yes,N
+el-khuffash-2021,13 Peds,D2,2.3,probably_yes,yes,PY
+el-khuffash-2021,13 Peds,D2,2.4,probably_no,yes,PN
+el-khuffash-2021,13 Peds,D2,2.5,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D2,2.6,yes,yes,Y
+el-khuffash-2021,13 Peds,D2,2.7,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D3,3.1,yes,yes,Y
+el-khuffash-2021,13 Peds,D3,3.2,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D3,3.3,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D3,3.4,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D4,4.1,no,yes,N
+el-khuffash-2021,13 Peds,D4,4.2,no,yes,N
+el-khuffash-2021,13 Peds,D4,4.3,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D4,4.4,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D4,4.5,not_applicable,no,NA
+el-khuffash-2021,13 Peds,D5,5.1,probably_yes,yes,PY
+el-khuffash-2021,13 Peds,D5,5.2,probably_no,yes,PN
+el-khuffash-2021,13 Peds,D5,5.3,probably_no,yes,PN
+elixa,08 Endo,D1,1.1,yes,yes,Y
+elixa,08 Endo,D1,1.2,yes,yes,Y
+elixa,08 Endo,D1,1.3,no,yes,N
+elixa,08 Endo,D2,2.1,no,yes,N
+elixa,08 Endo,D2,2.2,no,yes,N
+elixa,08 Endo,D2,2.3,not_applicable,no,NA
+elixa,08 Endo,D2,2.4,not_applicable,no,NA
+elixa,08 Endo,D2,2.5,not_applicable,no,NA
+elixa,08 Endo,D2,2.6,yes,yes,Y
+elixa,08 Endo,D2,2.7,not_applicable,no,NA
+elixa,08 Endo,D3,3.1,yes,yes,Y
+elixa,08 Endo,D3,3.2,not_applicable,no,NA
+elixa,08 Endo,D3,3.3,not_applicable,no,NA
+elixa,08 Endo,D3,3.4,not_applicable,no,NA
+elixa,08 Endo,D4,4.1,no,yes,N
+elixa,08 Endo,D4,4.2,no,yes,N
+elixa,08 Endo,D4,4.3,no,yes,N
+elixa,08 Endo,D4,4.4,not_applicable,no,NA
+elixa,08 Endo,D4,4.5,not_applicable,no,NA
+elixa,08 Endo,D5,5.1,yes,yes,Y
+elixa,08 Endo,D5,5.2,no,yes,N
+elixa,08 Endo,D5,5.3,no,yes,N
+empa-reg-outcome,01 GenMed (alternate),D1,1.1,yes,yes,Y
+empa-reg-outcome,01 GenMed (alternate),D1,1.2,yes,yes,Y
+empa-reg-outcome,01 GenMed (alternate),D1,1.3,no,yes,N
+empa-reg-outcome,01 GenMed (alternate),D2,2.1,no,yes,N
+empa-reg-outcome,01 GenMed (alternate),D2,2.2,no,yes,N
+empa-reg-outcome,01 GenMed (alternate),D2,2.3,not_applicable,no,NA
+empa-reg-outcome,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+empa-reg-outcome,01 GenMed (alternate),D2,2.5,not_applicable,no,NA
+empa-reg-outcome,01 GenMed (alternate),D2,2.6,probably_yes,yes,PY
+empa-reg-outcome,01 GenMed (alternate),D2,2.7,not_applicable,no,NA
+empa-reg-outcome,01 GenMed (alternate),D3,3.1,yes,yes,Y
+empa-reg-outcome,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+empa-reg-outcome,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+empa-reg-outcome,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+empa-reg-outcome,01 GenMed (alternate),D4,4.1,no,yes,N
+empa-reg-outcome,01 GenMed (alternate),D4,4.2,no,yes,N
+empa-reg-outcome,01 GenMed (alternate),D4,4.3,no,yes,N
+empa-reg-outcome,01 GenMed (alternate),D4,4.4,not_applicable,no,NA
+empa-reg-outcome,01 GenMed (alternate),D4,4.5,not_applicable,no,NA
+empa-reg-outcome,01 GenMed (alternate),D5,5.1,yes,yes,Y
+empa-reg-outcome,01 GenMed (alternate),D5,5.2,no,yes,N
+empa-reg-outcome,01 GenMed (alternate),D5,5.3,no,yes,N
+emperor-preserved,01 GenMed (alternate),D1,1.1,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D1,1.2,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D1,1.3,no,yes,N
+emperor-preserved,01 GenMed (alternate),D2,2.1,no,yes,N
+emperor-preserved,01 GenMed (alternate),D2,2.2,no,yes,N
+emperor-preserved,01 GenMed (alternate),D2,2.3,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D2,2.5,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D2,2.6,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D2,2.7,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D3,3.1,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D4,4.1,no,yes,N
+emperor-preserved,01 GenMed (alternate),D4,4.2,no,yes,N
+emperor-preserved,01 GenMed (alternate),D4,4.3,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D4,4.4,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D4,4.5,not_applicable,no,NA
+emperor-preserved,01 GenMed (alternate),D5,5.1,yes,yes,Y
+emperor-preserved,01 GenMed (alternate),D5,5.2,no,yes,N
+emperor-preserved,01 GenMed (alternate),D5,5.3,no,yes,N
+emperor-reduced,01 GenMed (alternate),D1,1.1,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D1,1.2,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D1,1.3,no,yes,N
+emperor-reduced,01 GenMed (alternate),D2,2.1,no,yes,N
+emperor-reduced,01 GenMed (alternate),D2,2.2,no,yes,N
+emperor-reduced,01 GenMed (alternate),D2,2.3,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D2,2.4,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D2,2.5,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D2,2.6,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D2,2.7,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D3,3.1,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D3,3.2,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D3,3.3,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D3,3.4,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D4,4.1,no,yes,N
+emperor-reduced,01 GenMed (alternate),D4,4.2,no,yes,N
+emperor-reduced,01 GenMed (alternate),D4,4.3,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D4,4.4,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D4,4.5,not_applicable,no,NA
+emperor-reduced,01 GenMed (alternate),D5,5.1,yes,yes,Y
+emperor-reduced,01 GenMed (alternate),D5,5.2,no,yes,N
+emperor-reduced,01 GenMed (alternate),D5,5.3,no,yes,N
+envision,14 Neph,D1,1.1,yes,yes,Y
+envision,14 Neph,D1,1.2,yes,yes,Y
+envision,14 Neph,D1,1.3,no,yes,N
+envision,14 Neph,D2,2.1,no,yes,N
+envision,14 Neph,D2,2.2,no,yes,N
+envision,14 Neph,D2,2.3,not_applicable,no,NA
+envision,14 Neph,D2,2.4,not_applicable,no,NA
+envision,14 Neph,D2,2.5,not_applicable,no,NA
+envision,14 Neph,D2,2.6,yes,yes,Y
+envision,14 Neph,D2,2.7,not_applicable,no,NA
+envision,14 Neph,D3,3.1,yes,yes,Y
+envision,14 Neph,D3,3.2,not_applicable,no,NA
+envision,14 Neph,D3,3.3,not_applicable,no,NA
+envision,14 Neph,D3,3.4,not_applicable,no,NA
+envision,14 Neph,D4,4.1,no,yes,N
+envision,14 Neph,D4,4.2,no,yes,N
+envision,14 Neph,D4,4.3,probably_no,yes,PN
+envision,14 Neph,D4,4.4,not_applicable,no,NA
+envision,14 Neph,D4,4.5,not_applicable,no,NA
+envision,14 Neph,D5,5.1,probably_yes,yes,PY
+envision,14 Neph,D5,5.2,probably_yes,yes,PY
+envision,14 Neph,D5,5.3,probably_yes,yes,PY
+espinos-2017,12 ObGyn,D1,1.1,yes,yes,Y
+espinos-2017,12 ObGyn,D1,1.2,no_information,yes,NI
+espinos-2017,12 ObGyn,D1,1.3,no,yes,N
+espinos-2017,12 ObGyn,D2,2.1,yes,yes,Y
+espinos-2017,12 ObGyn,D2,2.2,yes,yes,Y
+espinos-2017,12 ObGyn,D2,2.3,probably_no,yes,PN
+espinos-2017,12 ObGyn,D2,2.4,not_applicable,no,NA
+espinos-2017,12 ObGyn,D2,2.5,not_applicable,no,NA
+espinos-2017,12 ObGyn,D2,2.6,yes,yes,Y
+espinos-2017,12 ObGyn,D2,2.7,not_applicable,no,NA
+espinos-2017,12 ObGyn,D3,3.1,yes,yes,Y
+espinos-2017,12 ObGyn,D3,3.2,not_applicable,no,NA
+espinos-2017,12 ObGyn,D3,3.3,not_applicable,no,NA
+espinos-2017,12 ObGyn,D3,3.4,not_applicable,no,NA
+espinos-2017,12 ObGyn,D4,4.1,no,yes,N
+espinos-2017,12 ObGyn,D4,4.2,no,yes,N
+espinos-2017,12 ObGyn,D4,4.3,probably_no,yes,PN
+espinos-2017,12 ObGyn,D4,4.4,not_applicable,no,NA
+espinos-2017,12 ObGyn,D4,4.5,not_applicable,no,NA
+espinos-2017,12 ObGyn,D5,5.1,no_information,yes,NI
+espinos-2017,12 ObGyn,D5,5.2,probably_no,yes,PN
+espinos-2017,12 ObGyn,D5,5.3,probably_no,yes,PN
+exscel,08 Endo,D1,1.1,yes,yes,Y
+exscel,08 Endo,D1,1.2,yes,yes,Y
+exscel,08 Endo,D1,1.3,no,yes,N
+exscel,08 Endo,D2,2.1,no,yes,N
+exscel,08 Endo,D2,2.2,no,yes,N
+exscel,08 Endo,D2,2.3,not_applicable,no,NA
+exscel,08 Endo,D2,2.4,not_applicable,no,NA
+exscel,08 Endo,D2,2.5,not_applicable,no,NA
+exscel,08 Endo,D2,2.6,yes,yes,Y
+exscel,08 Endo,D2,2.7,not_applicable,no,NA
+exscel,08 Endo,D3,3.1,yes,yes,Y
+exscel,08 Endo,D3,3.2,not_applicable,no,NA
+exscel,08 Endo,D3,3.3,not_applicable,no,NA
+exscel,08 Endo,D3,3.4,not_applicable,no,NA
+exscel,08 Endo,D4,4.1,no,yes,N
+exscel,08 Endo,D4,4.2,no,yes,N
+exscel,08 Endo,D4,4.3,no,yes,N
+exscel,08 Endo,D4,4.4,not_applicable,no,NA
+exscel,08 Endo,D4,4.5,not_applicable,no,NA
+exscel,08 Endo,D5,5.1,yes,yes,Y
+exscel,08 Endo,D5,5.2,no,yes,N
+exscel,08 Endo,D5,5.3,no,yes,N
+ferreira-2021,11 Surg,D1,1.1,probably_yes,yes,PY
+ferreira-2021,11 Surg,D1,1.2,no_information,yes,NI
+ferreira-2021,11 Surg,D1,1.3,probably_no,yes,PN
+ferreira-2021,11 Surg,D2,2.1,yes,yes,Y
+ferreira-2021,11 Surg,D2,2.2,yes,yes,Y
+ferreira-2021,11 Surg,D2,2.3,probably_no,yes,PN
+ferreira-2021,11 Surg,D2,2.4,not_applicable,no,NA
+ferreira-2021,11 Surg,D2,2.5,not_applicable,no,NA
+ferreira-2021,11 Surg,D2,2.6,probably_yes,yes,PY
+ferreira-2021,11 Surg,D2,2.7,not_applicable,no,NA
+ferreira-2021,11 Surg,D3,3.1,no,yes,N
+ferreira-2021,11 Surg,D3,3.2,no,yes,N
+ferreira-2021,11 Surg,D3,3.3,probably_yes,yes,PY
+ferreira-2021,11 Surg,D3,3.4,probably_yes,yes,PY
+ferreira-2021,11 Surg,D4,4.1,no,yes,N
+ferreira-2021,11 Surg,D4,4.2,no,yes,N
+ferreira-2021,11 Surg,D4,4.3,not_applicable,no,NA
+ferreira-2021,11 Surg,D4,4.4,not_applicable,no,NA
+ferreira-2021,11 Surg,D4,4.5,not_applicable,no,NA
+ferreira-2021,11 Surg,D5,5.1,no_information,yes,NI
+ferreira-2021,11 Surg,D5,5.2,probably_no,yes,PN
+ferreira-2021,11 Surg,D5,5.3,probably_no,yes,PN
+fr-as-2018,06 Gastro,D1,1.1,yes,yes,Y
+fr-as-2018,06 Gastro,D1,1.2,probably_yes,yes,PY
+fr-as-2018,06 Gastro,D1,1.3,no,yes,N
+fr-as-2018,06 Gastro,D2,2.1,no,yes,N
+fr-as-2018,06 Gastro,D2,2.2,no,yes,N
+fr-as-2018,06 Gastro,D2,2.3,not_applicable,no,NA
+fr-as-2018,06 Gastro,D2,2.4,not_applicable,no,NA
+fr-as-2018,06 Gastro,D2,2.5,not_applicable,no,NA
+fr-as-2018,06 Gastro,D2,2.6,probably_yes,yes,PY
+fr-as-2018,06 Gastro,D2,2.7,not_applicable,no,NA
+fr-as-2018,06 Gastro,D3,3.1,probably_yes,yes,PY
+fr-as-2018,06 Gastro,D3,3.2,not_applicable,no,NA
+fr-as-2018,06 Gastro,D3,3.3,not_applicable,no,NA
+fr-as-2018,06 Gastro,D3,3.4,not_applicable,no,NA
+fr-as-2018,06 Gastro,D4,4.1,no,yes,N
+fr-as-2018,06 Gastro,D4,4.2,no,yes,N
+fr-as-2018,06 Gastro,D4,4.3,probably_no,yes,PN
+fr-as-2018,06 Gastro,D4,4.4,not_applicable,no,NA
+fr-as-2018,06 Gastro,D4,4.5,not_applicable,no,NA
+fr-as-2018,06 Gastro,D5,5.1,probably_yes,yes,PY
+fr-as-2018,06 Gastro,D5,5.2,no,yes,N
+fr-as-2018,06 Gastro,D5,5.3,no,yes,N
+frat-2019,07 PulmCC,D1,1.1,yes,yes,Y
+frat-2019,07 PulmCC,D1,1.2,yes,yes,Y
+frat-2019,07 PulmCC,D1,1.3,no,yes,N
+frat-2019,07 PulmCC,D2,2.1,yes,yes,Y
+frat-2019,07 PulmCC,D2,2.2,yes,yes,Y
+frat-2019,07 PulmCC,D2,2.3,probably_no,yes,PN
+frat-2019,07 PulmCC,D2,2.4,not_applicable,no,NA
+frat-2019,07 PulmCC,D2,2.5,not_applicable,no,NA
+frat-2019,07 PulmCC,D2,2.6,yes,yes,Y
+frat-2019,07 PulmCC,D2,2.7,not_applicable,no,NA
+frat-2019,07 PulmCC,D3,3.1,yes,yes,Y
+frat-2019,07 PulmCC,D3,3.2,not_applicable,no,NA
+frat-2019,07 PulmCC,D3,3.3,not_applicable,no,NA
+frat-2019,07 PulmCC,D3,3.4,not_applicable,no,NA
+frat-2019,07 PulmCC,D4,4.1,no,yes,N
+frat-2019,07 PulmCC,D4,4.2,no,yes,N
+frat-2019,07 PulmCC,D4,4.3,yes,yes,Y
+frat-2019,07 PulmCC,D4,4.4,probably_no,yes,PN
+frat-2019,07 PulmCC,D4,4.5,not_applicable,no,NA
+frat-2019,07 PulmCC,D5,5.1,yes,yes,Y
+frat-2019,07 PulmCC,D5,5.2,no,yes,N
+frat-2019,07 PulmCC,D5,5.3,no,yes,N
+freeman-2020,05 Psych,D1,1.1,yes,yes,Y
+freeman-2020,05 Psych,D1,1.2,probably_yes,yes,PY
+freeman-2020,05 Psych,D1,1.3,no,yes,N
+freeman-2020,05 Psych,D2,2.1,no,yes,N
+freeman-2020,05 Psych,D2,2.2,no,yes,N
+freeman-2020,05 Psych,D2,2.3,not_applicable,no,NA
+freeman-2020,05 Psych,D2,2.4,not_applicable,no,NA
+freeman-2020,05 Psych,D2,2.5,not_applicable,no,NA
+freeman-2020,05 Psych,D2,2.6,yes,yes,Y
+freeman-2020,05 Psych,D2,2.7,not_applicable,no,NA
+freeman-2020,05 Psych,D3,3.1,no_information,yes,NI
+freeman-2020,05 Psych,D3,3.2,probably_no,yes,PN
+freeman-2020,05 Psych,D3,3.3,no_information,yes,NI
+freeman-2020,05 Psych,D3,3.4,probably_no,yes,PN
+freeman-2020,05 Psych,D4,4.1,no,yes,N
+freeman-2020,05 Psych,D4,4.2,no,yes,N
+freeman-2020,05 Psych,D4,4.3,no,yes,N
+freeman-2020,05 Psych,D4,4.4,not_applicable,no,NA
+freeman-2020,05 Psych,D4,4.5,not_applicable,no,NA
+freeman-2020,05 Psych,D5,5.1,no_information,yes,NI
+freeman-2020,05 Psych,D5,5.2,probably_no,yes,PN
+freeman-2020,05 Psych,D5,5.3,probably_no,yes,PN
+fulop-2021,11 Surg,D1,1.1,yes,yes,Y
+fulop-2021,11 Surg,D1,1.2,probably_yes,yes,PY
+fulop-2021,11 Surg,D1,1.3,no,yes,N
+fulop-2021,11 Surg,D2,2.1,yes,yes,Y
+fulop-2021,11 Surg,D2,2.2,yes,yes,Y
+fulop-2021,11 Surg,D2,2.3,probably_no,yes,PN
+fulop-2021,11 Surg,D2,2.4,not_applicable,no,NA
+fulop-2021,11 Surg,D2,2.5,not_applicable,no,NA
+fulop-2021,11 Surg,D2,2.6,probably_no,yes,PN
+fulop-2021,11 Surg,D2,2.7,probably_no,yes,PN
+fulop-2021,11 Surg,D3,3.1,no,yes,N
+fulop-2021,11 Surg,D3,3.2,no,yes,N
+fulop-2021,11 Surg,D3,3.3,probably_yes,yes,PY
+fulop-2021,11 Surg,D3,3.4,probably_yes,yes,PY
+fulop-2021,11 Surg,D4,4.1,no,yes,N
+fulop-2021,11 Surg,D4,4.2,no,yes,N
+fulop-2021,11 Surg,D4,4.3,no_information,yes,NI
+fulop-2021,11 Surg,D4,4.4,probably_no,yes,PN
+fulop-2021,11 Surg,D4,4.5,not_applicable,no,NA
+fulop-2021,11 Surg,D5,5.1,no_information,yes,NI
+fulop-2021,11 Surg,D5,5.2,probably_no,yes,PN
+fulop-2021,11 Surg,D5,5.3,probably_no,yes,PN
+getgoal-duo1-2013,06 Gastro,D1,1.1,yes,yes,Y
+getgoal-duo1-2013,06 Gastro,D1,1.2,yes,yes,Y
+getgoal-duo1-2013,06 Gastro,D1,1.3,no,yes,N
+getgoal-duo1-2013,06 Gastro,D2,2.1,no,yes,N
+getgoal-duo1-2013,06 Gastro,D2,2.2,no,yes,N
+getgoal-duo1-2013,06 Gastro,D2,2.3,not_applicable,no,NA
+getgoal-duo1-2013,06 Gastro,D2,2.4,not_applicable,no,NA
+getgoal-duo1-2013,06 Gastro,D2,2.5,not_applicable,no,NA
+getgoal-duo1-2013,06 Gastro,D2,2.6,probably_yes,yes,PY
+getgoal-duo1-2013,06 Gastro,D2,2.7,not_applicable,no,NA
+getgoal-duo1-2013,06 Gastro,D3,3.1,yes,yes,Y
+getgoal-duo1-2013,06 Gastro,D3,3.2,not_applicable,no,NA
+getgoal-duo1-2013,06 Gastro,D3,3.3,not_applicable,no,NA
+getgoal-duo1-2013,06 Gastro,D3,3.4,not_applicable,no,NA
+getgoal-duo1-2013,06 Gastro,D4,4.1,no,yes,N
+getgoal-duo1-2013,06 Gastro,D4,4.2,no,yes,N
+getgoal-duo1-2013,06 Gastro,D4,4.3,no,yes,N
+getgoal-duo1-2013,06 Gastro,D4,4.4,not_applicable,no,NA
+getgoal-duo1-2013,06 Gastro,D4,4.5,not_applicable,no,NA
+getgoal-duo1-2013,06 Gastro,D5,5.1,probably_yes,yes,PY
+getgoal-duo1-2013,06 Gastro,D5,5.2,no,yes,N
+getgoal-duo1-2013,06 Gastro,D5,5.3,no,yes,N
+getgoal-f1-2013,06 Gastro,D1,1.1,no_information,yes,NI
+getgoal-f1-2013,06 Gastro,D1,1.2,no_information,yes,NI
+getgoal-f1-2013,06 Gastro,D1,1.3,no,yes,N
+getgoal-f1-2013,06 Gastro,D2,2.1,no,yes,N
+getgoal-f1-2013,06 Gastro,D2,2.2,no,yes,N
+getgoal-f1-2013,06 Gastro,D2,2.3,not_applicable,no,NA
+getgoal-f1-2013,06 Gastro,D2,2.4,not_applicable,no,NA
+getgoal-f1-2013,06 Gastro,D2,2.5,not_applicable,no,NA
+getgoal-f1-2013,06 Gastro,D2,2.6,yes,yes,Y
+getgoal-f1-2013,06 Gastro,D2,2.7,not_applicable,no,NA
+getgoal-f1-2013,06 Gastro,D3,3.1,yes,yes,Y
+getgoal-f1-2013,06 Gastro,D3,3.2,not_applicable,no,NA
+getgoal-f1-2013,06 Gastro,D3,3.3,not_applicable,no,NA
+getgoal-f1-2013,06 Gastro,D3,3.4,not_applicable,no,NA
+getgoal-f1-2013,06 Gastro,D4,4.1,no,yes,N
+getgoal-f1-2013,06 Gastro,D4,4.2,no,yes,N
+getgoal-f1-2013,06 Gastro,D4,4.3,probably_no,yes,PN
+getgoal-f1-2013,06 Gastro,D4,4.4,not_applicable,no,NA
+getgoal-f1-2013,06 Gastro,D4,4.5,not_applicable,no,NA
+getgoal-f1-2013,06 Gastro,D5,5.1,probably_yes,yes,PY
+getgoal-f1-2013,06 Gastro,D5,5.2,no,yes,N
+getgoal-f1-2013,06 Gastro,D5,5.3,no,yes,N
+getgood-2020,15 Ortho,D1,1.1,yes,yes,Y
+getgood-2020,15 Ortho,D1,1.2,probably_yes,yes,PY
+getgood-2020,15 Ortho,D1,1.3,no,yes,N
+getgood-2020,15 Ortho,D2,2.1,probably_yes,yes,PY
+getgood-2020,15 Ortho,D2,2.2,yes,yes,Y
+getgood-2020,15 Ortho,D2,2.3,probably_no,yes,PN
+getgood-2020,15 Ortho,D2,2.4,not_applicable,no,NA
+getgood-2020,15 Ortho,D2,2.5,not_applicable,no,NA
+getgood-2020,15 Ortho,D2,2.6,yes,yes,Y
+getgood-2020,15 Ortho,D2,2.7,not_applicable,no,NA
+getgood-2020,15 Ortho,D3,3.1,yes,yes,Y
+getgood-2020,15 Ortho,D3,3.2,not_applicable,no,NA
+getgood-2020,15 Ortho,D3,3.3,not_applicable,no,NA
+getgood-2020,15 Ortho,D3,3.4,not_applicable,no,NA
+getgood-2020,15 Ortho,D4,4.1,no,yes,N
+getgood-2020,15 Ortho,D4,4.2,no,yes,N
+getgood-2020,15 Ortho,D4,4.3,no,yes,N
+getgood-2020,15 Ortho,D4,4.4,not_applicable,no,NA
+getgood-2020,15 Ortho,D4,4.5,not_applicable,no,NA
+getgood-2020,15 Ortho,D5,5.1,probably_yes,yes,PY
+getgood-2020,15 Ortho,D5,5.2,probably_no,yes,PN
+getgood-2020,15 Ortho,D5,5.3,probably_no,yes,PN
+gillis-2014,11 Surg,D1,1.1,yes,yes,Y
+gillis-2014,11 Surg,D1,1.2,probably_yes,yes,PY
+gillis-2014,11 Surg,D1,1.3,no,yes,N
+gillis-2014,11 Surg,D2,2.1,yes,yes,Y
+gillis-2014,11 Surg,D2,2.2,yes,yes,Y
+gillis-2014,11 Surg,D2,2.3,not_applicable,no,NA
+gillis-2014,11 Surg,D2,2.4,not_applicable,no,NA
+gillis-2014,11 Surg,D2,2.5,not_applicable,no,NA
+gillis-2014,11 Surg,D2,2.6,probably_no,yes,PN
+gillis-2014,11 Surg,D2,2.7,probably_no,yes,PN
+gillis-2014,11 Surg,D3,3.1,no,yes,N
+gillis-2014,11 Surg,D3,3.2,no,yes,N
+gillis-2014,11 Surg,D3,3.3,probably_yes,yes,PY
+gillis-2014,11 Surg,D3,3.4,probably_no,yes,PN
+gillis-2014,11 Surg,D4,4.1,no,yes,N
+gillis-2014,11 Surg,D4,4.2,no,yes,N
+gillis-2014,11 Surg,D4,4.3,no,yes,N
+gillis-2014,11 Surg,D4,4.4,not_applicable,no,NA
+gillis-2014,11 Surg,D4,4.5,not_applicable,no,NA
+gillis-2014,11 Surg,D5,5.1,probably_yes,yes,PY
+gillis-2014,11 Surg,D5,5.2,no,yes,N
+gillis-2014,11 Surg,D5,5.3,no,yes,N
+grant-2017,11 Surg,D1,1.1,yes,yes,Y
+grant-2017,11 Surg,D1,1.2,no_information,yes,NI
+grant-2017,11 Surg,D1,1.3,probably_no,yes,PN
+grant-2017,11 Surg,D2,2.1,yes,yes,Y
+grant-2017,11 Surg,D2,2.2,yes,yes,Y
+grant-2017,11 Surg,D2,2.3,no_information,yes,NI
+grant-2017,11 Surg,D2,2.4,not_applicable,no,NA
+grant-2017,11 Surg,D2,2.5,not_applicable,no,NA
+grant-2017,11 Surg,D2,2.6,probably_yes,yes,PY
+grant-2017,11 Surg,D2,2.7,not_applicable,no,NA
+grant-2017,11 Surg,D3,3.1,no,yes,N
+grant-2017,11 Surg,D3,3.2,probably_yes,yes,PY
+grant-2017,11 Surg,D3,3.3,not_applicable,no,NA
+grant-2017,11 Surg,D3,3.4,not_applicable,no,NA
+grant-2017,11 Surg,D4,4.1,no,yes,N
+grant-2017,11 Surg,D4,4.2,no,yes,N
+grant-2017,11 Surg,D4,4.3,no,yes,N
+grant-2017,11 Surg,D4,4.4,not_applicable,no,NA
+grant-2017,11 Surg,D4,4.5,not_applicable,no,NA
+grant-2017,11 Surg,D5,5.1,no_information,yes,NI
+grant-2017,11 Surg,D5,5.2,probably_yes,yes,PY
+grant-2017,11 Surg,D5,5.3,probably_yes,yes,PY
+guitton-2019,07 PulmCC,D1,1.1,yes,yes,Y
+guitton-2019,07 PulmCC,D1,1.2,yes,yes,Y
+guitton-2019,07 PulmCC,D1,1.3,no,yes,N
+guitton-2019,07 PulmCC,D2,2.1,yes,yes,Y
+guitton-2019,07 PulmCC,D2,2.2,yes,yes,Y
+guitton-2019,07 PulmCC,D2,2.3,not_applicable,no,NA
+guitton-2019,07 PulmCC,D2,2.4,not_applicable,no,NA
+guitton-2019,07 PulmCC,D2,2.5,not_applicable,no,NA
+guitton-2019,07 PulmCC,D2,2.6,probably_yes,yes,PY
+guitton-2019,07 PulmCC,D2,2.7,not_applicable,no,NA
+guitton-2019,07 PulmCC,D3,3.1,probably_no,yes,PN
+guitton-2019,07 PulmCC,D3,3.2,probably_yes,yes,PY
+guitton-2019,07 PulmCC,D3,3.3,not_applicable,no,NA
+guitton-2019,07 PulmCC,D3,3.4,not_applicable,no,NA
+guitton-2019,07 PulmCC,D4,4.1,no,yes,N
+guitton-2019,07 PulmCC,D4,4.2,no,yes,N
+guitton-2019,07 PulmCC,D4,4.3,not_applicable,no,NA
+guitton-2019,07 PulmCC,D4,4.4,not_applicable,no,NA
+guitton-2019,07 PulmCC,D4,4.5,not_applicable,no,NA
+guitton-2019,07 PulmCC,D5,5.1,probably_yes,yes,PY
+guitton-2019,07 PulmCC,D5,5.2,no,yes,N
+guitton-2019,07 PulmCC,D5,5.3,no,yes,N
+gupta-2024,13 Peds,D1,1.1,yes,yes,Y
+gupta-2024,13 Peds,D1,1.2,no,yes,N
+gupta-2024,13 Peds,D1,1.3,no,yes,N
+gupta-2024,13 Peds,D2,2.1,no,yes,N
+gupta-2024,13 Peds,D2,2.2,no,yes,N
+gupta-2024,13 Peds,D2,2.3,not_applicable,no,NA
+gupta-2024,13 Peds,D2,2.4,not_applicable,no,NA
+gupta-2024,13 Peds,D2,2.5,not_applicable,no,NA
+gupta-2024,13 Peds,D2,2.6,yes,yes,Y
+gupta-2024,13 Peds,D2,2.7,not_applicable,no,NA
+gupta-2024,13 Peds,D3,3.1,yes,yes,Y
+gupta-2024,13 Peds,D3,3.2,not_applicable,no,NA
+gupta-2024,13 Peds,D3,3.3,not_applicable,no,NA
+gupta-2024,13 Peds,D3,3.4,not_applicable,no,NA
+gupta-2024,13 Peds,D4,4.1,no,yes,N
+gupta-2024,13 Peds,D4,4.2,no,yes,N
+gupta-2024,13 Peds,D4,4.3,not_applicable,no,NA
+gupta-2024,13 Peds,D4,4.4,not_applicable,no,NA
+gupta-2024,13 Peds,D4,4.5,not_applicable,no,NA
+gupta-2024,13 Peds,D5,5.1,yes,yes,Y
+gupta-2024,13 Peds,D5,5.2,no,yes,N
+gupta-2024,13 Peds,D5,5.3,no,yes,N
+hamido-2021,15 Ortho,D1,1.1,probably_yes,yes,PY
+hamido-2021,15 Ortho,D1,1.2,no_information,yes,NI
+hamido-2021,15 Ortho,D1,1.3,probably_no,yes,PN
+hamido-2021,15 Ortho,D2,2.1,yes,yes,Y
+hamido-2021,15 Ortho,D2,2.2,yes,yes,Y
+hamido-2021,15 Ortho,D2,2.3,probably_no,yes,PN
+hamido-2021,15 Ortho,D2,2.4,not_applicable,no,NA
+hamido-2021,15 Ortho,D2,2.5,not_applicable,no,NA
+hamido-2021,15 Ortho,D2,2.6,probably_yes,yes,PY
+hamido-2021,15 Ortho,D2,2.7,not_applicable,no,NA
+hamido-2021,15 Ortho,D3,3.1,yes,yes,Y
+hamido-2021,15 Ortho,D3,3.2,not_applicable,no,NA
+hamido-2021,15 Ortho,D3,3.3,not_applicable,no,NA
+hamido-2021,15 Ortho,D3,3.4,not_applicable,no,NA
+hamido-2021,15 Ortho,D4,4.1,no,yes,N
+hamido-2021,15 Ortho,D4,4.2,no,yes,N
+hamido-2021,15 Ortho,D4,4.3,probably_yes,yes,PY
+hamido-2021,15 Ortho,D4,4.4,probably_yes,yes,PY
+hamido-2021,15 Ortho,D4,4.5,probably_yes,yes,PY
+hamido-2021,15 Ortho,D5,5.1,no_information,yes,NI
+hamido-2021,15 Ortho,D5,5.2,probably_no,yes,PN
+hamido-2021,15 Ortho,D5,5.3,probably_no,yes,PN
+hanafiah-2022,12 ObGyn,D1,1.1,yes,yes,Y
+hanafiah-2022,12 ObGyn,D1,1.2,no_information,yes,NI
+hanafiah-2022,12 ObGyn,D1,1.3,probably_no,yes,PN
+hanafiah-2022,12 ObGyn,D2,2.1,yes,yes,Y
+hanafiah-2022,12 ObGyn,D2,2.2,yes,yes,Y
+hanafiah-2022,12 ObGyn,D2,2.3,probably_no,yes,PN
+hanafiah-2022,12 ObGyn,D2,2.4,not_applicable,no,NA
+hanafiah-2022,12 ObGyn,D2,2.5,not_applicable,no,NA
+hanafiah-2022,12 ObGyn,D2,2.6,no,yes,N
+hanafiah-2022,12 ObGyn,D2,2.7,probably_yes,yes,PY
+hanafiah-2022,12 ObGyn,D3,3.1,no,yes,N
+hanafiah-2022,12 ObGyn,D3,3.2,no,yes,N
+hanafiah-2022,12 ObGyn,D3,3.3,probably_yes,yes,PY
+hanafiah-2022,12 ObGyn,D3,3.4,probably_yes,yes,PY
+hanafiah-2022,12 ObGyn,D4,4.1,no,yes,N
+hanafiah-2022,12 ObGyn,D4,4.2,no,yes,N
+hanafiah-2022,12 ObGyn,D4,4.3,probably_no,yes,PN
+hanafiah-2022,12 ObGyn,D4,4.4,not_applicable,no,NA
+hanafiah-2022,12 ObGyn,D4,4.5,not_applicable,no,NA
+hanafiah-2022,12 ObGyn,D5,5.1,probably_yes,yes,PY
+hanafiah-2022,12 ObGyn,D5,5.2,no,yes,N
+hanafiah-2022,12 ObGyn,D5,5.3,no,yes,N
+harmony-outcomes,08 Endo,D1,1.1,yes,yes,Y
+harmony-outcomes,08 Endo,D1,1.2,yes,yes,Y
+harmony-outcomes,08 Endo,D1,1.3,no,yes,N
+harmony-outcomes,08 Endo,D2,2.1,no,yes,N
+harmony-outcomes,08 Endo,D2,2.2,no,yes,N
+harmony-outcomes,08 Endo,D2,2.3,not_applicable,no,NA
+harmony-outcomes,08 Endo,D2,2.4,not_applicable,no,NA
+harmony-outcomes,08 Endo,D2,2.5,not_applicable,no,NA
+harmony-outcomes,08 Endo,D2,2.6,yes,yes,Y
+harmony-outcomes,08 Endo,D2,2.7,not_applicable,no,NA
+harmony-outcomes,08 Endo,D3,3.1,yes,yes,Y
+harmony-outcomes,08 Endo,D3,3.2,not_applicable,no,NA
+harmony-outcomes,08 Endo,D3,3.3,not_applicable,no,NA
+harmony-outcomes,08 Endo,D3,3.4,not_applicable,no,NA
+harmony-outcomes,08 Endo,D4,4.1,no,yes,N
+harmony-outcomes,08 Endo,D4,4.2,no,yes,N
+harmony-outcomes,08 Endo,D4,4.3,no,yes,N
+harmony-outcomes,08 Endo,D4,4.4,not_applicable,no,NA
+harmony-outcomes,08 Endo,D4,4.5,not_applicable,no,NA
+harmony-outcomes,08 Endo,D5,5.1,yes,yes,Y
+harmony-outcomes,08 Endo,D5,5.2,no,yes,N
+harmony-outcomes,08 Endo,D5,5.3,no,yes,N
+heemskerk-2016,09 ID,D1,1.1,yes,yes,Y
+heemskerk-2016,09 ID,D1,1.2,yes,yes,Y
+heemskerk-2016,09 ID,D1,1.3,probably_no,yes,PN
+heemskerk-2016,09 ID,D2,2.1,no,yes,N
+heemskerk-2016,09 ID,D2,2.2,no,yes,N
+heemskerk-2016,09 ID,D2,2.3,not_applicable,no,NA
+heemskerk-2016,09 ID,D2,2.4,not_applicable,no,NA
+heemskerk-2016,09 ID,D2,2.5,not_applicable,no,NA
+heemskerk-2016,09 ID,D2,2.6,yes,yes,Y
+heemskerk-2016,09 ID,D2,2.7,not_applicable,no,NA
+heemskerk-2016,09 ID,D3,3.1,probably_yes,yes,PY
+heemskerk-2016,09 ID,D3,3.2,not_applicable,no,NA
+heemskerk-2016,09 ID,D3,3.3,not_applicable,no,NA
+heemskerk-2016,09 ID,D3,3.4,not_applicable,no,NA
+heemskerk-2016,09 ID,D4,4.1,no,yes,N
+heemskerk-2016,09 ID,D4,4.2,no,yes,N
+heemskerk-2016,09 ID,D4,4.3,no,yes,N
+heemskerk-2016,09 ID,D4,4.4,not_applicable,no,NA
+heemskerk-2016,09 ID,D4,4.5,not_applicable,no,NA
+heemskerk-2016,09 ID,D5,5.1,probably_yes,yes,PY
+heemskerk-2016,09 ID,D5,5.2,probably_no,yes,PN
+heemskerk-2016,09 ID,D5,5.3,probably_no,yes,PN
+hill-2017,05 Psych,D1,1.1,no_information,yes,NI
+hill-2017,05 Psych,D1,1.2,no_information,yes,NI
+hill-2017,05 Psych,D1,1.3,probably_no,yes,PN
+hill-2017,05 Psych,D2,2.1,probably_no,yes,PN
+hill-2017,05 Psych,D2,2.2,probably_no,yes,PN
+hill-2017,05 Psych,D2,2.3,probably_no,yes,PN
+hill-2017,05 Psych,D2,2.4,not_applicable,no,NA
+hill-2017,05 Psych,D2,2.5,not_applicable,no,NA
+hill-2017,05 Psych,D2,2.6,probably_yes,yes,PY
+hill-2017,05 Psych,D2,2.7,not_applicable,no,NA
+hill-2017,05 Psych,D3,3.1,probably_yes,yes,PY
+hill-2017,05 Psych,D3,3.2,not_applicable,no,NA
+hill-2017,05 Psych,D3,3.3,not_applicable,no,NA
+hill-2017,05 Psych,D3,3.4,not_applicable,no,NA
+hill-2017,05 Psych,D4,4.1,probably_no,yes,PN
+hill-2017,05 Psych,D4,4.2,no,yes,N
+hill-2017,05 Psych,D4,4.3,probably_no,yes,PN
+hill-2017,05 Psych,D4,4.4,not_applicable,no,NA
+hill-2017,05 Psych,D4,4.5,not_applicable,no,NA
+hill-2017,05 Psych,D5,5.1,no_information,yes,NI
+hill-2017,05 Psych,D5,5.2,probably_no,yes,PN
+hill-2017,05 Psych,D5,5.3,probably_no,yes,PN
+host-exam,01 GenMed,D1,1.1,yes,yes,"Y | Web-based randomisation system (MRCC IWRS), computer-generated."
+host-exam,01 GenMed,D1,1.2,yes,yes,"Y | Central web-based allocation, so concealed until assignment."
+host-exam,01 GenMed,D1,1.3,no,yes,N | Table 1 shows balanced baseline characteristics.
+host-exam,01 GenMed,D2,2.1,yes,yes,"Y | Open-label, so participants knew their assignment."
+host-exam,01 GenMed,D2,2.2,yes,yes,Y | Investigators knew the assignment.
+host-exam,01 GenMed,D2,2.3,probably_no,yes,"PN | No evidence of trial-context deviations. 35 patients (0.6%) used a different regimen, and discontinuation was similar in both groups (4.9% vs 5.1%)."
+host-exam,01 GenMed,D2,2.4,not_applicable,no,NA | 
+host-exam,01 GenMed,D2,2.5,not_applicable,no,NA | 
+host-exam,01 GenMed,D2,2.6,yes,yes,Y | Intention-to-treat analysis of all 5438 randomised patients.
+host-exam,01 GenMed,D2,2.7,not_applicable,no,NA | 
+host-exam,01 GenMed,D3,3.1,yes,yes,"Y | Primary endpoint ascertained in 98.2%, with vital status cross-checked in all patients."
+host-exam,01 GenMed,D3,3.2,not_applicable,no,NA | 
+host-exam,01 GenMed,D3,3.3,not_applicable,no,NA | 
+host-exam,01 GenMed,D3,3.4,not_applicable,no,NA | 
+host-exam,01 GenMed,D4,4.1,no,yes,"N | The methods are appropriate: standard definitions (BARC, Universal Definition of MI), with death cross-checked against national registries."
+host-exam,01 GenMed,D4,4.2,no,yes,N | Same ascertainment methods in both groups.
+host-exam,01 GenMed,D4,4.3,yes,yes,"Y | Investigators, who first assess the events, were not masked. The independent event committee that adjudicated them was masked."
+host-exam,01 GenMed,D4,4.4,probably_yes,yes,"PY | Readmission for ACS, bleeding and stroke involve judgement. Readmission for ACS is the largest driver of the effect (66 vs 109 events). Investigator knowledge could plausibly influence which events were reported."
+host-exam,01 GenMed,D4,4.5,probably_no,yes,"PN | Blinded adjudication makes it unlikely, though not certain, that assessment was influenced by assignment."
+host-exam,01 GenMed,D5,5.1,yes,yes,"Y | The registered primary outcome matches the published composite, over 24 months. Analysis plan and protocol are in the appendix."
+host-exam,01 GenMed,D5,5.2,no,yes,N | No sign of selection among multiple outcome measurements.
+host-exam,01 GenMed,D5,5.3,no,yes,N | No sign of selection among multiple analyses.
+hundscheid-2022,13 Peds,D1,1.1,yes,yes,Y
+hundscheid-2022,13 Peds,D1,1.2,yes,yes,Y
+hundscheid-2022,13 Peds,D1,1.3,no,yes,N
+hundscheid-2022,13 Peds,D2,2.1,yes,yes,Y
+hundscheid-2022,13 Peds,D2,2.2,yes,yes,Y
+hundscheid-2022,13 Peds,D2,2.3,probably_no,yes,PN
+hundscheid-2022,13 Peds,D2,2.4,not_applicable,no,NA
+hundscheid-2022,13 Peds,D2,2.5,not_applicable,no,NA
+hundscheid-2022,13 Peds,D2,2.6,yes,yes,Y
+hundscheid-2022,13 Peds,D2,2.7,not_applicable,no,NA
+hundscheid-2022,13 Peds,D3,3.1,yes,yes,Y
+hundscheid-2022,13 Peds,D3,3.2,not_applicable,no,NA
+hundscheid-2022,13 Peds,D3,3.3,not_applicable,no,NA
+hundscheid-2022,13 Peds,D3,3.4,not_applicable,no,NA
+hundscheid-2022,13 Peds,D4,4.1,no,yes,N
+hundscheid-2022,13 Peds,D4,4.2,no,yes,N
+hundscheid-2022,13 Peds,D4,4.3,yes,yes,Y
+hundscheid-2022,13 Peds,D4,4.4,probably_no,yes,PN
+hundscheid-2022,13 Peds,D4,4.5,not_applicable,no,NA
+hundscheid-2022,13 Peds,D5,5.1,yes,yes,Y
+hundscheid-2022,13 Peds,D5,5.2,no,yes,N
+hundscheid-2022,13 Peds,D5,5.3,no,yes,N
+ibrahim-2017,15 Ortho,D1,1.1,no,yes,N
+ibrahim-2017,15 Ortho,D1,1.2,no,yes,N
+ibrahim-2017,15 Ortho,D1,1.3,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D2,2.1,yes,yes,Y
+ibrahim-2017,15 Ortho,D2,2.2,yes,yes,Y
+ibrahim-2017,15 Ortho,D2,2.3,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D2,2.4,not_applicable,no,NA
+ibrahim-2017,15 Ortho,D2,2.5,not_applicable,no,NA
+ibrahim-2017,15 Ortho,D2,2.6,probably_yes,yes,PY
+ibrahim-2017,15 Ortho,D2,2.7,not_applicable,no,NA
+ibrahim-2017,15 Ortho,D3,3.1,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D3,3.2,probably_yes,yes,PY
+ibrahim-2017,15 Ortho,D3,3.3,not_applicable,no,NA
+ibrahim-2017,15 Ortho,D3,3.4,not_applicable,no,NA
+ibrahim-2017,15 Ortho,D4,4.1,no,yes,N
+ibrahim-2017,15 Ortho,D4,4.2,no,yes,N
+ibrahim-2017,15 Ortho,D4,4.3,yes,yes,Y
+ibrahim-2017,15 Ortho,D4,4.4,probably_yes,yes,PY
+ibrahim-2017,15 Ortho,D4,4.5,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D5,5.1,no_information,yes,NI
+ibrahim-2017,15 Ortho,D5,5.2,probably_no,yes,PN
+ibrahim-2017,15 Ortho,D5,5.3,probably_no,yes,PN
+jaber-2016,07 PulmCC,D1,1.1,yes,yes,Y
+jaber-2016,07 PulmCC,D1,1.2,probably_yes,yes,PY
+jaber-2016,07 PulmCC,D1,1.3,probably_no,yes,PN
+jaber-2016,07 PulmCC,D2,2.1,probably_no,yes,PN
+jaber-2016,07 PulmCC,D2,2.2,probably_yes,yes,PY
+jaber-2016,07 PulmCC,D2,2.3,probably_no,yes,PN
+jaber-2016,07 PulmCC,D2,2.4,not_applicable,no,NA
+jaber-2016,07 PulmCC,D2,2.5,not_applicable,no,NA
+jaber-2016,07 PulmCC,D2,2.6,probably_yes,yes,PY
+jaber-2016,07 PulmCC,D2,2.7,not_applicable,no,NA
+jaber-2016,07 PulmCC,D3,3.1,probably_yes,yes,PY
+jaber-2016,07 PulmCC,D3,3.2,not_applicable,no,NA
+jaber-2016,07 PulmCC,D3,3.3,not_applicable,no,NA
+jaber-2016,07 PulmCC,D3,3.4,not_applicable,no,NA
+jaber-2016,07 PulmCC,D4,4.1,probably_no,yes,PN
+jaber-2016,07 PulmCC,D4,4.2,probably_no,yes,PN
+jaber-2016,07 PulmCC,D4,4.3,not_applicable,no,NA
+jaber-2016,07 PulmCC,D4,4.4,not_applicable,no,NA
+jaber-2016,07 PulmCC,D4,4.5,not_applicable,no,NA
+jaber-2016,07 PulmCC,D5,5.1,probably_yes,yes,PY
+jaber-2016,07 PulmCC,D5,5.2,probably_no,yes,PN
+jaber-2016,07 PulmCC,D5,5.3,probably_no,yes,PN
+jindani-2016,09 ID,D1,1.1,yes,yes,Y
+jindani-2016,09 ID,D1,1.2,probably_yes,yes,PY
+jindani-2016,09 ID,D1,1.3,no,yes,N
+jindani-2016,09 ID,D2,2.1,yes,yes,Y
+jindani-2016,09 ID,D2,2.2,yes,yes,Y
+jindani-2016,09 ID,D2,2.3,probably_no,yes,PN
+jindani-2016,09 ID,D2,2.4,not_applicable,no,NA
+jindani-2016,09 ID,D2,2.5,not_applicable,no,NA
+jindani-2016,09 ID,D2,2.6,yes,yes,Y
+jindani-2016,09 ID,D2,2.7,not_applicable,no,NA
+jindani-2016,09 ID,D3,3.1,yes,yes,Y
+jindani-2016,09 ID,D3,3.2,not_applicable,no,NA
+jindani-2016,09 ID,D3,3.3,not_applicable,no,NA
+jindani-2016,09 ID,D3,3.4,not_applicable,no,NA
+jindani-2016,09 ID,D4,4.1,no,yes,N
+jindani-2016,09 ID,D4,4.2,no,yes,N
+jindani-2016,09 ID,D4,4.3,no,yes,N
+jindani-2016,09 ID,D4,4.4,not_applicable,no,NA
+jindani-2016,09 ID,D4,4.5,not_applicable,no,NA
+jindani-2016,09 ID,D5,5.1,no_information,yes,NI
+jindani-2016,09 ID,D5,5.2,probably_no,yes,PN
+jindani-2016,09 ID,D5,5.3,probably_no,yes,PN
+kang25-recovery-2020,02 Cardio,D1,1.1,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D1,1.2,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D1,1.3,no,yes,N
+kang25-recovery-2020,02 Cardio,D2,2.1,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D2,2.2,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D2,2.3,probably_no,yes,PN
+kang25-recovery-2020,02 Cardio,D2,2.4,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D2,2.5,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D2,2.6,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D2,2.7,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D3,3.1,yes,yes,Y
+kang25-recovery-2020,02 Cardio,D3,3.2,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D3,3.3,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D3,3.4,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D4,4.1,no,yes,N
+kang25-recovery-2020,02 Cardio,D4,4.2,no,yes,N
+kang25-recovery-2020,02 Cardio,D4,4.3,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D4,4.4,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D4,4.5,not_applicable,no,NA
+kang25-recovery-2020,02 Cardio,D5,5.1,probably_yes,yes,PY
+kang25-recovery-2020,02 Cardio,D5,5.2,probably_no,yes,PN
+kang25-recovery-2020,02 Cardio,D5,5.3,probably_no,yes,PN
+leader,08 Endo,D1,1.1,yes,yes,Y
+leader,08 Endo,D1,1.2,yes,yes,Y
+leader,08 Endo,D1,1.3,no,yes,N
+leader,08 Endo,D2,2.1,no,yes,N
+leader,08 Endo,D2,2.2,no,yes,N
+leader,08 Endo,D2,2.3,not_applicable,no,NA
+leader,08 Endo,D2,2.4,not_applicable,no,NA
+leader,08 Endo,D2,2.5,not_applicable,no,NA
+leader,08 Endo,D2,2.6,yes,yes,Y
+leader,08 Endo,D2,2.7,not_applicable,no,NA
+leader,08 Endo,D3,3.1,yes,yes,Y
+leader,08 Endo,D3,3.2,not_applicable,no,NA
+leader,08 Endo,D3,3.3,not_applicable,no,NA
+leader,08 Endo,D3,3.4,not_applicable,no,NA
+leader,08 Endo,D4,4.1,no,yes,N
+leader,08 Endo,D4,4.2,no,yes,N
+leader,08 Endo,D4,4.3,no,yes,N
+leader,08 Endo,D4,4.4,not_applicable,no,NA
+leader,08 Endo,D4,4.5,not_applicable,no,NA
+leader,08 Endo,D5,5.1,yes,yes,Y
+leader,08 Endo,D5,5.2,no,yes,N
+leader,08 Endo,D5,5.3,no,yes,N
+levin-2011,05 Psych,D1,1.1,yes,yes,Y
+levin-2011,05 Psych,D1,1.2,probably_yes,yes,PY
+levin-2011,05 Psych,D1,1.3,no,yes,N
+levin-2011,05 Psych,D2,2.1,no,yes,N
+levin-2011,05 Psych,D2,2.2,no,yes,N
+levin-2011,05 Psych,D2,2.3,not_applicable,no,NA
+levin-2011,05 Psych,D2,2.4,not_applicable,no,NA
+levin-2011,05 Psych,D2,2.5,not_applicable,no,NA
+levin-2011,05 Psych,D2,2.6,yes,yes,Y
+levin-2011,05 Psych,D2,2.7,not_applicable,no,NA
+levin-2011,05 Psych,D3,3.1,no,yes,N
+levin-2011,05 Psych,D3,3.2,probably_yes,yes,PY
+levin-2011,05 Psych,D3,3.3,not_applicable,no,NA
+levin-2011,05 Psych,D3,3.4,not_applicable,no,NA
+levin-2011,05 Psych,D4,4.1,no,yes,N
+levin-2011,05 Psych,D4,4.2,no,yes,N
+levin-2011,05 Psych,D4,4.3,probably_no,yes,PN
+levin-2011,05 Psych,D4,4.4,not_applicable,no,NA
+levin-2011,05 Psych,D4,4.5,not_applicable,no,NA
+levin-2011,05 Psych,D5,5.1,probably_yes,yes,PY
+levin-2011,05 Psych,D5,5.2,no,yes,N
+levin-2011,05 Psych,D5,5.3,no,yes,N
+levin-2016,05 Psych,D1,1.1,yes,yes,Y
+levin-2016,05 Psych,D1,1.2,yes,yes,Y
+levin-2016,05 Psych,D1,1.3,no,yes,N
+levin-2016,05 Psych,D2,2.1,probably_no,yes,PN
+levin-2016,05 Psych,D2,2.2,probably_no,yes,PN
+levin-2016,05 Psych,D2,2.3,not_applicable,no,NA
+levin-2016,05 Psych,D2,2.4,not_applicable,no,NA
+levin-2016,05 Psych,D2,2.5,not_applicable,no,NA
+levin-2016,05 Psych,D2,2.6,yes,yes,Y
+levin-2016,05 Psych,D2,2.7,not_applicable,no,NA
+levin-2016,05 Psych,D3,3.1,probably_no,yes,PN
+levin-2016,05 Psych,D3,3.2,probably_no,yes,PN
+levin-2016,05 Psych,D3,3.3,probably_yes,yes,PY
+levin-2016,05 Psych,D3,3.4,probably_yes,yes,PY
+levin-2016,05 Psych,D4,4.1,no,yes,N
+levin-2016,05 Psych,D4,4.2,no,yes,N
+levin-2016,05 Psych,D4,4.3,probably_no,yes,PN
+levin-2016,05 Psych,D4,4.4,not_applicable,no,NA
+levin-2016,05 Psych,D4,4.5,not_applicable,no,NA
+levin-2016,05 Psych,D5,5.1,probably_yes,yes,PY
+levin-2016,05 Psych,D5,5.2,no,yes,N
+levin-2016,05 Psych,D5,5.3,no,yes,N
+lv-2023,14 Neph,D1,1.1,probably_yes,yes,PY
+lv-2023,14 Neph,D1,1.2,probably_yes,yes,PY
+lv-2023,14 Neph,D1,1.3,probably_no,yes,PN
+lv-2023,14 Neph,D2,2.1,probably_no,yes,PN
+lv-2023,14 Neph,D2,2.2,probably_no,yes,PN
+lv-2023,14 Neph,D2,2.3,not_applicable,no,NA
+lv-2023,14 Neph,D2,2.4,not_applicable,no,NA
+lv-2023,14 Neph,D2,2.5,not_applicable,no,NA
+lv-2023,14 Neph,D2,2.6,probably_yes,yes,PY
+lv-2023,14 Neph,D2,2.7,not_applicable,no,NA
+lv-2023,14 Neph,D3,3.1,probably_yes,yes,PY
+lv-2023,14 Neph,D3,3.2,probably_yes,yes,PY
+lv-2023,14 Neph,D3,3.3,not_applicable,no,NA
+lv-2023,14 Neph,D3,3.4,not_applicable,no,NA
+lv-2023,14 Neph,D4,4.1,no,yes,N
+lv-2023,14 Neph,D4,4.2,no,yes,N
+lv-2023,14 Neph,D4,4.3,not_applicable,no,NA
+lv-2023,14 Neph,D4,4.4,not_applicable,no,NA
+lv-2023,14 Neph,D4,4.5,not_applicable,no,NA
+lv-2023,14 Neph,D5,5.1,no_information,yes,NI
+lv-2023,14 Neph,D5,5.2,probably_no,yes,PN
+lv-2023,14 Neph,D5,5.3,probably_no,yes,PN
+monaleesa-2,03 Onc,D1,1.1,yes,yes,Y
+monaleesa-2,03 Onc,D1,1.2,probably_yes,yes,PY
+monaleesa-2,03 Onc,D1,1.3,no,yes,N
+monaleesa-2,03 Onc,D2,2.1,no,yes,N
+monaleesa-2,03 Onc,D2,2.2,no,yes,N
+monaleesa-2,03 Onc,D2,2.3,not_applicable,no,NA
+monaleesa-2,03 Onc,D2,2.4,not_applicable,no,NA
+monaleesa-2,03 Onc,D2,2.5,not_applicable,no,NA
+monaleesa-2,03 Onc,D2,2.6,yes,yes,Y
+monaleesa-2,03 Onc,D2,2.7,not_applicable,no,NA
+monaleesa-2,03 Onc,D3,3.1,yes,yes,Y
+monaleesa-2,03 Onc,D3,3.2,not_applicable,no,NA
+monaleesa-2,03 Onc,D3,3.3,not_applicable,no,NA
+monaleesa-2,03 Onc,D3,3.4,not_applicable,no,NA
+monaleesa-2,03 Onc,D4,4.1,no,yes,N
+monaleesa-2,03 Onc,D4,4.2,no,yes,N
+monaleesa-2,03 Onc,D4,4.3,not_applicable,no,NA
+monaleesa-2,03 Onc,D4,4.4,not_applicable,no,NA
+monaleesa-2,03 Onc,D4,4.5,not_applicable,no,NA
+monaleesa-2,03 Onc,D5,5.1,yes,yes,Y
+monaleesa-2,03 Onc,D5,5.2,no,yes,N
+monaleesa-2,03 Onc,D5,5.3,no,yes,N
+monaleesa-3,03 Onc,D1,1.1,yes,yes,Y
+monaleesa-3,03 Onc,D1,1.2,probably_yes,yes,PY
+monaleesa-3,03 Onc,D1,1.3,no,yes,N
+monaleesa-3,03 Onc,D2,2.1,probably_no,yes,PN
+monaleesa-3,03 Onc,D2,2.2,probably_no,yes,PN
+monaleesa-3,03 Onc,D2,2.3,not_applicable,no,NA
+monaleesa-3,03 Onc,D2,2.4,not_applicable,no,NA
+monaleesa-3,03 Onc,D2,2.5,not_applicable,no,NA
+monaleesa-3,03 Onc,D2,2.6,yes,yes,Y
+monaleesa-3,03 Onc,D2,2.7,not_applicable,no,NA
+monaleesa-3,03 Onc,D3,3.1,yes,yes,Y
+monaleesa-3,03 Onc,D3,3.2,not_applicable,no,NA
+monaleesa-3,03 Onc,D3,3.3,not_applicable,no,NA
+monaleesa-3,03 Onc,D3,3.4,not_applicable,no,NA
+monaleesa-3,03 Onc,D4,4.1,no,yes,N
+monaleesa-3,03 Onc,D4,4.2,no,yes,N
+monaleesa-3,03 Onc,D4,4.3,probably_no,yes,PN
+monaleesa-3,03 Onc,D4,4.4,not_applicable,no,NA
+monaleesa-3,03 Onc,D4,4.5,not_applicable,no,NA
+monaleesa-3,03 Onc,D5,5.1,yes,yes,Y
+monaleesa-3,03 Onc,D5,5.2,no,yes,N
+monaleesa-3,03 Onc,D5,5.3,no,yes,N
+monaleesa-7,03 Onc,D1,1.1,yes,yes,Y
+monaleesa-7,03 Onc,D1,1.2,yes,yes,Y
+monaleesa-7,03 Onc,D1,1.3,no,yes,N
+monaleesa-7,03 Onc,D2,2.1,probably_no,yes,PN
+monaleesa-7,03 Onc,D2,2.2,probably_no,yes,PN
+monaleesa-7,03 Onc,D2,2.3,not_applicable,no,NA
+monaleesa-7,03 Onc,D2,2.4,not_applicable,no,NA
+monaleesa-7,03 Onc,D2,2.5,not_applicable,no,NA
+monaleesa-7,03 Onc,D2,2.6,yes,yes,Y
+monaleesa-7,03 Onc,D2,2.7,not_applicable,no,NA
+monaleesa-7,03 Onc,D3,3.1,yes,yes,Y
+monaleesa-7,03 Onc,D3,3.2,not_applicable,no,NA
+monaleesa-7,03 Onc,D3,3.3,not_applicable,no,NA
+monaleesa-7,03 Onc,D3,3.4,not_applicable,no,NA
+monaleesa-7,03 Onc,D4,4.1,no,yes,N
+monaleesa-7,03 Onc,D4,4.2,no,yes,N
+monaleesa-7,03 Onc,D4,4.3,no,yes,N
+monaleesa-7,03 Onc,D4,4.4,not_applicable,no,NA
+monaleesa-7,03 Onc,D4,4.5,not_applicable,no,NA
+monaleesa-7,03 Onc,D5,5.1,yes,yes,Y
+monaleesa-7,03 Onc,D5,5.2,no,yes,N
+monaleesa-7,03 Onc,D5,5.3,no,yes,N
+monarch-2,03 Onc,D1,1.1,yes,yes,Y
+monarch-2,03 Onc,D1,1.2,yes,yes,Y
+monarch-2,03 Onc,D1,1.3,no,yes,N
+monarch-2,03 Onc,D2,2.1,no,yes,N
+monarch-2,03 Onc,D2,2.2,probably_no,yes,PN
+monarch-2,03 Onc,D2,2.3,not_applicable,no,NA
+monarch-2,03 Onc,D2,2.4,not_applicable,no,NA
+monarch-2,03 Onc,D2,2.5,not_applicable,no,NA
+monarch-2,03 Onc,D2,2.6,yes,yes,Y
+monarch-2,03 Onc,D2,2.7,not_applicable,no,NA
+monarch-2,03 Onc,D3,3.1,yes,yes,Y
+monarch-2,03 Onc,D3,3.2,not_applicable,no,NA
+monarch-2,03 Onc,D3,3.3,not_applicable,no,NA
+monarch-2,03 Onc,D3,3.4,not_applicable,no,NA
+monarch-2,03 Onc,D4,4.1,no,yes,N
+monarch-2,03 Onc,D4,4.2,no,yes,N
+monarch-2,03 Onc,D4,4.3,probably_no,yes,PN
+monarch-2,03 Onc,D4,4.4,not_applicable,no,NA
+monarch-2,03 Onc,D4,4.5,not_applicable,no,NA
+monarch-2,03 Onc,D5,5.1,yes,yes,Y
+monarch-2,03 Onc,D5,5.2,no,yes,N
+monarch-2,03 Onc,D5,5.3,no,yes,N
+monarch-3,03 Onc,D1,1.1,yes,yes,Y
+monarch-3,03 Onc,D1,1.2,probably_yes,yes,PY
+monarch-3,03 Onc,D1,1.3,no,yes,N
+monarch-3,03 Onc,D2,2.1,probably_no,yes,PN
+monarch-3,03 Onc,D2,2.2,probably_no,yes,PN
+monarch-3,03 Onc,D2,2.3,not_applicable,no,NA
+monarch-3,03 Onc,D2,2.4,not_applicable,no,NA
+monarch-3,03 Onc,D2,2.5,not_applicable,no,NA
+monarch-3,03 Onc,D2,2.6,yes,yes,Y
+monarch-3,03 Onc,D2,2.7,not_applicable,no,NA
+monarch-3,03 Onc,D3,3.1,yes,yes,Y
+monarch-3,03 Onc,D3,3.2,not_applicable,no,NA
+monarch-3,03 Onc,D3,3.3,not_applicable,no,NA
+monarch-3,03 Onc,D3,3.4,not_applicable,no,NA
+monarch-3,03 Onc,D4,4.1,no,yes,N
+monarch-3,03 Onc,D4,4.2,no,yes,N
+monarch-3,03 Onc,D4,4.3,not_applicable,no,NA
+monarch-3,03 Onc,D4,4.4,not_applicable,no,NA
+monarch-3,03 Onc,D4,4.5,not_applicable,no,NA
+monarch-3,03 Onc,D5,5.1,yes,yes,Y
+monarch-3,03 Onc,D5,5.2,no,yes,N
+monarch-3,03 Onc,D5,5.3,no,yes,N
+monarch-plus,03 Onc,D1,1.1,yes,yes,Y
+monarch-plus,03 Onc,D1,1.2,yes,yes,Y
+monarch-plus,03 Onc,D1,1.3,no,yes,N
+monarch-plus,03 Onc,D2,2.1,no,yes,N
+monarch-plus,03 Onc,D2,2.2,no,yes,N
+monarch-plus,03 Onc,D2,2.3,not_applicable,no,NA
+monarch-plus,03 Onc,D2,2.4,not_applicable,no,NA
+monarch-plus,03 Onc,D2,2.5,not_applicable,no,NA
+monarch-plus,03 Onc,D2,2.6,yes,yes,Y
+monarch-plus,03 Onc,D2,2.7,not_applicable,no,NA
+monarch-plus,03 Onc,D3,3.1,yes,yes,Y
+monarch-plus,03 Onc,D3,3.2,not_applicable,no,NA
+monarch-plus,03 Onc,D3,3.3,not_applicable,no,NA
+monarch-plus,03 Onc,D3,3.4,not_applicable,no,NA
+monarch-plus,03 Onc,D4,4.1,no,yes,N
+monarch-plus,03 Onc,D4,4.2,no,yes,N
+monarch-plus,03 Onc,D4,4.3,no,yes,N
+monarch-plus,03 Onc,D4,4.4,not_applicable,no,NA
+monarch-plus,03 Onc,D4,4.5,not_applicable,no,NA
+monarch-plus,03 Onc,D5,5.1,yes,yes,Y
+monarch-plus,03 Onc,D5,5.2,no,yes,N
+monarch-plus,03 Onc,D5,5.3,no,yes,N
+nefigard,14 Neph,D1,1.1,yes,yes,Y
+nefigard,14 Neph,D1,1.2,yes,yes,Y
+nefigard,14 Neph,D1,1.3,no,yes,N
+nefigard,14 Neph,D2,2.1,no,yes,N
+nefigard,14 Neph,D2,2.2,no,yes,N
+nefigard,14 Neph,D2,2.3,probably_no,yes,PN
+nefigard,14 Neph,D2,2.4,not_applicable,no,NA
+nefigard,14 Neph,D2,2.5,not_applicable,no,NA
+nefigard,14 Neph,D2,2.6,probably_yes,yes,PY
+nefigard,14 Neph,D2,2.7,not_applicable,no,NA
+nefigard,14 Neph,D3,3.1,no,yes,N
+nefigard,14 Neph,D3,3.2,probably_yes,yes,PY
+nefigard,14 Neph,D3,3.3,not_applicable,no,NA
+nefigard,14 Neph,D3,3.4,not_applicable,no,NA
+nefigard,14 Neph,D4,4.1,no,yes,N
+nefigard,14 Neph,D4,4.2,no,yes,N
+nefigard,14 Neph,D4,4.3,no,yes,N
+nefigard,14 Neph,D4,4.4,not_applicable,no,NA
+nefigard,14 Neph,D4,4.5,not_applicable,no,NA
+nefigard,14 Neph,D5,5.1,no,yes,N
+nefigard,14 Neph,D5,5.2,probably_yes,yes,PY
+nefigard,14 Neph,D5,5.3,probably_no,yes,PN
+paloma-2,03 Onc,D1,1.1,yes,yes,Y
+paloma-2,03 Onc,D1,1.2,probably_yes,yes,PY
+paloma-2,03 Onc,D1,1.3,probably_no,yes,PN
+paloma-2,03 Onc,D2,2.1,probably_no,yes,PN
+paloma-2,03 Onc,D2,2.2,probably_no,yes,PN
+paloma-2,03 Onc,D2,2.3,not_applicable,no,NA
+paloma-2,03 Onc,D2,2.4,not_applicable,no,NA
+paloma-2,03 Onc,D2,2.5,not_applicable,no,NA
+paloma-2,03 Onc,D2,2.6,yes,yes,Y
+paloma-2,03 Onc,D2,2.7,not_applicable,no,NA
+paloma-2,03 Onc,D3,3.1,yes,yes,Y
+paloma-2,03 Onc,D3,3.2,not_applicable,no,NA
+paloma-2,03 Onc,D3,3.3,not_applicable,no,NA
+paloma-2,03 Onc,D3,3.4,not_applicable,no,NA
+paloma-2,03 Onc,D4,4.1,no,yes,N
+paloma-2,03 Onc,D4,4.2,no,yes,N
+paloma-2,03 Onc,D4,4.3,probably_no,yes,PN
+paloma-2,03 Onc,D4,4.4,not_applicable,no,NA
+paloma-2,03 Onc,D4,4.5,not_applicable,no,NA
+paloma-2,03 Onc,D5,5.1,yes,yes,Y
+paloma-2,03 Onc,D5,5.2,no,yes,N
+paloma-2,03 Onc,D5,5.3,no,yes,N
+pioneer-6,08 Endo,D1,1.1,yes,yes,Y
+pioneer-6,08 Endo,D1,1.2,probably_yes,yes,PY
+pioneer-6,08 Endo,D1,1.3,no,yes,N
+pioneer-6,08 Endo,D2,2.1,no,yes,N
+pioneer-6,08 Endo,D2,2.2,no,yes,N
+pioneer-6,08 Endo,D2,2.3,not_applicable,no,NA
+pioneer-6,08 Endo,D2,2.4,not_applicable,no,NA
+pioneer-6,08 Endo,D2,2.5,not_applicable,no,NA
+pioneer-6,08 Endo,D2,2.6,yes,yes,Y
+pioneer-6,08 Endo,D2,2.7,not_applicable,no,NA
+pioneer-6,08 Endo,D3,3.1,yes,yes,Y
+pioneer-6,08 Endo,D3,3.2,not_applicable,no,NA
+pioneer-6,08 Endo,D3,3.3,not_applicable,no,NA
+pioneer-6,08 Endo,D3,3.4,not_applicable,no,NA
+pioneer-6,08 Endo,D4,4.1,no,yes,N
+pioneer-6,08 Endo,D4,4.2,no,yes,N
+pioneer-6,08 Endo,D4,4.3,not_applicable,no,NA
+pioneer-6,08 Endo,D4,4.4,not_applicable,no,NA
+pioneer-6,08 Endo,D4,4.5,not_applicable,no,NA
+pioneer-6,08 Endo,D5,5.1,yes,yes,Y
+pioneer-6,08 Endo,D5,5.2,no,yes,N
+pioneer-6,08 Endo,D5,5.3,no,yes,N
+potsiurko-2022,13 Peds,D1,1.1,yes,yes,Y
+potsiurko-2022,13 Peds,D1,1.2,no_information,yes,NI
+potsiurko-2022,13 Peds,D1,1.3,probably_no,yes,PN
+potsiurko-2022,13 Peds,D2,2.1,yes,yes,Y
+potsiurko-2022,13 Peds,D2,2.2,yes,yes,Y
+potsiurko-2022,13 Peds,D2,2.3,probably_no,yes,PN
+potsiurko-2022,13 Peds,D2,2.4,not_applicable,no,NA
+potsiurko-2022,13 Peds,D2,2.5,not_applicable,no,NA
+potsiurko-2022,13 Peds,D2,2.6,yes,yes,Y
+potsiurko-2022,13 Peds,D2,2.7,not_applicable,no,NA
+potsiurko-2022,13 Peds,D3,3.1,yes,yes,Y
+potsiurko-2022,13 Peds,D3,3.2,not_applicable,no,NA
+potsiurko-2022,13 Peds,D3,3.3,not_applicable,no,NA
+potsiurko-2022,13 Peds,D3,3.4,not_applicable,no,NA
+potsiurko-2022,13 Peds,D4,4.1,no,yes,N
+potsiurko-2022,13 Peds,D4,4.2,no,yes,N
+potsiurko-2022,13 Peds,D4,4.3,yes,yes,Y
+potsiurko-2022,13 Peds,D4,4.4,probably_no,yes,PN
+potsiurko-2022,13 Peds,D4,4.5,not_applicable,no,NA
+potsiurko-2022,13 Peds,D5,5.1,probably_yes,yes,PY
+potsiurko-2022,13 Peds,D5,5.2,no,yes,N
+potsiurko-2022,13 Peds,D5,5.3,no,yes,N
+rewind,08 Endo,D1,1.1,yes,yes,Y
+rewind,08 Endo,D1,1.2,yes,yes,Y
+rewind,08 Endo,D1,1.3,no,yes,N
+rewind,08 Endo,D2,2.1,no,yes,N
+rewind,08 Endo,D2,2.2,no,yes,N
+rewind,08 Endo,D2,2.3,not_applicable,no,NA
+rewind,08 Endo,D2,2.4,not_applicable,no,NA
+rewind,08 Endo,D2,2.5,not_applicable,no,NA
+rewind,08 Endo,D2,2.6,yes,yes,Y
+rewind,08 Endo,D2,2.7,not_applicable,no,NA
+rewind,08 Endo,D3,3.1,yes,yes,Y
+rewind,08 Endo,D3,3.2,not_applicable,no,NA
+rewind,08 Endo,D3,3.3,not_applicable,no,NA
+rewind,08 Endo,D3,3.4,not_applicable,no,NA
+rewind,08 Endo,D4,4.1,no,yes,N
+rewind,08 Endo,D4,4.2,no,yes,N
+rewind,08 Endo,D4,4.3,no,yes,N
+rewind,08 Endo,D4,4.4,not_applicable,no,NA
+rewind,08 Endo,D4,4.5,not_applicable,no,NA
+rewind,08 Endo,D5,5.1,yes,yes,Y
+rewind,08 Endo,D5,5.2,no,yes,N
+rewind,08 Endo,D5,5.3,no,yes,N
+rosen-2021,07 PulmCC,D1,1.1,no_information,yes,NI
+rosen-2021,07 PulmCC,D1,1.2,probably_yes,yes,PY
+rosen-2021,07 PulmCC,D1,1.3,probably_no,yes,PN
+rosen-2021,07 PulmCC,D2,2.1,yes,yes,Y
+rosen-2021,07 PulmCC,D2,2.2,yes,yes,Y
+rosen-2021,07 PulmCC,D2,2.3,probably_no,yes,PN
+rosen-2021,07 PulmCC,D2,2.4,not_applicable,no,NA
+rosen-2021,07 PulmCC,D2,2.5,not_applicable,no,NA
+rosen-2021,07 PulmCC,D2,2.6,probably_no,yes,PN
+rosen-2021,07 PulmCC,D2,2.7,probably_no,yes,PN
+rosen-2021,07 PulmCC,D3,3.1,probably_yes,yes,PY
+rosen-2021,07 PulmCC,D3,3.2,not_applicable,no,NA
+rosen-2021,07 PulmCC,D3,3.3,not_applicable,no,NA
+rosen-2021,07 PulmCC,D3,3.4,not_applicable,no,NA
+rosen-2021,07 PulmCC,D4,4.1,probably_no,yes,PN
+rosen-2021,07 PulmCC,D4,4.2,probably_no,yes,PN
+rosen-2021,07 PulmCC,D4,4.3,yes,yes,Y
+rosen-2021,07 PulmCC,D4,4.4,probably_no,yes,PN
+rosen-2021,07 PulmCC,D4,4.5,not_applicable,no,NA
+rosen-2021,07 PulmCC,D5,5.1,no_information,yes,NI
+rosen-2021,07 PulmCC,D5,5.2,probably_no,yes,PN
+rosen-2021,07 PulmCC,D5,5.3,probably_no,yes,PN
+sanctuary,14 Neph,D1,1.1,probably_yes,yes,PY | Randomised 2:1 by interactive response technology. The sequence method isn't described in the paper.
+sanctuary,14 Neph,D1,1.2,probably_yes,yes,"PY | Central interactive response technology, with identical placebo kits."
+sanctuary,14 Neph,D1,1.3,no,yes,"N | Baseline differences (sex, Asian race 30% vs 16%, eGFR 76 vs 70) look like chance."
+sanctuary,14 Neph,D2,2.1,no,yes,N | Participants were blinded.
+sanctuary,14 Neph,D2,2.2,no,yes,"N | Investigators, site staff and sponsor personnel were blinded during the 26-week period."
+sanctuary,14 Neph,D2,2.3,not_applicable,no,"NA | Not needed, because there were no deviations from blinding."
+sanctuary,14 Neph,D2,2.4,not_applicable,no,NA | Not needed (see 2.3).
+sanctuary,14 Neph,D2,2.5,not_applicable,no,NA | Not needed (see 2.3).
+sanctuary,14 Neph,D2,2.6,yes,yes,"Y | The analysis set was all randomised participants who received at least one dose, analysed as randomised (a modified intention-to-treat set)."
+sanctuary,14 Neph,D2,2.7,not_applicable,no,"NA | Not needed, because 2.6 is Y."
+sanctuary,14 Neph,D3,3.1,probably_yes,yes,PY | Figure 2 shows 41 of 43 ravulizumab and 22 of 23 placebo participants analysed.
+sanctuary,14 Neph,D3,3.2,not_applicable,no,"NA | Not needed, because 3.1 is PY."
+sanctuary,14 Neph,D3,3.3,not_applicable,no,NA | Not needed (see 3.2).
+sanctuary,14 Neph,D3,3.4,not_applicable,no,NA | Not needed (see 3.2).
+sanctuary,14 Neph,D4,4.1,no,yes,"N | Proteinuria came from 24-hour urine collections, an objective laboratory measure."
+sanctuary,14 Neph,D4,4.2,no,yes,N | Everyone involved in outcome assessment was blinded.
+sanctuary,14 Neph,D4,4.3,not_applicable,no,"NA | Not needed, because 4.2 is N."
+sanctuary,14 Neph,D4,4.4,not_applicable,no,NA | Not needed (see 4.3).
+sanctuary,14 Neph,D4,4.5,not_applicable,no,NA | Not needed (see 4.3).
+sanctuary,14 Neph,D5,5.1,yes,yes,"Y | The SAP pre-specifies the analysis: ANCOVA on log-transformed proteinuria, with multiple imputation for missing data."
+sanctuary,14 Neph,D5,5.2,no,yes,N | The primary outcome matches the registry (absolute urine protein for IgAN). The UPCR analysis is labelled a sensitivity analysis.
+sanctuary,14 Neph,D5,5.3,no,yes,N | The result is a single pre-specified primary analysis.
+smart-choice-3,01 GenMed,D1,1.1,yes,yes,Y
+smart-choice-3,01 GenMed,D1,1.2,yes,yes,Y
+smart-choice-3,01 GenMed,D1,1.3,no,yes,N
+smart-choice-3,01 GenMed,D2,2.1,yes,yes,Y
+smart-choice-3,01 GenMed,D2,2.2,yes,yes,Y
+smart-choice-3,01 GenMed,D2,2.3,probably_no,yes,PN
+smart-choice-3,01 GenMed,D2,2.4,not_applicable,no,NA
+smart-choice-3,01 GenMed,D2,2.5,not_applicable,no,NA
+smart-choice-3,01 GenMed,D2,2.6,yes,yes,Y
+smart-choice-3,01 GenMed,D2,2.7,not_applicable,no,NA
+smart-choice-3,01 GenMed,D3,3.1,yes,yes,Y
+smart-choice-3,01 GenMed,D3,3.2,not_applicable,no,NA
+smart-choice-3,01 GenMed,D3,3.3,not_applicable,no,NA
+smart-choice-3,01 GenMed,D3,3.4,not_applicable,no,NA
+smart-choice-3,01 GenMed,D4,4.1,no,yes,N
+smart-choice-3,01 GenMed,D4,4.2,no,yes,N
+smart-choice-3,01 GenMed,D4,4.3,no,yes,N
+smart-choice-3,01 GenMed,D4,4.4,not_applicable,no,NA
+smart-choice-3,01 GenMed,D4,4.5,not_applicable,no,NA
+smart-choice-3,01 GenMed,D5,5.1,probably_yes,yes,PY
+smart-choice-3,01 GenMed,D5,5.2,probably_no,yes,PN
+smart-choice-3,01 GenMed,D5,5.3,probably_no,yes,PN
+stop-igan,14 Neph,D1,1.1,yes,yes,Y
+stop-igan,14 Neph,D1,1.2,probably_yes,yes,PY
+stop-igan,14 Neph,D1,1.3,probably_no,yes,PN
+stop-igan,14 Neph,D2,2.1,yes,yes,Y
+stop-igan,14 Neph,D2,2.2,yes,yes,Y
+stop-igan,14 Neph,D2,2.3,probably_no,yes,PN
+stop-igan,14 Neph,D2,2.4,not_applicable,no,NA
+stop-igan,14 Neph,D2,2.5,not_applicable,no,NA
+stop-igan,14 Neph,D2,2.6,probably_yes,yes,PY
+stop-igan,14 Neph,D2,2.7,not_applicable,no,NA
+stop-igan,14 Neph,D3,3.1,no,yes,N
+stop-igan,14 Neph,D3,3.2,no,yes,N
+stop-igan,14 Neph,D3,3.3,probably_yes,yes,PY
+stop-igan,14 Neph,D3,3.4,probably_no,yes,PN
+stop-igan,14 Neph,D4,4.1,no,yes,N
+stop-igan,14 Neph,D4,4.2,no,yes,N
+stop-igan,14 Neph,D4,4.3,yes,yes,Y
+stop-igan,14 Neph,D4,4.4,probably_no,yes,PN
+stop-igan,14 Neph,D4,4.5,not_applicable,no,NA
+stop-igan,14 Neph,D5,5.1,yes,yes,Y
+stop-igan,14 Neph,D5,5.2,probably_no,yes,PN
+stop-igan,14 Neph,D5,5.3,probably_no,yes,PN
+stopdapt-2,01 GenMed,D1,1.1,yes,yes,Y
+stopdapt-2,01 GenMed,D1,1.2,probably_yes,yes,PY
+stopdapt-2,01 GenMed,D1,1.3,no,yes,N
+stopdapt-2,01 GenMed,D2,2.1,yes,yes,Y
+stopdapt-2,01 GenMed,D2,2.2,yes,yes,Y
+stopdapt-2,01 GenMed,D2,2.3,probably_no,yes,PN
+stopdapt-2,01 GenMed,D2,2.4,not_applicable,no,NA
+stopdapt-2,01 GenMed,D2,2.5,not_applicable,no,NA
+stopdapt-2,01 GenMed,D2,2.6,probably_yes,yes,PY
+stopdapt-2,01 GenMed,D2,2.7,not_applicable,no,NA
+stopdapt-2,01 GenMed,D3,3.1,yes,yes,Y
+stopdapt-2,01 GenMed,D3,3.2,not_applicable,no,NA
+stopdapt-2,01 GenMed,D3,3.3,not_applicable,no,NA
+stopdapt-2,01 GenMed,D3,3.4,not_applicable,no,NA
+stopdapt-2,01 GenMed,D4,4.1,no,yes,N
+stopdapt-2,01 GenMed,D4,4.2,no,yes,N
+stopdapt-2,01 GenMed,D4,4.3,no,yes,N
+stopdapt-2,01 GenMed,D4,4.4,not_applicable,no,NA
+stopdapt-2,01 GenMed,D4,4.5,not_applicable,no,NA
+stopdapt-2,01 GenMed,D5,5.1,probably_yes,yes,PY
+stopdapt-2,01 GenMed,D5,5.2,probably_no,yes,PN
+stopdapt-2,01 GenMed,D5,5.3,probably_no,yes,PN
+stopdapt-3,01 GenMed,D1,1.1,probably_yes,yes,PY
+stopdapt-3,01 GenMed,D1,1.2,probably_yes,yes,PY
+stopdapt-3,01 GenMed,D1,1.3,no,yes,N
+stopdapt-3,01 GenMed,D2,2.1,yes,yes,Y
+stopdapt-3,01 GenMed,D2,2.2,yes,yes,Y
+stopdapt-3,01 GenMed,D2,2.3,probably_no,yes,PN
+stopdapt-3,01 GenMed,D2,2.4,not_applicable,no,NA
+stopdapt-3,01 GenMed,D2,2.5,not_applicable,no,NA
+stopdapt-3,01 GenMed,D2,2.6,probably_no,yes,PN
+stopdapt-3,01 GenMed,D2,2.7,probably_yes,yes,PY
+stopdapt-3,01 GenMed,D3,3.1,yes,yes,Y
+stopdapt-3,01 GenMed,D3,3.2,not_applicable,no,NA
+stopdapt-3,01 GenMed,D3,3.3,not_applicable,no,NA
+stopdapt-3,01 GenMed,D3,3.4,not_applicable,no,NA
+stopdapt-3,01 GenMed,D4,4.1,no,yes,N
+stopdapt-3,01 GenMed,D4,4.2,no,yes,N
+stopdapt-3,01 GenMed,D4,4.3,no,yes,N
+stopdapt-3,01 GenMed,D4,4.4,not_applicable,no,NA
+stopdapt-3,01 GenMed,D4,4.5,not_applicable,no,NA
+stopdapt-3,01 GenMed,D5,5.1,probably_no,yes,PN
+stopdapt-3,01 GenMed,D5,5.2,probably_no,yes,PN
+stopdapt-3,01 GenMed,D5,5.3,probably_yes,yes,PY
+sung-2020,13 Peds,D1,1.1,yes,yes,Y
+sung-2020,13 Peds,D1,1.2,no_information,yes,NI
+sung-2020,13 Peds,D1,1.3,probably_no,yes,PN
+sung-2020,13 Peds,D2,2.1,no,yes,N
+sung-2020,13 Peds,D2,2.2,no,yes,N
+sung-2020,13 Peds,D2,2.3,not_applicable,no,NA
+sung-2020,13 Peds,D2,2.4,not_applicable,no,NA
+sung-2020,13 Peds,D2,2.5,not_applicable,no,NA
+sung-2020,13 Peds,D2,2.6,no,yes,N
+sung-2020,13 Peds,D2,2.7,probably_no,yes,PN
+sung-2020,13 Peds,D3,3.1,no,yes,N
+sung-2020,13 Peds,D3,3.2,no,yes,N
+sung-2020,13 Peds,D3,3.3,probably_yes,yes,PY
+sung-2020,13 Peds,D3,3.4,probably_no,yes,PN
+sung-2020,13 Peds,D4,4.1,no,yes,N
+sung-2020,13 Peds,D4,4.2,no,yes,N
+sung-2020,13 Peds,D4,4.3,no,yes,N
+sung-2020,13 Peds,D4,4.4,not_applicable,no,NA
+sung-2020,13 Peds,D4,4.5,not_applicable,no,NA
+sung-2020,13 Peds,D5,5.1,no_information,yes,NI
+sung-2020,13 Peds,D5,5.2,probably_yes,yes,PY
+sung-2020,13 Peds,D5,5.3,probably_no,yes,PN
+sustain-6,08 Endo,D1,1.1,yes,yes,Y
+sustain-6,08 Endo,D1,1.2,yes,yes,Y
+sustain-6,08 Endo,D1,1.3,no,yes,N
+sustain-6,08 Endo,D2,2.1,no,yes,N
+sustain-6,08 Endo,D2,2.2,no,yes,N
+sustain-6,08 Endo,D2,2.3,not_applicable,no,NA
+sustain-6,08 Endo,D2,2.4,not_applicable,no,NA
+sustain-6,08 Endo,D2,2.5,not_applicable,no,NA
+sustain-6,08 Endo,D2,2.6,yes,yes,Y
+sustain-6,08 Endo,D2,2.7,not_applicable,no,NA
+sustain-6,08 Endo,D3,3.1,yes,yes,Y
+sustain-6,08 Endo,D3,3.2,not_applicable,no,NA
+sustain-6,08 Endo,D3,3.3,not_applicable,no,NA
+sustain-6,08 Endo,D3,3.4,not_applicable,no,NA
+sustain-6,08 Endo,D4,4.1,no,yes,N
+sustain-6,08 Endo,D4,4.2,no,yes,N
+sustain-6,08 Endo,D4,4.3,not_applicable,no,NA
+sustain-6,08 Endo,D4,4.4,not_applicable,no,NA
+sustain-6,08 Endo,D4,4.5,not_applicable,no,NA
+sustain-6,08 Endo,D5,5.1,yes,yes,Y
+sustain-6,08 Endo,D5,5.2,no,yes,N
+sustain-6,08 Endo,D5,5.3,no,yes,N
+testing,14 Neph,D1,1.1,yes,yes,Y
+testing,14 Neph,D1,1.2,yes,yes,Y
+testing,14 Neph,D1,1.3,no,yes,N
+testing,14 Neph,D2,2.1,no,yes,N
+testing,14 Neph,D2,2.2,no,yes,N
+testing,14 Neph,D2,2.3,not_applicable,no,NA
+testing,14 Neph,D2,2.4,not_applicable,no,NA
+testing,14 Neph,D2,2.5,not_applicable,no,NA
+testing,14 Neph,D2,2.6,yes,yes,Y
+testing,14 Neph,D2,2.7,not_applicable,no,NA
+testing,14 Neph,D3,3.1,probably_yes,yes,PY
+testing,14 Neph,D3,3.2,not_applicable,no,NA
+testing,14 Neph,D3,3.3,not_applicable,no,NA
+testing,14 Neph,D3,3.4,not_applicable,no,NA
+testing,14 Neph,D4,4.1,no,yes,N
+testing,14 Neph,D4,4.2,no,yes,N
+testing,14 Neph,D4,4.3,no,yes,N
+testing,14 Neph,D4,4.4,not_applicable,no,NA
+testing,14 Neph,D4,4.5,not_applicable,no,NA
+testing,14 Neph,D5,5.1,yes,yes,Y
+testing,14 Neph,D5,5.2,probably_no,yes,PN
+testing,14 Neph,D5,5.3,probably_no,yes,PN
+vel-squez-2018,09 ID,D1,1.1,yes,yes,Y
+vel-squez-2018,09 ID,D1,1.2,probably_yes,yes,PY
+vel-squez-2018,09 ID,D1,1.3,no,yes,N
+vel-squez-2018,09 ID,D2,2.1,no,yes,N
+vel-squez-2018,09 ID,D2,2.2,no,yes,N
+vel-squez-2018,09 ID,D2,2.3,not_applicable,no,NA
+vel-squez-2018,09 ID,D2,2.4,not_applicable,no,NA
+vel-squez-2018,09 ID,D2,2.5,not_applicable,no,NA
+vel-squez-2018,09 ID,D2,2.6,yes,yes,Y
+vel-squez-2018,09 ID,D2,2.7,not_applicable,no,NA
+vel-squez-2018,09 ID,D3,3.1,yes,yes,Y
+vel-squez-2018,09 ID,D3,3.2,not_applicable,no,NA
+vel-squez-2018,09 ID,D3,3.3,not_applicable,no,NA
+vel-squez-2018,09 ID,D3,3.4,not_applicable,no,NA
+vel-squez-2018,09 ID,D4,4.1,no,yes,N
+vel-squez-2018,09 ID,D4,4.2,no,yes,N
+vel-squez-2018,09 ID,D4,4.3,no,yes,N
+vel-squez-2018,09 ID,D4,4.4,not_applicable,no,NA
+vel-squez-2018,09 ID,D4,4.5,not_applicable,no,NA
+vel-squez-2018,09 ID,D5,5.1,probably_yes,yes,PY
+vel-squez-2018,09 ID,D5,5.2,no,yes,N
+vel-squez-2018,09 ID,D5,5.3,no,yes,N

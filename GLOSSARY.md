@@ -1,0 +1,33 @@
+# Glossary
+
+Terms for the ARBITER JAMIA benchmark analysis.
+
+## Arms and sources
+
+**ARBITER arm**: A model run that uses the ARBITER MCP server and the arbiter-assess skill. The data files call it "kit". There is one ARBITER arm per model: ARBITER-Sonnet and ARBITER-Haiku.
+
+**Baseline arm**: A model run with the same trial files and the same prompt, but without ARBITER. The data files call it "no-kit".
+
+**Meta label**: The published RoB 2 judgement for a trial, taken from the source meta-analysis. The data files call it "human". Do not call it "the human label" or "ground truth".
+
+**Adjudicator**: One of two blinded human reviewers (A and Z) who re-assessed the disputed cells.
+
+**Independent judgement**: An adjudicator's own domain judgement, made before they saw any other source. The data files call it `own`.
+
+**Preferred judgement**: The label an adjudicator picked as most defensible among three blinded reviewers. Each blinded reviewer was a meta label, a baseline-arm label or an ARBITER-arm label, in random order. The data files call it `chosen_label`.
+
+## Units
+
+**Cell**: One trial × one domain (D1 to D5, or Overall).
+
+**Disputed cell**: A D1-D5 cell where ARBITER-Sonnet or baseline-Sonnet differs from the meta label. Only disputed cells were adjudicated.
+
+**Analysis set**: The 102 trials that all four arms assessed. Three trials are excluded because ARBITER does not support their design: atwine-2020, haney-2004 and herrmann-2016.
+
+**Composite reference**: A reference label for every D1-D5 cell. On disputed cells where both adjudicators gave the same preferred judgement, it is that judgement. On every other cell, it is the meta label.
+
+## Judgements
+
+**Not Low**: A judgement of Some concerns or High, counted as one class.
+
+**All-Low baseline**: A reference rule that predicts Low for every cell. It shows how much of an accuracy figure comes from Low being the most common label.
