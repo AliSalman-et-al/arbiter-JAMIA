@@ -82,7 +82,7 @@ main_table3 <- function() {
     d <- x |> filter(arm==a) |> select(domain,status,estimate,lower,upper,n,count)
     d$value <- fmt_fraction(d$count,d$n)
     if(a=='Baseline-Sonnet') d$value <- ifelse(d$status %in% c('Violation','Invalid answer path','Departure'),
-      trimws(paste(d$value,fmt_ci(100*d$lower,100*d$upper,1,suppress_degenerate=TRUE))),d$value)
+      sub('[)]$','',d$value) |> paste0('; ',sub('^[(]','',fmt_ci(100*d$lower,100*d$upper,1,suppress_degenerate=TRUE))),d$value)
     if(a=='ARBITER-Sonnet') d$value <- ifelse(d$domain=='D1-D5' & d$status %in% c('Consistent','Violation','Invalid answer path','Departure'),paste0(d$value,'*'),d$value)
     out <- left_join(out,d |> select(domain,status,value),by=c('domain','status'))
     names(out)[names(out)=='value'] <- reader_label(a)
@@ -110,7 +110,7 @@ main_table_notes <- function() list(
     'Overall given indicates whether published Overall labels are available; total is labelled trials/all trials.',
     'The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses.',TOPIC_ABBREVIATIONS),
   paste('Values are coefficients or percentages (95% CI); denominators are in block labels. Not Low means Some concerns or High. All-Low rule has no variance; only accuracy and specificity are reported. Paired differences are coefficients or percentage points; — indicates undefined or not applicable.',COMPOSITE_NOTE,'Overall judgements were not adjudicated. Published labels were frequently less severe than the adjudicators’ preferred judgement (Figure 4).',CI_NOTE),
-  paste('Values are n/N (%) with 95% CI inside Unassisted departure-type cells. * Guaranteed by design: the server computes domain judgements with the official algorithm and rejects incomplete answer paths; reported to confirm the implementation, not as an empirical finding. Domain consistency for ARBITER refers to proposals;',
+  paste('Values are n/N (%); in Unassisted departure-type cells, the range after the semicolon is the 95% CI in percent. * Guaranteed by design: the server computes domain judgements with the official algorithm and rejects incomplete answer paths; reported to confirm the implementation, not as an empirical finding. Domain consistency for ARBITER refers to proposals;',
     'recorded overrides are separate. Departure = violation + invalid path.',
     'One Unassisted domain has no evaluable label/answer set and is excluded (509 evaluable).',
     'Overall consistency is exact worst-domain agreement; permitted escalations are separate.',
@@ -136,9 +136,13 @@ build_main_tables <- function(inputs) {
   }
   invisible(tables)
 }
+main_table_widths <- function(i) {
+  list(c(1.14,1.18,.43,1.95,.46,1.02,.67),c(1.02,1.18,1.26,1.11,1.08,1.26),
+    c(3.05,1.6,2.2),c(2.7,rep(1.3833,3)))[[i]]
+}
 main_table_flextable <- function(x,i,note=main_table_notes()[[i]]) {
-  widths <- list(c(1.14,1.18,.43,1.95,.46,1.02,.67),c(1.15,.8,.8,1.35,1.35,1.1),c(3.05,1.6,2.2),c(2.7,rep(1.3833,3)))
-  ft <- house_table(x,note) |> flextable::width(j=seq_len(ncol(x)),width=widths[[i]])
+  ft <- house_table(x,note) |> flextable::width(j=seq_len(ncol(x)),width=main_table_widths(i))
+  if(i==2) ft <- flextable::padding(ft,padding.left=2,padding.right=2,part='all')
   if(i>1) ft <- style_group_rows(ft,x)
   ft
 }

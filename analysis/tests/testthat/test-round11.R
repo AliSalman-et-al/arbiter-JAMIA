@@ -129,9 +129,9 @@ testthat::test_that('revised figure layouts and supplied legends retain their co
   old <- getwd(); setwd(analysis_dir); on.exit(setwd(old))
   source('R/manuscript-figures.R'); source('R/manuscript-legends.R')
   nodes <- study_flow_nodes()
-  testthat::expect_equal(nodes$x[c(1,2,4,5,6)],rep(0,5))
+  testthat::expect_equal(nodes$x[c(1,2,4,5,6)],rep(-1.1,5))
   testthat::expect_equal(nodes$w[c(1,2,4,5,6)],rep(5.1,5))
-  testthat::expect_equal(nodes$x[7],-nodes$x[8])
+  testthat::expect_equal(mean(nodes$x[7:8]),nodes$x[6])
   testthat::expect_equal(nodes$w[7],nodes$w[8])
   testthat::expect_gt(nodes$x[3],0)
   p <- decisive_question_plot()
@@ -152,4 +152,67 @@ testthat::test_that('revised figure layouts and supplied legends retain their co
   testthat::expect_identical(sections[1:2],supplied)
   testthat::expect_true(all(grepl('Alt text:',unlist(sections),fixed=TRUE)))
   testthat::expect_false(any(grepl('Legend supplied',unlist(sections),fixed=TRUE)))
+})
+
+testthat::test_that('portrait Tables 2 and 3 fit every value at Arial 9 pt', {
+  old <- getwd(); setwd(analysis_dir); on.exit(setwd(old))
+  for(i in 2:3) {
+    x <- get(paste0('main_table',i))()
+    widths <- main_table_widths(i)
+    testthat::expect_lte(sum(widths),8.27-2*.65)
+    for(j in 2:ncol(x)) {
+      # 720 dpi avoids whole-point rounding. Include both paddings and a
+      # 0.025-inch allowance for Word's layout/font-metric differences.
+      need <- systemfonts::string_width(x[[j]],family='Arial',size=9,res=720)/720+
+        (if(i==2) 4 else 6)/72+.025
+      testthat::expect_true(all(need<=widths[j]),info=paste('Table',i,names(x)[j]))
+    }
+  }
+  testthat::expect_true('26/509 (5.1%; 3.3–6.9)' %in% main_table3()$Unassisted)
+  testthat::expect_false(any(grepl('%) (',unlist(main_table3()),fixed=TRUE)))
+})
+
+testthat::test_that('flow boxes have physical padding and figure-edge clearance', {
+  source(file.path(analysis_dir,'R','manuscript-figures.R'))
+  nodes <- study_flow_nodes()
+  mm_per_x <- (174-6)/11.2
+  for(i in seq_len(nrow(nodes))) {
+    lines <- strsplit(nodes$label[i],'\n')[[1]]
+    text_mm <- systemfonts::string_width(lines,family='Fira Sans Condensed',size=2.8*72.27/25.4,res=720)*25.4/720
+    testthat::expect_gte((nodes$w[i]*mm_per_x-max(text_mm))/2,2)
+    height_mm <- (2.8*72.27/25.4)*25.4/72*(1+(length(lines)-1)*1.05)
+    testthat::expect_gte((nodes$h[i]*(120-6)/9-height_mm)/2,2)
+  }
+  testthat::expect_true(all(nodes$x+nodes$w/2<=5.6))
+  testthat::expect_true(all(nodes$x-nodes$w/2>=-5.6))
+})
+
+testthat::test_that('reader outputs expand answer codes and reject raw internal fields', {
+  old <- getwd(); setwd(analysis_dir); on.exit(setwd(old))
+  source('R/manuscript-supplement.R')
+  testthat::expect_identical(reader_answer(c('yes','no','probably_yes','probably_no',
+    'no_information','not_applicable','not_asked')),
+    c('Yes','No','Probably yes','Probably no','No information','Not applicable','Not asked'))
+  testthat::expect_setequal(raw_reader_codes('probably_no direct_support some_concerns not_applicable snake_case'),
+    c('probably_no','direct_support','some_concerns','not_applicable','snake_case'))
+  testthat::expect_length(raw_reader_codes('save_domain_judgment eh_012abc SAP_000.pdf'),0)
+  answers <- avatar_trace_blocks(inputs)[[1]]$data
+  questions <- grepl('^[1-5][.]',answers$Question)
+  allowed <- c(reader_answer(c('yes','no','probably_yes','probably_no','no_information','not_applicable')),
+    'Not asked (inactive; branching)')
+  testthat::expect_true(all(answers$ARBITER[questions] %in% allowed))
+  testthat::expect_true(all(answers$Unassisted[questions] %in% allowed))
+  testthat::expect_false(any(grepl('None recorded',unlist(answers),fixed=TRUE)))
+  for(e in supplement_registry(inputs)) {
+    data <- if(is.null(e$blocks)) list(display_frame(e$data)) else lapply(e$blocks,function(b) {
+      if(e$caption=='AVATAR complete trace') b$data else display_frame(b$data)
+    })
+    testthat::expect_equal(raw_reader_codes(c(e$caption,e$note,unlist(data))),character(),info=e$caption)
+  }
+  for(p in list.files('output/manuscript',pattern='[.]docx$',full.names=TRUE))
+    testthat::expect_equal(raw_reader_codes(officer::docx_summary(officer::read_docx(p))$text),character(),info=p)
+  for(p in c('results.html','supplement.html')) {
+    testthat::expect_equal(raw_reader_codes(reader_html_text(p)),character(),info=p)
+  }
+  testthat::expect_length(raw_reader_codes(readLines('output/manuscript/figure-legends.md',encoding='UTF-8',warn=FALSE)),0)
 })

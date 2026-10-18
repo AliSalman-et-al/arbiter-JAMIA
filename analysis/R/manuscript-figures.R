@@ -10,32 +10,32 @@ export_manuscript_figure <- function(plot,name,height_mm,width_mm=174) {
   invisible(plot)
 }
 study_flow_nodes <- function() {
-  tibble(x=c(0,0,3.8,0,0,0,-1.65,1.65,-1.65,1.65),
+  tibble(x=c(-1.1,-1.1,3.45,-1.1,-1.1,-1.1,-2.75,.55,-2.75,.55),
     y=c(8.8,7.6,8.2,6.2,4.8,3.6,2.4,2.4,1,1),
-    w=c(5.1,5.1,2.3,5.1,5.1,5.1,3,3,3,3),h=c(.7,.7,1.15,1,.85,.7,.7,.7,1,1),
+    w=c(5.1,5.1,3.7,5.1,5.1,5.1,3,3,3,3),h=c(.7,.7,.85,1.1,.85,.7,.7,.7,1.2,1.2),
     label=c('16 meta-analyses; 105 benchmark trials','102 analysis-set trials',
-      '3 excluded: unsupported design\nAtwine 2020; Haney 2004;\nHerrmann 2016',
+      '3 excluded (unsupported design):\nAtwine 2020; Haney 2004; Herrmann 2016',
       '4 arms each assessed 102 trials:\nARBITER and Unassisted with Sonnet 5.5 (main);\nwith Haiku 5.5 (supplement)',
       '510 D1–D5 cells per arm\n81 Published Overall labels','154 disputed cells',
       '129 consensus cells','25 split cells',
-      '62 cells where arms differ\n54 ARBITER; 7 Unassisted; 1 neither',
+      '62 cells where arms differ\n54 ARBITER; 7 Unassisted;\n1 neither',
       '18 cells where arms differ'))
 }
 study_flow_plot <- function() {
   nodes <- study_flow_nodes()
-  edges <- tibble(x=c(0,0,0,0,0,0,-1.65,1.65,0),
-    xend=c(0,0,0,0,-1.65,1.65,-1.65,1.65,2.65),
-    y=c(8.45,7.25,5.7,4.375,3.25,3.25,2.05,2.05,8.2),
-    yend=c(7.95,6.7,5.225,3.95,2.75,2.75,1.5,1.5,8.2))
+  edges <- tibble(x=c(rep(-1.1,6),-2.75,.55,-1.1),
+    xend=c(rep(-1.1,4),-2.75,.55,-2.75,.55,1.6),
+    y=c(8.45,7.25,5.65,4.375,3.25,3.25,2.05,2.05,8.2),
+    yend=c(7.95,6.75,5.225,3.95,2.75,2.75,1.6,1.6,8.2))
   ggplot2::ggplot(nodes,ggplot2::aes(x,y))+
     ggplot2::geom_segment(data=edges,ggplot2::aes(x=x,xend=xend,y=y,yend=yend),
       arrow=grid::arrow(length=grid::unit(1.5,'mm')),linewidth=.5)+
     ggplot2::geom_rect(ggplot2::aes(xmin=x-w/2,xmax=x+w/2,ymin=y-h/2,ymax=y+h/2),
       fill='#F3F6F7',color='#374E55',linewidth=.5)+
     ggplot2::geom_text(ggplot2::aes(label=label),family='Fira Sans Condensed',size=2.8,lineheight=1.05)+
-    ggplot2::coord_cartesian(xlim=c(-5.1,5.1),ylim=c(.4,9.25),expand=FALSE,clip='off')+
+    ggplot2::coord_cartesian(xlim=c(-5.6,5.6),ylim=c(.25,9.25),expand=FALSE,clip='off')+
     ggplot2::theme_void(base_family='Fira Sans Condensed')+
-    ggplot2::theme(plot.margin=ggplot2::margin(2,2,2,2))
+    ggplot2::theme(plot.margin=ggplot2::margin(3,3,3,3,unit='mm'))
 }
 
 disagreement_matrix_plot <- function(cells) {
@@ -101,19 +101,21 @@ decisive_question_plot <- function() {
   ggplot2::ggplot(x,ggplot2::aes(n,label,fill=bar_fill,group=source))+
     ggplot2::geom_col(width=.6,position=dodge,orientation='y',key_glyph=function(data,params,size) {
       if(identical(data$fill,'#B2E3F2')) grid::grobTree(
-        grid::rectGrob(y=.75,height=.5,gp=grid::gpar(fill='#B2E3F2',col=NA)),
-        grid::rectGrob(y=.25,height=.5,gp=grid::gpar(fill='#F5DDC7',col=NA)))
+        grid::rectGrob(x=.24,width=.44,gp=grid::gpar(fill='#B2E3F2',col=NA)),
+        grid::rectGrob(x=.76,width=.44,gp=grid::gpar(fill='#F5DDC7',col=NA)))
       else ggplot2::draw_key_rect(data,params,size)
     })+
     ggplot2::geom_text(ggplot2::aes(label=if_else(n>0,as.character(n),'')),position=dodge,
       hjust=-.25,family='Fira Sans',size=2.8)+
     ggplot2::facet_wrap(~facet,ncol=1,scales='free_y',space='free_y')+
     ggplot2::scale_fill_manual(values=c(JAMA_ROLES[c('ARBITER','Unassisted')],'ARBITER remainder'='#B2E3F2','Unassisted remainder'='#F5DDC7'),breaks=c('ARBITER','Unassisted','ARBITER remainder'),
-      labels=c('ARBITER','Unassisted','Lighter bars: loss cells with no\nindividually decisive question'))+
-    ggplot2::guides(fill=ggplot2::guide_legend(nrow=2,byrow=TRUE))+
+      labels=c('ARBITER','Unassisted','No individually decisive question (cells)'))+
+    ggplot2::guides(fill=ggplot2::guide_legend(nrow=1,byrow=TRUE))+
     ggplot2::scale_x_continuous(limits=c(0,20),breaks=c(0,5,10,15,20),expand=ggplot2::expansion(mult=c(0,.02)))+
     ggplot2::labs(x='Count',y=NULL,fill=NULL)+theme_manuscript()+
-    ggplot2::theme(plot.caption=ggplot2::element_text(size=8,hjust=0),strip.text=ggplot2::element_text(size=8),axis.text.y=ggplot2::element_text(size=8),panel.spacing=grid::unit(1.5,'mm'))
+    ggplot2::theme(legend.justification='left',legend.key.width=grid::unit(3,'mm'),
+      legend.key.height=grid::unit(3,'mm'),legend.key.spacing.x=grid::unit(2,'mm'),
+      plot.caption=ggplot2::element_text(size=8,hjust=0),strip.text=ggplot2::element_text(size=8),axis.text.y=ggplot2::element_text(size=8),panel.spacing=grid::unit(1.5,'mm'))
 }
 forest_plot <- function() {
   metadata <- readr::read_csv('data-curated/meta-analyses.csv',show_col_types=FALSE)

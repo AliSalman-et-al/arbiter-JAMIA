@@ -24,7 +24,7 @@ avatar_trace_blocks <- function(inputs) {
     for(q in qs) {
       id <- mapping$question_id[mapping$question==q]
       a <- Filter(function(x) x$question_id==id,rec$answers)
-      u <- un$answer[un$question==q]
+      u <- reader_answer(un$answer[un$question==q])
       if(length(u)!=1L) stop('Missing Unassisted answer: ',q)
       wording <- mapping$short_text[mapping$question==q]
       wording <- sub('Baseline imbalance','Preintervention imbalance',wording,fixed=TRUE)
@@ -37,11 +37,11 @@ avatar_trace_blocks <- function(inputs) {
         paste0(d$proposal$evidence[[b$evidence]]$handle,' (',gsub('_',' ',b$kind,fixed=TRUE),')')
       },character(1))
       counter <- if(length(a$counterevidence)) paste(vapply(a$counterevidence,function(c)
-        paste0('Basis ',c$basis_index,': ',c$implication),character(1)),collapse='; ') else 'None recorded'
+        paste0('Basis ',c$basis_index,': ',c$implication),character(1)),collapse='; ') else '—'
       answers[[length(answers)+1L]] <- row(paste(q,wording),
-        if(id %in% unlist(rec$active_questions)) gsub('_',' ',a$answer,fixed=TRUE) else 'Not asked (inactive; branching)',
+        if(id %in% unlist(rec$active_questions)) reader_answer(a$answer) else 'Not asked (inactive; branching)',
         paste(handles,collapse='; '),a$justification,
-        if(length(a$unknowns)) paste(unlist(a$unknowns),collapse='; ') else 'None recorded',counter,u)
+        if(length(a$unknowns)) paste(unlist(a$unknowns),collapse='; ') else '—',counter,u)
     }
   }
   overall <- d$snapshots[['banovic26-avatar-2024']]$aggregation

@@ -28,6 +28,20 @@ for(name in c(paste0('Figure',3:6),'eFigure1','eFigure2')) {
 }
 writeLines(trimws(capture.output(sessionInfo()),which='right'),'output/manuscript/qa/session-info.txt')
 
+# Four times final physical size on a 96-dpi display, from the vector PDFs.
+for(name in c('Figure3','Figure6')) {
+  path <- paste0('output/manuscript/qa/',name,'-4x.png')
+  pdftools::pdf_convert(paste0('output/manuscript/',name,'.pdf'),format='png',dpi=384,
+    filenames=sub('-4x.png$','-4x-%d.%s',path),verbose=FALSE)
+  file.rename(sub('-4x.png$','-4x-1.png',path),path)
+  img <- magick::image_read(path)
+  info <- magick::image_info(img)
+  geometry <- if(name=='Figure3') paste0(info$width,'x650+0+0') else
+    paste0(info$width,'x260+0+',info$height-260)
+  magick::image_write(magick::image_crop(img,geometry,repage=TRUE),
+    paste0('output/manuscript/qa/',name,'-detail-4x.png'))
+}
+
 # Refresh the summary from the actual vector-PDF rasters.
 figure_names <- c(paste0('Figure',3:6),'eFigure1','eFigure2')
 previews <- magick::image_read(paste0('output/manuscript/qa/',figure_names,'-pdf-1.png')) |>

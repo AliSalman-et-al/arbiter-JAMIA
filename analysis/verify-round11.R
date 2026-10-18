@@ -3,6 +3,8 @@ bad <- '(?i:(?<![A-Za-z0-9_])(rob2kit|rob2-kit|rob2-assess|no-kit|nokit|kit|meta
 scan_text <- function(txt,path) {
   hits <- grepl(bad,txt,perl=TRUE)
   if(any(hits)) stop('Prohibited text in ',path,': ',paste(txt[hits],collapse='\n'))
+  codes <- raw_reader_codes(txt)
+  if(length(codes)) stop('Raw internal codes in ',path,': ',paste(codes,collapse=', '))
 }
 for(p in list.files('output/manuscript',pattern='[.]docx$',full.names=TRUE)) {
   doc <- officer::read_docx(p); summary <- officer::docx_summary(doc)
@@ -34,12 +36,30 @@ for(name in c(paste0('Figure',3:6),'eFigure1','eFigure2')) {
   cat(name,': min text',min(dat$font_size),'pt, 174 mm, 600-dpi LZW; text clean\n')
 }
 for(p in c('results.html','supplement.html')) {
-  html <- xml2::read_html(p)
-  xml2::xml_remove(xml2::xml_find_all(html,'//script|//style'))
-  scan_text(xml2::xml_text(xml2::xml_find_first(html,'//body')),p)
+  scan_text(reader_html_text(p),p)
   cat(p,'reader text clean\n')
 }
 scan_text(readLines('output/manuscript/figure-legends.md',warn=FALSE,encoding='UTF-8'),'legends')
+source('R/load.R')
+source('R/manuscript-tables.R')
+for(i in 2:3) {
+  x <- get(paste0('main_table',i))()
+  pages <- pdftools::pdf_data(paste0('output/manuscript/qa/Table',i,'-word.pdf'))
+  stopifnot(length(pages)==1L)
+  dat <- pages[[1]]
+  for(j in 2:ncol(x)) for(value in unique(x[[j]][nzchar(x[[j]])])) {
+    words <- strsplit(value,' ',fixed=TRUE)[[1]]
+    starts <- which(dat$text==words[1])
+    found <- any(vapply(starts,function(k) {
+      rows <- k+seq_along(words)-1L
+      max(rows)<=nrow(dat) && identical(dat$text[rows],words) && diff(range(dat$y[rows]))<1
+    },logical(1)))
+    if(!found) stop('Missing or wrapped Table ',i,' value: ',value)
+  }
+  scan_text(pdftools::pdf_text(paste0('output/manuscript/qa/Table',i,'-word.pdf')),paste('Word Table',i))
+  cat('Table',i,': every value stays on one line in native Word PDF\n')
+}
+scan_text(pdftools::pdf_text('output/manuscript/qa/Supplement-word.pdf'),'Word supplement PDF')
 html <- xml2::read_html('results.html')
 images <- xml2::xml_find_all(html,'//main//img')
 stopifnot(length(images)==6L,all(nchar(xml2::xml_attr(images,'alt'))>100L))

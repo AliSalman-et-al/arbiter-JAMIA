@@ -3,6 +3,31 @@ if(.Platform$OS.type=='windows') Sys.setlocale('LC_CTYPE','English_United States
 JAMA_ROLES <- c(ARBITER='#00A1D5',Unassisted='#DF8F44',Published='#374E55',
   Split='#D9D9D9',`ARBITER (Haiku 5.5)`='#80D0EA',`Unassisted (Haiku 5.5)`='#EFC7A2')
 
+reader_answer <- function(x) {
+  labels <- c(yes='Yes',no='No',probably_yes='Probably yes',probably_no='Probably no',
+    no_information='No information',not_applicable='Not applicable',not_asked='Not asked')
+  result <- unname(labels[x])
+  if(anyNA(result)) stop('Unknown signalling-answer code: ',paste(x[is.na(result)],collapse=', '))
+  result
+}
+
+# Only literal filenames, tool names and evidence handles may retain underscores.
+raw_reader_codes <- function(text) {
+  text <- gsub('\\b[A-Za-z0-9_.-]+[.](pdf|csv|json|jsonl|md|txt|R|py|docx|png|tiff)\\b','',text,perl=TRUE)
+  tokens <- unique(unlist(regmatches(text,gregexpr('\\b[A-Za-z][A-Za-z0-9]*_[A-Za-z0-9_]+\\b',text,perl=TRUE))))
+  tokens <- setdiff(tokens,c('test_dir','save_domain_judgment','capture_source','create_evidence',
+    'propose_result','approve_result','save_signalling_answer','verify_bundle'))
+  tokens[!grepl('^eh_[a-f0-9]+$',tokens)]
+}
+
+reader_html_text <- function(path) {
+  html <- xml2::read_html(path)
+  xml2::xml_remove(xml2::xml_find_all(html,'//script|//style'))
+  # Preserve boundaries between table cells and paragraphs. Body text alone
+  # joins neighbouring cells, manufacturing tokens such as "Yeseh_…".
+  xml2::xml_text(xml2::xml_find_all(html,'//body//p|//body//td|//body//th|//body//h1|//body//h2|//body//h3|//body//h4|//body//pre|//body//li'))
+}
+
 reader_label <- function(x, supplement=FALSE) {
   replacements <- c('ARBITER-Sonnet'=if(supplement) 'ARBITER (Sonnet 5.5)' else 'ARBITER',
     'Baseline-Sonnet'=if(supplement) 'Unassisted (Sonnet 5.5)' else 'Unassisted',
@@ -10,7 +35,10 @@ reader_label <- function(x, supplement=FALSE) {
     'A vs Z'='Adjudicator 1 vs Adjudicator 2','Adjudicator A'='Adjudicator 1',
     'Adjudicator Z'='Adjudicator 2','A independent'='Adjudicator 1 independent',
     'Z independent'='Adjudicator 2 independent','Baseline imbalance'='Preintervention imbalance','meta-label'='published-label',
-    'meta_ids'='meta-analysis identifiers','no_information'='No information','Meta label'='Published label','meta label'='published label','Baseline'='Unassisted',
+    'meta_ids'='meta-analysis identifiers','no_information'='No information',
+    'probably_yes'='Probably yes','probably_no'='Probably no','not_applicable'='Not applicable',
+    'some_concerns'='Some concerns','direct_support'='direct support',
+    'Meta label'='Published label','meta label'='published label','Baseline'='Unassisted',
     'All-Low'='All-Low rule')
   for(k in names(replacements)) x <- gsub(k,replacements[[k]],x,fixed=TRUE)
   x <- gsub('All-Low rule rule','All-Low rule',x,fixed=TRUE)
