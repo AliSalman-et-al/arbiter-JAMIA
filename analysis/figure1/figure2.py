@@ -167,7 +167,7 @@ def draw_trace(data,rows):
     text(12,35,'Asymptomatic severe aortic stenosis · RoB 2 asks up to 22 questions about risk of bias across 5 domains.')
     text(12,53,'Y yes · PY / PN probably yes / no · N no · NI no information')
     s.add('<defs><pattern id="not-asked" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#FAFAF8"/><path d="M0 6 L6 0" stroke="#BBB" stroke-width=".5"/></pattern></defs>')
-    for x,w,label,fill,stroke,dashed in [(12,112,'direct support',HILITE,INK,False),(135,85,'context',CONTEXT,'none',False),(231,125,'inference (no quote)','white',GREY,True)]:
+    for x,w,label,fill,stroke,dashed in [(12,112,'direct quotation',HILITE,INK,False),(135,85,'context',CONTEXT,'none',False),(231,125,'inference (no quote)','white',GREY,True)]:
         s.rect(x,64,w,17,fill,3,stroke,.7)
         if dashed:s.parts[-1]=s.parts[-1].replace('/>',' stroke-dasharray="3 3"/>')
         text(x+6,76,label)

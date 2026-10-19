@@ -183,7 +183,7 @@ prior_work_table <- function() {
   x <- readr::read_csv('data-curated/prior-work-comparison.csv',show_col_types=FALSE)
   stopifnot(all(c('registry_or_protocol_given','identical_inputs_across_compared_arms','reference_key') %in% names(x)),
     x$study_id[1]=='marshall_2016')
-  x |> transmute(Study=paste0('[ref: ',reference_key,']',
+  x |> transmute(Study=paste0(if_else(reference_key=='This study','This study (ARBITER)',paste0('[ref: ',reference_key,']')),
       if_else(tool=='RoB 2','',paste0(' (',tool,')')),
       if_else(is.na(note_marks),'',paste0(' [',note_marks,']'))),
     `Rules in code`=rules_applied_in_code,
@@ -198,7 +198,7 @@ prior_work_note <- function() {
   paste('Yes, documented; No, affirmative absence; NR, Not reported (presence or absence unclear).',
     'Partly means: code, spreadsheet or incomplete rules; enforcement, some configurations or incomplete answer checks; breaks, overall-only or qualitative checks; quotations, semantic judging without occurrence/integrity checks; audit, retained responses without a verifiable source bundle; agent, enabled browsing or retrieval without demonstrated agent tool calls; reference, limited re-review, historical independent teams or text-relevance review; registry/protocol, compressed or restricted delivery.',
     'Structured prompting alone is not enforced rules. Registry/protocol includes SAPs and available records; a registration number alone does not qualify.',
-    'This study gave both compared arms identical inputs; other matched model/workflow comparisons also used identical underlying sources (see curated evidence notes).',
+    'This study gave both compared arms identical inputs; other matched model/workflow comparisons also used identical underlying sources (see eTable 32).',
     'a, Compressed ancillary records; overall-only checks. b, Post hoc Excel derivation; six development trials. c, Prompt rules. d, RoB 2 cohort; protocols when available. e, Masked panel; actual browsing unmeasured. f, One trial, 38 runs. g, Retrieval and retained edits. h, Post hoc support judging. i, ROBINS-I; selected concordant references. j, Recorded overrides permitted; none in 510 domains; disputed-cell adjudication. k, RobotReviewer used RoB 1; its blinded panel judged text relevance.',
-    'Reference callouts resolve in the manuscript bibliography. Full cell evidence and definitions: prior-work-comparison-notes.md.')
+    'Reference callouts resolve in the manuscript bibliography. Condensed cell evidence and quotation locations: eTable 32.')
 }

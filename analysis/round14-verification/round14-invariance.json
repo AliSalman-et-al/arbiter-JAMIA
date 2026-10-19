@@ -1,5 +1,5 @@
 {
-  "base": "7befa34",
+  "base": "120b332",
   "csv": [
     {
       "old": "analysis/output/tables/adjudication-analysis-cells.csv",
@@ -128,6 +128,13 @@
       "identical": true
     },
     {
+      "old": "analysis/output/tables/composite-components.csv",
+      "new": "analysis/output/tables/composite-components.csv",
+      "rows": 4,
+      "numeric_cells": 12,
+      "identical": true
+    },
+    {
       "old": "analysis/output/tables/confusion-matrices.csv",
       "new": "analysis/output/tables/confusion-matrices.csv",
       "rows": 144,
@@ -219,10 +226,31 @@
       "identical": true
     },
     {
+      "old": "analysis/output/tables/independent-paired-difference.csv",
+      "new": "analysis/output/tables/independent-paired-difference.csv",
+      "rows": 2,
+      "numeric_cells": 14,
+      "identical": true
+    },
+    {
       "old": "analysis/output/tables/invalid-path-sensitivity.csv",
       "new": "analysis/output/tables/invalid-path-sensitivity.csv",
       "rows": 12,
       "numeric_cells": 60,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/label-target-binding-counts.csv",
+      "new": "analysis/output/tables/label-target-binding-counts.csv",
+      "rows": 4,
+      "numeric_cells": 8,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/label-target-summary.csv",
+      "new": "analysis/output/tables/label-target-summary.csv",
+      "rows": 8,
+      "numeric_cells": 8,
       "identical": true
     },
     {
@@ -296,6 +324,13 @@
       "identical": true
     },
     {
+      "old": "analysis/output/tables/question51-mechanism.csv",
+      "new": "analysis/output/tables/question51-mechanism.csv",
+      "rows": 18,
+      "numeric_cells": 0,
+      "identical": true
+    },
+    {
       "old": "analysis/output/tables/reporting-checklist-skeleton.csv",
       "new": "analysis/output/tables/reporting-checklist-skeleton.csv",
       "rows": 64,
@@ -307,6 +342,13 @@
       "new": "analysis/output/tables/reproducibility.csv",
       "rows": 1,
       "numeric_cells": 4,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/round2-bundle-inputs.csv",
+      "new": "analysis/output/tables/round2-bundle-inputs.csv",
+      "rows": 102,
+      "numeric_cells": 0,
       "identical": true
     },
     {
@@ -411,2167 +453,2708 @@
   "protected": [
     {
       "path": "analysis/data-derived/README.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/api-cost-trials.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/api-cost-turns.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/arbiter-haiku.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/arbiter-sonnet.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/avatar-trace.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/avatar-unassisted-rationale.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/baseline-haiku.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/baseline-sonnet.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/bundle-binding-counts.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/bundle-path-checks.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/bundle-reverification.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/data-derived/bundle-trace-evidence.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/.gitattributes",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/.gitignore",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/DEVIATIONS.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/README.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/STYLE-REFERENCE.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/avatar-save-retry.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/avatar-tool-counts.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/build.py",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/figure1/count_save_rejections.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/figure2-text-provenance.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/figure2.py",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/figure1/fonts/FiraCode-OFL.txt",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/fonts/FiraCode-Regular.ttf",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/fonts/FiraSansCondensed-Bold.ttf",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/fonts/FiraSansCondensed-Regular.ttf",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/fonts/OFL.txt",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/geometry.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/html-report/raw/index.html",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/html-report/raw/trials/banovic26-avatar-2024.html",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/html-report/relabelled/index.html",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/html-report/relabelled/trials/banovic26-avatar-2024.html",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/inspect_tiffs.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/legend-provenance.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/pyproject.toml",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/qa.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/qa/avatar-html-report-domain-view.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/qa/avatar-html-report-domain-view.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/qa/avatar-html-report-table.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/qa/avatar-html-report.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/qa/html-report-proof.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/qa/html-report-relabel.diff",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/qa/html-report-relabel.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/relabel_report.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/reproducibility.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/save-rejections-summary.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/save-rejections.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/screenshot_report.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/test_geometry.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/uv.lock",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/verify.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/visual-inspection.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/figure1/visual-review.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/Figure1.pdf",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/output/manuscript/Figure1.png",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/output/manuscript/Figure1.svg",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/output/manuscript/Figure1.tiff",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/output/manuscript/Figure2.pdf",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/output/manuscript/Figure2.png",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/output/manuscript/Figure2.svg",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/output/manuscript/Figure2.tiff",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/output/manuscript/figure1-notes.md",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/output/manuscript/legends-fig1-2.md",
-      "identical": true
+      "identical": false,
+      "authorised_round3_exception": true
     },
     {
       "path": "analysis/output/manuscript/qa/Figure1-deuteranopia.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure1-final-size.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure1-grayscale.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure1-pdf.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure1-protanopia.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure1-tritanopia.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure2-deuteranopia.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure2-final-size.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure2-grayscale.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure2-pdf.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure2-protanopia.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/Figure2-tritanopia.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure1-accessibility.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure1-deutan.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure1-greyscale.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure1-pdf-1.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure1-protan.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure1-tritan.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure2-accessibility.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure2-deutan.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure2-greyscale.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure2-pdf-1.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure2-protan.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure2-tritan.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/round14-eFigure1-deuteranopia.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/round14-eFigure1-grayscale.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/round14-protected-Figure1.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "analysis/output/manuscript/qa/round14-protected-Figure2.png",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "human-adjudication/adjudication-cells-with-explanations-A.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "human-adjudication/adjudication-cells-with-explanations-Z.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/README.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/accuracy.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/aarnoutse-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/abbasi-2012.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/aboelfadl-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/albert-2013.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/allen-2014.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/allsop-2014.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/amini-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/an-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/apalla-2013.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/arezzo-2008.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/ascet.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/ashar-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/atli-2005.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/attal-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/attal-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/award-1-2014.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/award-10-2018.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/award-chn3-2023.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/bagg-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/baillard-2006.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/baillard-2018.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/banovic26-avatar-2024.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/barratt-2024.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/bausys-2023.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/becker-2015.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/beerendonk-1996.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/beerendonk-1999.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/bendix-1996.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/bendix-2000.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/bente-2014.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/boedt-2023.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/boeree-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/cadet.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/canvas-program.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/caprie.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/castoldi-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/chiba-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/chua-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/clyman-2019.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/dapa-hf.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/de-waal-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/declare-timi-58.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/deliver.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/dian-2018.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/duration-8-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/einarsson-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/el-khuffash-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/elixa.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/empa-reg-outcome.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/emperor-preserved.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/emperor-reduced.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/envision.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/espinos-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/exscel.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/ferreira-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/fr-as-2018.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/frat-2019.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/freeman-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/fulop-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/getgoal-duo1-2013.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/getgoal-f1-2013.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/getgood-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/gillis-2014.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/grant-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/guitton-2019.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/gupta-2024.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/hamido-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/hanafiah-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/harmony-outcomes.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/heemskerk-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/herrmann-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/hill-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/host-exam.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/hundscheid-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/ibrahim-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/jaber-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/jindani-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/kang25-recovery-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/leader.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/levin-2011.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/levin-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/lv-2023.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/monaleesa-2.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/monaleesa-3.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/monaleesa-7.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/monarch-2.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/monarch-3.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/monarch-plus.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/nefigard.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/paloma-2.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/pioneer-6.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/potsiurko-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/rewind.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/rosen-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/sanctuary.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/smart-choice-3.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/stop-igan.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/stopdapt-2.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/stopdapt-3.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/sung-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/sustain-6.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/testing.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/bundles/vel-squez-2018.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/claude-home-settings.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/continues.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/continues.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/results-102/accuracy.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/results-102/rob2kit-domain-labels.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/results-102/rob2kit-domain-labels.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/results-102/rob2kit-signalling-answers.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/results-102/rob2kit-signalling-answers.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/rob2kit-domain-labels.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/rob2kit-domain-labels.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/rob2kit-signalling-answers.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/rob2kit-signalling-answers.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/run_all.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/run_case.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-haiku-5.5/score.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/README.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/accuracy.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/aarnoutse-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/abbasi-2012.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/aboelfadl-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/albert-2013.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/allen-2014.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/allsop-2014.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/amini-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/an-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/apalla-2013.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/arezzo-2008.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/ascet.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/ashar-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/atli-2005.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/attal-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/attal-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/atwine-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/award-1-2014.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/award-10-2018.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/award-chn3-2023.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/bagg-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/baillard-2006.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/baillard-2018.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/banovic26-avatar-2024.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/barratt-2024.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/bausys-2023.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/becker-2015.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/beerendonk-1996.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/beerendonk-1999.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/bendix-1996.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/bendix-2000.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/bente-2014.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/boedt-2023.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/boeree-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/cadet.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/canvas-program.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/caprie.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/castoldi-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/chiba-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/chua-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/clyman-2019.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/dapa-hf.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/de-waal-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/declare-timi-58.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/deliver.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/dian-2018.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/duration-8-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/einarsson-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/el-khuffash-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/elixa.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/empa-reg-outcome.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/emperor-preserved.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/emperor-reduced.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/envision.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/espinos-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/exscel.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/ferreira-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/fr-as-2018.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/frat-2019.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/freeman-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/fulop-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/getgoal-duo1-2013.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/getgoal-f1-2013.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/getgood-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/gillis-2014.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/grant-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/guitton-2019.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/gupta-2024.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/hamido-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/hanafiah-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/haney-2004.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/harmony-outcomes.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/heemskerk-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/herrmann-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/hill-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/host-exam.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/hundscheid-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/ibrahim-2017.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/jaber-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/jindani-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/kang25-recovery-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/leader.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/levin-2011.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/levin-2016.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/lv-2023.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/monaleesa-2.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/monaleesa-3.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/monaleesa-7.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/monarch-2.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/monarch-3.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/monarch-plus.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/nefigard.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/paloma-2.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/pioneer-6.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/potsiurko-2022.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/rewind.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/rosen-2021.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/sanctuary.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/smart-choice-3.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/stop-igan.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/stopdapt-2.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/stopdapt-3.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/sung-2020.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/sustain-6.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/testing.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/bundles/vel-squez-2018.rob2.zip",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/claude-home-settings.json",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/results/accuracy.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/results/rob2kit-domain-labels.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/results/rob2kit-domain-labels.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/results/rob2kit-signalling-answers.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/results/rob2kit-signalling-answers.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/rob2kit-domain-labels.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/rob2kit-domain-labels.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/rob2kit-signalling-answers.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/rob2kit-signalling-answers.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/run_all.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/run_case.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "kit-sonnet-5.5/score.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/README.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/accuracy.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/build_nokit_inputs.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/continues.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/model-domain-labels.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/model-domain-labels.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/model-signalling-answers.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/model-signalling-answers.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/nokit-format.txt",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT00159679.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT00217971.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT00222261.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT00302796.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT00472160.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT00554502.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT00760149.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT00763451.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT00975286.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01020019.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01064687.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01131676.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01144338.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01147250.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01161732.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01251211.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01347762.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01356264.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01394952.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01408914.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01560052.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01566929.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01630278.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01720446.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01730534.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01740427.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01785186.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01952795.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01958320.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT01986543.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02010281.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02018354.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02044250.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02044809.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02107703.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02128191.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02169882.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02229396.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02246621.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02278120.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02416960.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02422615.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02436655.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02465515.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02530957.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02597049.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02617693.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02619760.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02668458.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02692716.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02700321.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02763566.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02913404.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT02938104.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03036124.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03057951.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03057977.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03131687.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03294148.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03396094.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03564106.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03619213.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03643965.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03758209.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03790449.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03841448.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT03860428.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT04223401.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT04287985.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT04291781.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT04418479.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT04564339.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT04591626.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/registry-markdown/NCT04609111.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/results-102/accuracy.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/results-102/model-domain-labels.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/results-102/model-domain-labels.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/results-102/model-signalling-answers.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/results-102/model-signalling-answers.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/run_all.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/run_nokit_case.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-haiku-5.5/score.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/README.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/accuracy.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/build_nokit_inputs.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/continues.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/model-domain-labels.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/model-domain-labels.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/model-signalling-answers.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/model-signalling-answers.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/nokit-format.txt",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT00159679.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT00217971.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT00222261.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT00302796.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT00472160.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT00554502.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT00760149.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT00763451.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT00975286.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01020019.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01064687.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01131676.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01144338.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01147250.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01161732.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01251211.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01347762.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01356264.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01394952.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01408914.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01560052.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01566929.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01630278.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01720446.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01730534.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01740427.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01785186.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01952795.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01958320.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT01986543.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02010281.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02018354.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02044250.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02044809.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02107703.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02128191.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02169882.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02229396.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02246621.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02278120.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02416960.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02422615.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02436655.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02465515.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02530957.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02597049.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02617693.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02619760.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02668458.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02692716.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02700321.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02763566.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02913404.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT02938104.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03036124.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03057951.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03057977.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03131687.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03294148.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03396094.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03564106.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03619213.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03643965.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03758209.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03790449.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03841448.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT03860428.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT04223401.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT04287985.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT04291781.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT04418479.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT04564339.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT04591626.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/registry-markdown/NCT04609111.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/results-102/accuracy.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/results-102/model-domain-labels.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/results-102/model-domain-labels.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/results-102/model-signalling-answers.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/results-102/model-signalling-answers.xlsx",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/run_all.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/run_nokit_case.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "no-kit-sonnet-5.5/score.py",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/ACQUIRE-NEEDS-ACCESS.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/FILES.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/LABEL-TARGETS.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/LABELS-batch.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/OUTCOMES-batch.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/README-FOR-ALI.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/TRIAL-SUMMARY.csv",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/ajsm-acl-leap/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/bja-prehab/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/cid-rifampin/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/cid-rifampin/label-table-2-from-PMC12314497.txt",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/cjasn-iga/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/gastro-glp1/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/hru-preconception/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/jacc-avr/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/jama-sglt2/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/jamapeds-pda/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/lancet-clopidogrel/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/lde-glp1/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/lneurol-neuropathic/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/loncol-cdk46/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/lpsych-cannabinoids/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/lrheum-lbp/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     },
     {
       "path": "rob2-meta-benchmark-set/metas/lrm-preox/BINDING.md",
-      "identical": true
+      "identical": true,
+      "authorised_round3_exception": false
     }
   ],
   "tables": [
@@ -2581,15 +3164,15 @@
       "numeric_cells": 31,
       "identical": true,
       "retained_footer_numbers_identical": true,
-      "authorised_footer_changes": "Renumbered eTable references only; Table 2 appends two post hoc paired differences (body)"
+      "authorised_footer_changes": "None in Round 3; all retained body and footer numbers checked"
     },
     {
       "old": 2,
       "new": 2,
-      "numeric_cells": 18,
+      "numeric_cells": 22,
       "identical": true,
       "retained_footer_numbers_identical": true,
-      "authorised_footer_changes": "Renumbered eTable references only; Table 2 appends two post hoc paired differences (body)"
+      "authorised_footer_changes": "None in Round 3; all retained body and footer numbers checked"
     },
     {
       "old": 3,
@@ -2597,15 +3180,12 @@
       "numeric_cells": 30,
       "identical": true,
       "retained_footer_numbers_identical": true,
-      "authorised_footer_changes": "Renumbered eTable references only; Table 2 appends two post hoc paired differences (body)"
+      "authorised_footer_changes": "None in Round 3; all retained body and footer numbers checked"
     }
   ],
   "failures": [],
   "declared_exceptions": [
-    "Table 2 adds two post hoc paired differences; retained rows checked exactly",
-    "Table 4 is replaced using independently curated schema and callouts, not a retained numerical endpoint",
-    "table5.csv changes only runtime/cost labels (reversibly decoded)",
-    "Checklist location/notes fields filled; all guideline/item/topic/source identifiers retained",
-    "Supplement composite adds four post hoc component rows; one new descriptive question 5.1 eTable; retained cells checked from baseline CSVs"
+    "Round 3: approved Figure 1–2 labels, legend/notes claim removal and eight figure renders; independently audited by verify-round14-figures.py",
+    "Round 3: evidence eTable 32 and Table 4 study label/note; no retained numerical change"
   ]
 }

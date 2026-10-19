@@ -29,3 +29,4 @@ eTable 28. Time, cost and token use per trial by model
 eTable 29. API cost reconstruction: estimates and bounds
 eTable 30. Token reconciliation and compaction diagnostics
 eTable 31. Exploratory signalling-answer agreement
+eTable 32. Evidence and quotation locations for the prior-work comparison

@@ -19,7 +19,7 @@ eTable,caption,retained,numeric_tokens,identical
 18,Localisation population eligibility,TRUE,9,TRUE
 19,"Error-localisation classes, both populations",TRUE,24,TRUE
 20,"Questions that alone changed the rating: frequencies, both populations",TRUE,176,TRUE
-21,Post hoc: supplied documents and answers in question 5.1 losses,FALSE,20,NA
+21,Post hoc: supplied documents and answers in question 5.1 losses,TRUE,20,TRUE
 22,Unresolved independent answer,TRUE,7,TRUE
 23,Post hoc: rules-only changes make three arm disagreements ties,TRUE,214,TRUE
 24,"RoB 2 consistency and structural audit, all sources and domains",TRUE,278,TRUE
@@ -30,3 +30,4 @@ eTable,caption,retained,numeric_tokens,identical
 29,API cost reconstruction: estimates and bounds,TRUE,34,TRUE
 30,Token reconciliation and compaction diagnostics,TRUE,57,TRUE
 31,Exploratory signalling-answer agreement,TRUE,466,TRUE
+32,Evidence and quotation locations for the prior-work comparison,FALSE,64,NA

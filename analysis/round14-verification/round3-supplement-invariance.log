@@ -1,0 +1,48 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+# A tibble: 32 × 5
+   eTable caption                              retained numeric_tokens identical
+    <int> <chr>                                <lgl>             <int> <lgl>    
+ 1      1 Benchmark trials span sixteen meta-… TRUE                 92 TRUE     
+ 2      2 Published label distributions by do… TRUE                262 TRUE     
+ 3      3 AVATAR complete trace                TRUE                893 TRUE     
+ 4      4 Confusion matrices against Published TRUE                108 TRUE     
+ 5      5 Per-meta-analysis weighted κ         TRUE                 72 TRUE     
+ 6      6 Agreement against Published, all so… TRUE                371 TRUE     
+ 7      7 Paired differences against Published TRUE                126 TRUE     
+ 8      8 Post hoc: unweighted agreement with… TRUE                140 TRUE     
+ 9      9 Adjudicators usually agreed with mo… TRUE                 48 TRUE     
+10     10 Published labels were usually less … TRUE                 51 TRUE     
+11     11 Agreement against the composite ref… TRUE                211 TRUE     
+12     12 Paired differences against the comp… TRUE                 73 TRUE     
+13     13 Composite-reference sensitivity est… TRUE                426 TRUE     
+14     14 Composite-reference paired differen… TRUE                158 TRUE     
+15     15 Preferred shares among adjudicated … TRUE                 66 TRUE     
+16     16 Post hoc: preferred shares among ad… TRUE                 28 TRUE     
+17     17 Independent and selected ratings: f… TRUE                102 TRUE     
+18     18 Localisation population eligibility  TRUE                  9 TRUE     
+19     19 Error-localisation classes, both po… TRUE                 24 TRUE     
+20     20 Questions that alone changed the ra… TRUE                176 TRUE     
+21     21 Post hoc: supplied documents and an… TRUE                 20 TRUE     
+22     22 Unresolved independent answer        TRUE                  7 TRUE     
+23     23 Post hoc: rules-only changes make t… TRUE                214 TRUE     
+24     24 RoB 2 consistency and structural au… TRUE                278 TRUE     
+25     25 Required question skipped sensitivi… TRUE                 86 TRUE     
+26     26 Quotation syntax in active justific… TRUE                 10 TRUE     
+27     27 Unassisted justification content     TRUE                  4 TRUE     
+28     28 Time, cost and token use per trial … TRUE                100 TRUE     
+29     29 API cost reconstruction: estimates … TRUE                 34 TRUE     
+30     30 Token reconciliation and compaction… TRUE                 57 TRUE     
+31     31 Exploratory signalling-answer agree… TRUE                466 TRUE     
+32     32 Evidence and quotation locations fo… FALSE                64 NA       
+Every numeric body token in all retained supplementary table constructions matches the parent CSV values.
+Actual Supplement.docx: all 50 table bodies match generated numeric tokens.

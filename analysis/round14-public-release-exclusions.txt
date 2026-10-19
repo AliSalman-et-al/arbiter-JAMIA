@@ -31,6 +31,7 @@ analysis/round14-report.md
 analysis/round14-verification/release-scan.txt
 analysis/round14-verification/round14-invariance.json
 analysis/round14-verification/round2-release.log
+analysis/round14-verification/round3-release.log
 analysis/round2-report.md
 analysis/round3-report.md
 analysis/round4-report.md
@@ -48,9 +49,11 @@ analysis/verify-round14.R
 analysis/verify-round4.R
 analysis/verify-round5.R
 analysis/verify-round6.R
+docs/manuscript/verify-numbers.py
 docs/round14/BRIEF.md
 docs/round14/REVIEW.md
 docs/round14/WP-A-pipeline.md
+docs/round14/WP-M-manuscript.md
 kit-haiku-5.5/README.md
 kit-haiku-5.5/accuracy.md
 kit-haiku-5.5/bundles/aarnoutse-2017.rob2.zip

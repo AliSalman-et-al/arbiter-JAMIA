@@ -2,7 +2,7 @@
 
 ## Figure 1. ARBITER splits the work: an AI model reads and answers; rule-based software checks quotes, applies RoB 2 rules and records everything
 
-**Figure 1. ARBITER splits the work: an AI model reads and answers; rule-based software checks quotes, applies RoB 2 rules and records everything.** Lanes show the reviewer, AI model, ARBITER server and audit file across capture, approval, domain assessment and export. Plain labels show actions; grey text names the underlying tool calls. The reviewer receives the HTML report and audit file, both checkable by an independent verifier. Across the 102 trials, the server rejected 53 of 637 save attempts with incomplete or unbound answers, and every affected domain was saved after resubmission. RoB 2 is the Cochrane risk-of-bias tool for randomised trials.
+**Figure 1. ARBITER splits the work: an AI model reads and answers; rule-based software checks quotes, applies RoB 2 rules and records everything.** Lanes show the reviewer, AI model, ARBITER server and audit file across capture, approval, domain assessment and export. Plain labels show actions; grey text names the underlying tool calls. The reviewer receives the HTML report and audit file, both checkable by an independent verifier. RoB 2 is the Cochrane risk-of-bias tool for randomised trials.
 
 Alt text: The reviewer chooses a trial and outcome and approves the result to assess. The AI model reads reports, selects evidence and answers questions. ARBITER stores source records, checks quotes and applies the RoB 2 rules. The reviewer receives an HTML assessment report and an audit file containing sources, quotes, answers and decisions; both can be checked by an independent verifier.
 

@@ -1,6 +1,6 @@
 # Figures 1–2: provenance and display notes
 
-The workflow uses plain labels above representative real MCP calls. Tool definitions and the public audit-file extension are checked against ARBITER source commit `2f549ae30f056ff441ea61a04b719968716f2219`. The frozen rejection audit remains in save-rejections.csv and its summary JSON.
+The workflow uses plain labels above representative real MCP calls. Tool definitions and the public audit-file extension are checked against ARBITER source commit `2f549ae30f056ff441ea61a04b719968716f2219`.
 
 ## AVATAR storyboard
 
@@ -15,30 +15,6 @@ D5 rule checked against the scientific-pack selection.md Algorithm section: High
 Both adjudicators preferred D5 Some concerns; Published D5 is Low. Overall was not adjudicated. The Without ARBITER comparison strip has been removed.
 
 Bundle SHA-256: `d6d683efd3acce82f9e0ee233d194223c569ffb7ac76ab74e45c6c4071fb6655`. AVATAR is illustrative, not representative.
-
-## Save-call rejection audit
-
-{
-  "trials": 102,
-  "total_calls": 637,
-  "rejected": 53,
-  "by_reason": {
-    "accepted": 584,
-    "evidence_or_basis_schema": 32,
-    "other_validation": 21
-  },
-  "avatar_calls": 7,
-  "avatar_rejected": 1,
-  "trial_domains_audited": 510,
-  "domain_attribution_inferred_calls": [
-    "toolu_01SEACoGACFkmrTarcdeV4oH"
-  ],
-  "domains_with_rejection": 47,
-  "domains_final_save_succeeded_after_rejection": 47,
-  "rejections_followed_by_success_same_domain": 53,
-  "domains_without_successful_save": [],
-  "domains_final_call_rejected": []
-}
 
 ## Fixed recorded-rule display mapping
 
@@ -937,7 +913,7 @@ Internal provenance only. The following text is preserved verbatim; reader-facin
 
 # Legends and alt text: Figures 1–2
 
-**Figure 1. How ARBITER works.** The reviewer chooses a trial and outcome and approves the result to assess through `arbiter review`. The AI model (LLM agent) follows the ARBITER assessment guide, uses `search_sources` and `search_sources_batch` to locate evidence, reads matching pages through `read_pages`, selects relevant quotations, and supplies answers, justifications and quotations. ARBITER is rule-based software with no AI: it stores source records, checks quotations, applies the official RoB 2 rules, packages the `.arbiter.zip` audit file, and writes the HTML report through `arbiter report`. Evenly spaced two-headed arrows represent model–server tool exchanges. Plain action labels are primary; small grey monospace labels identify representative tools. When needed, `render_page` delivers page images and `select_visual_evidence` selects evidence from them. Search and page reading recur during assessment; the phase columns group functions rather than prescribe a single tool-call sequence. Across 102 trials, 53 of 637 `save_domain_judgment` calls were rejected (32 for evidence/citation structure, 21 for other input errors); every affected domain was saved after resubmission. Audit files retain source identities and evidence quotations, rather than complete trial PDFs, with answers and decision history. The assessing model can record a reasoned override; none occurred here.
+**Figure 1. How ARBITER works.** The reviewer chooses a trial and outcome and approves the result to assess through `arbiter review`. The AI model (LLM agent) follows the ARBITER assessment guide, uses `search_sources` and `search_sources_batch` to locate evidence, reads matching pages through `read_pages`, selects relevant quotations, and supplies answers, justifications and quotations. ARBITER is rule-based software with no AI: it stores source records, checks quotations, applies the official RoB 2 rules, packages the `.arbiter.zip` audit file, and writes the HTML report through `arbiter report`. Evenly spaced two-headed arrows represent model–server tool exchanges. Plain action labels are primary; small grey monospace labels identify representative tools. When needed, `render_page` delivers page images and `select_visual_evidence` selects evidence from them. Search and page reading recur during assessment; the phase columns group functions rather than prescribe a single tool-call sequence. Audit files retain source identities and evidence quotations, rather than complete trial PDFs, with answers and decision history. The assessing model can record a reasoned override; none occurred here.
 
 Alt text: Reviewer, lavender AI model with a robot icon and mint rule-based ARBITER server with a server-stack icon extend across Capture, Propose and approve, Assess each domain, and Review and export. Trial reports and registry enter at Capture. The reviewer chooses and approves; the model reads and answers; the server stores, checks and applies rules, with grey tool names including search_sources, search_sources_batch and read_pages, plus arbiter report. Capture prepares and locates source records; Assess each domain reads text or page images and selects evidence to answer signalling questions. The assessment tools include select_text_evidence for text, render_page for inspecting page images and select_visual_evidence for selecting image evidence when needed. Export arrows lead to a yellow audit-file card and a framed native AVATAR HTML-report detail showing the five domain-navigation results and first domain card. The reviewer receives both the HTML report and audit file. Arrows from both outputs converge on a shared shield-and-check node labelled Checkable by an independent verifier.
 

@@ -2,7 +2,7 @@
 """Exhaustive retained CSV numeric-cell audit against the fixed parent."""
 import csv, io, json, re, subprocess, pathlib, collections, decimal, zipfile, xml.etree.ElementTree as ET
 ROOT=pathlib.Path(__file__).resolve().parent.parent
-BASE='7befa34'
+BASE='120b332'
 OUT=ROOT/'analysis/round14-verification'; OUT.mkdir(parents=True,exist_ok=True)
 def git(*args): return subprocess.check_output(['git',*args],cwd=ROOT)
 def old(path): return git('show',f'{BASE}:{path}')
@@ -30,7 +30,7 @@ def signature(row):
 rename={}
 dropped=set()
 report={'base':BASE,'csv':[],'protected':[],'tables':[],'failures':[]}
-report['declared_exceptions']=['Table 2 adds two post hoc paired differences; retained rows checked exactly','Table 4 is replaced using independently curated schema and callouts, not a retained numerical endpoint','table5.csv changes only runtime/cost labels (reversibly decoded)','Checklist location/notes fields filled; all guideline/item/topic/source identifiers retained','Supplement composite adds four post hoc component rows; one new descriptive question 5.1 eTable; retained cells checked from baseline CSVs']
+report['declared_exceptions']=['Round 3: approved Figure 1–2 labels, legend/notes claim removal and eight figure renders; independently audited by verify-round14-figures.py', 'Round 3: evidence eTable 32 and Table 4 study label/note; no retained numerical change']
 paths=git('ls-tree','-r','--name-only',BASE).decode().splitlines()
 for path in paths:
  if path.startswith('analysis/output/tables/') and path.endswith('.csv'):
@@ -39,11 +39,6 @@ for path in paths:
   target=ROOT/'analysis/output/tables'/rename.get(name,name)
   if not target.exists(): report['failures'].append(f'Missing retained CSV: {target}'); continue
   before,after=rows(old(path)),rows(target.read_bytes())
-  # The checklist now maps locations instead of blank fields; preserve all item IDs/topics.
-  if name=='reporting-checklist-skeleton.csv':
-   fields=('guideline','item','topic','source')
-   before=[{k:r[k] for k in fields} for r in before]
-   after=[{k:r[k] for k in fields} for r in after]
   a,b=collections.Counter(map(signature,before)),collections.Counter(map(signature,after))
   good=a==b
   numeric=sum(sum(bool(re.fullmatch(r'-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?',v)) for v in r.values()) for r in after)
@@ -56,7 +51,9 @@ for path in paths:
    disk=disk.replace(b'\r\n',b'\n');parent=parent.replace(b'\r\n',b'\n')
   good=disk==parent
   report['protected'].append({'path':path,'identical':good})
-  if not good: report['failures'].append('Protected file changed: '+path)
+  authorised = path in {'analysis/figure1/build.py','analysis/figure1/figure2.py','analysis/output/manuscript/figure1-notes.md','analysis/output/manuscript/legends-fig1-2.md'} or bool(re.fullmatch(r'analysis/output/manuscript/Figure[12]\.(svg|pdf|png|tiff)',path))
+  report['protected'][-1]['authorised_round3_exception']=authorised
+  if not good and not authorised: report['failures'].append('Protected file changed: '+path)
 W={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
 def table_cells(data):
  with zipfile.ZipFile(io.BytesIO(data)) as z: tree=ET.fromstring(z.read('word/document.xml'))
@@ -69,7 +66,6 @@ for new,previous in [(1,1),(2,2),(3,3)]:
  def numeric_cells(rs):
   retained=[]
   for row in rs[:-1]:
-   if any('Post hoc: paired agreement difference' in c for c in row): break
    retained.extend(cell for cell in row if re.search(r'\d',cell))
   return retained
  av,bv=numeric_cells(a),numeric_cells(b); good=av==bv
@@ -78,7 +74,7 @@ for new,previous in [(1,1),(2,2),(3,3)]:
   note=re.sub(r'eTables?\s+\d+(?:(?:\s*(?:[–-]|and|,)\s*)\d+)*','eTable REF',note)
   return re.findall(r'\d+(?:[.,]\d+)*',note)
  footer_good=footer_tokens(a)==footer_tokens(b)
- report['tables'].append({'old':previous,'new':new,'numeric_cells':len(bv),'identical':good,'retained_footer_numbers_identical':footer_good,'authorised_footer_changes':'Renumbered eTable references only; Table 2 appends two post hoc paired differences (body)'})
+ report['tables'].append({'old':previous,'new':new,'numeric_cells':len(bv),'identical':good,'retained_footer_numbers_identical':footer_good,'authorised_footer_changes':'None in Round 3; all retained body and footer numbers checked'})
  if not footer_good: report['failures'].append({'table':new,'footer_before':footer_tokens(a),'footer_after':footer_tokens(b)})
  if not good: report['failures'].append({'table':new,'before':av,'after':bv})
 (OUT/'round14-invariance.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))

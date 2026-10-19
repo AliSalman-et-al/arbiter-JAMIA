@@ -638,3 +638,182 @@ inventory. References in Word/HTML/Results resolve through the same registry.
 
 No commit or push was performed. HEAD remains `7befa34`; the lockfile and frozen
 inputs are unchanged. `git diff --check` passes.
+
+## Round 3
+
+WP-A3 baseline for all comparisons is **120b332** (WP-A round 2); checkout started at
+**7c0f14a**. During final checks, the concurrent manuscript commit advanced shared
+HEAD to **0349c5b**; its five changed files are confined to `docs/manuscript/` and
+`docs/round14/`. WP-A3 remains uncommitted. This worker performed no commit or
+push. `docs/manuscript/` belongs to the
+parallel manuscript worker and was not touched. The raw arm, adjudication,
+benchmark and `analysis/data-derived/` inputs remain unchanged.
+
+### Item-by-item implementation
+
+1. **Authorised Figure 1–2 exception — complete.** Only the three Q46 strings
+   changed in the generating source: Figure 1 now says “Store a content-hashed
+   copy of each source” and “cited evidence”; Figure 2 says “direct quotation”.
+   The existing two-line source-copy label retains its line break, coordinates,
+   font, size and alignment. SVG, PDF, PNG and 600-dpi LZW TIFF were re-rendered.
+   Only `build.py` and `figure2.py` differ under `analysis/figure1/`, with exactly
+   those substitutions; every other tracked file in that directory is byte-identical.
+2. **Rejected-save claim — complete.** Q45 authorises removal. The Figure 1
+   legend loses only its unsupported sentence. Its alt text did not contain the
+   claim and is unchanged. The figure notes lose the rejected-save JSON block,
+   its pointer and the repeated archived-legend sentence. Generated legends and
+   HTML were rebuilt. Historical planning/review/report records and the frozen
+   figure-source audit remain internal provenance, not publication claims.
+3. **Table 4 — complete.** The study label is “This study (ARBITER)”. Both notes
+   that referred readers to curated repository evidence now cite **eTable 32**.
+   The new condensed evidence table has **11 rows, one per study**, with quotations,
+   feature-specific locations and source identifiers. Its editable source is
+   `data-curated/prior-work-evidence-condensed.csv`, condensed from the existing
+   curated cell audit; neither original curated prior-work file was changed.
+   All Table 4 feature cells are retained exactly. Reader labels replace internal
+   field names; source-access errors and curator/review-round commentary are omitted.
+4. **Supplementary Methods, Limitations and plan — complete.** The existing
+   Methods distribution is retained: **33 same, 11 same across covered outcomes,
+   32 same inferred, 7 partly, 9 different, 10 unknown**. The plan now states it
+   explicitly. Methods and the plan disclose that De Waal 2021's supplied registry
+   belonged to another trial, an input error shared by both arms. Supplementary
+   Limitations and the plan state that disagreement with a published label may
+   partly reflect outcome mismatch rather than a different judgement. Q44's
+   decision to skip the matched-outcome sensitivity analysis is respected.
+5. **Full verification and report — complete.** The baseline is fixed to
+   `120b332`; no prior-round numerical additions are exempted from this round's
+   comparison. The checklist is compared in full, and the Table 2 paired rows
+   added in round 2 are now included in the retained main-table comparison.
+
+### Figure-string-only proof
+
+`verify-round14-figures.py` asserts exact before/after source substitutions and
+byte equality for every other tracked `analysis/figure1/` file. It compares every
+SVG semantic label in order; exactly two groups change in Figure 1 and one in
+Figure 2. Removing just those groups leaves **byte-identical SVG content**,
+including all other glyph paths, shapes, colours, images and geometry.
+
+The script replays the frozen outlined scenes with the bundled fonts and the
+existing `Scene.text` / `export_scene` implementation. Replaying each baseline
+SVG first reproduces the committed PNG pixels exactly. Direct differences
+between the actual committed `120b332` renders and current PNG, TIFF and
+rasterised PDF find **zero changed pixels outside the three authorised label
+regions**. The PDF comparison is at 160 dpi; the TIFF comparison covers every
+600-dpi pixel. This is a direct baseline comparison, not just a comparison of
+newly generated before/after images. Structured proof and visible differences:
+
+- `round14-verification/round3-figures/proof.json`
+- `round14-verification/round3-figures/Figure1-difference.png`
+- `round14-verification/round3-figures/Figure2-difference.png`
+
+`verify-round14-round3.py` separately proves that the protected legend and notes
+changed by exactly the specified deletions, and checks every retained Table 4
+body cell against the baseline, allowing only the authorised study-label edit.
+
+### Claim-removal grep proof
+
+`round14-verification/round3-grep-proof.log` records this command and exit status
+**1 (zero matches)**:
+
+```sh
+rg -n -i -e '53[[:space:]]*(/|of)[[:space:]]*637' \
+  analysis/output/manuscript analysis/output/tables analysis/output/figures \
+  analysis/results.html analysis/supplement.html
+```
+
+The complementary `verify-round14-round3.py` scan extracts compressed Word XML
+and PDF text as well as plain-text publication files, and also rejects the old
+structured audit counts. It finds **zero publication-artifact matches**. Logs
+and historical author instructions may mention the removed count; they are not
+part of this publication scan.
+
+### Invariance and tests
+
+- `verify-round14-numbers.py`: **64 retained CSVs, 7,693 numeric cells**, all
+  unchanged at full precision; **83 numeric body cells** and all retained footer
+  numbers in Tables 1–3 unchanged. Of **541** frozen/protected files, **529** are
+  unchanged and exactly **12** have the author-approved source, artwork or
+  legend/notes changes, independently constrained by the two round-3 proofs.
+- `verify-round14-tables.R`: **31 retained supplementary constructions / 4,712
+  numeric body tokens** match displays reconstructed from baseline CSVs. New
+  eTable 32 is explicitly excluded from that baseline comparison. The actual
+  Supplement.docx passes all **50 table-body** numeric-token checks.
+- `test-round14.R`: **610 assertions, zero failures, errors, warnings or skips**.
+  The supplement-inventory expectation changes from 31 to 32; no statistical
+  assertion was relaxed. Initial display-contract failures were corrected before
+  the final successful run.
+- `verify-round14.R` reproduces all preliminary rules-only values and direction
+  counts and checks actual reader artifacts. `verify-round14-round2.R` passes
+  the round-2 additions, new ties, terminology and checklist-map regressions.
+- `figure1/test_geometry.py`: **15 tests pass**. The new figure and text verifiers,
+  release scan, layout audit, archived-quotation check and `git diff --check` pass.
+  All **16/16** complete archived quotations remain present in the rendered PDF.
+
+Logs use the `round14-verification/round3-*` prefix. The exhaustive machine audit
+remains `round14-verification/round14-invariance.json`; current retained-table
+and Word-body audits are `retained-supplement-tables.csv` and
+`round3-supplement-word-tables.csv`.
+
+### Environment and visual QA
+
+The round-1 Linux approach is retained: R 4.3.3, Quarto 1.10.19,
+`R_LIBS_USER=/tmp/round14-R-library`,
+`LD_LIBRARY_PATH=/tmp/round14-sysroot/usr/lib/x86_64-linux-gnu`,
+`R_PROFILE_USER=/dev/null`, `RENV_CONFIG_AUTOLOADER_ENABLED=FALSE` and
+`QUARTO_R=/usr/bin`. The five previously disclosed host-package substitutions
+remain; `renv.lock`, `figure1/uv.lock` and `figure1/pyproject.toml` are unchanged.
+A full `quarto render` ran the numerical pipeline and both reports; the final
+presentation rebuild and supplementary render applied the final evidence text.
+
+The original log-dependent figure entry point also assumes unavailable local
+logs and hard-coded Windows paths. Rather than alter that protected code, the
+new verifier re-renders its frozen vector scenes with the pinned figure packages
+and the original exporter. Reproduction command from the repository root:
+
+```sh
+UV_PROJECT_ENVIRONMENT=/tmp/round14-figure-venv \
+  uv run --project analysis/figure1 --locked python analysis/verify-round14-figures.py
+```
+
+LibreOffice replaces Microsoft Word, using the documents renderer to create
+PDF and PNG QA files. All four main tables retain one page; the supplement has
+**64 pages**, including the three-page evidence eTable, and the reporting map
+has four pages. Layout checks find no blank pages or out-of-page spans. Figures
+retain 174-mm width and 600-dpi LZW TIFFs. Existing Poppler font-resource warnings
+from protected artwork persist; rasterisation and embedded-Fira checks succeed.
+
+Visual inspection covered Figures 1–2 at full size, Table 4, all supplement
+contact sheets, and full-size changed Methods/Limitations and evidence pages.
+No clipping, overlap or broken quotation/locator text was found. Inspected PNGs,
+relative to `analysis/`:
+
+- `round14-verification/round3-figures/Figure1-after.png` and `Figure2-after.png`,
+  plus both `Figure1-difference.png` and `Figure2-difference.png` in that directory
+- `output/manuscript/qa/round14-Table4/page-1.png`
+- `output/manuscript/qa/round14-Supplement-contact-1.png` through `-8.png`
+- `output/manuscript/qa/round14-Supplement/page-2.png`, `page-3.png`, `page-4.png`,
+  `page-61.png`, `page-62.png` and `page-63.png`
+
+The main numbering and eTables 1–31 are unchanged. **eTable 32** is the only new
+entry; eFigure 1 is unchanged. The inventory is regenerated in
+`output/manuscript/qa/round14-supplement-inventory.txt`.
+
+### Public-release exclusions and open issues
+
+The release scan reports **zero Haiku matches in publication artifacts**. The
+complete historical/internal exclusion manifest remains
+`round14-public-release-exclusions.txt`; all exclusions reported in rounds 1–2
+still apply, including frozen raw model trees and internal review/report records.
+The new report/scanning scripts and verification logs are internal provenance.
+The three added model-reference exclusions are `round14-verification/round3-release.log`,
+`docs/manuscript/verify-numbers.py` and `docs/round14/WP-M-manuscript.md`; the latter
+two are concurrent manuscript-work files inventoried read-only, not WP-A edits.
+
+Q45's missing-source issue is resolved by removing the claim; no rejected-save
+rate is inferred. Q46's three wording flags are resolved. The unchanged protected
+“LLM agent” lane label was not among the authorised substitutions and remains
+as before. Author declarations, rater credentials and final manuscript/reference
+assembly/pagination remain the reporting-map author-completion items. The
+original local-log figure pipeline cannot be fully rerun on this Linux checkout;
+the dedicated frozen-scene re-render and direct baseline proofs are provided
+instead. No new numerical or WP-A3 implementation issue remains.

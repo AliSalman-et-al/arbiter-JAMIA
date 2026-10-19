@@ -120,3 +120,14 @@ Queued for the final polish round:
 1. **Hypothesis wording.** The Objective says "We hypothesised… that differences in elicited answers would contribute beyond rule arithmetic". That analysis was post hoc. Write it as a post hoc question.
 2. **Supplement numbering.** Only 7 supplementary items are cited, in this order: eTable 3 → 1 → 2 → 21 → 23 → 28 → 11–14. Renumber the supplement in manuscript citation order. Every supplementary item must be cited at least once, for example through grouped pointers in Methods and Results.
 3. **ANALYSIS-PLAN section 7.** Correct the description of the Unassisted arm as the minimal-prompt condition, after WP-A3 finishes.
+
+## WP-A3 review, 2026-10-19
+
+**Verdict:** accepted.
+
+- The three Figure 1 and 2 strings changed. Nothing else in the SVGs changed, and no pixels outside the labels changed.
+- The orchestrator inspected Figure1.png directly.
+- The 53/637 claim is gone from every output.
+- Table 4's notes cite eTable 32.
+- 7,693 cells are unchanged, and 610 assertions pass.
+- ANALYSIS-PLAN section 7 now describes the Unassisted arm correctly, as the minimal-prompt condition.

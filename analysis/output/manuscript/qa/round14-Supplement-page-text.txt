@@ -1,7 +1,7 @@
-1: 2080 chars: ARBITER: Supplementary material Contents Methods appendix · Supplementary results · Prompt templates and example · Run provenance eTable 1.
-2: 1466 chars: Methods appendix Algorithms and validation The official 22 August 2019 RoB 2 algorithms were implemented for D1 randomisation, D2 deviations
+1: 2154 chars: ARBITER: Supplementary material Contents Methods appendix · Supplementary results · Prompt templates and example · Run provenance eTable 1.
+2: 1666 chars: Methods appendix Algorithms and validation The official 22 August 2019 RoB 2 algorithms were implemented for D1 randomisation, D2 deviations
 3: 5786 chars: API list-price reconstruction Costs are frozen-rate API list-price equivalents, not expenditure. USD rates per million tokens are: Sonnet in
-4: 2258 chars: explicitly stated for 62 label sets, overlapping these categories. Source: benchmark README-FOR-ALI.md,  LABEL-TARGETS.csv and per-review BI
+4: 2366 chars: explicitly stated for 62 label sets, overlapping these categories. Source: benchmark README-FOR-ALI.md,  LABEL-TARGETS.csv and per-review BI
 5: 2975 chars: eTable 1. Benchmark trials span sixteen meta-analyses Specialty Journal and year Topic Trials Published D1–D5 labels (Low/SC/High) Overall
 6: 2823 chars: eTable 2. Published label distributions by domain Specialty Topic Trials D1 D2 D3 D4 D5 General medicine Clopidogrel vs aspirin for  seconda
 7: 2003 chars: eTable 3. AVATAR complete trace Part A. Answers and judgements Question ARBITER Evidence handles (type) Justification Unknowns Countereviden
@@ -58,4 +58,7 @@
 58: 1904 chars: eTable 30. Token reconciliation and compaction diagnostics Measure ARBITER (Sonnet 5.5) Unassisted (Sonnet 5.5) Main-thread request input to
 59: 2988 chars: eTable 31. Exploratory signalling-answer agreement Adjudicator 1 SQ Signalling question ARBITER (Sonnet 5.5) Unassisted (Sonnet 5.5) 1.1 Ran
 60: 3000 chars: eTable 31 (continued). Exploratory signalling-answer agreement Adjudicator 2 SQ Signalling question ARBITER (Sonnet 5.5) Unassisted (Sonnet
-61: 2069 chars: Prompt templates and a filled example ARBITER template /arbiter-assess Assess risk of bias for {outcome} defined as {definition} in {trial}.
+61: 3556 chars: eTable 32. Evidence and quotation locations for the prior-work comparison Study Quoted cell evidence and locations Source [ref: Marshall  20
+62: 2805 chars: Study Quoted cell evidence and locations Source [ref: Choi 2026] Code rules — Yes: “implemented in code” — Methods, RoB 2.0 Algorithm  Imple
+63: 2373 chars: Study Quoted cell evidence and locations Source This study  (ARBITER) Code rules — Yes: “ARBITER's server proposes the algorithm judgement.”
+64: 2069 chars: Prompt templates and a filled example ARBITER template /arbiter-assess Assess risk of bias for {outcome} defined as {definition} in {trial}.

@@ -291,7 +291,7 @@ def draw_workflow(data):
     draw_actor_icon(s,25,88,'model')
     s.text(47,94,'LLM agent',11,'bold',LLM)
     s.text(47,107,'Follows the',10,color=GREY);s.text(47,119,'assessment guide',10,color=GREY)
-    for cx,top,bottom in zip(centers,['Locate trial reports','Specify the outcome','Read text or page images','Review the answers'],['and registry records','and analysis to assess','Select and cite evidence','and supporting evidence']):
+    for cx,top,bottom in zip(centers,['Locate trial reports','Specify the outcome','Read text or page images','Review the answers'],['and registry records','and analysis to assess','Select and cite evidence','and cited evidence']):
         if cx==476:
             for y,label in zip([92,105,118],[top,bottom,'Answer RoB 2 questions']):s.text(cx,y,label,10,'bold',LLM,anchor='middle')
         else:
@@ -309,7 +309,7 @@ def draw_workflow(data):
     draw_actor_icon(s,25,218,'server')
     s.text(47,225,'ARBITER server',11,'bold')
     s.text(47,238,'Rule-based software',10);s.text(47,250,'No AI',10)
-    for cx,phrases in zip(centers,[['Store an unchangeable','copy of each source'],['Check and record','the choice'],['Check every quote','Apply the RoB 2 rules'],['Keep the full record','Package the audit file','Write the HTML report']]):
+    for cx,phrases in zip(centers,[['Store a content-hashed','copy of each source'],['Check and record','the choice'],['Check every quote','Apply the RoB 2 rules'],['Keep the full record','Package the audit file','Write the HTML report']]):
         for j,phrase in enumerate(phrases):s.text(cx,(231 if len(phrases)==2 else 218)+j*12,phrase,10,'bold',anchor='middle')
     s.text(616,256,'arbiter report',10,'mono',GREY,anchor='middle')
     for x in [266,406,546]:s.line(x,211,x,257,dotted=True,sw=.6)
