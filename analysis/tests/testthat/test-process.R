@@ -7,21 +7,18 @@ test_that('streamed extraction stops on absent inputs and never writes empty CSV
 
 test_that('committed derived files cover exactly the analysis set and preserve continue counts', {
   m <- load_run_metrics(file.path(analysis_dir,'data-derived'))
-  expect_equal(nrow(m),408L)
+  expect_equal(nrow(m),204L)
   expect_false(any(m$slug %in% EXCLUDED))
   expect_equal(m$continues,m$continues_csv)
   expect_true(all(is.na(m$approved[grepl('Baseline',m$arm)])))
   expect_true(all(m$approved[startsWith(m$arm,'ARBITER')]))
 })
 
-test_that('proposals follow official algorithms and the single departure is recorded', {
+test_that('proposals follow official algorithms and no Sonnet departure is recorded', {
   m <- load_run_metrics(file.path(analysis_dir,'data-derived'))
   d <- bundle_decision_cells(m)
   expect_no_error(validate_proposed_gate(d,inputs$labels))
-  expect_equal(sum(d$override),1L)
-  expect_equal(d$slug[d$override],'hill-2017')
-  expect_true(nzchar(d$rationale[d$override]))
-  expect_true(nzchar(d$evidence[d$override]))
+  expect_equal(sum(d$override),0L)
   d$proposed[1] <- 'incorrect'
   expect_error(validate_proposed_gate(d,inputs$labels),'bundle validation gate failed')
 })

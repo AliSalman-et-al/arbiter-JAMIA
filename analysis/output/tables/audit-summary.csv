@@ -1,19 +1,10 @@
 metric,estimate,lower,upper,valid_replicates,n,count,arm,note
-Evidence coverage,1,1,1,10000,1538,1538,ARBITER-Sonnet,
-Bundle verification,1,1,1,10000,102,102,ARBITER-Sonnet,
-Structural evidence binding (overall),1,1,1,10000,1421,1421,ARBITER-Sonnet,
-Text-span evidence binding,1,1,1,10000,1407,1407,ARBITER-Sonnet,
-Visual evidence binding,1,1,1,9996,14,14,ARBITER-Sonnet,
-Other evidence records,0,0,0,10000,1421,0,ARBITER-Sonnet,
-Trials using visual evidence,0.0784313725490196,0.029411764705882353,0.12745098039215685,10000,102,8,ARBITER-Sonnet,
-Evidence coverage,,,,0,,,Baseline-Sonnet,Not available
-Bundle verification,,,,0,,,Baseline-Sonnet,Not available
-Evidence coverage,1,1,1,10000,1552,1552,ARBITER-Haiku,
-Bundle verification,1,1,1,10000,102,102,ARBITER-Haiku,
-Structural evidence binding (overall),1,1,1,10000,1260,1260,ARBITER-Haiku,
-Text-span evidence binding,1,1,1,10000,1255,1255,ARBITER-Haiku,
-Visual evidence binding,1,1,1,9871,5,5,ARBITER-Haiku,
-Other evidence records,0,0,0,10000,1260,0,ARBITER-Haiku,
-Trials using visual evidence,0.0392156862745098,0.00980392156862745,0.0784313725490196,10000,102,4,ARBITER-Haiku,
-Evidence coverage,,,,0,,,Baseline-Haiku,Not available
-Bundle verification,,,,0,,,Baseline-Haiku,Not available
+Evidence coverage,1,1,1,10000,1538,1538,ARBITER (Sonnet 5.5),
+Bundle verification,1,1,1,10000,102,102,ARBITER (Sonnet 5.5),
+Structural evidence binding (overall),1,1,1,10000,1421,1421,ARBITER (Sonnet 5.5),
+Text-span evidence binding,1,1,1,10000,1407,1407,ARBITER (Sonnet 5.5),
+Visual evidence binding,1,1,1,9996,14,14,ARBITER (Sonnet 5.5),
+Other evidence records,0,0,0,10000,1421,0,ARBITER (Sonnet 5.5),
+Trials using visual evidence,0.0784313725490196,0.029411764705882353,0.12745098039215685,10000,102,8,ARBITER (Sonnet 5.5),
+Evidence coverage,,,,0,,,Unassisted (Sonnet 5.5),Not available
+Bundle verification,,,,0,,,Unassisted (Sonnet 5.5),Not available

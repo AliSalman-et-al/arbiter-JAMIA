@@ -1,0 +1,11 @@
+study_id,citation_short,doi,tool,n_trials,rules_applied_in_code,rules_enforced_during_assessment,rule_breaks_measured,quotations_verified_against_stored_source,audit_file,agent_with_tools,reference_standard,independent_reference_or_adjudication,input_parity_registry_protocol,note_marks
+eisele_metzger_2025,"Eisele-Metzger 2025, Res Synth Methods (Claude 2)",10.1017/rsm.2025.12,RoB 2,100,Not reported,No,Partly,Not reported,Not reported,No,Cochrane labels; limited author discrepancy review,Partly,No,a
+huang_2025,"Huang 2025, J Med Internet Res",10.2196/70450,RoB 2,46,Partly,No,Partly,Not reported,Not reported,Not reported,3-reviewer consensus and Cochrane labels,Yes,Partly,b
+lai_2026,"Lai 2026, J Med Internet Res",10.2196/84915,RoB 2,29,Not reported,No,Not reported,Not reported,Not reported,Not reported,Cochrane labels; corrected-label sensitivity analysis,Partly,Not reported,c
+nyrhi_2026,"Nyrhi 2026, EBioMedicine",10.1016/j.ebiom.2026.106238,RoB 2,100,Not reported,No,Not reported,Not reported,Not reported,No,Published meta-analysis labels,No,Partly,d
+gandhi_2026,"Gandhi 2026, PLoS One",10.1371/journal.pone.0353155,RoB 2,50,Not reported,No,Not reported,Not reported,Not reported,Partly,Masked 3-person panel,Yes,No,e
+choi_2026,"Choi 2026, J Evid-Based Pract",10.63528/jebp.2026.00011,RoB 2,1,Yes,Partly,Yes,Not reported,Not reported,Partly,Single experienced reviewer; transcription errors corrected,Yes,Not reported,f
+hevia_2025,"Hevia 2025, ROBoto2, EMNLP demos",10.18653/v1/2025.emnlp-demos.2,RoB 2,521,Yes,Partly,Not reported,Not reported,Partly,Partly,Expert manual assessments (245-report evaluation subset),Yes,Not reported,g
+liang_2026,"Liang 2026, JMIR AI",10.2196/93761,RoB 2,97,Not reported,No,Not reported,Partly,Partly,Partly,Cochrane labels,No,Not reported,h
+saadi_2026,"Saadi 2026, BMJ Digit Health AI",10.1136/bmjdh-2026-000034,ROBINS-I,171,Not reported,No,Not reported,Not reported,Not reported,Partly,Concordant published ratings from 2 human teams,Partly,No,i
+arbiter,This study (ARBITER),,RoB 2,102,Yes,Yes,Yes,Yes,Yes,Yes,blinded adjudication of disagreement cells,Yes,Yes,j

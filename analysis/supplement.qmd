@@ -4,6 +4,7 @@ title: "ARBITER: supplementary analyses"
 
 ```{r}
 source('R/load.R')
+source('R/publication-io.R')
 source('R/presentation.R')
 source('R/manuscript-tables.R')
 source('R/manuscript-supplement.R')
@@ -42,12 +43,6 @@ for(i in seq_along(entries)) {
 }
 ```
 
-## eFigure 2. ARBITER-only choices outnumbered Unassisted-only choices
-
-![Disagreement patterns and the adjudicators’ agreed choices form a count matrix; split cells appear separately.](output/manuscript/eFigure2.png)
-
-ARBITER-only choices were more frequent than Unassisted-only choices. Rows group disputed cells by disagreement with the published review label; columns show the adjudicators’ agreed choice or split. Counts use label equality; shared labels count as both arms preferred. A cell is one trial × domain.
-
 ## Prompt templates and filled example
 
 ```{r}
@@ -58,4 +53,4 @@ for(i in seq_len(nrow(prompts))) cat('\n### ',reader_label(prompts$type[i],TRUE)
 
 ## Run provenance
 
-Models: claude-sonnet-5-5 and claude-haiku-5-5; effort medium; Claude Code 2.1.278; isolated configuration homes. ARBITER 1.0.0, public commit 2f549ae30f056ff441ea61a04b719968716f2219. Sonnet with ARBITER ran 12 October 2026; other arms ran 14 October 2026. The proposed result was approved unchanged; up to two uncoached Continue replies per phase were permitted. Each arm ran each trial once. Trial PDFs are not redistributed; source DOIs and FILES.csv hashes identify them. See the Word supplement for the full provenance statement.
+Model: claude-sonnet-5-5; effort medium; Claude Code 2.1.278; isolated configuration homes. ARBITER 1.0.0, public commit 2f549ae30f056ff441ea61a04b719968716f2219. Sonnet with ARBITER ran 12 October 2026; other arms ran 14 October 2026. The proposed result was approved unchanged; up to two uncoached Continue replies per phase were permitted. Each arm ran each trial once. Trial PDFs are not redistributed; source DOIs and FILES.csv hashes identify them. See the Word supplement for the full provenance statement.

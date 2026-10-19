@@ -1,9 +1,9 @@
-MAIN_TABLE_TITLES <- c(
+LEGACY_TABLE_TITLES <- c(
   'Sixteen meta-analyses across 15 specialties supplied the benchmark',
   'ARBITER detected more of the risk flagged by published reviews, at lower specificity',
   'Without ARBITER, 1 in 8 domain ratings broke the RoB 2 rules',
   'Before seeing any label, both adjudicators’ own ratings agreed with ARBITER far more than with the unassisted model or the published review')
-manuscript_data <- function(name) readr::read_csv(paste0('output/tables/',name,'.csv'),show_col_types=FALSE)
+manuscript_data <- function(name) read_manuscript_data(name)
 COMPOSITE_NOTE <- paste('Reference: the adjudicators’ agreed choice where both agreed; published labels elsewhere.',
   'Excludes 25 divided decisions (485 cells per arm). Only three labels were offered.',
   'Unreviewed cells where both Sonnet arms matched published labels are assumed correct.',
@@ -99,7 +99,7 @@ main_table3 <- function() {
     group_row(filter(out,domain=='Audit') |> select(Measure,Unassisted,ARBITER),'Evidence and audit'))
 }
 
-main_table4 <- function() {
+reliability_table <- function() {
   x <- manuscript_data('table4-reliability') |> filter(metric!='AC2') |> agreement_display('comparison')
   between <- filter(x,startsWith(comparison,'A vs Z')) |>
     mutate(comparison=if_else(grepl('independent',comparison),'Independent ratings','Ratings chosen after seeing labels'))
@@ -111,17 +111,17 @@ main_table4 <- function() {
   bind_rows(group_row(between,'Between adjudicators'),parts[[1]],parts[[2]]) |>
     rename(Comparison=comparison,`Raw agreement`=`Exact agreement`)
 }
-main_table_notes <- function() {
+legacy_table_notes <- function() {
   notes <- list(
   paste('SC, Some concerns; RoB 2, risk of bias tool for randomised trials. Counts are published labels pooled across D1\u2013D5.',
     paste0('Per-domain distributions: eTable ',supplement_number('Published label distributions by domain'),'.'),
     'Overall given indicates whether published Overall labels are available; total is labelled trials/all trials.',
     'The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses.',TOPIC_ABBREVIATIONS),
-  paste('Published means published review label. Values are coefficients or percentages (95% CI); denominators are in block labels. ¹ Sensitivity for Some concerns or High; specificity is the share of published Low ratings also rated Low. All-Low rule has no variance; only accuracy and specificity are reported. Paired differences are coefficients or percentage points; — indicates undefined or not applicable.',paste0('AC2 and composite-reference results: eTables ',supplement_number('Agreement against Published, all sources and domains'),' and ',supplement_number('Agreement against the composite reference, Sonnet only'),'. Full paired differences: eTables ',supplement_number('Paired differences against Published'),'–',supplement_number('Paired differences against the composite reference'),'.'),'Overall judgements were not adjudicated. Published labels were frequently less severe than the adjudicators’ agreed choice (Figure 4).',CI_NOTE),
+  paste('Published means published review label. Values are coefficients or percentages (95% CI); denominators are in block labels. ¹ Sensitivity for Some concerns or High; specificity is the share of published Low ratings also rated Low. All-Low rule has no variance; only accuracy and specificity are reported. Paired differences are coefficients or percentage points; — indicates undefined or not applicable.',paste0('AC2 and composite-reference results: eTables ',supplement_number('Agreement against Published, all sources and domains'),' and ',supplement_number('Agreement against the composite reference, Sonnet only'),'. Full paired differences: eTables ',supplement_number('Paired differences against Published'),' and ',supplement_number('Paired differences against the composite reference'),'.'),'Overall judgements were not adjudicated. Published labels were frequently less severe than the adjudicators’ agreed choice (Figure 4).',CI_NOTE),
   paste('Values are n/N (x.x%; 95% CI a–b) where an interval is shown. A rule break means a rating contradicts its own answers or a required question was skipped.',
-    'ARBITER computes proposed ratings from the official rules and requires complete answers. Recorded model overrides are in the supplement.',
+    'ARBITER computes proposed ratings from the official rules and requires complete answers; recorded overrides: 0/510.',
     'One ARBITER Overall rating used the permitted escalation; both arms followed the Overall rules in every trial.',
-    paste0('Full checks, skipped-question sensitivity and overrides: eTables ',supplement_number('RoB 2 consistency and structural audit, all sources and domains'),'–',supplement_number('Recorded model override'),'.'),
+    paste0('Full checks and skipped-question sensitivity: eTables ',supplement_number('RoB 2 consistency and structural audit, all sources and domains'),' and ',supplement_number('Invalid answer path sensitivity'),'.'),
     'One Unassisted domain lacks a rating and answers and is excluded (509 evaluable).',
     'Evidence coverage counts required answers citing a passage or image. Text and image checks count distinct cited records.',
     'ARBITER extracts quoted text and renders cited images. The model writes image descriptions; these are not checked against the images.',
@@ -134,7 +134,7 @@ main_table_notes <- function() {
 }
 build_main_tables <- function(inputs) {
   dir.create('output/manuscript',recursive=TRUE,showWarnings=FALSE)
-  tables <- list(benchmark_table(inputs),main_table2(),main_table3(),main_table4())
+  tables <- list(main_table2(),reliability_table(),main_table3(),prior_work_table())
   captions <- paste0('Table ',1:4,'. ',MAIN_TABLE_TITLES)
   notes <- main_table_notes()
   for(i in seq_along(tables)) {
@@ -145,8 +145,7 @@ build_main_tables <- function(inputs) {
   invisible(tables)
 }
 main_table_widths <- function(i) {
-  list(c(1.46,1.15,1.92,.40,1.50,.54),c(1.35,1.35,1.35,1.35,1.45),
-    c(2.95,2.2,1.7),c(3.1,1.65,2.1))[[i]]
+  list(c(1.35,1.35,1.35,1.35,1.45),c(3.1,1.65,2.1),c(2.95,2.2,1.7),c(1.35,.65,.85,.8,.65,.7,1.05,.9))[[i]]
 }
 # Word joiners preserve the en dash while prohibiting a line break on either side.
 main_table_no_break_ranges <- function(x) {
@@ -159,13 +158,46 @@ main_table_flextable <- function(x,i,note=main_table_notes()[[i]]) {
   ft <- house_table(x,note) |> flextable::width(j=seq_len(ncol(x)),width=main_table_widths(i))
   ft <- flextable::padding(ft,padding.left=main_table_padding(i),
     padding.right=main_table_padding(i),part='all')
-  if(i==1) {
+  if(FALSE) {
     ft <- flextable::padding(ft,padding.top=2,padding.bottom=2,part='all') |>
       flextable::set_header_labels(values=setNames(
         'Published\u00a0D1\u2060–\u2060D5\u00a0labels\n(Low/SC/High)',names(x)[5])) |>
       flextable::hline(i=nrow(x)-1,border=officer::fp_border(width=.6),part='body') |>
       flextable::bold(i=nrow(x),j=1,part='body')
   }
-  if(i>1) ft <- style_group_rows(ft,x)
+  if(i<4) ft <- style_group_rows(ft,x)
   ft
+}
+
+MAIN_TABLE_TITLES <- c(LEGACY_TABLE_TITLES[c(2,4,3)],
+  'ARBITER combines rule enforcement, source verification and blinded adjudication')
+main_table_notes <- function() {
+  old <- legacy_table_notes()
+  list(old[[2]],old[[4]],old[[3]],prior_work_note())
+}
+prior_work_table <- function() {
+  path <- 'data-curated/prior-work-comparison.csv'
+  if(!file.exists(path)) {
+    warning('Table 4 awaits WP-T; using explicitly labelled schema fixture')
+    path <- 'tests/fixtures/prior-work-comparison.csv'
+  }
+  x <- readr::read_csv(path,show_col_types=FALSE)
+  x |> transmute(Study=paste0(citation_short,if_else(is.na(note_marks),'',paste0(' [',note_marks,']'))),
+    `Rules in code`=rules_applied_in_code,`Rules enforced during assessment`=rules_enforced_during_assessment,
+    `Quotations verified`=quotations_verified_against_stored_source,`Audit file`=audit_file,
+    `Agent with tools`=agent_with_tools,`Independent reference or adjudication`=independent_reference_or_adjudication,
+    `Input parity`=input_parity_registry_protocol)
+}
+prior_work_note <- function() {
+  path <- 'data-curated/prior-work-comparison.csv'
+  if(!file.exists(path)) return('SCHEMA FIXTURE ONLY. Table 4 awaits WP-T; no study claims are populated.')
+  x <- readr::read_csv(path,show_col_types=FALSE)
+  cited <- x |> filter(!is.na(doi),nzchar(doi))
+  citations <- paste(paste0(cited$citation_short,': ',cited$doi),collapse='; ')
+  notes <- if(file.exists('data-curated/prior-work-comparison-notes.md'))
+    paste(readLines('data-curated/prior-work-comparison-notes.md',warn=FALSE),collapse=' ') else ''
+  # WP-T ends with publication footnotes; the evidence ledger remains in its source file.
+  if(grepl('## Footnote texts for the table',notes,fixed=TRUE)) notes <- sub('(?is).*## Footnote texts for the table[[:space:]]*', '',notes,perl=TRUE) else notes <- ''
+  paste('Yes, Partly, No and Not reported follow the source evidence; No denotes demonstrated absence.',
+    'Quotations verified means checked against a stored source. Input parity concerns registry/protocol access across comparison arms.',citations,notes)
 }

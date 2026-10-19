@@ -1,12 +1,6 @@
 arm,status,n
-ARBITER-Sonnet,Consistent,510
-Baseline-Sonnet,Consistent,444
-Baseline-Sonnet,Invalid answer path,39
-Baseline-Sonnet,Not evaluable,1
-Baseline-Sonnet,Violation,26
-ARBITER-Haiku,Consistent,504
-ARBITER-Haiku,Not evaluable,5
-ARBITER-Haiku,Reported departure,1
-Baseline-Haiku,Consistent,330
-Baseline-Haiku,Invalid answer path,48
-Baseline-Haiku,Violation,132
+ARBITER (Sonnet 5.5),Consistent,510
+Unassisted (Sonnet 5.5),Consistent,444
+Unassisted (Sonnet 5.5),Required question skipped,39
+Unassisted (Sonnet 5.5),Not evaluable,1
+Unassisted (Sonnet 5.5),Rating contradicts its own answers,26

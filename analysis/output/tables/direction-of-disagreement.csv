@@ -1,0 +1,5 @@
+metric,estimate,lower,upper,valid_replicates,source,direction,n,count,split,published_upheld,other_label,analysis
+share,0.948051948051948,0.9036144578313253,0.9868421052631579,10000,ARBITER,Stricter,77,73,11,2,2,Post hoc
+share,0.7857142857142857,0.6363636363636364,0.9166666666666666,10000,ARBITER,More lenient,28,22,8,6,0,Post hoc
+share,0.8135593220338984,0.732388078470825,0.8936170212765957,10000,Unassisted,Stricter,59,48,10,10,1,Post hoc
+share,0.5,0.34375,0.6579107830551988,10000,Unassisted,More lenient,38,19,8,17,2,Post hoc

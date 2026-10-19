@@ -2,7 +2,7 @@ load_run_metrics <- function(directory='data-derived') {
   paths <- file.path(directory,paste0(tolower(names(ARMS)),'.csv'))
   if(!all(file.exists(paths))) stop('Derived run metrics absent. Run Rscript R/extract-run-metrics.R with raw logs available.')
   out <- bind_rows(lapply(paths,function(p) readr::read_csv(p,show_col_types=FALSE)))
-  stopifnot(nrow(out)==408L,!anyDuplicated(paste(out$arm,out$slug)))
+  stopifnot(nrow(out)==204L,!anyDuplicated(paste(out$arm,out$slug)))
   out
 }
 
@@ -77,8 +77,7 @@ validate_proposed_gate <- function(decisions,labels) {
     any(observed$adopted!=observed$label) || any(observed$override & !observed$recorded))
     stop('Proposed-judgement bundle validation gate failed')
   overrides <- filter(observed,override)
-  if(nrow(overrides)!=1L || overrides$arm!='ARBITER-Haiku' || overrides$slug!='hill-2017' || overrides$domain!='D1')
-    stop('Unexpected override inventory')
+  if(nrow(overrides)) stop('Unexpected Sonnet override inventory')
   invisible(TRUE)
 }
 

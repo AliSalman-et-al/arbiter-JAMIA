@@ -1,7 +1,7 @@
 # Display transformations only. Statistical objects and CSVs are never modified.
 if(.Platform$OS.type=='windows') Sys.setlocale('LC_CTYPE','English_United States.utf8')
 JAMA_ROLES <- c(ARBITER='#00A1D5',Unassisted='#DF8F44',Published='#374E55',
-  Split='#D9D9D9',`ARBITER (Haiku 5.5)`='#80D0EA',`Unassisted (Haiku 5.5)`='#EFC7A2')
+  Split='#D9D9D9')
 
 reader_answer <- function(x) {
   labels <- c(yes='Yes',no='No',probably_yes='Probably yes',probably_no='Probably no',
@@ -33,7 +33,10 @@ reader_html_text <- function(path) {
 }
 
 reader_label <- function(x, supplement=FALSE) {
-  replacements <- c('Algorithm violation'='Rating contradicts its own answers',
+  replacements <- c('ARBITER more severe'='ARBITER stricter than Unassisted',
+    'ARBITER less severe'='ARBITER more lenient than Unassisted',
+    'More severe'='Stricter','Less severe'='More lenient',
+    'Split sensitivity'='Counting split decisions against ARBITER','Algorithm violation'='Rating contradicts its own answers',
     'Invalid answer path'='Required question skipped','Any departure'='Any rule break',
     'consensus cells'='cells where both adjudicators agreed','split cells'='cells where adjudicators split',
     'Consensus losses'='Ratings not chosen by either adjudicator','Not Low'='Some concerns or High','not low'='Some concerns or High',
@@ -49,7 +52,6 @@ reader_label <- function(x, supplement=FALSE) {
     'decisive questions'='questions that alone changed the rating',
     'decisive question'='question that alone changed the rating','ARBITER-Sonnet'=if(supplement) 'ARBITER (Sonnet 5.5)' else 'ARBITER',
     'Baseline-Sonnet'=if(supplement) 'Unassisted (Sonnet 5.5)' else 'Unassisted',
-    'ARBITER-Haiku'='ARBITER (Haiku 5.5)','Baseline-Haiku'='Unassisted (Haiku 5.5)',
     'A vs Z'='Adjudicator 1 vs Adjudicator 2','Adjudicator A'='Adjudicator 1',
     'Adjudicator Z'='Adjudicator 2','A independent'='Adjudicator 1 independent',
     'Z independent'='Adjudicator 2 independent','Baseline imbalance'='Preintervention imbalance','meta-label'='published-label',
@@ -61,6 +63,9 @@ reader_label <- function(x, supplement=FALSE) {
   for(k in names(replacements)) x <- gsub(k,replacements[[k]],x,fixed=TRUE)
   x <- gsub('All-Low rule rule','All-Low rule',x,fixed=TRUE)
   x <- gsub('D1-D5','D1\u2013D5',x,fixed=TRUE)
+  x[x=='kappa'] <- 'Weighted κ'; x[x=='accuracy'] <- 'Exact agreement'
+  x[x=='sensitivity'] <- 'Sensitivity'; x[x=='specificity'] <- 'Specificity'; x[x=='share'] <- 'Share'
+  x[x=='Consensus'] <- 'Both adjudicators agreed'
   x[x=='Meta'] <- 'Published'; x[x=='A'] <- 'Adjudicator 1'; x[x=='Z'] <- 'Adjudicator 2'
   x
 }

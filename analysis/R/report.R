@@ -17,7 +17,7 @@ estimate_ci <- function(x) {
 }
 arm_order <- function(x) {
   if('arm' %in% names(x)) x <- x[order(match(x$arm,c('ARBITER-Sonnet','Baseline-Sonnet','All-Low',
-    'ARBITER-Haiku','Baseline-Haiku','Meta'))),,drop=FALSE]
+    'Meta'))),,drop=FALSE]
   x
 }
 format_estimates <- function(x) {

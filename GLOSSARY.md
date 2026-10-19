@@ -14,7 +14,7 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 **Adjudicator**: One of two blinded human reviewers who re-assessed the disputed cells. Outputs call them Adjudicator 1 and Adjudicator 2. The data files call them A and Z: A is Adjudicator 1 and Z is Adjudicator 2.
 
-**Independent judgement**: An adjudicator's own domain judgement, made before they saw any other source. The data files call it `own`.
+**Independent judgement**: An adjudicator's own domain judgement, made from the trial documents and frozen before they saw any label. No AI was used. The data files call it `own`.
 
 **Preferred judgement**: The label an adjudicator picked as most defensible among three blinded reviewers. Each blinded reviewer was a meta label, a baseline-arm label or an ARBITER-arm label, in random order. The data files call it `chosen_label`.
 

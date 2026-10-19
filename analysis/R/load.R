@@ -2,8 +2,7 @@ library(dplyr)
 library(tidyr)
 LABELS <- c('Low', 'Some concerns', 'High')
 EXCLUDED <- c('atwine-2020', 'haney-2004', 'herrmann-2016')
-ARMS <- c('ARBITER-Sonnet'='kit-sonnet-5.5', 'Baseline-Sonnet'='no-kit-sonnet-5.5',
-          'ARBITER-Haiku'='kit-haiku-5.5', 'Baseline-Haiku'='no-kit-haiku-5.5')
+ARMS <- c('ARBITER-Sonnet'='kit-sonnet-5.5', 'Baseline-Sonnet'='no-kit-sonnet-5.5')
 clean_label <- function(x) {
   x <- trimws(x)
   x[!x %in% LABELS] <- NA_character_

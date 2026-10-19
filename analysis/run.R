@@ -9,17 +9,18 @@ validate_gate(checks)
 weights <- stratified_cluster_weights(inputs$trials,B,SEED)
 cells <- adjudication_cells(inputs)
 run_metrics <- load_run_metrics()
-bundle_bindings <- readr::read_csv('data-derived/bundle-binding-counts.csv',show_col_types=FALSE)
-stopifnot(nrow(bundle_bindings)==204L,!anyDuplicated(paste(bundle_bindings$arm,bundle_bindings$slug)),
+
+bundle_bindings <- readr::read_csv('data-derived/bundle-binding-counts.csv',show_col_types=FALSE) |> filter(arm %in% names(ARMS))
+stopifnot(nrow(bundle_bindings)==102L,!anyDuplicated(paste(bundle_bindings$arm,bundle_bindings$slug)),
   setequal(bundle_bindings$slug,inputs$trials$slug))
-api_trials <- readr::read_csv('data-derived/api-cost-trials.csv',show_col_types=FALSE)
-api_turns <- readr::read_csv('data-derived/api-cost-turns.csv',show_col_types=FALSE)
+api_trials <- readr::read_csv('data-derived/api-cost-trials.csv',show_col_types=FALSE) |> filter(arm %in% names(ARMS))
+api_turns <- readr::read_csv('data-derived/api-cost-turns.csv',show_col_types=FALSE) |> filter(arm %in% names(ARMS))
 run_metrics <- run_metrics |> rename(harness_cost_usd=cost_usd) |>
   left_join(api_trials |> select(arm,slug,cost_usd=point),by=c('arm','slug'))
-stopifnot(nrow(run_metrics)==408L,!anyNA(run_metrics$cost_usd))
+stopifnot(nrow(run_metrics)==204L,!anyNA(run_metrics$cost_usd))
 bundle_decisions <- bundle_decision_cells(run_metrics)
 validate_proposed_gate(bundle_decisions,inputs$labels)
-bundle_paths <- readr::read_csv('data-derived/bundle-path-checks.csv',show_col_types=FALSE)
+bundle_paths <- readr::read_csv('data-derived/bundle-path-checks.csv',show_col_types=FALSE) |> filter(arm %in% names(ARMS))
 stopifnot(!any(bundle_paths$invalid_path),!any(bundle_paths$invalid_active_answer),
   all(bundle_paths$active_questions==bundle_paths$active_answered),
   sum(bundle_paths$final)==nrow(bundle_decisions))
@@ -29,7 +30,9 @@ save_table <- function(x,name) {
   names(x)[names(x)=='kit'] <- 'ARBITER_label'
   names(x)[names(x)=='nokit'] <- 'Baseline_label'
   if('arm' %in% names(x)) x <- x[order(match(x$arm,c('ARBITER-Sonnet','Baseline-Sonnet',
-    'All-Low','ARBITER-Haiku','Baseline-Haiku','Meta'))),,drop=FALSE]
+    'All-Low','Meta'))),,drop=FALSE]
+  name <- publication_filename(name)
+  x <- publication_labels(x)
   readr::write_csv(x,paste0('output/tables/',name,'.csv'),na='')
 }
 cost_summary <- api_trials |> group_by(arm) |> summarise(across(
@@ -45,12 +48,10 @@ save_table(api_turns |> mutate(has_side=side_input+side_write1+side_write5+side_
   side_without_compaction=sum(side_without_compaction),.groups='drop'),'api-token-reconciliation')
 save_table(process_summary(run_metrics),'process-summary')
 save_table(process_display(run_metrics,weights),'table5')
-save_table(process_display(run_metrics,weights,'Haiku'),'table5-haiku')
 save_table(paired_process_difference(run_metrics,weights),'process-differences')
 save_table(audit_summary(run_metrics,weights,bundle_bindings),'audit-summary')
 save_table(evidence_distribution(run_metrics),'evidence-bases-distribution')
 save_table(bundle_decisions,'bundle-domain-checks')
-save_table(bundle_decisions |> filter(override),'recorded-overrides')
 save_table(tibble(seed=SEED,replicates=B,coding_sample_seed=20261019L,
   rng_kind=RNGkind()[1],quantile_type=7),'reproducibility')
 primary <- bind_rows(lapply(c('Consensus','A','Z','Split sensitivity'),function(s) win_share(cells,weights,s)))
@@ -86,7 +87,7 @@ agreement_outputs <- function(labels,reference,exclude_missing=FALSE) {
       }
       results[[paste(g,a)]] <- out
     }
-    for(model in c('Sonnet','Haiku')) {
+    for(model in 'Sonnet') {
       aa <- paste0('ARBITER-',model); bb <- paste0('Baseline-',model)
       if(all(c(aa,bb) %in% names(reps))) differences[[paste(g,model)]] <-
         interval_table(reps[[aa]]-reps[[bb]]) |> mutate(comparison=paste(aa,'minus',bb),
@@ -106,13 +107,6 @@ for(a in c('A','Z')) {
   save_table(out$estimates,paste0('composite-',a))
   save_table(out$differences,paste0('composite-',a,'-differences'))
 }
-# Pairwise deletion uses the same retained cells in both Haiku arms.
-missing_keys <- inputs$labels |> filter(arm=='ARBITER-Haiku',is.na(label)) |> select(slug,domain)
-observed <- inputs$labels |> filter(grepl('Haiku',arm)) |> anti_join(missing_keys,by=c('slug','domain'))
-missing_sensitivity <- agreement_outputs(observed,'Meta; missing Haiku cells excluded',TRUE)
-save_table(missing_sensitivity$estimates,'missing-sensitivity')
-save_table(missing_sensitivity$differences,'missing-sensitivity-differences')
-
 save_table(checks,'domain-consistency-cells')
 save_table(invalid_path_sensitivity(inputs,checks),'invalid-path-sensitivity')
 save_table(checks |> filter(startsWith(arm,'ARBITER'),status=='Reported departure'),'algorithm-mismatches')
@@ -176,13 +170,17 @@ for(name in c('cells','counts','frequency','issues','eligibility'))
 save_table(localisation$candidates,'discussion-quote-candidates')
 if(file.exists('R/materials.R')) { source('R/materials.R'); build_materials(inputs,cells) }
 # Figure 1 is maintained separately. Its code and outputs are not regenerated here.
-save_table(disagreement_pattern_counts(cells),'efigure2-disagreement-patterns')
 save_table(published_direction_counts(cells),'published-direction-domain')
 save_table(vindicated_disagreements(cells),'vindicated-disagreements')
 save_table(severity_win_share(cells,weights),'severity-win-share')
 save_table(no_decisive_counts(localisation$cells),'no-decisive-counts')
+posthoc <- rules_only_recomputation(inputs$labels,checks,cells,weights)
+for(nm in names(posthoc)) save_table(posthoc[[nm]],paste0('rules-only-recomputation-',nm))
+save_table(direction_of_disagreement(cells,weights),'direction-of-disagreement')
+save_table(unweighted_agreement(inputs$labels,weights),'agreement-unweighted')
 build_main_tables(inputs)
 build_manuscript_figures(cells)
 build_supplement(inputs)
 build_figure_legends()
 build_results_sentences()
+finish_publication_outputs()

@@ -1,0 +1,2 @@
+study_id,citation_short,doi,tool,n_trials,rules_applied_in_code,rules_enforced_during_assessment,rule_breaks_measured,quotations_verified_against_stored_source,audit_file,agent_with_tools,reference_standard,independent_reference_or_adjudication,input_parity_registry_protocol,note_marks
+fixture,Awaiting WP-T schema fixture only,,,,Not reported,Not reported,Not reported,Not reported,Not reported,Not reported,,Not reported,Not reported,

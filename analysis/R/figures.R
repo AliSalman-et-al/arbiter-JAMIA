@@ -1,6 +1,5 @@
 library(ggplot2)
-ARM_COLORS <- c('ARBITER-Sonnet'='#007f86','Baseline-Sonnet'='#c76b13',
-  'ARBITER-Haiku'='#007f86','Baseline-Haiku'='#c76b13')
+ARM_COLORS <- c('ARBITER-Sonnet'='#007f86','Baseline-Sonnet'='#c76b13')
 read_table <- function(name) readr::read_csv(paste0('output/tables/',name,'.csv'),show_col_types=FALSE)
 save_figure <- function(plot,name,width=9,height=6) {
   dir.create('output/figures',recursive=TRUE,showWarnings=FALSE)

@@ -5,11 +5,11 @@ title: "ARBITER manuscript results"
 ```{r}
 if(Sys.getenv('ARBITER_PRESENTATION_ONLY')=='1') source('build-round12.R') else source('run.R')
 source('R/report.R')
-main_tables <- list(benchmark_table(inputs),main_table2(),main_table3(),main_table4())
+main_tables <- list(main_table2(),reliability_table(),main_table3(),prior_work_table())
 legends <- figure_legend_sections()
 ```
 
-The benchmark compares ARBITER with an Unassisted model on 102 trials from 16 meta-analyses. Blinded adjudication of disputed domain judgements is the primary quantitative evidence. Sonnet 5.5 is the main analysis; Haiku 5.5 analyses appear in the [supplement](supplement.html). Each arm assessed each trial once.
+The benchmark compares ARBITER with an Unassisted model on 102 trials from 16 meta-analyses. Blinded adjudication of disputed domain judgements is the primary quantitative evidence. Both arms used Sonnet 5.5. Each arm assessed each trial once.
 
 ```{r}
 for(i in 1:6) {

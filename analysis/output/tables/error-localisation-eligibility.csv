@@ -1,4 +1,4 @@
 source,consensus_losses,primary,sensitivity
-ARBITER-Sonnet,13,10,12
-Baseline-Sonnet,60,47,57
-Meta,100,,
+ARBITER (Sonnet 5.5),13,10,12
+Unassisted (Sonnet 5.5),60,47,57
+Published,100,,

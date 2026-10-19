@@ -1,0 +1,3 @@
+1: 1074 chars: TRIPOD-LLM and GRRAS checklist skeleton Abbreviated topic labels map to official item identifiers. Authors must assess applicability and com
+2: 842 chars: Guideline Item Topic Page Section Notes TRIPOD-LLM 12 Compute TRIPOD-LLM 13 Ethics TRIPOD-LLM 14a Funding TRIPOD-LLM 14b Conflicts TRIPOD-LL
+3: 553 chars: Guideline Item Topic Page Section Notes GRRAS 7 Sampling GRRAS 8 Rating process  and blinding GRRAS 9 Independent  ratings GRRAS 10 Statisti

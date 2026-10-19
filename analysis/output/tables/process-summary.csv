@@ -1,45 +1,23 @@
 arm,metric,n,missing,median,q1,q3,total
-ARBITER-Sonnet,wall_seconds,102,0,456.75000000000006,367.90000000000003,630.6999999999999,70140.2
-ARBITER-Sonnet,input_tokens,102,0,96,86,104,9794
-ARBITER-Sonnet,cache_creation_tokens,102,0,493973,459698.25,544387,50695878
-ARBITER-Sonnet,cache_read_tokens,102,0,4964973,4483250.5,5585994.25,512867801
-ARBITER-Sonnet,output_tokens,102,0,21362,18913.5,24285.5,2237043
-ARBITER-Sonnet,thinking_tokens,102,0,3451,2595.75,4183.25,363154
-ARBITER-Sonnet,cost_usd,102,0,3.7778825,3.46215315,4.095009149999999,386.07207800000003
-ARBITER-Sonnet,turns,102,0,2,2,2,204
-ARBITER-Sonnet,agent_steps,102,0,60,54,71.75,6438
-ARBITER-Sonnet,continues,102,0,0,0,0,0
-ARBITER-Sonnet,approved,102,0,1,1,1,102
-Baseline-Sonnet,wall_seconds,102,0,27.200000000000003,22.55,31.200000000000003,2809.2
-Baseline-Sonnet,input_tokens,102,0,6,6,6,644
-Baseline-Sonnet,cache_creation_tokens,102,0,16789.5,10759.5,25804.5,1910531
-Baseline-Sonnet,cache_read_tokens,102,0,24690,24563.25,24957.5,3585005
-Baseline-Sonnet,output_tokens,102,0,2396.5,1927.25,2923.75,248579
-Baseline-Sonnet,thinking_tokens,102,0,1041,673,1348.25,108384
-Baseline-Sonnet,cost_usd,102,0,0.09411515000000001,0.06679682499999999,0.13349434999999998,10.4877025
-Baseline-Sonnet,turns,102,0,1,1,1,102
-Baseline-Sonnet,agent_steps,102,0,4,4,5,464
-Baseline-Sonnet,continues,102,0,0,0,0,0
-Baseline-Sonnet,approved,0,102,,,,
-ARBITER-Haiku,wall_seconds,102,0,482.55,407.375,558.5500000000001,68845.3
-ARBITER-Haiku,input_tokens,102,0,116,102.5,124,11792
-ARBITER-Haiku,cache_creation_tokens,102,0,567770,510502,617016.75,57619249
-ARBITER-Haiku,cache_read_tokens,102,0,5789667,5246519.25,6297647.25,586216581
-ARBITER-Haiku,output_tokens,102,0,55800,48436.25,63792.5,5718801
-ARBITER-Haiku,thinking_tokens,102,0,27743,23727.75,32435.25,2913354
-ARBITER-Haiku,cost_usd,102,0,1.1238980518665849,0.9913468510379713,1.2332042645512822,117.62551666940492
-ARBITER-Haiku,turns,102,0,2,2,2,208
-ARBITER-Haiku,agent_steps,102,0,68,63,74,6988
-ARBITER-Haiku,continues,102,0,0,0,0,4
-ARBITER-Haiku,approved,102,0,1,1,1,102
-Baseline-Haiku,wall_seconds,102,0,68,51.650000000000006,86.975,7020.1
-Baseline-Haiku,input_tokens,102,0,8,6,10,872
-Baseline-Haiku,cache_creation_tokens,102,0,39401,26737.25,59889.5,4432900
-Baseline-Haiku,cache_read_tokens,102,0,44218.5,24767,125434,8581878
-Baseline-Haiku,output_tokens,102,0,12027.5,9561.75,15164.25,1258831
-Baseline-Haiku,thinking_tokens,102,0,9975.5,7739.5,12977.25,1059135
-Baseline-Haiku,cost_usd,102,0,0.01469937,0.010865675,0.02044345,1.8527210651515151
-Baseline-Haiku,turns,102,0,1,1,1,102
-Baseline-Haiku,agent_steps,102,0,6,5,9,739
-Baseline-Haiku,continues,102,0,0,0,0,0
-Baseline-Haiku,approved,0,102,,,,
+ARBITER (Sonnet 5.5),wall_seconds,102,0,456.75000000000006,367.90000000000003,630.6999999999999,70140.2
+ARBITER (Sonnet 5.5),input_tokens,102,0,96,86,104,9794
+ARBITER (Sonnet 5.5),cache_creation_tokens,102,0,493973,459698.25,544387,50695878
+ARBITER (Sonnet 5.5),cache_read_tokens,102,0,4964973,4483250.5,5585994.25,512867801
+ARBITER (Sonnet 5.5),output_tokens,102,0,21362,18913.5,24285.5,2237043
+ARBITER (Sonnet 5.5),thinking_tokens,102,0,3451,2595.75,4183.25,363154
+ARBITER (Sonnet 5.5),cost_usd,102,0,3.7778825,3.46215315,4.095009149999999,386.07207800000003
+ARBITER (Sonnet 5.5),turns,102,0,2,2,2,204
+ARBITER (Sonnet 5.5),agent_steps,102,0,60,54,71.75,6438
+ARBITER (Sonnet 5.5),continues,102,0,0,0,0,0
+ARBITER (Sonnet 5.5),approved,102,0,1,1,1,102
+Unassisted (Sonnet 5.5),wall_seconds,102,0,27.200000000000003,22.55,31.200000000000003,2809.2
+Unassisted (Sonnet 5.5),input_tokens,102,0,6,6,6,644
+Unassisted (Sonnet 5.5),cache_creation_tokens,102,0,16789.5,10759.5,25804.5,1910531
+Unassisted (Sonnet 5.5),cache_read_tokens,102,0,24690,24563.25,24957.5,3585005
+Unassisted (Sonnet 5.5),output_tokens,102,0,2396.5,1927.25,2923.75,248579
+Unassisted (Sonnet 5.5),thinking_tokens,102,0,1041,673,1348.25,108384
+Unassisted (Sonnet 5.5),cost_usd,102,0,0.09411515000000001,0.06679682499999999,0.13349434999999998,10.4877025
+Unassisted (Sonnet 5.5),turns,102,0,1,1,1,102
+Unassisted (Sonnet 5.5),agent_steps,102,0,4,4,5,464
+Unassisted (Sonnet 5.5),continues,102,0,0,0,0,0
+Unassisted (Sonnet 5.5),approved,0,102,,,,

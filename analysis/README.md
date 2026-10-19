@@ -1,7 +1,6 @@
 # ARBITER JAMIA analysis
 
-The amended section 5.4 gate passes, with the isolated ARBITER-Haiku exception
-documented in [DEVIATIONS.md](DEVIATIONS.md). Main results and supplement rebuild
+The section 5.4 gate passes for all 510 ARBITER domain ratings. Main results and supplement rebuild
 all numerical outputs directly from the source inputs.
 
 From this directory, using R 4.6.1 and Quarto 1.10.19:
@@ -22,8 +21,8 @@ and denominator choices are documented in DEVIATIONS.md. Localisation audit rows
 parse issues, class counts, question frequencies and fixed-rule Discussion quote
 candidates are exported under output/tables/.
 
-The binding section 5.8 amendment is included. `data-derived/` contains four
-committed per-arm process/audit CSVs. To regenerate them with the raw logs and
+The binding section 5.8 amendment is included. `data-derived/` contains two reported
+per-arm process/audit CSVs. To regenerate them with the raw logs and
 bundles present, run `Rscript R/extract-run-metrics.R` from analysis/. It streams
 JSONL, validates usage against metadata and stops if logs are absent. Rendering
 reads only those derived CSVs, never raw logs or bundles. ARBITER proposals are
@@ -42,7 +41,9 @@ numeric precision; rendered tables format percentages and confidence intervals.
 
 The author amendment 69c73c6 supersedes harness pricing. Run
 `Rscript extract-api-costs.R` to reconstruct the frozen API list-price equivalents
-from raw logs. Table 5 uses per-trial point estimates. The supplement contains
-Haiku bounds, five-minute side-write sensitivity, unusable harness figures and
+from raw logs. The supplementary time/cost table uses per-trial point estimates. The supplement contains
+five-minute side-write sensitivity, unusable harness figures and
 request/result/side-call token reconciliation. Re-run `Rscript report-round3.R`
 after rendering to update the round 3 report from the committed table outputs.
+
+Round 14 reports the two Sonnet arms only. Post hoc analyses are explicitly labelled. See round14-report.md and verify-round14*.py/R for reproduction and invariance checks. On Linux, use Rscript and Quarto; the original Windows commands above document the frozen environment.

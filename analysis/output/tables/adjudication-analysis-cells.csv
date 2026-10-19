@@ -1,4 +1,4 @@
-slug,meta_id,domain,meta,ARBITER_label,Baseline_label,disputed,own_A,own_Z,chosen_label_A,chosen_label_Z,consensus,discordant,preferred
+slug,meta_id,domain,meta,ARBITER_label,Unassisted_label,disputed,own_A,own_Z,chosen_label_A,chosen_label_Z,consensus,discordant,preferred
 abbasi-2012,lrheum-lbp,D1,Low,High,High,TRUE,High,High,High,High,TRUE,FALSE,High
 albert-2013,lrheum-lbp,D1,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low
 allen-2014,lneurol-neuropathic,D1,Some concerns,Low,Low,TRUE,Low,Low,Low,Low,TRUE,FALSE,Low

@@ -1,12 +1,12 @@
 test_that('fresh verification covers each analysis trial in each ARBITER arm', {
   x <- read.csv(file.path(analysis_dir,'data-derived','bundle-reverification.csv'),
-                stringsAsFactors=FALSE)
+                stringsAsFactors=FALSE) |> filter(arm=='ARBITER-Sonnet')
   expect_true(all(c('slug','arm','bundle_sha256','verifier_version','verifier_commit',
     'result','detail','population','archived_result','receipt_agreement',
     'archived_receipt') %in% names(x)))
-  expect_equal(nrow(x),208L)
+  expect_equal(nrow(x),105L)
   expect_false(anyDuplicated(paste(x$arm,x$slug)) > 0L)
-  expect_equal(sort(unique(x$arm)),c('ARBITER-Haiku','ARBITER-Sonnet'))
+  expect_equal(sort(unique(x$arm)),'ARBITER-Sonnet')
   for (arm in unique(x$arm)) {
     a <- x[x$arm == arm & x$population == 'analysis',]
     expect_equal(nrow(a),102L)
@@ -14,13 +14,12 @@ test_that('fresh verification covers each analysis trial in each ARBITER arm', {
     expect_false(any(a$slug %in% EXCLUDED))
   }
   expect_equal(sum(x$arm == 'ARBITER-Sonnet' & x$population == 'excluded'),3L)
-  expect_equal(x$slug[x$arm == 'ARBITER-Haiku' & x$population == 'excluded'],
-               'herrmann-2016')
+
 })
 
 test_that('fresh run-build results agree with every archived receipt', {
   x <- read.csv(file.path(analysis_dir,'data-derived','bundle-reverification.csv'),
-                stringsAsFactors=FALSE)
+                stringsAsFactors=FALSE) |> filter(arm=='ARBITER-Sonnet')
   expect_true(all(grepl('^[a-f0-9]{64}$',x$bundle_sha256)))
   expect_true(all(x$verifier_commit == '2848c7926a2acc25402345a42be39d695a99861a'))
   expect_true(all(x$verifier_version == '0.13.0'))

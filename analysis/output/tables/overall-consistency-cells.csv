@@ -1,511 +1,307 @@
 arm,slug,status
-ARBITER-Sonnet,aarnoutse-2017,Consistent
-ARBITER-Sonnet,abbasi-2012,Consistent
-ARBITER-Sonnet,aboelfadl-2022,Consistent
-ARBITER-Sonnet,albert-2013,Consistent
-ARBITER-Sonnet,allen-2014,Consistent
-ARBITER-Sonnet,allsop-2014,Consistent
-ARBITER-Sonnet,amini-2022,Consistent
-ARBITER-Sonnet,an-2021,Consistent
-ARBITER-Sonnet,apalla-2013,Consistent
-ARBITER-Sonnet,arezzo-2008,Consistent
-ARBITER-Sonnet,ascet,Consistent
-ARBITER-Sonnet,ashar-2022,Consistent
-ARBITER-Sonnet,atli-2005,Consistent
-ARBITER-Sonnet,attal-2016,Consistent
-ARBITER-Sonnet,attal-2021,Consistent
-ARBITER-Sonnet,award-1-2014,Consistent
-ARBITER-Sonnet,award-10-2018,Consistent
-ARBITER-Sonnet,award-chn3-2023,Consistent
-ARBITER-Sonnet,bagg-2022,Consistent
-ARBITER-Sonnet,baillard-2006,Consistent
-ARBITER-Sonnet,baillard-2018,Consistent
-ARBITER-Sonnet,banovic26-avatar-2024,Consistent
-ARBITER-Sonnet,barratt-2024,Consistent
-ARBITER-Sonnet,bausys-2023,Consistent
-ARBITER-Sonnet,becker-2015,Consistent
-ARBITER-Sonnet,beerendonk-1996,Consistent
-ARBITER-Sonnet,beerendonk-1999,Consistent
-ARBITER-Sonnet,bendix-1996,Consistent
-ARBITER-Sonnet,bendix-2000,Consistent
-ARBITER-Sonnet,bente-2014,Consistent
-ARBITER-Sonnet,boedt-2023,Consistent
-ARBITER-Sonnet,boeree-2017,Consistent
-ARBITER-Sonnet,cadet,Consistent
-ARBITER-Sonnet,canvas-program,Consistent
-ARBITER-Sonnet,caprie,Consistent
-ARBITER-Sonnet,castoldi-2020,Consistent
-ARBITER-Sonnet,chiba-2021,Consistent
-ARBITER-Sonnet,chua-2022,Consistent
-ARBITER-Sonnet,clyman-2019,Consistent
-ARBITER-Sonnet,dapa-hf,Consistent
-ARBITER-Sonnet,de-waal-2021,Consistent
-ARBITER-Sonnet,declare-timi-58,Consistent
-ARBITER-Sonnet,deliver,Consistent
-ARBITER-Sonnet,dian-2018,Consistent
-ARBITER-Sonnet,duration-8-2016,Consistent
-ARBITER-Sonnet,einarsson-2017,Consistent
-ARBITER-Sonnet,el-khuffash-2021,Consistent
-ARBITER-Sonnet,elixa,Consistent
-ARBITER-Sonnet,empa-reg-outcome,Consistent
-ARBITER-Sonnet,emperor-preserved,Consistent
-ARBITER-Sonnet,emperor-reduced,Consistent
-ARBITER-Sonnet,envision,Consistent
-ARBITER-Sonnet,espinos-2017,Consistent
-ARBITER-Sonnet,exscel,Consistent
-ARBITER-Sonnet,ferreira-2021,Consistent
-ARBITER-Sonnet,fr-as-2018,Consistent
-ARBITER-Sonnet,frat-2019,Consistent
-ARBITER-Sonnet,freeman-2020,Consistent
-ARBITER-Sonnet,fulop-2021,Permitted escalation
-ARBITER-Sonnet,getgoal-duo1-2013,Consistent
-ARBITER-Sonnet,getgoal-f1-2013,Consistent
-ARBITER-Sonnet,getgood-2020,Consistent
-ARBITER-Sonnet,gillis-2014,Consistent
-ARBITER-Sonnet,grant-2017,Consistent
-ARBITER-Sonnet,guitton-2019,Consistent
-ARBITER-Sonnet,gupta-2024,Consistent
-ARBITER-Sonnet,hamido-2021,Consistent
-ARBITER-Sonnet,hanafiah-2022,Consistent
-ARBITER-Sonnet,harmony-outcomes,Consistent
-ARBITER-Sonnet,heemskerk-2016,Consistent
-ARBITER-Sonnet,hill-2017,Consistent
-ARBITER-Sonnet,host-exam,Consistent
-ARBITER-Sonnet,hundscheid-2022,Consistent
-ARBITER-Sonnet,ibrahim-2017,Consistent
-ARBITER-Sonnet,jaber-2016,Consistent
-ARBITER-Sonnet,jindani-2016,Consistent
-ARBITER-Sonnet,kang25-recovery-2020,Consistent
-ARBITER-Sonnet,leader,Consistent
-ARBITER-Sonnet,levin-2011,Consistent
-ARBITER-Sonnet,levin-2016,Consistent
-ARBITER-Sonnet,lv-2023,Consistent
-ARBITER-Sonnet,monaleesa-2,Consistent
-ARBITER-Sonnet,monaleesa-3,Consistent
-ARBITER-Sonnet,monaleesa-7,Consistent
-ARBITER-Sonnet,monarch-2,Consistent
-ARBITER-Sonnet,monarch-3,Consistent
-ARBITER-Sonnet,monarch-plus,Consistent
-ARBITER-Sonnet,nefigard,Consistent
-ARBITER-Sonnet,paloma-2,Consistent
-ARBITER-Sonnet,pioneer-6,Consistent
-ARBITER-Sonnet,potsiurko-2022,Consistent
-ARBITER-Sonnet,rewind,Consistent
-ARBITER-Sonnet,rosen-2021,Consistent
-ARBITER-Sonnet,sanctuary,Consistent
-ARBITER-Sonnet,smart-choice-3,Consistent
-ARBITER-Sonnet,stop-igan,Consistent
-ARBITER-Sonnet,stopdapt-2,Consistent
-ARBITER-Sonnet,stopdapt-3,Consistent
-ARBITER-Sonnet,sung-2020,Consistent
-ARBITER-Sonnet,sustain-6,Consistent
-ARBITER-Sonnet,testing,Consistent
-ARBITER-Sonnet,vel-squez-2018,Consistent
-Baseline-Sonnet,aarnoutse-2017,Consistent
-Baseline-Sonnet,abbasi-2012,Consistent
-Baseline-Sonnet,aboelfadl-2022,Consistent
-Baseline-Sonnet,albert-2013,Consistent
-Baseline-Sonnet,allen-2014,Consistent
-Baseline-Sonnet,allsop-2014,Consistent
-Baseline-Sonnet,amini-2022,Consistent
-Baseline-Sonnet,an-2021,Consistent
-Baseline-Sonnet,apalla-2013,Consistent
-Baseline-Sonnet,arezzo-2008,Consistent
-Baseline-Sonnet,ascet,Consistent
-Baseline-Sonnet,ashar-2022,Consistent
-Baseline-Sonnet,atli-2005,Consistent
-Baseline-Sonnet,attal-2016,Consistent
-Baseline-Sonnet,attal-2021,Consistent
-Baseline-Sonnet,award-1-2014,Consistent
-Baseline-Sonnet,award-10-2018,Consistent
-Baseline-Sonnet,award-chn3-2023,Consistent
-Baseline-Sonnet,bagg-2022,Consistent
-Baseline-Sonnet,baillard-2006,Consistent
-Baseline-Sonnet,baillard-2018,Consistent
-Baseline-Sonnet,banovic26-avatar-2024,Consistent
-Baseline-Sonnet,barratt-2024,Consistent
-Baseline-Sonnet,bausys-2023,Consistent
-Baseline-Sonnet,becker-2015,Consistent
-Baseline-Sonnet,beerendonk-1996,Consistent
-Baseline-Sonnet,beerendonk-1999,Consistent
-Baseline-Sonnet,bendix-1996,Consistent
-Baseline-Sonnet,bendix-2000,Consistent
-Baseline-Sonnet,bente-2014,Consistent
-Baseline-Sonnet,boedt-2023,Consistent
-Baseline-Sonnet,boeree-2017,Consistent
-Baseline-Sonnet,cadet,Consistent
-Baseline-Sonnet,canvas-program,Consistent
-Baseline-Sonnet,caprie,Consistent
-Baseline-Sonnet,castoldi-2020,Consistent
-Baseline-Sonnet,chiba-2021,Consistent
-Baseline-Sonnet,chua-2022,Consistent
-Baseline-Sonnet,clyman-2019,Consistent
-Baseline-Sonnet,dapa-hf,Consistent
-Baseline-Sonnet,de-waal-2021,Consistent
-Baseline-Sonnet,declare-timi-58,Consistent
-Baseline-Sonnet,deliver,Consistent
-Baseline-Sonnet,dian-2018,Consistent
-Baseline-Sonnet,duration-8-2016,Consistent
-Baseline-Sonnet,einarsson-2017,Consistent
-Baseline-Sonnet,el-khuffash-2021,Consistent
-Baseline-Sonnet,elixa,Consistent
-Baseline-Sonnet,empa-reg-outcome,Consistent
-Baseline-Sonnet,emperor-preserved,Consistent
-Baseline-Sonnet,emperor-reduced,Consistent
-Baseline-Sonnet,envision,Consistent
-Baseline-Sonnet,espinos-2017,Consistent
-Baseline-Sonnet,exscel,Consistent
-Baseline-Sonnet,ferreira-2021,Consistent
-Baseline-Sonnet,fr-as-2018,Consistent
-Baseline-Sonnet,frat-2019,Consistent
-Baseline-Sonnet,freeman-2020,Consistent
-Baseline-Sonnet,fulop-2021,Consistent
-Baseline-Sonnet,getgoal-duo1-2013,Consistent
-Baseline-Sonnet,getgoal-f1-2013,Consistent
-Baseline-Sonnet,getgood-2020,Consistent
-Baseline-Sonnet,gillis-2014,Consistent
-Baseline-Sonnet,grant-2017,Consistent
-Baseline-Sonnet,guitton-2019,Consistent
-Baseline-Sonnet,gupta-2024,Consistent
-Baseline-Sonnet,hamido-2021,Consistent
-Baseline-Sonnet,hanafiah-2022,Consistent
-Baseline-Sonnet,harmony-outcomes,Consistent
-Baseline-Sonnet,heemskerk-2016,Consistent
-Baseline-Sonnet,hill-2017,Consistent
-Baseline-Sonnet,host-exam,Consistent
-Baseline-Sonnet,hundscheid-2022,Consistent
-Baseline-Sonnet,ibrahim-2017,Consistent
-Baseline-Sonnet,jaber-2016,Consistent
-Baseline-Sonnet,jindani-2016,Consistent
-Baseline-Sonnet,kang25-recovery-2020,Consistent
-Baseline-Sonnet,leader,Consistent
-Baseline-Sonnet,levin-2011,Consistent
-Baseline-Sonnet,levin-2016,Consistent
-Baseline-Sonnet,lv-2023,Consistent
-Baseline-Sonnet,monaleesa-2,Consistent
-Baseline-Sonnet,monaleesa-3,Consistent
-Baseline-Sonnet,monaleesa-7,Consistent
-Baseline-Sonnet,monarch-2,Consistent
-Baseline-Sonnet,monarch-3,Consistent
-Baseline-Sonnet,monarch-plus,Consistent
-Baseline-Sonnet,nefigard,Consistent
-Baseline-Sonnet,paloma-2,Consistent
-Baseline-Sonnet,pioneer-6,Consistent
-Baseline-Sonnet,potsiurko-2022,Consistent
-Baseline-Sonnet,rewind,Consistent
-Baseline-Sonnet,rosen-2021,Consistent
-Baseline-Sonnet,sanctuary,Consistent
-Baseline-Sonnet,smart-choice-3,Consistent
-Baseline-Sonnet,stop-igan,Consistent
-Baseline-Sonnet,stopdapt-2,Consistent
-Baseline-Sonnet,stopdapt-3,Consistent
-Baseline-Sonnet,sung-2020,Consistent
-Baseline-Sonnet,sustain-6,Consistent
-Baseline-Sonnet,testing,Consistent
-Baseline-Sonnet,vel-squez-2018,Consistent
-ARBITER-Haiku,aarnoutse-2017,Consistent
-ARBITER-Haiku,abbasi-2012,Consistent
-ARBITER-Haiku,aboelfadl-2022,Consistent
-ARBITER-Haiku,albert-2013,Consistent
-ARBITER-Haiku,allen-2014,Consistent
-ARBITER-Haiku,allsop-2014,Consistent
-ARBITER-Haiku,amini-2022,Consistent
-ARBITER-Haiku,an-2021,Consistent
-ARBITER-Haiku,apalla-2013,Consistent
-ARBITER-Haiku,arezzo-2008,Consistent
-ARBITER-Haiku,ascet,Consistent
-ARBITER-Haiku,ashar-2022,Consistent
-ARBITER-Haiku,atli-2005,Consistent
-ARBITER-Haiku,attal-2016,Consistent
-ARBITER-Haiku,attal-2021,Consistent
-ARBITER-Haiku,award-1-2014,Not evaluable
-ARBITER-Haiku,award-10-2018,Consistent
-ARBITER-Haiku,award-chn3-2023,Consistent
-ARBITER-Haiku,bagg-2022,Consistent
-ARBITER-Haiku,baillard-2006,Consistent
-ARBITER-Haiku,baillard-2018,Consistent
-ARBITER-Haiku,banovic26-avatar-2024,Consistent
-ARBITER-Haiku,barratt-2024,Consistent
-ARBITER-Haiku,bausys-2023,Consistent
-ARBITER-Haiku,becker-2015,Consistent
-ARBITER-Haiku,beerendonk-1996,Consistent
-ARBITER-Haiku,beerendonk-1999,Consistent
-ARBITER-Haiku,bendix-1996,Consistent
-ARBITER-Haiku,bendix-2000,Consistent
-ARBITER-Haiku,bente-2014,Consistent
-ARBITER-Haiku,boedt-2023,Consistent
-ARBITER-Haiku,boeree-2017,Consistent
-ARBITER-Haiku,cadet,Consistent
-ARBITER-Haiku,canvas-program,Consistent
-ARBITER-Haiku,caprie,Consistent
-ARBITER-Haiku,castoldi-2020,Consistent
-ARBITER-Haiku,chiba-2021,Consistent
-ARBITER-Haiku,chua-2022,Consistent
-ARBITER-Haiku,clyman-2019,Consistent
-ARBITER-Haiku,dapa-hf,Consistent
-ARBITER-Haiku,de-waal-2021,Consistent
-ARBITER-Haiku,declare-timi-58,Consistent
-ARBITER-Haiku,deliver,Consistent
-ARBITER-Haiku,dian-2018,Consistent
-ARBITER-Haiku,duration-8-2016,Consistent
-ARBITER-Haiku,einarsson-2017,Consistent
-ARBITER-Haiku,el-khuffash-2021,Consistent
-ARBITER-Haiku,elixa,Consistent
-ARBITER-Haiku,empa-reg-outcome,Consistent
-ARBITER-Haiku,emperor-preserved,Consistent
-ARBITER-Haiku,emperor-reduced,Consistent
-ARBITER-Haiku,envision,Consistent
-ARBITER-Haiku,espinos-2017,Consistent
-ARBITER-Haiku,exscel,Consistent
-ARBITER-Haiku,ferreira-2021,Consistent
-ARBITER-Haiku,fr-as-2018,Consistent
-ARBITER-Haiku,frat-2019,Consistent
-ARBITER-Haiku,freeman-2020,Consistent
-ARBITER-Haiku,fulop-2021,Consistent
-ARBITER-Haiku,getgoal-duo1-2013,Consistent
-ARBITER-Haiku,getgoal-f1-2013,Consistent
-ARBITER-Haiku,getgood-2020,Consistent
-ARBITER-Haiku,gillis-2014,Consistent
-ARBITER-Haiku,grant-2017,Consistent
-ARBITER-Haiku,guitton-2019,Consistent
-ARBITER-Haiku,gupta-2024,Consistent
-ARBITER-Haiku,hamido-2021,Consistent
-ARBITER-Haiku,hanafiah-2022,Consistent
-ARBITER-Haiku,harmony-outcomes,Consistent
-ARBITER-Haiku,heemskerk-2016,Consistent
-ARBITER-Haiku,hill-2017,Consistent
-ARBITER-Haiku,host-exam,Consistent
-ARBITER-Haiku,hundscheid-2022,Consistent
-ARBITER-Haiku,ibrahim-2017,Consistent
-ARBITER-Haiku,jaber-2016,Consistent
-ARBITER-Haiku,jindani-2016,Consistent
-ARBITER-Haiku,kang25-recovery-2020,Consistent
-ARBITER-Haiku,leader,Consistent
-ARBITER-Haiku,levin-2011,Consistent
-ARBITER-Haiku,levin-2016,Consistent
-ARBITER-Haiku,lv-2023,Consistent
-ARBITER-Haiku,monaleesa-2,Consistent
-ARBITER-Haiku,monaleesa-3,Consistent
-ARBITER-Haiku,monaleesa-7,Consistent
-ARBITER-Haiku,monarch-2,Consistent
-ARBITER-Haiku,monarch-3,Consistent
-ARBITER-Haiku,monarch-plus,Consistent
-ARBITER-Haiku,nefigard,Consistent
-ARBITER-Haiku,paloma-2,Consistent
-ARBITER-Haiku,pioneer-6,Consistent
-ARBITER-Haiku,potsiurko-2022,Consistent
-ARBITER-Haiku,rewind,Consistent
-ARBITER-Haiku,rosen-2021,Consistent
-ARBITER-Haiku,sanctuary,Consistent
-ARBITER-Haiku,smart-choice-3,Consistent
-ARBITER-Haiku,stop-igan,Consistent
-ARBITER-Haiku,stopdapt-2,Consistent
-ARBITER-Haiku,stopdapt-3,Consistent
-ARBITER-Haiku,sung-2020,Consistent
-ARBITER-Haiku,sustain-6,Consistent
-ARBITER-Haiku,testing,Consistent
-ARBITER-Haiku,vel-squez-2018,Consistent
-Baseline-Haiku,aarnoutse-2017,Consistent
-Baseline-Haiku,abbasi-2012,Consistent
-Baseline-Haiku,aboelfadl-2022,Consistent
-Baseline-Haiku,albert-2013,Consistent
-Baseline-Haiku,allen-2014,Consistent
-Baseline-Haiku,allsop-2014,Consistent
-Baseline-Haiku,amini-2022,Consistent
-Baseline-Haiku,an-2021,Consistent
-Baseline-Haiku,apalla-2013,Consistent
-Baseline-Haiku,arezzo-2008,Consistent
-Baseline-Haiku,ascet,Consistent
-Baseline-Haiku,ashar-2022,Consistent
-Baseline-Haiku,atli-2005,Consistent
-Baseline-Haiku,attal-2016,Consistent
-Baseline-Haiku,attal-2021,Consistent
-Baseline-Haiku,award-1-2014,Consistent
-Baseline-Haiku,award-10-2018,Consistent
-Baseline-Haiku,award-chn3-2023,Consistent
-Baseline-Haiku,bagg-2022,Consistent
-Baseline-Haiku,baillard-2006,Consistent
-Baseline-Haiku,baillard-2018,Consistent
-Baseline-Haiku,banovic26-avatar-2024,Consistent
-Baseline-Haiku,barratt-2024,Consistent
-Baseline-Haiku,bausys-2023,Consistent
-Baseline-Haiku,becker-2015,Consistent
-Baseline-Haiku,beerendonk-1996,Consistent
-Baseline-Haiku,beerendonk-1999,Consistent
-Baseline-Haiku,bendix-1996,Consistent
-Baseline-Haiku,bendix-2000,Consistent
-Baseline-Haiku,bente-2014,Consistent
-Baseline-Haiku,boedt-2023,Consistent
-Baseline-Haiku,boeree-2017,Consistent
-Baseline-Haiku,cadet,Consistent
-Baseline-Haiku,canvas-program,Consistent
-Baseline-Haiku,caprie,Consistent
-Baseline-Haiku,castoldi-2020,Consistent
-Baseline-Haiku,chiba-2021,Consistent
-Baseline-Haiku,chua-2022,Consistent
-Baseline-Haiku,clyman-2019,Consistent
-Baseline-Haiku,dapa-hf,Consistent
-Baseline-Haiku,de-waal-2021,Consistent
-Baseline-Haiku,declare-timi-58,Consistent
-Baseline-Haiku,deliver,Consistent
-Baseline-Haiku,dian-2018,Consistent
-Baseline-Haiku,duration-8-2016,Consistent
-Baseline-Haiku,einarsson-2017,Consistent
-Baseline-Haiku,el-khuffash-2021,Consistent
-Baseline-Haiku,elixa,Consistent
-Baseline-Haiku,empa-reg-outcome,Consistent
-Baseline-Haiku,emperor-preserved,Consistent
-Baseline-Haiku,emperor-reduced,Consistent
-Baseline-Haiku,envision,Consistent
-Baseline-Haiku,espinos-2017,Consistent
-Baseline-Haiku,exscel,Consistent
-Baseline-Haiku,ferreira-2021,Consistent
-Baseline-Haiku,fr-as-2018,Consistent
-Baseline-Haiku,frat-2019,Consistent
-Baseline-Haiku,freeman-2020,Consistent
-Baseline-Haiku,fulop-2021,Consistent
-Baseline-Haiku,getgoal-duo1-2013,Consistent
-Baseline-Haiku,getgoal-f1-2013,Consistent
-Baseline-Haiku,getgood-2020,Consistent
-Baseline-Haiku,gillis-2014,Consistent
-Baseline-Haiku,grant-2017,Consistent
-Baseline-Haiku,guitton-2019,Consistent
-Baseline-Haiku,gupta-2024,Consistent
-Baseline-Haiku,hamido-2021,Consistent
-Baseline-Haiku,hanafiah-2022,Consistent
-Baseline-Haiku,harmony-outcomes,Consistent
-Baseline-Haiku,heemskerk-2016,Consistent
-Baseline-Haiku,hill-2017,Consistent
-Baseline-Haiku,host-exam,Consistent
-Baseline-Haiku,hundscheid-2022,Consistent
-Baseline-Haiku,ibrahim-2017,Consistent
-Baseline-Haiku,jaber-2016,Consistent
-Baseline-Haiku,jindani-2016,Consistent
-Baseline-Haiku,kang25-recovery-2020,Consistent
-Baseline-Haiku,leader,Consistent
-Baseline-Haiku,levin-2011,Consistent
-Baseline-Haiku,levin-2016,Consistent
-Baseline-Haiku,lv-2023,Consistent
-Baseline-Haiku,monaleesa-2,Consistent
-Baseline-Haiku,monaleesa-3,Consistent
-Baseline-Haiku,monaleesa-7,Consistent
-Baseline-Haiku,monarch-2,Consistent
-Baseline-Haiku,monarch-3,Consistent
-Baseline-Haiku,monarch-plus,Consistent
-Baseline-Haiku,nefigard,Consistent
-Baseline-Haiku,paloma-2,Consistent
-Baseline-Haiku,pioneer-6,Consistent
-Baseline-Haiku,potsiurko-2022,Consistent
-Baseline-Haiku,rewind,Consistent
-Baseline-Haiku,rosen-2021,Consistent
-Baseline-Haiku,sanctuary,Consistent
-Baseline-Haiku,smart-choice-3,Consistent
-Baseline-Haiku,stop-igan,Consistent
-Baseline-Haiku,stopdapt-2,Consistent
-Baseline-Haiku,stopdapt-3,Consistent
-Baseline-Haiku,sung-2020,Consistent
-Baseline-Haiku,sustain-6,Consistent
-Baseline-Haiku,testing,Consistent
-Baseline-Haiku,vel-squez-2018,Consistent
-Meta,aarnoutse-2017,Consistent
-Meta,abbasi-2012,Permitted escalation
-Meta,aboelfadl-2022,Permitted escalation
-Meta,albert-2013,Permitted escalation
-Meta,allen-2014,Consistent
-Meta,allsop-2014,Consistent
-Meta,amini-2022,Consistent
-Meta,an-2021,Consistent
-Meta,apalla-2013,Consistent
-Meta,arezzo-2008,Consistent
-Meta,ascet,Consistent
-Meta,ashar-2022,Permitted escalation
-Meta,atli-2005,Consistent
-Meta,attal-2016,Consistent
-Meta,attal-2021,Consistent
-Meta,award-1-2014,Consistent
-Meta,award-10-2018,Consistent
-Meta,award-chn3-2023,Consistent
-Meta,bagg-2022,Consistent
-Meta,baillard-2006,Not evaluable
-Meta,baillard-2018,Not evaluable
-Meta,banovic26-avatar-2024,Consistent
-Meta,barratt-2024,Not evaluable
-Meta,bausys-2023,Consistent
-Meta,becker-2015,Consistent
-Meta,beerendonk-1996,Consistent
-Meta,beerendonk-1999,Consistent
-Meta,bendix-1996,Permitted escalation
-Meta,bendix-2000,Permitted escalation
-Meta,bente-2014,Consistent
-Meta,boedt-2023,Consistent
-Meta,boeree-2017,Consistent
-Meta,cadet,Consistent
-Meta,canvas-program,Not evaluable
-Meta,caprie,Consistent
-Meta,castoldi-2020,Consistent
-Meta,chiba-2021,Consistent
-Meta,chua-2022,Not evaluable
-Meta,clyman-2019,Consistent
-Meta,dapa-hf,Not evaluable
-Meta,de-waal-2021,Consistent
-Meta,declare-timi-58,Not evaluable
-Meta,deliver,Not evaluable
-Meta,dian-2018,Consistent
-Meta,duration-8-2016,Consistent
-Meta,einarsson-2017,Consistent
-Meta,el-khuffash-2021,Consistent
-Meta,elixa,Consistent
-Meta,empa-reg-outcome,Not evaluable
-Meta,emperor-preserved,Not evaluable
-Meta,emperor-reduced,Not evaluable
-Meta,envision,Not evaluable
-Meta,espinos-2017,Consistent
-Meta,exscel,Consistent
-Meta,ferreira-2021,Consistent
-Meta,fr-as-2018,Consistent
-Meta,frat-2019,Not evaluable
-Meta,freeman-2020,Consistent
-Meta,fulop-2021,Consistent
-Meta,getgoal-duo1-2013,Consistent
-Meta,getgoal-f1-2013,Consistent
-Meta,getgood-2020,Consistent
-Meta,gillis-2014,Consistent
-Meta,grant-2017,Consistent
-Meta,guitton-2019,Not evaluable
-Meta,gupta-2024,Violation
-Meta,hamido-2021,Consistent
-Meta,hanafiah-2022,Consistent
-Meta,harmony-outcomes,Consistent
-Meta,heemskerk-2016,Consistent
-Meta,hill-2017,Consistent
-Meta,host-exam,Consistent
-Meta,hundscheid-2022,Consistent
-Meta,ibrahim-2017,Consistent
-Meta,jaber-2016,Not evaluable
-Meta,jindani-2016,Consistent
-Meta,kang25-recovery-2020,Consistent
-Meta,leader,Consistent
-Meta,levin-2011,Consistent
-Meta,levin-2016,Consistent
-Meta,lv-2023,Not evaluable
-Meta,monaleesa-2,Consistent
-Meta,monaleesa-3,Consistent
-Meta,monaleesa-7,Consistent
-Meta,monarch-2,Consistent
-Meta,monarch-3,Consistent
-Meta,monarch-plus,Consistent
-Meta,nefigard,Not evaluable
-Meta,paloma-2,Consistent
-Meta,pioneer-6,Consistent
-Meta,potsiurko-2022,Consistent
-Meta,rewind,Consistent
-Meta,rosen-2021,Not evaluable
-Meta,sanctuary,Not evaluable
-Meta,smart-choice-3,Consistent
-Meta,stop-igan,Not evaluable
-Meta,stopdapt-2,Consistent
-Meta,stopdapt-3,Consistent
-Meta,sung-2020,Consistent
-Meta,sustain-6,Consistent
-Meta,testing,Not evaluable
-Meta,vel-squez-2018,Consistent
+ARBITER (Sonnet 5.5),aarnoutse-2017,Consistent
+ARBITER (Sonnet 5.5),abbasi-2012,Consistent
+ARBITER (Sonnet 5.5),aboelfadl-2022,Consistent
+ARBITER (Sonnet 5.5),albert-2013,Consistent
+ARBITER (Sonnet 5.5),allen-2014,Consistent
+ARBITER (Sonnet 5.5),allsop-2014,Consistent
+ARBITER (Sonnet 5.5),amini-2022,Consistent
+ARBITER (Sonnet 5.5),an-2021,Consistent
+ARBITER (Sonnet 5.5),apalla-2013,Consistent
+ARBITER (Sonnet 5.5),arezzo-2008,Consistent
+ARBITER (Sonnet 5.5),ascet,Consistent
+ARBITER (Sonnet 5.5),ashar-2022,Consistent
+ARBITER (Sonnet 5.5),atli-2005,Consistent
+ARBITER (Sonnet 5.5),attal-2016,Consistent
+ARBITER (Sonnet 5.5),attal-2021,Consistent
+ARBITER (Sonnet 5.5),award-1-2014,Consistent
+ARBITER (Sonnet 5.5),award-10-2018,Consistent
+ARBITER (Sonnet 5.5),award-chn3-2023,Consistent
+ARBITER (Sonnet 5.5),bagg-2022,Consistent
+ARBITER (Sonnet 5.5),baillard-2006,Consistent
+ARBITER (Sonnet 5.5),baillard-2018,Consistent
+ARBITER (Sonnet 5.5),banovic26-avatar-2024,Consistent
+ARBITER (Sonnet 5.5),barratt-2024,Consistent
+ARBITER (Sonnet 5.5),bausys-2023,Consistent
+ARBITER (Sonnet 5.5),becker-2015,Consistent
+ARBITER (Sonnet 5.5),beerendonk-1996,Consistent
+ARBITER (Sonnet 5.5),beerendonk-1999,Consistent
+ARBITER (Sonnet 5.5),bendix-1996,Consistent
+ARBITER (Sonnet 5.5),bendix-2000,Consistent
+ARBITER (Sonnet 5.5),bente-2014,Consistent
+ARBITER (Sonnet 5.5),boedt-2023,Consistent
+ARBITER (Sonnet 5.5),boeree-2017,Consistent
+ARBITER (Sonnet 5.5),cadet,Consistent
+ARBITER (Sonnet 5.5),canvas-program,Consistent
+ARBITER (Sonnet 5.5),caprie,Consistent
+ARBITER (Sonnet 5.5),castoldi-2020,Consistent
+ARBITER (Sonnet 5.5),chiba-2021,Consistent
+ARBITER (Sonnet 5.5),chua-2022,Consistent
+ARBITER (Sonnet 5.5),clyman-2019,Consistent
+ARBITER (Sonnet 5.5),dapa-hf,Consistent
+ARBITER (Sonnet 5.5),de-waal-2021,Consistent
+ARBITER (Sonnet 5.5),declare-timi-58,Consistent
+ARBITER (Sonnet 5.5),deliver,Consistent
+ARBITER (Sonnet 5.5),dian-2018,Consistent
+ARBITER (Sonnet 5.5),duration-8-2016,Consistent
+ARBITER (Sonnet 5.5),einarsson-2017,Consistent
+ARBITER (Sonnet 5.5),el-khuffash-2021,Consistent
+ARBITER (Sonnet 5.5),elixa,Consistent
+ARBITER (Sonnet 5.5),empa-reg-outcome,Consistent
+ARBITER (Sonnet 5.5),emperor-preserved,Consistent
+ARBITER (Sonnet 5.5),emperor-reduced,Consistent
+ARBITER (Sonnet 5.5),envision,Consistent
+ARBITER (Sonnet 5.5),espinos-2017,Consistent
+ARBITER (Sonnet 5.5),exscel,Consistent
+ARBITER (Sonnet 5.5),ferreira-2021,Consistent
+ARBITER (Sonnet 5.5),fr-as-2018,Consistent
+ARBITER (Sonnet 5.5),frat-2019,Consistent
+ARBITER (Sonnet 5.5),freeman-2020,Consistent
+ARBITER (Sonnet 5.5),fulop-2021,Permitted escalation
+ARBITER (Sonnet 5.5),getgoal-duo1-2013,Consistent
+ARBITER (Sonnet 5.5),getgoal-f1-2013,Consistent
+ARBITER (Sonnet 5.5),getgood-2020,Consistent
+ARBITER (Sonnet 5.5),gillis-2014,Consistent
+ARBITER (Sonnet 5.5),grant-2017,Consistent
+ARBITER (Sonnet 5.5),guitton-2019,Consistent
+ARBITER (Sonnet 5.5),gupta-2024,Consistent
+ARBITER (Sonnet 5.5),hamido-2021,Consistent
+ARBITER (Sonnet 5.5),hanafiah-2022,Consistent
+ARBITER (Sonnet 5.5),harmony-outcomes,Consistent
+ARBITER (Sonnet 5.5),heemskerk-2016,Consistent
+ARBITER (Sonnet 5.5),hill-2017,Consistent
+ARBITER (Sonnet 5.5),host-exam,Consistent
+ARBITER (Sonnet 5.5),hundscheid-2022,Consistent
+ARBITER (Sonnet 5.5),ibrahim-2017,Consistent
+ARBITER (Sonnet 5.5),jaber-2016,Consistent
+ARBITER (Sonnet 5.5),jindani-2016,Consistent
+ARBITER (Sonnet 5.5),kang25-recovery-2020,Consistent
+ARBITER (Sonnet 5.5),leader,Consistent
+ARBITER (Sonnet 5.5),levin-2011,Consistent
+ARBITER (Sonnet 5.5),levin-2016,Consistent
+ARBITER (Sonnet 5.5),lv-2023,Consistent
+ARBITER (Sonnet 5.5),monaleesa-2,Consistent
+ARBITER (Sonnet 5.5),monaleesa-3,Consistent
+ARBITER (Sonnet 5.5),monaleesa-7,Consistent
+ARBITER (Sonnet 5.5),monarch-2,Consistent
+ARBITER (Sonnet 5.5),monarch-3,Consistent
+ARBITER (Sonnet 5.5),monarch-plus,Consistent
+ARBITER (Sonnet 5.5),nefigard,Consistent
+ARBITER (Sonnet 5.5),paloma-2,Consistent
+ARBITER (Sonnet 5.5),pioneer-6,Consistent
+ARBITER (Sonnet 5.5),potsiurko-2022,Consistent
+ARBITER (Sonnet 5.5),rewind,Consistent
+ARBITER (Sonnet 5.5),rosen-2021,Consistent
+ARBITER (Sonnet 5.5),sanctuary,Consistent
+ARBITER (Sonnet 5.5),smart-choice-3,Consistent
+ARBITER (Sonnet 5.5),stop-igan,Consistent
+ARBITER (Sonnet 5.5),stopdapt-2,Consistent
+ARBITER (Sonnet 5.5),stopdapt-3,Consistent
+ARBITER (Sonnet 5.5),sung-2020,Consistent
+ARBITER (Sonnet 5.5),sustain-6,Consistent
+ARBITER (Sonnet 5.5),testing,Consistent
+ARBITER (Sonnet 5.5),vel-squez-2018,Consistent
+Unassisted (Sonnet 5.5),aarnoutse-2017,Consistent
+Unassisted (Sonnet 5.5),abbasi-2012,Consistent
+Unassisted (Sonnet 5.5),aboelfadl-2022,Consistent
+Unassisted (Sonnet 5.5),albert-2013,Consistent
+Unassisted (Sonnet 5.5),allen-2014,Consistent
+Unassisted (Sonnet 5.5),allsop-2014,Consistent
+Unassisted (Sonnet 5.5),amini-2022,Consistent
+Unassisted (Sonnet 5.5),an-2021,Consistent
+Unassisted (Sonnet 5.5),apalla-2013,Consistent
+Unassisted (Sonnet 5.5),arezzo-2008,Consistent
+Unassisted (Sonnet 5.5),ascet,Consistent
+Unassisted (Sonnet 5.5),ashar-2022,Consistent
+Unassisted (Sonnet 5.5),atli-2005,Consistent
+Unassisted (Sonnet 5.5),attal-2016,Consistent
+Unassisted (Sonnet 5.5),attal-2021,Consistent
+Unassisted (Sonnet 5.5),award-1-2014,Consistent
+Unassisted (Sonnet 5.5),award-10-2018,Consistent
+Unassisted (Sonnet 5.5),award-chn3-2023,Consistent
+Unassisted (Sonnet 5.5),bagg-2022,Consistent
+Unassisted (Sonnet 5.5),baillard-2006,Consistent
+Unassisted (Sonnet 5.5),baillard-2018,Consistent
+Unassisted (Sonnet 5.5),banovic26-avatar-2024,Consistent
+Unassisted (Sonnet 5.5),barratt-2024,Consistent
+Unassisted (Sonnet 5.5),bausys-2023,Consistent
+Unassisted (Sonnet 5.5),becker-2015,Consistent
+Unassisted (Sonnet 5.5),beerendonk-1996,Consistent
+Unassisted (Sonnet 5.5),beerendonk-1999,Consistent
+Unassisted (Sonnet 5.5),bendix-1996,Consistent
+Unassisted (Sonnet 5.5),bendix-2000,Consistent
+Unassisted (Sonnet 5.5),bente-2014,Consistent
+Unassisted (Sonnet 5.5),boedt-2023,Consistent
+Unassisted (Sonnet 5.5),boeree-2017,Consistent
+Unassisted (Sonnet 5.5),cadet,Consistent
+Unassisted (Sonnet 5.5),canvas-program,Consistent
+Unassisted (Sonnet 5.5),caprie,Consistent
+Unassisted (Sonnet 5.5),castoldi-2020,Consistent
+Unassisted (Sonnet 5.5),chiba-2021,Consistent
+Unassisted (Sonnet 5.5),chua-2022,Consistent
+Unassisted (Sonnet 5.5),clyman-2019,Consistent
+Unassisted (Sonnet 5.5),dapa-hf,Consistent
+Unassisted (Sonnet 5.5),de-waal-2021,Consistent
+Unassisted (Sonnet 5.5),declare-timi-58,Consistent
+Unassisted (Sonnet 5.5),deliver,Consistent
+Unassisted (Sonnet 5.5),dian-2018,Consistent
+Unassisted (Sonnet 5.5),duration-8-2016,Consistent
+Unassisted (Sonnet 5.5),einarsson-2017,Consistent
+Unassisted (Sonnet 5.5),el-khuffash-2021,Consistent
+Unassisted (Sonnet 5.5),elixa,Consistent
+Unassisted (Sonnet 5.5),empa-reg-outcome,Consistent
+Unassisted (Sonnet 5.5),emperor-preserved,Consistent
+Unassisted (Sonnet 5.5),emperor-reduced,Consistent
+Unassisted (Sonnet 5.5),envision,Consistent
+Unassisted (Sonnet 5.5),espinos-2017,Consistent
+Unassisted (Sonnet 5.5),exscel,Consistent
+Unassisted (Sonnet 5.5),ferreira-2021,Consistent
+Unassisted (Sonnet 5.5),fr-as-2018,Consistent
+Unassisted (Sonnet 5.5),frat-2019,Consistent
+Unassisted (Sonnet 5.5),freeman-2020,Consistent
+Unassisted (Sonnet 5.5),fulop-2021,Consistent
+Unassisted (Sonnet 5.5),getgoal-duo1-2013,Consistent
+Unassisted (Sonnet 5.5),getgoal-f1-2013,Consistent
+Unassisted (Sonnet 5.5),getgood-2020,Consistent
+Unassisted (Sonnet 5.5),gillis-2014,Consistent
+Unassisted (Sonnet 5.5),grant-2017,Consistent
+Unassisted (Sonnet 5.5),guitton-2019,Consistent
+Unassisted (Sonnet 5.5),gupta-2024,Consistent
+Unassisted (Sonnet 5.5),hamido-2021,Consistent
+Unassisted (Sonnet 5.5),hanafiah-2022,Consistent
+Unassisted (Sonnet 5.5),harmony-outcomes,Consistent
+Unassisted (Sonnet 5.5),heemskerk-2016,Consistent
+Unassisted (Sonnet 5.5),hill-2017,Consistent
+Unassisted (Sonnet 5.5),host-exam,Consistent
+Unassisted (Sonnet 5.5),hundscheid-2022,Consistent
+Unassisted (Sonnet 5.5),ibrahim-2017,Consistent
+Unassisted (Sonnet 5.5),jaber-2016,Consistent
+Unassisted (Sonnet 5.5),jindani-2016,Consistent
+Unassisted (Sonnet 5.5),kang25-recovery-2020,Consistent
+Unassisted (Sonnet 5.5),leader,Consistent
+Unassisted (Sonnet 5.5),levin-2011,Consistent
+Unassisted (Sonnet 5.5),levin-2016,Consistent
+Unassisted (Sonnet 5.5),lv-2023,Consistent
+Unassisted (Sonnet 5.5),monaleesa-2,Consistent
+Unassisted (Sonnet 5.5),monaleesa-3,Consistent
+Unassisted (Sonnet 5.5),monaleesa-7,Consistent
+Unassisted (Sonnet 5.5),monarch-2,Consistent
+Unassisted (Sonnet 5.5),monarch-3,Consistent
+Unassisted (Sonnet 5.5),monarch-plus,Consistent
+Unassisted (Sonnet 5.5),nefigard,Consistent
+Unassisted (Sonnet 5.5),paloma-2,Consistent
+Unassisted (Sonnet 5.5),pioneer-6,Consistent
+Unassisted (Sonnet 5.5),potsiurko-2022,Consistent
+Unassisted (Sonnet 5.5),rewind,Consistent
+Unassisted (Sonnet 5.5),rosen-2021,Consistent
+Unassisted (Sonnet 5.5),sanctuary,Consistent
+Unassisted (Sonnet 5.5),smart-choice-3,Consistent
+Unassisted (Sonnet 5.5),stop-igan,Consistent
+Unassisted (Sonnet 5.5),stopdapt-2,Consistent
+Unassisted (Sonnet 5.5),stopdapt-3,Consistent
+Unassisted (Sonnet 5.5),sung-2020,Consistent
+Unassisted (Sonnet 5.5),sustain-6,Consistent
+Unassisted (Sonnet 5.5),testing,Consistent
+Unassisted (Sonnet 5.5),vel-squez-2018,Consistent
+Published,aarnoutse-2017,Consistent
+Published,abbasi-2012,Permitted escalation
+Published,aboelfadl-2022,Permitted escalation
+Published,albert-2013,Permitted escalation
+Published,allen-2014,Consistent
+Published,allsop-2014,Consistent
+Published,amini-2022,Consistent
+Published,an-2021,Consistent
+Published,apalla-2013,Consistent
+Published,arezzo-2008,Consistent
+Published,ascet,Consistent
+Published,ashar-2022,Permitted escalation
+Published,atli-2005,Consistent
+Published,attal-2016,Consistent
+Published,attal-2021,Consistent
+Published,award-1-2014,Consistent
+Published,award-10-2018,Consistent
+Published,award-chn3-2023,Consistent
+Published,bagg-2022,Consistent
+Published,baillard-2006,Not evaluable
+Published,baillard-2018,Not evaluable
+Published,banovic26-avatar-2024,Consistent
+Published,barratt-2024,Not evaluable
+Published,bausys-2023,Consistent
+Published,becker-2015,Consistent
+Published,beerendonk-1996,Consistent
+Published,beerendonk-1999,Consistent
+Published,bendix-1996,Permitted escalation
+Published,bendix-2000,Permitted escalation
+Published,bente-2014,Consistent
+Published,boedt-2023,Consistent
+Published,boeree-2017,Consistent
+Published,cadet,Consistent
+Published,canvas-program,Not evaluable
+Published,caprie,Consistent
+Published,castoldi-2020,Consistent
+Published,chiba-2021,Consistent
+Published,chua-2022,Not evaluable
+Published,clyman-2019,Consistent
+Published,dapa-hf,Not evaluable
+Published,de-waal-2021,Consistent
+Published,declare-timi-58,Not evaluable
+Published,deliver,Not evaluable
+Published,dian-2018,Consistent
+Published,duration-8-2016,Consistent
+Published,einarsson-2017,Consistent
+Published,el-khuffash-2021,Consistent
+Published,elixa,Consistent
+Published,empa-reg-outcome,Not evaluable
+Published,emperor-preserved,Not evaluable
+Published,emperor-reduced,Not evaluable
+Published,envision,Not evaluable
+Published,espinos-2017,Consistent
+Published,exscel,Consistent
+Published,ferreira-2021,Consistent
+Published,fr-as-2018,Consistent
+Published,frat-2019,Not evaluable
+Published,freeman-2020,Consistent
+Published,fulop-2021,Consistent
+Published,getgoal-duo1-2013,Consistent
+Published,getgoal-f1-2013,Consistent
+Published,getgood-2020,Consistent
+Published,gillis-2014,Consistent
+Published,grant-2017,Consistent
+Published,guitton-2019,Not evaluable
+Published,gupta-2024,Rating contradicts its own answers
+Published,hamido-2021,Consistent
+Published,hanafiah-2022,Consistent
+Published,harmony-outcomes,Consistent
+Published,heemskerk-2016,Consistent
+Published,hill-2017,Consistent
+Published,host-exam,Consistent
+Published,hundscheid-2022,Consistent
+Published,ibrahim-2017,Consistent
+Published,jaber-2016,Not evaluable
+Published,jindani-2016,Consistent
+Published,kang25-recovery-2020,Consistent
+Published,leader,Consistent
+Published,levin-2011,Consistent
+Published,levin-2016,Consistent
+Published,lv-2023,Not evaluable
+Published,monaleesa-2,Consistent
+Published,monaleesa-3,Consistent
+Published,monaleesa-7,Consistent
+Published,monarch-2,Consistent
+Published,monarch-3,Consistent
+Published,monarch-plus,Consistent
+Published,nefigard,Not evaluable
+Published,paloma-2,Consistent
+Published,pioneer-6,Consistent
+Published,potsiurko-2022,Consistent
+Published,rewind,Consistent
+Published,rosen-2021,Not evaluable
+Published,sanctuary,Not evaluable
+Published,smart-choice-3,Consistent
+Published,stop-igan,Not evaluable
+Published,stopdapt-2,Consistent
+Published,stopdapt-3,Consistent
+Published,sung-2020,Consistent
+Published,sustain-6,Consistent
+Published,testing,Not evaluable
+Published,vel-squez-2018,Consistent

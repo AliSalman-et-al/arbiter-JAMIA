@@ -1,0 +1,30 @@
+eTable 1. Benchmark trials span sixteen meta-analyses
+eTable 2. Published label distributions by domain
+eTable 3. AVATAR complete trace
+eTable 4. Confusion matrices against Published
+eTable 5. Per-meta-analysis weighted κ
+eTable 6. Agreement against Published, all sources and domains
+eTable 7. Paired differences against Published
+eTable 8. Post hoc: unweighted agreement with published labels is modest
+eTable 9. Post hoc: adjudicators usually agreed with models when they disagreed with Published
+eTable 10. Published labels were usually less severe than the agreed choice
+eTable 11. Agreement against the composite reference, Sonnet only
+eTable 12. Paired differences against the composite reference
+eTable 13. Composite-reference sensitivity estimates by adjudicator
+eTable 14. Composite-reference paired differences by adjudicator
+eTable 15. Per-adjudicator and split-cell win-share sensitivity
+eTable 16. Post hoc severity-stratified win share
+eTable 17. Independent and selected ratings: full agreement including AC2
+eTable 18. Localisation population eligibility
+eTable 19. Error-localisation classes, both populations
+eTable 20. Questions that alone changed the rating: frequencies, both populations
+eTable 21. Unresolved independent answer
+eTable 22. Post hoc: recomputing Unassisted ratings changes few arm disagreements
+eTable 23. RoB 2 consistency and structural audit, all sources and domains
+eTable 24. Required question skipped sensitivity
+eTable 25. Quotation syntax in active justifications
+eTable 26. Unassisted justification content
+eTable 27. Time, cost and token use per trial by model
+eTable 28. API cost reconstruction: estimates and bounds
+eTable 29. Token reconciliation and compaction diagnostics
+eTable 30. Exploratory signalling-answer agreement

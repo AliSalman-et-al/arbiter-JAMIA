@@ -59,7 +59,7 @@ Verify each DOI at reference-manager import.
 - Sahu V. Res Synth Methods 2026. doi:10.1017/rsm.2026.10073
 - Eisele-Metzger A, et al. Res Synth Methods 2026 (response). doi:10.1017/rsm.2026.10102
 - Huang J, et al. J Med Internet Res 2025. doi:10.2196/70450
-- Lai H, et al. J Med Internet Res 2026. doi:10.2196/84915
+- Lai YJ, et al. J Med Internet Res 2026. doi:10.2196/84915 (first author verified 2026-10-19)
 - Lai H, et al. JAMA Netw Open 2024. doi:10.1001/jamanetworkopen.2024.12687
 - Nyrhi, et al. EBioMedicine 2026. doi:10.1016/j.ebiom.2026.106238
 - Nagao, et al. Am J Perinatol 2026. doi:10.1055/a-2793-9092 (abstract only)
@@ -70,7 +70,7 @@ Verify each DOI at reference-manager import.
 - Liang, et al. JMIR AI 2026;5:e93761. doi:10.2196/93761
 - Šuster S, et al. Res Synth Methods 2024. doi:10.1002/jrsm.1749
 - Li, et al. BMC Med Res Methodol 2026. doi:10.1186/s12874-025-02763-3
-- Saadi, et al. BMJ Digit Health AI 2026. doi:10.1136/bmjdth-2026-000034 (partial full text)
+- Saadi, et al. BMJ Digit Health AI 2026. doi:10.1136/bmjdh-2026-000034 (DOI corrected and verified 2026-10-19)
 - Gartlehner G, et al. Ann Intern Med 2025;178:1763–71. doi:10.7326/ANNALS-25-00739
 - Rose CJ, et al. Cochrane Evid Synth Methods 2025. doi:10.1002/cesm.70048
 - Minozzi S, et al. J Clin Epidemiol 2020. doi:10.1016/j.jclinepi.2020.06.015

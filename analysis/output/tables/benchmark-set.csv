@@ -1,0 +1,17 @@
+meta_id,field,trials,journal,D1,D2,D3,D4,D5
+ajsm-acl-leap,15 Ortho,5,American Journal of Sports Medicine,2/1/2,4/1/0,5/0/0,4/1/0,5/0/0
+bja-prehab,11 Surg,7,British Journal of Anaesthesia,4/1/2,5/1/1,7/0/0,7/0/0,7/0/0
+cid-rifampin,09 ID,6,Clinical Infectious Diseases,6/0/0,6/0/0,6/0/0,6/0/0,6/0/0
+cjasn-iga,14 Neph,7,Clinical Journal of the American Society of Nephrology,7/0/0,7/0/0,6/1/0,6/1/0,4/3/0
+gastro-glp1,06 Gastro,7,Gastroenterology,6/1/0,6/1/0,7/0/0,7/0/0,5/2/0
+hru-preconception,12 ObGyn,7,Human Reproduction Update,3/3/1,7/0/0,5/1/1,6/1/0,2/5/0
+jacc-avr,02 Cardio,2,Journal of the American College of Cardiology,2/0/0,2/0/0,2/0/0,2/0/0,2/0/0
+jama-sglt2,01 GenMed (alternate),7,JAMA,7/0/0,7/0/0,7/0/0,7/0/0,7/0/0
+jamapeds-pda,13 Peds,7,JAMA Pediatrics,6/1/0,3/4/0,7/0/0,6/1/0,7/0/0
+lancet-clopidogrel,01 GenMed,7,The Lancet,7/0/0,4/3/0,7/0/0,7/0/0,7/0/0
+lde-glp1,08 Endo,7,The Lancet Diabetes & Endocrinology,7/0/0,7/0/0,7/0/0,7/0/0,7/0/0
+lneurol-neuropathic,04 Neuro,7,The Lancet Neurology,6/1/0,6/1/0,3/3/1,7/0/0,2/2/3
+loncol-cdk46,03 Onc,7,The Lancet Oncology,7/0/0,7/0/0,7/0/0,7/0/0,7/0/0
+lpsych-cannabinoids,05 Psych,5,The Lancet Psychiatry,4/1/0,3/2/0,3/2/0,4/1/0,5/0/0
+lrheum-lbp,10 Rheum,7,The Lancet Rheumatology,3/4/0,5/2/0,0/7/0,3/4/0,1/6/0
+lrm-preox,07 PulmCC,7,The Lancet Respiratory Medicine,7/0/0,7/0/0,4/0/3,7/0/0,7/0/0

@@ -1,0 +1,2546 @@
+{
+  "base": "bfe7111",
+  "csv": [
+    {
+      "old": "analysis/output/tables/adjudication-analysis-cells.csv",
+      "new": "analysis/output/tables/adjudication-analysis-cells.csv",
+      "rows": 154,
+      "numeric_cells": 0,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/agreement-composite-differences.csv",
+      "new": "analysis/output/tables/agreement-composite-differences.csv",
+      "rows": 30,
+      "numeric_cells": 120,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/agreement-composite.csv",
+      "new": "analysis/output/tables/agreement-composite.csv",
+      "rows": 90,
+      "numeric_cells": 540,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/agreement-meta-differences.csv",
+      "new": "analysis/output/tables/agreement-meta-differences.csv",
+      "rows": 35,
+      "numeric_cells": 140,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/agreement-meta.csv",
+      "new": "analysis/output/tables/agreement-meta.csv",
+      "rows": 105,
+      "numeric_cells": 630,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/algorithm-mismatches.csv",
+      "new": "analysis/output/tables/algorithm-mismatches.csv",
+      "rows": 0,
+      "numeric_cells": 0,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/algorithm-validation-summary.csv",
+      "new": "analysis/output/tables/algorithm-validation-summary.csv",
+      "rows": 5,
+      "numeric_cells": 5,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/api-cost-summary.csv",
+      "new": "analysis/output/tables/api-cost-summary.csv",
+      "rows": 2,
+      "numeric_cells": 28,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/api-token-reconciliation.csv",
+      "new": "analysis/output/tables/api-token-reconciliation.csv",
+      "rows": 2,
+      "numeric_cells": 48,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/audit-summary.csv",
+      "new": "analysis/output/tables/audit-summary.csv",
+      "rows": 9,
+      "numeric_cells": 44,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/baseline-justification-content.csv",
+      "new": "analysis/output/tables/baseline-justification-content.csv",
+      "rows": 1,
+      "numeric_cells": 2,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/bundle-domain-checks.csv",
+      "new": "analysis/output/tables/bundle-domain-checks.csv",
+      "rows": 510,
+      "numeric_cells": 0,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/composite-A-differences.csv",
+      "new": "analysis/output/tables/composite-A-differences.csv",
+      "rows": 30,
+      "numeric_cells": 120,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/composite-A.csv",
+      "new": "analysis/output/tables/composite-A.csv",
+      "rows": 90,
+      "numeric_cells": 540,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/composite-Z-differences.csv",
+      "new": "analysis/output/tables/composite-Z-differences.csv",
+      "rows": 30,
+      "numeric_cells": 120,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/composite-Z.csv",
+      "new": "analysis/output/tables/composite-Z.csv",
+      "rows": 90,
+      "numeric_cells": 540,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/confusion-matrices.csv",
+      "new": "analysis/output/tables/confusion-matrices.csv",
+      "rows": 144,
+      "numeric_cells": 144,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/discussion-quote-candidates.csv",
+      "new": "analysis/output/tables/discussion-quote-candidates.csv",
+      "rows": 10,
+      "numeric_cells": 22,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/domain-consistency-cells.csv",
+      "new": "analysis/output/tables/domain-consistency-cells.csv",
+      "rows": 1020,
+      "numeric_cells": 1019,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/error-localisation-cells.csv",
+      "new": "analysis/output/tables/error-localisation-cells.csv",
+      "rows": 126,
+      "numeric_cells": 202,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/error-localisation-counts.csv",
+      "new": "analysis/output/tables/error-localisation-counts.csv",
+      "rows": 24,
+      "numeric_cells": 48,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/error-localisation-eligibility.csv",
+      "new": "analysis/output/tables/error-localisation-eligibility.csv",
+      "rows": 3,
+      "numeric_cells": 7,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/error-localisation-frequency.csv",
+      "new": "analysis/output/tables/error-localisation-frequency.csv",
+      "rows": 88,
+      "numeric_cells": 176,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/error-localisation-issues.csv",
+      "new": "analysis/output/tables/error-localisation-issues.csv",
+      "rows": 1,
+      "numeric_cells": 1,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/evidence-bases-distribution.csv",
+      "new": "analysis/output/tables/evidence-bases-distribution.csv",
+      "rows": 7,
+      "numeric_cells": 21,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/figure1-draft-selection.csv",
+      "new": "analysis/output/tables/figure1-draft-selection.csv",
+      "rows": 1,
+      "numeric_cells": 5,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/forest-meta.csv",
+      "new": "analysis/output/tables/forest-meta.csv",
+      "rows": 32,
+      "numeric_cells": 142,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/grounding.csv",
+      "new": "analysis/output/tables/grounding.csv",
+      "rows": 2,
+      "numeric_cells": 12,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/invalid-path-sensitivity.csv",
+      "new": "analysis/output/tables/invalid-path-sensitivity.csv",
+      "rows": 12,
+      "numeric_cells": 60,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/meta-consensus-confusion.csv",
+      "new": "analysis/output/tables/meta-consensus-confusion.csv",
+      "rows": 9,
+      "numeric_cells": 9,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/meta-leniency.csv",
+      "new": "analysis/output/tables/meta-leniency.csv",
+      "rows": 3,
+      "numeric_cells": 18,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/no-decisive-counts.csv",
+      "new": "analysis/output/tables/no-decisive-counts.csv",
+      "rows": 10,
+      "numeric_cells": 30,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/overall-consistency-cells.csv",
+      "new": "analysis/output/tables/overall-consistency-cells.csv",
+      "rows": 306,
+      "numeric_cells": 0,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/primary-endpoint.csv",
+      "new": "analysis/output/tables/primary-endpoint.csv",
+      "rows": 12,
+      "numeric_cells": 72,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/process-differences.csv",
+      "new": "analysis/output/tables/process-differences.csv",
+      "rows": 20,
+      "numeric_cells": 80,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/process-summary.csv",
+      "new": "analysis/output/tables/process-summary.csv",
+      "rows": 22,
+      "numeric_cells": 128,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/prompt-template-example.csv",
+      "new": "analysis/output/tables/prompt-template-example.csv",
+      "rows": 4,
+      "numeric_cells": 0,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/published-direction-domain.csv",
+      "new": "analysis/output/tables/published-direction-domain.csv",
+      "rows": 18,
+      "numeric_cells": 36,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/question-map.csv",
+      "new": "analysis/output/tables/question-map.csv",
+      "rows": 22,
+      "numeric_cells": 22,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/reporting-checklist-skeleton.csv",
+      "new": "analysis/output/tables/reporting-checklist-skeleton.csv",
+      "rows": 64,
+      "numeric_cells": 25,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/reproducibility.csv",
+      "new": "analysis/output/tables/reproducibility.csv",
+      "rows": 1,
+      "numeric_cells": 4,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/severity-win-share.csv",
+      "new": "analysis/output/tables/severity-win-share.csv",
+      "rows": 6,
+      "numeric_cells": 36,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/signalling-agreement.csv",
+      "new": "analysis/output/tables/signalling-agreement.csv",
+      "rows": 88,
+      "numeric_cells": 616,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/table1.csv",
+      "new": "analysis/output/tables/benchmark-set.csv",
+      "rows": 16,
+      "numeric_cells": 16,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/table2-differences.csv",
+      "new": "analysis/output/tables/table1-differences.csv",
+      "rows": 10,
+      "numeric_cells": 40,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/table2.csv",
+      "new": "analysis/output/tables/table1.csv",
+      "rows": 30,
+      "numeric_cells": 180,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/table3-supplement.csv",
+      "new": "analysis/output/tables/table3-supplement.csv",
+      "rows": 78,
+      "numeric_cells": 527,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/table3.csv",
+      "new": "analysis/output/tables/table3.csv",
+      "rows": 78,
+      "numeric_cells": 527,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/table4-reliability.csv",
+      "new": "analysis/output/tables/table2-reliability.csv",
+      "rows": 24,
+      "numeric_cells": 128,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/table5.csv",
+      "new": "analysis/output/tables/table5.csv",
+      "rows": 10,
+      "numeric_cells": 0,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/vindicated-disagreements.csv",
+      "new": "analysis/output/tables/vindicated-disagreements.csv",
+      "rows": 16,
+      "numeric_cells": 48,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/worked-trace-candidates.csv",
+      "new": "analysis/output/tables/worked-trace-candidates.csv",
+      "rows": 5,
+      "numeric_cells": 25,
+      "identical": true
+    }
+  ],
+  "protected": [
+    {
+      "path": "analysis/data-derived/README.md",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/api-cost-trials.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/api-cost-turns.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/arbiter-haiku.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/arbiter-sonnet.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/avatar-trace.json",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/avatar-unassisted-rationale.json",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/baseline-haiku.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/baseline-sonnet.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/bundle-binding-counts.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/bundle-path-checks.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/bundle-reverification.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/data-derived/bundle-trace-evidence.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/.gitattributes",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/.gitignore",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/DEVIATIONS.md",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/README.md",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/STYLE-REFERENCE.md",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/avatar-save-retry.json",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/avatar-tool-counts.json",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/build.py",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/count_save_rejections.py",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/figure2-text-provenance.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/figure2.py",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/fonts/FiraCode-OFL.txt",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/fonts/FiraCode-Regular.ttf",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/fonts/FiraSansCondensed-Bold.ttf",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/fonts/FiraSansCondensed-Regular.ttf",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/fonts/OFL.txt",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/geometry.py",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/html-report/raw/index.html",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/html-report/raw/trials/banovic26-avatar-2024.html",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/html-report/relabelled/index.html",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/html-report/relabelled/trials/banovic26-avatar-2024.html",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/inspect_tiffs.py",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/legend-provenance.md",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/pyproject.toml",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/qa.json",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/qa/avatar-html-report-domain-view.json",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/qa/avatar-html-report-domain-view.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/qa/avatar-html-report-table.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/qa/avatar-html-report.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/qa/html-report-proof.md",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/qa/html-report-relabel.diff",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/qa/html-report-relabel.md",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/relabel_report.py",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/reproducibility.json",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/save-rejections-summary.json",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/save-rejections.csv",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/screenshot_report.py",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/test_geometry.py",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/uv.lock",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/verify.py",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/visual-inspection.json",
+      "identical": true
+    },
+    {
+      "path": "analysis/figure1/visual-review.md",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/Figure1.pdf",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/Figure1.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/Figure1.svg",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/Figure1.tiff",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/Figure2.pdf",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/Figure2.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/Figure2.svg",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/Figure2.tiff",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/figure1-notes.md",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/legends-fig1-2.md",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure1-deuteranopia.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure1-final-size.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure1-grayscale.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure1-pdf.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure1-protanopia.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure1-tritanopia.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure2-deuteranopia.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure2-final-size.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure2-grayscale.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure2-pdf.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure2-protanopia.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/Figure2-tritanopia.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure1-accessibility.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure1-deutan.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure1-greyscale.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure1-pdf-1.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure1-protan.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure1-tritan.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure2-accessibility.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure2-deutan.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure2-greyscale.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure2-pdf-1.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure2-protan.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/eFigure2-tritan.png",
+      "identical": true
+    },
+    {
+      "path": "human-adjudication/adjudication-cells-with-explanations-A.xlsx",
+      "identical": true
+    },
+    {
+      "path": "human-adjudication/adjudication-cells-with-explanations-Z.xlsx",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/README.md",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/accuracy.md",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/aarnoutse-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/abbasi-2012.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/aboelfadl-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/albert-2013.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/allen-2014.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/allsop-2014.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/amini-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/an-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/apalla-2013.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/arezzo-2008.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/ascet.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/ashar-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/atli-2005.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/attal-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/attal-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/award-1-2014.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/award-10-2018.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/award-chn3-2023.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/bagg-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/baillard-2006.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/baillard-2018.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/banovic26-avatar-2024.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/barratt-2024.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/bausys-2023.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/becker-2015.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/beerendonk-1996.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/beerendonk-1999.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/bendix-1996.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/bendix-2000.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/bente-2014.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/boedt-2023.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/boeree-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/cadet.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/canvas-program.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/caprie.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/castoldi-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/chiba-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/chua-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/clyman-2019.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/dapa-hf.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/de-waal-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/declare-timi-58.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/deliver.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/dian-2018.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/duration-8-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/einarsson-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/el-khuffash-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/elixa.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/empa-reg-outcome.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/emperor-preserved.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/emperor-reduced.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/envision.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/espinos-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/exscel.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/ferreira-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/fr-as-2018.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/frat-2019.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/freeman-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/fulop-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/getgoal-duo1-2013.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/getgoal-f1-2013.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/getgood-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/gillis-2014.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/grant-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/guitton-2019.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/gupta-2024.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/hamido-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/hanafiah-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/harmony-outcomes.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/heemskerk-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/herrmann-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/hill-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/host-exam.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/hundscheid-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/ibrahim-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/jaber-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/jindani-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/kang25-recovery-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/leader.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/levin-2011.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/levin-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/lv-2023.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/monaleesa-2.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/monaleesa-3.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/monaleesa-7.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/monarch-2.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/monarch-3.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/monarch-plus.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/nefigard.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/paloma-2.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/pioneer-6.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/potsiurko-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/rewind.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/rosen-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/sanctuary.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/smart-choice-3.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/stop-igan.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/stopdapt-2.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/stopdapt-3.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/sung-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/sustain-6.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/testing.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/bundles/vel-squez-2018.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/claude-home-settings.json",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/continues.csv",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/continues.py",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/results-102/accuracy.md",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/results-102/rob2kit-domain-labels.csv",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/results-102/rob2kit-domain-labels.xlsx",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/results-102/rob2kit-signalling-answers.csv",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/results-102/rob2kit-signalling-answers.xlsx",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/rob2kit-domain-labels.csv",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/rob2kit-domain-labels.xlsx",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/rob2kit-signalling-answers.csv",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/rob2kit-signalling-answers.xlsx",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/run_all.py",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/run_case.py",
+      "identical": true
+    },
+    {
+      "path": "kit-haiku-5.5/score.py",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/README.md",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/accuracy.md",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/aarnoutse-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/abbasi-2012.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/aboelfadl-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/albert-2013.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/allen-2014.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/allsop-2014.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/amini-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/an-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/apalla-2013.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/arezzo-2008.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/ascet.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/ashar-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/atli-2005.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/attal-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/attal-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/atwine-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/award-1-2014.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/award-10-2018.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/award-chn3-2023.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/bagg-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/baillard-2006.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/baillard-2018.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/banovic26-avatar-2024.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/barratt-2024.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/bausys-2023.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/becker-2015.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/beerendonk-1996.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/beerendonk-1999.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/bendix-1996.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/bendix-2000.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/bente-2014.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/boedt-2023.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/boeree-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/cadet.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/canvas-program.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/caprie.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/castoldi-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/chiba-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/chua-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/clyman-2019.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/dapa-hf.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/de-waal-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/declare-timi-58.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/deliver.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/dian-2018.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/duration-8-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/einarsson-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/el-khuffash-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/elixa.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/empa-reg-outcome.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/emperor-preserved.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/emperor-reduced.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/envision.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/espinos-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/exscel.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/ferreira-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/fr-as-2018.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/frat-2019.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/freeman-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/fulop-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/getgoal-duo1-2013.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/getgoal-f1-2013.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/getgood-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/gillis-2014.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/grant-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/guitton-2019.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/gupta-2024.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/hamido-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/hanafiah-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/haney-2004.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/harmony-outcomes.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/heemskerk-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/herrmann-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/hill-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/host-exam.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/hundscheid-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/ibrahim-2017.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/jaber-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/jindani-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/kang25-recovery-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/leader.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/levin-2011.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/levin-2016.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/lv-2023.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/monaleesa-2.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/monaleesa-3.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/monaleesa-7.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/monarch-2.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/monarch-3.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/monarch-plus.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/nefigard.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/paloma-2.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/pioneer-6.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/potsiurko-2022.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/rewind.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/rosen-2021.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/sanctuary.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/smart-choice-3.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/stop-igan.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/stopdapt-2.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/stopdapt-3.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/sung-2020.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/sustain-6.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/testing.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/bundles/vel-squez-2018.rob2.zip",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/claude-home-settings.json",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/results/accuracy.md",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/results/rob2kit-domain-labels.csv",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/results/rob2kit-domain-labels.xlsx",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/results/rob2kit-signalling-answers.csv",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/results/rob2kit-signalling-answers.xlsx",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/rob2kit-domain-labels.csv",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/rob2kit-domain-labels.xlsx",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/rob2kit-signalling-answers.csv",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/rob2kit-signalling-answers.xlsx",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/run_all.py",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/run_case.py",
+      "identical": true
+    },
+    {
+      "path": "kit-sonnet-5.5/score.py",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/README.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/accuracy.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/build_nokit_inputs.py",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/continues.csv",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/model-domain-labels.csv",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/model-domain-labels.xlsx",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/model-signalling-answers.csv",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/model-signalling-answers.xlsx",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/nokit-format.txt",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT00159679.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT00217971.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT00222261.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT00302796.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT00472160.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT00554502.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT00760149.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT00763451.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT00975286.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01020019.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01064687.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01131676.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01144338.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01147250.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01161732.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01251211.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01347762.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01356264.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01394952.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01408914.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01560052.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01566929.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01630278.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01720446.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01730534.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01740427.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01785186.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01952795.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01958320.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT01986543.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02010281.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02018354.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02044250.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02044809.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02107703.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02128191.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02169882.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02229396.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02246621.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02278120.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02416960.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02422615.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02436655.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02465515.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02530957.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02597049.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02617693.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02619760.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02668458.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02692716.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02700321.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02763566.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02913404.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT02938104.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03036124.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03057951.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03057977.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03131687.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03294148.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03396094.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03564106.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03619213.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03643965.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03758209.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03790449.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03841448.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT03860428.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT04223401.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT04287985.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT04291781.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT04418479.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT04564339.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT04591626.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/registry-markdown/NCT04609111.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/results-102/accuracy.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/results-102/model-domain-labels.csv",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/results-102/model-domain-labels.xlsx",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/results-102/model-signalling-answers.csv",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/results-102/model-signalling-answers.xlsx",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/run_all.py",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/run_nokit_case.py",
+      "identical": true
+    },
+    {
+      "path": "no-kit-haiku-5.5/score.py",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/README.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/accuracy.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/build_nokit_inputs.py",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/continues.csv",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/model-domain-labels.csv",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/model-domain-labels.xlsx",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/model-signalling-answers.csv",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/model-signalling-answers.xlsx",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/nokit-format.txt",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT00159679.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT00217971.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT00222261.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT00302796.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT00472160.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT00554502.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT00760149.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT00763451.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT00975286.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01020019.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01064687.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01131676.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01144338.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01147250.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01161732.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01251211.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01347762.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01356264.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01394952.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01408914.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01560052.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01566929.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01630278.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01720446.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01730534.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01740427.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01785186.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01952795.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01958320.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT01986543.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02010281.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02018354.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02044250.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02044809.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02107703.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02128191.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02169882.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02229396.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02246621.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02278120.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02416960.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02422615.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02436655.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02465515.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02530957.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02597049.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02617693.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02619760.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02668458.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02692716.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02700321.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02763566.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02913404.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT02938104.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03036124.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03057951.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03057977.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03131687.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03294148.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03396094.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03564106.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03619213.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03643965.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03758209.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03790449.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03841448.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT03860428.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT04223401.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT04287985.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT04291781.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT04418479.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT04564339.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT04591626.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/registry-markdown/NCT04609111.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/results-102/accuracy.md",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/results-102/model-domain-labels.csv",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/results-102/model-domain-labels.xlsx",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/results-102/model-signalling-answers.csv",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/results-102/model-signalling-answers.xlsx",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/run_all.py",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/run_nokit_case.py",
+      "identical": true
+    },
+    {
+      "path": "no-kit-sonnet-5.5/score.py",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/ACQUIRE-NEEDS-ACCESS.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/FILES.csv",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/LABEL-TARGETS.csv",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/LABELS-batch.csv",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/OUTCOMES-batch.csv",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/README-FOR-ALI.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/TRIAL-SUMMARY.csv",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/ajsm-acl-leap/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/bja-prehab/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/cid-rifampin/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/cid-rifampin/label-table-2-from-PMC12314497.txt",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/cjasn-iga/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/gastro-glp1/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/hru-preconception/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/jacc-avr/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/jama-sglt2/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/jamapeds-pda/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/lancet-clopidogrel/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/lde-glp1/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/lneurol-neuropathic/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/loncol-cdk46/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/lpsych-cannabinoids/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/lrheum-lbp/BINDING.md",
+      "identical": true
+    },
+    {
+      "path": "rob2-meta-benchmark-set/metas/lrm-preox/BINDING.md",
+      "identical": true
+    }
+  ],
+  "tables": [
+    {
+      "old": 2,
+      "new": 1,
+      "numeric_cells": 31,
+      "identical": true,
+      "retained_footer_numbers_identical": true,
+      "authorised_footer_changes": "Renumbered eTable references; Table 3 adds 0/510 overrides"
+    },
+    {
+      "old": 4,
+      "new": 2,
+      "numeric_cells": 18,
+      "identical": true,
+      "retained_footer_numbers_identical": true,
+      "authorised_footer_changes": "Renumbered eTable references; Table 3 adds 0/510 overrides"
+    },
+    {
+      "old": 3,
+      "new": 3,
+      "numeric_cells": 30,
+      "identical": true,
+      "retained_footer_numbers_identical": true,
+      "authorised_footer_changes": "Renumbered eTable references; Table 3 adds 0/510 overrides"
+    }
+  ],
+  "failures": []
+}

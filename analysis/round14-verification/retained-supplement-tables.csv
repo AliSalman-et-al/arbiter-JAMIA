@@ -1,0 +1,31 @@
+eTable,caption,retained,numeric_tokens,identical
+1,Benchmark trials span sixteen meta-analyses,TRUE,92,TRUE
+2,Published label distributions by domain,TRUE,262,TRUE
+3,AVATAR complete trace,TRUE,893,TRUE
+4,Confusion matrices against Published,TRUE,108,TRUE
+5,Per-meta-analysis weighted κ,TRUE,72,TRUE
+6,"Agreement against Published, all sources and domains",TRUE,371,TRUE
+7,Paired differences against Published,TRUE,126,TRUE
+8,Post hoc: unweighted agreement with published labels is modest,FALSE,140,NA
+9,Post hoc: adjudicators usually agreed with models when they disagreed with Published,TRUE,48,TRUE
+10,Published labels were usually less severe than the agreed choice,TRUE,51,TRUE
+11,"Agreement against the composite reference, Sonnet only",TRUE,195,TRUE
+12,Paired differences against the composite reference,TRUE,73,TRUE
+13,Composite-reference sensitivity estimates by adjudicator,TRUE,426,TRUE
+14,Composite-reference paired differences by adjudicator,TRUE,158,TRUE
+15,Per-adjudicator and split-cell win-share sensitivity,TRUE,66,TRUE
+16,Post hoc severity-stratified win share,TRUE,28,TRUE
+17,Independent and selected ratings: full agreement including AC2,TRUE,102,TRUE
+18,Localisation population eligibility,TRUE,9,TRUE
+19,"Error-localisation classes, both populations",TRUE,24,TRUE
+20,"Questions that alone changed the rating: frequencies, both populations",TRUE,176,TRUE
+21,Unresolved independent answer,TRUE,7,TRUE
+22,Post hoc: recomputing Unassisted ratings changes few arm disagreements,FALSE,214,NA
+23,"RoB 2 consistency and structural audit, all sources and domains",TRUE,278,TRUE
+24,Required question skipped sensitivity,TRUE,86,TRUE
+25,Quotation syntax in active justifications,TRUE,10,TRUE
+26,Unassisted justification content,TRUE,4,TRUE
+27,"Time, cost and token use per trial by model",TRUE,100,TRUE
+28,API cost reconstruction: estimates and bounds,TRUE,34,TRUE
+29,Token reconciliation and compaction diagnostics,TRUE,57,TRUE
+30,Exploratory signalling-answer agreement,TRUE,466,TRUE

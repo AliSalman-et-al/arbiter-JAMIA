@@ -147,13 +147,6 @@ invalid_path_sensitivity <- function(inputs,checks) {
 }
 validate_gate <- function(checks) {
   sonnet <- checks |> filter(arm=='ARBITER-Sonnet',status!='Consistent')
-  haiku <- checks |> filter(arm=='ARBITER-Haiku',!status %in% c('Consistent','Not evaluable'))
-  missing <- checks |> filter(arm=='ARBITER-Haiku',status=='Not evaluable')
-  # The amended gate allows only the independently established exception.
-  isolated <- nrow(haiku)==0L || (nrow(haiku)==1L && haiku$slug=='hill-2017' &&
-    haiku$domain=='D1' && haiku$algorithm=='Low' && haiku$label=='Some concerns')
-  unfinished <- all(missing$slug=='award-1-2014' & is.na(missing$label) & is.na(missing$algorithm))
-  if(nrow(sonnet) || !isolated || !unfinished)
-    stop('Section 5.4 validation gate failed: unexpected ARBITER inconsistency.',call.=FALSE)
+  if(nrow(sonnet)) stop('Section 5.4 validation gate failed: unexpected ARBITER inconsistency.',call.=FALSE)
   invisible(TRUE)
 }

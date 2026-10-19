@@ -65,14 +65,11 @@ test_that('consensus endpoint reproduces label-based sanity counts', {
   expect_equal(x$count,c(54L,7L,1L))
 })
 
-test_that('amended gate rejects a second Haiku exception or unexpected missingness', {
+test_that('Sonnet gate rejects inconsistencies and missing required answers', {
   x <- domain_checks(inputs)
-  i <- which(x$arm=='ARBITER-Haiku' & x$status=='Consistent')[1]
+  i <- which(x$arm=='ARBITER-Sonnet')[1]
   x$status[i] <- 'Violation'
   expect_error(validate_gate(x),'validation gate failed')
-  x <- domain_checks(inputs)
   x$status[i] <- 'Not evaluable'
   expect_error(validate_gate(x),'validation gate failed')
 })
-
-

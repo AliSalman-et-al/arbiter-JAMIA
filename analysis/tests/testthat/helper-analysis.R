@@ -9,3 +9,6 @@ source(file.path(analysis_dir,'R','error-localisation.R'))
 source(file.path(analysis_dir,'R','checklist.R'))
 source(file.path(analysis_dir,'R','process.R'))
 source(file.path(analysis_dir,'R','extract-run-metrics.R'))
+
+source(file.path(analysis_dir,'R','posthoc.R'))
+source(file.path(analysis_dir,'R','publication-io.R'))

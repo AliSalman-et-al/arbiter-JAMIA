@@ -1,4 +1,4 @@
-Metric,ARBITER-Sonnet,Baseline-Sonnet,Paired mean difference (95% CI)
+Metric,ARBITER (Sonnet 5.5),Unassisted (Sonnet 5.5),Paired mean difference (95% CI)
 Time (minutes/trial),7.6 [6.1 to 10.5],0.5 [0.4 to 0.5],11.0 (8.4 to 14.1)
 Cost (USD/trial),3.78 [3.46 to 4.10],0.09 [0.07 to 0.13],3.68 (3.61 to 3.75)
 Input tokens (count/trial),96 [86 to 104],6 [6 to 6],90 (88 to 92)
