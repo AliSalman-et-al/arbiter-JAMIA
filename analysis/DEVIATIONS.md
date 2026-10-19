@@ -352,3 +352,35 @@ No Python is used. This file records conservative resolutions as they arise.
     resolves the AVATAR eTable placeholder and legacy number without editing them.
     No statistical estimate or method changes. See round12-report.md for the full
     legends, numbering map, checks and visual QA.
+
+38. **Round 14 story revision; Haiku arms removed from reporting.** After a
+    full-text literature review (`docs/research/llm-rob2/SYNTHESIS.md`), the
+    authors revised the manuscript story and displays (ANALYSIS-PLAN section 7,
+    Round 14). The pre-specified Haiku supplement analyses are dropped from
+    every output, including the manuscript, supplement, results.html and the
+    public release, by author decision. The Haiku data and code remain in the
+    working repository. Display changes:
+    - The benchmark set moves to the supplement.
+    - Old Table 2 becomes Table 1, and old Table 4 becomes Table 2.
+    - A new Table 4 compares the study with prior work.
+    - Old Fig 5B, with bootstrap CIs, becomes Fig 4B. Old Fig 4B moves to the supplement.
+    - Fig 5 gains the post hoc strictness rows.
+    - The disagreement-pattern tile matrix and the recorded-override eTable are
+      dropped. Sonnet has no overrides; Table 3 reports 0/510.
+    The composite reference stays in the supplement and is cited only in the
+    Discussion. No confirmatory method changes.
+
+39. **Round 14 post hoc analyses.** Added after the literature review and
+    labelled post hoc in every output (ANALYSIS-PLAN section 6):
+    - Rules-only recomputation of the unassisted arm. Violations are replaced by
+      the algorithm's output from the arm's own answers; invalid paths are left
+      as reported.
+    - Direction-of-disagreement shares with stratified cluster bootstrap CIs.
+    - Per-domain unweighted Cohen's kappa against published labels.
+    Motivation: prior studies report that recomputing ratings from model answers
+    improves agreement (Huang 2025; Choi 2026), and that LLMs rate more strictly
+    than published labels (Nyrhi 2026; Gandhi 2026; ROBoto2). A preliminary
+    script outside the pipeline gave 3 of 62 consensus discordant cells changed;
+    Unassisted wins 7 to 10; agreement with published labels 395 to 385 of 510;
+    agreement with the agreed choice 69 to 64 of 129. The pipeline must
+    reproduce these numbers before they are reported.

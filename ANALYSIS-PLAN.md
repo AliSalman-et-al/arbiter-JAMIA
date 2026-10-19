@@ -4,7 +4,7 @@ Status: fixed on 2026-10-18, after data collection and before any analysis beyon
 
 ## 1. Framing
 
-ARBITER is reported as a system and auditability paper. The primary quantitative evidence is blinded human adjudication of the disputed cells. Agreement with meta labels is reported in full as evidence that published RoB 2 labels are a noisy reference. It is not the headline.
+ARBITER is reported as a system and auditability paper. Amended 2026-10-19 (Round 14): the manuscript reports the two Sonnet arms only; see section 7. The primary quantitative evidence is blinded human adjudication of the disputed cells. Agreement with meta labels is reported in full as evidence that published RoB 2 labels are a noisy reference. It is not the headline.
 
 Only the primary endpoint (section 4) is confirmatory. Every other analysis is secondary or exploratory. Results are reported as estimates with 95% CIs. There are no p-values and no multiplicity correction.
 
@@ -213,55 +213,67 @@ Baseline arms have no evidence trace. Report them as "not available" rather than
 - Signalling-answer agreement with each adjudicator's independent answers, on disputed domains only (`signalling_answers_independent`). Report it per question, collapsed to Y/PY, N/PN and NI/NA.
 - A forest plot by meta-analysis: weighted κ against the meta label per arm. Descriptive, with no tests (supplement).
 
+- **Post hoc, added 2026-10-19 (Round 14).** These are labelled post hoc in every output and recorded in `analysis/DEVIATIONS.md`.
+  - *Rules-only recomputation.* Replace each Unassisted domain label that is a violation with the official algorithm's output from its own signalling answers. Invalid answer paths stay as reported; the section 5.4 NA sensitivity covers them. Report: cells changed; win share on consensus discordant cells (preliminary script: 3 of 62 cells change; Unassisted wins 7 → 10); agreement with published labels (preliminary: 395 → 385 of 510); and agreement with the agreed choice on consensus cells (preliminary: 69 → 64 of 129). Recompute in the pipeline; do not copy these numbers.
+  - *Direction of disagreement with published labels.* For each Sonnet arm and each direction (stricter / more lenient than the published label), the share of consensus cells where the agreed choice equals the arm's label, with the section 4 stratified cluster bootstrap 95% CI. Split cells are reported as counts. This is the Fig 4B estimand.
+  - *Unweighted Cohen's κ* and exact agreement against published labels, by domain and Overall, for comparison with prior studies (supplement only).
+
 ## 7. Outputs
 
 Revised 2026-10-18 for JAMIA's Research and Applications limits: at most 4 tables and 6 figures, tables as editable Word tables, figures as separate files with legends and alt text. Supplementary material is unlimited. Every output must be ready for the manuscript as produced.
 
-### Story
+### Story (Round 14, 2026-10-19; supersedes the earlier story and display lists)
 
-Published RoB 2 labels are a weak reference. An unassisted model matches them about as well as ARBITER does. But ARBITER follows the RoB 2 rules, ties every answer to a cited passage, and is the arm blinded experts prefer when the two arms disagree, at a known cost per trial. Figures follow the argument: Action (Fig 1–3), Challenge (Fig 4), Resolution (Fig 5–6). Each main item serves one part of this story. Items that do not serve it go to the supplement. No item repeats another.
+Agreed with the authors in the Round 14 story review, grounded in `docs/research/llm-rob2/SYNTHESIS.md`. The manuscript reports the two Sonnet arms only. The Haiku arms are not mentioned anywhere in the manuscript, the supplement, results.html or the public release.
+
+- **Reader and Opening.** JAMIA informatics readers. Opening: AI output used in evidence synthesis must be checkable. RoB 2 is the worked case: it drives certainty ratings, is slow and unreliable even among experts (Minozzi 2020, 2021), and published reviews disagree on the same trials (Hartling 2019, Zhang 2024). Evidence-synthesis bodies require AI that makes or suggests judgements to be overseen by humans and reported transparently (Flemyng 2025; RAISE).
+- **Challenge.** Can a design where the rules and the evidence checks are the only route to a rating make LLM RoB 2 assessment auditable without losing judgement quality? The obstacle: LLM studies keep reporting modest agreement with published labels and stricter ratings, and read the strictness as model error (Nyrhi 2026; ROBoto2; Gandhi 2026; Taneri 2025; Lai 2026), while the field itself calls those labels imperfect and asks for purpose-built expert references (Eisele-Metzger 2025; Sahu 2026). Partial fixes exist: rules applied after the fact (Huang 2025; Choi 2026; ROBoto2), quotes checked after the fact (Liang 2026), and agents for other tools (Saadi 2026). None makes rules and evidence the only route to a rating, and none tests the published reference where it is disputed.
+- **Action.** ARBITER compared with an unassisted model. The unassisted arm mirrors the typical prior design: it answers the signalling questions with RoB 2 guidance and states its own ratings. Both arms had identical inputs (articles, supplements, registry records, protocols and SAPs). 102 trials from 16 meta-analyses. Blinded dual adjudication of the disagreement cells: each adjudicator first gave an independent rating, then chose among three blinded labels. This is the affordable form of a purpose-built expert reference. Design precedent: Gartlehner 2025.
+- **Resolution (message sentence).** Every ARBITER rating follows the RoB 2 rules and every quotation is found in a stored source. Both models agreed poorly with published labels, mostly because they rated more strictly, and the adjudicators usually agreed with the stricter rating. When the two arms disagreed, the adjudicators chose ARBITER in 54 of 62 cells. Applying the rules to the unassisted model's own answers changed almost none of those cells. The gain came from the answers the workflow produced, not from the arithmetic.
+- **Claim discipline.** Claims are made at system level; workflow, skill prompt and extra time are not separated. ARBITER's software gives consistency and auditability; the workflow changed the answers. Quotations are "found in the stored source", never "supported". Never use "first"; use "to our knowledge" backed by a dated search before submission. Credit ROBoto2, Choi, Huang, Liang, Saadi and Gandhi by name.
+- **Title.** *ARBITER (Agentic Risk of Bias Inference Tool for Evidence Reviews): auditable AI risk-of-bias assessment.*
+- **Abstract Results order.** (1) Primary endpoint, 54/62; (2) stricter ratings usually upheld, for both arms; (3) rule breaks without ARBITER, and every ARBITER quotation found in its source; (4) similar, poor κ against published labels; (5) time and cost.
+- **Discussion order.** (1) Principal finding. (2) Over-flagging reinterpreted, including the contrast with Gandhi's masked panel, which points the same way. (3) Comparison with prior systems, using Table 4. (4) Answers, not arithmetic: the rules-only recomputation, set against Huang and Choi; the rule-break rate placed beside Huang, Eisele-Metzger (2/100 overall-rule breaks) and Choi, without comparing magnitudes. (5) Inputs: both arms had the registry and protocol, so the question 5.1 gap reflects use, not access. (6) Implications: evaluation practice (the composite-reference contrast: the same ratings, scored against two references, reach opposite verdicts) and, hedged, evidence certainty. (7) Cost and deployment: list-price equivalent as the reproducible reference; runs used a subscription; anecdotal statement that flat-rate plans carry far more usage than their price. (8) Limitations: system-level attribution; adjudicators could choose only among the labels offered; agreed cells never adjudicated (Gartlehner's caveat); one run per arm; strictness evidence rests on small strata; Overall not adjudicated; whether the quotations support the answers was not assessed. (9) Conclusion.
 
 ### Main text
 
-| Item | Content |
+| Item | Results step and job |
 |---|---|
-| Fig 1 | "How ARBITER works" (final design 2026-10-18). Double column, ≤110 mm tall. Swimlanes: Reviewer, AI model (LLM agent), ARBITER server ("rule-based software, no AI"), Audit file. Phases Capture → Propose & approve → Assess each domain → Review & export. Plain-language labels are primary; real MCP tool names are secondary (small grey monospace under the plain labels). Relabelled: "follows the ARBITER assessment guide"; "Pick the result to assess (outcome + analysis)"; "Check and record the choice"; "Store an unchangeable copy of each source"; "Check every quote · Apply the RoB 2 rules"; "Keep the full record · Package the audit file"; Reviewer "Chooses the trial and outcome", approves via `arbiter review`, and receives the HTML assessment report (rendered by `arbiter report` from the verified audit file); Audit file "every source, quote, answer and decision, checkable by an independent verifier" (.arbiter.zip). Input glyph (trial reports + registry) enters at Capture. No red rejection arrow; the legend reports the 53/637 rejected saves. No "why it works" strip or safeguard badges. |
-| Fig 2 | "AVATAR, assessed by ARBITER, domain by domain" (final content 2026-10-18). Reader-first, plain language. Header: AVATAR in one line; "RoB 2 asks up to 22 questions in 5 domains"; answer and evidence keys. **Sources stored strip**: 7 stored, 4 cited, shown as lettered cards A–D (Circulation 2022 report, Eur Heart J 2024 report, ClinicalTrials.gov record, 2021 protocol amendment), each with a 6-character fingerprint of the stored copy. Storyboard rows (full RoB 2 domain names; plain paraphrased question, official number in grey): Domain & question → The sources say (every snippet the AI cited for that question, up to 4, each ≤~15 words, tagged "A · p 4", typed supports/context/reasoning) → AI model answers (pill + one-line reason) → ARBITER (rule-based software, no AI) checks & applies rules (✓ quotes found in stored copies; the domain's answer chips, not-needed hatched; the rule) → Result. "Weighed against: …" (counter-evidence) and "? Open point: …" (unknowns) shown verbatim where recorded. Displayed questions: D1 1.3 (Table 2 + diabetes figure + counter-evidence); D2 2.3 (four snippets incl. protocol amendment, counter-evidence, open point); D3 3.1; D4 4.3 + 4.4 (reasoning, no quote); D5 5.1 expanded (four context snippets + open point → No information → RoB 2 rule → Some concerns). Overall rule row. Three italic annotations on curved arrows that point at their targets (fourth "records evidence against its own answer and what it could not find" only if it fits). No "Without ARBITER" strip. Footer lines: this trial's totals (questions answered / not needed; quotes all found in stored sources); "All of this appears in ARBITER's HTML report for the reviewer and is saved in one audit file (.arbiter.zip), verified by an independent verifier"; "Published review: Low · Both expert adjudicators: Some concerns". No tool names, handles or hashes beyond the fingerprints. |
-| Fig 3 | Study flow, CONSORT style, full width, centred. Adds an arms box: 4 arms each assessed 102 trials; Sonnet 5.5 ARBITER and Unassisted (main), Haiku 5.5 (supplement). |
-| Fig 4 | "Published labels are a weak reference" (Challenge). **A:** weighted κ against Published by domain and pooled, ARBITER and Unassisted, 95% CIs. **B:** one 100% stacked bar per domain plus All: Published less severe / equal / more severe than the consensus preferred judgement, with counts (D5 30/41 and D3 19/24 less severe). |
-| Fig 5 | Primary endpoint (Resolution). **A:** forest plot of the ARBITER win share with 95% CI for: both adjudicators (consensus), Adjudicator 1, Adjudicator 2, split cells counted against ARBITER; dashed 50% line "no preference"; right-hand text column with ARBITER / Unassisted / neither counts. **B:** vindicated disagreements: for each source (ARBITER, Unassisted), stacked bars split by direction of disagreement with Published (more / less severe): vindicated / Published upheld / other label / adjudicators split. Consensus counts: ARBITER 95/105 vindicated (more severe 73/77, less severe 22/28); Unassisted 67/97 (48/59, 19/38). The old tile matrix moves to the supplement. |
-| Fig 6 | Decisive signalling questions (section 5.6, primary population). Paired horizontal bars, ARBITER above Unassisted. Each domain facet adds a grey row "No single decisive question" so the bars reconcile with the facet n. Tighter vertical spacing. |
-| Table 1 | Benchmark set. One row per meta-analysis, sorted by specialty. Columns: specialty; journal and year; topic; trials in the analysis set; published D1–D5 labels pooled as Low / Some concerns / High counts; Overall labels given (yes/no). A totals row closes the table. Specialty, journal, year and topic come from `analysis/data-curated/meta-analyses.csv`. |
-| Table 2 | Agreement. Block 1: against published labels, for ARBITER, Unassisted and the All-Low rule, on D1–D5 pooled and on Overall. Block 2: against the composite reference, D1–D5. Block 3: the paired ARBITER − Unassisted differences. Denominators go in headers or block labels; cells read "66.3 (57.3–74.7)" (no n/N in cells; full n/N in eTable). AC2 kept. Footnotes: both composite caveats; Overall judgements were not adjudicated and Published is lenient (cross-reference Fig 4). |
-| Table 3 | RoB 2 rule consistency and audit, for ARBITER and Unassisted (sections 5.4 and 5.8): consistent; violation; invalid answer path; departure; recorded overrides; Overall consistency and permitted escalation; evidence coverage; evidence binding (text spans and visual, separately); bundle verification. Drop "All evidence bound", "Proposed judgement matches algorithm" and the Overall violation row. CIs inside the cells, no separate CI column. ARBITER structural zeros carry a footnote mark: guaranteed by design. |
-| Table 4 | Reliability of the reference standard (section 5.5): Adjudicator 1 vs Adjudicator 2 on independent and on preferred judgements, and each adjudicator's independent judgement against the Published, ARBITER and Unassisted labels, on disputed cells only. The footnote states the selection. |
+| Fig 1 | Methods. How ARBITER works. Protected; unchanged. |
+| Fig 2 | Methods. AVATAR worked example. Protected; unchanged. |
+| Fig 3 | R1. Study flow with two arms (ARBITER, Unassisted). |
+| Table 1 | R2. Agreement with published labels: ARBITER, Unassisted, All-Low rule; D1–D5 and Overall; weighted κ, exact agreement, sensitivity and specificity for Some concerns or High; paired differences. Footnote: Overall not adjudicated; published labels are lenient (see Fig 4B). |
+| Fig 4 | R2–R3. **A:** weighted κ against published labels by domain, both arms. **B:** for each arm and each direction (stricter / more lenient than the published label), the share of consensus cells where the adjudicators agreed with the model, with counts and bootstrap 95% CIs (ARBITER 73/77 and 22/28; Unassisted 48/59 and 19/38; recompute). Split cells shown as counts. |
+| Fig 5 | R4. Primary endpoint forest: consensus, Adjudicator 1, Adjudicator 2, splits counted against ARBITER, plus a separate post hoc group: ARBITER stricter than Unassisted (44/45) and more lenient (10/17). |
+| Table 2 | R4. Reliability of the reference: Adjudicator 1 vs 2 (independent and preferred), and each adjudicator's independent rating against the published, ARBITER and Unassisted labels. Disputed cells only. |
+| Fig 6 | R5. Where the unassisted model went wrong: the question that alone changed the rating. Results text adds the rules-only recomputation (post hoc). |
+| Table 3 | R6. RoB 2 rule breaks without ARBITER (violation, invalid answer path, total, by domain; Overall); ARBITER audit rows (no rule breaks or overrides by design; quotation verification; rejected saves; bundle verification). |
+| Table 4 | Discussion. Comparison with prior work: about 8 representative studies plus ARBITER as rows; columns: rules applied in code; rules enforced while the assessment runs; quotations verified against a stored source; audit file; agent with tools; independent reference or adjudication; input parity. Citations in the notes. |
 
-Results text gives the time and cost per trial (median [IQR]) and the paired differences. Their table is in the supplement.
+Cost and time (R7) are given in text only.
 
 ### Supplement
 
-One `Supplement.docx`, built by the pipeline, with eTables and eFigures numbered in the order they are cited. Each has a caption and footnotes. It holds:
+One `Supplement.docx`, with eTables and eFigures numbered in citation order, Sonnet arms only.
 
-- a short methods appendix: the RoB 2 algorithms and validation; the API list-price reconstruction; the error-localisation rules; the evidence-binding criteria
-- Table 1 per domain
-- process metrics (former Table 5), Sonnet and Haiku
-- the Haiku arms on every analysis except the adjudication analyses
-- confusion matrices
-- per-meta forest plot
-- per-adjudicator, split-cell and missing-judgement sensitivity analyses
-- error-localisation class counts, both populations, and the decisive-question frequency table
-- the recorded override
-- grounding by quote syntax
-- exploratory signalling-answer agreement
-- the prompt template and one filled example
-- run provenance
-- eFigure: the former Fig 3B tile matrix (all 154 disputed cells by disagreement pattern × preferred label)
-- eTable: post-hoc severity-stratified win share (ARBITER more vs less severe than Unassisted: 44/45 and 10/17), recorded in DEVIATIONS.md
-- eTable: complete AVATAR trace (all ARBITER answers with full quotes, evidence types, justifications, unknowns, source/page/lines/hash; all Unassisted answers and rationale)
+- eMethods: RoB 2 algorithms and validation; prompt template with a filled example; input parity; error-localisation rules; evidence-binding criteria; API list-price reconstruction and token reconciliation.
+- Benchmark set (former Table 1) and published label distributions by domain.
+- AVATAR complete trace.
+- Confusion matrices; per-meta-analysis κ (eFigure); full agreement including AC2; **per-domain unweighted Cohen's κ and exact agreement against published labels, for comparison with prior studies**.
+- Published label against the adjudicators' agreed choice, by domain (former Fig 4B).
+- Composite-reference analysis and its by-adjudicator sensitivity. It is cited in Discussion point 6, not in the Results.
+- Per-adjudicator and split-cell win-share sensitivity; the full severity-stratified table.
+- Independent and preferred ratings: full agreement including AC2.
+- Localisation eligibility, classes, decisive-question frequencies, unresolved answers.
+- **Rules-only recomputation of the unassisted arm (post hoc)**: changed cells; win share; agreement with published labels and with the agreed choice.
+- Full rule-consistency audit by domain; invalid-path sensitivity; quotation syntax; Unassisted justification content.
+- Time, cost and tokens per trial.
+- Exploratory signalling-answer agreement.
+- Dropped: every Haiku item, the recorded-override eTable (no Sonnet overrides; Table 3 states 0/510), and the disagreement-pattern tile matrix.
 
 `TRIPOD-LLM.docx` is a separate file: the checklist skeleton, with GRRAS items.
 
-`results.html` is reviewer-facing: it follows the manuscript order (Fig 1–6, Tables 1–4) with legends, plus a short reproduction section and code links, and is published on GitHub Pages and cited in the Data availability statement. `supplement.html` mirrors Supplement.docx.
+`results.html` is reviewer-facing. It follows the manuscript order (Fig 1–6, Tables 1–4) with legends, plus a short reproduction section and code links. It is published on GitHub Pages and cited in the Data availability statement. `supplement.html` mirrors Supplement.docx.
 
 ### Production standards
 
@@ -287,7 +299,7 @@ One `Supplement.docx`, built by the pipeline, with eTables and eFigures numbered
 
 - Follow TRIPOD-LLM, plus GRRAS for the agreement and reliability parts.
 - Methods state the model IDs, the effort setting, the run dates and the ARBITER commit. Take these from the run READMEs and `meta.json`:
-  - models `claude-sonnet-5-5` and `claude-haiku-5-5`, effort medium
+  - model `claude-sonnet-5-5`, effort medium (the Haiku arms are not reported)
   - Claude Code 2.1.278, with an isolated home (`claude-home-settings.json`)
   - ARBITER 1.0.0 (public commit `2f549ae`), the code used for the runs
 - Call the tool ARBITER and the skill `/arbiter-assess` throughout, including in the analysis code, figures and tables. rob2-kit is an earlier name for the same software. File names and identifiers in the data, such as `rob2kit_*` columns, `/rob2-assess` in the logs and `kit_commit`, are internal and are never shown in outputs. The version cited in Methods must resolve in the public ARBITER repository or its Zenodo archive.
@@ -330,3 +342,8 @@ Display changes only; all statistical methods, estimates and source CSVs remain 
 - Table 1 merges journal and year, gives Topic the released width and fixes column widths.
 - Figures 4B and 5B use direct segment labels; separate legends are removed.
 - Results do not start with numerals; Figure 4 adds its existing count-derived percentage. Keep six figures and four main tables; finding titles retained except the approved Table 2 shortening.
+
+### Round 14 story and display revision (2026-10-19)
+
+This round sets the story, displays and order in section 7 (Story, Main text, Supplement), which replace the earlier lists. It also adds the post hoc analyses in section 6. Section headings in 5.x keep their original item numbers. The current numbering is: Table 1 = agreement with published labels (was Table 2); Table 2 = reliability of the reference (was Table 4); Table 3 = rule breaks and audit (unchanged); Table 4 = comparison with prior work (new); the benchmark set (was Table 1) moves to the supplement. Fig 4B = direction-of-disagreement estimand (was Fig 5B); the old Fig 4B moves to the supplement. Fig 5 = primary endpoint forest with post hoc strictness rows. The Haiku arms are dropped from every output. Earlier round notes that conflict with section 7 are superseded.
+
