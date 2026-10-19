@@ -96,3 +96,27 @@ Minor items for the next round:
 - **Q44 (matched-outcome sensitivity analysis): skipped.** Methods disclose how labels were matched to results. Limitations state that some disagreements may reflect outcome mismatch rather than a different judgement.
 - **Q45: the source of 53/637 is unknown.** Remove the rejected-saves sentence from the Figure 1 legend. Remove it from any other place it appears.
 - **Q46: approved.** Figure 1: "Store an unchangeable copy of each source" becomes "Store a content-hashed copy of each source"; "supporting evidence" becomes "cited evidence". Figure 2: "direct support" becomes "direct quotation". Change only these strings, then re-render.
+
+## WP-M draft 1 review, 2026-10-19
+
+**Verdict:** revise (`WP-M2-revision.md`). The draft is accurate: all 302 number tokens trace, and it runs to 3,291 of 4,000 words.
+
+- **Story spec error (orchestrator's).** Section 7 says the Unassisted arm "mirrors the typical prior design: answers the signalling questions with RoB 2 guidance". In fact its prompt carried no RoB 2 guidance, only the task and an output-format sentence (`no-kit-sonnet-5.5/README.md`). Correct ANALYSIS-PLAN section 7 once WP-A3 has finished, since WP-A3 may be editing the plan. Limitations must add that no structured-prompt comparator was tested.
+- **Citation fixes confirmed.** "Hartling 2019" is Bertizzolo et al., *BMJ Open* (Crossref). Both same-trial discordance studies concern RoB 1.
+- **Structure.** The message block was pasted verbatim three times, the Objective stated results, the Background did not end on the question, the abstract Discussion was too thin, and an optional lay summary was included.
+
+## WP-M draft 2 review, 2026-10-19
+
+**Verdict:** accepted as the working draft.
+
+- 308 number tokens, none untraced.
+- 3,297 of 4,000 words.
+- The abstract carries the rules-only and question 5.1 findings.
+- The Background ends on the Challenge question.
+- The Unassisted arm is described accurately as the minimal-prompt condition.
+
+Queued for the final polish round:
+
+1. **Hypothesis wording.** The Objective says "We hypothesised… that differences in elicited answers would contribute beyond rule arithmetic". That analysis was post hoc. Write it as a post hoc question.
+2. **Supplement numbering.** Only 7 supplementary items are cited, in this order: eTable 3 → 1 → 2 → 21 → 23 → 28 → 11–14. Renumber the supplement in manuscript citation order. Every supplementary item must be cited at least once, for example through grouped pointers in Methods and Results.
+3. **ANALYSIS-PLAN section 7.** Correct the description of the Unassisted arm as the minimal-prompt condition, after WP-A3 finishes.
