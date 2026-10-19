@@ -1,7 +1,0 @@
-# Regenerable full-size Word renders are local QA intermediates.
-*-word.pdf
-*-word-*.png
-Supplement-contact-*.png
-test*.png
-identity.png
-*-pdf.png
