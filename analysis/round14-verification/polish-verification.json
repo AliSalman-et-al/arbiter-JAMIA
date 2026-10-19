@@ -1,0 +1,72 @@
+{
+  "baseline": "85a4c6f",
+  "eTables": 32,
+  "eFigures": 1,
+  "all_cited_in_order": true,
+  "identity_checks": [
+    {
+      "path": "analysis/output/manuscript/Supplement.docx",
+      "reference_blocks": 76,
+      "numeric_blocks": 2090
+    },
+    {
+      "path": "analysis/output/manuscript/TRIPOD-LLM.docx",
+      "reference_blocks": 9,
+      "numeric_blocks": 80
+    },
+    {
+      "path": "analysis/output/manuscript/Table1.docx",
+      "reference_blocks": 1,
+      "numeric_blocks": 33
+    },
+    {
+      "path": "analysis/output/manuscript/Table2.docx",
+      "reference_blocks": 1,
+      "numeric_blocks": 24
+    },
+    {
+      "path": "analysis/output/manuscript/Table3.docx",
+      "reference_blocks": 1,
+      "numeric_blocks": 32
+    },
+    {
+      "path": "analysis/output/manuscript/Table4.docx",
+      "reference_blocks": 1,
+      "numeric_blocks": 12
+    },
+    {
+      "path": "analysis/output/manuscript/figure-legends.md",
+      "reference_blocks": 3,
+      "numeric_blocks": 13
+    },
+    {
+      "path": "analysis/output/manuscript/figure1-notes.md",
+      "reference_blocks": 3,
+      "numeric_blocks": 50
+    },
+    {
+      "path": "analysis/output/manuscript/legends-fig1-2.md",
+      "reference_blocks": 0,
+      "numeric_blocks": 5
+    },
+    {
+      "path": "analysis/output/manuscript/results-sentences.md",
+      "reference_blocks": 3,
+      "numeric_blocks": 8
+    },
+    {
+      "path": "analysis/results.html",
+      "reference_blocks": 10,
+      "baseline": "verified committed Word/Markdown sources"
+    },
+    {
+      "path": "analysis/supplement.html",
+      "reference_blocks": 34,
+      "baseline": "verified committed Word/Markdown sources"
+    }
+  ],
+  "invariant_csvs": 64,
+  "invariant_input_and_artwork_files": 527,
+  "manuscript_empirical_numbers_unchanged": true,
+  "rendered_pdf_references_match_Word": true
+}

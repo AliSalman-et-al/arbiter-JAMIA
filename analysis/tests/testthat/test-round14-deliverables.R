@@ -5,7 +5,7 @@ test_that('Round 14 published files use current numbering, reader labels and inv
  entries <- supplement_registry(inputs)
  captions <- vapply(entries,`[[`,character(1),'caption')
  expect_equal(length(entries),32L)
- expect_equal(supplement_number('AVATAR complete trace'),3L)
+ expect_equal(supplement_number('AVATAR complete trace'),1L)
  expect_false(any(grepl('Haiku|Recorded model override|disagreement-pattern',captions)))
  expect_equal(sum(grepl('Post hoc|post hoc',captions)),4L)
  expect_true(all(c('Benchmark trials span sixteen meta-analyses','Published labels were usually less severe than the agreed choice') %in% captions))

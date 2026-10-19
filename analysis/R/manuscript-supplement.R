@@ -257,26 +257,13 @@ supplement_registry <- function(inputs) {
     entries[[i]]$caption <- reader_label(entries[[i]]$caption)
     entries[[i]]$note <- reader_label(entries[[i]]$note)
   }
-  # Citation order in the main figures, main tables, then time/cost results.
-  first <- c('Benchmark trials span sixteen meta-analyses','Published label distributions by domain','AVATAR complete trace',
-    'Confusion matrices against Published','Per-meta-analysis weighted κ','Agreement against Published, all sources and domains',
-    'Paired differences against Published','Post hoc: unweighted agreement with published labels is modest',
-    'Adjudicators usually agreed with models when they disagreed with Published',
-    'Published labels were usually less severe than the agreed choice',
-    'Agreement against the composite reference, Sonnet only','Paired differences against the composite reference',
-    'Composite-reference sensitivity estimates by adjudicator','Composite-reference paired differences by adjudicator',
-    'Preferred shares among adjudicated arm disagreements: sensitivities','Post hoc: preferred shares among adjudicated arm disagreements by strictness',
-    'Independent and selected ratings: full agreement including AC2','Localisation population eligibility',
-    'Error-localisation classes, both populations','Decisive-question frequencies, both populations',
-    'Post hoc: supplied documents and answers in question 5.1 losses','Unresolved independent answer',
-    'Post hoc: rules-only changes make three arm disagreements ties',
-    'RoB 2 consistency and structural audit, all sources and domains','Invalid answer path sensitivity',
-    'Quotation syntax in active justifications','Unassisted justification content','Time, cost and token use per trial by model',
-    'API cost reconstruction: estimates and bounds','Token reconciliation and compaction diagnostics','Exploratory signalling-answer agreement')
+  # The polish map is generated from first citations in manuscript.md.
+  numbering <- readr::read_csv('output/manuscript/qa/round14-polish-numbering.csv',show_col_types=FALSE) |>
+    filter(kind=='eTable') |> arrange(new_number)
   captions <- vapply(entries,`[[`,character(1),'caption')
-  cited <- match(reader_label(first),captions)
-  stopifnot(!anyNA(cited))
-  entries[c(cited,setdiff(seq_along(entries),cited))]
+  cited <- match(numbering$caption,captions)
+  stopifnot(!anyNA(cited),length(cited)==length(entries),!anyDuplicated(cited))
+  entries[cited]
 
 }
 supplement_table <- function(entry,data=entry$data) {

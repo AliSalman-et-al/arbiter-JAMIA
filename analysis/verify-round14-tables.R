@@ -3,11 +3,12 @@
 dir.create('round14-verification',recursive=TRUE,showWarnings=FALSE)
 source('R/load.R')
 for(f in c('publication-io','presentation','manuscript-tables','avatar-trace','manuscript-supplement')) source(paste0('R/',f,'.R'))
+baseline <- Sys.getenv('ROUND14_BASELINE','120b332')
 inputs <- load_inputs()
 current_reader <- manuscript_data
 current <- supplement_registry(inputs)
 parent_reader <- function(name) {
-  raw <- suppressWarnings(system2('git',c('show',paste0('120b332:analysis/output/tables/',publication_filename(name),'.csv')),stdout=TRUE,stderr=FALSE))
+  raw <- suppressWarnings(system2('git',c('show',paste0(baseline,':analysis/output/tables/',publication_filename(name),'.csv')),stdout=TRUE,stderr=FALSE))
   if(!is.null(attr(raw,'status'))) return(current_reader(name)) # New post hoc exports only.
   x <- readr::read_csv(I(paste(raw,collapse='\n')),show_col_types=FALSE)
   keep <- rep(TRUE,nrow(x))
@@ -28,7 +29,7 @@ body_tokens <- function(entry) {
 }
 rows <- lapply(seq_along(current),function(i) {
   e <- current[[i]]
-  added <- grepl('Evidence and quotation locations for the prior-work comparison',e$caption)
+  added <- baseline!='85a4c6f' && grepl('Evidence and quotation locations for the prior-work comparison',e$caption)
   a <- body_tokens(parent[[i]]); b <- body_tokens(e)
   data.frame(eTable=i,caption=e$caption,retained=!added,numeric_tokens=length(b),identical=if(added) NA else identical(a,b))
 }) |> bind_rows()
@@ -58,6 +59,6 @@ word_rows <- lapply(seq_along(actual),function(i) {
   b <- numeric_tokens(values)
   data.frame(Word_table=i,numeric_tokens=length(a),identical=identical(a,b))
 }) |> bind_rows()
-readr::write_csv(word_rows,'round14-verification/round3-supplement-word-tables.csv')
+readr::write_csv(word_rows,paste0('round14-verification/',if(baseline=='85a4c6f') 'polish' else 'round3','-supplement-word-tables.csv'))
 stopifnot(all(word_rows$identical))
 cat('Actual Supplement.docx: all',nrow(word_rows),'table bodies match generated numeric tokens.\n')

@@ -1,6 +1,6 @@
-eTable 1. Benchmark trials span sixteen meta-analyses
-eTable 2. Published label distributions by domain
-eTable 3. AVATAR complete trace
+eTable 1. AVATAR complete trace
+eTable 2. Benchmark trials span sixteen meta-analyses
+eTable 3. Published label distributions by domain
 eTable 4. Confusion matrices against Published
 eTable 5. Per-meta-analysis weighted κ
 eTable 6. Agreement against Published, all sources and domains
@@ -8,25 +8,25 @@ eTable 7. Paired differences against Published
 eTable 8. Post hoc: unweighted agreement with published labels is modest
 eTable 9. Adjudicators usually agreed with models when they disagreed with Published
 eTable 10. Published labels were usually less severe than the agreed choice
-eTable 11. Agreement against the composite reference, Sonnet only
-eTable 12. Paired differences against the composite reference
-eTable 13. Composite-reference sensitivity estimates by adjudicator
-eTable 14. Composite-reference paired differences by adjudicator
-eTable 15. Preferred shares among adjudicated arm disagreements: sensitivities
-eTable 16. Post hoc: preferred shares among adjudicated arm disagreements by strictness
-eTable 17. Independent and selected ratings: full agreement including AC2
-eTable 18. Localisation population eligibility
-eTable 19. Error-localisation classes, both populations
-eTable 20. Questions that alone changed the rating: frequencies, both populations
-eTable 21. Post hoc: supplied documents and answers in question 5.1 losses
-eTable 22. Unresolved independent answer
-eTable 23. Post hoc: rules-only changes make three arm disagreements ties
-eTable 24. RoB 2 consistency and structural audit, all sources and domains
-eTable 25. Required question skipped sensitivity
-eTable 26. Quotation syntax in active justifications
-eTable 27. Unassisted justification content
-eTable 28. Time, cost and token use per trial by model
-eTable 29. API cost reconstruction: estimates and bounds
-eTable 30. Token reconciliation and compaction diagnostics
-eTable 31. Exploratory signalling-answer agreement
-eTable 32. Evidence and quotation locations for the prior-work comparison
+eTable 11. Preferred shares among adjudicated arm disagreements: sensitivities
+eTable 12. Post hoc: preferred shares among adjudicated arm disagreements by strictness
+eTable 13. Independent and selected ratings: full agreement including AC2
+eTable 14. Localisation population eligibility
+eTable 15. Error-localisation classes, both populations
+eTable 16. Questions that alone changed the rating: frequencies, both populations
+eTable 17. Unresolved independent answer
+eTable 18. Exploratory signalling-answer agreement
+eTable 19. Post hoc: supplied documents and answers in question 5.1 losses
+eTable 20. Post hoc: rules-only changes make three arm disagreements ties
+eTable 21. RoB 2 consistency and structural audit, all sources and domains
+eTable 22. Required question skipped sensitivity
+eTable 23. Quotation syntax in active justifications
+eTable 24. Unassisted justification content
+eTable 25. Time, cost and token use per trial by model
+eTable 26. API cost reconstruction: estimates and bounds
+eTable 27. Token reconciliation and compaction diagnostics
+eTable 28. Evidence and quotation locations for the prior-work comparison
+eTable 29. Agreement against the composite reference, Sonnet only
+eTable 30. Paired differences against the composite reference
+eTable 31. Composite-reference sensitivity estimates by adjudicator
+eTable 32. Composite-reference paired differences by adjudicator

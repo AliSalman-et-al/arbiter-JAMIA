@@ -28,6 +28,7 @@ analysis/round12-report.md
 analysis/round13-report.md
 analysis/round14-public-release-exclusions.txt
 analysis/round14-report.md
+analysis/round14-verification/polish-release.log
 analysis/round14-verification/release-scan.txt
 analysis/round14-verification/round14-invariance.json
 analysis/round14-verification/round2-release.log

@@ -131,3 +131,23 @@ Queued for the final polish round:
 - Table 4's notes cite eTable 32.
 - 7,693 cells are unchanged, and 610 assertions pass.
 - ANALYSIS-PLAN section 7 now describes the Unassisted arm correctly, as the minimal-prompt condition.
+
+## WP-P review, 2026-10-19
+
+**Verdict:** accepted. Round 14 implementation is complete.
+
+- The Objective separates the prespecified hypothesis from the post hoc question.
+- All 33 supplementary items are cited, in order (eTables 1–32 and eFigure 1). The orchestrator spot-checked the citation sequence.
+- 7,693 numeric cells are unchanged, 610 assertions pass and all 324 manuscript number tokens trace to source.
+- Main text is 3,419 of 4,000 words.
+
+**Remaining work is the authors':**
+
+- names, affiliations and correspondence
+- adjudicator qualifications
+- funding, competing interests and CRediT roles
+- ethics and registration
+- AI-drafting disclosure
+- repository and Zenodo links
+- a refreshed, dated literature search
+- final submission assembly

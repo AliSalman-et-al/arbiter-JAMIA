@@ -1,5 +1,8 @@
 # Round 14 pipeline and display revision
 
+Supplementary identifiers throughout this report use the Polish round numbering;
+counts and verification results in earlier sections retain their historical meaning.
+
 Parent: `bfe7111` on `main`. WP-A implementation in the shared checkout; no commit or push. The prior-work CSV and its notes belong to WP-T and were not edited by this worker. Figures 1–2, their notes, `analysis/figure1/`, all arm folders, adjudication inputs, benchmark inputs and `analysis/data-derived/` were kept read-only.
 
 ## A1–A6 and section 7 changes
@@ -16,10 +19,10 @@ Parent: `bfe7111` on `main`. WP-A implementation in the shared checkout; no comm
 
 ## Numbering map
 
-- Old Table 1 → benchmark eTable 1; published per-domain distributions → eTable 2.
+- Old Table 1 → benchmark eTable 2; published per-domain distributions → eTable 3.
 - Old Table 2 → Table 1; old Table 4 → Table 2; Table 3 stays Table 3; Table 4 is the new prior-work comparison.
 - CSVs: old `table1.csv` → `benchmark-set.csv`; old `table2.csv` and `table2-differences.csv` → `table1.csv` and `table1-differences.csv`; old `table4-reliability.csv` → `table2-reliability.csv`.
-- AVATAR trace → eTable 3. Old Figure 4B → eTable 10. Old Figure 5B → Figure 4B, now with bootstrap intervals. Figure 5 becomes one forest with an added post hoc group. Figure 6 retains its content.
+- AVATAR trace → eTable 1. Old Figure 4B → eTable 10. Old Figure 5B → Figure 4B, now with bootstrap intervals. Figure 5 becomes one forest with an added post hoc group. Figure 6 retains its content.
 - The meta-analysis forest remains eFigure 1. The old eFigure 2 tile matrix is dropped. The complete generated eTable inventory is saved in `output/manuscript/qa/round14-supplement-inventory.txt`.
 
 ## Post hoc reproduction
@@ -351,36 +354,38 @@ no-kit-sonnet-5.5/run_nokit_case.py
 
 ## Complete supplementary numbering
 
-- eTable 1. Benchmark trials span sixteen meta-analyses
-- eTable 2. Published label distributions by domain
-- eTable 3. AVATAR complete trace
+- eTable 1. AVATAR complete trace
+- eTable 2. Benchmark trials span sixteen meta-analyses
+- eTable 3. Published label distributions by domain
 - eTable 4. Confusion matrices against Published
 - eTable 5. Per-meta-analysis weighted κ
 - eTable 6. Agreement against Published, all sources and domains
 - eTable 7. Paired differences against Published
 - eTable 8. Post hoc: unweighted agreement with published labels is modest
-- eTable 9. Post hoc: adjudicators usually agreed with models when they disagreed with Published
+- eTable 9. Adjudicators usually agreed with models when they disagreed with Published
 - eTable 10. Published labels were usually less severe than the agreed choice
-- eTable 11. Agreement against the composite reference, Sonnet only
-- eTable 12. Paired differences against the composite reference
-- eTable 13. Composite-reference sensitivity estimates by adjudicator
-- eTable 14. Composite-reference paired differences by adjudicator
-- eTable 15. Per-adjudicator and split-cell win-share sensitivity
-- eTable 16. Post hoc severity-stratified win share
-- eTable 17. Independent and selected ratings: full agreement including AC2
-- eTable 18. Localisation population eligibility
-- eTable 19. Error-localisation classes, both populations
-- eTable 20. Questions that alone changed the rating: frequencies, both populations
-- eTable 21. Unresolved independent answer
-- eTable 22. Post hoc: recomputing Unassisted ratings changes few arm disagreements
-- eTable 23. RoB 2 consistency and structural audit, all sources and domains
-- eTable 24. Required question skipped sensitivity
-- eTable 25. Quotation syntax in active justifications
-- eTable 26. Unassisted justification content
-- eTable 27. Time, cost and token use per trial by model
-- eTable 28. API cost reconstruction: estimates and bounds
-- eTable 29. Token reconciliation and compaction diagnostics
-- eTable 30. Exploratory signalling-answer agreement
+- eTable 11. Preferred shares among adjudicated arm disagreements: sensitivities
+- eTable 12. Post hoc: preferred shares among adjudicated arm disagreements by strictness
+- eTable 13. Independent and selected ratings: full agreement including AC2
+- eTable 14. Localisation population eligibility
+- eTable 15. Error-localisation classes, both populations
+- eTable 16. Questions that alone changed the rating: frequencies, both populations
+- eTable 17. Unresolved independent answer
+- eTable 18. Exploratory signalling-answer agreement
+- eTable 19. Post hoc: supplied documents and answers in question 5.1 losses
+- eTable 20. Post hoc: rules-only changes make three arm disagreements ties
+- eTable 21. RoB 2 consistency and structural audit, all sources and domains
+- eTable 22. Required question skipped sensitivity
+- eTable 23. Quotation syntax in active justifications
+- eTable 24. Unassisted justification content
+- eTable 25. Time, cost and token use per trial by model
+- eTable 26. API cost reconstruction: estimates and bounds
+- eTable 27. Token reconciliation and compaction diagnostics
+- eTable 28. Evidence and quotation locations for the prior-work comparison
+- eTable 29. Agreement against the composite reference, Sonnet only
+- eTable 30. Paired differences against the composite reference
+- eTable 31. Composite-reference sensitivity estimates by adjudicator
+- eTable 32. Composite-reference paired differences by adjudicator
 
 The only supplementary figure is eFigure 1 (per-meta-analysis weighted κ). No commit or push was performed; HEAD remains `bfe7111`.
 
@@ -396,7 +401,7 @@ are concurrent work, not WP-A2 edits. All arm, adjudication, benchmark and
 1. **Preferred-share wording — complete.** Figure 5, the sensitivity/strictness
    eTables and rules-only blocks identify preference among adjudicated arm
    disagreements. They do not call the primary endpoint accuracy or correctness.
-2. **Composite split — complete.** Existing composite eTable 11 adds four
+2. **Composite split — complete.** Existing composite eTable 29 adds four
    explicitly post hoc descriptive rows. ARBITER: agreed-choice **116/129
    (89.9%)**, retained Published **356/356 (100.0%)**. Unassisted: **69/129
    (53.5%)** and **356/356 (100.0%)**. The partitions reproduce **472/485** and
@@ -407,7 +412,7 @@ are concurrent work, not WP-A2 edits. All arm, adjudication, benchmark and
    Adjudicator 1 **24.7 percentage points (95% CI 16.2–32.9)**, from 107 versus
    69 matches; Adjudicator 2 **28.6 (19.8–37.4)**, from 120 versus 76. The note
    confirms the rating was made and frozen before any label was seen.
-4. **Question 5.1 mechanism description — complete.** New post hoc eTable 21 and
+4. **Question 5.1 mechanism description — complete.** New post hoc eTable 19 and
    one Results sentence describe the **18** primary Unassisted losses where
    question 5.1 alone changed the algorithm output. **13/18** had an inventoried
    registry record, protocol or SAP; **5/18** did not. All 13 have a registry
@@ -618,10 +623,11 @@ Inspected paths relative to `analysis/`:
   `round14-Figure4-deuteranopia.png`, `round14-Figure5-grayscale.png`, and
   `round14-Figure5-deuteranopia.png`.
 
-Figures and main tables retain their round-1 numbering. eTables 1–20 retain their
-numbers; new mechanism description is **eTable 21**. Former eTables 21–30 become
-**22–31**; the rules-only analysis is now **eTable 23**, the full audit is 24,
-required-question sensitivity 25, and time/cost 28. eFigure 1 is unchanged.
+Figures and main tables retained their round-1 numbering. Round 2 added the
+mechanism description (current eTable 19). Current identifiers for the rules-only
+analysis, full audit, required-question sensitivity and time/cost are eTables
+20–22 and eTable 25, respectively. eFigure 1 is unchanged. The later Polish round
+renumbers the retained items by manuscript citation order.
 `output/manuscript/qa/round14-supplement-inventory.txt` records the complete current
 inventory. References in Word/HTML/Results resolve through the same registry.
 
@@ -665,7 +671,7 @@ benchmark and `analysis/data-derived/` inputs remain unchanged.
    HTML were rebuilt. Historical planning/review/report records and the frozen
    figure-source audit remain internal provenance, not publication claims.
 3. **Table 4 — complete.** The study label is “This study (ARBITER)”. Both notes
-   that referred readers to curated repository evidence now cite **eTable 32**.
+   that referred readers to curated repository evidence now cite **eTable 28**.
    The new condensed evidence table has **11 rows, one per study**, with quotations,
    feature-specific locations and source identifiers. Its editable source is
    `data-curated/prior-work-evidence-condensed.csv`, condensed from the existing
@@ -736,7 +742,7 @@ part of this publication scan.
   legend/notes changes, independently constrained by the two round-3 proofs.
 - `verify-round14-tables.R`: **31 retained supplementary constructions / 4,712
   numeric body tokens** match displays reconstructed from baseline CSVs. New
-  eTable 32 is explicitly excluded from that baseline comparison. The actual
+  eTable 28 is explicitly excluded from that baseline comparison. The actual
   Supplement.docx passes all **50 table-body** numeric-token checks.
 - `test-round14.R`: **610 assertions, zero failures, errors, warnings or skips**.
   The supplement-inventory expectation changes from 31 to 32; no statistical
@@ -794,7 +800,8 @@ relative to `analysis/`:
 - `output/manuscript/qa/round14-Supplement/page-2.png`, `page-3.png`, `page-4.png`,
   `page-61.png`, `page-62.png` and `page-63.png`
 
-The main numbering and eTables 1–31 are unchanged. **eTable 32** is the only new
+Round 3 retained all earlier supplementary items and added the prior-work evidence
+table (current **eTable 28**) as its only new
 entry; eFigure 1 is unchanged. The inventory is regenerated in
 `output/manuscript/qa/round14-supplement-inventory.txt`.
 
@@ -817,3 +824,173 @@ assembly/pagination remain the reporting-map author-completion items. The
 original local-log figure pipeline cannot be fully rerun on this Linux checkout;
 the dedicated frozen-scene re-render and direct baseline proofs are provided
 instead. No new numerical or WP-A3 implementation issue remains.
+
+
+## Polish round
+
+WP-P was implemented against **85a4c6f**, in the shared checkout, with sole
+ownership of `analysis/` and `docs/manuscript/`. No commit or push was performed.
+The Objective preserves the prespecified adjudicator-preference hypothesis and
+asks the answer-versus-arithmetic question explicitly **post hoc**. The additions
+below are navigation sentences; no study result or claim was added. All 32 eTables
+and the single eFigure are cited in manuscript order; the composite-reference
+pointers remain in Discussion.
+
+### Citation sentences added
+
+> Confusion matrices, per-meta-analysis estimates, full agreement metrics, paired differences and post hoc unweighted agreement are in eTables 4–8; the meta-analysis forest is in eFigure 1.
+
+> Full direction-of-disagreement outcomes and published-label agreement with the adjudicators’ agreed choice are in eTables 9–10.
+
+> Preference sensitivities, post hoc severity strata and full independent- and preferred-rating agreement metrics are in eTables 11–13.
+
+> Localisation eligibility, classes and question frequencies are in eTables 14–16; unresolved independent answers are in eTable 17, and exploratory signalling-answer agreement is in eTable 18.
+
+> The full consistency audit, skipped-question sensitivity, quotation syntax and Unassisted justification content are in eTables 21–24.
+
+> Cost reconstruction and token reconciliation are in eTables 26–27.
+
+> Condensed evidence and quotation locations for the prior-work comparison are in eTable 28.
+
+### Baseline-to-polish numbering map
+
+The map is generated from the reviewed paragraph/caption identity contract by
+`verify-round14-polish.py --write-map`, and saved as
+`output/manuscript/qa/round14-polish-numbering.csv`. The supplement builder reads
+this map and matches by caption, with complete/unique coverage enforced. Figure
+legends, tables and results sentences resolve their numbers from that registry.
+The reporting map, technical figure notes and all earlier report references were
+also brought forward. Main tables and figures retain their numbers.
+
+- eTable 3 → eTable 1: AVATAR complete trace
+- eTable 1 → eTable 2: Benchmark trials span sixteen meta-analyses
+- eTable 2 → eTable 3: Published label distributions by domain
+- eTable 4 → eTable 4: Confusion matrices against Published
+- eTable 5 → eTable 5: Per-meta-analysis weighted κ
+- eTable 6 → eTable 6: Agreement against Published, all sources and domains
+- eTable 7 → eTable 7: Paired differences against Published
+- eTable 8 → eTable 8: Post hoc: unweighted agreement with published labels is modest
+- eFigure 1 → eFigure 1: Agreement with Published varied across meta-analyses
+- eTable 9 → eTable 9: Adjudicators usually agreed with models when they disagreed with Published
+- eTable 10 → eTable 10: Published labels were usually less severe than the agreed choice
+- eTable 15 → eTable 11: Preferred shares among adjudicated arm disagreements: sensitivities
+- eTable 16 → eTable 12: Post hoc: preferred shares among adjudicated arm disagreements by strictness
+- eTable 17 → eTable 13: Independent and selected ratings: full agreement including AC2
+- eTable 18 → eTable 14: Localisation population eligibility
+- eTable 19 → eTable 15: Error-localisation classes, both populations
+- eTable 20 → eTable 16: Questions that alone changed the rating: frequencies, both populations
+- eTable 22 → eTable 17: Unresolved independent answer
+- eTable 31 → eTable 18: Exploratory signalling-answer agreement
+- eTable 21 → eTable 19: Post hoc: supplied documents and answers in question 5.1 losses
+- eTable 23 → eTable 20: Post hoc: rules-only changes make three arm disagreements ties
+- eTable 24 → eTable 21: RoB 2 consistency and structural audit, all sources and domains
+- eTable 25 → eTable 22: Required question skipped sensitivity
+- eTable 26 → eTable 23: Quotation syntax in active justifications
+- eTable 27 → eTable 24: Unassisted justification content
+- eTable 28 → eTable 25: Time, cost and token use per trial by model
+- eTable 29 → eTable 26: API cost reconstruction: estimates and bounds
+- eTable 30 → eTable 27: Token reconciliation and compaction diagnostics
+- eTable 32 → eTable 28: Evidence and quotation locations for the prior-work comparison
+- eTable 11 → eTable 29: Agreement against the composite reference, Sonnet only
+- eTable 12 → eTable 30: Paired differences against the composite reference
+- eTable 13 → eTable 31: Composite-reference sensitivity estimates by adjudicator
+- eTable 14 → eTable 32: Composite-reference paired differences by adjudicator
+
+### Verification results and reproduction
+
+The existing Linux environment is retained: R 4.3.3, Quarto 1.10.19,
+`R_LIBS_USER=/tmp/round14-R-library`,
+`LD_LIBRARY_PATH=/tmp/round14-sysroot/usr/lib/x86_64-linux-gnu`,
+`R_PROFILE_USER=/dev/null`, `RENV_CONFIG_AUTOLOADER_ENABLED=FALSE`,
+`QUARTO_R=/usr/bin`. The same five host-package substitutions disclosed above
+remain. LibreOffice replaces Microsoft Word; Arial resolves locally to Liberation
+Sans. No package, lockfile or source-input change was made.
+
+Commands below run from `analysis/`, except the manuscript verifier, which is run
+from the repository root. Logs and structured audits use the
+`round14-verification/polish-*` prefix.
+
+- **Presentation build:** `ARBITER_PRESENTATION_ONLY=1 quarto render` passed for
+  both `results.html` and `supplement.html`. This round only changes prose,
+  numbering and ordering, so the verified numerical CSVs were retained. The HTML
+  files are gitignored, as before, and are present/rebuilt locally. Metadata-only
+  figure PDF rebuilds were restored after checking identical PNG/TIFF bytes.
+- **Full suite:** `Rscript --vanilla test-round14.R` passes **610 assertions**, zero
+  failures, errors, warnings or skips. The initial run caught the stale AVATAR
+  number expectation; it was updated from the baseline identifier to the new
+  citation-order identifier. No numerical assertion was changed or relaxed.
+- **Baseline invariance and citation identity:**
+  `/tmp/round14-qa-venv/bin/python verify-round14-polish.py` passes. All **64 CSVs /
+  7,693 numeric cells** retain their baseline values, including all text cells
+  except reporting-map supplementary identifiers. Every empirical manuscript
+  number remains in the same order. Paragraph-level numerical streams in all
+  main Word tables, the complete supplement, reporting map, figure notes,
+  legends and results prose are unchanged, allowing only supplementary-reference
+  numbers and table reordering. All **527 frozen input, source, lockfile and
+  artwork files** tested are byte-identical to 85a4c6f.
+- **Reference targets:** the new verifier checks manuscript sentence context and
+  intended caption, complete coverage and ascending initial citations. It checks
+  every reference-bearing block in the committed publication artifacts against
+  its baseline identity, including ranges and lists. For the two gitignored HTML
+  reports it checks every reference-bearing context against the independently
+  verified Word/Markdown sources, plus every supplementary HTML caption. Every
+  reference in all six rendered PDFs has the same multiplicity as its Word
+  source. An existing number pointing at the wrong item therefore fails.
+- **Supplement numbers:**
+  `ROUND14_BASELINE=85a4c6f Rscript --vanilla verify-round14-tables.R` passes all
+  **32 constructions / 4,776 numeric body tokens** against baseline CSVs, with
+  **no excluded item**. All **50 actual Word table bodies** match their generated
+  numerical tokens. The script accepts a baseline environment variable so its
+  historical default remains reproducible.
+- **Estimands:** `Rscript --vanilla verify-round14.R` and
+  `Rscript --vanilla verify-round14-round2.R` pass all preliminary counts,
+  direction counts, paired differences, composite partitions, tie semantics,
+  reader terminology and reporting-map checks.
+- **Manuscript number audit:** `python3 docs/manuscript/verify-numbers.py` passes
+  **324 numeric tokens: 176 output-traced, 148 explicitly classified non-result
+  tokens, zero untraced**. Reference matching, headline-source checks and banned
+  wording checks pass.
+- **Release:** `python3 verify-round14-release.py` scans **106** text, Word and PDF
+  publication artifacts, with **zero excluded-model matches**. The existing
+  Poppler font-resource diagnostics remain; they do not prevent rendering.
+  `verify-round14-exclusions.py` refreshes the internal exclusion manifest to
+  **265 paths**, adding the new internal test/release logs as applicable.
+- **Visual and layout QA:** the documents renderer succeeded for all six Word
+  documents. `verify-round14-layout.py` passes: supplement **64 pages**, reporting
+  map **4 pages**, each main table **1 page**, no blank pages or out-of-page text.
+  `verify-round14-trace.py` confirms **16/16 complete archived quotations** in the
+  rendered supplement. `verify-round14-contact-sheets.py` regenerated the page
+  summaries. `git diff --check` passes.
+
+### Word counts
+
+Using the existing verifier's whitespace-word method (headings and numeric
+bibliographic callouts excluded): abstract **206/250**; Background and significance
+**409**; Objective **52**; Materials and methods **1,185**; Results **759**;
+Discussion **1,014**, including Conclusion **45**. Main text **3,419/4,000**;
+back matter **199**; main text plus back matter **3,618**. The draft's count note
+is updated. JAMIA Research and Applications limits were rechecked at
+https://academic.oup.com/jamia/pages/General_Instructions on 19 October 2026.
+
+### Visual inspection and open issues
+
+The eight supplement contact sheets were inspected, covering all 64 pages, with
+full-size inspection of the revised contents, AVATAR start and composite table.
+The reporting-map contact sheet and Table 4 were also inspected. Renumbered
+headings, landscape boundaries, repeated headers, quotation blocks and table
+notes are legible, with no clipping or overlap. Inspected paths relative to
+`analysis/`:
+
+- `output/manuscript/qa/round14-Supplement-contact-1.png` through `-8.png`
+- `output/manuscript/qa/round14-Supplement/page-1.png`, `page-5.png`, `page-59.png`
+- `output/manuscript/qa/round14-TRIPOD-LLM-contact-1.png`
+- `output/manuscript/qa/round14-Table4/page-1.png`
+
+No WP-P implementation issue remains. Existing author-completion fields remain:
+author identities/affiliations/correspondence, adjudicator credentials and
+training, AI-use disclosure, acknowledgements, funding, competing interests,
+contributions, ethics/consent, registration, public involvement, repository/archive
+and report URLs, plus final submission assembly/pagination. No new citation or
+DOI was introduced. The existing literature-search refresh and original-log
+figure-pipeline limitation remain as disclosed in Round 3. Historical reports
+and verification logs are internal provenance, not publication claims.
