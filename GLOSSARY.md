@@ -66,3 +66,8 @@ These are the labels used in manuscript text, figures and tables. The internal t
 | Decisive question | question that alone changed the rating | question that alone changed the rating |
 | LLM agent | AI model (Figure 1: AI model (LLM agent)) | AI model |
 | ARBITER server | ARBITER (rule-based software, no AI) (Figure 1: ARBITER server) | ARBITER server |
+| Algorithm violation | Rating contradicts its own answers | Rating contradicts its own answers |
+| Invalid answer path | Required question skipped | Required question skipped |
+| Departure | Any rule break | Any rule break |
+| Overall consistent or permitted escalation | Overall rating follows the RoB 2 rules (incl. permitted escalation) | Overall follows the RoB 2 rules; escalation reported separately |
+| Split cells | Adjudicators split | Adjudicators split |

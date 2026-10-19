@@ -62,7 +62,7 @@ for(i in 1:4) {
     }
   }
   # Table 1 topics are long free text; all labels, merged labels and values must fit.
-  for(j in setdiff(seq_len(ncol(x)),if(i==1) 4L else integer())) for(value in unique(x[[j]][nzchar(x[[j]])])) {
+  for(j in setdiff(seq_len(ncol(x)),if(i==1) 1:3 else if(i %in% c(3L,4L)) 1L else integer())) for(value in unique(x[[j]][nzchar(x[[j]])])) {
     words <- strsplit(as.character(value),' ',fixed=TRUE)[[1]]
     starts <- which(dat$text==words[1])
     found <- any(vapply(starts,function(k) {

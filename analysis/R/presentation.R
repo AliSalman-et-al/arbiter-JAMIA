@@ -33,9 +33,13 @@ reader_html_text <- function(path) {
 }
 
 reader_label <- function(x, supplement=FALSE) {
-  replacements <- c('Not Low'='Some concerns or High','not low'='Some concerns or High',
+  replacements <- c('Algorithm violation'='Rating contradicts its own answers',
+    'Invalid answer path'='Required question skipped','Any departure'='Any rule break',
+    'consensus cells'='cells where both adjudicators agreed','split cells'='cells where adjudicators split',
+    'Consensus losses'='Ratings not chosen by either adjudicator','Not Low'='Some concerns or High','not low'='Some concerns or High',
     'consensus preferred judgement'='the adjudicators’ agreed choice',
     'consensus preferred'='the adjudicators’ agreed choice',
+    'preferred judgement'='the adjudicators’ agreed choice',
     'discordant cells'='cells where the two arms disagreed','discordant'='differing',
     'Vindicated'='Adjudicators agreed with it','vindicated'='adjudicators agreed with it',
     'Decisive-question'='Questions that alone changed the rating:',
@@ -67,7 +71,7 @@ fmt_number <- function(x,digits=2L) {
   out
 }
 fmt_ci <- function(lower,upper,digits=2L,suppress_degenerate=FALSE) {
-  sep <- ifelse(lower<0 | upper<0,' to ','\u2013')
+  sep <- '\u2013'
   out <- paste0('(',fmt_number(lower,digits),sep,fmt_number(upper,digits),')')
   if(suppress_degenerate) out[is.finite(lower) & is.finite(upper) &
     fmt_number(lower,digits)==fmt_number(upper,digits)] <- ''
@@ -90,6 +94,7 @@ fmt_estimate <- function(x,proportion=FALSE) {
   }
   value <- trimws(paste0(out,' ',fmt_ci(x$lower*if(proportion) 100 else 1,x$upper*if(proportion) 100 else 1,if(proportion) 1L else 2L,
     suppress_degenerate=proportion)))
+  if(proportion) value <- gsub('%) (', '%; ',value,fixed=TRUE)
   value[!is.finite(x$estimate)] <- '\u2014'; value
 }
 display_frame <- function(x,supplement=TRUE) {
@@ -148,7 +153,7 @@ register_figure_fonts <- function() {
   stopifnot(all(file.exists(paths)))
   installed <- unique(systemfonts::system_fonts()$family)
   if(!fonts[1] %in% installed) systemfonts::register_font(fonts[1],plain=paths[1],bold='assets/fonts/FiraSans-Bold.ttf')
-  if(!fonts[2] %in% installed) systemfonts::register_font(fonts[2],plain=paths[2])
+  if(!fonts[2] %in% installed) systemfonts::register_font(fonts[2],plain=paths[2],bold='assets/fonts/FiraSansCondensed-Bold.ttf')
   # Cairo PDF needs installed fonts; the installer installs these same vendored bytes.
   invisible(fonts)
 }

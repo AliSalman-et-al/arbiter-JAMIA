@@ -320,3 +320,13 @@ Applies to every main and supplementary item. Principles: Tufte/Heard (most idea
 - **Results sentences**: `analysis/output/manuscript/results-sentences.md`, one or two finding-first sentences per main item with magnitudes and parenthetical citations.
 - **Supplement audit**: same title/legend/label rules for all eTables/eFigures; merge duplicates (e.g. composite sensitivity eTables 15–18 → 2); every footnote defines abbreviations and denominators.
 - 6 figures and 4 tables retained.
+
+### Round 13 manuscript polish (2026-10-19)
+Display changes only; all statistical methods, estimates and source CSVs remain fixed.
+- Table 3 combines exact Overall agreement and permitted escalation into one compliant row (102/102 per arm); the single ARBITER escalation moves to the note. Rule-break rows use the reader labels in GLOSSARY.
+- Figures 3–6, Tables 2–4, results and shared supplementary items use plain adjudicator and rating labels. Figure 6 distinguishes all eligible losses from losses with a question that alone changes the rating.
+- Figure 3 follows the rounded, heavy-outline book style, neutral fills, Fira Sans Condensed, filled black arrows and arm colour chips; width 174 mm and height 120 mm. Figures 1–2 remain protected.
+- Counts and intervals share one pair of parentheses; coefficients use estimate (lower–upper). Table 2 retains percentage-only estimates with its block denominators.
+- Table 1 merges journal and year, gives Topic the released width and fixes column widths.
+- Figures 4B and 5B use direct segment labels; separate legends are removed.
+- Results do not start with numerals; Figure 4 adds its existing count-derived percentage. Keep six figures and four main tables; finding titles retained except the approved Table 2 shortening.

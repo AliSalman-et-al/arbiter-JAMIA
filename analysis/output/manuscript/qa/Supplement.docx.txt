@@ -14,7 +14,7 @@ eTable 10. Agreement against the composite reference, Sonnet only
 eTable 11. Paired differences against Published
 eTable 12. Paired differences against the composite reference
 eTable 13. RoB 2 consistency and structural audit, all sources and domains
-eTable 14. Invalid answer path sensitivity
+eTable 14. Required question skipped sensitivity
 eTable 15. Recorded model override
 eTable 16. Independent and selected ratings: full agreement including AC2
 eTable 17. Time, cost and token use per trial by model
@@ -39,7 +39,7 @@ API list-price reconstruction
 Costs are frozen-rate API list-price equivalents, not expenditure. USD rates per million tokens are: Sonnet input 2.00, 1-hour cache write 4.00, 5-minute write 2.50, cache read 0.10, output 10.00; Haiku at prompts of at most 100,000 tokens: 0.10, 0.20, 0.125, 0.01, 0.50; above 100,000: 0.50, 1.00, 0.625, 0.05, 2.50. Rates were frozen from the provider pricing documentation on 18 October 2026. Main-thread assistant events are deduplicated by message identity within turn; synthetic zero-usage events are excluded. Prompt length is input plus cache creation plus cache read. Terminal output is allocated by request share for the point estimate and wholly to lower/higher tiers for bounds. Thinking tokens are already included in output. Signed terminal-minus-request input residuals, including negative retry residuals, are retained and allocated at lower-tier, request-share and higher-tier rates. Side calls are total recorded model usage minus terminal usage. Compaction uses high-tier pricing and one-hour writes; five-minute writes are a sensitivity. Side-call turns without a compaction boundary are flagged and bounded. All trial bounds are ordered; Sonnet bounds coincide. Routing was global, with no geography multiplier. Harness costs are unusable: unrecognised model and unknown cost basis; retained only as supplementary diagnostics.
 
 Error localisation
-Losses are consensus cells where a source label differs from preferred. A reference adjudicator is usable only when their independent judgement equals the adjudicators’ agreed choice. Primary requires both; sensitivity at least one. Haiku is excluded. Y/PY collapse to Y and N/PN to N; NI and NA remain separate. Discordance requires all usable adjudicators to agree on a parsed answer different from the losing answer. Adjudicator disagreements are separately flagged, never errors. A single replacement is decisive if it changes a valid algorithm output, even if the new output is not preferred. Other answers, including inactive NA, stay fixed; invalid substituted paths are not decisive. First applicable cell class: judgement departs from own answers; one question alone changed the rating; several questions each changed the rating alone; jointly decisive (all differing replacements reach preferred); no differing questions with complete comparisons; not attributable. The no-discordance class can contain adjudicator-disagreement questions. Reference-judgement departures from their own answers are flagged. Frequencies count all questions that alone changed the rating regardless of cell class; joint sets contribute none. Ambiguous or qualified answers are not imputed. Published losses cannot be localised without signalling answers.
+Losses are cells where both adjudicators agreed where a source label differs from preferred. A reference adjudicator is usable only when their independent judgement equals the adjudicators’ agreed choice. Primary requires both; sensitivity at least one. Haiku is excluded. Y/PY collapse to Y and N/PN to N; NI and NA remain separate. Discordance requires all usable adjudicators to agree on a parsed answer different from the losing answer. Adjudicator disagreements are separately flagged, never errors. A single replacement is decisive if it changes a valid algorithm output, even if the new output is not preferred. Other answers, including inactive NA, stay fixed; invalid substituted paths are not decisive. First applicable cell class: judgement departs from own answers; one question alone changed the rating; several questions each changed the rating alone; jointly decisive (all differing replacements reach preferred); no differing questions with complete comparisons; not attributable. The no-discordance class can contain adjudicator-disagreement questions. Reference-judgement departures from their own answers are flagged. Frequencies count all questions that alone changed the rating regardless of cell class; joint sets contribute none. Ambiguous or qualified answers are not imputed. Published losses cannot be localised without signalling answers.
 Evidence binding and verification
 Each distinct evidence identity cited in bases or counterevidence by current active answers is counted once per bundle; superseded histories are excluded. Visual records (figure kind or render field) take precedence over text spans. Text spans (narrative kind or quote/start/end fields) require a nonblank quote and source version, source identity matching a captured bundle source, finite page/start/end, and start less than end. Quotes are server-extracted spans cited by handle. Visual binding requires render source matching the record and a captured source, positive integer page, nonblank PNG hash, four finite region coordinates in [0,1] with ordered corners, and nonblank transcription. Images are server-rendered and hash-bound; transcriptions are model-written and are not machine-checked against the image. Unknown or missing records are other and unbound in the overall denominator. Empty bundles contribute no cited records. Trials using visual evidence use all 102 trials as denominator. These are structural checks, without PDF re-extraction or a judgement of whether a passage supports an answer. Bundle verification does not establish clinical correctness or completion. Unassisted evidence traces are not available.
 Inference and references
@@ -71,7 +71,7 @@ eTable 12. Paired differences against the composite reference
 
 eTable 13. RoB 2 consistency and structural audit, all sources and domains
 
-eTable 14. Invalid answer path sensitivity
+eTable 14. Required question skipped sensitivity
 
 eTable 15. Recorded model override
 
@@ -570,69 +570,69 @@ Adjudicators agreed with it
 48
 59
 69
-Both sources use Sonnet 5.5. Figure 5B uses consensus disagreements as the denominator; split cells are displayed separately. Adjudicators agreed with it means their agreed choice equals the source label; Published upheld means their agreed choice equals the published review label; Other label means neither. Count is the outcome count; consensus n excludes split cells and All n includes them. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
+Both sources use Sonnet 5.5. Figure 5B uses disagreements where both adjudicators agreed as the denominator; cells where adjudicators split are displayed separately. Adjudicators agreed with it means their agreed choice equals the source label; Published upheld means their agreed choice equals the published review label; Other label means neither. Count is the outcome count; Agreed n excludes divided decisions and All n includes them. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Direction
 Measure
 Estimate (95% CI)
 ARBITER more severe
 ARBITER
-44/45 (97.8%) (92.7–100.0)
+44/45 (97.8%; 92.7–100.0)
 ARBITER more severe
 Unassisted
-1/45 (2.2%) (0.0–7.3)
+1/45 (2.2%; 0.0–7.3)
 ARBITER more severe
 Neither
 0/45 (0.0%)
 ARBITER less severe
 ARBITER
-10/17 (58.8%) (35.7–80.0)
+10/17 (58.8%; 35.7–80.0)
 ARBITER less severe
 Unassisted
-6/17 (35.3%) (14.3–57.9)
+6/17 (35.3%; 14.3–57.9)
 ARBITER less severe
 Neither
-1/17 (5.9%) (0.0–18.2)
-Post hoc Sonnet 5.5 analysis of consensus cells where the two arms disagreed, stratified by ARBITER severity relative to Unassisted. Fractions are label-based wins / cells in that severity stratum. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
+1/17 (5.9%; 0.0–18.2)
+Post hoc Sonnet 5.5 analysis of cells where both adjudicators agreed where the two arms disagreed, stratified by ARBITER severity relative to Unassisted. Fractions are label-based wins / cells in that severity stratum. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Analysis
 Measure
 Estimate (95% CI)
 Consensus
 ARBITER
-54/62 (87.1%) (79.0–94.3)
+54/62 (87.1%; 79.0–94.3)
 Consensus
 Unassisted
-7/62 (11.3%) (4.5–19.2)
+7/62 (11.3%; 4.5–19.2)
 Consensus
 Neither
-1/62 (1.6%) (0.0–4.8)
+1/62 (1.6%; 0.0–4.8)
 Adjudicator 1
 ARBITER
-60/80 (75.0%) (66.7–83.3)
+60/80 (75.0%; 66.7–83.3)
 Adjudicator 1
 Unassisted
-16/80 (20.0%) (11.7–28.9)
+16/80 (20.0%; 11.7–28.9)
 Adjudicator 1
 Neither
-4/80 (5.0%) (1.3–9.2)
+4/80 (5.0%; 1.3–9.2)
 Adjudicator 2
 ARBITER
-64/80 (80.0%) (72.3–87.2)
+64/80 (80.0%; 72.3–87.2)
 Adjudicator 2
 Unassisted
-15/80 (18.8%) (11.6–26.3)
+15/80 (18.8%; 11.6–26.3)
 Adjudicator 2
 Neither
-1/80 (1.2%) (0.0–3.8)
+1/80 (1.2%; 0.0–3.8)
 Split sensitivity
 ARBITER
-54/80 (67.5%) (58.7–76.3)
+54/80 (67.5%; 58.7–76.3)
 Split sensitivity
 Unassisted
-7/80 (8.8%) (3.5–15.0)
+7/80 (8.8%; 3.5–15.0)
 Split sensitivity
 Neither
-19/80 (23.8%) (16.0–31.3)
-Fractions are label-based wins / cells where the two arms disagreed. Consensus is primary and includes only cells with the same choice from both adjudicators; each single-adjudicator analysis includes split cells. Split cells are forced ARBITER losses in the split sensitivity; Neither includes these forced losses. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
+19/80 (23.8%; 16.0–31.3)
+Fractions are label-based wins / cells where the two arms disagreed. Consensus is primary and includes only cells with the same choice from both adjudicators; each single-adjudicator analysis includes cells where adjudicators split. Split cells are forced ARBITER losses in the split sensitivity; Neither includes these forced losses. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Population
 Domain
 Question
@@ -905,7 +905,7 @@ Result selected from eligible analyses
 1
 Counts of questions that alone changed the rating; all 22 questions are retained. A cell may contribute several. Jointly decisive sets contribute none. Short question texts follow the 2019 guidance; D2 uses effect of assignment. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Source
-Consensus losses (cells)
+Ratings not chosen (cells)
 Primary eligible (cells)
 Sensitivity eligible (cells)
 ARBITER (Sonnet 5.5)
@@ -1121,217 +1121,217 @@ ARBITER (Sonnet 5.5)
 D1–D5
 0.34 (0.26–0.42)
 0.81 (0.78–0.84)
-386/510 (75.7%) (72.4–79.0)
-55/83 (66.3%) (57.3–74.7)
-347/427 (81.3%) (77.7–84.7)
+386/510 (75.7%; 72.4–79.0)
+55/83 (66.3%; 57.3–74.7)
+347/427 (81.3%; 77.7–84.7)
 D1
 0.38 (0.19–0.55)
 0.84 (0.78–0.89)
-82/102 (80.4%) (74.5–86.3)
-10/18 (55.6%) (35.0–77.8)
-75/84 (89.3%) (83.2–95.1)
+82/102 (80.4%; 74.5–86.3)
+10/18 (55.6%; 35.0–77.8)
+75/84 (89.3%; 83.2–95.1)
 D2
-−0.01 (−0.15 to 0.14)
+−0.01 (−0.15–0.14)
 0.77 (0.69–0.84)
-71/102 (69.6%) (61.8–77.5)
-3/16 (18.8%) (0.0–37.5)
-69/86 (80.2%) (72.6–87.4)
+71/102 (69.6%; 61.8–77.5)
+3/16 (18.8%; 0.0–37.5)
+69/86 (80.2%; 72.6–87.4)
 D3
 0.43 (0.29–0.57)
 0.76 (0.68–0.84)
-75/102 (73.5%) (66.7–80.4)
-17/19 (89.5%) (73.9–100.0)
-66/83 (79.5%) (72.6–86.4)
+75/102 (73.5%; 66.7–80.4)
+17/19 (89.5%; 73.9–100.0)
+66/83 (79.5%; 72.6–86.4)
 D4
 0.57 (0.33–0.78)
 0.95 (0.91–0.98)
-93/102 (91.2%) (86.3–96.1)
-7/9 (77.8%) (50.0–100.0)
-87/93 (93.5%) (88.9–97.8)
+93/102 (91.2%; 86.3–96.1)
+7/9 (77.8%; 50.0–100.0)
+87/93 (93.5%; 88.9–97.8)
 D5
 0.30 (0.20–0.41)
 0.71 (0.64–0.77)
-65/102 (63.7%) (56.9–71.6)
-18/21 (85.7%) (75.0–95.5)
-50/81 (61.7%) (53.1–70.4)
+65/102 (63.7%; 56.9–71.6)
+18/21 (85.7%; 75.0–95.5)
+50/81 (61.7%; 53.1–70.4)
 Overall
 0.44 (0.32–0.56)
 0.50 (0.39–0.60)
-47/81 (58.0%) (49.4–66.7)
-36/39 (92.3%) (83.7–100.0)
-23/42 (54.8%) (44.2–67.4)
+47/81 (58.0%; 49.4–66.7)
+36/39 (92.3%; 83.7–100.0)
+23/42 (54.8%; 44.2–67.4)
 Unassisted (Sonnet 5.5)
 D1–D5
 0.28 (0.21–0.35)
 0.82 (0.79–0.85)
-395/510 (77.5%) (74.1–80.8)
-42/83 (50.6%) (40.3–60.2)
-366/427 (85.7%) (82.1–89.3)
+395/510 (77.5%; 74.1–80.8)
+42/83 (50.6%; 40.3–60.2)
+366/427 (85.7%; 82.1–89.3)
 D1
 0.39 (0.21–0.55)
 0.85 (0.79–0.90)
-82/102 (80.4%) (74.5–86.3)
-11/18 (61.1%) (40.0–81.8)
-75/84 (89.3%) (83.3–95.1)
+82/102 (80.4%; 74.5–86.3)
+11/18 (61.1%; 40.0–81.8)
+75/84 (89.3%; 83.3–95.1)
 D2
-0.06 (−0.10 to 0.21)
+0.06 (−0.10–0.21)
 0.79 (0.72–0.85)
-73/102 (71.6%) (64.7–78.4)
-4/16 (25.0%) (6.7–45.5)
-71/86 (82.6%) (76.1–89.0)
+73/102 (71.6%; 64.7–78.4)
+4/16 (25.0%; 6.7–45.5)
+71/86 (82.6%; 76.1–89.0)
 D3
 0.29 (0.13–0.44)
 0.76 (0.67–0.83)
-77/102 (75.5%) (68.6–82.4)
-11/19 (57.9%) (38.9–76.5)
-70/83 (84.3%) (77.9–90.7)
+77/102 (75.5%; 68.6–82.4)
+11/19 (57.9%; 38.9–76.5)
+70/83 (84.3%; 77.9–90.7)
 D4
 0.43 (0.22–0.61)
 0.94 (0.90–0.97)
-91/102 (89.2%) (83.3–94.1)
-5/9 (55.6%) (28.6–85.7)
-89/93 (95.7%) (92.0–98.9)
+91/102 (89.2%; 83.3–94.1)
+5/9 (55.6%; 28.6–85.7)
+89/93 (95.7%; 92.0–98.9)
 D5
 0.25 (0.07–0.43)
 0.76 (0.69–0.83)
-72/102 (70.6%) (63.7–78.4)
-11/21 (52.4%) (34.8–71.4)
-61/81 (75.3%) (67.9–82.9)
+72/102 (70.6%; 63.7–78.4)
+11/21 (52.4%; 34.8–71.4)
+61/81 (75.3%; 67.9–82.9)
 Overall
 0.42 (0.27–0.56)
 0.53 (0.43–0.64)
-48/81 (59.3%) (50.6–67.9)
-25/39 (64.1%) (50.0–77.8)
-32/42 (76.2%) (65.9–86.8)
+48/81 (59.3%; 50.6–67.9)
+25/39 (64.1%; 50.0–77.8)
+32/42 (76.2%; 65.9–86.8)
 All-Low rule
 D1–D5
 —
 —
-427/510 (83.7%) (81.0–86.5)
+427/510 (83.7%; 81.0–86.5)
 —
 427/427 (100.0%)
 D1
 —
 —
-84/102 (82.4%) (76.5–88.2)
+84/102 (82.4%; 76.5–88.2)
 —
 84/84 (100.0%)
 D2
 —
 —
-86/102 (84.3%) (78.4–90.2)
+86/102 (84.3%; 78.4–90.2)
 —
 86/86 (100.0%)
 D3
 —
 —
-83/102 (81.4%) (76.5–86.3)
+83/102 (81.4%; 76.5–86.3)
 —
 83/83 (100.0%)
 D4
 —
 —
-93/102 (91.2%) (86.3–96.1)
+93/102 (91.2%; 86.3–96.1)
 —
 93/93 (100.0%)
 D5
 —
 —
-81/102 (79.4%) (74.5–84.3)
+81/102 (79.4%; 74.5–84.3)
 —
 81/81 (100.0%)
 Overall
 —
 —
-42/81 (51.9%) (44.4–59.3)
+42/81 (51.9%; 44.4–59.3)
 —
 42/42 (100.0%)
 ARBITER (Haiku 5.5)
 D1–D5
 0.29 (0.22–0.36)
 0.72 (0.67–0.77)
-355/510 (69.6%) (65.9–73.1)
-64/83 (77.1%) (67.5–86.2)
-311/427 (72.8%) (69.2–76.3)
+355/510 (69.6%; 65.9–73.1)
+64/83 (77.1%; 67.5–86.2)
+311/427 (72.8%; 69.2–76.3)
 D1
 0.40 (0.21–0.58)
 0.84 (0.77–0.90)
-82/102 (80.4%) (73.5–86.3)
-11/18 (61.1%) (40.0–81.0)
-74/84 (88.1%) (81.0–94.3)
+82/102 (80.4%; 73.5–86.3)
+11/18 (61.1%; 40.0–81.0)
+74/84 (88.1%; 81.0–94.3)
 D2
 0.14 (0.03–0.26)
 0.62 (0.53–0.71)
-60/102 (58.8%) (51.0–66.7)
-11/16 (68.8%) (47.4–87.5)
-53/86 (61.6%) (53.9–69.5)
+60/102 (58.8%; 51.0–66.7)
+11/16 (68.8%; 47.4–87.5)
+53/86 (61.6%; 53.9–69.5)
 D3
 0.37 (0.24–0.51)
 0.68 (0.58–0.77)
-72/102 (70.6%) (63.7–77.5)
-17/19 (89.5%) (75.0–100.0)
-63/83 (75.9%) (68.6–82.9)
+72/102 (70.6%; 63.7–77.5)
+17/19 (89.5%; 75.0–100.0)
+63/83 (75.9%; 68.6–82.9)
 D4
 0.36 (0.18–0.55)
 0.88 (0.82–0.94)
-87/102 (85.3%) (78.4–91.2)
-7/9 (77.8%) (50.0–100.0)
-82/93 (88.2%) (81.9–93.7)
+87/102 (85.3%; 78.4–91.2)
+7/9 (77.8%; 50.0–100.0)
+82/93 (88.2%; 81.9–93.7)
 D5
 0.17 (0.08–0.26)
 0.54 (0.45–0.63)
-54/102 (52.9%) (46.1–59.8)
-18/21 (85.7%) (71.4–100.0)
-39/81 (48.1%) (40.7–56.0)
+54/102 (52.9%; 46.1–59.8)
+18/21 (85.7%; 71.4–100.0)
+39/81 (48.1%; 40.7–56.0)
 Overall
 0.37 (0.26–0.48)
 0.34 (0.20–0.48)
-43/81 (53.1%) (44.4–61.7)
+43/81 (53.1%; 44.4–61.7)
 39/39 (100.0%)
-15/42 (35.7%) (27.7–44.7)
+15/42 (35.7%; 27.7–44.7)
 Unassisted (Haiku 5.5)
 D1–D5
 0.26 (0.19–0.32)
 0.69 (0.65–0.73)
-336/510 (65.9%) (62.4–69.4)
-67/83 (80.7%) (71.9–88.5)
-289/427 (67.7%) (63.9–71.4)
+336/510 (65.9%; 62.4–69.4)
+67/83 (80.7%; 71.9–88.5)
+289/427 (67.7%; 63.9–71.4)
 D1
 0.40 (0.24–0.54)
 0.80 (0.72–0.86)
-77/102 (75.5%) (68.6–82.4)
-15/18 (83.3%) (64.7–100.0)
-67/84 (79.8%) (71.9–87.2)
+77/102 (75.5%; 68.6–82.4)
+15/18 (83.3%; 64.7–100.0)
+67/84 (79.8%; 71.9–87.2)
 D2
 0.17 (0.03–0.31)
 0.68 (0.61–0.75)
-64/102 (62.7%) (55.9–69.6)
-11/16 (68.8%) (46.7–88.9)
-54/86 (62.8%) (56.2–69.6)
+64/102 (62.7%; 55.9–69.6)
+11/16 (68.8%; 46.7–88.9)
+54/86 (62.8%; 56.2–69.6)
 D3
 0.26 (0.12–0.40)
 0.67 (0.58–0.76)
-68/102 (66.7%) (59.8–73.5)
-14/19 (73.7%) (53.3–91.7)
-60/83 (72.3%) (65.1–79.3)
+68/102 (66.7%; 59.8–73.5)
+14/19 (73.7%; 53.3–91.7)
+60/83 (72.3%; 65.1–79.3)
 D4
 0.22 (0.09–0.34)
 0.79 (0.72–0.86)
-73/102 (71.6%) (63.7–79.4)
-7/9 (77.8%) (50.0–100.0)
-70/93 (75.3%) (67.4–83.0)
+73/102 (71.6%; 63.7–79.4)
+7/9 (77.8%; 50.0–100.0)
+70/93 (75.3%; 67.4–83.0)
 D5
 0.21 (0.13–0.31)
 0.50 (0.39–0.60)
-54/102 (52.9%) (45.1–60.8)
-20/21 (95.2%) (85.0–100.0)
-38/81 (46.9%) (39.0–54.9)
+54/102 (52.9%; 45.1–60.8)
+20/21 (95.2%; 85.0–100.0)
+38/81 (46.9%; 39.0–54.9)
 Overall
 0.27 (0.16–0.38)
 0.28 (0.15–0.43)
-35/81 (43.2%) (34.6–53.1)
-38/39 (97.4%) (92.3–100.0)
-9/42 (21.4%) (13.3–30.8)
+35/81 (43.2%; 34.6–53.1)
+38/39 (97.4%; 92.3–100.0)
+9/42 (21.4%; 13.3–30.8)
 Linearly weighted Cohen’s κ and Gwet’s AC2. Exact agreement, sensitivity and specificity are n/N (%); their CI bounds are percentages. Some concerns or High is the positive class. All-Low rule has no variance; only accuracy and specificity are reported. Paired differences are on the coefficient scale or in percentage points; — indicates undefined or not applicable. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Domain
 Weighted κ
@@ -1341,78 +1341,78 @@ ARBITER (Sonnet 5.5)
 D1–D5
 0.94 (0.91–0.97)
 0.98 (0.97–0.99)
-472/485 (97.3%) (95.9–98.6)
+472/485 (97.3%; 95.9–98.6)
 D1
 0.97 (0.92–1.00)
 0.99 (0.98–1.00)
-97/98 (99.0%) (96.9–100.0)
+97/98 (99.0%; 96.9–100.0)
 D2
 0.80 (0.61–0.93)
 0.96 (0.93–0.99)
-88/94 (93.6%) (88.7–97.9)
+88/94 (93.6%; 88.7–97.9)
 D3
 0.97 (0.92–1.00)
 0.98 (0.96–1.00)
-92/94 (97.9%) (94.7–100.0)
+92/94 (97.9%; 94.7–100.0)
 D4
 0.92 (0.80–1.00)
 0.99 (0.97–1.00)
-99/101 (98.0%) (95.1–100.0)
+99/101 (98.0%; 95.1–100.0)
 D5
 0.96 (0.91–1.00)
 0.98 (0.96–1.00)
-96/98 (98.0%) (95.8–100.0)
+96/98 (98.0%; 95.8–100.0)
 Unassisted (Sonnet 5.5)
 D1–D5
 0.69 (0.62–0.76)
 0.91 (0.88–0.93)
-425/485 (87.6%) (85.2–90.0)
+425/485 (87.6%; 85.2–90.0)
 D1
 0.89 (0.77–1.00)
 0.97 (0.94–1.00)
-95/98 (96.9%) (93.8–100.0)
+95/98 (96.9%; 93.8–100.0)
 D2
 0.42 (0.14–0.65)
 0.88 (0.82–0.92)
-78/94 (83.0%) (76.7–89.1)
+78/94 (83.0%; 76.7–89.1)
 D3
 0.78 (0.65–0.89)
 0.90 (0.85–0.95)
-83/94 (88.3%) (82.3–93.8)
+83/94 (88.3%; 82.3–93.8)
 D4
 0.69 (0.48–0.86)
 0.96 (0.93–0.98)
-94/101 (93.1%) (88.2–97.0)
+94/101 (93.1%; 88.2–97.0)
 D5
 0.55 (0.44–0.67)
 0.80 (0.74–0.86)
-75/98 (76.5%) (69.7–83.2)
+75/98 (76.5%; 69.7–83.2)
 All-Low rule
 D1–D5
 —
 —
-358/485 (73.8%) (70.6–77.0)
+358/485 (73.8%; 70.6–77.0)
 D1
 —
 —
-78/98 (79.6%) (73.5–85.7)
+78/98 (79.6%; 73.5–85.7)
 D2
 —
 —
-79/94 (84.0%) (77.7–90.4)
+79/94 (84.0%; 77.7–90.4)
 D3
 —
 —
-66/94 (70.2%) (63.5–76.8)
+66/94 (70.2%; 63.5–76.8)
 D4
 —
 —
-87/101 (86.1%) (80.4–91.2)
+87/101 (86.1%; 80.4–91.2)
 D5
 —
 —
-48/98 (49.0%) (41.7–56.6)
-Linearly weighted κ and AC2; exact agreement is n/N (%), with CI bounds in percent. The composite uses the adjudicators’ agreed choice on consensus disputed cells and Published elsewhere; split cells are excluded. Adjudicators chose among three offered labels. Cells where both arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
+48/98 (49.0%; 41.7–56.6)
+Linearly weighted κ and AC2; exact agreement is n/N (x.x%; 95% CI a–b). The composite uses the adjudicators’ agreed choice on cells where both adjudicators agreed and Published elsewhere; cells where adjudicators split are excluded. Adjudicators chose among three offered labels. Cells where both arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Domain
 Weighted κ
 AC2
@@ -1421,88 +1421,88 @@ Sensitivity
 Specificity
 ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)
 D1–D5
-0.06 (−0.03 to 0.14)
-−0.01 (−0.04 to 0.02)
-−1.8 (−5.1 to 1.6)
+0.06 (−0.03–0.14)
+−0.01 (−0.04–0.02)
+−1.8 (−5.1–1.6)
 15.7 (6.8–24.4)
-−4.4 (−7.6 to −1.2)
+−4.4 (−7.6–−1.2)
 D1
-−0.01 (−0.12 to 0.10)
-−0.01 (−0.04 to 0.03)
-0.0 (−3.9 to 3.9)
-−5.6 (−16.7 to 0.0)
-0.0 (−2.6 to 2.6)
+−0.01 (−0.12–0.10)
+−0.01 (−0.04–0.03)
+0.0 (−3.9–3.9)
+−5.6 (−16.7–0.0)
+0.0 (−2.6–2.6)
 D2
-−0.07 (−0.24 to 0.11)
-−0.01 (−0.09 to 0.06)
-−2.0 (−9.8 to 5.9)
-−6.2 (−26.7 to 13.3)
-−2.3 (−11.5 to 6.6)
+−0.07 (−0.24–0.11)
+−0.01 (−0.09–0.06)
+−2.0 (−9.8–5.9)
+−6.2 (−26.7–13.3)
+−2.3 (−11.5–6.6)
 D3
 0.14 (0.01–0.28)
-0.00 (−0.05 to 0.06)
-−2.0 (−7.8 to 3.9)
+0.00 (−0.05–0.06)
+−2.0 (−7.8–3.9)
 31.6 (13.6–47.6)
-−4.8 (−10.5 to 0.0)
+−4.8 (−10.5–0.0)
 D4
-0.13 (−0.08 to 0.36)
-0.01 (−0.02 to 0.05)
-2.0 (−3.9 to 7.8)
+0.13 (−0.08–0.36)
+0.01 (−0.02–0.05)
+2.0 (−3.9–7.8)
 22.2 (0.0–50.0)
-−2.2 (−6.6 to 2.2)
+−2.2 (−6.6–2.2)
 D5
-0.05 (−0.15 to 0.24)
-−0.05 (−0.13 to 0.02)
-−6.9 (−15.7 to 2.0)
+0.05 (−0.15–0.24)
+−0.05 (−0.13–0.02)
+−6.9 (−15.7–2.0)
 33.3 (11.8–52.9)
-−13.6 (−22.0 to −5.0)
+−13.6 (−22.0–−5.0)
 Overall
-0.02 (−0.11 to 0.16)
-−0.04 (−0.16 to 0.09)
-−1.2 (−11.1 to 8.6)
+0.02 (−0.11–0.16)
+−0.04 (−0.16–0.09)
+−1.2 (−11.1–8.6)
 28.2 (16.1–40.5)
-−21.4 (−32.7 to −9.8)
+−21.4 (−32.7–−9.8)
 ARBITER (Haiku 5.5) minus Unassisted (Haiku 5.5)
 D1–D5
-0.03 (−0.04 to 0.10)
-0.03 (−0.02 to 0.07)
-3.7 (−0.2 to 7.6)
-−3.6 (−13.9 to 7.2)
+0.03 (−0.04–0.10)
+0.03 (−0.02–0.07)
+3.7 (−0.2–7.6)
+−3.6 (−13.9–7.2)
 5.2 (1.2–8.9)
 D1
-0.01 (−0.16 to 0.16)
-0.04 (−0.02 to 0.10)
-4.9 (−2.0 to 11.8)
-−22.2 (−41.2 to −5.9)
+0.01 (−0.16–0.16)
+0.04 (−0.02–0.10)
+4.9 (−2.0–11.8)
+−22.2 (−41.2–−5.9)
 8.3 (1.3–15.2)
 D2
-−0.03 (−0.16 to 0.11)
-−0.06 (−0.17 to 0.04)
-−3.9 (−13.7 to 5.9)
-0.0 (−22.2 to 22.2)
-−1.2 (−10.7 to 8.1)
+−0.03 (−0.16–0.11)
+−0.06 (−0.17–0.04)
+−3.9 (−13.7–5.9)
+0.0 (−22.2–22.2)
+−1.2 (−10.7–8.1)
 D3
-0.11 (−0.04 to 0.27)
-0.01 (−0.07 to 0.09)
-3.9 (−3.9 to 11.8)
-15.8 (−10.5 to 41.2)
-3.6 (−2.3 to 9.5)
+0.11 (−0.04–0.27)
+0.01 (−0.07–0.09)
+3.9 (−3.9–11.8)
+15.8 (−10.5–41.2)
+3.6 (−2.3–9.5)
 D4
-0.14 (−0.01 to 0.32)
+0.14 (−0.01–0.32)
 0.09 (0.02–0.16)
 13.7 (5.9–20.6)
-0.0 (−30.0 to 30.0)
+0.0 (−30.0–30.0)
 12.9 (5.5–20.2)
 D5
-−0.04 (−0.16 to 0.06)
-0.04 (−0.07 to 0.16)
-0.0 (−8.8 to 9.8)
-−9.5 (−26.1 to 5.9)
-1.2 (−8.9 to 11.2)
+−0.04 (−0.16–0.06)
+0.04 (−0.07–0.16)
+0.0 (−8.8–9.8)
+−9.5 (−26.1–5.9)
+1.2 (−8.9–11.2)
 Overall
-0.10 (−0.03 to 0.23)
-0.05 (−0.09 to 0.19)
-9.9 (−1.2 to 19.8)
+0.10 (−0.03–0.23)
+0.05 (−0.09–0.19)
+9.9 (−1.2–19.8)
 2.6 (0.0–7.7)
 14.3 (4.4–25.0)
 ARBITER minus Unassisted; coefficients in original units, proportions in percentage points.  CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
@@ -1535,7 +1535,7 @@ D5
 0.41 (0.28–0.52)
 0.18 (0.12–0.24)
 21.4 (14.3–28.3)
-ARBITER minus Unassisted; coefficients in original units, proportions in percentage points. Composite reference: the adjudicators’ agreed choice on consensus cells, Published on other cells; 25 split cells excluded (485 cells per arm). Adjudicators could only choose among the three labels offered. Cells where both Sonnet arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
+ARBITER minus Unassisted; coefficients in original units, proportions in percentage points. Reference: the adjudicators’ agreed choice where both agreed; published labels elsewhere. Excludes 25 divided decisions (485 cells per arm). Only three labels were offered. Unreviewed cells where both Sonnet arms matched published labels are assumed correct. Both features inflate absolute values. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Domain
 Measure
 ARBITER (Sonnet 5.5)
@@ -1558,7 +1558,7 @@ Permitted escalation
 0/102 (0.0%)
 6/81 (7.4%)
 Overall
-Algorithm violation
+Rating contradicts its own answers
 0/102 (0.0%)
 0/102 (0.0%)
 0/101 (0.0%)
@@ -1586,21 +1586,21 @@ Recorded override
 —
 —
 D1–D5
-Algorithm violation
+Rating contradicts its own answers
 0/510 (0.0%)
 26/509 (5.1%)
 0/505 (0.0%)
 132/510 (25.9%)
 —
 D1–D5
-Invalid answer path
+Required question skipped
 0/510 (0.0%)
 39/509 (7.7%)
 0/505 (0.0%)
 48/510 (9.4%)
 —
 D1–D5
-Any departure
+Any rule break
 0/510 (0.0%)
 65/509 (12.8%)
 0/505 (0.0%)
@@ -1628,21 +1628,21 @@ Recorded override
 —
 —
 D1
-Algorithm violation
+Rating contradicts its own answers
 0/102 (0.0%)
 5/101 (5.0%)
 0/101 (0.0%)
 10/102 (9.8%)
 —
 D1
-Invalid answer path
+Required question skipped
 0/102 (0.0%)
 0/101 (0.0%)
 0/101 (0.0%)
 0/102 (0.0%)
 —
 D1
-Any departure
+Any rule break
 0/102 (0.0%)
 5/101 (5.0%)
 0/101 (0.0%)
@@ -1670,21 +1670,21 @@ Recorded override
 —
 —
 D2
-Algorithm violation
+Rating contradicts its own answers
 0/102 (0.0%)
 3/102 (2.9%)
 0/101 (0.0%)
 16/102 (15.7%)
 —
 D2
-Invalid answer path
+Required question skipped
 0/102 (0.0%)
 4/102 (3.9%)
 0/101 (0.0%)
 39/102 (38.2%)
 —
 D2
-Any departure
+Any rule break
 0/102 (0.0%)
 7/102 (6.9%)
 0/101 (0.0%)
@@ -1712,21 +1712,21 @@ Recorded override
 —
 —
 D3
-Algorithm violation
+Rating contradicts its own answers
 0/102 (0.0%)
 3/102 (2.9%)
 0/101 (0.0%)
 17/102 (16.7%)
 —
 D3
-Invalid answer path
+Required question skipped
 0/102 (0.0%)
 2/102 (2.0%)
 0/101 (0.0%)
 1/102 (1.0%)
 —
 D3
-Any departure
+Any rule break
 0/102 (0.0%)
 5/102 (4.9%)
 0/101 (0.0%)
@@ -1754,21 +1754,21 @@ Recorded override
 —
 —
 D4
-Algorithm violation
+Rating contradicts its own answers
 0/102 (0.0%)
 3/102 (2.9%)
 0/101 (0.0%)
 35/102 (34.3%)
 —
 D4
-Invalid answer path
+Required question skipped
 0/102 (0.0%)
 32/102 (31.4%)
 0/101 (0.0%)
 7/102 (6.9%)
 —
 D4
-Any departure
+Any rule break
 0/102 (0.0%)
 35/102 (34.3%)
 0/101 (0.0%)
@@ -1796,35 +1796,35 @@ Recorded override
 —
 —
 D5
-Algorithm violation
+Rating contradicts its own answers
 0/102 (0.0%)
 12/102 (11.8%)
 0/101 (0.0%)
 54/102 (52.9%)
 —
 D5
-Invalid answer path
+Required question skipped
 0/102 (0.0%)
 1/102 (1.0%)
 0/101 (0.0%)
 1/102 (1.0%)
 —
 D5
-Any departure
+Any rule break
 0/102 (0.0%)
 13/102 (12.7%)
 0/101 (0.0%)
 55/102 (53.9%)
 —
 Audit
-Answers citing ≥1 evidence record
+Answers citing ≥1 supporting passage or image
 1538/1538 (100.0%)
 —
 1552/1552 (100.0%)
 —
 —
 Audit
-Bundle passes independent verification
+Audit file passes the independent verifier
 102/102 (100.0%)
 —
 102/102 (100.0%)
@@ -1838,14 +1838,14 @@ All evidence bound
 —
 —
 Audit
-Text spans bound to captured source
+Quoted text linked to its source
 1407/1407 (100.0%)
 —
 1255/1255 (100.0%)
 —
 —
 Audit
-Visual regions bound to rendered page
+Image regions linked to their page
 14/14 (100.0%)
 —
 5/5 (100.0%)
@@ -2043,36 +2043,36 @@ Exact agreement
 Adjudicator 1 vs Adjudicator 2 independent
 0.59 (0.48–0.68)
 0.69 (0.61–0.77)
-114/154 (74.0%) (68.2–79.9)
+114/154 (74.0%; 68.2–79.9)
 Adjudicator 1 vs Adjudicator 2 preferred
 0.69 (0.57–0.79)
 0.83 (0.77–0.89)
-129/154 (83.8%) (78.6–88.9)
+129/154 (83.8%; 78.6–88.9)
 Adjudicator 1 independent vs published label
-−0.08 (−0.17 to 0.01)
-−0.06 (−0.18 to 0.07)
-34/154 (22.1%) (15.8–28.5)
+−0.08 (−0.17–0.01)
+−0.06 (−0.18–0.07)
+34/154 (22.1%; 15.8–28.5)
 Adjudicator 1 independent vs ARBITER (Sonnet 5.5)
 0.52 (0.41–0.62)
 0.66 (0.57–0.74)
-107/154 (69.5%) (62.7–76.0)
+107/154 (69.5%; 62.7–76.0)
 Adjudicator 1 independent vs Unassisted (Sonnet 5.5)
 0.22 (0.13–0.30)
 0.28 (0.18–0.38)
-69/154 (44.8%) (38.1–51.6)
+69/154 (44.8%; 38.1–51.6)
 Adjudicator 2 independent vs published label
-−0.08 (−0.18 to 0.03)
+−0.08 (−0.18–0.03)
 0.14 (0.04–0.24)
-42/154 (27.3%) (20.4–34.3)
+42/154 (27.3%; 20.4–34.3)
 Adjudicator 2 independent vs ARBITER (Sonnet 5.5)
 0.67 (0.56–0.76)
 0.79 (0.73–0.85)
-120/154 (77.9%) (71.7–84.0)
+120/154 (77.9%; 71.7–84.0)
 Adjudicator 2 independent vs Unassisted (Sonnet 5.5)
 0.31 (0.19–0.42)
 0.45 (0.37–0.53)
-76/154 (49.4%) (42.2–56.5)
-154 disputed cells per comparison, selected because at least one Sonnet arm differed from the published review label. Independent ratings preceded label presentation; selected ratings chose among three offered labels. κ and AC2 are linearly weighted; raw agreement is n/N (%), with CI bounds in percent. This selected population cannot estimate full-benchmark agreement. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
+76/154 (49.4%; 42.2–56.5)
+154 disputed cells per comparison, selected because at least one Sonnet arm differed from the published review label. Independent ratings preceded label presentation; selected ratings chose among three offered labels. κ and AC2 are linearly weighted; raw agreement is n/N (x.x%; 95% CI a–b). This selected population cannot estimate full-benchmark agreement. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Model
 Metric
 ARBITER
@@ -2801,10 +2801,10 @@ ARBITER (Haiku 5.5)
 Unassisted (Haiku 5.5)
 General medicine
 Clopidogrel vs aspirin for secondary prevention of coronary artery disease
-0.12 (−0.17 to 0.72)
-0.12 (−0.14 to 0.46)
+0.12 (−0.17–0.72)
+0.12 (−0.14–0.46)
 0.28 (0.05–0.61)
-0.16 (−0.09 to 0.39)
+0.16 (−0.09–0.39)
 General medicine
 SGLT2 inhibitors and kidney outcomes across eGFR and albuminuria
 —
@@ -2837,14 +2837,14 @@ Safety of high-dose rifampin in tuberculosis treatment
 —
 Nephrology
 Therapies for proteinuria and eGFR decline in IgA nephropathy
-0.11 (−0.12 to 0.34)
-0.32 (−0.05 to 0.68)
-0.09 (−0.10 to 0.39)
+0.11 (−0.12–0.34)
+0.32 (−0.05–0.68)
+0.09 (−0.10–0.39)
 0.46 (0.09–0.77)
 Neurology
 Pharmacotherapy and non-invasive neuromodulation for neuropathic pain
 0.41 (0.10–0.73)
-0.08 (−0.15 to 0.26)
+0.08 (−0.15–0.26)
 0.41 (0.17–0.70)
 0.33 (0.09–0.64)
 Obstetrics and gynaecology
@@ -2861,40 +2861,40 @@ CDK4/6 inhibitors plus endocrine therapy in HR-positive, HER2-negative advanced 
 —
 Orthopaedics
 Lateral extra-articular procedure added to primary ACL reconstruction
-0.04 (−0.14 to 0.17)
-−0.03 (−0.14 to 0.09)
-0.05 (−0.15 to 0.19)
-0.00 (−0.17 to 0.14)
+0.04 (−0.14–0.17)
+−0.03 (−0.14–0.09)
+0.05 (−0.15–0.19)
+0.00 (−0.17–0.14)
 Paediatrics
 Active treatment vs expectant management of patent ductus arteriosus in preterm infants
-0.10 (−0.16 to 0.41)
-0.07 (−0.18 to 0.43)
-0.18 (−0.08 to 0.44)
+0.10 (−0.16–0.41)
+0.07 (−0.18–0.43)
+0.18 (−0.08–0.44)
 0.27 (0.06–0.57)
 Psychiatry
 Cannabinoids for mental and substance use disorders
-0.01 (−0.30 to 0.32)
-−0.13 (−0.32 to 0.06)
-0.05 (−0.32 to 0.35)
-−0.09 (−0.36 to 0.27)
+0.01 (−0.30–0.32)
+−0.13 (−0.32–0.06)
+0.05 (−0.32–0.35)
+−0.09 (−0.36–0.27)
 Pulmonary and critical care
 Preoxygenation strategies for intubation in critically ill patients
-0.18 (−0.04 to 0.31)
-−0.07 (−0.16 to 0.00)
-0.17 (−0.09 to 0.34)
-0.02 (−0.14 to 0.19)
+0.18 (−0.04–0.31)
+−0.07 (−0.16–0.00)
+0.17 (−0.09–0.34)
+0.02 (−0.14–0.19)
 Rheumatology
 Long-term effectiveness of non-surgical interventions for chronic low back pain
 0.52 (0.38–0.62)
 0.39 (0.12–0.62)
 0.46 (0.26–0.71)
-0.23 (−0.05 to 0.46)
+0.23 (−0.05–0.46)
 Surgery and anaesthesia
 Home-based prehabilitation before surgery
-−0.14 (−0.30 to 0.07)
-−0.06 (−0.24 to 0.16)
-−0.04 (−0.20 to 0.14)
-−0.01 (−0.13 to 0.11)
+−0.14 (−0.30–0.07)
+−0.06 (−0.24–0.16)
+−0.04 (−0.20–0.14)
+−0.01 (−0.13–0.11)
 ACL, anterior cruciate ligament; CDK4/6, cyclin-dependent kinases 4 and 6; eGFR, estimated glomerular filtration rate; GLP-1, glucagon-like peptide-1; HER2, human epidermal growth factor receptor 2; HR, hormone receptor; IgA, immunoglobulin A; SGLT2, sodium-glucose cotransporter 2. Weighted κ (95% CI). eFigure 1 displays the defined nondegenerate estimates. A coefficient with no variance, or a degenerate bootstrap interval, is shown as —. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Adjudicator
 Source
@@ -2907,217 +2907,217 @@ ARBITER (Sonnet 5.5)
 D1–D5
 0.86 (0.81–0.90)
 0.95 (0.93–0.97)
-479/510 (93.9%) (92.0–95.9)
+479/510 (93.9%; 92.0–95.9)
 Adjudicator 1
 ARBITER (Sonnet 5.5)
 D1
 0.90 (0.81–0.98)
 0.97 (0.95–0.99)
-98/102 (96.1%) (93.1–99.0)
+98/102 (96.1%; 93.1–99.0)
 Adjudicator 1
 ARBITER (Sonnet 5.5)
 D2
 0.70 (0.50–0.85)
 0.92 (0.87–0.96)
-92/102 (90.2%) (85.3–95.1)
+92/102 (90.2%; 85.3–95.1)
 Adjudicator 1
 ARBITER (Sonnet 5.5)
 D3
 0.83 (0.72–0.92)
 0.90 (0.84–0.95)
-92/102 (90.2%) (85.3–95.1)
+92/102 (90.2%; 85.3–95.1)
 Adjudicator 1
 ARBITER (Sonnet 5.5)
 D4
 0.92 (0.80–1.00)
 0.99 (0.97–1.00)
-100/102 (98.0%) (95.1–100.0)
+100/102 (98.0%; 95.1–100.0)
 Adjudicator 1
 ARBITER (Sonnet 5.5)
 D5
 0.90 (0.82–0.96)
 0.96 (0.92–0.98)
-97/102 (95.1%) (91.2–98.0)
+97/102 (95.1%; 91.2–98.0)
 Adjudicator 1
 Unassisted (Sonnet 5.5)
 D1–D5
 0.65 (0.58–0.72)
 0.88 (0.85–0.90)
-435/510 (85.3%) (82.5–87.8)
+435/510 (85.3%; 82.5–87.8)
 Adjudicator 1
 Unassisted (Sonnet 5.5)
 D1
 0.87 (0.75–0.98)
 0.97 (0.93–0.99)
-98/102 (96.1%) (92.2–99.0)
+98/102 (96.1%; 92.2–99.0)
 Adjudicator 1
 Unassisted (Sonnet 5.5)
 D2
 0.35 (0.12–0.55)
 0.82 (0.76–0.88)
-79/102 (77.5%) (70.6–84.3)
+79/102 (77.5%; 70.6–84.3)
 Adjudicator 1
 Unassisted (Sonnet 5.5)
 D3
 0.71 (0.57–0.83)
 0.85 (0.78–0.92)
-87/102 (85.3%) (79.4–91.2)
+87/102 (85.3%; 79.4–91.2)
 Adjudicator 1
 Unassisted (Sonnet 5.5)
 D4
 0.68 (0.50–0.84)
 0.95 (0.92–0.98)
-94/102 (92.2%) (87.3–96.1)
+94/102 (92.2%; 87.3–96.1)
 Adjudicator 1
 Unassisted (Sonnet 5.5)
 D5
 0.54 (0.42–0.66)
 0.79 (0.73–0.85)
-77/102 (75.5%) (68.6–82.4)
+77/102 (75.5%; 68.6–82.4)
 Adjudicator 1
 All-Low rule
 D1–D5
 —
 —
-364/510 (71.4%) (67.8–74.9)
+364/510 (71.4%; 67.8–74.9)
 Adjudicator 1
 All-Low rule
 D1
 —
 —
-79/102 (77.5%) (70.6–84.3)
+79/102 (77.5%; 70.6–84.3)
 Adjudicator 1
 All-Low rule
 D2
 —
 —
-81/102 (79.4%) (72.5–86.3)
+81/102 (79.4%; 72.5–86.3)
 Adjudicator 1
 All-Low rule
 D3
 —
 —
-69/102 (67.6%) (60.8–74.5)
+69/102 (67.6%; 60.8–74.5)
 Adjudicator 1
 All-Low rule
 D4
 —
 —
-87/102 (85.3%) (79.4–91.2)
+87/102 (85.3%; 79.4–91.2)
 Adjudicator 1
 All-Low rule
 D5
 —
 —
-48/102 (47.1%) (40.2–54.9)
+48/102 (47.1%; 40.2–54.9)
 Adjudicator 2
 ARBITER (Sonnet 5.5)
 D1–D5
 0.91 (0.88–0.94)
 0.97 (0.96–0.98)
-488/510 (95.7%) (94.1–97.1)
+488/510 (95.7%; 94.1–97.1)
 Adjudicator 2
 ARBITER (Sonnet 5.5)
 D1
 0.95 (0.87–1.00)
 0.99 (0.97–1.00)
-100/102 (98.0%) (95.1–100.0)
+100/102 (98.0%; 95.1–100.0)
 Adjudicator 2
 ARBITER (Sonnet 5.5)
 D2
 0.71 (0.52–0.85)
 0.93 (0.88–0.96)
-91/102 (89.2%) (83.3–94.1)
+91/102 (89.2%; 83.3–94.1)
 Adjudicator 2
 ARBITER (Sonnet 5.5)
 D3
 0.96 (0.90–1.00)
 0.97 (0.95–1.00)
-99/102 (97.1%) (94.1–100.0)
+99/102 (97.1%; 94.1–100.0)
 Adjudicator 2
 ARBITER (Sonnet 5.5)
 D4
 0.89 (0.78–1.00)
 0.98 (0.96–1.00)
-99/102 (97.1%) (94.1–100.0)
+99/102 (97.1%; 94.1–100.0)
 Adjudicator 2
 ARBITER (Sonnet 5.5)
 D5
 0.94 (0.88–1.00)
 0.97 (0.95–1.00)
-99/102 (97.1%) (94.1–100.0)
+99/102 (97.1%; 94.1–100.0)
 Adjudicator 2
 Unassisted (Sonnet 5.5)
 D1–D5
 0.67 (0.59–0.73)
 0.89 (0.87–0.91)
-439/510 (86.1%) (83.3–88.6)
+439/510 (86.1%; 83.3–88.6)
 Adjudicator 2
 Unassisted (Sonnet 5.5)
 D1
 0.82 (0.68–0.94)
 0.95 (0.91–0.99)
-96/102 (94.1%) (89.2–98.0)
+96/102 (94.1%; 89.2–98.0)
 Adjudicator 2
 Unassisted (Sonnet 5.5)
 D2
 0.50 (0.25–0.70)
 0.87 (0.82–0.92)
-85/102 (83.3%) (77.5–89.2)
+85/102 (83.3%; 77.5–89.2)
 Adjudicator 2
 Unassisted (Sonnet 5.5)
 D3
 0.72 (0.58–0.83)
 0.86 (0.80–0.92)
-86/102 (84.3%) (78.4–90.2)
+86/102 (84.3%; 78.4–90.2)
 Adjudicator 2
 Unassisted (Sonnet 5.5)
 D4
 0.73 (0.55–0.88)
 0.96 (0.93–0.98)
-95/102 (93.1%) (88.2–97.1)
+95/102 (93.1%; 88.2–97.1)
 Adjudicator 2
 Unassisted (Sonnet 5.5)
 D5
 0.52 (0.40–0.65)
 0.79 (0.73–0.85)
-77/102 (75.5%) (68.6–82.4)
+77/102 (75.5%; 68.6–82.4)
 Adjudicator 2
 All-Low rule
 D1–D5
 —
 —
-372/510 (72.9%) (69.6–76.1)
+372/510 (72.9%; 69.6–76.1)
 Adjudicator 2
 All-Low rule
 D1
 —
 —
-81/102 (79.4%) (73.5–85.3)
+81/102 (79.4%; 73.5–85.3)
 Adjudicator 2
 All-Low rule
 D2
 —
 —
-84/102 (82.4%) (76.5–88.2)
+84/102 (82.4%; 76.5–88.2)
 Adjudicator 2
 All-Low rule
 D3
 —
 —
-68/102 (66.7%) (60.8–72.5)
+68/102 (66.7%; 60.8–72.5)
 Adjudicator 2
 All-Low rule
 D4
 —
 —
-87/102 (85.3%) (79.4–91.2)
+87/102 (85.3%; 79.4–91.2)
 Adjudicator 2
 All-Low rule
 D5
 —
 —
-52/102 (51.0%) (44.1–58.8)
+52/102 (51.0%; 44.1–58.8)
 510 cells per Sonnet arm. Each adjudicator’s selected label replaces Published on disputed cells. Only three labels were offered; unadjudicated cells are assumed correct. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Adjudicator
 Comparison
@@ -3134,9 +3134,9 @@ D1–D5
 Adjudicator 1
 ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)
 D1
-0.03 (−0.09 to 0.16)
-0.01 (−0.02 to 0.04)
-0.0 (−3.9 to 3.9)
+0.03 (−0.09–0.16)
+0.01 (−0.02–0.04)
+0.0 (−3.9–3.9)
 Adjudicator 1
 ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)
 D2
@@ -3146,9 +3146,9 @@ D2
 Adjudicator 1
 ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)
 D3
-0.12 (−0.02 to 0.26)
-0.05 (−0.02 to 0.12)
-4.9 (−2.0 to 11.8)
+0.12 (−0.02–0.26)
+0.05 (−0.02–0.12)
+4.9 (−2.0–11.8)
 Adjudicator 1
 ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)
 D4
@@ -3176,9 +3176,9 @@ D1
 Adjudicator 2
 ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)
 D2
-0.21 (−0.03 to 0.47)
-0.05 (−0.01 to 0.11)
-5.9 (−2.9 to 13.7)
+0.21 (−0.03–0.47)
+0.05 (−0.01–0.11)
+5.9 (−2.9–13.7)
 Adjudicator 2
 ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)
 D3
@@ -3188,9 +3188,9 @@ D3
 Adjudicator 2
 ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)
 D4
-0.16 (−0.06 to 0.39)
-0.02 (−0.01 to 0.06)
-3.9 (−1.0 to 8.8)
+0.16 (−0.06–0.39)
+0.02 (−0.01–0.06)
+3.9 (−1.0–8.8)
 Adjudicator 2
 ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)
 D5
@@ -3208,88 +3208,88 @@ ARBITER (Haiku 5.5)
 D1–D5
 0.30 (0.24–0.37)
 0.74 (0.70–0.77)
-355/505 (70.3%) (67.1–73.5)
-64/83 (77.1%) (67.5–86.2)
-311/422 (73.7%) (70.5–76.8)
+355/505 (70.3%; 67.1–73.5)
+64/83 (77.1%; 67.5–86.2)
+311/422 (73.7%; 70.5–76.8)
 D1
 0.43 (0.24–0.60)
 0.85 (0.79–0.91)
-82/101 (81.2%) (75.0–87.3)
-11/18 (61.1%) (40.0–81.0)
-74/83 (89.2%) (82.4–95.1)
+82/101 (81.2%; 75.0–87.3)
+11/18 (61.1%; 40.0–81.0)
+74/83 (89.2%; 82.4–95.1)
 D2
 0.15 (0.04–0.27)
 0.63 (0.54–0.72)
-60/101 (59.4%) (51.5–67.3)
-11/16 (68.8%) (47.4–87.5)
-53/85 (62.4%) (54.7–70.2)
+60/101 (59.4%; 51.5–67.3)
+11/16 (68.8%; 47.4–87.5)
+53/85 (62.4%; 54.7–70.2)
 D3
 0.39 (0.25–0.53)
 0.70 (0.60–0.78)
-72/101 (71.3%) (64.4–78.2)
-17/19 (89.5%) (75.0–100.0)
-63/82 (76.8%) (69.9–83.8)
+72/101 (71.3%; 64.4–78.2)
+17/19 (89.5%; 75.0–100.0)
+63/82 (76.8%; 69.9–83.8)
 D4
 0.39 (0.20–0.59)
 0.90 (0.84–0.94)
-87/101 (86.1%) (79.4–92.1)
-7/9 (77.8%) (50.0–100.0)
-82/92 (89.1%) (82.8–94.6)
+87/101 (86.1%; 79.4–92.1)
+7/9 (77.8%; 50.0–100.0)
+82/92 (89.1%; 82.8–94.6)
 D5
 0.18 (0.09–0.27)
 0.55 (0.47–0.63)
-54/101 (53.5%) (47.0–60.4)
-18/21 (85.7%) (71.4–100.0)
-39/80 (48.8%) (41.5–56.4)
+54/101 (53.5%; 47.0–60.4)
+18/21 (85.7%; 71.4–100.0)
+39/80 (48.8%; 41.5–56.4)
 Overall
 0.38 (0.27–0.49)
 0.36 (0.22–0.50)
-43/80 (53.8%) (45.0–62.5)
+43/80 (53.8%; 45.0–62.5)
 39/39 (100.0%)
-15/41 (36.6%) (28.6–45.7)
+15/41 (36.6%; 28.6–45.7)
 Unassisted (Haiku 5.5)
 D1–D5
 0.26 (0.19–0.32)
 0.69 (0.65–0.73)
-332/505 (65.7%) (62.2–69.2)
-67/83 (80.7%) (71.9–88.5)
-285/422 (67.5%) (63.7–71.3)
+332/505 (65.7%; 62.2–69.2)
+67/83 (80.7%; 71.9–88.5)
+285/422 (67.5%; 63.7–71.3)
 D1
 0.40 (0.24–0.54)
 0.79 (0.72–0.86)
-76/101 (75.2%) (68.0–82.4)
-15/18 (83.3%) (64.7–100.0)
-66/83 (79.5%) (71.6–87.1)
+76/101 (75.2%; 68.0–82.4)
+15/18 (83.3%; 64.7–100.0)
+66/83 (79.5%; 71.6–87.1)
 D2
 0.16 (0.03–0.30)
 0.68 (0.61–0.74)
-63/101 (62.4%) (55.4–69.6)
-11/16 (68.8%) (46.7–88.9)
-53/85 (62.4%) (55.7–69.2)
+63/101 (62.4%; 55.4–69.6)
+11/16 (68.8%; 46.7–88.9)
+53/85 (62.4%; 55.7–69.2)
 D3
 0.26 (0.12–0.40)
 0.67 (0.57–0.75)
-67/101 (66.3%) (59.0–73.3)
-14/19 (73.7%) (53.3–91.7)
-59/82 (72.0%) (64.7–79.0)
+67/101 (66.3%; 59.0–73.3)
+14/19 (73.7%; 53.3–91.7)
+59/82 (72.0%; 64.7–79.0)
 D4
 0.22 (0.09–0.34)
 0.79 (0.72–0.86)
-72/101 (71.3%) (63.7–79.2)
-7/9 (77.8%) (50.0–100.0)
-69/92 (75.0%) (67.0–82.8)
+72/101 (71.3%; 63.7–79.2)
+7/9 (77.8%; 50.0–100.0)
+69/92 (75.0%; 67.0–82.8)
 D5
 0.22 (0.13–0.32)
 0.50 (0.39–0.60)
-54/101 (53.5%) (45.5–61.4)
-20/21 (95.2%) (85.0–100.0)
-38/80 (47.5%) (39.5–55.6)
+54/101 (53.5%; 45.5–61.4)
+20/21 (95.2%; 85.0–100.0)
+38/80 (47.5%; 39.5–55.6)
 Overall
 0.27 (0.16–0.39)
 0.29 (0.15–0.43)
-35/80 (43.8%) (34.6–53.2)
-38/39 (97.4%) (92.3–100.0)
-9/41 (22.0%) (13.6–31.6)
+35/80 (43.8%; 34.6–53.2)
+38/39 (97.4%; 92.3–100.0)
+9/41 (22.0%; 13.6–31.6)
 Both Haiku arms exclude the same missing domain and Overall cells. Fractions give eligible-cell denominators. Sensitivity uses Some concerns or High as positive; specificity uses Low. κ and AC2 are linearly weighted. Paired differences use coefficient units or percentage points. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Domain
 Weighted κ
@@ -3299,45 +3299,45 @@ Sensitivity
 Specificity
 ARBITER (Haiku 5.5) minus Unassisted (Haiku 5.5)
 D1–D5
-0.04 (−0.02 to 0.11)
+0.04 (−0.02–0.11)
 0.05 (0.01–0.08)
 4.6 (1.0–8.0)
-−3.6 (−13.9 to 7.2)
+−3.6 (−13.9–7.2)
 6.2 (2.6–9.6)
 D1
-0.03 (−0.12 to 0.18)
+0.03 (−0.12–0.18)
 0.06 (0.01–0.11)
-5.9 (−1.0 to 12.9)
-−22.2 (−41.2 to −5.9)
+5.9 (−1.0–12.9)
+−22.2 (−41.2–−5.9)
 9.6 (3.5–16.3)
 D2
-−0.02 (−0.15 to 0.12)
-−0.04 (−0.14 to 0.05)
-−3.0 (−12.9 to 6.9)
-0.0 (−22.2 to 22.2)
-0.0 (−9.5 to 9.3)
+−0.02 (−0.15–0.12)
+−0.04 (−0.14–0.05)
+−3.0 (−12.9–6.9)
+0.0 (−22.2–22.2)
+0.0 (−9.5–9.3)
 D3
-0.13 (−0.02 to 0.29)
-0.03 (−0.04 to 0.10)
-5.0 (−2.0 to 12.0)
-15.8 (−10.5 to 41.2)
+0.13 (−0.02–0.29)
+0.03 (−0.04–0.10)
+5.0 (−2.0–12.0)
+15.8 (−10.5–41.2)
 4.9 (0.0–10.5)
 D4
 0.17 (0.01–0.35)
 0.11 (0.04–0.17)
 14.9 (7.8–21.8)
-0.0 (−30.0 to 30.0)
+0.0 (−30.0–30.0)
 14.1 (7.4–21.3)
 D5
-−0.04 (−0.16 to 0.07)
-0.05 (−0.06 to 0.17)
-0.0 (−9.0 to 9.8)
-−9.5 (−26.1 to 5.9)
-1.3 (−9.0 to 11.4)
+−0.04 (−0.16–0.07)
+0.05 (−0.06–0.17)
+0.0 (−9.0–9.8)
+−9.5 (−26.1–5.9)
+1.3 (−9.0–11.4)
 Overall
-0.11 (−0.03 to 0.24)
-0.07 (−0.07 to 0.20)
-10.0 (−1.2 to 20.5)
+0.11 (−0.03–0.24)
+0.07 (−0.07–0.20)
+10.0 (−1.2–20.5)
 2.6 (0.0–7.7)
 14.6 (4.5–25.6)
 Both Haiku arms exclude the same missing domain and Overall cells. Fractions give eligible-cell denominators. Sensitivity uses Some concerns or High as positive; specificity uses Low. κ and AC2 are linearly weighted. Paired differences use coefficient units or percentage points. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
@@ -3357,13 +3357,13 @@ The qualified answer is preserved without selecting a time point. This cell is o
 Source
 Estimate (95% CI)
 ARBITER (Sonnet 5.5)
-34/1538 (2.2%) (1.1–3.5)
+34/1538 (2.2%; 1.1–3.5)
 Unassisted (Sonnet 5.5)
 0/1459 (0.0%)
 ARBITER (Haiku 5.5)
-47/1552 (3.0%) (1.7–4.6)
+47/1552 (3.0%; 1.7–4.6)
 Unassisted (Haiku 5.5)
-3/1782 (0.2%) (0.0–0.4)
+3/1782 (0.2%; 0.0–0.4)
 Quoted active answers / all active answers. Paired double quotes enclose at least five words. Syntax is not verification and understates ARBITER bundle-based grounding. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 Source
 Answer-code-only / exported fields (%)
@@ -3380,136 +3380,136 @@ ARBITER (Haiku 5.5)
 Unassisted (Haiku 5.5)
 1.1
 Random allocation sequence
-20/22 (90.9%) (78.3–100.0)
-20/21 (95.2%) (85.7–100.0)
-20/22 (90.9%) (77.8–100.0)
-19/22 (86.4%) (72.0–100.0)
+20/22 (90.9%; 78.3–100.0)
+20/21 (95.2%; 85.7–100.0)
+20/22 (90.9%; 77.8–100.0)
+19/22 (86.4%; 72.0–100.0)
 1.2
 Concealment until enrolment and assignment
-19/22 (86.4%) (72.0–100.0)
-16/21 (76.2%) (57.9–93.8)
-17/22 (77.3%) (59.3–93.8)
-19/22 (86.4%) (71.4–100.0)
+19/22 (86.4%; 72.0–100.0)
+16/21 (76.2%; 57.9–93.8)
+17/22 (77.3%; 59.3–93.8)
+19/22 (86.4%; 71.4–100.0)
 1.3
 Preintervention imbalance suggesting a randomisation problem
-12/22 (54.5%) (36.4–70.8)
-9/21 (42.9%) (23.5–60.9)
-12/22 (54.5%) (36.8–70.8)
-6/22 (27.3%) (10.0–45.0)
+12/22 (54.5%; 36.4–70.8)
+9/21 (42.9%; 23.5–60.9)
+12/22 (54.5%; 36.8–70.8)
+6/22 (27.3%; 10.0–45.0)
 2.1
 Participants aware of assignment
-34/40 (85.0%) (74.4–94.6)
-34/40 (85.0%) (74.4–94.6)
-32/40 (80.0%) (68.3–91.3)
-29/40 (72.5%) (60.5–84.2)
+34/40 (85.0%; 74.4–94.6)
+34/40 (85.0%; 74.4–94.6)
+32/40 (80.0%; 68.3–91.3)
+29/40 (72.5%; 60.5–84.2)
 2.2
 Carers or intervention providers aware of assignment
-37/40 (92.5%) (84.2–100.0)
-36/40 (90.0%) (81.0–97.6)
-35/40 (87.5%) (77.1–96.8)
-29/40 (72.5%) (58.8–85.3)
+37/40 (92.5%; 84.2–100.0)
+36/40 (90.0%; 81.0–97.6)
+35/40 (87.5%; 77.1–96.8)
+29/40 (72.5%; 58.8–85.3)
 2.3
 Deviations arising from trial context
-27/40 (67.5%) (53.1–80.6)
-27/40 (67.5%) (53.8–81.0)
-21/40 (52.5%) (37.8–66.7)
-25/40 (62.5%) (48.6–75.6)
+27/40 (67.5%; 53.1–80.6)
+27/40 (67.5%; 53.8–81.0)
+21/40 (52.5%; 37.8–66.7)
+25/40 (62.5%; 48.6–75.6)
 2.4
 Deviations affecting the outcome
-39/40 (97.5%) (92.5–100.0)
-38/40 (95.0%) (87.8–100.0)
-39/40 (97.5%) (92.5–100.0)
-24/40 (60.0%) (45.9–73.3)
+39/40 (97.5%; 92.5–100.0)
+38/40 (95.0%; 87.8–100.0)
+39/40 (97.5%; 92.5–100.0)
+24/40 (60.0%; 45.9–73.3)
 2.5
 Deviations balanced across groups
-39/40 (97.5%) (92.5–100.0)
-39/40 (97.5%) (92.5–100.0)
-39/40 (97.5%) (92.5–100.0)
-13/40 (32.5%) (18.8–46.7)
+39/40 (97.5%; 92.5–100.0)
+39/40 (97.5%; 92.5–100.0)
+39/40 (97.5%; 92.5–100.0)
+13/40 (32.5%; 18.8–46.7)
 2.6
 Appropriate analysis of assignment effect
-31/40 (77.5%) (65.7–88.6)
-23/40 (57.5%) (44.7–70.6)
-30/40 (75.0%) (62.5–86.8)
-13/39 (33.3%) (20.0–47.4)
+31/40 (77.5%; 65.7–88.6)
+23/40 (57.5%; 44.7–70.6)
+30/40 (75.0%; 62.5–86.8)
+13/39 (33.3%; 20.0–47.4)
 2.7
 Substantial impact of analysing outside assigned groups
-26/40 (65.0%) (51.4–77.5)
-17/40 (42.5%) (30.0–55.6)
-24/40 (60.0%) (46.2–73.8)
-4/26 (15.4%) (3.8–29.4)
+26/40 (65.0%; 51.4–77.5)
+17/40 (42.5%; 30.0–55.6)
+24/40 (60.0%; 46.2–73.8)
+4/26 (15.4%; 3.8–29.4)
 3.1
 Outcome data available for nearly everyone
-28/32 (87.5%) (75.7–97.0)
-19/31 (61.3%) (45.2–77.4)
-24/31 (77.4%) (62.5–91.4)
-21/32 (65.6%) (48.6–80.6)
+28/32 (87.5%; 75.7–97.0)
+19/31 (61.3%; 45.2–77.4)
+24/31 (77.4%; 62.5–91.4)
+21/32 (65.6%; 48.6–80.6)
 3.2
 Evidence against bias from missing data
-29/32 (90.6%) (80.0–100.0)
-19/32 (59.4%) (43.2–75.0)
-26/31 (83.9%) (71.4–96.2)
-16/32 (50.0%) (35.1–64.5)
+29/32 (90.6%; 80.0–100.0)
+19/32 (59.4%; 43.2–75.0)
+26/31 (83.9%; 71.4–96.2)
+16/32 (50.0%; 35.1–64.5)
 3.3
 Missingness potentially depends on true outcome
-28/32 (87.5%) (75.7–97.0)
-14/31 (45.2%) (29.2–61.5)
-25/31 (80.6%) (66.7–93.3)
-18/32 (56.2%) (40.5–72.4)
+28/32 (87.5%; 75.7–97.0)
+14/31 (45.2%; 29.2–61.5)
+25/31 (80.6%; 66.7–93.3)
+18/32 (56.2%; 40.5–72.4)
 3.4
 Missingness likely depends on true outcome
-16/32 (50.0%) (34.5–65.8)
-11/31 (35.5%) (20.7–51.5)
-18/31 (58.1%) (41.9–75.0)
-15/31 (48.4%) (32.0–65.2)
+16/32 (50.0%; 34.5–65.8)
+11/31 (35.5%; 20.7–51.5)
+18/31 (58.1%; 41.9–75.0)
+15/31 (48.4%; 32.0–65.2)
 4.1
 Inappropriate measurement method
 15/15 (100.0%)
 15/15 (100.0%)
 15/15 (100.0%)
-14/15 (93.3%) (80.0–100.0)
+14/15 (93.3%; 80.0–100.0)
 4.2
 Measurement differs across groups
 15/15 (100.0%)
 15/15 (100.0%)
 15/15 (100.0%)
-7/15 (46.7%) (23.1–72.7)
+7/15 (46.7%; 23.1–72.7)
 4.3
 Assessors aware of received intervention
-12/15 (80.0%) (58.8–100.0)
-13/15 (86.7%) (69.2–100.0)
-12/15 (80.0%) (58.8–100.0)
-13/15 (86.7%) (66.7–100.0)
+12/15 (80.0%; 58.8–100.0)
+13/15 (86.7%; 69.2–100.0)
+12/15 (80.0%; 58.8–100.0)
+13/15 (86.7%; 66.7–100.0)
 4.4
 Assessment potentially influenced by awareness
-13/15 (86.7%) (68.8–100.0)
-8/15 (53.3%) (31.2–75.0)
-12/15 (80.0%) (58.8–100.0)
-11/15 (73.3%) (50.0–93.3)
+13/15 (86.7%; 68.8–100.0)
+8/15 (53.3%; 31.2–75.0)
+12/15 (80.0%; 58.8–100.0)
+11/15 (73.3%; 50.0–93.3)
 4.5
 Assessment likely influenced by awareness
-12/15 (80.0%) (58.3–100.0)
-5/15 (33.3%) (11.1–56.2)
-10/15 (66.7%) (42.9–88.2)
-3/13 (23.1%) (0.0–50.0)
+12/15 (80.0%; 58.3–100.0)
+5/15 (33.3%; 11.1–56.2)
+10/15 (66.7%; 42.9–88.2)
+3/13 (23.1%; 0.0–50.0)
 5.1
 Analysis plan finalised before unblinding
-37/45 (82.2%) (73.8–90.2)
-19/45 (42.2%) (29.8–55.0)
-31/44 (70.5%) (58.1–82.4)
-9/45 (20.0%) (9.5–31.6)
+37/45 (82.2%; 73.8–90.2)
+19/45 (42.2%; 29.8–55.0)
+31/44 (70.5%; 58.1–82.4)
+9/45 (20.0%; 9.5–31.6)
 5.2
 Result selected from eligible outcome measurements
-21/45 (46.7%) (34.1–58.3)
-15/44 (34.1%) (22.5–45.2)
-26/44 (59.1%) (45.2–71.8)
-8/45 (17.8%) (7.7–28.6)
+21/45 (46.7%; 34.1–58.3)
+15/44 (34.1%; 22.5–45.2)
+26/44 (59.1%; 45.2–71.8)
+8/45 (17.8%; 7.7–28.6)
 5.3
 Result selected from eligible analyses
-6/45 (13.3%) (4.8–22.5)
-3/45 (6.7%) (0.0–13.6)
-24/44 (54.5%) (40.8–68.4)
-8/45 (17.8%) (7.5–28.9)
+6/45 (13.3%; 4.8–22.5)
+3/45 (6.7%; 0.0–13.6)
+24/44 (54.5%; 40.8–68.4)
+8/45 (17.8%; 7.5–28.9)
 SQ, signalling question. Correct collapsed answers / eligible questions (95% CI) on disputed domains. Independent answers define reference; Y/PY, N/PN, NI/NA collapse. Missing predictions are wrong. Includes Haiku without a preferred-judgement endpoint. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.
 SQ
 Signalling question
@@ -3519,134 +3519,134 @@ ARBITER (Haiku 5.5)
 Unassisted (Haiku 5.5)
 1.1
 Random allocation sequence
-21/22 (95.5%) (85.7–100.0)
-19/21 (90.5%) (78.3–100.0)
-19/22 (86.4%) (71.4–100.0)
-18/22 (81.8%) (65.5–95.5)
+21/22 (95.5%; 85.7–100.0)
+19/21 (90.5%; 78.3–100.0)
+19/22 (86.4%; 71.4–100.0)
+18/22 (81.8%; 65.5–95.5)
 1.2
 Concealment until enrolment and assignment
-20/22 (90.9%) (78.9–100.0)
-14/21 (66.7%) (47.4–85.7)
-18/22 (81.8%) (65.2–95.5)
-17/22 (77.3%) (60.0–93.8)
+20/22 (90.9%; 78.9–100.0)
+14/21 (66.7%; 47.4–85.7)
+18/22 (81.8%; 65.2–95.5)
+17/22 (77.3%; 60.0–93.8)
 1.3
 Preintervention imbalance suggesting a randomisation problem
 22/22 (100.0%)
-19/21 (90.5%) (78.3–100.0)
-18/22 (81.8%) (65.4–95.5)
-15/22 (68.2%) (50.0–85.7)
+19/21 (90.5%; 78.3–100.0)
+18/22 (81.8%; 65.4–95.5)
+15/22 (68.2%; 50.0–85.7)
 2.1
 Participants aware of assignment
-37/40 (92.5%) (84.4–100.0)
-37/40 (92.5%) (84.4–100.0)
-37/40 (92.5%) (84.2–100.0)
-31/40 (77.5%) (66.0–88.9)
+37/40 (92.5%; 84.4–100.0)
+37/40 (92.5%; 84.4–100.0)
+37/40 (92.5%; 84.2–100.0)
+31/40 (77.5%; 66.0–88.9)
 2.2
 Carers or intervention providers aware of assignment
-38/40 (95.0%) (88.2–100.0)
-37/40 (92.5%) (84.4–100.0)
-36/40 (90.0%) (80.5–97.6)
-28/40 (70.0%) (56.2–82.9)
+38/40 (95.0%; 88.2–100.0)
+37/40 (92.5%; 84.4–100.0)
+36/40 (90.0%; 80.5–97.6)
+28/40 (70.0%; 56.2–82.9)
 2.3
 Deviations arising from trial context
-31/40 (77.5%) (65.0–88.6)
-27/40 (67.5%) (54.3–80.0)
-25/40 (62.5%) (47.4–76.3)
-25/40 (62.5%) (48.9–75.0)
+31/40 (77.5%; 65.0–88.6)
+27/40 (67.5%; 54.3–80.0)
+25/40 (62.5%; 47.4–76.3)
+25/40 (62.5%; 48.9–75.0)
 2.4
 Deviations affecting the outcome
-39/40 (97.5%) (92.1–100.0)
-36/40 (90.0%) (80.6–97.6)
-39/40 (97.5%) (92.1–100.0)
-25/40 (62.5%) (48.7–75.7)
+39/40 (97.5%; 92.1–100.0)
+36/40 (90.0%; 80.6–97.6)
+39/40 (97.5%; 92.1–100.0)
+25/40 (62.5%; 48.7–75.7)
 2.5
 Deviations balanced across groups
-39/40 (97.5%) (92.1–100.0)
-39/40 (97.5%) (92.1–100.0)
-39/40 (97.5%) (92.1–100.0)
-13/40 (32.5%) (18.8–46.7)
+39/40 (97.5%; 92.1–100.0)
+39/40 (97.5%; 92.1–100.0)
+39/40 (97.5%; 92.1–100.0)
+13/40 (32.5%; 18.8–46.7)
 2.6
 Appropriate analysis of assignment effect
-32/40 (80.0%) (68.6–90.9)
-26/40 (65.0%) (51.4–77.5)
-27/40 (67.5%) (54.5–80.0)
-14/39 (35.9%) (22.0–50.0)
+32/40 (80.0%; 68.6–90.9)
+26/40 (65.0%; 51.4–77.5)
+27/40 (67.5%; 54.5–80.0)
+14/39 (35.9%; 22.0–50.0)
 2.7
 Substantial impact of analysing outside assigned groups
-31/40 (77.5%) (65.8–89.2)
-26/40 (65.0%) (51.7–77.8)
-27/40 (67.5%) (54.5–80.0)
-8/26 (30.8%) (14.3–48.1)
+31/40 (77.5%; 65.8–89.2)
+26/40 (65.0%; 51.7–77.8)
+27/40 (67.5%; 54.5–80.0)
+8/26 (30.8%; 14.3–48.1)
 3.1
 Outcome data available for nearly everyone
-30/32 (93.8%) (84.8–100.0)
-21/31 (67.7%) (52.8–82.8)
-26/31 (83.9%) (71.4–96.2)
-23/32 (71.9%) (57.1–85.7)
+30/32 (93.8%; 84.8–100.0)
+21/31 (67.7%; 52.8–82.8)
+26/31 (83.9%; 71.4–96.2)
+23/32 (71.9%; 57.1–85.7)
 3.2
 Evidence against bias from missing data
-30/32 (93.8%) (84.8–100.0)
-20/32 (62.5%) (46.9–78.1)
-27/31 (87.1%) (75.8–96.9)
-16/32 (50.0%) (35.1–64.5)
+30/32 (93.8%; 84.8–100.0)
+20/32 (62.5%; 46.9–78.1)
+27/31 (87.1%; 75.8–96.9)
+16/32 (50.0%; 35.1–64.5)
 3.3
 Missingness potentially depends on true outcome
-30/32 (93.8%) (84.8–100.0)
-16/31 (51.6%) (36.0–67.9)
-27/31 (87.1%) (75.8–96.9)
-18/32 (56.2%) (40.5–72.4)
+30/32 (93.8%; 84.8–100.0)
+16/31 (51.6%; 36.0–67.9)
+27/31 (87.1%; 75.8–96.9)
+18/32 (56.2%; 40.5–72.4)
 3.4
 Missingness likely depends on true outcome
-24/32 (75.0%) (60.6–88.0)
-11/31 (35.5%) (19.4–52.8)
-19/31 (61.3%) (44.8–77.3)
-14/31 (45.2%) (28.1–62.1)
+24/32 (75.0%; 60.6–88.0)
+11/31 (35.5%; 19.4–52.8)
+19/31 (61.3%; 44.8–77.3)
+14/31 (45.2%; 28.1–62.1)
 4.1
 Inappropriate measurement method
 15/15 (100.0%)
 15/15 (100.0%)
 15/15 (100.0%)
-14/15 (93.3%) (80.0–100.0)
+14/15 (93.3%; 80.0–100.0)
 4.2
 Measurement differs across groups
 15/15 (100.0%)
 15/15 (100.0%)
 15/15 (100.0%)
-7/15 (46.7%) (23.1–72.7)
+7/15 (46.7%; 23.1–72.7)
 4.3
 Assessors aware of received intervention
-12/15 (80.0%) (58.8–100.0)
-13/15 (86.7%) (69.2–100.0)
-12/15 (80.0%) (58.8–100.0)
-13/15 (86.7%) (66.7–100.0)
+12/15 (80.0%; 58.8–100.0)
+13/15 (86.7%; 69.2–100.0)
+12/15 (80.0%; 58.8–100.0)
+13/15 (86.7%; 66.7–100.0)
 4.4
 Assessment potentially influenced by awareness
-13/15 (86.7%) (68.8–100.0)
-8/15 (53.3%) (31.2–75.0)
-12/15 (80.0%) (58.8–100.0)
-11/15 (73.3%) (50.0–93.3)
+13/15 (86.7%; 68.8–100.0)
+8/15 (53.3%; 31.2–75.0)
+12/15 (80.0%; 58.8–100.0)
+11/15 (73.3%; 50.0–93.3)
 4.5
 Assessment likely influenced by awareness
-11/15 (73.3%) (50.0–92.9)
-7/15 (46.7%) (25.0–69.2)
-10/15 (66.7%) (42.9–88.2)
-6/13 (46.2%) (20.0–75.0)
+11/15 (73.3%; 50.0–92.9)
+7/15 (46.7%; 25.0–69.2)
+10/15 (66.7%; 42.9–88.2)
+6/13 (46.2%; 20.0–75.0)
 5.1
 Analysis plan finalised before unblinding
-33/45 (73.3%) (61.0–85.1)
-16/45 (35.6%) (23.1–48.7)
-31/44 (70.5%) (56.9–83.3)
-18/45 (40.0%) (27.5–53.3)
+33/45 (73.3%; 61.0–85.1)
+16/45 (35.6%; 23.1–48.7)
+31/44 (70.5%; 56.9–83.3)
+18/45 (40.0%; 27.5–53.3)
 5.2
 Result selected from eligible outcome measurements
-40/45 (88.9%) (80.0–96.1)
-31/44 (70.5%) (57.1–82.9)
-27/44 (61.4%) (47.9–74.4)
-14/45 (31.1%) (19.0–43.6)
+40/45 (88.9%; 80.0–96.1)
+31/44 (70.5%; 57.1–82.9)
+27/44 (61.4%; 47.9–74.4)
+14/45 (31.1%; 19.0–43.6)
 5.3
 Result selected from eligible analyses
-34/45 (75.6%) (64.1–86.0)
-32/45 (71.1%) (59.1–82.6)
-19/44 (43.2%) (30.8–54.5)
-22/45 (48.9%) (35.7–62.2)
+34/45 (75.6%; 64.1–86.0)
+32/45 (71.1%; 59.1–82.6)
+19/44 (43.2%; 30.8–54.5)
+22/45 (48.9%; 35.7–62.2)
 SQ, signalling question. Correct collapsed answers / eligible questions (95% CI) on disputed domains. Independent answers define reference; Y/PY, N/PN, NI/NA collapse. Missing predictions are wrong. Includes Haiku without a preferred-judgement endpoint. CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018. CI, confidence interval; IQR, interquartile range; USD, US dollars; AC2, Gwet’s linearly weighted agreement coefficient; κ, linearly weighted Cohen’s kappa; RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains; Y/PY, yes/probably yes; N/PN, no/probably no; NI, no information; NA, not applicable. All counts are numbers of the units named in the headers; — means undefined or not applicable.

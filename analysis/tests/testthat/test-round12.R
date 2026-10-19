@@ -25,7 +25,7 @@ testthat::test_that('round 12 figures use one home and one unit', {
   testthat::expect_setequal(as.character(published_reference_plot()[[1]]$data$domain),paste0('D',1:5))
   q <- decisive_question_plot()
   testthat::expect_false(any(q$data$question=='remainder'))
-  testthat::expect_true(all(grepl('without a single deciding question',q$data$facet,fixed=TRUE)))
+  testthat::expect_true(all(grepl('No single deciding question',q$data$facet,fixed=TRUE)))
   testthat::expect_setequal(q$data$bar_fill,c('ARBITER','Unassisted'))
 })
 
@@ -52,7 +52,7 @@ testthat::test_that('generated results sentences match CSV estimates and counts'
   testthat::expect_true(grepl(sprintf('%.1f–%.1f',100*p$lower,100*p$upper),sentences[3],fixed=TRUE))
   f <- manuscript_data('error-localisation-frequency') |> filter(population=='Primary',source=='Baseline-Sonnet',question==5.1)
   r <- manuscript_data('no-decisive-counts') |> filter(source=='Baseline-Sonnet')
-  testthat::expect_true(grepl(sprintf('%s of %s',f$n,sum(r$with_decisive)),sentences[4],fixed=TRUE))
+  testthat::expect_true(grepl(sprintf('%s of the unassisted model’s %s eligible',f$n,sum(r$eligible)),sentences[4],fixed=TRUE))
   d <- manuscript_data('table3') |> filter(arm=='Baseline-Sonnet',domain=='D1-D5',status=='Departure')
   testthat::expect_true(grepl(sprintf('%s of %s',d$count,d$n),sentences[7],fixed=TRUE))
   testthat::expect_true(all(grepl('Figure [3-6]|Table [1-4]',sentences[1:8])))

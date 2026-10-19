@@ -1,8 +1,8 @@
 source(file.path(analysis_dir,'R','presentation.R'))
 testthat::test_that('display punctuation follows the manuscript standard', {
   testthat::expect_identical(fmt_ci(.26,.42),'(0.26\u20130.42)')
-  testthat::expect_identical(fmt_ci(-.03,.14),'(\u22120.03 to 0.14)')
-  testthat::expect_identical(fmt_ci(-.4,-.1),'(\u22120.40 to \u22120.10)')
+  testthat::expect_identical(fmt_ci(-.03,.14),'(\u22120.03\u20130.14)')
+  testthat::expect_identical(fmt_ci(-.4,-.1),'(\u22120.40\u2013\u22120.10)')
   testthat::expect_identical(fmt_number(-.001),'0.00')
   testthat::expect_identical(fmt_fraction(54,62),'54/62 (87.1%)')
   testthat::expect_identical(fmt_fraction(0,0),'\u2014')
@@ -23,14 +23,14 @@ testthat::test_that('reader labels translate sources without changing data', {
 
 testthat::test_that('proportion intervals use the percentage scale', {
   x <- data.frame(estimate=386/510,lower=.724,upper=.790,count=386,n=510)
-  testthat::expect_identical(fmt_estimate(x,TRUE),'386/510 (75.7%) (72.4\u201379.0)')
+  testthat::expect_identical(fmt_estimate(x,TRUE),'386/510 (75.7%; 72.4\u201379.0)')
   testthat::expect_identical(reader_label('D1-D5'),'D1\u2013D5')
 })
 testthat::test_that('proportion formatters omit collapsed intervals and retain estimates', {
   x <- data.frame(estimate=c(1,0,.5,1,NA),lower=c(1,0,.4,.99999,NA),
     upper=c(1,0,.6,1,NA),count=c(10,0,5,10,NA),n=10)
   testthat::expect_identical(fmt_estimate(x,TRUE),
-    c('10/10 (100.0%)','0/10 (0.0%)','5/10 (50.0%) (40.0\u201360.0)',
+    c('10/10 (100.0%)','0/10 (0.0%)','5/10 (50.0%; 40.0\u201360.0)',
       '10/10 (100.0%)','\u2014'))
   testthat::expect_identical(fmt_ci(0,0,1,suppress_degenerate=TRUE),'')
   testthat::expect_identical(fmt_ci(1,1),'(1.00\u20131.00)')

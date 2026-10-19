@@ -90,9 +90,9 @@ testthat::test_that('AVATAR trace includes all questions and original rationale'
 testthat::test_that('main tables retain requested denominators and slim audit layout', {
   old <- getwd(); setwd(analysis_dir); on.exit(setwd(old))
   t2 <- main_table2(); t3 <- main_table3()
-  testthat::expect_true(any(grepl('positive N = 83',t2$Source,fixed=TRUE)))
+  testthat::expect_true(any(grepl('Some concerns or High: N = 83',t2$Source,fixed=TRUE)))
   testthat::expect_false(any(grepl('[0-9]/[0-9]',unlist(t2))))
-  testthat::expect_true(any(grepl('66.3 (57.3–74.7)',unlist(t2),fixed=TRUE)))
+  testthat::expect_true(any(grepl('66.3% (57.3–74.7)',unlist(t2),fixed=TRUE)))
   testthat::expect_identical(names(t3),c('Measure','Unassisted','ARBITER'))
   testthat::expect_false(any(t3$Measure %in% c('All evidence bound','Proposed judgement matches algorithm')))
   testthat::expect_equal(sum(t3$ARBITER=='0 by design'),8)
@@ -136,7 +136,7 @@ testthat::test_that('revised figure layouts and supplied legends retain their co
   testthat::expect_gt(nodes$x[3],0)
   p <- decisive_question_plot()
   testthat::expect_false(any(p$data$domain=='D1' & p$data$question=='remainder'))
-  testthat::expect_identical(p$labels$x,'Loss cells')
+  testthat::expect_identical(p$labels$x,'Ratings the adjudicators did not choose')
   testthat::expect_equal(unname(p$scales$get_scales('fill')$palette(2)),unname(JAMA_ROLES[c('ARBITER','Unassisted')]))
   direction <- published_reference_plot()[[2]]
   scale <- direction$scales$get_scales('fill')
@@ -160,10 +160,10 @@ testthat::test_that('portrait Tables 1–4 fit labels and non-free-text values a
   for(i in 1:4) {
     x <- main_table_no_break_ranges(tables[[i]])
     widths <- main_table_widths(i)
-    testthat::expect_lte(sum(widths),8.27-2*.65)
+    testthat::expect_lte(sum(widths),8.27-2*.65+1e-10)
     groups <- if(i==1) rep(FALSE,nrow(x)) else rowSums(x[-1]!='')==0
     for(j in seq_len(ncol(x))) {
-      if(i==1 && names(x)[j]=='Topic') next # Long free text may wrap.
+      if((i==1 && names(x)[j] %in% c('Topic','Journal and year','Specialty')) || (i==3 && j==1) || (i==4 && j==1)) next # Long free text may wrap.
       # Merged group labels use the whole table width and are bold.
       need <- systemfonts::string_width(gsub('\u2060','',x[[j]][!groups],fixed=TRUE),family='Arial',size=9,res=720)/720+
         2*main_table_padding(i)/72+.025

@@ -13,7 +13,10 @@ public class ArbiterFonts {
 '@
 Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot 'assets/fonts') -Filter '*.ttf' | ForEach-Object {
   $fontTarget = Join-Path $fontRoot $_.Name
-  Copy-Item -LiteralPath $_.FullName -Destination $fontTarget -Force
+  if (!(Test-Path -LiteralPath $fontTarget) -or
+      (Get-FileHash -LiteralPath $_.FullName).Hash -ne (Get-FileHash -LiteralPath $fontTarget).Hash) {
+    Copy-Item -LiteralPath $_.FullName -Destination $fontTarget -Force
+  }
   New-ItemProperty -Path $fontKey -Name ($_.BaseName + ' (TrueType)') -Value $fontTarget -PropertyType String -Force | Out-Null
   [ArbiterFonts]::AddFontResourceEx($fontTarget,0,[IntPtr]::Zero) | Out-Null
 }

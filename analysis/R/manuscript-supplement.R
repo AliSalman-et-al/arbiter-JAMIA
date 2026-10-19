@@ -67,7 +67,7 @@ reader_field <- function(x) {
     count='Count (n)',question='Question',adjudicator='Adjudicator',population='Population',
     proposed='Proposed judgement',adopted='Adopted judgement',rationale='Recorded rationale',
     slug='Trial',raw='Recorded answer',issue='Parsing issue',short_text='Signalling question',
-    consensus_losses='Consensus losses (cells)',primary='Primary eligible (cells)',sensitivity='Sensitivity eligible (cells)',
+    consensus_losses='Ratings not chosen (cells)',primary='Primary eligible (cells)',sensitivity='Sensitivity eligible (cells)',
     original_violations='Original violations (cells)',invalid_paths='Invalid paths (cells)',
     additional_violations='Additional violations (cells)',resolution='Replacement answer',violations='Violations after replacement (cells)',
     answer_code_only='Answer-code-only fields (n)',Field='Field',Value='Value',comparison='Comparison')
@@ -118,7 +118,7 @@ supplement_registry <- function(inputs) {
     x <- manuscript_data(paste0('agreement-',ref))
     if(ref=='composite') x <- filter(x,metric %in% c('kappa','AC2','accuracy'))
     add(if(ref=='meta') 'Agreement against Published, all sources and domains' else 'Agreement against the composite reference, Sonnet only',
-      agreement_display(x),if(ref=='meta') paste(AGREEMENT_NOTE,CI_NOTE) else paste('Linearly weighted κ and AC2; exact agreement is n/N (%), with CI bounds in percent. The composite uses the adjudicators’ agreed choice on consensus disputed cells and Published elsewhere; split cells are excluded. Adjudicators chose among three offered labels. Cells where both arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values.',CI_NOTE))
+      agreement_display(x),if(ref=='meta') paste(AGREEMENT_NOTE,CI_NOTE) else paste('Linearly weighted κ and AC2; exact agreement is n/N (x.x%; 95% CI a–b). The composite uses the adjudicators’ agreed choice on cells where both adjudicators agreed and Published elsewhere; split cells are excluded. Adjudicators chose among three offered labels. Cells where both arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values.',CI_NOTE))
   }
   consistency <- manuscript_data('table3-supplement') |> mutate(status=coalesce(unname(MEASURE_LABELS[status]),status))
   consistency$value <- fmt_fraction(consistency$count,consistency$n)
@@ -166,7 +166,7 @@ supplement_registry <- function(inputs) {
     paste('Post hoc Sonnet 5.5 analysis of consensus cells where the two arms disagreed, stratified by ARBITER severity relative to Unassisted. Fractions are label-based wins / cells in that severity stratum.',CI_NOTE))
   add('Adjudicators usually agreed with ARBITER when it disagreed with Published',manuscript_data('vindicated-disagreements') |>
     select(source,direction,outcome,Count=n,consensus_n,all_n),
-    'Both sources use Sonnet 5.5. Figure 5B uses consensus disagreements as the denominator; split cells are displayed separately. Adjudicators agreed with it means their agreed choice equals the source label; Published upheld means their agreed choice equals the published review label; Other label means neither. Count is the outcome count; consensus n excludes split cells and All n includes them.')
+    'Both sources use Sonnet 5.5. Figure 5B uses disagreements where both adjudicators agreed as the denominator; split cells are displayed separately. Adjudicators agreed with it means their agreed choice equals the source label; Published upheld means their agreed choice equals the published review label; Other label means neither. Count is the outcome count; Agreed n excludes divided decisions and All n includes them.')
   add('Per-adjudicator and split-cell win-share sensitivity',supplement_estimates(manuscript_data('primary-endpoint'),c('analysis','metric')),
     paste('Fractions are label-based wins / cells where the two arms disagreed. Consensus is primary and includes only cells with the same choice from both adjudicators; each single-adjudicator analysis includes split cells. Split cells are forced ARBITER losses in the split sensitivity; Neither includes these forced losses.',CI_NOTE))
   for(ref in c('meta','composite')) {
@@ -223,7 +223,7 @@ supplement_registry <- function(inputs) {
     'Illustrative all-cause-death assessment (Banovic 2024). Part A gives all questions, answers, evidence types, justifications, unknowns, counterevidence and Unassisted rationales. — means none recorded in those fields; inactive questions follow branching. Part B preserves 16 archived records (15 cited by current answers). Quotes and rationales are verbatim; quote line breaks display as spaces. Source locations and hashes identify captured versions. References within quotations concern original documents. Full trace: analysis/data-derived/avatar-trace.json.',avatar_trace_blocks(inputs))
   add('Independent and selected ratings: full agreement including AC2',
     agreement_display(manuscript_data('table4-reliability'),'comparison'),
-    paste('154 disputed cells per comparison, selected because at least one Sonnet arm differed from the published review label. Independent ratings preceded label presentation; selected ratings chose among three offered labels. κ and AC2 are linearly weighted; raw agreement is n/N (%), with CI bounds in percent. This selected population cannot estimate full-benchmark agreement.',CI_NOTE))
+    paste('154 disputed cells per comparison, selected because at least one Sonnet arm differed from the published review label. Independent ratings preceded label presentation; selected ratings chose among three offered labels. κ and AC2 are linearly weighted; raw agreement is n/N (x.x%; 95% CI a–b). This selected population cannot estimate full-benchmark agreement.',CI_NOTE))
   for(i in seq_along(entries)) {
     entries[[i]]$caption <- reader_label(entries[[i]]$caption)
     entries[[i]]$note <- reader_label(entries[[i]]$note)

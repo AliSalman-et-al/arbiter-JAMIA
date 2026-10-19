@@ -12,27 +12,33 @@ export_manuscript_figure <- function(plot,name,height_mm,width_mm=174) {
 study_flow_nodes <- function() {
   tibble(x=c(-1.1,-1.1,3.45,-1.1,-1.1,-1.1,-2.75,.55,-2.75,.55),
     y=c(8.8,7.6,8.2,6.2,4.8,3.6,2.4,2.4,1,1),
-    w=c(5.1,5.1,3.7,5.1,5.1,5.1,3,3,3,3),h=c(.7,.7,.85,1.1,.85,.7,.7,.7,1.2,1.2),
-    label=c('16 meta-analyses; 105 benchmark trials','102 analysis-set trials',
-      '3 excluded (unsupported design):\nAtwine 2020; Haney 2004; Herrmann 2016',
-      '4 arms each assessed 102 trials:\nARBITER and Unassisted with Sonnet 5.5 (main);\nwith Haiku 5.5 (supplement)',
-      '510 D1–D5 cells per arm\n81 Published Overall labels','154 disputed cells',
-      '129 consensus cells','25 split cells',
-      '62 consensus cells\nwhere the arms differ',
-      '18 split cells\nwhere the arms differ'))
+    w=c(5.1,5.1,3.7,5.1,5.1,5.1,3,3,3,3),h=c(.7,.7,1.1,1.1,.85,.85,.8,.7,1.2,1.2),
+    label=c('16 meta-analyses; 105 benchmark trials','102 trials included',
+      '3 excluded: unsupported design\nAtwine 2020; Haney 2004;\nHerrmann 2016',
+      '4 arms each assessed 102 trials:\nSonnet 5.5 (main); Haiku 5.5 (supplement)\nARBITER                 Unassisted',
+      '510 domain ratings per arm (D1–D5)\n81 published Overall ratings','154 domain ratings\nreviewed by adjudicators',
+      '129 both adjudicators\nagreed','25 adjudicators split',
+      '62 where the two\narms disagreed',
+      '18 where the two\narms disagreed'))
 }
 study_flow_plot <- function() {
   nodes <- study_flow_nodes()
   edges <- tibble(x=c(rep(-1.1,6),-2.75,.55,-1.1),
-    xend=c(rep(-1.1,4),-2.75,.55,-2.75,.55,1.6),
-    y=c(8.45,7.25,5.65,4.375,3.25,3.25,2.05,2.05,8.2),
-    yend=c(7.95,6.75,5.225,3.95,2.75,2.75,1.6,1.6,8.2))
+    xend=c(rep(-1.1,4),-2.75,.55,-2.75,.55,1.53),
+    y=c(8.45,7.25,5.65,4.375,3.15,3.15,1.95,2.0,8.2),
+    yend=c(8.02,6.82,5.295,4.095,2.89,2.89,1.67,1.67,8.2))
   ggplot2::ggplot(nodes,ggplot2::aes(x,y))+
     ggplot2::geom_segment(data=edges,ggplot2::aes(x=x,xend=xend,y=y,yend=yend),
-      arrow=grid::arrow(length=grid::unit(1.5,'mm')),linewidth=.5)+
-    ggplot2::geom_rect(ggplot2::aes(xmin=x-w/2,xmax=x+w/2,ymin=y-h/2,ymax=y+h/2),
-      fill='#F3F6F7',color='#374E55',linewidth=.5)+
-    ggplot2::geom_text(ggplot2::aes(label=label),family='Fira Sans Condensed',size=2.8,lineheight=1.05)+
+      arrow=grid::arrow(length=grid::unit(1.5,'mm'),type='closed'),linewidth=.42,color='black')+
+    lapply(seq_len(nrow(nodes)),function(i) {
+      n <- nodes[i,]
+      ggplot2::annotation_custom(grid::roundrectGrob(r=grid::unit(1.5,'mm'),
+        gp=grid::gpar(fill='#F5F5F3',col='black',lwd=1.6,lty=if(i==3) 'dashed' else 'solid')),
+        xmin=n$x-n$w/2,xmax=n$x+n$w/2,ymin=n$y-n$h/2,ymax=n$y+n$h/2)
+    })+
+    ggplot2::annotate('rect',xmin=c(-2.79,-2.63,-1.28,-1.12),xmax=c(-2.66,-2.50,-1.15,-.99),ymin=5.88,ymax=6.02,
+      fill=c('#00A1D5','#80D0EA','#DF8F44','#EFC7A2'),color=NA)+
+    ggplot2::geom_text(ggplot2::aes(label=label),family='Fira Sans Condensed',fontface='bold',size=2.8,lineheight=1.05)+
     ggplot2::coord_cartesian(xlim=c(-5.6,5.6),ylim=c(.25,9.25),expand=FALSE,clip='off')+
     ggplot2::theme_void(base_family='Fira Sans Condensed')+
     ggplot2::theme(plot.margin=ggplot2::margin(3,3,3,3,unit='mm'))
@@ -75,10 +81,10 @@ published_reference_plot <- function() {
     direction=factor(direction,levels=c('Less severe','Equal','More severe')))
   pB <- ggplot2::ggplot(direction,ggplot2::aes(n/total,domain,fill=direction,group=direction))+
     ggplot2::geom_col(position=ggplot2::position_stack(reverse=TRUE),width=.65)+
-    ggplot2::geom_text(ggplot2::aes(label=if_else(n>0,as.character(n),''),color=direction=='Less severe'),
+    ggplot2::geom_text(ggplot2::aes(label=if_else(n>0,if_else(domain=='All',paste(n,direction),as.character(n)),''),color=direction=='Less severe'),
       position=ggplot2::position_stack(vjust=.5,reverse=TRUE),size=2.8,family='Fira Sans',show.legend=FALSE)+
     ggplot2::scale_color_manual(values=c('TRUE'='white','FALSE'='black'),guide='none')+
-    ggplot2::scale_fill_manual(values=c('Less severe'='#374E55','Equal'='#94A1A6','More severe'='#DCE1E3'))+
+    ggplot2::scale_fill_manual(values=c('Less severe'='#374E55','Equal'='#94A1A6','More severe'='#DCE1E3'),guide='none')+
     ggplot2::scale_x_continuous(breaks=seq(0,1,.25),labels=scales::label_percent())+
     ggplot2::labs(x="Published relative to the adjudicators’ agreed choice",y=NULL,fill=NULL)+theme_manuscript()
   patchwork::wrap_plots(pA,pB,ncol=1,heights=c(1.15,1))+
@@ -90,8 +96,9 @@ decisive_question_plot <- function() {
   remainder <- manuscript_data('no-decisive-counts')
   losses <- remainder |> select(domain,source,eligible,n) |>
     pivot_wider(names_from=source,values_from=c(eligible,n)) |>
-    mutate(facet=paste0(domain,' · ARBITER ',`eligible_ARBITER-Sonnet`,if_else(`eligible_ARBITER-Sonnet`==1,' loss (',' losses ('),`n_ARBITER-Sonnet`,
-      ' without a single deciding question) · Unassisted ',`eligible_Baseline-Sonnet`,' (',`n_Baseline-Sonnet`,')'))
+    mutate(facet=paste0(domain,' · Eligible: ARBITER ',`eligible_ARBITER-Sonnet`,' / Unassisted ',`eligible_Baseline-Sonnet`,
+      '\nNo single deciding question: ARBITER ',`n_ARBITER-Sonnet`,' / Unassisted ',`n_Baseline-Sonnet`))
+
   x <- x |> filter(question %in% shown$question) |>
     left_join(losses |> select(domain,facet),by='domain') |>
     mutate(source=factor(reader_label(source),levels=c('ARBITER','Unassisted')),
@@ -106,10 +113,10 @@ decisive_question_plot <- function() {
     ggplot2::scale_fill_manual(values=JAMA_ROLES[c('ARBITER','Unassisted')])+
     ggplot2::guides(fill=ggplot2::guide_legend(nrow=1,byrow=TRUE))+
     ggplot2::scale_x_continuous(limits=c(0,20),breaks=c(0,5,10,15,20),expand=ggplot2::expansion(mult=c(0,.02)))+
-    ggplot2::labs(x='Loss cells',y=NULL,fill=NULL)+theme_manuscript()+
+    ggplot2::labs(x='Ratings the adjudicators did not choose',y=NULL,fill=NULL)+theme_manuscript()+
     ggplot2::theme(legend.justification='left',legend.key.width=grid::unit(3,'mm'),
       legend.key.height=grid::unit(3,'mm'),legend.key.spacing.x=grid::unit(2,'mm'),
-      plot.caption=ggplot2::element_text(size=8,hjust=0),strip.text=ggplot2::element_text(size=8),axis.text.y=ggplot2::element_text(size=8),panel.spacing=grid::unit(1.5,'mm'))
+      plot.caption=ggplot2::element_text(size=8,hjust=0),strip.text=ggplot2::element_text(size=8,face='plain'),axis.text.y=ggplot2::element_text(size=8),panel.spacing=grid::unit(1.5,'mm'))
 }
 forest_plot <- function() {
   metadata <- readr::read_csv('data-curated/meta-analyses.csv',show_col_types=FALSE)
@@ -137,7 +144,7 @@ build_manuscript_figures <- function(cells) {
   export_manuscript_figure(disagreement_matrix_plot(cells),'eFigure2',95)
 }
 adjudication_plot <- function(cells) {
-  rows <- c('Both adjudicators (consensus)','Adjudicator 1','Adjudicator 2','Split cells counted against ARBITER')
+  rows <- c('Both adjudicators agreed','Adjudicator 1','Adjudicator 2','Counting split decisions against ARBITER')
   raw <- manuscript_data('primary-endpoint')
   primary <- raw |> filter(metric=='ARBITER') |> mutate(
     row=factor(analysis,levels=c('Consensus','A','Z','Split sensitivity'),labels=rows),
@@ -150,11 +157,11 @@ adjudication_plot <- function(cells) {
     ggplot2::geom_errorbar(ggplot2::aes(xmin=lower,xmax=upper),width=.14,color=JAMA_ROLES[['ARBITER']])+
     ggplot2::geom_point(size=2.2,color=JAMA_ROLES[['ARBITER']])+
     ggplot2::geom_text(ggplot2::aes(x=1.04,label=text),hjust=0,size=2.6,family='Fira Sans')+
-    ggplot2::annotate('text',x=.52,y=4.65,hjust=0,label='no preference',size=2.6,family='Fira Sans')+
-    ggplot2::annotate('text',x=1.04,y=4.65,label='ARBITER / Unassisted / neither',hjust=0,size=2.5,family='Fira Sans')+
+    ggplot2::annotate('text',x=.52,y=4.65,hjust=0,label='equal choice',size=2.6,family='Fira Sans')+
+    ggplot2::annotate('text',x=1.04,y=4.65,label='ARBITER / Unassisted / neither chosen',hjust=0,size=2.5,family='Fira Sans')+
     ggplot2::scale_x_continuous(breaks=seq(0,1,.25),labels=scales::label_percent())+
     ggplot2::coord_cartesian(xlim=c(0,1.7),ylim=c(.6,4.8),clip='off')+
-    ggplot2::labs(x='ARBITER win share (95% CI)',y=NULL)+theme_manuscript()+
+    ggplot2::labs(x='Adjudicators chose ARBITER (% of disagreements, 95% CI)',y=NULL)+theme_manuscript()+
     ggplot2::theme(axis.text.y=ggplot2::element_text(size=7.5),panel.grid.major.x=ggplot2::element_blank())
   v <- manuscript_data('vindicated-disagreements')
   splits <- filter(v,outcome=='Split')
@@ -167,9 +174,9 @@ adjudication_plot <- function(cells) {
   totals <- d |> filter(outcome=='Vindicated') |> left_join(outcomes,by=c('source','direction')) |> left_join(splits |> select(source,direction,split=n),by=c('source','direction'))
   pB <- ggplot2::ggplot(d,ggplot2::aes(n/consensus_n,row,fill=fill,group=outcome))+
     ggplot2::geom_col(position=ggplot2::position_stack(reverse=TRUE),width=.6)+
-    ggplot2::geom_text(ggplot2::aes(label=if_else(n>=3,as.character(n),''),color=outcome=='Published upheld'),
+    ggplot2::geom_text(ggplot2::aes(label=case_when(n/consensus_n>=.32 ~ paste0(n,'\n',if_else(outcome=='Vindicated',paste('agreed with',source),as.character(outcome))),n>=3 ~ as.character(n),TRUE ~ ''),color=outcome=='Published upheld'),
       position=ggplot2::position_stack(vjust=.5,reverse=TRUE),size=2.7,family='Fira Sans',show.legend=FALSE)+
-    ggplot2::geom_text(data=totals,ggplot2::aes(x=1.04,label=paste0(n,' of ',consensus_n,' · ',split,' split')),
+    ggplot2::geom_text(data=totals,ggplot2::aes(x=1.04,label=paste0(n,' of ',consensus_n,' · split on ',split)),
       hjust=0,color='black',size=2.6,family='Fira Sans',inherit.aes=TRUE,show.legend=FALSE)+
     ggplot2::scale_color_manual(values=c('TRUE'='white','FALSE'='black'),guide='none')+
     ggplot2::scale_fill_manual(values=c(ARBITER=JAMA_ROLES[['ARBITER']],Unassisted=JAMA_ROLES[['Unassisted']],
@@ -178,8 +185,8 @@ adjudication_plot <- function(cells) {
       labels=c('Adjudicators agreed with it: ARBITER','Adjudicators agreed with it: Unassisted','Published upheld','Other label'))+
     ggplot2::scale_x_continuous(breaks=seq(0,1,.25),labels=scales::label_percent())+
     ggplot2::coord_cartesian(xlim=c(0,1.7),clip='off')+
-    ggplot2::labs(x='Consensus disagreements with Published (split cells excluded)',y=NULL,fill=NULL)+theme_manuscript()+
-    ggplot2::theme(legend.text=ggplot2::element_text(size=7.5),legend.position='bottom',panel.grid.major.x=ggplot2::element_blank())+
+    ggplot2::labs(x='Disagreements with the published label (adjudicators agreed; splits excluded)',y=NULL,fill=NULL,caption='Other label: neither the source nor the published label was chosen')+theme_manuscript()+
+    ggplot2::theme(legend.text=ggplot2::element_text(size=7.5),legend.position='none',plot.caption=ggplot2::element_text(hjust=0,size=7),panel.grid.major.x=ggplot2::element_blank())+
     ggplot2::guides(fill=ggplot2::guide_legend(nrow=2,byrow=TRUE))
   patchwork::wrap_plots(pA,pB,ncol=1,heights=c(1,1.1))+patchwork::plot_annotation(tag_levels='A')
 }
