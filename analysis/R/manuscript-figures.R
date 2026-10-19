@@ -15,7 +15,7 @@ study_flow_nodes <- function() {
     w=c(5.1,5.1,3.7,5.1,5.1,5.1,4,4,4,4),h=c(.7,.7,1.1,1.1,.85,.85,.8,.8,1.2,1.2),
     label=c('16 meta-analyses; 105 benchmark trials','102 trials included',
       '3 excluded: unsupported design\nAtwine 2020; Haney 2004;\nHerrmann 2016',
-      '2 arms each assessed 102 trials:\nARBITER and Unassisted (Sonnet 5.5)',
+      '2 arms each assessed 102 trials:\nARBITER and Unassisted',
       '510 domain ratings per arm (D1–D5)\n81 published Overall ratings','154 domain ratings\nreviewed by adjudicators',
       '129 both adjudicators agreed','25 adjudicators split',
       '62 where the two\narms disagreed',
@@ -88,7 +88,7 @@ direction_disagreement_plot <- function() {
     ggplot2::scale_color_manual(values=JAMA_ROLES,guide='none')+
     ggplot2::scale_x_continuous(breaks=seq(0,1,.25),labels=scales::label_percent())+
     ggplot2::coord_cartesian(xlim=c(0,1.48),clip='off')+
-    ggplot2::labs(x='Post hoc: adjudicators agreed with the model (95% CI)',y=NULL)+theme_manuscript()+
+    ggplot2::labs(x='Adjudicators agreed with the model (95% CI)',y=NULL)+theme_manuscript()+
     ggplot2::theme(axis.text.y=ggplot2::element_text(size=8))
 }
 
@@ -150,8 +150,12 @@ adjudication_plot <- function(cells) {
   counts <- raw |> select(analysis,metric,count,n) |> pivot_wider(names_from=metric,values_from=count) |>
     mutate(text=paste0(ARBITER,' / ',Baseline,' / ',Neither,'; N = ',n))
   primary <- left_join(primary,counts |> select(analysis,text),by='analysis')
+  severity_counts <- manuscript_data('severity-win-share') |>
+    select(direction,metric,count,n) |> pivot_wider(names_from=metric,values_from=count) |>
+    mutate(text=paste0(ARBITER,' / ',Baseline,' / ',Neither,'; N = ',n))
   severity <- manuscript_data('severity-win-share') |> filter(metric=='ARBITER') |>
-    mutate(y=c(2,1),label=c('ARBITER stricter than Unassisted','ARBITER more lenient'),text=paste0(count,'/',n))
+    left_join(severity_counts |> select(direction,text),by='direction') |>
+    mutate(y=c(2,1),label=c('ARBITER stricter than Unassisted','ARBITER more lenient'))
   x <- bind_rows(primary,severity)
   ggplot2::ggplot(x,ggplot2::aes(estimate,y))+
     ggplot2::geom_vline(xintercept=.5,linetype='dashed',color='grey60')+
@@ -164,6 +168,6 @@ adjudication_plot <- function(cells) {
     ggplot2::scale_y_continuous(breaks=x$y,labels=x$label)+
     ggplot2::scale_x_continuous(breaks=seq(0,1,.25),labels=scales::label_percent())+
     ggplot2::coord_cartesian(xlim=c(0,1.65),ylim=c(.5,8),clip='off')+
-    ggplot2::labs(x='Adjudicators chose ARBITER (95% CI)',y=NULL)+theme_manuscript()+
+    ggplot2::labs(x='Adjudicators preferred ARBITER among reviewed arm disagreements (95% CI)',y=NULL)+theme_manuscript()+
     ggplot2::theme(axis.text.y=ggplot2::element_text(size=7.5),panel.grid.major.x=ggplot2::element_blank())
 }

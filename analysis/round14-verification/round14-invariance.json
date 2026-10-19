@@ -1,5 +1,5 @@
 {
-  "base": "bfe7111",
+  "base": "7befa34",
   "csv": [
     {
       "old": "analysis/output/tables/adjudication-analysis-cells.csv",
@@ -34,6 +34,13 @@
       "new": "analysis/output/tables/agreement-meta.csv",
       "rows": 105,
       "numeric_cells": 630,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/agreement-unweighted.csv",
+      "new": "analysis/output/tables/agreement-unweighted.csv",
+      "rows": 24,
+      "numeric_cells": 132,
       "identical": true
     },
     {
@@ -79,6 +86,13 @@
       "identical": true
     },
     {
+      "old": "analysis/output/tables/benchmark-set.csv",
+      "new": "analysis/output/tables/benchmark-set.csv",
+      "rows": 16,
+      "numeric_cells": 16,
+      "identical": true
+    },
+    {
       "old": "analysis/output/tables/bundle-domain-checks.csv",
       "new": "analysis/output/tables/bundle-domain-checks.csv",
       "rows": 510,
@@ -118,6 +132,13 @@
       "new": "analysis/output/tables/confusion-matrices.csv",
       "rows": 144,
       "numeric_cells": 144,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/direction-of-disagreement.csv",
+      "new": "analysis/output/tables/direction-of-disagreement.csv",
+      "rows": 4,
+      "numeric_cells": 36,
       "identical": true
     },
     {
@@ -289,6 +310,34 @@
       "identical": true
     },
     {
+      "old": "analysis/output/tables/rules-only-recomputation-agreed_choice.csv",
+      "new": "analysis/output/tables/rules-only-recomputation-agreed_choice.csv",
+      "rows": 2,
+      "numeric_cells": 12,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/rules-only-recomputation-agreement.csv",
+      "new": "analysis/output/tables/rules-only-recomputation-agreement.csv",
+      "rows": 24,
+      "numeric_cells": 132,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/rules-only-recomputation-changed.csv",
+      "new": "analysis/output/tables/rules-only-recomputation-changed.csv",
+      "rows": 26,
+      "numeric_cells": 0,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/rules-only-recomputation-win_share.csv",
+      "new": "analysis/output/tables/rules-only-recomputation-win_share.csv",
+      "rows": 6,
+      "numeric_cells": 36,
+      "identical": true
+    },
+    {
       "old": "analysis/output/tables/severity-win-share.csv",
       "new": "analysis/output/tables/severity-win-share.csv",
       "rows": 6,
@@ -303,24 +352,24 @@
       "identical": true
     },
     {
-      "old": "analysis/output/tables/table1.csv",
-      "new": "analysis/output/tables/benchmark-set.csv",
-      "rows": 16,
-      "numeric_cells": 16,
-      "identical": true
-    },
-    {
-      "old": "analysis/output/tables/table2-differences.csv",
+      "old": "analysis/output/tables/table1-differences.csv",
       "new": "analysis/output/tables/table1-differences.csv",
       "rows": 10,
       "numeric_cells": 40,
       "identical": true
     },
     {
-      "old": "analysis/output/tables/table2.csv",
+      "old": "analysis/output/tables/table1.csv",
       "new": "analysis/output/tables/table1.csv",
       "rows": 30,
       "numeric_cells": 180,
+      "identical": true
+    },
+    {
+      "old": "analysis/output/tables/table2-reliability.csv",
+      "new": "analysis/output/tables/table2-reliability.csv",
+      "rows": 24,
+      "numeric_cells": 128,
       "identical": true
     },
     {
@@ -335,13 +384,6 @@
       "new": "analysis/output/tables/table3.csv",
       "rows": 78,
       "numeric_cells": 527,
-      "identical": true
-    },
-    {
-      "old": "analysis/output/tables/table4-reliability.csv",
-      "new": "analysis/output/tables/table2-reliability.csv",
-      "rows": 24,
-      "numeric_cells": 128,
       "identical": true
     },
     {
@@ -721,6 +763,22 @@
     },
     {
       "path": "analysis/output/manuscript/qa/eFigure2-tritan.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/round14-eFigure1-deuteranopia.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/round14-eFigure1-grayscale.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/round14-protected-Figure1.png",
+      "identical": true
+    },
+    {
+      "path": "analysis/output/manuscript/qa/round14-protected-Figure2.png",
       "identical": true
     },
     {
@@ -2518,20 +2576,20 @@
   ],
   "tables": [
     {
-      "old": 2,
+      "old": 1,
       "new": 1,
       "numeric_cells": 31,
       "identical": true,
       "retained_footer_numbers_identical": true,
-      "authorised_footer_changes": "Renumbered eTable references; Table 3 adds 0/510 overrides"
+      "authorised_footer_changes": "Renumbered eTable references only; Table 2 appends two post hoc paired differences (body)"
     },
     {
-      "old": 4,
+      "old": 2,
       "new": 2,
       "numeric_cells": 18,
       "identical": true,
       "retained_footer_numbers_identical": true,
-      "authorised_footer_changes": "Renumbered eTable references; Table 3 adds 0/510 overrides"
+      "authorised_footer_changes": "Renumbered eTable references only; Table 2 appends two post hoc paired differences (body)"
     },
     {
       "old": 3,
@@ -2539,8 +2597,15 @@
       "numeric_cells": 30,
       "identical": true,
       "retained_footer_numbers_identical": true,
-      "authorised_footer_changes": "Renumbered eTable references; Table 3 adds 0/510 overrides"
+      "authorised_footer_changes": "Renumbered eTable references only; Table 2 appends two post hoc paired differences (body)"
     }
   ],
-  "failures": []
+  "failures": [],
+  "declared_exceptions": [
+    "Table 2 adds two post hoc paired differences; retained rows checked exactly",
+    "Table 4 is replaced using independently curated schema and callouts, not a retained numerical endpoint",
+    "table5.csv changes only runtime/cost labels (reversibly decoded)",
+    "Checklist location/notes fields filled; all guideline/item/topic/source identifiers retained",
+    "Supplement composite adds four post hoc component rows; one new descriptive question 5.1 eTable; retained cells checked from baseline CSVs"
+  ]
 }

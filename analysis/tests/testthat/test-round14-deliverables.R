@@ -4,7 +4,7 @@ test_that('Round 14 published files use current numbering, reader labels and inv
  old <- getwd(); setwd(analysis_dir); on.exit(setwd(old))
  entries <- supplement_registry(inputs)
  captions <- vapply(entries,`[[`,character(1),'caption')
- expect_equal(length(entries),30L)
+ expect_equal(length(entries),31L)
  expect_equal(supplement_number('AVATAR complete trace'),3L)
  expect_false(any(grepl('Haiku|Recorded model override|disagreement-pattern',captions)))
  expect_equal(sum(grepl('Post hoc|post hoc',captions)),4L)

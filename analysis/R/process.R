@@ -37,7 +37,7 @@ process_display <- function(metrics,weights,model='Sonnet') {
   differences <- paired_process_difference(metrics,weights,model) |> filter(estimand=='Mean paired trial difference')
   columns <- c('wall_seconds','cost_usd','input_tokens','cache_creation_tokens','cache_read_tokens',
     'output_tokens','thinking_tokens','agent_steps','continues','turns')
-  labels <- c('Time (minutes/trial)','Cost (USD/trial)','Input tokens (count/trial)',
+  labels <- c('System runtime (min/trial)','API list-price equivalent (US$/trial)','Input tokens (count/trial)',
     'Cache creation tokens (millions/trial)','Cache read tokens (millions/trial)',
     'Output tokens (thousands/trial)','Thinking tokens (thousands/trial)',
     'Agent steps/trial','Continue prompts/trial','Turns/trial')

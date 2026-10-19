@@ -2,11 +2,11 @@
 """Exhaustive retained CSV numeric-cell audit against the fixed parent."""
 import csv, io, json, re, subprocess, pathlib, collections, decimal, zipfile, xml.etree.ElementTree as ET
 ROOT=pathlib.Path(__file__).resolve().parent.parent
-BASE='bfe7111'
+BASE='7befa34'
 OUT=ROOT/'analysis/round14-verification'; OUT.mkdir(parents=True,exist_ok=True)
 def git(*args): return subprocess.check_output(['git',*args],cwd=ROOT)
 def old(path): return git('show',f'{BASE}:{path}')
-MAP={'ARBITER (Sonnet 5.5)':'ARBITER-Sonnet','Unassisted (Sonnet 5.5)':'Baseline-Sonnet','Unassisted template':'Baseline template','Unassisted output-format instruction':'Baseline output-format instruction','Unassisted_label':'Baseline_label','Adjudicator 1 vs Adjudicator 2':'A vs Z','Adjudicator 1 independent':'A independent','Adjudicator 2 independent':'Z independent','published label':'meta label','Unassisted':'Baseline','Published':'Meta','All-Low rule':'All-Low','Rating contradicts its own answers':'Violation','Required question skipped':'Invalid answer path','Any rule break':'Departure','Adjudicators agreed with it':'Vindicated','Adjudicator 1':'A','Adjudicator 2':'Z'}
+MAP={'System runtime (min/trial)':'Time (minutes/trial)','API list-price equivalent (US$/trial)':'Cost (USD/trial)','ARBITER (Sonnet 5.5)':'ARBITER-Sonnet','Unassisted (Sonnet 5.5)':'Baseline-Sonnet','Unassisted template':'Baseline template','Unassisted output-format instruction':'Baseline output-format instruction','Unassisted_label':'Baseline_label','Adjudicator 1 vs Adjudicator 2':'A vs Z','Adjudicator 1 independent':'A independent','Adjudicator 2 independent':'Z independent','published label':'meta label','Unassisted':'Baseline','Published':'Meta','All-Low rule':'All-Low','Rating contradicts its own answers':'Violation','Required question skipped':'Invalid answer path','Any rule break':'Departure','Adjudicators agreed with it':'Vindicated','Adjudicator 1':'A','Adjudicator 2':'Z'}
 def decode(v):
  for a,b in MAP.items():
   if any(k in a for k in ['Sonnet',' vs ','independent',' label']): v=v.replace(a,b)
@@ -27,9 +27,10 @@ def signature(row):
   try: return ('number',str(decimal.Decimal(v).normalize())) if v else ('text','')
   except decimal.InvalidOperation: return ('text',v)
  return tuple(sorted((k,val(v)) for k,v in row.items()))
-rename={'table1.csv':'benchmark-set.csv','table2.csv':'table1.csv','table2-differences.csv':'table1-differences.csv','table4-reliability.csv':'table2-reliability.csv'}
-dropped={'table5-haiku.csv','missing-sensitivity.csv','missing-sensitivity-differences.csv','recorded-overrides.csv','efigure2-disagreement-patterns.csv','artifact-verification.csv'}
+rename={}
+dropped=set()
 report={'base':BASE,'csv':[],'protected':[],'tables':[],'failures':[]}
+report['declared_exceptions']=['Table 2 adds two post hoc paired differences; retained rows checked exactly','Table 4 is replaced using independently curated schema and callouts, not a retained numerical endpoint','table5.csv changes only runtime/cost labels (reversibly decoded)','Checklist location/notes fields filled; all guideline/item/topic/source identifiers retained','Supplement composite adds four post hoc component rows; one new descriptive question 5.1 eTable; retained cells checked from baseline CSVs']
 paths=git('ls-tree','-r','--name-only',BASE).decode().splitlines()
 for path in paths:
  if path.startswith('analysis/output/tables/') and path.endswith('.csv'):
@@ -38,6 +39,11 @@ for path in paths:
   target=ROOT/'analysis/output/tables'/rename.get(name,name)
   if not target.exists(): report['failures'].append(f'Missing retained CSV: {target}'); continue
   before,after=rows(old(path)),rows(target.read_bytes())
+  # The checklist now maps locations instead of blank fields; preserve all item IDs/topics.
+  if name=='reporting-checklist-skeleton.csv':
+   fields=('guideline','item','topic','source')
+   before=[{k:r[k] for k in fields} for r in before]
+   after=[{k:r[k] for k in fields} for r in after]
   a,b=collections.Counter(map(signature,before)),collections.Counter(map(signature,after))
   good=a==b
   numeric=sum(sum(bool(re.fullmatch(r'-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?',v)) for v in r.values()) for r in after)
@@ -57,19 +63,22 @@ def table_cells(data):
  tables=tree.findall('.//w:tbl',W)
  # Footer notes occupy their own final row; compare body numeric cells separately.
  return [[''.join(c.itertext()) for c in []]] if not tables else [[ ''.join(t.text or '' for t in c.findall('.//w:t',W)) for c in row.findall('w:tc',W)] for row in tables[0].findall('w:tr',W)]
-for new,previous in [(1,2),(2,4),(3,3)]:
+for new,previous in [(1,1),(2,2),(3,3)]:
  a=table_cells(old(f'analysis/output/manuscript/Table{previous}.docx')); b=table_cells((ROOT/f'analysis/output/manuscript/Table{new}.docx').read_bytes())
  # All numeric body cells, including CI strings. Footer and title references are intentionally renumbered.
  def numeric_cells(rs):
-  return [cell for row in rs[:-1] for cell in row if re.search(r'\d',cell)]
+  retained=[]
+  for row in rs[:-1]:
+   if any('Post hoc: paired agreement difference' in c for c in row): break
+   retained.extend(cell for cell in row if re.search(r'\d',cell))
+  return retained
  av,bv=numeric_cells(a),numeric_cells(b); good=av==bv
  def footer_tokens(rs):
   note=' '.join(rs[-1])
   note=re.sub(r'eTables?\s+\d+(?:(?:\s*(?:[–-]|and|,)\s*)\d+)*','eTable REF',note)
-  note=note.replace('recorded overrides: 0/510.','') # Explicit Round 14 addition.
   return re.findall(r'\d+(?:[.,]\d+)*',note)
  footer_good=footer_tokens(a)==footer_tokens(b)
- report['tables'].append({'old':previous,'new':new,'numeric_cells':len(bv),'identical':good,'retained_footer_numbers_identical':footer_good,'authorised_footer_changes':'Renumbered eTable references; Table 3 adds 0/510 overrides'})
+ report['tables'].append({'old':previous,'new':new,'numeric_cells':len(bv),'identical':good,'retained_footer_numbers_identical':footer_good,'authorised_footer_changes':'Renumbered eTable references only; Table 2 appends two post hoc paired differences (body)'})
  if not footer_good: report['failures'].append({'table':new,'footer_before':footer_tokens(a),'footer_after':footer_tokens(b)})
  if not good: report['failures'].append({'table':new,'before':av,'after':bv})
 (OUT/'round14-invariance.json').write_text(json.dumps(report,indent=2,ensure_ascii=False))

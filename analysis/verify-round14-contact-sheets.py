@@ -13,6 +13,6 @@ for name in ['Supplement','TRIPOD-LLM']:
    out.paste(im,(x+(400-im.width)//2,y+28));draw.text((x+12,y+8),f'{name}: {f.stem}',fill='black')
   out.save(qa/f'round14-{name}-contact-{start//8+1}.png')
  doc=pymupdf.open(next(p.glob('*.pdf')))
- lines=[f'{i+1}: {len(page.get_text())} chars: '+page.get_text().replace('\n',' ')[:140] for i,page in enumerate(doc)]
+ lines=[f'{i+1}: {len(page.get_text())} chars: '+page.get_text().replace('\n',' ')[:140].rstrip() for i,page in enumerate(doc)]
  (qa/f'round14-{name}-page-text.txt').write_text('\n'.join(lines))
  print(name,len(doc),'pages')

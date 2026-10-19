@@ -18,20 +18,20 @@ Two assessment arms supplied the benchmark. The flow follows trial inclusion, do
 
 Alt text: Trial inclusion flows into two assessment arms and blinded adjudication, with separate branches for agreement and split decisions.
 
-## Figure 4. Both models agreed poorly with published labels; adjudicators usually upheld stricter ratings (post hoc panel B)
+## Figure 4. Both models agreed poorly with published labels; adjudicators usually upheld stricter ratings (post hoc intervals in B)
 
-Both models agreed poorly with published labels, but adjudicators usually upheld stricter ratings. A, Domain-specific linearly weighted Cohen’s κ against published labels; the dashed line marks zero. B, Post hoc shares of disagreements where the adjudicators’ agreed choice equals the model rating, by direction relative to Published. Labels give n/N and split decisions excluded from denominators. Points and bars show estimates and 95% percentile intervals from 10,000 trial-cluster bootstrap resamples within meta-analysis (seed 20261018). This selected population cannot estimate full-benchmark accuracy. Pooled agreement is in Table 1.
+Both models agreed poorly with published labels, but adjudicators usually upheld stricter ratings. A, Domain-specific linearly weighted Cohen’s κ against published labels; the dashed line marks zero. B, Shares of disagreements where the adjudicators’ agreed choice equals the model rating, by direction relative to Published. Labels give n/N and split decisions excluded from denominators. Intervals in B were added post hoc. Points and bars show estimates and 95% percentile intervals from 10,000 trial-cluster bootstrap resamples within meta-analysis (seed 20261018). This selected population cannot estimate full-benchmark accuracy. Pooled agreement is in Table 1.
 
-Alt text: Domain agreement intervals overlap. Post hoc adjudicator agreement is highest for stricter ARBITER ratings, followed by stricter Unassisted ratings.
+Alt text: Domain agreement intervals overlap. Adjudicator agreement is highest for stricter ARBITER ratings, followed by stricter Unassisted ratings.
 
 ## Figure 5. Adjudicators chose ARBITER far more often when the arms disagreed, including post hoc strictness strata
 
-Adjudicators favoured ARBITER when the arms disagreed. The first four rows show the primary estimate and sensitivities; the separate post hoc group stratifies by which arm was stricter. Points and bars show the share choosing ARBITER and 95% percentile intervals from 10,000 trial-cluster bootstrap resamples within meta-analysis (seed 20261018). The dashed line marks equal choice. Scoring compares labels. The split sensitivity counts every split against ARBITER without assigning it to Unassisted. Right labels give counts. Full outcomes and post hoc strata are in eTables 15–16.
+Adjudicators favoured ARBITER when the arms disagreed. The first four rows show the primary estimate and sensitivities; the separate post hoc group stratifies by which arm was stricter. Points and bars show the share of adjudicated arm disagreements where ARBITER’s rating was preferred and 95% percentile intervals from 10,000 trial-cluster bootstrap resamples within meta-analysis (seed 20261018). The dashed line marks equal choice. Scoring compares labels. The split sensitivity counts every split against ARBITER without assigning it to Unassisted. Right labels give counts. Full outcomes and post hoc strata are in eTables 15–16.
 
-Alt text: Adjudicators chose ARBITER in most disagreements in the primary and sensitivity analyses. The post hoc stricter ARBITER stratum has the highest win share.
+Alt text: Adjudicators chose ARBITER in most disagreements in the primary and sensitivity analyses. The post hoc stricter ARBITER stratum has the highest preferred share.
 
 ## Figure 6. Most localised Unassisted losses traced to whether the analysis plan was fixed in advance
 
-The analysis-plan question explained the largest share of localised Unassisted losses. Bars count ratings the adjudicators did not choose, by the question that alone changed the rating: replacing that answer with the agreed independent answer changes the official algorithm output. Eligibility requires both independent ratings to equal the agreed choice. A rating may contribute to several bars. Facet labels give eligible totals and ratings without a single deciding question. D2 uses the effect-of-assignment algorithm. Frequencies and eligibility are in eTables 18–20; the post hoc rules-only recomputation is in eTable 22.
+The analysis-plan question explained the largest share of localised Unassisted losses. Bars count ratings the adjudicators did not choose, by the question that alone changed the rating: replacing that answer with the agreed independent answer changes the official algorithm output. Eligibility requires both independent ratings to equal the agreed choice. A rating may contribute to several bars. Facet labels give eligible totals and ratings without a single deciding question. D2 uses the effect-of-assignment algorithm. Frequencies and eligibility are in eTables 18–20; the post hoc rules-only recomputation is in eTable 23.
 
 Alt text: Bars compare losses by question within domains. The analysis-plan question dominates Unassisted losses. Facet totals include ratings without a single deciding question.

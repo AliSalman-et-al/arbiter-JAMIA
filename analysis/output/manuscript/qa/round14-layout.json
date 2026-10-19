@@ -132,13 +132,13 @@
     {
       "name": "Supplement",
       "pdf": "output/manuscript/qa/round14-Supplement/Supplement.pdf",
-      "pages": 59,
+      "pages": 61,
       "out_of_page_spans": []
     },
     {
       "name": "TRIPOD-LLM",
       "pdf": "output/manuscript/qa/round14-TRIPOD-LLM/TRIPOD-LLM.pdf",
-      "pages": 3,
+      "pages": 4,
       "out_of_page_spans": []
     }
   ],

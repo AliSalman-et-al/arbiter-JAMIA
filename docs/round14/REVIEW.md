@@ -36,3 +36,57 @@ Revisions for round 2, added to `WP-A2.md`:
 6. **No "Sonnet" in reader-facing main text or tables.** Table 2's note says "at least one Sonnet arm", and Table 4 note j says "510 Sonnet domains". The model is named in Methods only, per the GLOSSARY label table.
 7. **Rejected saves (53/637) in the protected Figure 1 legend have no committed source.** If the committed bundles record rejected saves, derive the count reproducibly into `data-derived/`, and test it. Otherwise flag the number for the authors to source or remove. Do not edit Figure 1.
 8. **Fig 5 post hoc rows.** Show the ARBITER / Unassisted / neither counts, like the upper rows: 44/1/0 and 10/6/1. Recompute these.
+
+## WP-T2 clarification, 2026-10-19
+
+The curator asked whether `identical_inputs_across_compared_arms` covers the human reference. Answer: it covers model and workflow arms only, and "Yes" is allowed for other studies wherever the full text establishes it. The footnote "only this study…" was the orchestrator's assumption, so it is dropped unless the data support it. Added column `same_model_with_and_without_system`. WP-A2 must word the Table 4 footnote from the data, not from the brief.
+
+## WP-T2 review, 2026-10-19
+
+**Verdict:** accepted.
+
+- Seven cells changed. Every change is justified by its column definition, and the RobotReviewer row was verified from the PMC full text (DOI 10.1093/jamia/ocv044).
+- Identical inputs across compared arms is common in prior work (seven studies are Yes). The claim "only this study gave identical inputs" is therefore false and must not appear anywhere.
+- Same model with and without a system on identical inputs is Yes for this study and for Choi 2026 (Gemini general vs custom Gem).
+- The defensible distinction remains the combination of features, not any single column.
+
+For the WP-A2 review, check that:
+
+- the Table 4 footnote does not claim exclusivity on inputs;
+- the display uses `reference_key` callouts;
+- internal names in the notes (for example "rob2-kit" in the ARBITER row's reason) never reach displays;
+- Marshall's n = 12,808 (the whole corpus) is not shown as an evaluation size; if n is displayed, footnote it.
+
+## WP-A2 review, 2026-10-19
+
+**Verdict:** accepted; committed as round 14b.
+
+- 608 assertions pass.
+- 7,651 retained cells are unchanged against `7befa34`.
+- Table 4 makes no claim of exclusive inputs.
+- The results sentences follow the wording rules.
+
+New findings that matter for the story:
+
+- **Question 5.1.** In 13 of the 18 losses, the inputs included a registry record, protocol or SAP. None of the Unassisted justifications mentions them. This supports "use, not access".
+- **Label-target match** (102 trials):
+
+  | Match category | Trials |
+  |---|---|
+  | Same | 33 |
+  | Same, across several covered outcomes | 11 |
+  | Same, inferred | 32 |
+  | Partly | 7 |
+  | Different | 9 |
+  | Unknown | 10 |
+
+  Agreement with published labels mixes outcome mismatch with judgement difference in up to 26 trials. **Proposed sensitivity analysis:** Table 1, Fig 4B and the primary endpoint, restricted to the 76 matched trials. Author decision.
+- **De Waal 2021.** The registry record supplied to both arms belongs to a different trial. This is an input error, the same in both arms. Disclose it in Methods.
+- **Training cut-off.** Sonnet 5.5's documented cut-off is June 2026. Most of the 16 source meta-analyses (published 2025–2026) predate it, so the memorisation limitation applies.
+- **53/637 rejected saves.** This count is not derivable from the committed bundles. The authors must source it or remove it.
+- **Wording on Figures 1 and 2** (protected; author decision): "Store an unchangeable copy", "supporting evidence" (Fig 1) and "direct support" (Fig 2).
+
+Minor items for the next round:
+
+- In Table 4, "[ref: This study]" should read "This study (ARBITER)".
+- The Table 4 note cites a repository file. It should cite the eTable instead.

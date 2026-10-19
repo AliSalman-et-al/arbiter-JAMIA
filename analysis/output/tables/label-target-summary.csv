@@ -1,0 +1,9 @@
+assess_vs_label,trials,analysis
+different,5,Descriptive label-target audit
+different (inferred),4,Descriptive label-target audit
+partly,5,Descriptive label-target audit
+partly (inferred),2,Descriptive label-target audit
+same,33,Descriptive label-target audit
+same (inferred),32,Descriptive label-target audit
+same (rating covers several outcomes),11,Descriptive label-target audit
+unknown,10,Descriptive label-target audit

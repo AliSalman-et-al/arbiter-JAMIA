@@ -16,7 +16,7 @@ entries <- supplement_registry(inputs)
 METHODS_APPENDIX <- reader_label(METHODS_APPENDIX)
 ```
 
-[Download Supplement.docx](output/manuscript/Supplement.docx). The Word document and this working view use the same display objects and numbering. [TRIPOD-LLM and GRRAS checklist](output/manuscript/TRIPOD-LLM.docx) is a separate author-completion skeleton.
+[Download Supplement.docx](output/manuscript/Supplement.docx). The Word document and this working view use the same display objects and numbering. [TRIPOD-LLM and GRRAS checklist](output/manuscript/TRIPOD-LLM.docx) is a separate reporting map, with author-completion needs flagged.
 
 ## Methods appendix
 

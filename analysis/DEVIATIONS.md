@@ -384,3 +384,22 @@ No Python is used. This file records conservative resolutions as they arise.
     Unassisted wins 7 to 10; agreement with published labels 395 to 385 of 510;
     agreement with the agreed choice 69 to 64 of 129. The pipeline must
     reproduce these numbers before they are reported.
+
+40. **Round 14 round 2: Figure 4B label correction.** The direction-of-disagreement
+    counts were already specified as old Figure 5B in the 18 October plan. Only
+    the bootstrap intervals were added post hoc. Figure 4B therefore drops the
+    blanket post hoc axis label; its legend labels the intervals post hoc. This
+    refines entry 39's wording without changing any count, denominator or interval.
+
+41. **Round 14 round 2 author-requested post hoc additions.** Two paired differences
+    in agreement with the adjudicators' frozen independent ratings use all 154
+    disputed cells and the existing stratified trial-cluster bootstrap (10,000,
+    seed 20261018). The composite-reference eTable adds a descriptive partition
+    into 129 agreed-choice and 356 retained-published cells, without new intervals.
+    The 18 primary Unassisted question 5.1 losses receive a descriptive source-input,
+    justification-mention and answer comparison. No inferential mechanism analysis
+    or additional endpoint is introduced. Counts do not establish that supplied
+    registry material was relevant: De Waal's supplied record belongs to another
+    trial. Full arm justifications and source inventories remain exported. Rules-only
+    shares retain the original disagreements, and three corrections become ties
+    with ARBITER rather than new exclusive Unassisted wins. No retained estimate changes.

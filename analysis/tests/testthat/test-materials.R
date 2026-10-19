@@ -1,8 +1,8 @@
-test_that('reporting checklist has all official IDs and empty author columns', {
+test_that('reporting checklist has all official IDs and populated reporting locations', {
   x <- reporting_checklist()
   expect_equal(nrow(filter(x,guideline=='GRRAS')),15L)
   expect_setequal(filter(x,guideline=='TRIPOD-LLM',startsWith(item,'19'))$item,paste0('19',letters[1:7]))
-  expect_true(all(x$page=='' & x$section=='' & x$applicability_and_notes==''))
+  expect_true(all(nzchar(x$section) & nzchar(x$applicability_and_notes)))
 })
 test_that('worked trace uses more-severe consensus candidates and retains the alternative', {
   evidence <- readr::read_csv(file.path(analysis_dir,'data-derived','bundle-trace-evidence.csv'),show_col_types=FALSE)

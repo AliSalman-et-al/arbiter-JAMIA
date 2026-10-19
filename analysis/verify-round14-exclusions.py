@@ -11,7 +11,7 @@ for p in root.rglob('*'):
 # Include historical/planning/code references, including new untracked reports.
 for base in ['analysis','docs']:
  for p in (root/base).rglob('*'):
-  if not p.is_file() or p.suffix not in ['.R','.py','.md','.qmd','.txt','.json','.csv','.yml','.yaml']: continue
+  if not p.is_file() or p.suffix not in ['.R','.py','.md','.qmd','.txt','.json','.csv','.yml','.yaml','.log']: continue
   if any(part in ['renv','__pycache__'] for part in p.parts): continue
   if 'haiku' in p.read_text(errors='ignore').lower(): paths.add(p.relative_to(root).as_posix())
 tracked=subprocess.run(['git','grep','-Iil','-e','Haiku'],cwd=root,text=True,capture_output=True)

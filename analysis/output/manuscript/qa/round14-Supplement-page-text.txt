@@ -1,59 +1,61 @@
-1: 1970 chars: ARBITER: Supplementary material Contents Methods appendix · Supplementary results · Prompt templates and example · Run provenance eTable 1. 
+1: 2080 chars: ARBITER: Supplementary material Contents Methods appendix · Supplementary results · Prompt templates and example · Run provenance eTable 1.
 2: 1466 chars: Methods appendix Algorithms and validation The official 22 August 2019 RoB 2 algorithms were implemented for D1 randomisation, D2 deviations
-3: 4469 chars: API list-price reconstruction Costs are frozen-rate API list-price equivalents, not expenditure. USD rates per million tokens are: Sonnet in
-4: 2975 chars: eTable 1. Benchmark trials span sixteen meta-analyses Specialty Journal and year Topic Trials Published D1–D5 labels (Low/SC/High) Overall  
-5: 2823 chars: eTable 2. Published label distributions by domain Specialty Topic Trials D1 D2 D3 D4 D5 General medicine Clopidogrel vs aspirin for  seconda
-6: 2003 chars: eTable 3. AVATAR complete trace Part A. Answers and judgements Question ARBITER Evidence handles (type) Justification Unknowns Countereviden
-7: 2401 chars: Question ARBITER Evidence handles (type) Justification Unknowns Counterevidence Unassisted protocol-defined triggers such as symptom  onset.
-8: 1920 chars: Question ARBITER Evidence handles (type) Justification Unknowns Counterevidence Unassisted assignment effect eh_c8e0958840636206  (direct su
-9: 2438 chars: Question ARBITER Evidence handles (type) Justification Unknowns Counterevidence Unassisted differs across groups (direct support) COVID-rela
-10: 2481 chars: Question ARBITER Evidence handles (type) Justification Unknowns Counterevidence Unassisted data. The only SAP-type document is an amendment 
-11: 4187 chars: Handle Source Page Lines Source-version  hash Full verbatim quote procedures will be performed and results will be published according to th
-12: 4222 chars: Handle Source Page Lines Source-version  hash Full verbatim quote board (DSMB) adjudicated all serious adverse events and oversaw the safety
-13: 3847 chars: Handle Source Page Lines Source-version  hash Full verbatim quote disease at the time the study was designed.11 Conservative treatment inclu
-14: 4175 chars: Handle Source Page Lines Source-version  hash Full verbatim quote conservative group who remained AVR-free during follow-up and those who la
-15: 4178 chars: Handle Source Page Lines Source-version  hash Full verbatim quote In a post hoc heterogeneity analysis in the study population, no signifi c
-16: 4291 chars: Handle Source Page Lines Source-version  hash Full verbatim quote asymptomatic and AVR free throughout the entire follow-up (Figure 1). The 
-17: 666 chars: Handle Source Page Lines Source-version  hash Full verbatim quote locations and hashes identify captured versions. References within quotati
-18: 988 chars: eTable 4. Confusion matrices against Published ARBITER (Sonnet 5.5) — D1 Published Low Some concerns High Low 75 6 3 Some concerns 7 6 0 Hig
-19: 1006 chars: eTable 4 (continued). Confusion matrices against Published ARBITER (Sonnet 5.5) — D4 Published Low Some concerns High Low 87 6 0 Some concer
-20: 1008 chars: eTable 4 (continued). Confusion matrices against Published Unassisted (Sonnet 5.5) — D1 Published Low Some concerns High Low 75 7 2 Some con
-21: 1014 chars: eTable 4 (continued). Confusion matrices against Published Unassisted (Sonnet 5.5) — D4 Published Low Some concerns High Low 89 4 0 Some con
-22: 2926 chars: eTable 5. Per-meta-analysis weighted κ Specialty Topic ARBITER (Sonnet 5.5) Unassisted (Sonnet 5.5) General medicine Clopidogrel vs aspirin 
-23: 398 chars: eFigure 1. Agreement with Published varied across meta-analyses Weighted kappa and 95% CIs; source symbols distinguish model and assistance.
-24: 1905 chars: eTable 6. Agreement against Published, all sources and domains ARBITER (Sonnet 5.5) Domain Weighted κ AC2 Exact agreement Sensitivity Specif
-25: 1915 chars: eTable 6 (continued). Agreement against Published, all sources and domains Unassisted (Sonnet 5.5) Domain Weighted κ AC2 Exact agreement Sen
-26: 1450 chars: eTable 6 (continued). Agreement against Published, all sources and domains All-Low rule Domain Weighted κ AC2 Exact agreement Sensitivity Sp
-27: 1554 chars: eTable 7. Paired differences against Published Domain Weighted κ AC2 Exact agreement Sensitivity Specificity ARBITER (Sonnet 5.5) minus Unas
-28: 2347 chars: eTable 8. Post hoc: unweighted agreement with published labels is modest Source Domain Measure Estimate (95% CI) ARBITER (Sonnet 5.5) D1 Unw
-29: 1768 chars: eTable 9. Post hoc: adjudicators usually agreed with models when they disagreed with Published Source Direction Outcome Count Consensus n Al
-30: 1133 chars: eTable 10. Published labels were usually less severe than the agreed choice Domain Direction Eligible cells (n) Total D1 More lenient 9 18 D
-31: 2104 chars: eTable 11. Agreement against the composite reference, Sonnet only Domain Weighted κ AC2 Exact agreement ARBITER (Sonnet 5.5) D1–D5 0.94 (0.9
-32: 1424 chars: eTable 12. Paired differences against the composite reference Domain Weighted κ AC2 Exact agreement ARBITER (Sonnet 5.5) minus Unassisted (S
-33: 2214 chars: eTable 13. Composite-reference sensitivity estimates by adjudicator Adjudicator Source Domain Weighted κ AC2 Exact agreement Adjudicator 1 A
-34: 1878 chars: Adjudicator Source Domain Weighted κ AC2 Exact agreement Adjudicator 2 ARBITER (Sonnet 5.5) D5 0.94 (0.88–1.00) 0.97 (0.95–1.00) 99/102 (97.
-35: 2341 chars: eTable 14. Composite-reference paired differences by adjudicator Adjudicator Comparison Domain Weighted κ AC2 Exact agreement Adjudicator 1 
-36: 1675 chars: eTable 15. Per-adjudicator and split-cell win-share sensitivity Analysis Measure Estimate (95% CI) Both adjudicators agreed ARBITER 54/62 (8
-37: 1269 chars: eTable 16. Post hoc severity-stratified win share Direction Measure Estimate (95% CI) ARBITER stricter than  Unassisted ARBITER 44/45 (97.8%
-38: 1927 chars: eTable 17. Independent and selected ratings: full agreement including AC2 Comparison Weighted κ AC2 Exact agreement Adjudicator 1 vs Adjudic
-39: 808 chars: eTable 18. Localisation population eligibility Source Ratings not chosen (cells) Primary eligible (cells) Sensitivity ARBITER (Sonnet 5.5) 1
-40: 1294 chars: eTable 19. Error-localisation classes, both populations Population Class ARBITER (Sonnet  5.5) Unassisted (Sonnet  5.5) Primary Judgement de
-41: 1786 chars: eTable 20. Questions that alone changed the rating: frequencies, both populations Population Domain Question Signalling question ARBITER (So
-42: 1949 chars: Population Domain Question Signalling question ARBITER (Sonnet  5.5) Unassisted  (Sonnet 5.5) Sensitivity D2 2.2 Carers or intervention prov
-43: 847 chars: eTable 21. Unresolved independent answer Trial Domain Adjudicator Question Recorded answer Parsing issue Chiba 2021 D3 Adjudicator 1 3.4 3.4
-44: 951 chars: eTable 22. Post hoc: recomputing Unassisted ratings changes few arm disagreements Changed ratings (post hoc) Trial Domain Original Recompute
-45: 925 chars: Trial Domain Original Recomputed Sung 2020 D5 Some concerns High Post hoc. Replace violations only using the official algorithm applied to U
-46: 1292 chars: eTable 22 (continued). Post hoc: recomputing Unassisted ratings changes few arm disagreements Win share on original arm disagreements (post 
-47: 2212 chars: eTable 22 (continued). Post hoc: recomputing Unassisted ratings changes few arm disagreements Agreement with published labels (post hoc) Ver
-48: 1110 chars: eTable 22 (continued). Post hoc: recomputing Unassisted ratings changes few arm disagreements Agreement with the adjudicators’ agreed choice
-49: 1711 chars: eTable 23. RoB 2 consistency and structural audit, all sources and domains Domain Measure ARBITER (Sonnet 5.5) Unassisted (Sonnet  5.5) Publ
-50: 2137 chars: Domain Measure ARBITER (Sonnet 5.5) Unassisted (Sonnet  5.5) Published D4 Consistent with RoB 2 102/102 (100.0%) 67/102 (65.7%) — D4 Propose
-51: 1054 chars: eTable 24. Required question skipped sensitivity Domain Evaluable  (n) Original  violations  (n) Invalid paths (n) Additional violations (n)
-52: 894 chars: eTable 25. Quotation syntax in active justifications Source Estimate (95% CI) ARBITER (Sonnet 5.5) 34/1538 (2.2%; 1.1–3.5) Unassisted (Sonne
-53: 676 chars: eTable 26. Unassisted justification content Source Answer-code-only / exported fields (%) Unassisted (Sonnet 5.5) 1344/1459 (92.1%) Codes ar
-54: 1697 chars: eTable 27. Time, cost and token use per trial by model Model Metric ARBITER Unassisted Paired mean  difference (95% CI) Sonnet 5.5 Time (min
-55: 1491 chars: eTable 28. API cost reconstruction: estimates and bounds Measure ARBITER (Sonnet 5.5) Unassisted (Sonnet 5.5) Primary estimate: total (USD) 
-56: 1904 chars: eTable 29. Token reconciliation and compaction diagnostics Measure ARBITER (Sonnet 5.5) Unassisted (Sonnet 5.5) Main-thread request input to
-57: 2988 chars: eTable 30. Exploratory signalling-answer agreement Adjudicator 1 SQ Signalling question ARBITER (Sonnet 5.5) Unassisted (Sonnet 5.5) 1.1 Ran
-58: 3000 chars: eTable 30 (continued). Exploratory signalling-answer agreement Adjudicator 2 SQ Signalling question ARBITER (Sonnet 5.5) Unassisted (Sonnet 
-59: 2069 chars: Prompt templates and a filled example ARBITER template /arbiter-assess Assess risk of bias for {outcome} defined as {definition} in {trial}.
+3: 5786 chars: API list-price reconstruction Costs are frozen-rate API list-price equivalents, not expenditure. USD rates per million tokens are: Sonnet in
+4: 2258 chars: explicitly stated for 62 label sets, overlapping these categories. Source: benchmark README-FOR-ALI.md,  LABEL-TARGETS.csv and per-review BI
+5: 2975 chars: eTable 1. Benchmark trials span sixteen meta-analyses Specialty Journal and year Topic Trials Published D1–D5 labels (Low/SC/High) Overall
+6: 2823 chars: eTable 2. Published label distributions by domain Specialty Topic Trials D1 D2 D3 D4 D5 General medicine Clopidogrel vs aspirin for  seconda
+7: 2003 chars: eTable 3. AVATAR complete trace Part A. Answers and judgements Question ARBITER Evidence handles (type) Justification Unknowns Countereviden
+8: 2401 chars: Question ARBITER Evidence handles (type) Justification Unknowns Counterevidence Unassisted protocol-defined triggers such as symptom  onset.
+9: 1920 chars: Question ARBITER Evidence handles (type) Justification Unknowns Counterevidence Unassisted assignment effect eh_c8e0958840636206  (direct su
+10: 2438 chars: Question ARBITER Evidence handles (type) Justification Unknowns Counterevidence Unassisted differs across groups (direct support) COVID-rela
+11: 2481 chars: Question ARBITER Evidence handles (type) Justification Unknowns Counterevidence Unassisted data. The only SAP-type document is an amendment
+12: 4187 chars: Handle Source Page Lines Source-version  hash Full verbatim quote procedures will be performed and results will be published according to th
+13: 4222 chars: Handle Source Page Lines Source-version  hash Full verbatim quote board (DSMB) adjudicated all serious adverse events and oversaw the safety
+14: 3847 chars: Handle Source Page Lines Source-version  hash Full verbatim quote disease at the time the study was designed.11 Conservative treatment inclu
+15: 4175 chars: Handle Source Page Lines Source-version  hash Full verbatim quote conservative group who remained AVR-free during follow-up and those who la
+16: 4178 chars: Handle Source Page Lines Source-version  hash Full verbatim quote In a post hoc heterogeneity analysis in the study population, no signifi c
+17: 4291 chars: Handle Source Page Lines Source-version  hash Full verbatim quote asymptomatic and AVR free throughout the entire follow-up (Figure 1). The
+18: 666 chars: Handle Source Page Lines Source-version  hash Full verbatim quote locations and hashes identify captured versions. References within quotati
+19: 988 chars: eTable 4. Confusion matrices against Published ARBITER (Sonnet 5.5) — D1 Published Low Some concerns High Low 75 6 3 Some concerns 7 6 0 Hig
+20: 1006 chars: eTable 4 (continued). Confusion matrices against Published ARBITER (Sonnet 5.5) — D4 Published Low Some concerns High Low 87 6 0 Some concer
+21: 1008 chars: eTable 4 (continued). Confusion matrices against Published Unassisted (Sonnet 5.5) — D1 Published Low Some concerns High Low 75 7 2 Some con
+22: 1014 chars: eTable 4 (continued). Confusion matrices against Published Unassisted (Sonnet 5.5) — D4 Published Low Some concerns High Low 89 4 0 Some con
+23: 2926 chars: eTable 5. Per-meta-analysis weighted κ Specialty Topic ARBITER (Sonnet 5.5) Unassisted (Sonnet 5.5) General medicine Clopidogrel vs aspirin
+24: 398 chars: eFigure 1. Agreement with Published varied across meta-analyses Weighted kappa and 95% CIs; source symbols distinguish model and assistance.
+25: 1905 chars: eTable 6. Agreement against Published, all sources and domains ARBITER (Sonnet 5.5) Domain Weighted κ AC2 Exact agreement Sensitivity Specif
+26: 1915 chars: eTable 6 (continued). Agreement against Published, all sources and domains Unassisted (Sonnet 5.5) Domain Weighted κ AC2 Exact agreement Sen
+27: 1450 chars: eTable 6 (continued). Agreement against Published, all sources and domains All-Low rule Domain Weighted κ AC2 Exact agreement Sensitivity Sp
+28: 1554 chars: eTable 7. Paired differences against Published Domain Weighted κ AC2 Exact agreement Sensitivity Specificity ARBITER (Sonnet 5.5) minus Unas
+29: 2347 chars: eTable 8. Post hoc: unweighted agreement with published labels is modest Source Domain Measure Estimate (95% CI) ARBITER (Sonnet 5.5) D1 Unw
+30: 1743 chars: eTable 9. Adjudicators usually agreed with models when they disagreed with Published Source Direction Outcome Count Consensus n All n ARBITE
+31: 1133 chars: eTable 10. Published labels were usually less severe than the agreed choice Domain Direction Eligible cells (n) Total D1 More lenient 9 18 D
+32: 2276 chars: eTable 11. Agreement against the composite reference, Sonnet only Domain Weighted κ AC2 Exact agreement ARBITER (Sonnet 5.5) D1–D5 0.94 (0.9
+33: 1416 chars: eTable 12. Paired differences against the composite reference Domain Weighted κ AC2 Exact agreement ARBITER (Sonnet 5.5) minus Unassisted (S
+34: 2214 chars: eTable 13. Composite-reference sensitivity estimates by adjudicator Adjudicator Source Domain Weighted κ AC2 Exact agreement Adjudicator 1 A
+35: 1878 chars: Adjudicator Source Domain Weighted κ AC2 Exact agreement Adjudicator 2 ARBITER (Sonnet 5.5) D5 0.94 (0.88–1.00) 0.97 (0.95–1.00) 99/102 (97.
+36: 2341 chars: eTable 14. Composite-reference paired differences by adjudicator Adjudicator Comparison Domain Weighted κ AC2 Exact agreement Adjudicator 1
+37: 1757 chars: eTable 15. Preferred shares among adjudicated arm disagreements: sensitivities Analysis Measure Estimate (95% CI) Both adjudicators agreed A
+38: 1311 chars: eTable 16. Post hoc: preferred shares among adjudicated arm disagreements by strictness Direction Measure Estimate (95% CI) ARBITER stricter
+39: 1927 chars: eTable 17. Independent and selected ratings: full agreement including AC2 Comparison Weighted κ AC2 Exact agreement Adjudicator 1 vs Adjudic
+40: 808 chars: eTable 18. Localisation population eligibility Source Ratings not chosen (cells) Primary eligible (cells) Sensitivity ARBITER (Sonnet 5.5) 1
+41: 1294 chars: eTable 19. Error-localisation classes, both populations Population Class ARBITER (Sonnet  5.5) Unassisted (Sonnet  5.5) Primary Judgement de
+42: 1786 chars: eTable 20. Questions that alone changed the rating: frequencies, both populations Population Domain Question Signalling question ARBITER (So
+43: 1949 chars: Population Domain Question Signalling question ARBITER (Sonnet  5.5) Unassisted  (Sonnet 5.5) Sensitivity D2 2.2 Carers or intervention prov
+44: 1614 chars: eTable 21. Post hoc: supplied documents and answers in question 5.1 losses Trial Registry, protocol or  SAP supplied Unassisted mentions  th
+45: 847 chars: eTable 22. Unresolved independent answer Trial Domain Adjudicator Question Recorded answer Parsing issue Chiba 2021 D3 Adjudicator 1 3.4 3.4
+46: 943 chars: eTable 23. Post hoc: rules-only changes make three arm disagreements ties Changed ratings (post hoc) Trial Domain Original Recomputed An 202
+47: 968 chars: Trial Domain Original Recomputed Sung 2020 D5 Some concerns High Post hoc. Three of 62 adjudicated arm disagreements changed to ARBITER’s pr
+48: 1346 chars: eTable 23 (continued). Post hoc: rules-only changes make three arm disagreements ties Preferred shares on original adjudicated arm disagreem
+49: 2247 chars: eTable 23 (continued). Post hoc: rules-only changes make three arm disagreements ties Agreement with published labels (post hoc) Version Dom
+50: 1145 chars: eTable 23 (continued). Post hoc: rules-only changes make three arm disagreements ties Agreement with the adjudicators’ agreed choice (post h
+51: 1711 chars: eTable 24. RoB 2 consistency and structural audit, all sources and domains Domain Measure ARBITER (Sonnet 5.5) Unassisted (Sonnet  5.5) Publ
+52: 2137 chars: Domain Measure ARBITER (Sonnet 5.5) Unassisted (Sonnet  5.5) Published D4 Consistent with RoB 2 102/102 (100.0%) 67/102 (65.7%) — D4 Propose
+53: 1054 chars: eTable 25. Required question skipped sensitivity Domain Evaluable  (n) Original  violations  (n) Invalid paths (n) Additional violations (n)
+54: 894 chars: eTable 26. Quotation syntax in active justifications Source Estimate (95% CI) ARBITER (Sonnet 5.5) 34/1538 (2.2%; 1.1–3.5) Unassisted (Sonne
+55: 676 chars: eTable 27. Unassisted justification content Source Answer-code-only / exported fields (%) Unassisted (Sonnet 5.5) 1344/1459 (92.1%) Codes ar
+56: 1785 chars: eTable 28. Time, cost and token use per trial by model Model Metric ARBITER Unassisted Paired mean  difference (95% CI) Sonnet 5.5 System ru
+57: 1491 chars: eTable 29. API cost reconstruction: estimates and bounds Measure ARBITER (Sonnet 5.5) Unassisted (Sonnet 5.5) Primary estimate: total (USD)
+58: 1904 chars: eTable 30. Token reconciliation and compaction diagnostics Measure ARBITER (Sonnet 5.5) Unassisted (Sonnet 5.5) Main-thread request input to
+59: 2988 chars: eTable 31. Exploratory signalling-answer agreement Adjudicator 1 SQ Signalling question ARBITER (Sonnet 5.5) Unassisted (Sonnet 5.5) 1.1 Ran
+60: 3000 chars: eTable 31 (continued). Exploratory signalling-answer agreement Adjudicator 2 SQ Signalling question ARBITER (Sonnet 5.5) Unassisted (Sonnet
+61: 2069 chars: Prompt templates and a filled example ARBITER template /arbiter-assess Assess risk of bias for {outcome} defined as {definition} in {trial}.

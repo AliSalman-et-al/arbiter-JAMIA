@@ -383,3 +383,258 @@ no-kit-sonnet-5.5/run_nokit_case.py
 - eTable 30. Exploratory signalling-answer agreement
 
 The only supplementary figure is eFigure 1 (per-meta-analysis weighted κ). No commit or push was performed; HEAD remains `bfe7111`.
+
+## Round 2
+
+Baseline: `7befa34` on `main`. No commit or push. WP-T2 owns the curated
+prior-work CSV and notes; its edits and the orchestrator's REVIEW.md additions
+are concurrent work, not WP-A2 edits. All arm, adjudication, benchmark and
+`data-derived/` inputs and all protected Figure 1–2 files remain read-only.
+
+### WP-A2 queued items
+
+1. **Preferred-share wording — complete.** Figure 5, the sensitivity/strictness
+   eTables and rules-only blocks identify preference among adjudicated arm
+   disagreements. They do not call the primary endpoint accuracy or correctness.
+2. **Composite split — complete.** Existing composite eTable 11 adds four
+   explicitly post hoc descriptive rows. ARBITER: agreed-choice **116/129
+   (89.9%)**, retained Published **356/356 (100.0%)**. Unassisted: **69/129
+   (53.5%)** and **356/356 (100.0%)**. The partitions reproduce **472/485** and
+   **425/485** overall agreement. No new intervals or endpoint.
+3. **Independent paired differences — complete.** Table 2 adds post hoc paired
+   differences, all **154** disputed cells, using the existing shared 10,000
+   trial-cluster bootstrap replicates within meta-analysis (seed 20261018):
+   Adjudicator 1 **24.7 percentage points (95% CI 16.2–32.9)**, from 107 versus
+   69 matches; Adjudicator 2 **28.6 (19.8–37.4)**, from 120 versus 76. The note
+   confirms the rating was made and frozen before any label was seen.
+4. **Question 5.1 mechanism description — complete.** New post hoc eTable 21 and
+   one Results sentence describe the **18** primary Unassisted losses where
+   question 5.1 alone changed the algorithm output. **13/18** had an inventoried
+   registry record, protocol or SAP; **5/18** did not. All 13 have a registry
+   record, so generic supplement classification cannot change this combined
+   availability count. **0/18** Unassisted justifications mention any such
+   document. Answers are **16 PY versus NI**, **1 Y versus NI**, and **1 Y
+   versus N**; both adjudicators agree on every reference answer. The full export
+   preserves both arms' question 5.1 justifications, both adjudicators' answers
+   and source inventories. De Waal 2021's supplied registry belongs to a different
+   trial: availability does not establish relevance or pre-specification.
+5. **Label-target matching — complete.** eMethods describe the benchmark's
+   outcome/time-point/contrast binding and its explicit versus inferred evidence.
+   Recomputed match categories among 102 trials: **33 same**, **11 same across
+   several covered outcomes**, **32 same inferred**, **7 partly**, **9 different**,
+   **10 unknown**. Non-single-result labels are disclosed as **12 trial-wide sets
+   (60 domain labels)**, **7 joint pain/disability sets (35 labels)**, and **10
+   unknown-result sets (50 labels)**: **29 sets / 145 domain labels** altogether.
+   **62 sets** have inferred binding, overlapping the unknown category; these
+   are not an additional disjoint population. Exports `label-target-summary.csv`
+   and `label-target-binding-counts.csv` reproduce the counts.
+6. **Dates — complete.** eMethods report trial publication years **1996–2025**
+   and source-review years **2025–2026**, with the possibility of training exposure
+   in Limitations. The provider documents a **June 2026** training-data cut-off,
+   verified on 19 October 2026 from its [model documentation](https://platform.claude.com/docs/en/models/sonnet-5-5/overview)
+   and [training-data help page](https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data).
+   No date-stratified analysis was added.
+7. **Runtime and cost labels — complete.** Process rows read “System runtime
+   (min/trial)” and “API list-price equivalent (US$/trial)”. Results, the eTable
+   note and eMethods state that runs used a subscription. eMethods show the
+   per-token formula and frozen US$/million-token rates: input **2**, 1-hour
+   cache write **4**, 5-minute cache write **2.5**, cache read **0.1**, output **10**.
+   All retained runtime and price-equivalent estimates are unchanged.
+8. **TRIPOD-LLM — mapping complete; author details remain flagged.** The separate
+   Word reporting map and CSV map all **49 TRIPOD-LLM** and **15 GRRAS** items to
+   named displays/eMethods/manuscript locations or justified N/A. The official
+   checklist was read; instruction-tuning item 11 is N/A because no alignment
+   training was performed. Rater credentials, ethics, funding, competing interests,
+   registration and public involvement cannot be invented from analysis inputs;
+   their planned manuscript locations are explicitly marked for author completion.
+   Final manuscript pagination and author-assembled Introduction/Discussion/abstract
+   remain to be checked. This is a reporting map, not a claim of completed compliance.
+9. **Table 4 — complete against WP-T2's final schema.** Built last, after its
+   schema arrived; no polling delay was needed. RobotReviewer is first; all eight
+   requested feature columns are displayed, including Rule breaks measured.
+   References use `reference_key` callouts. NR means Not reported and is kept
+   distinct from No. Feature-specific Partly definitions and the difference between
+   prompt instructions and enforced rules are condensed in the notes. No DOI list,
+   internal project name, model name or misleading RobotReviewer evaluation n is
+   shown. The extra design columns stay out of the display.
+
+   **Resolved brief conflict:** the originally requested “Only this study gave
+   both compared arms identical inputs” footnote is false under the reverified
+   schema. Seven rows are Yes for input identity; Choi and this study are Yes for
+   a fixed model with/without a workflow. The orchestrator's subsequent WP-T2
+   clarification/review in `docs/round14/REVIEW.md` expressly drops exclusivity.
+   The table therefore says this study gave both arms identical inputs and that
+   other matched comparisons also used identical underlying sources.
+
+### WP-A round 1 review items
+
+1. **Figure 4B post hoc label — complete.** Removed from the axis; the legend
+   marks the intervals as added post hoc. The Results sentence describes the
+   pre-specified counts without calling them a post hoc analysis. Deviation 40
+   records why the scope of entry 39 was refined.
+2. **Rules-only framing — complete.** Results and the eTable title/note state
+   that **3/62** changed, each to ARBITER's preferred rating, and **59** were
+   unchanged. These three become ties, not new exclusive Unassisted wins. The
+   original 62-cell denominator remains; overlapping label-equality credit is
+   disclosed. The existing supplementary numbers remain **7→10**, **395→385/510**
+   and **69→64/129**, with their existing intervals unchanged.
+3. **Strictness — complete.** Pipeline recomputation and tests verify ARBITER
+   **88/124** and Unassisted **69/115**, using `all_n` and including split decisions.
+   Both appear in the R2 Results sentence.
+4. **R6 — complete.** Results state “zero domain rule breaks by design” and
+   “every quotation was found in its content-hashed stored source”; no claim of
+   semantic support was added.
+5. **Table 4 — complete.** Rule-break column restored; quotation-check title,
+   reference callouts and condensed definitions/notes applied.
+6. **Main-text model names — complete.** Removed from Figure 3, the results
+   introduction and Table 2/4 notes; the model is documented in Methods/provenance.
+   Main Word tables are checked for the absence of “Sonnet”.
+7. **Rejected saves — investigated and flagged.** `verify-round14-bundles.py`
+   scans all **102 included committed bundles / 1,888 JSON members**. No rejected-
+   save, attempted-save, error or validation-event keys exist. Successful histories
+   cannot supply an attempted-save denominator. **53/637 is not reproducible from
+   the committed bundles.** No invented derived metric was written; Figure 1 and
+   its legend remain untouched. `round2-rejected-saves.json` records the finding;
+   tests check the scan inventory and explicit non-reproducibility result. Authors
+   must supply the underlying event logs or approve removal of the claim.
+8. **Figure 5 post hoc counts — complete.** Recomputed and displayed
+   **44 / 1 / 0; N = 45** and **10 / 6 / 1; N = 17** for ARBITER / Unassisted /
+   neither, using the same outcome columns as the upper rows.
+
+### Protected Figure 1–2 wording flags
+
+Read-only PDF text extraction and the protected legend identify these author-review
+items; no protected source, image, legend or notes file was changed:
+
+- **Figure 1: “Store an unchangeable copy of each source”.** Direct conflict with
+  the content-hashed-source wording rule; replace only with author approval.
+- **Figure 1: “LLM agent”.** Conflicts with the glossary's approved lane label
+  “AI model (LLM agent)”; author approval is needed for the protected figure.
+- **Figure 2: “direct support”.** Potential conflict with the rule that quotation
+  occurrence does not establish semantic support; it labels a model's evidence
+  relationship, not an independently assessed finding. Authors should approve a
+  label or clarify that distinction.
+- **Figure 1: “Review the answers and supporting evidence”.** Related potential
+  ambiguity: support was not assessed in this evaluation. This is a human review
+  action, so it is a flag rather than a demonstrated false verification claim.
+
+Neither figure calls ARBITER a second reviewer or uses “tamper-proof”. Figure 2's
+“all found in the stored sources” and independent-verifier wording comply with the
+new rules. Separately, the protected Figure 1 legend's **53/637** needs sourcing as
+noted above; it is not a wording-only correction.
+
+### Invariance and verification
+
+Round-2 verification uses **7befa34**, not the round-1 ancestor. The exhaustive
+`verify-round14-numbers.py` comparison retains every baseline CSV and compares
+all numeric fields at full precision after reversible label decoding. It also
+compares the numeric body cells and retained footer numbers of main Tables 1–3,
+plus every tracked frozen input/protected file. Declared changes are restricted
+to the runtime/cost labels, filled checklist mapping fields, new Table 2 paired
+rows, four composite component rows, the new descriptive eTable, and the revised
+curated Table 4. Table 4 is a changed literature comparison, not a retained
+statistical endpoint. All guideline/item/topic/source identifiers in the checklist
+are retained. New rows do not excuse changes to retained estimates.
+
+`verify-round14-tables.R` reconstructs retained supplementary tables from baseline
+CSV values using the current display code and compares every numeric body token.
+It additionally opens the actual Supplement.docx XML and checks all **49 current
+table bodies** against generated numeric tokens, including new rows. The post hoc
+paired-difference test includes a hand-built paired example; composite tests prove
+the partition and recover total agreements; question 5.1, strictness, severity and
+new-tie tests independently recompute their counts. Deviation 41 declares the new
+post hoc additions. Environment substitutions remain those disclosed in round 1;
+`renv.lock` is not changed.
+
+### Round 2 final results and reproduction
+
+- `quarto render` completed the numerical pipeline and both HTML reports.
+  Presentation-only rebuilds then applied the final labels, notes and pagination;
+  `quarto render supplement.qmd` refreshed the final supplementary HTML.
+- `Rscript --vanilla test-round14.R`: **608 assertions passed; zero failures,
+  errors, warnings or skips**. The old blank-checklist assertion was replaced by
+  the requested populated-location contract; no statistical assertion was relaxed.
+- `python3 verify-round14-numbers.py`: **58 retained CSVs / 7,651 retained numeric
+  cells**, **79 numeric body cells in main Tables 1–3**, retained main-table footer
+  numbers and **541 frozen/protected files** match `7befa34`. Only the two retained
+  CSV files `table5.csv` (labels only) and `reporting-checklist-skeleton.csv` (filled
+  mapping fields) differ in the working tree. Six new CSV exports contain the
+  declared additions. No tolerance or rounding exemption is used for invariance.
+- `Rscript --vanilla verify-round14-tables.R`: **30 retained supplementary table
+  constructions**, with **4,692 current numeric body tokens**, agree with displays
+  reconstructed from baseline CSVs. This current token total includes the declared
+  new composite component rows, independently checked by the partition tests.
+  The new question 5.1 eTable is excluded from the baseline comparison. The actual
+  Supplement.docx passes all **49 table-body** token checks against generated data.
+- `Rscript --vanilla verify-round14.R` and `verify-round14-round2.R` pass, including
+  reproduction of all preliminary rules-only counts, the independent paired
+  differences, composite partitions, label-binding counts, the three new ties,
+  main-table terminology and complete checklist mapping.
+- The release scan finds **zero Haiku matches in 105 publication artifacts**.
+  The complete exclusion manifest now has **261 paths**. The round-1 listing above
+  still applies; the two additional exclusions are
+  `analysis/round14-verification/round2-release.log` and `docs/round14/REVIEW.md`.
+  `round14-public-release-exclusions.txt` is the current complete inventory.
+
+Logs are under `analysis/round14-verification/round2-*`; current structured audits
+are `round14-invariance.json`, `retained-supplement-tables.csv` and
+`round2-supplement-word-tables.csv`. The full test result remains in
+`tests-round14.rds` / `tests-round14.txt`. Deviation entries 40–41 record the new
+judgement calls. The retained package substitutions are disclosed in the round-1
+environment section; the lockfile and all frozen inputs are unchanged.
+
+### Round 2 visual QA and numbering
+
+LibreOffice replaced native Microsoft Word, as in round 1. Final publication
+layout checks pass: all four main tables occupy one page, Supplement.docx has
+**61 pages**, the reporting map has **four pages**, and there are no blank pages
+or out-of-page text spans. All figures retain 174-mm width; new figures have at
+least 7.11-pt text; TIFFs are 600-dpi LZW. The rendered supplement retains all
+**16/16 complete archived quotations**. Existing protected-artwork PDF font
+warnings remain environmental diagnostics; those files were not modified.
+
+Visual inspection covered main Tables 1–4, Figures 3–6, the supplementary forest,
+all supplement pages represented in contact sheets, the four reporting-map pages,
+and full-size changed Methods/composite/mechanism pages. The new composite rows
+fit with the retained grid and its note on one page using wider labels and reduced
+vertical padding. Table 4 uses NR to avoid splitting “reported” within its narrow
+columns. The mechanism table uses unambiguous benchmark trial labels; the AVATAR
+label removes the benchmark's attached reference-number artefact. The existing
+26-cell rules-only listing still spans two pages with a repeated header; no cells
+were dropped. Greyscale and deuteranopia checks keep the arms distinguishable.
+
+Inspected paths relative to `analysis/`:
+
+- `output/manuscript/Figure3.png` through `Figure6.png`, and `eFigure1.png`.
+- `output/manuscript/qa/round14-Table1/page-1.png` through
+  `round14-Table4/page-1.png`; Table 2 and Table 4 were re-rendered after note and
+  NR changes.
+- `output/manuscript/qa/round14-Supplement-contact-1.png` through `-8.png`;
+  full-size `round14-Supplement/page-3.png`, `page-4.png`, `page-32.png` (composite
+  split), and `page-44.png` (mechanism description).
+- `output/manuscript/qa/round14-TRIPOD-LLM/page-1.png` through `page-4.png` and
+  `round14-TRIPOD-LLM-contact-1.png`.
+- `output/manuscript/qa/round14-Figure4-grayscale.png`,
+  `round14-Figure4-deuteranopia.png`, `round14-Figure5-grayscale.png`, and
+  `round14-Figure5-deuteranopia.png`.
+
+Figures and main tables retain their round-1 numbering. eTables 1–20 retain their
+numbers; new mechanism description is **eTable 21**. Former eTables 21–30 become
+**22–31**; the rules-only analysis is now **eTable 23**, the full audit is 24,
+required-question sensitivity 25, and time/cost 28. eFigure 1 is unchanged.
+`output/manuscript/qa/round14-supplement-inventory.txt` records the complete current
+inventory. References in Word/HTML/Results resolve through the same registry.
+
+### Round 2 open issues
+
+- Authors must source or approve removal of protected Figure 1's 53/637 claim.
+- The protected labels listed above need author decisions; no Figure 1–2 edits
+  were made.
+- The reporting map flags missing author declarations/credentials and final
+  manuscript assembly/pagination; it does not fabricate those statements.
+- Input-identity exclusivity is resolved against the claim: the verified evidence
+  and orchestrator review require nonexclusive wording. No missing WP-T2 schema
+  issue remains.
+
+No commit or push was performed. HEAD remains `7befa34`; the lockfile and frozen
+inputs are unchanged. `git diff --check` passes.

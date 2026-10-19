@@ -6,7 +6,7 @@ LEGACY_TABLE_TITLES <- c(
 manuscript_data <- function(name) read_manuscript_data(name)
 COMPOSITE_NOTE <- paste('Reference: the adjudicators’ agreed choice where both agreed; published labels elsewhere.',
   'Excludes 25 divided decisions (485 cells per arm). Only three labels were offered.',
-  'Unreviewed cells where both Sonnet arms matched published labels are assumed correct.',
+  'Unreviewed cells where both arms matched published labels are assumed correct.',
   'Both features inflate absolute values.')
 TOPIC_ABBREVIATIONS <- paste('ACL, anterior cruciate ligament; CDK4/6, cyclin-dependent kinases 4 and 6;',
   'eGFR, estimated glomerular filtration rate; GLP-1, glucagon-like peptide-1; HER2, human epidermal growth factor receptor 2;',
@@ -108,7 +108,11 @@ reliability_table <- function() {
       mutate(comparison=reader_label(sub('.* vs ','',comparison)),comparison=if_else(comparison=='published label','Published',comparison))
     group_row(d,paste('Adjudicator',if(a=='A') 1 else 2,'own rating compared with …'))
   })
-  bind_rows(group_row(between,'Between adjudicators'),parts[[1]],parts[[2]]) |>
+  delta <- manuscript_data('independent-paired-difference') |>
+    transmute(comparison=paste('Adjudicator',if_else(adjudicator=='A','1','2')),
+      `Weighted κ`='—',`Exact agreement`=paste0(fmt_number(100*estimate,1),' ',fmt_ci(100*lower,100*upper,1)))
+  bind_rows(group_row(between,'Between adjudicators'),parts[[1]],parts[[2]],
+    group_row(delta,'Post hoc: paired agreement difference (percentage points)')) |>
     rename(Comparison=comparison,`Raw agreement`=`Exact agreement`)
 }
 legacy_table_notes <- function() {
@@ -126,10 +130,10 @@ legacy_table_notes <- function() {
     'Evidence coverage counts required answers citing a passage or image. Text and image checks count distinct cited records.',
     'ARBITER extracts quoted text and renders cited images. The model writes image descriptions; these are not checked against the images.',
     'The independent verifier checks the audit file structure, not clinical correctness or completion. Unassisted evidence records are unavailable.',CI_NOTE),
-  paste('All comparisons use the 154 domain ratings reviewed because at least one Sonnet arm differed from the published label.',
+  paste('All comparisons use the 154 domain ratings reviewed because at least one arm differed from the published label.',
     'These comparisons cannot estimate agreement or published-label accuracy in the full benchmark.',
-      'Independent ratings preceded blinded label presentation. Adjudicators then chose among the three offered labels.',
-      'Linearly weighted Cohen\u2019s \u03ba; AC2 is in eTable PLACEHOLDER_RELIABILITY; raw agreement is n/N (x.x%; 95% CI a–b).',CI_NOTE))
+      'Adjudicators used no AI; each independent rating was made and frozen before the adjudicator saw any label. They then saw only three labels in an order randomised per cell, without rationales or quotations. ',
+      'Linearly weighted Cohen\u2019s \u03ba; AC2 is in eTable PLACEHOLDER_RELIABILITY; raw agreement is n/N (x.x%; 95% CI a–b). Post hoc paired differences are ARBITER minus Unassisted agreement with the same independent rating, in percentage points.',CI_NOTE))
   lapply(notes,function(x) reader_label(gsub('PLACEHOLDER_RELIABILITY',supplement_number('Independent and selected ratings: full agreement including AC2'),x,fixed=TRUE)))
 }
 build_main_tables <- function(inputs) {
@@ -145,7 +149,7 @@ build_main_tables <- function(inputs) {
   invisible(tables)
 }
 main_table_widths <- function(i) {
-  list(c(1.35,1.35,1.35,1.35,1.45),c(3.1,1.65,2.1),c(2.95,2.2,1.7),c(1.35,.65,.85,.8,.65,.7,1.05,.9))[[i]]
+  list(c(1.35,1.35,1.35,1.35,1.45),c(3.1,1.65,2.1),c(2.95,2.2,1.7),c(1.20,.55,.85,.70,.75,.48,.55,.98,.90))[[i]]
 }
 # Word joiners preserve the en dash while prohibiting a line break on either side.
 main_table_no_break_ranges <- function(x) {
@@ -170,34 +174,31 @@ main_table_flextable <- function(x,i,note=main_table_notes()[[i]]) {
 }
 
 MAIN_TABLE_TITLES <- c(LEGACY_TABLE_TITLES[c(2,4,3)],
-  'ARBITER combines rule enforcement, source verification and blinded adjudication')
+  'ARBITER combines rule enforcement, quotation checks and blinded adjudication')
 main_table_notes <- function() {
   old <- legacy_table_notes()
   list(old[[2]],old[[4]],old[[3]],prior_work_note())
 }
 prior_work_table <- function() {
-  path <- 'data-curated/prior-work-comparison.csv'
-  if(!file.exists(path)) {
-    warning('Table 4 awaits WP-T; using explicitly labelled schema fixture')
-    path <- 'tests/fixtures/prior-work-comparison.csv'
-  }
-  x <- readr::read_csv(path,show_col_types=FALSE)
-  x |> transmute(Study=paste0(citation_short,if_else(is.na(note_marks),'',paste0(' [',note_marks,']'))),
-    `Rules in code`=rules_applied_in_code,`Rules enforced during assessment`=rules_enforced_during_assessment,
+  x <- readr::read_csv('data-curated/prior-work-comparison.csv',show_col_types=FALSE)
+  stopifnot(all(c('registry_or_protocol_given','identical_inputs_across_compared_arms','reference_key') %in% names(x)),
+    x$study_id[1]=='marshall_2016')
+  x |> transmute(Study=paste0('[ref: ',reference_key,']',
+      if_else(tool=='RoB 2','',paste0(' (',tool,')')),
+      if_else(is.na(note_marks),'',paste0(' [',note_marks,']'))),
+    `Rules in code`=rules_applied_in_code,
+    `Rules enforced during assessment`=rules_enforced_during_assessment,
+    `Rule breaks measured`=rule_breaks_measured,
     `Quotations verified`=quotations_verified_against_stored_source,`Audit file`=audit_file,
     `Agent with tools`=agent_with_tools,`Independent reference or adjudication`=independent_reference_or_adjudication,
-    `Input parity`=input_parity_registry_protocol)
+    `Registry or protocol given to the model`=registry_or_protocol_given) |>
+    mutate(across(-Study,~if_else(.x=='Not reported','NR',.x)))
 }
 prior_work_note <- function() {
-  path <- 'data-curated/prior-work-comparison.csv'
-  if(!file.exists(path)) return('SCHEMA FIXTURE ONLY. Table 4 awaits WP-T; no study claims are populated.')
-  x <- readr::read_csv(path,show_col_types=FALSE)
-  cited <- x |> filter(!is.na(doi),nzchar(doi))
-  citations <- paste(paste0(cited$citation_short,': ',cited$doi),collapse='; ')
-  notes <- if(file.exists('data-curated/prior-work-comparison-notes.md'))
-    paste(readLines('data-curated/prior-work-comparison-notes.md',warn=FALSE),collapse=' ') else ''
-  # WP-T ends with publication footnotes; the evidence ledger remains in its source file.
-  if(grepl('## Footnote texts for the table',notes,fixed=TRUE)) notes <- sub('(?is).*## Footnote texts for the table[[:space:]]*', '',notes,perl=TRUE) else notes <- ''
-  paste('Yes, Partly, No and Not reported follow the source evidence; No denotes demonstrated absence.',
-    'Quotations verified means checked against a stored source. Input parity concerns registry/protocol access across comparison arms.',citations,notes)
+  paste('Yes, documented; No, affirmative absence; NR, Not reported (presence or absence unclear).',
+    'Partly means: code, spreadsheet or incomplete rules; enforcement, some configurations or incomplete answer checks; breaks, overall-only or qualitative checks; quotations, semantic judging without occurrence/integrity checks; audit, retained responses without a verifiable source bundle; agent, enabled browsing or retrieval without demonstrated agent tool calls; reference, limited re-review, historical independent teams or text-relevance review; registry/protocol, compressed or restricted delivery.',
+    'Structured prompting alone is not enforced rules. Registry/protocol includes SAPs and available records; a registration number alone does not qualify.',
+    'This study gave both compared arms identical inputs; other matched model/workflow comparisons also used identical underlying sources (see curated evidence notes).',
+    'a, Compressed ancillary records; overall-only checks. b, Post hoc Excel derivation; six development trials. c, Prompt rules. d, RoB 2 cohort; protocols when available. e, Masked panel; actual browsing unmeasured. f, One trial, 38 runs. g, Retrieval and retained edits. h, Post hoc support judging. i, ROBINS-I; selected concordant references. j, Recorded overrides permitted; none in 510 domains; disputed-cell adjudication. k, RobotReviewer used RoB 1; its blinded panel judged text relevance.',
+    'Reference callouts resolve in the manuscript bibliography. Full cell evidence and definitions: prior-work-comparison-notes.md.')
 }

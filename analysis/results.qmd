@@ -9,7 +9,7 @@ main_tables <- list(main_table2(),reliability_table(),main_table3(),prior_work_t
 legends <- figure_legend_sections()
 ```
 
-The benchmark compares ARBITER with an Unassisted model on 102 trials from 16 meta-analyses. Blinded adjudication of disputed domain judgements is the primary quantitative evidence. Both arms used Sonnet 5.5. Each arm assessed each trial once.
+The benchmark compares ARBITER with an Unassisted model on 102 trials from 16 meta-analyses. Blinded adjudication of disputed domain judgements is the primary quantitative evidence. Each arm assessed each trial once.
 
 ```{r}
 for(i in 1:6) {

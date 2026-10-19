@@ -1,0 +1,146 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ | F W  S  OK | Context
+
+⠏ |          0 | algorithms                                                     
+⠴ |          6 | algorithms                                                     
+⠴ |         26 | algorithms                                                     
+⠇ |         29 | algorithms                                                     
+✔ |         29 | algorithms
+
+⠏ |          0 | api-cost                                                       
+✔ |          1 | api-cost
+
+⠏ |          0 | binding                                                        
+⠙ |         12 | binding                                                        
+⠧ |         28 | binding                                                        
+✔ |         50 | binding
+
+⠏ |          0 | bundle-reverification                                          
+⠴ |         16 | bundle-reverification                                          
+✔ |         16 | bundle-reverification
+
+⠏ |          0 | error-localisation                                             
+⠹ |          3 | error-localisation                                             
+⠸ |         14 | error-localisation                                             
+⠸ |         34 | error-localisation                                             
+⠙ |         42 | error-localisation                                             
+⠹ |         43 | error-localisation                                             
+✔ |         52 | error-localisation [2.9s]
+
+⠏ |          0 | estimands                                                      
+⠦ |          7 | estimands                                                      
+⠧ |         18 | estimands                                                      
+⠹ |         23 | estimands                                                      
+⠴ |         26 | estimands                                                      
+✔ |         27 | estimands
+
+⠏ |          0 | inputs                                                         
+⠙ |         22 | inputs                                                         
+✔ |         23 | inputs
+
+⠏ |          0 | invalid-paths                                                  
+⠸ |         14 | invalid-paths                                                  
+✔ |         17 | invalid-paths
+
+⠏ |          0 | materials                                                      
+⠴ |          6 | materials                                                      
+✔ |         12 | materials
+
+⠏ |          0 | posthoc                                                        
+⠹ |          3 | posthoc                                                        
+⠋ |         11 | posthoc                                                        
+⠸ |         14 | posthoc                                                        
+✔ |         17 | posthoc [3.9s]
+
+⠏ |          0 | presentation                                                   
+⠴ |         16 | presentation                                                   
+⠇ |         29 | presentation                                                   
+✔ |         32 | presentation
+
+⠏ |          0 | process                                                        
+⠋ |          1 | process                                                        
+⠧ |          8 | process                                                        
+⠋ |         11 | process                                                        
+✔ |         12 | process [1.8s]
+
+⠏ |          0 | round11                                                        
+⠹ |         13 | round11                                                        
+⠸ |         34 | round11                                                        
+⠏ |         40 | round11                                                        
+⠼ |         55 | round11                                                        
+⠙ |         72 | round11                                                        
+⠧ |         88 | round11                                                        
+⠙ |        102 | round11                                                        
+⠦ |        117 | round11                                                        
+⠧ |        118 | round11                                                        
+⠸ |        124 | round11                                                        
+⠇ |        129 | round11                                                        
+⠙ |        142 | round11                                                        
+⠋ |        151 | round11                                                        
+⠸ |        154 | round11                                                        
+⠦ |        157 | round11                                                        
+⠏ |        160 | round11                                                        
+⠸ |        164 | round11                                                        
+⠴ |        166 | round11                                                        
+⠋ |        171 | round11                                                        
+⠼ |        175 | round11                                                        
+⠴ |        176 | round11                                                        
+⠏ |        180 | round11                                                        
+⠙ |        182 | round11                                                        
+⠦ |        187 | round11                                                        
+⠧ |        188 | round11                                                        
+⠇ |        189 | round11                                                        
+⠏ |        190 | round11                                                        
+⠋ |        191 | round11                                                        
+⠙ |        192 | round11                                                        
+⠹ |        193 | round11                                                        
+⠼ |        195 | round11                                                        
+✔ |        196 | round11 [41.3s]
+
+⠏ |          0 | round12                                                        
+⠋ |          1 | round12                                                        
+⠇ |          9 | round12                                                        
+⠦ |         37 | round12                                                        
+⠏ |         40 | round12                                                        
+⠋ |         41 | round12                                                        
+✔ |         41 | round12 [3.3s]
+
+⠏ |          0 | round13                                                        
+⠹ |          3 | round13                                                        
+⠼ |          5 | round13                                                        
+✔ |          7 | round13
+
+⠏ |          0 | round14-deliverables                                           
+⠋ |          1 | round14-deliverables                                           
+⠙ |          2 | round14-deliverables                                           
+⠴ |          6 | round14-deliverables                                           
+⠧ |          8 | round14-deliverables                                           
+⠏ |         10 | round14-deliverables                                           
+⠙ |         12 | round14-deliverables                                           
+⠴ |         16 | round14-deliverables                                           
+⠸ |         24 | round14-deliverables                                           
+⠋ |         31 | round14-deliverables                                           
+⠹ |         33 | round14-deliverables                                           
+✔ |         43 | round14-deliverables [6.0s]
+
+⠏ |          0 | round14-round2                                                 
+⠋ |          1 | round14-round2                                                 
+⠙ |         12 | round14-round2                                                 
+⠴ |         16 | round14-round2                                                 
+✔ |         33 | round14-round2 [6.5s]
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 68.7 s
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 608 ]
+Assertions: 608; failed: 0; errors: 0; warnings: 0; skipped: 0 

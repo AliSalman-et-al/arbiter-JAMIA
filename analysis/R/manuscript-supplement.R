@@ -14,6 +14,7 @@ METHODS_APPENDIX <- c(
     'Thinking tokens are included in output. Side calls are total recorded model usage minus terminal usage.',
     'One-hour side-call cache writes are primary; five-minute writes are a sensitivity. Reconstruction bounds coincide.',
     'Routing was global, with no geography multiplier.',
+    'For each trial, equivalent US$ = (2 × input + 4 × 1-hour cache writes + 2.5 × 5-minute cache writes + 0.1 × cache reads + 10 × output tokens) / 1,000,000, summed over recorded model calls. Runs used a subscription; these equivalents are not subscription expenditure.',
     'Harness costs are unusable: unrecognised model and unknown cost basis; retained only as supplementary diagnostics.'),
   'Error localisation' = paste('Losses are consensus cells where a source label differs from preferred. A reference adjudicator is usable only',
     'when their independent judgement equals consensus preferred. Primary requires both; sensitivity at least one.',
@@ -43,6 +44,12 @@ METHODS_APPENDIX <- c(
     'Higgins JPT, Savović J, Page MJ, Sterne JAC, editors. Revised Cochrane risk-of-bias tool for randomized trials (RoB 2), 22 August 2019. https://www.riskofbias.info/welcome/rob-2-0-tool/current-version-of-rob-2.',
     'Salman A et al. ARBITER 1.0.0, public source release, commit 2f549ae. https://github.com/AliSalman-et-al/ARBITER/tree/2f549ae30f056ff441ea61a04b719968716f2219.',
     'Anthropic. Claude API pricing. Accessed 18 October 2026. https://platform.claude.com/docs/en/about-claude/pricing.'))
+
+METHODS_APPENDIX <- c(METHODS_APPENDIX,
+  'Published-label target matching' = paste('LABEL-TARGETS.csv links each published label to its review, source table, outcome, time point and contrast, with quoted binding evidence where stated and an explicit inference otherwise. The assessment prompt targets the labelled result rather than automatically the trial primary outcome, with the definition, printed result and locator from the trial report. Among the 102 included trials, 33 targets match an explicitly stated result, 11 match one of several covered outcomes, and 32 match an inferred result; 7 partly match, 9 differ and 10 have unknown binding. These categories are retained rather than treating all targets as exact matches. Twelve published label sets (60 domain labels) cover every outcome taken from a trial; another 10 label sets (50 domain labels) have no identified result, and seven more label sets (35 domain labels) jointly cover pain and disability; thus 29 sets (145 domain labels) do not isolate a single result (19 broad and 10 unknown). Binding was inferred rather than explicitly stated for 62 label sets, overlapping these categories. Source: benchmark README-FOR-ALI.md, LABEL-TARGETS.csv and per-review BINDING.md; label-target-summary.csv recomputes matching categories.'),
+  'Dates and training exposure' = paste('Trial reports span publication years 1996–2025; the 16 source reviews were published in 2025–2026. Years come from TRIAL-SUMMARY.csv and trial-label years where that field is blank; the benchmark README identifies the SANCTUARY report as 2025. Anthropic documents June 2026 as the training-data cut-off for claude-sonnet-5-5 (model documentation, https://platform.claude.com/docs/en/models/sonnet-5-5/overview, and provider help, https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data; checked 19 October 2026). Dates cannot establish whether a report was used in training.'),
+  'Adjudication process and primary endpoint' = paste('Two blinded adjudicators used no AI. Each rated the domain from the supplied documents and froze the independent rating before seeing any label. They then saw only the three labels, randomised in order for each cell, and chose the preferred label with a reason. They did not see model rationales or quotations. The primary endpoint is the share of adjudicated arm-disagreement cells where the adjudicators preferred ARBITER’s rating. Independent-rating paired differences added post hoc compare ARBITER and Unassisted agreement with the same frozen independent rating on all 154 disputed cells, using the shared stratified trial-cluster bootstrap.'),
+  'Limitations' = paste('Adjudication selected cells on disagreement, so preferred shares are subject to discrepant-analysis selection and do not estimate full-benchmark accuracy. Adjudicators chose only among the offered labels; cells where both arms matched Published were not audited. Labels alone may have revealed an arm, although this risk was low because rationales and quotations were hidden. Each arm ran once; workflow, prompt and runtime contributions cannot be separated. Reports or reviews may have appeared in training before the documented June 2026 cut-off. Whether quotations support the answers was not assessed. Overall was not adjudicated. Some label-target bindings were inferred, broad or mismatched.'))
 
 SUPPLEMENT_ABBREVIATIONS <- paste('CI, confidence interval; IQR, interquartile range; USD, US dollars;',
   'AC2, Gwet’s linearly weighted agreement coefficient; κ, Cohen’s kappa (linear weights unless explicitly unweighted); RoB 2, risk of bias tool for randomised trials; D1–D5, its five domains;',
@@ -109,13 +116,20 @@ supplement_registry <- function(inputs) {
     paste('Each D1–D5 cell gives Low / Some concerns / High counts; 102 trials. Source journals and years are in the preceding benchmark eTable.',TOPIC_ABBREVIATIONS))
   add('Time, cost and token use per trial by model',manuscript_data('table5') |>
     rename(ARBITER=`ARBITER-Sonnet`,Unassisted=`Baseline-Sonnet`) |> mutate(Model='Sonnet 5.5',.before=1),
-    paste('102 trials per arm; per-trial median [IQR] and paired mean ARBITER minus Unassisted difference (95% CI). USD denotes API list-price equivalent, not expenditure; thinking is included in output.',CI_NOTE))
+    paste('102 trials per arm; per-trial median [IQR] and paired mean ARBITER minus Unassisted difference (95% CI). US$ denotes API list-price equivalent; runs used a subscription. Thinking is included in output; eMethods give the reconstruction formula and rates.',CI_NOTE))
   # Redundant process-summary export is deliberately not a reader table.
   for(ref in c('meta','composite')) {
     x <- manuscript_data(paste0('agreement-',ref))
     if(ref=='composite') x <- filter(x,metric %in% c('kappa','AC2','accuracy'))
+    display <- agreement_display(x)
+    if(ref=='composite') {
+      components <- manuscript_data('composite-components') |>
+        transmute(arm,domain=paste0('Post hoc split: ',component),`Weighted κ`='—',AC2='—',
+          `Exact agreement`=fmt_fraction(count,n))
+      display <- bind_rows(display,components)
+    }
     add(if(ref=='meta') 'Agreement against Published, all sources and domains' else 'Agreement against the composite reference, Sonnet only',
-      agreement_display(x),if(ref=='meta') paste(AGREEMENT_NOTE,CI_NOTE) else paste('Linearly weighted κ and AC2; exact agreement is n/N (x.x%; 95% CI a–b). The composite uses the adjudicators’ agreed choice on cells where both adjudicators agreed and Published elsewhere; split cells are excluded. Adjudicators chose among three offered labels. Cells where both arms matched Published were never adjudicated and are assumed correct. Both features inflate absolute composite values.',CI_NOTE))
+      display,if(ref=='meta') paste(AGREEMENT_NOTE,CI_NOTE) else paste('Weighted κ, AC2 and exact agreement. The composite uses the agreed choice on 129 cells and Published on 356; 25 split cells are excluded. Adjudicators chose among three labels; unreviewed cells matching Published are assumed correct. Both inflate absolute values. Post hoc component rows give n/N (%) without new intervals.',CI_NOTE))
   }
   consistency <- manuscript_data('table3-supplement') |> mutate(status=coalesce(unname(MEASURE_LABELS[status]),status))
   consistency$value <- fmt_fraction(consistency$count,consistency$n)
@@ -159,13 +173,13 @@ supplement_registry <- function(inputs) {
   add('Per-meta-analysis weighted κ',supplement_estimates(forest,c('specialty','topic','arm')) |>
       pivot_wider(names_from=arm,values_from=`Estimate (95% CI)`) |> arrange(specialty!='General medicine',specialty,topic),
     paste(TOPIC_ABBREVIATIONS,'Weighted κ (95% CI). eFigure 1 displays the defined nondegenerate estimates. A coefficient with no variance, or a degenerate bootstrap interval, is shown as —.',CI_NOTE))
-  add('Post hoc severity-stratified win share',supplement_estimates(manuscript_data('severity-win-share'),c('direction','metric')),
-    paste('Post hoc Sonnet 5.5 analysis of consensus cells where the two arms disagreed, stratified by ARBITER severity relative to Unassisted. Fractions are label-based wins / cells in that severity stratum.',CI_NOTE))
-  add('Post hoc: adjudicators usually agreed with models when they disagreed with Published',manuscript_data('vindicated-disagreements') |>
+  add('Post hoc: preferred shares among adjudicated arm disagreements by strictness',supplement_estimates(manuscript_data('severity-win-share'),c('direction','metric')),
+    paste('Post hoc analysis among adjudicated arm disagreements where both adjudicators agreed, stratified by ARBITER severity relative to Unassisted. Fractions are cells where the named rating was preferred / cells in that stratum.',CI_NOTE))
+  add('Adjudicators usually agreed with models when they disagreed with Published',manuscript_data('vindicated-disagreements') |>
     select(source,direction,outcome,Count=n,consensus_n,all_n),
-    'Post hoc. Both sources use Sonnet 5.5. Post hoc Figure 4B uses disagreements where both adjudicators agreed as the denominator; split cells are displayed separately. Adjudicators agreed with it means their agreed choice equals the source label; Published upheld means their agreed choice equals the published review label; Other label means neither. Count is the outcome count; Agreed n excludes divided decisions and All n includes them.')
-  add('Per-adjudicator and split-cell win-share sensitivity',supplement_estimates(manuscript_data('primary-endpoint'),c('analysis','metric')),
-    paste('Fractions are label-based wins / cells where the two arms disagreed. Consensus is primary and includes only cells with the same choice from both adjudicators; each single-adjudicator analysis includes split cells. Split cells are forced ARBITER losses in the split sensitivity; Neither includes these forced losses.',CI_NOTE))
+    'Both sources use the same model. Figure 4B uses disagreements where both adjudicators agreed as the denominator; split cells are displayed separately. Adjudicators agreed with it means their agreed choice equals the source label; Published upheld means their agreed choice equals the published review label; Other label means neither. Count is the outcome count; Agreed n excludes divided decisions and All n includes them.')
+  add('Preferred shares among adjudicated arm disagreements: sensitivities',supplement_estimates(manuscript_data('primary-endpoint'),c('analysis','metric')),
+    paste('Fractions are adjudicated arm disagreements where the named rating was preferred / all adjudicated arm disagreements in that analysis. Consensus is primary and includes only cells with the same choice from both adjudicators; each single-adjudicator analysis includes split cells. Split cells are forced ARBITER losses in the split sensitivity; Neither includes these forced losses.',CI_NOTE))
   for(ref in c('meta','composite')) {
     x <- manuscript_data(paste0('agreement-',ref,'-differences'))
     if(ref=='composite') x <- filter(x,metric %in% c('kappa','AC2','accuracy'))
@@ -217,13 +231,19 @@ supplement_registry <- function(inputs) {
     paste('Post hoc. Unweighted Cohen’s κ and exact agreement against published review labels, by domain and Overall. κ here is unweighted; exact agreement uses labelled trials.',CI_NOTE))
   add('Published labels were usually less severe than the agreed choice',manuscript_data('published-direction-domain'),
     'Published review label relative to the adjudicators’ agreed choice, on the 129 ratings where both adjudicators agreed. Directions compare severity on Low < Some concerns < High. Selected disputed ratings cannot estimate full-benchmark accuracy.')
-  add('Post hoc: recomputing Unassisted ratings changes few arm disagreements',NULL,
-    paste('Post hoc. Replace violations only using the official algorithm applied to Unassisted answers; invalid paths stay as reported. Win shares retain the original arm disagreements; after recomputation, matching labels may credit both arms. Weighted κ uses linear weights; exact agreement is n/N (%).',CI_NOTE),
+  add('Post hoc: rules-only changes make three arm disagreements ties',NULL,
+    paste('Post hoc. Three of 62 adjudicated arm disagreements changed to ARBITER’s preferred rating; 59 were unchanged. Only violations are recomputed from Unassisted answers; invalid paths stay as reported. The original denominator is retained. Three new ties credit both arms, so preferred shares overlap. Weighted κ; exact agreement is n/N (%).',CI_NOTE),
     list(list(title='Changed ratings (post hoc)',data=manuscript_data('rules-only-recomputation-changed') |>
       mutate(slug=trial_display(slug)) |> select(slug,domain,original,recomputed)),
-      list(title='Win share on original arm disagreements (post hoc)',data=supplement_estimates(manuscript_data('rules-only-recomputation-win_share'),c('version','metric'))),
+      list(title='Preferred shares on original adjudicated arm disagreements (post hoc)',data=supplement_estimates(manuscript_data('rules-only-recomputation-win_share'),c('version','metric'))),
       list(title='Agreement with published labels (post hoc)',data=supplement_estimates(manuscript_data('rules-only-recomputation-agreement'),c('version','domain','metric'))),
       list(title='Agreement with the adjudicators’ agreed choice (post hoc)',data=supplement_estimates(manuscript_data('rules-only-recomputation-agreed_choice'),'version'))))
+  add('Post hoc: supplied documents and answers in question 5.1 losses',
+    manuscript_data('question51-mechanism') |>
+      transmute(Trial=if_else(slug=='banovic26-avatar-2024','Banovic 2024 (AVATAR)',inputs$trials$trial_label[match(slug,inputs$trials$slug)]),`Registry, protocol or SAP supplied`=if_else(registry_or_protocol_or_sap,'Yes','No'),
+        `Unassisted mentions these documents`=if_else(mentions_document,'Yes','No'),
+        `Unassisted answer`=answer,`Adjudicators’ answer`=reference_A),
+    'Post hoc description of 18 primary Unassisted losses where question 5.1 alone changed the rating. Supplied means a bundle-inventoried registry, protocol or SAP; relevance/timing are not implied. De Waal’s supplied registry is for another trial. Mentions include negated mentions in the Unassisted 5.1 justification. Both adjudicators agreed on each answer. Full justifications and inventories: question51-mechanism.csv. Y, yes; PY, probably yes; NI, no information.')
   # Keep each source's full agreement grid together, with no orphan Overall row.
   j <- which(vapply(entries,function(e) e$caption=='Agreement against Published, all sources and domains',logical(1)))
   wide <- entries[[j]]$data
@@ -238,14 +258,15 @@ supplement_registry <- function(inputs) {
   first <- c('Benchmark trials span sixteen meta-analyses','Published label distributions by domain','AVATAR complete trace',
     'Confusion matrices against Published','Per-meta-analysis weighted κ','Agreement against Published, all sources and domains',
     'Paired differences against Published','Post hoc: unweighted agreement with published labels is modest',
-    'Post hoc: adjudicators usually agreed with models when they disagreed with Published',
+    'Adjudicators usually agreed with models when they disagreed with Published',
     'Published labels were usually less severe than the agreed choice',
     'Agreement against the composite reference, Sonnet only','Paired differences against the composite reference',
     'Composite-reference sensitivity estimates by adjudicator','Composite-reference paired differences by adjudicator',
-    'Per-adjudicator and split-cell win-share sensitivity','Post hoc severity-stratified win share',
+    'Preferred shares among adjudicated arm disagreements: sensitivities','Post hoc: preferred shares among adjudicated arm disagreements by strictness',
     'Independent and selected ratings: full agreement including AC2','Localisation population eligibility',
-    'Error-localisation classes, both populations','Decisive-question frequencies, both populations','Unresolved independent answer',
-    'Post hoc: recomputing Unassisted ratings changes few arm disagreements',
+    'Error-localisation classes, both populations','Decisive-question frequencies, both populations',
+    'Post hoc: supplied documents and answers in question 5.1 losses','Unresolved independent answer',
+    'Post hoc: rules-only changes make three arm disagreements ties',
     'RoB 2 consistency and structural audit, all sources and domains','Invalid answer path sensitivity',
     'Quotation syntax in active justifications','Unassisted justification content','Time, cost and token use per trial by model',
     'API cost reconstruction: estimates and bounds','Token reconciliation and compaction diagnostics','Exploratory signalling-answer agreement')
@@ -279,6 +300,7 @@ supplement_table <- function(entry,data=entry$data) {
   if(entry$caption=='Benchmark trials span sixteen meta-analyses') widths <- c(1.46,1.15,1.92,.4,1.50,.54)
   else if(entry$caption=='Published label distributions by domain') widths <- c(1.15,2,.5,rep(.64,5))
   else if(startsWith(entry$caption,'Composite-reference')) widths <- c(.9,1.8,.55,1.05,1.05,1.5)
+  else if(entry$caption=='Agreement against the composite reference, Sonnet only') widths <- c(1.7,1.45,1.45,2.25)
   else if(entry$caption=='Agreement against Published, all sources and domains') widths <- c(.55,1.1,1.1,1.3,1.4,1.4)
   else if(entry$caption=='Time, cost and token use per trial by model') widths <- c(.9,2,1.25,1.25,1.45)
   else if(grepl('^Confusion',entry$caption)) widths <- c(2.05,rep(4.8/(ncol(x)-1),ncol(x)-1))
@@ -302,7 +324,9 @@ supplement_table <- function(entry,data=entry$data) {
     flextable::set_header_labels(values=setNames('Published D1–D5 labels\n(Low/SC/High)',names(x)[5])) |>
     flextable::hline(i=nrow(x)-1,border=officer::fp_border(width=.6),part='body') |>
     flextable::bold(i=nrow(x),j=1,part='body')
-  if(entry$caption=='Exploratory signalling-answer agreement' || grepl('^Post hoc: recomputing Unassisted',entry$caption))
+  if(entry$caption=='Agreement against the composite reference, Sonnet only')
+    ft <- flextable::padding(ft,padding.top=0,padding.bottom=0,part='all')
+  if(entry$caption=='Exploratory signalling-answer agreement' || grepl('^Post hoc: rules-only changes',entry$caption))
     ft <- flextable::padding(ft,padding.top=1,padding.bottom=1,part='all')
   if(entry$caption=='AVATAR complete trace') ft <- ft |>
     flextable::fontsize(size=8,part='all') |> flextable::padding(padding=2,part='all') |>
@@ -373,13 +397,14 @@ build_supplement <- function(inputs) {
       'Trial PDFs are not redistributed; source DOIs and FILES.csv hashes identify them.',
       'Bootstrap seed 20261018, 10,000 replicates; R/renv/Quarto versions are recorded in the project lockfile and session-info.txt.'))
   print(doc,target='output/manuscript/Supplement.docx')
-  checklist <- reporting_checklist() |> select(-source) |>
-    rename(Guideline=guideline,Item=item,Topic=topic,Page=page,Section=section,Notes=applicability_and_notes)
-  doc <- manuscript_doc() |> manuscript_par('TRIPOD-LLM and GRRAS checklist skeleton',style='heading 1') |>
-    manuscript_par('Abbreviated topic labels map to official item identifiers. Authors must assess applicability and complete Page, Section and Notes against the full checklists. This skeleton is not a claim of reporting compliance.') |>
+  checklist <- reporting_checklist() |> select(-source,-page) |>
+    rename(Guideline=guideline,Item=item,Topic=topic,Section=section,Notes=applicability_and_notes)
+  doc <- manuscript_doc() |> manuscript_par('TRIPOD-LLM and GRRAS reporting map',style='heading 1') |>
+    manuscript_par('Abbreviated topic labels map to official item identifiers. Locations identify the manuscript display or supplement section; author declarations and rater credentials marked for author completion remain open. Page numbers are left to final manuscript pagination.') |>
     flextable::body_add_flextable(house_table(checklist,paste('TRIPOD-LLM:',
       'https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf;',
-      'GRRAS: https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf')))
+      'GRRAS: https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf')) |>
+      flextable::width(j=1:5,width=c(.7,.4,1.05,2.75,1.95)))
   print(doc,target='output/manuscript/TRIPOD-LLM.docx')
   invisible(entries)
 }
