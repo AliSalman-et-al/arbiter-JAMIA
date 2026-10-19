@@ -90,3 +90,9 @@ Minor items for the next round:
 
 - In Table 4, "[ref: This study]" should read "This study (ARBITER)".
 - The Table 4 note cites a repository file. It should cite the eTable instead.
+
+## Author decisions, 2026-10-19
+
+- **Q44 (matched-outcome sensitivity analysis): skipped.** Methods disclose how labels were matched to results. Limitations state that some disagreements may reflect outcome mismatch rather than a different judgement.
+- **Q45: the source of 53/637 is unknown.** Remove the rejected-saves sentence from the Figure 1 legend. Remove it from any other place it appears.
+- **Q46: approved.** Figure 1: "Store an unchangeable copy of each source" becomes "Store a content-hashed copy of each source"; "supporting evidence" becomes "cited evidence". Figure 2: "direct support" becomes "direct quotation". Change only these strings, then re-render.
