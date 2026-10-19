@@ -1,10 +1,10 @@
-The benchmark covered 102 trials assessed in 4 arms, with 154 domain disagreements reviewed independently (Figure 3).
+The benchmark covered 102 trials assessed in four arms, with 154 domain disagreements reviewed independently (Figure 3).
 
 Both systems agreed poorly with published review labels (weighted κ 0.34 and 0.28); Published review labels were less severe than the adjudicators’ agreed choice in 78 of 129 cells (60.5%; Figure 4).
 
 When the two arms disagreed, both adjudicators chose ARBITER’s rating in 54 of 62 cells (87.1%; 95% CI 79.0–94.3; Figure 5).
 
-The question of whether the analysis plan was fixed in advance alone changed the rating in 18 of the unassisted model’s 47 eligible ratings not chosen by the adjudicators. Of these, 29 had at least one question that alone changed the rating, and 18 had none (Figure 6).
+Among the 47 eligible unassisted ratings the adjudicators did not choose, 29 hinged on at least one question that alone changed the rating; the analysis-plan question (5.1) did so in 18 (Figure 6).
 
 Sixteen meta-analyses across 15 specialties supplied 102 benchmark trials (Table 1).
 

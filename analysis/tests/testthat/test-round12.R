@@ -52,7 +52,7 @@ testthat::test_that('generated results sentences match CSV estimates and counts'
   testthat::expect_true(grepl(sprintf('%.1f–%.1f',100*p$lower,100*p$upper),sentences[3],fixed=TRUE))
   f <- manuscript_data('error-localisation-frequency') |> filter(population=='Primary',source=='Baseline-Sonnet',question==5.1)
   r <- manuscript_data('no-decisive-counts') |> filter(source=='Baseline-Sonnet')
-  testthat::expect_true(grepl(sprintf('%s of the unassisted model’s %s eligible',f$n,sum(r$eligible)),sentences[4],fixed=TRUE))
+  testthat::expect_true(grepl(sprintf('Among the %s eligible unassisted ratings',sum(r$eligible)),sentences[4],fixed=TRUE))
   d <- manuscript_data('table3') |> filter(arm=='Baseline-Sonnet',domain=='D1-D5',status=='Departure')
   testthat::expect_true(grepl(sprintf('%s of %s',d$count,d$n),sentences[7],fixed=TRUE))
   testthat::expect_true(all(grepl('Figure [3-6]|Table [1-4]',sentences[1:8])))

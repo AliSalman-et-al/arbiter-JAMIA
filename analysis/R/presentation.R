@@ -71,7 +71,7 @@ fmt_number <- function(x,digits=2L) {
   out
 }
 fmt_ci <- function(lower,upper,digits=2L,suppress_degenerate=FALSE) {
-  sep <- '\u2013'
+  sep <- ifelse(lower<0 | upper<0,' to ','\u2013')
   out <- paste0('(',fmt_number(lower,digits),sep,fmt_number(upper,digits),')')
   if(suppress_degenerate) out[is.finite(lower) & is.finite(upper) &
     fmt_number(lower,digits)==fmt_number(upper,digits)] <- ''

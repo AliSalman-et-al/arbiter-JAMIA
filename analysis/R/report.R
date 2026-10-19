@@ -13,7 +13,7 @@ number <- function(x) ifelse(is.finite(x),sprintf('%.3f',x),'—')
 percent <- function(x) ifelse(is.finite(x),sprintf('%.1f%%',100*x),'—')
 estimate_ci <- function(x) {
   if(!nrow(x)) return('—')
-  paste0(number(x$estimate),' (',number(x$lower),' to ',number(x$upper),')')
+  fmt_process_text(paste0(number(x$estimate),' (',number(x$lower),ifelse(x$lower<0 | x$upper<0,' to ','–'),number(x$upper),')'))
 }
 arm_order <- function(x) {
   if('arm' %in% names(x)) x <- x[order(match(x$arm,c('ARBITER-Sonnet','Baseline-Sonnet','All-Low',
@@ -35,11 +35,11 @@ format_estimates <- function(x) {
     has <- rate & !is.na(count) & !is.na(x$n)
     value[has] <- paste0(count[has],'/',x$n[has],' (',value[has],')')
   }
-  if(all(c('lower','upper') %in% names(x))) value <- paste0(value,' (',fmt(x$lower),' to ',fmt(x$upper),')')
+  if(all(c('lower','upper') %in% names(x))) value <- paste0(value,' (',fmt(x$lower),ifelse(x$lower<0 | x$upper<0,' to ','–'),fmt(x$upper),')')
   value[!is.finite(x$estimate)] <- if('note' %in% names(x)) ifelse(
     !is.na(x$note[!is.finite(x$estimate)]) & x$note[!is.finite(x$estimate)]=='Not available','Not available','—') else '—'
   if('status' %in% names(x)) value[is.na(x$estimate) & x$status %in% c('Evidence coverage','Bundle verification')] <- 'Not available'
-  value
+  fmt_process_text(value)
 }
 metric_table <- function(x,ids=c('arm','domain')) {
   x <- arm_order(x)

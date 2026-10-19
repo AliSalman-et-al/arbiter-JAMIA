@@ -1,0 +1,12 @@
+PASS Table 1: every number token identical, including title and note.
+PASS Table 2: every number token identical, including title and note.
+PASS Table 3: every number token identical, including title and note.
+PASS Table 4: every number token identical, including title and note.
+PASS Supplement: every number token identical; no ambiguous negative CI.
+PASS results: only approved four-arms spelling and CSV-derived Figure 6 sentence changes; 47/29/18 reconciled to distinct primary cells.
+PASS Figure 3: complete displayed number multiset identical.
+PASS Figure 4: complete displayed number multiset identical.
+PASS Figure 5: complete displayed number multiset identical.
+PASS Figure 6: complete displayed number multiset identical.
+PASS 145 tracked CSV/protected files unchanged (CSV line endings normalised).
+PASS all 1474 Round 13 frozen inputs/artwork files also unchanged.

@@ -3,7 +3,8 @@ Specialty
 Journal and year
 Topic
 Trials
-Published D1–D5 labels (Low/SC/High)
+Published D1⁠–⁠D5 labels
+(Low/SC/High)
 Overall given
 General medicine
 JAMA 2026

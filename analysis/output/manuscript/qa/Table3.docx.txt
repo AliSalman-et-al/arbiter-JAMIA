@@ -2,7 +2,7 @@ Table 3. Without ARBITER, 1 in 8 domain ratings broke the RoB 2 rules
 Measure
 Unassisted
 ARBITER
-Domain judgements (D1⁠–⁠D5)
+Domain ratings (D1⁠–⁠D5)
 Rating contradicts its own answers
 26/509 (5.1%; 3.3–6.9)
 0 by design
@@ -27,7 +27,7 @@ D4 rule breaks
 D5 rule breaks
 13/102 (12.7%; 6.9–18.6)
 0 by design
-Overall judgement
+Overall rating
 Overall rating follows the RoB 2 rules (incl. permitted escalation)
 102/102 (100.0%)
 102/102 (100.0%)

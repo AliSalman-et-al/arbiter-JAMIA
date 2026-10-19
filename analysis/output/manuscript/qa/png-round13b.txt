@@ -1,0 +1,18 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed
+2: Setting LC_CTYPE=C.UTF-8 failed
+3: Setting LC_MONETARY=C.UTF-8 failed
+4: Setting LC_TIME=C.UTF-8 failed
+Converting page 1 to output/manuscript/qa/round13b-Table1-1.png... done!
+Converting page 1 to output/manuscript/qa/round13b-Table2-1.png... done!
+Converting page 1 to output/manuscript/qa/round13b-Table3-1.png... done!
+Converting page 1 to output/manuscript/qa/round13b-Table4-1.png... done!
+Warning messages:
+1: In sprintf(filenames, pages, format) :
+  2 arguments not used by format 'output/manuscript/qa/round13b-Table1-1.png'
+2: In sprintf(filenames, pages, format) :
+  2 arguments not used by format 'output/manuscript/qa/round13b-Table2-1.png'
+3: In sprintf(filenames, pages, format) :
+  2 arguments not used by format 'output/manuscript/qa/round13b-Table3-1.png'
+4: In sprintf(filenames, pages, format) :
+  2 arguments not used by format 'output/manuscript/qa/round13b-Table4-1.png'

@@ -10,22 +10,40 @@ export_manuscript_figure <- function(plot,name,height_mm,width_mm=174) {
   invisible(plot)
 }
 study_flow_nodes <- function() {
-  tibble(x=c(-1.1,-1.1,3.45,-1.1,-1.1,-1.1,-2.75,.55,-2.75,.55),
+  tibble(x=c(-1.1,-1.1,3.45,-1.1,-1.1,-1.1,-3.25,1.05,-3.25,1.05),
     y=c(8.8,7.6,8.2,6.2,4.8,3.6,2.4,2.4,1,1),
-    w=c(5.1,5.1,3.7,5.1,5.1,5.1,3,3,3,3),h=c(.7,.7,1.1,1.1,.85,.85,.8,.7,1.2,1.2),
+    w=c(5.1,5.1,3.7,5.1,5.1,5.1,4,4,4,4),h=c(.7,.7,1.1,1.1,.85,.85,.8,.8,1.2,1.2),
     label=c('16 meta-analyses; 105 benchmark trials','102 trials included',
       '3 excluded: unsupported design\nAtwine 2020; Haney 2004;\nHerrmann 2016',
-      '4 arms each assessed 102 trials:\nSonnet 5.5 (main); Haiku 5.5 (supplement)\nARBITER                 Unassisted',
+      '4 arms each assessed 102 trials:\nSonnet 5.5 (main); Haiku 5.5 (supplement)\n ',
       '510 domain ratings per arm (D1–D5)\n81 published Overall ratings','154 domain ratings\nreviewed by adjudicators',
-      '129 both adjudicators\nagreed','25 adjudicators split',
+      '129 both adjudicators agreed','25 adjudicators split',
       '62 where the two\narms disagreed',
       '18 where the two\narms disagreed'))
 }
+arm_chip_key <- function() {
+  gp <- grid::gpar(fontfamily='Fira Sans Condensed',fontface='bold',fontsize=2.8*72.27/25.4)
+  labels <- lapply(c('ARBITER','Unassisted'),grid::textGrob,gp=gp,just='left')
+  chip <- grid::unit(1.6,'mm'); gap <- grid::unit(.5,'mm')
+  widths <- lapply(labels,grid::grobWidth)
+  total <- 4*chip+4*gap+widths[[1]]+widths[[2]]+grid::unit(4,'mm')
+  start <- grid::unit(.5,'npc')-total/2
+  second <- start+2*chip+2*gap+widths[[1]]+grid::unit(4,'mm')
+  children <- list()
+  for(i in 1:2) {
+    x <- if(i==1) start else second
+    for(j in 1:2) children <- c(children,list(grid::rectGrob(
+      x=x+(j-1)*(chip+gap),y=.5,width=chip,height=chip,just=c('left','centre'),
+      gp=grid::gpar(fill=JAMA_ROLES[c('ARBITER','ARBITER (Haiku 5.5)','Unassisted','Unassisted (Haiku 5.5)')][2*(i-1)+j],col=NA))))
+    children <- c(children,list(grid::editGrob(labels[[i]],x=x+2*chip+2*gap,y=grid::unit(.5,'npc'))))
+  }
+  do.call(grid::grobTree,children)
+}
 study_flow_plot <- function() {
   nodes <- study_flow_nodes()
-  edges <- tibble(x=c(rep(-1.1,6),-2.75,.55,-1.1),
-    xend=c(rep(-1.1,4),-2.75,.55,-2.75,.55,1.53),
-    y=c(8.45,7.25,5.65,4.375,3.15,3.15,1.95,2.0,8.2),
+  edges <- tibble(x=c(rep(-1.1,6),-3.25,1.05,-1.1),
+    xend=c(rep(-1.1,4),-3.25,1.05,-3.25,1.05,1.53),
+    y=c(8.45,7.25,5.65,4.375,3.15,3.15,1.95,1.95,8.2),
     yend=c(8.02,6.82,5.295,4.095,2.89,2.89,1.67,1.67,8.2))
   ggplot2::ggplot(nodes,ggplot2::aes(x,y))+
     ggplot2::geom_segment(data=edges,ggplot2::aes(x=x,xend=xend,y=y,yend=yend),
@@ -36,8 +54,7 @@ study_flow_plot <- function() {
         gp=grid::gpar(fill='#F5F5F3',col='black',lwd=1.6,lty=if(i==3) 'dashed' else 'solid')),
         xmin=n$x-n$w/2,xmax=n$x+n$w/2,ymin=n$y-n$h/2,ymax=n$y+n$h/2)
     })+
-    ggplot2::annotate('rect',xmin=c(-2.79,-2.63,-1.28,-1.12),xmax=c(-2.66,-2.50,-1.15,-.99),ymin=5.88,ymax=6.02,
-      fill=c('#00A1D5','#80D0EA','#DF8F44','#EFC7A2'),color=NA)+
+    ggplot2::annotation_custom(arm_chip_key(),xmin=-3.65,xmax=1.45,ymin=5.86,ymax=6.04)+
     ggplot2::geom_text(ggplot2::aes(label=label),family='Fira Sans Condensed',fontface='bold',size=2.8,lineheight=1.05)+
     ggplot2::coord_cartesian(xlim=c(-5.6,5.6),ylim=c(.25,9.25),expand=FALSE,clip='off')+
     ggplot2::theme_void(base_family='Fira Sans Condensed')+
@@ -75,7 +92,7 @@ published_reference_plot <- function() {
     ggplot2::geom_errorbar(ggplot2::aes(ymin=lower,ymax=upper),position=ggplot2::position_dodge(width=.45),width=.13)+
     ggplot2::geom_point(position=ggplot2::position_dodge(width=.45),size=2)+
     ggplot2::scale_color_manual(values=JAMA_ROLES)+ggplot2::scale_shape_manual(values=c(16,17))+
-    ggplot2::labs(x=NULL,y='Weighted \u03ba vs Published (95% CI)',color=NULL,shape=NULL)+theme_manuscript()
+    ggplot2::labs(x=NULL,y='Weighted \u03ba with published label (95% CI)',color=NULL,shape=NULL)+theme_manuscript()
   direction <- manuscript_data('published-direction-domain') |> mutate(
     domain=factor(domain,levels=rev(c(paste0('D',1:5),'All'))),
     direction=factor(direction,levels=c('Less severe','Equal','More severe')))
@@ -176,17 +193,17 @@ adjudication_plot <- function(cells) {
     ggplot2::geom_col(position=ggplot2::position_stack(reverse=TRUE),width=.6)+
     ggplot2::geom_text(ggplot2::aes(label=case_when(n/consensus_n>=.32 ~ paste0(n,'\n',if_else(outcome=='Vindicated',paste('agreed with',source),as.character(outcome))),n>=3 ~ as.character(n),TRUE ~ ''),color=outcome=='Published upheld'),
       position=ggplot2::position_stack(vjust=.5,reverse=TRUE),size=2.7,family='Fira Sans',show.legend=FALSE)+
-    ggplot2::geom_text(data=totals,ggplot2::aes(x=1.04,label=paste0(n,' of ',consensus_n,' · split on ',split)),
+    ggplot2::geom_text(data=totals,ggplot2::aes(x=1.04,label=paste0(n,' of ',consensus_n,' · adjudicators split on ',split)),
       hjust=0,color='black',size=2.6,family='Fira Sans',inherit.aes=TRUE,show.legend=FALSE)+
     ggplot2::scale_color_manual(values=c('TRUE'='white','FALSE'='black'),guide='none')+
     ggplot2::scale_fill_manual(values=c(ARBITER=JAMA_ROLES[['ARBITER']],Unassisted=JAMA_ROLES[['Unassisted']],
       'Published upheld'=JAMA_ROLES[['Published']],'Other label'='#D9D9D9'),
-      breaks=c('ARBITER','Unassisted','Published upheld','Other label'),
-      labels=c('Adjudicators agreed with it: ARBITER','Adjudicators agreed with it: Unassisted','Published upheld','Other label'))+
+      breaks='Other label',
+      labels='Other label: neither the source nor the published label was chosen')+
     ggplot2::scale_x_continuous(breaks=seq(0,1,.25),labels=scales::label_percent())+
     ggplot2::coord_cartesian(xlim=c(0,1.7),clip='off')+
-    ggplot2::labs(x='Disagreements with the published label (adjudicators agreed; splits excluded)',y=NULL,fill=NULL,caption='Other label: neither the source nor the published label was chosen')+theme_manuscript()+
-    ggplot2::theme(legend.text=ggplot2::element_text(size=7.5),legend.position='none',plot.caption=ggplot2::element_text(hjust=0,size=7),panel.grid.major.x=ggplot2::element_blank())+
-    ggplot2::guides(fill=ggplot2::guide_legend(nrow=2,byrow=TRUE))
+    ggplot2::labs(x='Disagreements with the published label (adjudicators agreed; splits excluded)',y=NULL,fill=NULL)+theme_manuscript()+
+    ggplot2::theme(legend.text=ggplot2::element_text(size=7),legend.position='bottom',legend.justification='left',legend.key.size=grid::unit(2.5,'mm'),panel.grid.major.x=ggplot2::element_blank())+
+    ggplot2::guides(fill=ggplot2::guide_legend(nrow=1,byrow=TRUE))
   patchwork::wrap_plots(pA,pB,ncol=1,heights=c(1,1.1))+patchwork::plot_annotation(tag_levels='A')
 }

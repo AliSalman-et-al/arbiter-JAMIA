@@ -11,7 +11,7 @@ Ratings chosen after seeing labels
 129/154 (83.8%; 78.6–88.9)
 Adjudicator 1 own rating compared with …
 Published
-−0.08 (−0.17–0.01)
+−0.08 (−0.17 to 0.01)
 34/154 (22.1%; 15.8–28.5)
 ARBITER
 0.52 (0.41–0.62)
@@ -21,7 +21,7 @@ Unassisted
 69/154 (44.8%; 38.1–51.6)
 Adjudicator 2 own rating compared with …
 Published
-−0.08 (−0.18–0.03)
+−0.08 (−0.18 to 0.03)
 42/154 (27.3%; 20.4–34.3)
 ARBITER
 0.67 (0.56–0.76)

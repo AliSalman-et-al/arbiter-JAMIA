@@ -1,0 +1,143 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed
+2: Setting LC_CTYPE=C.UTF-8 failed
+3: Setting LC_MONETARY=C.UTF-8 failed
+4: Setting LC_TIME=C.UTF-8 failed
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+v | F W  S  OK | Context
+
+/ |          0 | algorithms
+\ |          6 | algorithms
+\ |         26 | algorithms
+| |         27 | algorithms
+- |         29 | algorithms
+v |         29 | algorithms
+
+/ |          0 | api-cost
+v |          7 | api-cost
+
+/ |          0 | binding
+- |          9 | binding
+| |         23 | binding
+\ |         38 | binding
+v |         50 | binding
+
+/ |          0 | bundle-reverification
+\ |         18 | bundle-reverification
+v |         20 | bundle-reverification
+
+/ |          0 | error-localisation
+| |          3 | error-localisation
+- |         13 | error-localisation
+\ |         34 | error-localisation
+\ |         42 | error-localisation
+| |         43 | error-localisation
+v |         52 | error-localisation [2.5s]
+
+/ |          0 | estimands
+- |          9 | estimands
+- |         21 | estimands
+/ |         24 | estimands
+\ |         26 | estimands
+| |         27 | estimands
+v |         27 | estimands
+
+/ |          0 | inputs
+- |         17 | inputs
+v |         23 | inputs
+
+/ |          0 | invalid-paths
+\ |         14 | invalid-paths
+v |         17 | invalid-paths
+
+/ |          0 | materials
+/ |          4 | materials
+v |         12 | materials
+
+/ |          0 | presentation
+- |         17 | presentation
+- |         29 | presentation
+✔ |         33 | presentation
+
+/ |          0 | process
+| |          3 | process
+/ |          8 | process
+\ |         14 | process
+✔ |         15 | process [3.1s]
+
+/ |          0 | round11
+- |         13 | round11
+\ |         34 | round11
+/ |         40 | round11
+| |         55 | round11
+/ |         80 | round11
+/ |        104 | round11
+\ |        118 | round11
+/ |        124 | round11
+| |        139 | round11
+\ |        142 | round11
+/ |        144 | round11
+- |        145 | round11
+| |        147 | round11
+\ |        150 | round11
+\ |        154 | round11
+- |        169 | round11
+/ |        172 | round11
+\ |        198 | round11
+- |        201 | round11
+\ |        214 | round11
+| |        223 | round11
+- |        229 | round11
+\ |        230 | round11
+| |        231 | round11
+/ |        232 | round11
+- |        233 | round11
+\ |        234 | round11
+/ |        236 | round11
+✔ |        237 | round11 [23.4s]
+
+/ |          0 | round12
+- |          1 | round12
+- |         13 | round12
+\ |         14 | round12
+- |         17 | round12
+| |         19 | round12
+- |         21 | round12
+/ |         24 | round12
+\ |         30 | round12
+- |         33 | round12
+| |         43 | round12
+- |         45 | round12
+| |         47 | round12
+- |         49 | round12
+| |         55 | round12
+/ |         56 | round12
+- |         57 | round12
+\ |         70 | round12
+✔ |         84 | round12 [10.8s]
+
+/ |          0 | round13
+/ |          4 | round13
+/ |          8 | round13
+/ |         12 | round13
+- |         17 | round13
+\ |         18 | round13
+| |         19 | round13
+/ |         20 | round13
+✔ |         20 | round13 [2.5s]
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 45.8 s
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 626 ]
+Assertions: 626; failed: 0; errors: 0; warnings: 0; skipped: 0

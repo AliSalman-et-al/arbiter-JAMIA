@@ -11,12 +11,13 @@ results_sentences <- function() {
   flow <- manuscript_data('adjudication-analysis-cells')
   trials <- load_inputs()$trials
   process <- manuscript_data('table5')
+  number_words <- function(n) c('one','two','three','four','five','six','seven','eight','nine')[n]
   pct <- function(x) fmt_number(100*x,1)
   c(
-    sprintf('The benchmark covered %s trials assessed in %s arms, with %s domain disagreements reviewed independently (Figure 3).',nrow(trials),length(unique(manuscript_data('agreement-meta')$arm[manuscript_data('agreement-meta')$arm!='All-Low'])),nrow(flow)),
+    sprintf('The benchmark covered %s trials assessed in %s arms, with %s domain disagreements reviewed independently (Figure 3).',nrow(trials),number_words(length(unique(manuscript_data('agreement-meta')$arm[manuscript_data('agreement-meta')$arm!='All-Low']))),nrow(flow)),
     sprintf('Both systems agreed poorly with published review labels (weighted κ %s and %s); Published review labels were less severe than the adjudicators’ agreed choice in %s of %s cells (%s%%; Figure 4).',fmt_number(a$estimate[1]),fmt_number(a$estimate[2]),d$n,d$total,pct(d$n/d$total)),
     sprintf('When the two arms disagreed, both adjudicators chose ARBITER’s rating in %s of %s cells (%s%%; 95%% CI %s–%s; Figure 5).',p$count,p$n,pct(p$estimate),pct(p$lower),pct(p$upper)),
-    sprintf('The question of whether the analysis plan was fixed in advance alone changed the rating in %s of the unassisted model’s %s eligible ratings not chosen by the adjudicators. Of these, %s had at least one question that alone changed the rating, and %s had none (Figure 6).',f$n,sum(r$eligible),sum(r$with_decisive),sum(r$n)),
+    sprintf('Among the %s eligible unassisted ratings the adjudicators did not choose, %s hinged on at least one question that alone changed the rating; the analysis-plan question (%s) did so in %s (Figure 6).',sum(r$eligible),sum(r$with_decisive),format(f$question,nsmall=1),f$n),
     sprintf('Sixteen meta-analyses across %s specialties supplied %s benchmark trials (Table 1).',length(unique(readr::read_csv('data-curated/meta-analyses.csv',show_col_types=FALSE)$specialty)),nrow(trials)),
     sprintf('ARBITER detected %s%% of domain ratings the published reviews labelled Some concerns or High, compared with %s%% for Unassisted (Table 2).',pct(s$estimate[1]),pct(s$estimate[2])),
     sprintf('Without ARBITER, %s of %s evaluable domain ratings broke the RoB 2 rules (%s%%; 95%% CI %s–%s; Table 3).',dep$count,dep$n,pct(dep$estimate),pct(dep$lower),pct(dep$upper)),

@@ -14,7 +14,7 @@ Alt text: AVATAR's five risk-of-bias domains connect source excerpts to the AI m
 
 ## Figure 3. 102 trials, four assessment arms and 154 adjudicated disagreements
 
-Four assessment arms supplied the benchmark. The flow follows trial inclusion, domain and Overall ratings, and selection for blinded adjudication. A cell is one trial × domain. Ratings were reviewed when at least one Sonnet arm differed from the published review label. The branches show whether both adjudicators agreed or their choices differed, then identify cells where the two arms disagreed. Haiku analyses are supplementary.
+Four assessment arms supplied the benchmark. The flow follows trial inclusion, domain and Overall ratings, and selection for blinded adjudication. A cell is one trial × domain. Ratings were reviewed when at least one Sonnet arm differed from the published review label. The branches show whether both adjudicators agreed or their choices differed, then identify cells where the two arms disagreed. Dark arm chips indicate Sonnet 5.5; light chips indicate Haiku 5.5. Haiku analyses are supplementary.
 
 Alt text: Trial inclusion flows into four assessment arms and adjudication. Separate branches show both adjudicators agreeing or choosing different labels, then identify cells where the Sonnet arms disagreed.
 

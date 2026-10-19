@@ -1,8 +1,8 @@
 source(file.path(analysis_dir,'R','presentation.R'))
 testthat::test_that('display punctuation follows the manuscript standard', {
   testthat::expect_identical(fmt_ci(.26,.42),'(0.26\u20130.42)')
-  testthat::expect_identical(fmt_ci(-.03,.14),'(\u22120.03\u20130.14)')
-  testthat::expect_identical(fmt_ci(-.4,-.1),'(\u22120.40\u2013\u22120.10)')
+  testthat::expect_identical(fmt_ci(-.03,.14),'(\u22120.03 to 0.14)')
+  testthat::expect_identical(fmt_ci(-.4,-.1),'(\u22120.40 to \u22120.10)')
   testthat::expect_identical(fmt_number(-.001),'0.00')
   testthat::expect_identical(fmt_fraction(54,62),'54/62 (87.1%)')
   testthat::expect_identical(fmt_fraction(0,0),'\u2014')

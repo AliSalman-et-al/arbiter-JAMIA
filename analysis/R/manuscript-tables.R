@@ -1,6 +1,6 @@
 MAIN_TABLE_TITLES <- c(
   'Sixteen meta-analyses across 15 specialties supplied the benchmark',
-  'ARBITER detected more flagged risk, with lower specificity',
+  'ARBITER detected more of the risk flagged by published reviews, at lower specificity',
   'Without ARBITER, 1 in 8 domain ratings broke the RoB 2 rules',
   'Before seeing any label, both adjudicators’ own ratings agreed with ARBITER far more than with the unassisted model or the published review')
 manuscript_data <- function(name) readr::read_csv(paste0('output/tables/',name,'.csv'),show_col_types=FALSE)
@@ -94,8 +94,8 @@ main_table3 <- function() {
     names(out)[names(out)=='value'] <- reader_label(a)
   }
   out <- out |> mutate(Unassisted=if_else(domain=='Audit'|is.na(Unassisted),'Not available',Unassisted))
-  bind_rows(group_row(filter(out,domain %in% c('D1-D5',paste0('D',1:5))) |> select(Measure,Unassisted,ARBITER),'Domain judgements (D1–D5)'),
-    group_row(filter(out,domain=='Overall') |> select(Measure,Unassisted,ARBITER),'Overall judgement'),
+  bind_rows(group_row(filter(out,domain %in% c('D1-D5',paste0('D',1:5))) |> select(Measure,Unassisted,ARBITER),'Domain ratings (D1–D5)'),
+    group_row(filter(out,domain=='Overall') |> select(Measure,Unassisted,ARBITER),'Overall rating'),
     group_row(filter(out,domain=='Audit') |> select(Measure,Unassisted,ARBITER),'Evidence and audit'))
 }
 
@@ -145,7 +145,7 @@ build_main_tables <- function(inputs) {
   invisible(tables)
 }
 main_table_widths <- function(i) {
-  list(c(1.46,1.15,2.5,.40,.92,.54),c(1.35,1.35,1.35,1.35,1.45),
+  list(c(1.46,1.15,1.92,.40,1.50,.54),c(1.35,1.35,1.35,1.35,1.45),
     c(2.95,2.2,1.7),c(3.1,1.65,2.1))[[i]]
 }
 # Word joiners preserve the en dash while prohibiting a line break on either side.
@@ -159,7 +159,13 @@ main_table_flextable <- function(x,i,note=main_table_notes()[[i]]) {
   ft <- house_table(x,note) |> flextable::width(j=seq_len(ncol(x)),width=main_table_widths(i))
   ft <- flextable::padding(ft,padding.left=main_table_padding(i),
     padding.right=main_table_padding(i),part='all')
-  if(i==1) ft <- flextable::padding(ft,padding.top=2,padding.bottom=2,part='all')
+  if(i==1) {
+    ft <- flextable::padding(ft,padding.top=2,padding.bottom=2,part='all') |>
+      flextable::set_header_labels(values=setNames(
+        'Published\u00a0D1\u2060–\u2060D5\u00a0labels\n(Low/SC/High)',names(x)[5])) |>
+      flextable::hline(i=nrow(x)-1,border=officer::fp_border(width=.6),part='body') |>
+      flextable::bold(i=nrow(x),j=1,part='body')
+  }
   if(i>1) ft <- style_group_rows(ft,x)
   ft
 }

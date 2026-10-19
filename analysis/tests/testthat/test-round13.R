@@ -12,3 +12,23 @@ testthat::test_that('round 13 reader displays retain the approved counts', {
   testthat::expect_false(any(grepl('^[0-9]',results_sentences())))
   testthat::expect_false(any(grepl('%) (',unlist(main_table4()),fixed=TRUE)))
 })
+
+testthat::test_that('round 13b intervals and reader labels retain their meaning', {
+  old <- getwd(); setwd(analysis_dir); on.exit(setwd(old))
+  testthat::expect_identical(fmt_ci(c(-.17,-32.7,.1),c(.01,-9.8,.2),1),
+    c('(−0.2 to 0.0)','(−32.7 to −9.8)','(0.1–0.2)'))
+  testthat::expect_identical(MAIN_TABLE_TITLES[2],
+    'ARBITER detected more of the risk flagged by published reviews, at lower specificity')
+  testthat::expect_true(all(c('Domain ratings (D1–D5)','Overall rating') %in% main_table3()$Measure))
+  nodes <- study_flow_nodes()
+  testthat::expect_equal(nodes$w[7:10],rep(nodes$w[7],4))
+  testthat::expect_equal(nodes$h[7],nodes$h[8])
+  testthat::expect_equal(mean(nodes$x[7:8]),nodes$x[6])
+  testthat::expect_false(any(grepl('\n',nodes$label[7:8],fixed=TRUE)))
+  r <- manuscript_data('no-decisive-counts') |> filter(source=='Baseline-Sonnet')
+  f <- manuscript_data('error-localisation-frequency') |> filter(population=='Primary',source=='Baseline-Sonnet',question==5.1)
+  testthat::expect_true(grepl(sprintf('Among the %s eligible unassisted ratings',sum(r$eligible)),results_sentences()[4],fixed=TRUE))
+  testthat::expect_true(grepl(sprintf('%s hinged on at least one question',sum(r$with_decisive)),results_sentences()[4],fixed=TRUE))
+  testthat::expect_true(grepl(sprintf('question (%s) did so in %s',f$question,f$n),results_sentences()[4],fixed=TRUE))
+  testthat::expect_true(grepl('assessed in four arms',results_sentences()[1],fixed=TRUE))
+})
