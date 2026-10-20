@@ -28,3 +28,4 @@ no-kit-*/
 
 # Run logs: ~1.1 GB stream-json with trial text; kept local, summarised by the analysis
 */logs/
+*.ini
