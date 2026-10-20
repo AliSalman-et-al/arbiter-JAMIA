@@ -1,0 +1,1 @@
+PASS captured five rendered HTML sections after document/image load, with instantaneous anchor scrolling.

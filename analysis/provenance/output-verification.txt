@@ -10,9 +10,9 @@ PASS Overall differences classified: 21 absent Published labels, seven permitted
 Derived Overall validation: 29 differences across 612 columns/trial checks; all expert independent, chosen and revised ratings match.
 PASS 17 unchanged CSVs: empty git diff against HEAD; prior-work data identical except the authorised reference description.
 PASS Figures 1 and 2: all eight PNG/PDF/SVG/TIFF files byte-identical to HEAD.
-PASS 46037 source-cell trace records resolve to final CSV values.
+PASS 67148 source-cell trace records resolve to final CSV values.
 PASS results sentences and figure legends exactly regenerate from final CSVs and the protected supplied legends.
-PASS compact Table 2 regenerates exactly: four references × two cohorts plus expert-to-expert foot row; Overall uses the observed Published subset.
+PASS compact Table 1 regenerates exactly: four references × two cohorts plus expert-to-expert foot row; Overall uses the observed Published subset.
 PASS independent answer-code recomputation of every within/cross-direction count; mean-of-experts cells omit counts; Figure 6 is collapsed only with no title.
 PASS Figure 6 retains only question/expert rows with at least 20 paired answers; eFigure 3 retains every sparse and zero-answer row.
 PASS current display builders reproduce every supplemental display CSV and its Word footnote exactly.

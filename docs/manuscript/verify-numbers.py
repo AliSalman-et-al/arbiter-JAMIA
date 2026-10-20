@@ -101,16 +101,16 @@ def metadata_spans(text):
     patterns = {
         "URL": r"https?://[^\s)]+",
         "reference callout": r"\[[\d,–-]+\]",
-        "display cross-reference": r"\b(?:Figure|Table|eTables?|eFigure)\s+\d+(?:[AB]|[–-]\d+)?",
+        "display cross-reference": r"\b(?:Figures?|Tables?|eTables?|eFigures?)\s+\d+(?:[AB]|[–-]\d+)?(?:,\d+(?:[–-]\d+)?)*",
         "instrument identifier": r"\bRoB 2\b",
-        "question identifier": r"\b(?:question|Question)\s*\(?5\.1\)?|\(5\.1\)",
+        "domain identifier": r"\bD[1-5](?:[–-]D[1-5])?\b",
         "adjudicator identifier": r"\bAdjudicator [12]\b",
         "interval convention": r"\b95%",
         "model identifier": r"`claude-sonnet-5-5`",
         "harness version (run README)": r"Claude Code 2\.1\.278",
         "software version (analysis plan)": r"ARBITER 1\.0\.0",
         "software commit (analysis plan)": r"2f549ae(?:30f056ff441ea61a04b719968716f2219)?",
-        "date (run README or editorial search/access date)": r"\b(?:12|14|19) October 2026\b",
+        "date (run README or editorial search/access date)": r"\b(?:12|14|19|21) October 2026\b",
         "literature shorthand year (bibliography)": r"(?:Hartling 2019|Zhang 2024)",
     }
     for label, pattern in patterns.items():
@@ -130,67 +130,90 @@ def rows(filename):
 
 
 def headline_checks(text):
-    """Check source-row identity as well as occurrence of key manuscript claims."""
+    """Tie headline claims to identified source rows, not just token occurrence."""
     failures = []
 
     def check(condition, description):
         if not condition:
             failures.append(description)
 
-    primary = {r["metric"]: r for r in rows("primary-endpoint.csv") if r["analysis"] == "Consensus"}
-    check([(r, primary[r]["count"], primary[r]["n"]) for r in ("ARBITER", "Unassisted", "Neither")]
-          == [("ARBITER", "54", "62"), ("Unassisted", "7", "62"), ("Neither", "1", "62")],
-          "Primary source counts changed")
-    check("54/62" in text and "7/62" in text and "1/62" in text, "Primary counts missing")
-    check(round(float(primary["ARBITER"]["estimate"]) * 100, 1) == 87.1
-          and round(float(primary["ARBITER"]["lower"]) * 100, 1) == 79.0
-          and round(float(primary["ARBITER"]["upper"]) * 100, 1) == 94.3, "Primary interval changed")
-    directions = {(r["source"], r["direction"]): (r["n"], r["consensus_n"])
-                  for r in rows("vindicated-disagreements.csv")
-                  if r["outcome"] == "Adjudicators agreed with it"}
-    check(directions == {("ARBITER", "More severe"): ("73", "77"),
-                         ("ARBITER", "Less severe"): ("22", "28"),
-                         ("Unassisted", "More severe"): ("48", "59"),
-                         ("Unassisted", "Less severe"): ("19", "38")}, "Direction source counts changed")
-    agreement = {(r["arm"].split(" (")[0], r["metric"]): r for r in rows("table1.csv")
-                 if r["domain"] == "D1-D5"}
-    check(agreement[("ARBITER", "accuracy")]["count"] == "386"
-          and agreement[("Unassisted", "accuracy")]["count"] == "395", "Published agreement changed")
-    audit = {(r["arm"].split(" (")[0], r["status"]): r for r in rows("table3.csv")
-             if r["domain"] == "D1-D5"}
-    check(audit[("Unassisted", "Any rule break")]["count"] == "65"
-          and audit[("Unassisted", "Any rule break")]["n"] == "509"
-          and audit[("ARBITER", "Recorded override")]["count"] == "0", "Rule audit changed")
-    credit = {(r["metric"], r["version"]): r["count"]
-              for r in rows("rules-only-recomputation-win_share.csv")}
-    check(credit[("Unassisted", "Reported")] == "7"
-          and credit[("Unassisted", "Recomputed")] == "10"
-          and credit[("ARBITER", "Recomputed")] == "54", "Recomputed label credit changed")
-    changed = [r for r in rows("rules-only-recomputation-changed.csv")
-               if r["consensus"] == "TRUE" and r["discordant"] == "TRUE"]
-    check(len(changed) == 3 and all(r["recomputed"] == r["preferred"] for r in changed),
-          "Rules-only changed arm-disagreement cells changed")
-    plan_losses = rows("question51-mechanism.csv")
-    check(len(plan_losses) == 18
-          and sum(r["registry_or_protocol_or_sap"] == "TRUE" for r in plan_losses) == 13
-          and all(r["mentions_document"] == "FALSE" for r in plan_losses),
-          "Question 5.1 loss/document counts changed")
-    check("created ties" in text, "Recomputation tie qualification missing")
-    check("## Results" in text and "composite" not in sections(text)["Results"].lower(),
-          "Composite reference must stay outside Results")
+    def selected(filename, **keys):
+        found = [r for r in rows(filename) if all(r.get(k) == v for k, v in keys.items())]
+        if len(found) != 1:
+            failures.append(f"Expected one row in {filename}: {keys}; found {len(found)}")
+            return {}
+        return found[0]
+
+    primary = selected("primary-endpoint.csv", analysis="Consensus", metric="ARBITER")
+    check((primary.get("count"), primary.get("n")) == ("53", "60"), "Primary source counts changed")
+    check("53/60" in text and "7/60" in text, "Primary counts missing")
+    for field, expected in (("estimate", 88.3), ("lower", 79.7), ("upper", 96.3)):
+        check(round(float(primary.get(field, "nan")) * 100, 1) == expected,
+              f"Primary {field} changed")
+    check("88.3%; 95% CI 79.7–96.3" in text, "Primary displayed estimate/interval changed")
+    for expert, expected in (("1", (371, 332, 301)), ("2", (433, 400, 362))):
+        for source, count in zip(("ARBITER", "Unassisted", "Published"), expected):
+            row = selected("independent-estimates.csv", adjudicator=expert,
+                           source=source, domain="D1-D5", metric="accuracy")
+            check((row.get("count"), row.get("n")) == (str(count), "510"),
+                  f"Independent agreement changed: {expert}, {source}")
+            check(f"{count}/510" in text, f"Independent count missing: {expert}, {source}")
+    for expert, values in (("1", (7.6, 5.1, 10.2)), ("2", (6.5, 3.5, 9.4))):
+        row = selected("independent-differences.csv", adjudicator=expert,
+                       domain="D1-D5", metric="accuracy", comparison="ARBITER minus Unassisted")
+        check(tuple(round(float(row.get(k, "nan")) * 100, 1)
+                    for k in ("estimate", "lower", "upper")) == values,
+              f"Paired independent difference changed: {expert}")
+        check(f"{values[0]}" in sections(text)["Abstract"] and
+              f"{values[1]}–{values[2]}" in sections(text)["Abstract"],
+              f"Abstract paired difference missing: {expert}")
+    for expert, count in (("1", 64), ("2", 65)):
+        row = selected("direction-of-disagreement.csv", source="ARBITER", direction="Stricter",
+                       adjudicator=expert, outcome="Expert matches model")
+        check((row.get("count"), row.get("n")) == (str(count), "88"), "Directional count changed")
+        check(f"{count}/88" in text, "Directional claim missing")
+    changed = rows("rules-only-changed.csv")
+    check(len(changed) == 26 and sum(r["discordant"] == "TRUE" for r in changed) == 6,
+          "Rules-only changed population changed")
+    repaired = selected("rules-only-primary.csv", analysis="Consensus", metric="Unassisted")
+    check((repaired.get("count"), repaired.get("n")) == ("8", "60"), "Recomputed credit changed")
+    for expert, count in (("1", 324), ("2", 391)):
+        row = selected("rules-only-agreement.csv", adjudicator=expert, source="Unassisted",
+                       domain="D1-D5", metric="accuracy")
+        check(row.get("count") == str(count), "Recomputed independent agreement changed")
+        check(f"{count}/510" in text, "Recomputed independent claim missing")
+    audit = selected("table3.csv", arm="Unassisted (Sonnet 5.5)", domain="D1-D5", status="Any rule break")
+    check((audit.get("count"), audit.get("n")) == ("65", "509"), "Rule audit changed")
+    check("65/509" in text and "1407/1407" in text, "Audit claims missing")
+    check("after data collection" in sections(text)["Objective"], "Post-collection definition missing")
+    check("Applying the rules to the unassisted model's own answers did not close the gap" in text and "post hoc" in text.lower(), "Recomputation interpretation missing")
     return failures
 
 
-def supplementary_citations(text):
-    """Expand ranges in citation order without changing supplement numbering."""
+def display_citations(text):
+    """Expand lists/ranges and ignore repeated panel citations within each class."""
     ordered = []
-    for match in re.finditer(r"\b(eTables?|eFigures?)\s+(\d+)(?:[–-](\d+))?", text):
-        kind = "eTable" if match[1].startswith("eTable") else "eFigure"
-        for number in range(int(match[2]), int(match[3] or match[2]) + 1):
-            item = f"{kind} {number}"
-            if item not in ordered:
-                ordered.append(item)
+    pattern = r"\b(Figures?|Tables?|eTables?|eFigures?)\s+(\d+[AB]?(?:[–-]\d+[AB]?)?(?:,\s*\d+[AB]?(?:[–-]\d+[AB]?)?)*)"
+    for match in re.finditer(pattern, text):
+        kind = match[1].rstrip("s")
+        for part in match[2].split(","):
+            ends = re.split("[–-]", re.sub("[AB]", "", part.strip()))
+            for number in range(int(ends[0]), int(ends[-1]) + 1):
+                item = f"{kind} {number}"
+                if item not in ordered:
+                    ordered.append(item)
     return ordered
+
+
+def citation_order_checks(text):
+    ordered = display_citations(text)
+    failures = []
+    for kind, count in (("Figure", 6), ("Table", 4), ("eTable", 21), ("eFigure", 3)):
+        observed = [item for item in ordered if item.startswith(kind + " ")]
+        expected = [f"{kind} {i}" for i in range(1, count + 1)]
+        if observed != expected:
+            failures.append(f"Citation order mismatch: {kind}: {observed}; expected {expected}")
+    return failures
 
 
 def main():
@@ -223,7 +246,7 @@ def main():
     failures = headline_checks(text)
     if counts["Abstract"] > 250 or main_count > 4000:
         failures.append("JAMIA word limit exceeded")
-    banned = re.findall(r"\b(?:first|over-flagging|second reviewer|unchangeable|tamper-proof|Haiku|kit)\b|supported by evidence",
+    banned = re.findall(r"\b(?:first|over-flagging|second reviewer|unchangeable|tamper-proof|Haiku|ground truth|accuracy|correct|kit)\b|supported by evidence",
                         text, re.I)
     if banned:
         failures.append(f"Prohibited wording: {banned}")
@@ -253,10 +276,13 @@ def main():
     print(f"  Main text total: {main_count}/4000; abstract: {counts['Abstract']}/250")
     for failure in failures:
         print(f"FAIL: {failure}")
-    ordered = supplementary_citations(text)
-    print("Supplementary items in order of initial citation: " + "; ".join(ordered))
-    if not any(item.startswith("eFigure") for item in ordered):
-        print("No eFigures cited in the manuscript.")
+    ordered = display_citations(text)
+    citation_failures = citation_order_checks(text)
+    failures.extend(citation_failures)
+    for failure in citation_failures:
+        print(f"FAIL: {failure}")
+    print("Displays in order of initial citation: " + "; ".join(ordered))
+    print("Citation-order assertion: " + ("FAIL" if citation_failures else "PASS (all four display classes)"))
     print("eMethods is cited separately as an unnumbered supplementary item.")
     print("PASS" if not missing and not failures else "FAIL")
     return int(bool(missing or failures))

@@ -94,7 +94,7 @@ unchanged <- c('agreement-meta','agreement-meta-differences','table1','table1-di
   'audit-summary','bundle-domain-checks','api-cost-summary','api-token-reconciliation','process-summary','process-differences',
   'table5','evidence-bases-distribution','overall-consistency-cells','domain-consistency-cells','invalid-path-sensitivity')
 paths <- paste0('analysis/output/tables/',unchanged,'.csv')
-diffs <- system2('git',c('-C','..','diff','HEAD','--',paths),stdout=TRUE)
+diffs <- system2('git',c('-C','..','diff','0cbdfc3','--',paths),stdout=TRUE)
 writeLines(diffs,'provenance/unchanged-analysis.diff')
 stopifnot(!length(diffs))
 prior <- readr::read_csv('data-curated/prior-work-comparison.csv',show_col_types=FALSE)
@@ -135,8 +135,8 @@ compact <- compact_expert_table(
   readr::read_csv('output/tables/independent-estimates.csv',show_col_types=FALSE),
   readr::read_csv('output/tables/independent-differences.csv',show_col_types=FALSE),
   readr::read_csv('output/tables/expert-reliability.csv',show_col_types=FALSE))
-stopifnot(identical(as.matrix(compact),as.matrix(readr::read_csv('output/tables/display-table2.csv',show_col_types=FALSE,na=character()))),nrow(compact)==9L)
-record('PASS compact Table 2 regenerates exactly: four references × two cohorts plus expert-to-expert foot row; Overall uses the observed Published subset.')
+stopifnot(identical(as.matrix(compact),as.matrix(readr::read_csv('output/tables/display-table1.csv',show_col_types=FALSE,na=character()))),nrow(compact)==9L)
+record('PASS compact Table 1 regenerates exactly: four references × two cohorts plus expert-to-expert foot row; Overall uses the observed Published subset.')
 questions <- question_difference_plot()$data
 all_questions <- question_difference_plot(TRUE)$data
 stopifnot(all(questions$n>=20L),all(as.character(questions$level)=='Collapsed'),

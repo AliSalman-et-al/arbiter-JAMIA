@@ -1,0 +1,310 @@
+Extracted 397 numeric tokens from the entire manuscript.
+Output-traced: 221; non-result/editorial: 176; UNTRACED: 0.
+Sources: 89 output CSVs, generated results sentences and Tables 1–4.
+TRACE line 21: 102 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 53 -> analysis/output/manuscript/results-sentences.md:3
+TRACE line 25: 60 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 88.3 -> analysis/output/manuscript/results-sentences.md:3
+TRACE line 25: 79.7 -> analysis/output/manuscript/results-sentences.md:3
+TRACE line 25: 96.3 -> analysis/output/manuscript/results-sentences.md:3
+TRACE line 25: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 72.7 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 65.1 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 59.0 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 84.9 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 78.4 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 71.0 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 7.6 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 5.1 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 10.2 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 6.5 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 3.5 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 9.4 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 64 -> analysis/output/manuscript/results-sentences.md:11
+TRACE line 25: 88 -> analysis/output/manuscript/results-sentences.md:11
+TRACE line 25: 65 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 88 -> analysis/output/manuscript/results-sentences.md:11
+TRACE line 25: 65 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 509 -> analysis/output/manuscript/Table2.docx
+TRACE line 25: 1407 -> analysis/output/manuscript/Table2.docx
+TRACE line 25: 1407 -> analysis/output/manuscript/Table2.docx
+TRACE line 25: 0.34 -> analysis/output/manuscript/Table3.docx
+TRACE line 25: 0.28 -> analysis/output/manuscript/Table3.docx
+TRACE line 25: 7.6 -> analysis/output/manuscript/Table1.docx
+TRACE line 25: 0.5 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 25: 3.78 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 25: 0.09 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 39: 2 -> analysis/output/manuscript/Table1.docx
+TRACE line 41: 2 -> analysis/output/manuscript/Table1.docx
+TRACE line 59: 33 -> analysis/output/tables/display-source-trace.csv:10190:row
+TRACE line 59: 11 -> analysis/output/tables/agreement-meta.csv:45:count
+TRACE line 59: 32 -> analysis/output/manuscript/Table1.docx
+TRACE line 59: 7 -> analysis/output/manuscript/Table2.docx
+TRACE line 59: 9 -> analysis/output/tables/agreement-meta.csv:25:n
+TRACE line 59: 10 -> analysis/output/manuscript/Table2.docx
+TRACE line 67: 102 -> analysis/output/manuscript/Table1.docx
+TRACE line 69: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 75: 2 -> analysis/output/manuscript/Table1.docx
+TRACE line 81: 81 -> analysis/output/manuscript/Table1.docx
+TRACE line 81: 21 -> analysis/output/manuscript/Table1.docx
+TRACE line 81: 102 -> analysis/output/manuscript/Table1.docx
+TRACE line 85: 10,000 -> analysis/output/manuscript/Table1.docx
+TRACE line 85: 20261018 -> analysis/output/manuscript/Table1.docx
+TRACE line 89: 102 -> analysis/output/manuscript/Table1.docx
+TRACE line 89: 16 -> analysis/output/manuscript/results-sentences.md:1
+TRACE line 89: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 89: 53 -> analysis/output/manuscript/results-sentences.md:3
+TRACE line 89: 60 -> analysis/output/manuscript/Table1.docx
+TRACE line 89: 88.3 -> analysis/output/manuscript/results-sentences.md:3
+TRACE line 89: 79.7 -> analysis/output/manuscript/results-sentences.md:3
+TRACE line 89: 96.3 -> analysis/output/manuscript/results-sentences.md:3
+TRACE line 89: 7 -> analysis/output/manuscript/Table2.docx
+TRACE line 89: 60 -> analysis/output/manuscript/Table1.docx
+TRACE line 89: 154 -> analysis/output/tables/display-source-trace.csv:10087:row
+TRACE line 89: 80 -> analysis/output/tables/display-source-trace.csv:10013:row
+TRACE line 89: 20 -> analysis/output/manuscript/Table1.docx
+TRACE line 89: 63 -> analysis/output/tables/display-source-trace.csv:10220:row
+TRACE line 89: 80 -> analysis/output/tables/display-source-trace.csv:10013:row
+TRACE line 89: 61 -> analysis/output/tables/agreement-meta.csv:66:count
+TRACE line 89: 80 -> analysis/output/tables/display-source-trace.csv:10013:row
+TRACE line 89: 53 -> analysis/output/manuscript/results-sentences.md:3
+TRACE line 89: 80 -> analysis/output/tables/display-source-trace.csv:10013:row
+TRACE line 89: 43 -> analysis/output/tables/agreement-meta.csv:17:estimate [scale 100, 1 dp]
+TRACE line 89: 44 -> analysis/output/tables/agreement-meta.csv:32:estimate [scale 100, 1 dp]
+TRACE line 89: 10 -> analysis/output/manuscript/Table2.docx
+TRACE line 89: 16 -> analysis/output/manuscript/results-sentences.md:1
+TRACE line 91: 371 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 72.7 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 0.51 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 332 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 65.1 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 0.35 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 301 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 59.0 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 0.21 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 7.6 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 5.1 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 10.2 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 433 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 84.9 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 0.69 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 400 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 78.4 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 0.53 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 362 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 71.0 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 0.29 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 6.5 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 3.5 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 9.4 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 81 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 13.6 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 6.2 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 21.0 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 17.3 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 8.6 -> analysis/output/manuscript/Table1.docx
+TRACE line 91: 25.9 -> analysis/output/manuscript/Table1.docx
+TRACE line 93: 64 -> analysis/output/manuscript/results-sentences.md:11
+TRACE line 93: 88 -> analysis/output/manuscript/results-sentences.md:11
+TRACE line 93: 65 -> analysis/output/manuscript/Table1.docx
+TRACE line 93: 88 -> analysis/output/manuscript/results-sentences.md:11
+TRACE line 93: 5 -> analysis/output/manuscript/Table1.docx
+TRACE line 93: 88 -> analysis/output/manuscript/results-sentences.md:11
+TRACE line 93: 14 -> analysis/output/manuscript/Table2.docx
+TRACE line 93: 88 -> analysis/output/manuscript/results-sentences.md:11
+TRACE line 93: 46 -> analysis/output/manuscript/Table1.docx
+TRACE line 93: 69 -> analysis/output/tables/agreement-meta.csv:16:count
+TRACE line 93: 43 -> analysis/output/tables/agreement-meta.csv:17:estimate [scale 100, 1 dp]
+TRACE line 93: 69 -> analysis/output/tables/agreement-meta.csv:16:count
+TRACE line 93: 22 -> analysis/output/tables/agreement-meta.csv:57:lower [scale 100, 1 dp]
+TRACE line 93: 36 -> analysis/output/tables/agreement-meta.csv:35:count
+TRACE line 93: 26 -> analysis/output/manuscript/Table2.docx
+TRACE line 93: 36 -> analysis/output/tables/agreement-meta.csv:35:count
+TRACE line 93: 19 -> analysis/output/tables/agreement-meta.csv:20:n
+TRACE line 93: 46 -> analysis/output/manuscript/Table1.docx
+TRACE line 93: 26 -> analysis/output/manuscript/Table2.docx
+TRACE line 93: 46 -> analysis/output/manuscript/Table1.docx
+TRACE line 95: 65 -> analysis/output/manuscript/Table1.docx
+TRACE line 95: 509 -> analysis/output/manuscript/Table2.docx
+TRACE line 95: 12.8 -> analysis/output/manuscript/Table2.docx
+TRACE line 95: 10.0 -> analysis/output/manuscript/Table2.docx
+TRACE line 95: 15.6 -> analysis/output/manuscript/Table2.docx
+TRACE line 95: 26 -> analysis/output/manuscript/Table2.docx
+TRACE line 95: 39 -> analysis/output/manuscript/Table2.docx
+TRACE line 95: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 95: 1538 -> analysis/output/manuscript/Table2.docx
+TRACE line 95: 1407 -> analysis/output/manuscript/Table2.docx
+TRACE line 95: 1407 -> analysis/output/manuscript/Table2.docx
+TRACE line 95: 14 -> analysis/output/manuscript/Table2.docx
+TRACE line 95: 102 -> analysis/output/manuscript/Table1.docx
+TRACE line 95: 102 -> analysis/output/manuscript/Table1.docx
+TRACE line 95: 102 -> analysis/output/manuscript/Table1.docx
+TRACE line 97: 0.34 -> analysis/output/manuscript/Table3.docx
+TRACE line 97: 0.26 -> analysis/output/manuscript/Table3.docx
+TRACE line 97: 0.42 -> analysis/output/manuscript/Table3.docx
+TRACE line 97: 0.28 -> analysis/output/manuscript/Table3.docx
+TRACE line 97: 0.21 -> analysis/output/manuscript/Table1.docx
+TRACE line 97: 0.35 -> analysis/output/manuscript/Table1.docx
+TRACE line 97: 386 -> analysis/output/tables/agreement-meta.csv:4:count
+TRACE line 97: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 97: 75.7 -> analysis/output/manuscript/Table3.docx
+TRACE line 97: 395 -> analysis/output/tables/agreement-meta.csv:39:count
+TRACE line 97: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 97: 77.5 -> analysis/output/manuscript/Table3.docx
+TRACE line 97: 83.7 -> analysis/output/manuscript/Table3.docx
+TRACE line 97: 0.44 -> analysis/output/manuscript/Table1.docx
+TRACE line 97: 0.32 -> analysis/output/manuscript/Table1.docx
+TRACE line 97: 0.56 -> analysis/output/manuscript/Table3.docx
+TRACE line 97: 0.42 -> analysis/output/manuscript/Table3.docx
+TRACE line 97: 0.27 -> analysis/output/manuscript/Table3.docx
+TRACE line 97: 0.56 -> analysis/output/manuscript/Table3.docx
+TRACE line 99: 7.6 -> analysis/output/manuscript/Table1.docx
+TRACE line 99: 6.1 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 99: 10.5 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 99: 0.5 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 99: 0.4 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 99: 0.5 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 99: 3.78 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 99: 3.46 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 99: 4.10 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 99: 0.09 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 99: 0.07 -> analysis/output/manuscript/results-sentences.md:17
+TRACE line 99: 0.13 -> analysis/output/manuscript/Table1.docx
+TRACE line 99: 11.0 -> analysis/output/tables/agreement-meta.csv:45:count
+TRACE line 99: 8.4 -> analysis/output/tables/primary-endpoint.csv:6:lower [scale 100, 1 dp]
+TRACE line 99: 14.1 -> analysis/output/tables/independent-differences.csv:136:lower [scale 100, 1 dp]
+TRACE line 99: 3.68 -> analysis/output/tables/process-differences.csv:14:estimate [scale 1, 2 dp]
+TRACE line 99: 3.61 -> analysis/output/tables/process-differences.csv:14:lower [scale 1, 2 dp]
+TRACE line 99: 3.75 -> analysis/output/tables/independent-differences.csv:168:lower [scale 100, 2 dp]
+TRACE line 101: 26 -> analysis/output/manuscript/Table2.docx
+TRACE line 101: 6 -> analysis/output/manuscript/results-sentences.md:19
+TRACE line 101: 60 -> analysis/output/manuscript/Table1.docx
+TRACE line 101: 7 -> analysis/output/manuscript/Table2.docx
+TRACE line 101: 8 -> analysis/output/manuscript/Table1.docx
+TRACE line 101: 53 -> analysis/output/manuscript/results-sentences.md:3
+TRACE line 101: 332 -> analysis/output/manuscript/Table1.docx
+TRACE line 101: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 101: 324 -> analysis/output/manuscript/results-sentences.md:19
+TRACE line 101: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 101: 400 -> analysis/output/manuscript/Table1.docx
+TRACE line 101: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 101: 391 -> analysis/output/manuscript/results-sentences.md:19
+TRACE line 101: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 103: 80.4 -> analysis/output/manuscript/results-sentences.md:21
+TRACE line 103: 74.9 -> analysis/output/manuscript/results-sentences.md:21
+TRACE line 103: 90.9 -> analysis/output/manuscript/results-sentences.md:21
+TRACE line 103: 87.4 -> analysis/output/manuscript/results-sentences.md:21
+TRACE line 103: 5.0 -> analysis/output/manuscript/Table1.docx
+TRACE line 103: 3.6 -> analysis/output/manuscript/results-sentences.md:21
+TRACE line 103: 6.4 -> analysis/output/manuscript/results-sentences.md:21
+TRACE line 103: 3.3 -> analysis/output/manuscript/Table2.docx
+TRACE line 103: 1.9 -> analysis/output/manuscript/results-sentences.md:21
+TRACE line 103: 4.7 -> analysis/output/manuscript/results-sentences.md:21
+TRACE line 103: 11.3 -> analysis/output/manuscript/results-sentences.md:23
+TRACE line 103: 8.2 -> analysis/output/manuscript/results-sentences.md:23
+TRACE line 103: 14.6 -> analysis/output/manuscript/results-sentences.md:23
+TRACE line 103: 7.9 -> analysis/output/manuscript/results-sentences.md:23
+TRACE line 103: 2.8 -> analysis/output/manuscript/results-sentences.md:23
+TRACE line 103: 13.6 -> analysis/output/manuscript/Table1.docx
+TRACE line 103: 3.7 -> analysis/output/manuscript/results-sentences.md:23
+TRACE line 103: −0.3 -> analysis/output/manuscript/results-sentences.md:23
+TRACE line 103: 7.4 -> analysis/output/manuscript/results-sentences.md:23
+TRACE line 105: 388 -> analysis/output/manuscript/Table1.docx
+TRACE line 105: 510 -> analysis/output/manuscript/Table1.docx
+TRACE line 105: 76.1 -> analysis/output/manuscript/Table1.docx
+TRACE line 105: 0.59 -> analysis/output/manuscript/Table1.docx
+TRACE line 105: 54 -> analysis/output/manuscript/results-sentences.md:27
+TRACE line 105: 102 -> analysis/output/manuscript/Table1.docx
+TRACE line 117: 2 -> analysis/output/manuscript/Table1.docx
+Non-result tokens (not claimed to trace to statistical outputs):
+  -5: model identifier (2 occurrence(s))
+  04: URL (2 occurrence(s))
+  056: URL (2 occurrence(s))
+  1: adjudicator identifier (9 occurrence(s))
+  1: display cross-reference (5 occurrence(s))
+  1: domain identifier (1 occurrence(s))
+  1: reference callout (2 occurrence(s))
+  1.0.0: software version (analysis plan) (1 occurrence(s))
+  10: display cross-reference (2 occurrence(s))
+  10: reference callout (2 occurrence(s))
+  11: display cross-reference (1 occurrence(s))
+  11: reference callout (2 occurrence(s))
+  12: date (run README or editorial search/access date) (1 occurrence(s))
+  12: display cross-reference (2 occurrence(s))
+  13: display cross-reference (2 occurrence(s))
+  13: reference callout (2 occurrence(s))
+  14: date (run README or editorial search/access date) (1 occurrence(s))
+  14: display cross-reference (2 occurrence(s))
+  14: reference callout (4 occurrence(s))
+  15: display cross-reference (2 occurrence(s))
+  15: reference callout (2 occurrence(s))
+  16: display cross-reference (2 occurrence(s))
+  16: reference callout (2 occurrence(s))
+  17: display cross-reference (2 occurrence(s))
+  17: reference callout (2 occurrence(s))
+  18: display cross-reference (2 occurrence(s))
+  18: reference callout (2 occurrence(s))
+  19: date (run README or editorial search/access date) (1 occurrence(s))
+  19: display cross-reference (2 occurrence(s))
+  19: reference callout (2 occurrence(s))
+  2: URL (2 occurrence(s))
+  2: adjudicator identifier (9 occurrence(s))
+  2: display cross-reference (5 occurrence(s))
+  2: instrument identifier (14 occurrence(s))
+  2: reference callout (1 occurrence(s))
+  2: software commit (analysis plan) (1 occurrence(s))
+  2.1.278: harness version (run README) (1 occurrence(s))
+  20: display cross-reference (2 occurrence(s))
+  20: reference callout (1 occurrence(s))
+  2026: date (run README or editorial search/access date) (5 occurrence(s))
+  21: date (run README or editorial search/access date) (2 occurrence(s))
+  21: display cross-reference (1 occurrence(s))
+  21: reference callout (1 occurrence(s))
+  22: reference callout (1 occurrence(s))
+  2219: URL (2 occurrence(s))
+  23: reference callout (1 occurrence(s))
+  250: editorial metadata / journal requirement (1 occurrence(s))
+  3: display cross-reference (5 occurrence(s))
+  3: domain identifier (3 occurrence(s))
+  3: reference callout (1 occurrence(s))
+  30: URL (2 occurrence(s))
+  4: display cross-reference (4 occurrence(s))
+  4: reference callout (1 occurrence(s))
+  4000: editorial metadata / journal requirement (1 occurrence(s))
+  441: URL (2 occurrence(s))
+  5: display cross-reference (5 occurrence(s))
+  5: domain identifier (3 occurrence(s))
+  5: reference callout (1 occurrence(s))
+  549: URL (2 occurrence(s))
+  549: software commit (analysis plan) (1 occurrence(s))
+  6: display cross-reference (3 occurrence(s))
+  6: reference callout (1 occurrence(s))
+  61: URL (2 occurrence(s))
+  7: display cross-reference (2 occurrence(s))
+  7: reference callout (1 occurrence(s))
+  719968716: URL (2 occurrence(s))
+  8: display cross-reference (2 occurrence(s))
+  8: reference callout (2 occurrence(s))
+  9: display cross-reference (2 occurrence(s))
+  9: reference callout (2 occurrence(s))
+  95: interval convention (10 occurrence(s))
+Section word counts (whitespace words; headings and numeric citation callouts excluded):
+  Abstract: 249
+  Background and significance: 382
+  Objective: 54
+  Materials and methods: 1396
+  Results: 750
+  Discussion: 888
+  Back matter: 199
+  Conclusion (within Discussion): 45
+  Main text total: 3470/4000; abstract: 249/250
+Displays in order of initial citation: Figure 1; Figure 2; eTable 1; eTable 2; eTable 3; eTable 4; eTable 5; eTable 6; eTable 7; eTable 8; eTable 9; eTable 10; eTable 11; eTable 12; eTable 13; eTable 14; eTable 15; eTable 16; eTable 17; eTable 18; eTable 19; eTable 20; Figure 3; Figure 4; Table 1; Figure 5; Table 2; Table 3; eFigure 1; Figure 6; eFigure 2; eFigure 3; Table 4; eTable 21
+Citation-order assertion: PASS (all four display classes)
+eMethods is cited separately as an unnumbered supplementary item.
+PASS

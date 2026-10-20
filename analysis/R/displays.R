@@ -61,7 +61,7 @@ compact_expert_table <- function(independent,paired,reliability) {
     Unassisted='',Published='',`ARBITER − Unassisted`=''))
 }
 build_displays <- function(inputs,cells) {
-  dir.create('output/manuscript',recursive=TRUE,showWarnings=FALSE)
+  dir.create('output/manuscript/qa',recursive=TRUE,showWarnings=FALSE)
   independent <- read_display('independent-estimates'); paired <- read_display('independent-differences'); reliability <- read_display('expert-reliability')
   table2 <- compact_expert_table(independent,paired,reliability)
   read_display('table1');read_display('table1-differences');read_display('table3')
@@ -74,13 +74,17 @@ build_displays <- function(inputs,cells) {
     table2_note(),
     paste('A rule break is a rating contradicting its own answers or a required question skipped. ARBITER has no recorded domain overrides. One ARBITER Overall escalation is permitted. Evidence checks establish quotation occurrence and structural binding, without assessing whether quotations support an answer.',CI_NOTE),
     prior_work_note())
+  numbering <- display_numbering()
+  readr::write_csv(numbering,'output/manuscript/qa/round15-display-numbering.csv')
+  order <- numbering$old_number[numbering$kind=='Table']
+  tables <- tables[order]; titles <- titles[order]; notes <- notes[order]
   for(i in 1:4) {
     x <- tables[[i]];readr::write_csv(x,paste0('output/tables/display-table',i,'.csv'),na='')
     doc <- manuscript_doc() |> manuscript_par(paste0('Table ',i,' ',titles[i]),style='heading 1')
     if(i==4) doc <- officer::body_set_default_section(doc,officer::prop_section(page_size=officer::page_size(orient='landscape'),page_margins=officer::page_mar(top=.6,bottom=.6,left=.65,right=.65)))
     ft <- house_table(x,notes[i],if(i==4) 10.3 else 6.85)
     if(i<4) ft <- style_group_rows(ft,x)
-    if(i==2) ft <- flextable::width(ft,j=1:6,width=c(1.05,.55,1.25,1.25,1.25,1.5)) |> flextable::merge_at(i=9,j=3:5,part='body')
+    if(i==1) ft <- flextable::width(ft,j=1:6,width=c(1.05,.55,1.25,1.25,1.25,1.5)) |> flextable::merge_at(i=9,j=3:5,part='body')
     doc <- flextable::body_add_flextable(doc,ft)
     print(doc,target=paste0('output/manuscript/Table',i,'.docx'))
   }

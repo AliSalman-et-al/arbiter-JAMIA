@@ -1,0 +1,1 @@
+PASS real manuscript; five deliberately misordered/missing citation mutations rejected; range, list, panel and class separation checks pass.

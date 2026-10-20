@@ -1,0 +1,114 @@
+document,page,review
+TRIPOD-LLM,1,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+TRIPOD-LLM,2,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+TRIPOD-LLM,3,PASS: pixel-identical to inspected baseline
+TRIPOD-LLM,4,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+TRIPOD-LLM,5,PASS: pixel-identical to inspected baseline
+Table1,1,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+Supplement,1,PASS: pixel-identical to inspected baseline
+Supplement,2,PASS: pixel-identical to inspected baseline
+Supplement,3,PASS: pixel-identical to inspected baseline
+Supplement,4,PASS: pixel-identical to inspected baseline
+Supplement,5,PASS: pixel-identical to inspected baseline
+Supplement,6,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,7,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,8,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,9,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,10,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,11,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,12,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,13,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,14,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,15,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,16,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,17,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,18,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,19,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,20,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,21,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,22,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,23,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,24,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,25,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,26,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,27,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,28,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,29,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,30,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,31,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,32,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,33,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,34,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,35,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,36,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,37,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,38,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,39,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,40,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,41,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,42,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,43,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,44,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,45,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,46,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,47,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,48,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,49,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,50,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,51,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,52,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,53,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,54,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,55,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,56,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,57,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,58,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,59,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,60,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,61,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,62,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,63,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,64,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,65,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,66,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,67,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,68,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,69,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,70,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,71,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,72,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,73,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,74,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,75,PASS: content identical; only outer rule endpoint raster pixels differ
+Supplement,76,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+Supplement,77,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+Supplement,78,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+Supplement,79,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+Supplement,80,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+Supplement,81,PASS: pixel-identical to inspected baseline
+Supplement,82,PASS: pixel-identical to inspected baseline
+Supplement,83,PASS: pixel-identical to inspected baseline
+Supplement,84,PASS: pixel-identical to inspected baseline
+Supplement,85,PASS: pixel-identical to inspected baseline
+Supplement,86,PASS: pixel-identical to inspected baseline
+Supplement,87,PASS: pixel-identical to inspected baseline
+Supplement,88,PASS: pixel-identical to inspected baseline
+Supplement,89,PASS: pixel-identical to inspected baseline
+Supplement,90,PASS: pixel-identical to inspected baseline
+Supplement,91,PASS: pixel-identical to inspected baseline
+Supplement,92,PASS: pixel-identical to inspected baseline
+Supplement,93,PASS: pixel-identical to inspected baseline
+Supplement,94,PASS: pixel-identical to inspected baseline
+Supplement,95,PASS: pixel-identical to inspected baseline
+Supplement,96,PASS: pixel-identical to inspected baseline
+Supplement,97,PASS: pixel-identical to inspected baseline
+Supplement,98,PASS: pixel-identical to inspected baseline
+Supplement,99,PASS: pixel-identical to inspected baseline
+Supplement,100,PASS: pixel-identical to inspected baseline
+Supplement,101,PASS: pixel-identical to inspected baseline
+Supplement,102,PASS: pixel-identical to inspected baseline
+Supplement,103,PASS: pixel-identical to inspected baseline
+Supplement,104,PASS: pixel-identical to inspected baseline
+Table3,1,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+Table2,1,"PASS: visually inspected at full size; no clipping, overlap or missing content"
+Table4,1,PASS: pixel-identical to inspected baseline

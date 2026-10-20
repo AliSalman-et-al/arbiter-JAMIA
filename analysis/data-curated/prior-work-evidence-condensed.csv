@@ -28,10 +28,10 @@ Agent — Partly: “post hoc claim verification” — Discussion, Limitations:
 [ref: Saadi 2026],"Agent — Not reported: “customised agent-based implementations” — Methods, LLM assessment workflow: structured prompting is established, but neither retrieval nor external tool calling is demonstrated.
 Independent reference — Partly: “two separate teams of human reviewers” — Methods, Study design and data source: concordant historical review ratings selected, not new adjudication.","PMC13528376, Methods."
 This study (ARBITER),"Code rules — Yes: “ARBITER proposals must reproduce the official algorithms for every domain” — ANALYSIS-PLAN, section 5.4; bundle-domain-checks.csv.
-Enforcement — Yes: every override must be recorded; no ARBITER domain overrides were recorded in these 510 domains — ANALYSIS-PLAN, section 5.4; Table 3.
-Rule checks — Yes: ARBITER D1–D5 rule breaks 0/510 — table3-supplement.csv; Table 3.
+Enforcement — Yes: every override must be recorded; no ARBITER domain overrides were recorded in these 510 domains — ANALYSIS-PLAN, section 5.4; Table 2.
+Rule checks — Yes: ARBITER D1–D5 rule breaks 0/510 — table3-supplement.csv; Table 2.
 Quotation checks — Yes: “found in the stored source” — ANALYSIS-PLAN, section 5.5; audit-summary.csv reports 1407/1407 text-span and 14/14 visual evidence bindings.
 Audit file — Yes: stored bundles contain canonical.json and verification.json; audit-summary.csv reports 102/102 bundle verification. Sources: ARBITER bundles and independent verification receipts.
 Agent — Yes: “its MCP server.” — ARBITER run input inventory, Setup.
 Independent reference — Yes: Two blinded human experts independently rated all 510 trial domains without AI, before viewing labels. Sources: the two full-coverage adjudication workbooks, Adjudications sheets; design specification in docs/round15/BRIEF.md.
-Registry/protocol — Yes: “the 60 protocol and SAP PDFs” — Unassisted run input inventory, Inputs; ARBITER run input inventory, opening paragraph: registry document acquisition enabled. Availability varies by trial; Yes records delivery of the complete acquired ancillary set to both arms, not that every trial had a protocol.","This study, Methods, Results and Table 3."
+Registry/protocol — Yes: “the 60 protocol and SAP PDFs” — Unassisted run input inventory, Inputs; ARBITER run input inventory, opening paragraph: registry document acquisition enabled. Availability varies by trial; Yes records delivery of the complete acquired ancillary set to both arms, not that every trial had a protocol.","This study, Methods, Results and Table 2."

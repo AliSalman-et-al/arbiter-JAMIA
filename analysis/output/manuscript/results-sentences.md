@@ -1,16 +1,18 @@
-Among cells where the arms disagreed and the adjudicators made the same forced choice, they preferred ARBITER’s rating in 53/60 (88.3%; 95% CI 79.7–96.3; Figure 5).
+All 102 trials from 16 meta-analyses received two independent expert assessments of all 510 domain cells (Figure 3).
 
-Adjudicator 1 independently agreed with ARBITER on 371/510 cells (72.7%), Unassisted on 332/510 (65.1%) and Published on 301/510 (59.0%); the paired ARBITER − Unassisted difference was 7.6 percentage points (95% CI 5.1–10.2; Table 2).
+Among cells where the arms disagreed and the adjudicators made the same forced choice, they preferred ARBITER’s rating in 53/60 (88.3%; 95% CI 79.7–96.3; Figure 4).
 
-Adjudicator 2 independently agreed with ARBITER on 433/510 cells (84.9%), Unassisted on 400/510 (78.4%) and Published on 362/510 (71.0%); the paired ARBITER − Unassisted difference was 6.5 percentage points (95% CI 3.5–9.4; Table 2).
+Adjudicator 1 independently agreed with ARBITER on 371/510 cells (72.7%), Unassisted on 332/510 (65.1%) and Published on 301/510 (59.0%); the paired ARBITER − Unassisted difference was 7.6 percentage points (95% CI 5.1–10.2; Table 1).
 
-On the 81 trials with observed Published Overall, the paired ARBITER − Unassisted difference in agreement with derived Overall was 13.6 percentage points (95% CI 6.2–21.0) for Adjudicator 1 and 17.3 (8.6–25.9) for Adjudicator 2 (Table 2).
+Adjudicator 2 independently agreed with ARBITER on 433/510 cells (84.9%), Unassisted on 400/510 (78.4%) and Published on 362/510 (71.0%); the paired ARBITER − Unassisted difference was 6.5 percentage points (95% CI 3.5–9.4; Table 1).
 
-For ARBITER ratings stricter than Published, the independent expert rating matched ARBITER in 64/88 cells for Adjudicator 1 and 65/88 for Adjudicator 2 (Figure 4B).
+On the 81 trials with observed Published Overall, the paired ARBITER − Unassisted difference in agreement with derived Overall was 13.6 percentage points (95% CI 6.2–21.0) for Adjudicator 1 and 17.3 (8.6–25.9) for Adjudicator 2 (Table 1).
 
-Unassisted broke the RoB 2 rules in 65/509 evaluable domain ratings (12.8%; 95% CI 10.0–15.6), while all 1407/1407 cited text records were bound to quotations found in content-hashed stored sources (Table 3).
+For ARBITER ratings stricter than Published, the independent expert rating matched ARBITER in 64/88 cells for Adjudicator 1 and 65/88 for Adjudicator 2 (Figure 5B).
 
-Agreement with Published was poor for both arms (weighted κ 0.34 for ARBITER and 0.28 for Unassisted; Table 1).
+Unassisted broke the RoB 2 rules in 65/509 evaluable domain ratings (12.8%; 95% CI 10.0–15.6), while all 1407/1407 cited text records were bound to quotations found in content-hashed stored sources (Table 2).
+
+Agreement with Published was poor for both arms (weighted κ 0.34 for ARBITER and 0.28 for Unassisted; Table 3).
 
 Median [IQR] system runtime was 7.6 [6.1–10.5] minutes per trial for ARBITER and 0.5 [0.4–0.5] for Unassisted; API list-price equivalents were US$3.78 [3.46–4.10] and US$0.09 [0.07–0.13] per trial, respectively (eTable 16).
 

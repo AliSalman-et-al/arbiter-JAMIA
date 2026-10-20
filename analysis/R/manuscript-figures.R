@@ -117,8 +117,8 @@ question_difference_plot <- function(include_sparse=FALSE) {
 build_manuscript_figures <- function(cells) {
   register_figure_fonts()
   export_manuscript_figure(study_flow_plot(cells),'Figure3',120)
-  export_manuscript_figure(expert_reference_plot(),'Figure4',215)
-  export_manuscript_figure(primary_forest_plot(),'Figure5',130)
+  export_manuscript_figure(expert_reference_plot(),'Figure5',215)
+  export_manuscript_figure(primary_forest_plot(),'Figure4',130)
   export_manuscript_figure(question_difference_plot(),'Figure6',245)
   export_manuscript_figure(forest_plot(),'eFigure1',200)
   export_manuscript_figure(signalling_plot(),'eFigure2',140)
