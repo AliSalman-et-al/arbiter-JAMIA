@@ -1,5 +1,0 @@
-Syntax Error: font resource is not a dictionary
-Syntax Error: font resource is not a dictionary
-Syntax Error: font resource is not a dictionary
-Syntax Error: font resource is not a dictionary
-Scanned 99 text, Word and PDF publication artifacts; Haiku matches: 0

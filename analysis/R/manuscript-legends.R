@@ -1,42 +1,21 @@
-supplied_figure_legends <- function(path='output/manuscript/legends-fig1-2.md') {
-  lines <- readLines(path,warn=FALSE,encoding='UTF-8')
-  lines <- gsub('{{eTable:avatar-trace}}',paste('eTable',supplement_number('AVATAR complete trace')),lines,fixed=TRUE)
-  # Compatibility for the pre-handoff file: keep provenance in its notes, not the manuscript.
-  lines <- lines[!startsWith(lines,'The independent verifier checks archive structure')]
-  lines <- gsub('eTable 31',paste('eTable',supplement_number('AVATAR complete trace')),lines,fixed=TRUE)
-  lines <- gsub('Baseline differences','Preintervention differences',lines,fixed=TRUE)
-  starts <- grep('^\\*\\*Figure [12][.]',lines)
-  stopifnot(length(starts)==2L)
-  ends <- c(starts[2]-1L,length(lines))
-  setNames(lapply(seq_along(starts),function(i) {
-    part <- lines[starts[i]:ends[i]]
-    part <- part[!startsWith(part,'For the version without')]
-    paste(part,collapse='\n')
-  }),sub('^\\*\\*(Figure [12][.] .*?)\\.\\*\\*.*$','\\1',lines[starts]))
+figure_legend_sections <- function() {
+  supplied <- readLines('output/manuscript/legends-fig1-2.md',warn=FALSE)
+  supplied <- supplied[!startsWith(supplied,'The independent verifier checks archive structure') & !startsWith(supplied,'For the version without')]
+  supplied <- gsub('{{eTable:avatar-trace}}','the AVATAR complete trace in the supplement',supplied,fixed=TRUE)
+  sparse <- read_display('signalling-differences') |> filter(grepl('^[1-5][.]',group),n<20) |>
+    distinct(adjudicator,group,n) |> arrange(as.numeric(group),adjudicator)
+  omitted <- paste0(sparse$group,' (Adjudicator ',sparse$adjudicator,', n = ',sparse$n,')',collapse='; ')
+  d <- read_display('direction-of-disagreement') |> filter(source=='ARBITER',direction=='Stricter',outcome=='Expert matches Published')
+  c(paste(supplied,collapse='\n'),
+    'Figure 3 Every domain cell received two blinded independent ratings. The nested subsets identify disputed cells, arm-discordant cells and equal forced choices. Side notes identify cells with three concordant labels, which give no forced-choice information, and Overall derived from each expert’s domain ratings. Independent ratings and signalling answers were frozen before labels were shown. The three excluded trials had unsupported designs. Alt text: Included trials lead to two complete expert assessments, followed by nested preference subsets.',
+    paste('Figure 4 Independent experts agreed more often with ARBITER. A, Exact agreement against each expert by domain and derived Overall; the dashed line is expert-to-expert agreement. ARBITER is a blue circle, Unassisted an orange square and Published a dark-grey triangle, in that legend and dodge order. Adjudicators are separated by facet. B, Each horizontal bar partitions directional disagreements into expert matches arm (medium grey), matches Published (light grey), or matches neither (near white). Segment labels give count/n; ARBITER rows precede Unassisted rows.',
+      sprintf('When ARBITER was stricter, the experts matched Published in only %s/%s and %s/%s cells, respectively.',d$count[1],d$n[1],d$count[2],d$n[2]),
+      'A, D1–D5: n = 102 per domain and expert; Overall: n = 102 for ARBITER, Unassisted and expert-to-expert agreement, and n = 81 for Published. Twenty-one (21) published reviews gave no Overall label and are excluded. Main Table 2 uses the same n = 81 Overall trials for all three sources. Directional CIs are in eTable 9. Alt text: Domain and Overall agreement against each expert, above three-part directional disagreement bars.',CI_NOTE),
+    paste('Figure 5 Adjudicators preferred ARBITER in most arm disagreements. Rows are grouped as Primary (agreed choice), Sensitivity (each adjudicator; split cells counted as losses), and Post hoc strata. The primary row retains equal forced choices; expert-specific rows retain all arm disagreements. Split decisions count as ARBITER losses without assigning a win to Unassisted. Blue circles show ARBITER, with no marker encoding for adjudicator. Right-hand labels show ARBITER count/denominator and the Unassisted count; ties can credit both arms. The dashed line marks equal preference. Alt text: Grouped forest of primary, sensitivity and strictness estimates of ARBITER preference.',CI_NOTE),
+    paste('Figure 6 ARBITER generally agreed more often with the experts on individual signalling questions. Question-level paired ARBITER − Unassisted differences compare collapsed agreement with each expert’s independent answer. Blue circles encode the ARBITER contrast, with expert identity and n printed on each row, grouped by domain. Collapsed agreement combines Y/PY and N/PN, with NI separate. Only explicit matched answers evaluable in both arms contribute. Questions with fewer than 20 paired answers are omitted:',paste0(omitted,'.'),
+      'All questions, including these sparse rows and the five-level scale, are shown in eFigure 3 and eTable 5. Domain-level agreement is in eFigure 2. Alt text: Collapsed per-question paired differences and intervals for both experts, grouped by domain.',signalling_disagreement_sentence(),CI_NOTE),
+    paste('eFigure 1 Published label agreement varied across reviews. ARBITER uses blue circles and Unassisted orange squares, in that legend and dodge order. Marks show weighted κ and its interval.',CI_NOTE),
+    paste('eFigure 2 Domain level signalling agreement. ARBITER uses blue circles and Unassisted orange squares; experts and answer scales are separated by facet. All denominators and exact values are in eTable 5.',CI_NOTE),
+    paste('eFigure 3 All signalling question paired differences. The Figure 6 display includes all sparse questions here. Blue circles encode ARBITER − Unassisted, with expert and n in each row label. The two columns separate collapsed and five-level answers.',CI_NOTE))
 }
-figure_legend_sections <- function() c(supplied_figure_legends(),list(
- 'Figure 3. Two assessment arms supplied 102 trials and 154 adjudicated disagreements'=paste(
- 'Two assessment arms supplied the benchmark. The flow follows trial inclusion, domain and Overall ratings, and selection for blinded adjudication. A cell is one trial × domain. Ratings were reviewed when at least one arm differed from the published review label. Branches show whether both adjudicators agreed, then identify cells where the two arms disagreed.',
- '\n\nAlt text: Trial inclusion flows into two assessment arms and blinded adjudication, with separate branches for agreement and split decisions.'),
- 'Figure 4. Both models agreed poorly with published labels; adjudicators usually upheld stricter ratings (post hoc intervals in B)'=paste(
- 'Both models agreed poorly with published labels, but adjudicators usually upheld stricter ratings. A, Domain-specific linearly weighted Cohen’s κ against published labels; the dashed line marks zero. B, Shares of disagreements where the adjudicators’ agreed choice equals the model rating, by direction relative to Published. Labels give n/N and split decisions excluded from denominators. Intervals in B were added post hoc. Points and bars show estimates and 95% percentile intervals from 10,000 trial-cluster bootstrap resamples within meta-analysis (seed 20261018). This selected population cannot estimate full-benchmark accuracy. Pooled agreement is in Table 1.',
- '\n\nAlt text: Domain agreement intervals overlap. Adjudicator agreement is highest for stricter ARBITER ratings, followed by stricter Unassisted ratings.'),
- 'Figure 5. Adjudicators chose ARBITER far more often when the arms disagreed, including post hoc strictness strata'=paste(
- 'Adjudicators favoured ARBITER when the arms disagreed. The first four rows show the primary estimate and sensitivities; the separate post hoc group stratifies by which arm was stricter. Points and bars show the share of adjudicated arm disagreements where ARBITER’s rating was preferred and 95% percentile intervals from 10,000 trial-cluster bootstrap resamples within meta-analysis (seed 20261018). The dashed line marks equal choice. Scoring compares labels. The split sensitivity counts every split against ARBITER without assigning it to Unassisted. Right labels give counts. Full outcomes and post hoc strata are in eTables SHARE_TABLES.',
- '\n\nAlt text: Adjudicators chose ARBITER in most disagreements in the primary and sensitivity analyses. The post hoc stricter ARBITER stratum has the highest preferred share.'),
- 'Figure 6. Most localised Unassisted losses traced to whether the analysis plan was fixed in advance'=paste(
- 'The analysis-plan question explained the largest share of localised Unassisted losses. Bars count ratings the adjudicators did not choose, by the question that alone changed the rating: replacing that answer with the agreed independent answer changes the official algorithm output. Eligibility requires both independent ratings to equal the agreed choice. A rating may contribute to several bars. Facet labels give eligible totals and ratings without a single deciding question. D2 uses the effect-of-assignment algorithm. Frequencies and eligibility are in eTables LOCAL_TABLES; the post hoc rules-only recomputation is in eTable RULES_TABLE.',
- '\n\nAlt text: Bars compare losses by question within domains. The analysis-plan question dominates Unassisted losses. Facet totals include ratings without a single deciding question.')
-)) |> lapply(function(x) {
- x <- gsub('SHARE_TABLES',paste(supplement_number('Preferred shares among adjudicated arm disagreements: sensitivities'),supplement_number('Post hoc: preferred shares among adjudicated arm disagreements by strictness'),sep='–'),x,fixed=TRUE)
- x <- gsub('LOCAL_TABLES',paste(supplement_number('Localisation population eligibility'),supplement_number('Decisive-question frequencies, both populations'),sep='–'),x,fixed=TRUE)
- gsub('RULES_TABLE',supplement_number('Post hoc: rules-only changes make three arm disagreements ties'),x,fixed=TRUE)
-})
-build_figure_legends <- function() {
-  sections <- figure_legend_sections()
-  text <- c('# Figure legends','',unlist(lapply(seq_along(sections),function(i) c(paste('##',names(sections)[i]),'',sections[[i]],''))))
-  text <- gsub('[ \t]+\n','\n',text)
-  text <- sub('\n+$','',text)
-  text <- text[seq_len(max(which(nzchar(text))))]
-  writeLines(enc2utf8(text),'output/manuscript/figure-legends.md',useBytes=TRUE)
-}
+build_figure_legends <- function() writeLines(enc2utf8(paste(figure_legend_sections(),collapse='\n\n')),'output/manuscript/figure-legends.md',useBytes=TRUE)

@@ -1,0 +1,613 @@
+slug,column,workbook,calculated,matches
+aarnoutse-2017,human,Low,Low,TRUE
+aarnoutse-2017,kit,Low,Low,TRUE
+aarnoutse-2017,nokit,Low,Low,TRUE
+aarnoutse-2017,independent,Some concerns,Some concerns,TRUE
+aarnoutse-2017,chosen_label,Low,Low,TRUE
+aarnoutse-2017,revised,Low,Low,TRUE
+abbasi-2012,human,High,Some concerns,FALSE
+abbasi-2012,kit,High,High,TRUE
+abbasi-2012,nokit,High,High,TRUE
+abbasi-2012,independent,High,High,TRUE
+abbasi-2012,chosen_label,High,High,TRUE
+abbasi-2012,revised,High,High,TRUE
+aboelfadl-2022,human,High,Some concerns,FALSE
+aboelfadl-2022,kit,Some concerns,Some concerns,TRUE
+aboelfadl-2022,nokit,Some concerns,Some concerns,TRUE
+aboelfadl-2022,independent,Some concerns,Some concerns,TRUE
+aboelfadl-2022,chosen_label,Some concerns,Some concerns,TRUE
+aboelfadl-2022,revised,Some concerns,Some concerns,TRUE
+albert-2013,human,High,Some concerns,FALSE
+albert-2013,kit,High,High,TRUE
+albert-2013,nokit,Some concerns,Some concerns,TRUE
+albert-2013,independent,Some concerns,Some concerns,TRUE
+albert-2013,chosen_label,Some concerns,Some concerns,TRUE
+albert-2013,revised,Some concerns,Some concerns,TRUE
+allen-2014,human,Some concerns,Some concerns,TRUE
+allen-2014,kit,High,High,TRUE
+allen-2014,nokit,Low,Low,TRUE
+allen-2014,independent,High,High,TRUE
+allen-2014,chosen_label,High,High,TRUE
+allen-2014,revised,High,High,TRUE
+allsop-2014,human,Some concerns,Some concerns,TRUE
+allsop-2014,kit,High,High,TRUE
+allsop-2014,nokit,High,High,TRUE
+allsop-2014,independent,High,High,TRUE
+allsop-2014,chosen_label,High,High,TRUE
+allsop-2014,revised,High,High,TRUE
+amini-2022,human,High,High,TRUE
+amini-2022,kit,Some concerns,Some concerns,TRUE
+amini-2022,nokit,Low,Low,TRUE
+amini-2022,independent,Some concerns,Some concerns,TRUE
+amini-2022,chosen_label,Some concerns,Some concerns,TRUE
+amini-2022,revised,Some concerns,Some concerns,TRUE
+an-2021,human,Low,Low,TRUE
+an-2021,kit,Some concerns,Some concerns,TRUE
+an-2021,nokit,Some concerns,Some concerns,TRUE
+an-2021,independent,High,High,TRUE
+an-2021,chosen_label,Some concerns,Some concerns,TRUE
+an-2021,revised,Some concerns,Some concerns,TRUE
+apalla-2013,human,Low,Low,TRUE
+apalla-2013,kit,Some concerns,Some concerns,TRUE
+apalla-2013,nokit,Low,Low,TRUE
+apalla-2013,independent,Some concerns,Some concerns,TRUE
+apalla-2013,chosen_label,Some concerns,Some concerns,TRUE
+apalla-2013,revised,Some concerns,Some concerns,TRUE
+arezzo-2008,human,High,High,TRUE
+arezzo-2008,kit,Some concerns,Some concerns,TRUE
+arezzo-2008,nokit,Some concerns,Some concerns,TRUE
+arezzo-2008,independent,High,High,TRUE
+arezzo-2008,chosen_label,Some concerns,Some concerns,TRUE
+arezzo-2008,revised,High,High,TRUE
+ascet,human,Some concerns,Some concerns,TRUE
+ascet,kit,Some concerns,Some concerns,TRUE
+ascet,nokit,Low,Low,TRUE
+ascet,independent,Some concerns,Some concerns,TRUE
+ascet,chosen_label,Some concerns,Some concerns,TRUE
+ascet,revised,Some concerns,Some concerns,TRUE
+ashar-2022,human,High,Some concerns,FALSE
+ashar-2022,kit,High,High,TRUE
+ashar-2022,nokit,High,High,TRUE
+ashar-2022,independent,High,High,TRUE
+ashar-2022,chosen_label,High,High,TRUE
+ashar-2022,revised,High,High,TRUE
+atli-2005,human,High,High,TRUE
+atli-2005,kit,High,High,TRUE
+atli-2005,nokit,High,High,TRUE
+atli-2005,independent,High,High,TRUE
+atli-2005,chosen_label,High,High,TRUE
+atli-2005,revised,High,High,TRUE
+attal-2016,human,High,High,TRUE
+attal-2016,kit,High,High,TRUE
+attal-2016,nokit,Low,Low,TRUE
+attal-2016,independent,High,High,TRUE
+attal-2016,chosen_label,High,High,TRUE
+attal-2016,revised,High,High,TRUE
+attal-2021,human,Low,Low,TRUE
+attal-2021,kit,High,High,TRUE
+attal-2021,nokit,High,High,TRUE
+attal-2021,independent,High,High,TRUE
+attal-2021,chosen_label,High,High,TRUE
+attal-2021,revised,High,High,TRUE
+award-1-2014,human,Low,Low,TRUE
+award-1-2014,kit,Some concerns,Some concerns,TRUE
+award-1-2014,nokit,Low,Low,TRUE
+award-1-2014,independent,Some concerns,Some concerns,TRUE
+award-1-2014,chosen_label,Some concerns,Some concerns,TRUE
+award-1-2014,revised,Some concerns,Some concerns,TRUE
+award-10-2018,human,Low,Low,TRUE
+award-10-2018,kit,Some concerns,Some concerns,TRUE
+award-10-2018,nokit,Low,Low,TRUE
+award-10-2018,independent,Some concerns,Some concerns,TRUE
+award-10-2018,chosen_label,Some concerns,Some concerns,TRUE
+award-10-2018,revised,Some concerns,Some concerns,TRUE
+award-chn3-2023,human,Low,Low,TRUE
+award-chn3-2023,kit,Low,Low,TRUE
+award-chn3-2023,nokit,Low,Low,TRUE
+award-chn3-2023,independent,Some concerns,Some concerns,TRUE
+award-chn3-2023,chosen_label,Low,Low,TRUE
+award-chn3-2023,revised,Some concerns,Some concerns,TRUE
+bagg-2022,human,Some concerns,Some concerns,TRUE
+bagg-2022,kit,Low,Low,TRUE
+bagg-2022,nokit,Low,Low,TRUE
+bagg-2022,independent,Some concerns,Some concerns,TRUE
+bagg-2022,chosen_label,Some concerns,Some concerns,TRUE
+bagg-2022,revised,Some concerns,Some concerns,TRUE
+baillard-2006,human,,High,FALSE
+baillard-2006,kit,Some concerns,Some concerns,TRUE
+baillard-2006,nokit,Some concerns,Some concerns,TRUE
+baillard-2006,independent,Some concerns,Some concerns,TRUE
+baillard-2006,chosen_label,Some concerns,Some concerns,TRUE
+baillard-2006,revised,Some concerns,Some concerns,TRUE
+baillard-2018,human,,Low,FALSE
+baillard-2018,kit,Low,Low,TRUE
+baillard-2018,nokit,Low,Low,TRUE
+baillard-2018,independent,Some concerns,Some concerns,TRUE
+baillard-2018,chosen_label,Low,Low,TRUE
+baillard-2018,revised,Some concerns,Some concerns,TRUE
+banovic26-avatar-2024,human,Low,Low,TRUE
+banovic26-avatar-2024,kit,Some concerns,Some concerns,TRUE
+banovic26-avatar-2024,nokit,Low,Low,TRUE
+banovic26-avatar-2024,independent,Some concerns,Some concerns,TRUE
+banovic26-avatar-2024,chosen_label,Some concerns,Some concerns,TRUE
+banovic26-avatar-2024,revised,Some concerns,Some concerns,TRUE
+barratt-2024,human,,Low,FALSE
+barratt-2024,kit,Low,Low,TRUE
+barratt-2024,nokit,Low,Low,TRUE
+barratt-2024,independent,Low,Low,TRUE
+barratt-2024,chosen_label,Low,Low,TRUE
+barratt-2024,revised,Low,Low,TRUE
+bausys-2023,human,Some concerns,Some concerns,TRUE
+bausys-2023,kit,Low,Low,TRUE
+bausys-2023,nokit,Low,Low,TRUE
+bausys-2023,independent,Some concerns,Some concerns,TRUE
+bausys-2023,chosen_label,Low,Low,TRUE
+bausys-2023,revised,Some concerns,Some concerns,TRUE
+becker-2015,human,High,High,TRUE
+becker-2015,kit,High,High,TRUE
+becker-2015,nokit,High,High,TRUE
+becker-2015,independent,High,High,TRUE
+becker-2015,chosen_label,High,High,TRUE
+becker-2015,revised,High,High,TRUE
+beerendonk-1996,human,Some concerns,Some concerns,TRUE
+beerendonk-1996,kit,Some concerns,Some concerns,TRUE
+beerendonk-1996,nokit,Some concerns,Some concerns,TRUE
+beerendonk-1996,independent,Some concerns,Some concerns,TRUE
+beerendonk-1996,chosen_label,Some concerns,Some concerns,TRUE
+beerendonk-1996,revised,Some concerns,Some concerns,TRUE
+beerendonk-1999,human,Some concerns,Some concerns,TRUE
+beerendonk-1999,kit,High,High,TRUE
+beerendonk-1999,nokit,High,High,TRUE
+beerendonk-1999,independent,High,High,TRUE
+beerendonk-1999,chosen_label,High,High,TRUE
+beerendonk-1999,revised,High,High,TRUE
+bendix-1996,human,High,Some concerns,FALSE
+bendix-1996,kit,High,High,TRUE
+bendix-1996,nokit,High,High,TRUE
+bendix-1996,independent,High,High,TRUE
+bendix-1996,chosen_label,High,High,TRUE
+bendix-1996,revised,High,High,TRUE
+bendix-2000,human,High,Some concerns,FALSE
+bendix-2000,kit,High,High,TRUE
+bendix-2000,nokit,High,High,TRUE
+bendix-2000,independent,High,High,TRUE
+bendix-2000,chosen_label,High,High,TRUE
+bendix-2000,revised,High,High,TRUE
+bente-2014,human,High,High,TRUE
+bente-2014,kit,Some concerns,Some concerns,TRUE
+bente-2014,nokit,Some concerns,Some concerns,TRUE
+bente-2014,independent,Some concerns,Some concerns,TRUE
+bente-2014,chosen_label,Some concerns,Some concerns,TRUE
+bente-2014,revised,Some concerns,Some concerns,TRUE
+boedt-2023,human,Low,Low,TRUE
+boedt-2023,kit,Some concerns,Some concerns,TRUE
+boedt-2023,nokit,Low,Low,TRUE
+boedt-2023,independent,Some concerns,Some concerns,TRUE
+boedt-2023,chosen_label,Some concerns,Some concerns,TRUE
+boedt-2023,revised,Some concerns,Some concerns,TRUE
+boeree-2017,human,Low,Low,TRUE
+boeree-2017,kit,Some concerns,Some concerns,TRUE
+boeree-2017,nokit,Low,Low,TRUE
+boeree-2017,independent,Some concerns,Some concerns,TRUE
+boeree-2017,chosen_label,Some concerns,Some concerns,TRUE
+boeree-2017,revised,Some concerns,Some concerns,TRUE
+cadet,human,Low,Low,TRUE
+cadet,kit,Some concerns,Some concerns,TRUE
+cadet,nokit,Some concerns,Some concerns,TRUE
+cadet,independent,Some concerns,Some concerns,TRUE
+cadet,chosen_label,Some concerns,Some concerns,TRUE
+cadet,revised,Some concerns,Some concerns,TRUE
+canvas-program,human,,Low,FALSE
+canvas-program,kit,Low,Low,TRUE
+canvas-program,nokit,Low,Low,TRUE
+canvas-program,independent,Some concerns,Some concerns,TRUE
+canvas-program,chosen_label,Low,Low,TRUE
+canvas-program,revised,Low,Low,TRUE
+caprie,human,Low,Low,TRUE
+caprie,kit,Low,Low,TRUE
+caprie,nokit,Low,Low,TRUE
+caprie,independent,Low,Low,TRUE
+caprie,chosen_label,Low,Low,TRUE
+caprie,revised,Low,Low,TRUE
+castoldi-2020,human,High,High,TRUE
+castoldi-2020,kit,Some concerns,Some concerns,TRUE
+castoldi-2020,nokit,High,High,TRUE
+castoldi-2020,independent,High,High,TRUE
+castoldi-2020,chosen_label,High,High,TRUE
+castoldi-2020,revised,High,High,TRUE
+chiba-2021,human,Low,Low,TRUE
+chiba-2021,kit,Some concerns,Some concerns,TRUE
+chiba-2021,nokit,Some concerns,Some concerns,TRUE
+chiba-2021,independent,High,High,TRUE
+chiba-2021,chosen_label,Some concerns,Some concerns,TRUE
+chiba-2021,revised,High,High,TRUE
+chua-2022,human,,High,FALSE
+chua-2022,kit,Low,Low,TRUE
+chua-2022,nokit,Low,Low,TRUE
+chua-2022,independent,Some concerns,Some concerns,TRUE
+chua-2022,chosen_label,Low,Low,TRUE
+chua-2022,revised,Some concerns,Some concerns,TRUE
+clyman-2019,human,Some concerns,Some concerns,TRUE
+clyman-2019,kit,Some concerns,Some concerns,TRUE
+clyman-2019,nokit,Low,Low,TRUE
+clyman-2019,independent,High,High,TRUE
+clyman-2019,chosen_label,Some concerns,Some concerns,TRUE
+clyman-2019,revised,High,High,TRUE
+dapa-hf,human,,Low,FALSE
+dapa-hf,kit,Low,Low,TRUE
+dapa-hf,nokit,Low,Low,TRUE
+dapa-hf,independent,Low,Low,TRUE
+dapa-hf,chosen_label,Low,Low,TRUE
+dapa-hf,revised,Low,Low,TRUE
+de-waal-2021,human,Low,Low,TRUE
+de-waal-2021,kit,Some concerns,Some concerns,TRUE
+de-waal-2021,nokit,Low,Low,TRUE
+de-waal-2021,independent,Some concerns,Some concerns,TRUE
+de-waal-2021,chosen_label,Some concerns,Some concerns,TRUE
+de-waal-2021,revised,Some concerns,Some concerns,TRUE
+declare-timi-58,human,,Low,FALSE
+declare-timi-58,kit,Low,Low,TRUE
+declare-timi-58,nokit,Low,Low,TRUE
+declare-timi-58,independent,Low,Low,TRUE
+declare-timi-58,chosen_label,Low,Low,TRUE
+declare-timi-58,revised,Low,Low,TRUE
+deliver,human,,Low,FALSE
+deliver,kit,Low,Low,TRUE
+deliver,nokit,Low,Low,TRUE
+deliver,independent,Low,Low,TRUE
+deliver,chosen_label,Low,Low,TRUE
+deliver,revised,Low,Low,TRUE
+dian-2018,human,Low,Low,TRUE
+dian-2018,kit,Some concerns,Some concerns,TRUE
+dian-2018,nokit,Some concerns,Some concerns,TRUE
+dian-2018,independent,Some concerns,Some concerns,TRUE
+dian-2018,chosen_label,Some concerns,Some concerns,TRUE
+dian-2018,revised,Some concerns,Some concerns,TRUE
+duration-8-2016,human,Low,Low,TRUE
+duration-8-2016,kit,Some concerns,Some concerns,TRUE
+duration-8-2016,nokit,Low,Low,TRUE
+duration-8-2016,independent,Some concerns,Some concerns,TRUE
+duration-8-2016,chosen_label,Some concerns,Some concerns,TRUE
+duration-8-2016,revised,Some concerns,Some concerns,TRUE
+einarsson-2017,human,Some concerns,Some concerns,TRUE
+einarsson-2017,kit,Some concerns,Some concerns,TRUE
+einarsson-2017,nokit,Low,Low,TRUE
+einarsson-2017,independent,Some concerns,Some concerns,TRUE
+einarsson-2017,chosen_label,Some concerns,Some concerns,TRUE
+einarsson-2017,revised,Some concerns,Some concerns,TRUE
+el-khuffash-2021,human,Some concerns,Some concerns,TRUE
+el-khuffash-2021,kit,Some concerns,Some concerns,TRUE
+el-khuffash-2021,nokit,Low,Low,TRUE
+el-khuffash-2021,independent,Some concerns,Some concerns,TRUE
+el-khuffash-2021,chosen_label,Some concerns,Some concerns,TRUE
+el-khuffash-2021,revised,Some concerns,Some concerns,TRUE
+elixa,human,Low,Low,TRUE
+elixa,kit,Low,Low,TRUE
+elixa,nokit,Low,Low,TRUE
+elixa,independent,Low,Low,TRUE
+elixa,chosen_label,Low,Low,TRUE
+elixa,revised,Low,Low,TRUE
+empa-reg-outcome,human,,Low,FALSE
+empa-reg-outcome,kit,Some concerns,Some concerns,TRUE
+empa-reg-outcome,nokit,Low,Low,TRUE
+empa-reg-outcome,independent,Low,Low,TRUE
+empa-reg-outcome,chosen_label,Some concerns,Some concerns,TRUE
+empa-reg-outcome,revised,Some concerns,Some concerns,TRUE
+emperor-preserved,human,,Low,FALSE
+emperor-preserved,kit,Low,Low,TRUE
+emperor-preserved,nokit,Low,Low,TRUE
+emperor-preserved,independent,Low,Low,TRUE
+emperor-preserved,chosen_label,Low,Low,TRUE
+emperor-preserved,revised,Low,Low,TRUE
+emperor-reduced,human,,Low,FALSE
+emperor-reduced,kit,Low,Low,TRUE
+emperor-reduced,nokit,Low,Low,TRUE
+emperor-reduced,independent,Low,Low,TRUE
+emperor-reduced,chosen_label,Low,Low,TRUE
+emperor-reduced,revised,Low,Low,TRUE
+envision,human,,Low,FALSE
+envision,kit,Some concerns,Some concerns,TRUE
+envision,nokit,Some concerns,Some concerns,TRUE
+envision,independent,High,High,TRUE
+envision,chosen_label,Some concerns,Some concerns,TRUE
+envision,revised,High,High,TRUE
+espinos-2017,human,Some concerns,Some concerns,TRUE
+espinos-2017,kit,Some concerns,Some concerns,TRUE
+espinos-2017,nokit,Some concerns,Some concerns,TRUE
+espinos-2017,independent,Some concerns,Some concerns,TRUE
+espinos-2017,chosen_label,Some concerns,Some concerns,TRUE
+espinos-2017,revised,Some concerns,Some concerns,TRUE
+exscel,human,Low,Low,TRUE
+exscel,kit,Low,Low,TRUE
+exscel,nokit,Low,Low,TRUE
+exscel,independent,Low,Low,TRUE
+exscel,chosen_label,Low,Low,TRUE
+exscel,revised,Low,Low,TRUE
+ferreira-2021,human,Low,Low,TRUE
+ferreira-2021,kit,High,High,TRUE
+ferreira-2021,nokit,High,High,TRUE
+ferreira-2021,independent,High,High,TRUE
+ferreira-2021,chosen_label,High,High,TRUE
+ferreira-2021,revised,High,High,TRUE
+fr-as-2018,human,Low,Low,TRUE
+fr-as-2018,kit,Some concerns,Some concerns,TRUE
+fr-as-2018,nokit,Low,Low,TRUE
+fr-as-2018,independent,Some concerns,Some concerns,TRUE
+fr-as-2018,chosen_label,Low,Low,TRUE
+fr-as-2018,revised,Some concerns,Some concerns,TRUE
+frat-2019,human,,Low,FALSE
+frat-2019,kit,Low,Low,TRUE
+frat-2019,nokit,Low,Low,TRUE
+frat-2019,independent,Some concerns,Some concerns,TRUE
+frat-2019,chosen_label,Low,Low,TRUE
+frat-2019,revised,Low,Low,TRUE
+freeman-2020,human,Low,Low,TRUE
+freeman-2020,kit,Some concerns,Some concerns,TRUE
+freeman-2020,nokit,Some concerns,Some concerns,TRUE
+freeman-2020,independent,High,High,TRUE
+freeman-2020,chosen_label,Some concerns,Some concerns,TRUE
+freeman-2020,revised,High,High,TRUE
+fulop-2021,human,Some concerns,Some concerns,TRUE
+fulop-2021,kit,High,Some concerns,FALSE
+fulop-2021,nokit,High,High,TRUE
+fulop-2021,independent,High,High,TRUE
+fulop-2021,chosen_label,Some concerns,Some concerns,TRUE
+fulop-2021,revised,Some concerns,Some concerns,TRUE
+getgoal-duo1-2013,human,Some concerns,Some concerns,TRUE
+getgoal-duo1-2013,kit,Some concerns,Some concerns,TRUE
+getgoal-duo1-2013,nokit,Low,Low,TRUE
+getgoal-duo1-2013,independent,Some concerns,Some concerns,TRUE
+getgoal-duo1-2013,chosen_label,Some concerns,Some concerns,TRUE
+getgoal-duo1-2013,revised,Some concerns,Some concerns,TRUE
+getgoal-f1-2013,human,Some concerns,Some concerns,TRUE
+getgoal-f1-2013,kit,Some concerns,Some concerns,TRUE
+getgoal-f1-2013,nokit,Some concerns,Some concerns,TRUE
+getgoal-f1-2013,independent,Some concerns,Some concerns,TRUE
+getgoal-f1-2013,chosen_label,Some concerns,Some concerns,TRUE
+getgoal-f1-2013,revised,Some concerns,Some concerns,TRUE
+getgood-2020,human,Some concerns,Some concerns,TRUE
+getgood-2020,kit,Low,Low,TRUE
+getgood-2020,nokit,Low,Low,TRUE
+getgood-2020,independent,Some concerns,Some concerns,TRUE
+getgood-2020,chosen_label,Low,Low,TRUE
+getgood-2020,revised,Some concerns,Some concerns,TRUE
+gillis-2014,human,High,High,TRUE
+gillis-2014,kit,Some concerns,Some concerns,TRUE
+gillis-2014,nokit,Some concerns,Some concerns,TRUE
+gillis-2014,independent,Some concerns,Some concerns,TRUE
+gillis-2014,chosen_label,Some concerns,Some concerns,TRUE
+gillis-2014,revised,Some concerns,Some concerns,TRUE
+grant-2017,human,High,High,TRUE
+grant-2017,kit,Some concerns,Some concerns,TRUE
+grant-2017,nokit,Some concerns,Some concerns,TRUE
+grant-2017,independent,Some concerns,Some concerns,TRUE
+grant-2017,chosen_label,Some concerns,Some concerns,TRUE
+grant-2017,revised,Some concerns,Some concerns,TRUE
+guitton-2019,human,,Low,FALSE
+guitton-2019,kit,Low,Low,TRUE
+guitton-2019,nokit,Low,Low,TRUE
+guitton-2019,independent,Some concerns,Some concerns,TRUE
+guitton-2019,chosen_label,Low,Low,TRUE
+guitton-2019,revised,Some concerns,Some concerns,TRUE
+gupta-2024,human,Low,Some concerns,FALSE
+gupta-2024,kit,Low,Low,TRUE
+gupta-2024,nokit,Low,Low,TRUE
+gupta-2024,independent,Low,Low,TRUE
+gupta-2024,chosen_label,Low,Low,TRUE
+gupta-2024,revised,Low,Low,TRUE
+hamido-2021,human,High,High,TRUE
+hamido-2021,kit,Some concerns,Some concerns,TRUE
+hamido-2021,nokit,High,High,TRUE
+hamido-2021,independent,High,High,TRUE
+hamido-2021,chosen_label,High,High,TRUE
+hamido-2021,revised,High,High,TRUE
+hanafiah-2022,human,High,High,TRUE
+hanafiah-2022,kit,High,High,TRUE
+hanafiah-2022,nokit,High,High,TRUE
+hanafiah-2022,independent,High,High,TRUE
+hanafiah-2022,chosen_label,High,High,TRUE
+hanafiah-2022,revised,High,High,TRUE
+harmony-outcomes,human,Low,Low,TRUE
+harmony-outcomes,kit,Low,Low,TRUE
+harmony-outcomes,nokit,Low,Low,TRUE
+harmony-outcomes,independent,Low,Low,TRUE
+harmony-outcomes,chosen_label,Low,Low,TRUE
+harmony-outcomes,revised,Low,Low,TRUE
+heemskerk-2016,human,Low,Low,TRUE
+heemskerk-2016,kit,Low,Low,TRUE
+heemskerk-2016,nokit,Low,Low,TRUE
+heemskerk-2016,independent,Low,Low,TRUE
+heemskerk-2016,chosen_label,Low,Low,TRUE
+heemskerk-2016,revised,Low,Low,TRUE
+hill-2017,human,Some concerns,Some concerns,TRUE
+hill-2017,kit,Some concerns,Some concerns,TRUE
+hill-2017,nokit,Some concerns,Some concerns,TRUE
+hill-2017,independent,Some concerns,Some concerns,TRUE
+hill-2017,chosen_label,Some concerns,Some concerns,TRUE
+hill-2017,revised,Some concerns,Some concerns,TRUE
+host-exam,human,Low,Low,TRUE
+host-exam,kit,Low,Low,TRUE
+host-exam,nokit,Some concerns,Some concerns,TRUE
+host-exam,independent,Some concerns,Some concerns,TRUE
+host-exam,chosen_label,Some concerns,Some concerns,TRUE
+host-exam,revised,Some concerns,Some concerns,TRUE
+hundscheid-2022,human,Some concerns,Some concerns,TRUE
+hundscheid-2022,kit,Some concerns,Some concerns,TRUE
+hundscheid-2022,nokit,Low,Low,TRUE
+hundscheid-2022,independent,Some concerns,Some concerns,TRUE
+hundscheid-2022,chosen_label,Some concerns,Some concerns,TRUE
+hundscheid-2022,revised,Some concerns,Some concerns,TRUE
+ibrahim-2017,human,Low,Low,TRUE
+ibrahim-2017,kit,High,High,TRUE
+ibrahim-2017,nokit,High,High,TRUE
+ibrahim-2017,independent,High,High,TRUE
+ibrahim-2017,chosen_label,High,High,TRUE
+ibrahim-2017,revised,High,High,TRUE
+jaber-2016,human,,Low,FALSE
+jaber-2016,kit,Some concerns,Some concerns,TRUE
+jaber-2016,nokit,Low,Low,TRUE
+jaber-2016,independent,Some concerns,Some concerns,TRUE
+jaber-2016,chosen_label,Some concerns,Some concerns,TRUE
+jaber-2016,revised,Some concerns,Some concerns,TRUE
+jindani-2016,human,Low,Low,TRUE
+jindani-2016,kit,Some concerns,Some concerns,TRUE
+jindani-2016,nokit,Low,Low,TRUE
+jindani-2016,independent,Some concerns,Some concerns,TRUE
+jindani-2016,chosen_label,Some concerns,Some concerns,TRUE
+jindani-2016,revised,Some concerns,Some concerns,TRUE
+kang25-recovery-2020,human,Low,Low,TRUE
+kang25-recovery-2020,kit,Low,Low,TRUE
+kang25-recovery-2020,nokit,Low,Low,TRUE
+kang25-recovery-2020,independent,Low,Low,TRUE
+kang25-recovery-2020,chosen_label,Low,Low,TRUE
+kang25-recovery-2020,revised,Low,Low,TRUE
+leader,human,Low,Low,TRUE
+leader,kit,Low,Low,TRUE
+leader,nokit,Low,Low,TRUE
+leader,independent,Low,Low,TRUE
+leader,chosen_label,Low,Low,TRUE
+leader,revised,Low,Low,TRUE
+levin-2011,human,Some concerns,Some concerns,TRUE
+levin-2011,kit,Some concerns,Some concerns,TRUE
+levin-2011,nokit,Low,Low,TRUE
+levin-2011,independent,High,High,TRUE
+levin-2011,chosen_label,Some concerns,Some concerns,TRUE
+levin-2011,revised,Some concerns,Some concerns,TRUE
+levin-2016,human,Some concerns,Some concerns,TRUE
+levin-2016,kit,Some concerns,Some concerns,TRUE
+levin-2016,nokit,Some concerns,Some concerns,TRUE
+levin-2016,independent,High,High,TRUE
+levin-2016,chosen_label,Some concerns,Some concerns,TRUE
+levin-2016,revised,High,High,TRUE
+lv-2023,human,,Some concerns,FALSE
+lv-2023,kit,Low,Low,TRUE
+lv-2023,nokit,Some concerns,Some concerns,TRUE
+lv-2023,independent,Some concerns,Some concerns,TRUE
+lv-2023,chosen_label,Some concerns,Some concerns,TRUE
+lv-2023,revised,Some concerns,Some concerns,TRUE
+monaleesa-2,human,Low,Low,TRUE
+monaleesa-2,kit,Low,Low,TRUE
+monaleesa-2,nokit,Low,Low,TRUE
+monaleesa-2,independent,Low,Low,TRUE
+monaleesa-2,chosen_label,Low,Low,TRUE
+monaleesa-2,revised,Low,Low,TRUE
+monaleesa-3,human,Low,Low,TRUE
+monaleesa-3,kit,Low,Low,TRUE
+monaleesa-3,nokit,Low,Low,TRUE
+monaleesa-3,independent,Low,Low,TRUE
+monaleesa-3,chosen_label,Low,Low,TRUE
+monaleesa-3,revised,Low,Low,TRUE
+monaleesa-7,human,Low,Low,TRUE
+monaleesa-7,kit,Low,Low,TRUE
+monaleesa-7,nokit,Low,Low,TRUE
+monaleesa-7,independent,Low,Low,TRUE
+monaleesa-7,chosen_label,Low,Low,TRUE
+monaleesa-7,revised,Low,Low,TRUE
+monarch-2,human,Low,Low,TRUE
+monarch-2,kit,Low,Low,TRUE
+monarch-2,nokit,Low,Low,TRUE
+monarch-2,independent,Low,Low,TRUE
+monarch-2,chosen_label,Low,Low,TRUE
+monarch-2,revised,Low,Low,TRUE
+monarch-3,human,Low,Low,TRUE
+monarch-3,kit,Low,Low,TRUE
+monarch-3,nokit,Low,Low,TRUE
+monarch-3,independent,Low,Low,TRUE
+monarch-3,chosen_label,Low,Low,TRUE
+monarch-3,revised,Low,Low,TRUE
+monarch-plus,human,Low,Low,TRUE
+monarch-plus,kit,Low,Low,TRUE
+monarch-plus,nokit,Low,Low,TRUE
+monarch-plus,independent,Some concerns,Some concerns,TRUE
+monarch-plus,chosen_label,Low,Low,TRUE
+monarch-plus,revised,Low,Low,TRUE
+nefigard,human,,Low,FALSE
+nefigard,kit,Some concerns,Some concerns,TRUE
+nefigard,nokit,High,High,TRUE
+nefigard,independent,Some concerns,Some concerns,TRUE
+nefigard,chosen_label,Some concerns,Some concerns,TRUE
+nefigard,revised,Some concerns,Some concerns,TRUE
+paloma-2,human,Low,Low,TRUE
+paloma-2,kit,Low,Low,TRUE
+paloma-2,nokit,Low,Low,TRUE
+paloma-2,independent,Some concerns,Some concerns,TRUE
+paloma-2,chosen_label,Low,Low,TRUE
+paloma-2,revised,Some concerns,Some concerns,TRUE
+pioneer-6,human,Low,Low,TRUE
+pioneer-6,kit,Low,Low,TRUE
+pioneer-6,nokit,Low,Low,TRUE
+pioneer-6,independent,Low,Low,TRUE
+pioneer-6,chosen_label,Low,Low,TRUE
+pioneer-6,revised,Low,Low,TRUE
+potsiurko-2022,human,Some concerns,Some concerns,TRUE
+potsiurko-2022,kit,Some concerns,Some concerns,TRUE
+potsiurko-2022,nokit,Some concerns,Some concerns,TRUE
+potsiurko-2022,independent,Some concerns,Some concerns,TRUE
+potsiurko-2022,chosen_label,Some concerns,Some concerns,TRUE
+potsiurko-2022,revised,Some concerns,Some concerns,TRUE
+rewind,human,Low,Low,TRUE
+rewind,kit,Low,Low,TRUE
+rewind,nokit,Low,Low,TRUE
+rewind,independent,Low,Low,TRUE
+rewind,chosen_label,Low,Low,TRUE
+rewind,revised,Low,Low,TRUE
+rosen-2021,human,,High,FALSE
+rosen-2021,kit,High,High,TRUE
+rosen-2021,nokit,Some concerns,Some concerns,TRUE
+rosen-2021,independent,High,High,TRUE
+rosen-2021,chosen_label,High,High,TRUE
+rosen-2021,revised,High,High,TRUE
+sanctuary,human,,Low,FALSE
+sanctuary,kit,Low,Low,TRUE
+sanctuary,nokit,Low,Low,TRUE
+sanctuary,independent,Low,Low,TRUE
+sanctuary,chosen_label,Low,Low,TRUE
+sanctuary,revised,Low,Low,TRUE
+smart-choice-3,human,Low,Low,TRUE
+smart-choice-3,kit,Low,Low,TRUE
+smart-choice-3,nokit,Low,Low,TRUE
+smart-choice-3,independent,Some concerns,Some concerns,TRUE
+smart-choice-3,chosen_label,Low,Low,TRUE
+smart-choice-3,revised,Some concerns,Some concerns,TRUE
+stop-igan,human,,Some concerns,FALSE
+stop-igan,kit,Some concerns,Some concerns,TRUE
+stop-igan,nokit,Some concerns,Some concerns,TRUE
+stop-igan,independent,Some concerns,Some concerns,TRUE
+stop-igan,chosen_label,Some concerns,Some concerns,TRUE
+stop-igan,revised,Some concerns,Some concerns,TRUE
+stopdapt-2,human,Some concerns,Some concerns,TRUE
+stopdapt-2,kit,Some concerns,Some concerns,TRUE
+stopdapt-2,nokit,Low,Low,TRUE
+stopdapt-2,independent,Some concerns,Some concerns,TRUE
+stopdapt-2,chosen_label,Some concerns,Some concerns,TRUE
+stopdapt-2,revised,Some concerns,Some concerns,TRUE
+stopdapt-3,human,Some concerns,Some concerns,TRUE
+stopdapt-3,kit,Some concerns,Some concerns,TRUE
+stopdapt-3,nokit,Some concerns,Some concerns,TRUE
+stopdapt-3,independent,Some concerns,Some concerns,TRUE
+stopdapt-3,chosen_label,Some concerns,Some concerns,TRUE
+stopdapt-3,revised,Some concerns,Some concerns,TRUE
+sung-2020,human,Low,Low,TRUE
+sung-2020,kit,High,High,TRUE
+sung-2020,nokit,Some concerns,Some concerns,TRUE
+sung-2020,independent,Some concerns,Some concerns,TRUE
+sung-2020,chosen_label,Some concerns,Some concerns,TRUE
+sung-2020,revised,Some concerns,Some concerns,TRUE
+sustain-6,human,Low,Low,TRUE
+sustain-6,kit,Low,Low,TRUE
+sustain-6,nokit,Low,Low,TRUE
+sustain-6,independent,Low,Low,TRUE
+sustain-6,chosen_label,Low,Low,TRUE
+sustain-6,revised,Low,Low,TRUE
+testing,human,,Some concerns,FALSE
+testing,kit,Low,Low,TRUE
+testing,nokit,Low,Low,TRUE
+testing,independent,Some concerns,Some concerns,TRUE
+testing,chosen_label,Some concerns,Some concerns,TRUE
+testing,revised,Some concerns,Some concerns,TRUE
+vel-squez-2018,human,Low,Low,TRUE
+vel-squez-2018,kit,Low,Low,TRUE
+vel-squez-2018,nokit,Low,Low,TRUE
+vel-squez-2018,independent,Some concerns,Some concerns,TRUE
+vel-squez-2018,chosen_label,Low,Low,TRUE
+vel-squez-2018,revised,Some concerns,Some concerns,TRUE

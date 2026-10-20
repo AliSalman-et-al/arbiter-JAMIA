@@ -1,0 +1,70 @@
+- One or more packages recorded in the lockfile are not installed.
+- Use `renv::status()` for more details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+✔ | F W  S  OK | Context
+
+⠏ |          0 | algorithms                                                     
+⠼ |          5 | algorithms                                                     
+⠴ |          6 | algorithms                                                     
+⠴ |         26 | algorithms                                                     
+⠇ |         29 | algorithms                                                     
+✔ |         29 | algorithms
+
+⠏ |          0 | api-cost                                                       
+✔ |          1 | api-cost
+
+⠏ |          0 | binding                                                        
+⠴ |          6 | binding                                                        
+⠏ |         20 | binding                                                        
+⠇ |         39 | binding                                                        
+✔ |         50 | binding
+
+⠏ |          0 | bundle-reverification                                          
+⠼ |         15 | bundle-reverification                                          
+✔ |         16 | bundle-reverification
+
+⠏ |          0 | estimands                                                      
+⠦ |          7 | estimands                                                      
+⠧ |         18 | estimands                                                      
+⠙ |         22 | estimands                                                      
+✔ |         23 | estimands
+
+⠏ |          0 | experts                                                        
+⠸ |          4 | experts                                                        
+⠏ |         10 | experts                                                        
+⠦ |         17 | experts                                                        
+⠇ |         19 | experts                                                        
+⠴ |         26 | experts                                                        
+⠇ |         29 | experts                                                        
+⠙ |         32 | experts                                                        
+⠧ |         38 | experts                                                        
+⠼ |         45 | experts                                                        
+✔ |         53 | experts [4.5s]
+
+⠏ |          0 | inputs                                                         
+✔ |          7 | inputs
+
+⠏ |          0 | invalid-paths                                                  
+⠸ |         14 | invalid-paths                                                  
+✔ |         17 | invalid-paths
+
+⠏ |          0 | process                                                        
+⠋ |          1 | process                                                        
+⠧ |          8 | process                                                        
+⠋ |         11 | process                                                        
+✔ |         12 | process [2.2s]
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 9.1 s
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 208 ]

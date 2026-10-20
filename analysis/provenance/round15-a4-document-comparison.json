@@ -1,0 +1,56 @@
+{
+  "Supplement": {
+    "matches_after_requested_replacements": true,
+    "accepted_paragraphs": 479,
+    "rebuilt_paragraphs": 479,
+    "accepted_tables": 71,
+    "rebuilt_tables": 71,
+    "identical_table_cells": false,
+    "identical_text": false
+  },
+  "TRIPOD-LLM": {
+    "matches_after_requested_replacements": true,
+    "accepted_paragraphs": 9,
+    "rebuilt_paragraphs": 9,
+    "accepted_tables": 5,
+    "rebuilt_tables": 5,
+    "identical_table_cells": true,
+    "identical_text": true
+  },
+  "Table1": {
+    "matches_after_requested_replacements": true,
+    "accepted_paragraphs": 1,
+    "rebuilt_paragraphs": 1,
+    "accepted_tables": 1,
+    "rebuilt_tables": 1,
+    "identical_table_cells": true,
+    "identical_text": true
+  },
+  "Table2": {
+    "matches_after_requested_replacements": true,
+    "accepted_paragraphs": 1,
+    "rebuilt_paragraphs": 1,
+    "accepted_tables": 1,
+    "rebuilt_tables": 1,
+    "identical_table_cells": true,
+    "identical_text": true
+  },
+  "Table3": {
+    "matches_after_requested_replacements": true,
+    "accepted_paragraphs": 1,
+    "rebuilt_paragraphs": 1,
+    "accepted_tables": 1,
+    "rebuilt_tables": 1,
+    "identical_table_cells": true,
+    "identical_text": true
+  },
+  "Table4": {
+    "matches_after_requested_replacements": true,
+    "accepted_paragraphs": 1,
+    "rebuilt_paragraphs": 1,
+    "accepted_tables": 1,
+    "rebuilt_tables": 1,
+    "identical_table_cells": true,
+    "identical_text": true
+  }
+}

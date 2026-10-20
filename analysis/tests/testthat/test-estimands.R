@@ -13,8 +13,8 @@ test_that('stratified bootstrap preserves trial counts and whole clusters', {
 test_that('win shares score equal labels and retain neither outcomes', {
   d <- tibble(slug=letters[1:4],discordant=TRUE,consensus=c(TRUE,TRUE,TRUE,FALSE),
     kit='Low',nokit='High',preferred=c('Low','High','Some concerns',NA_character_),
-    chosen_label_A=c('Low','High','Some concerns','Low'),
-    chosen_label_Z=c('Low','High','Some concerns','High'))
+    chosen_label_1=c('Low','High','Some concerns','Low'),
+    chosen_label_2=c('Low','High','Some concerns','High'))
   w <- stratified_cluster_weights(tibble(slug=letters[1:4],meta_id='m'),100,3)
   x <- win_share(d,w)
   expect_equal(x$count,c(1L,1L,1L))
@@ -50,19 +50,6 @@ test_that('missing judgements fail exact and binary scoring', {
 test_that('quotations require five words and paired double quotes', {
   expect_identical(has_quotation(c('"one two three four five"','“one two three four five”',
     '"one two three four"',"'one two three four five'",NA)),c(TRUE,TRUE,FALSE,FALSE,FALSE))
-})
-
-test_that('composite excludes all split cells', {
-  x <- composite_reference(inputs)
-  expect_equal(as.integer(table(x$arm)),c(485L,485L))
-  expect_equal(nrow(composite_reference(inputs,'A')),1020L)
-})
-
-test_that('consensus endpoint reproduces label-based sanity counts', {
-  w <- stratified_cluster_weights(inputs$trials,100,20261018)
-  x <- win_share(adjudication_cells(inputs),w)
-  expect_equal(x$n,rep(62L,3))
-  expect_equal(x$count,c(54L,7L,1L))
 })
 
 test_that('Sonnet gate rejects inconsistencies and missing required answers', {

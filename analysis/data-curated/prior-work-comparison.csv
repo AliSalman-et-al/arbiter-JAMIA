@@ -9,4 +9,4 @@ choi_2026,"Choi 2026, J Evid-Based Pract",Choi 2026,10.63528/jebp.2026.00011,RoB
 hevia_2025,"Hevia 2025, ROBoto2, EMNLP demos",Hevia 2025,10.18653/v1/2025.emnlp-demos.2,RoB 2,521,Yes,Partly,Not reported,Not reported,Partly,Partly,Expert manual assessments (245-report evaluation subset),Yes,No,Yes,No,g
 liang_2026,"Liang 2026, JMIR AI",Liang 2026,10.2196/93761,RoB 2,97,Not reported,No,Not reported,Partly,Partly,Partly,Cochrane labels,No,No,Yes,No,h
 saadi_2026,"Saadi 2026, BMJ Digit Health AI",Saadi 2026,10.1136/bmjdh-2026-000034,ROBINS-I,171,Not reported,No,Not reported,Not reported,Not reported,Not reported,Concordant published ratings from 2 human teams,Partly,No,Yes,No,i
-arbiter,This study (ARBITER),This study,,RoB 2,102,Yes,Yes,Yes,Yes,Yes,Yes,blinded adjudication of disagreement cells,Yes,Yes,Yes,Yes,j
+arbiter,This study (ARBITER),This study,,RoB 2,102,Yes,Yes,Yes,Yes,Yes,Yes,blinded dual expert rating of all domains,Yes,Yes,Yes,Yes,j

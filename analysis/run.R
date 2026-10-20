@@ -1,6 +1,6 @@
-# Rebuild all numerical outputs from read-only inputs. Run from analysis/.
+# One entry point. Run from analysis/; raw inputs are read-only.
 source('R/load.R')
-for(f in setdiff(list.files('R',full.names=TRUE),c('R/load.R','R/figures.R','R/materials.R'))) source(f)
+for(f in setdiff(list.files('R',pattern='[.]R$',full.names=TRUE),'R/load.R')) source(f)
 SEED <- 20261018L
 B <- 10000L
 inputs <- load_inputs()
@@ -8,186 +8,39 @@ checks <- domain_checks(inputs)
 validate_gate(checks)
 weights <- stratified_cluster_weights(inputs$trials,B,SEED)
 cells <- adjudication_cells(inputs)
-run_metrics <- load_run_metrics()
-
-bundle_bindings <- readr::read_csv('data-derived/bundle-binding-counts.csv',show_col_types=FALSE) |> filter(arm %in% names(ARMS))
-stopifnot(nrow(bundle_bindings)==102L,!anyDuplicated(paste(bundle_bindings$arm,bundle_bindings$slug)),
-  setequal(bundle_bindings$slug,inputs$trials$slug))
-api_trials <- readr::read_csv('data-derived/api-cost-trials.csv',show_col_types=FALSE) |> filter(arm %in% names(ARMS))
-api_turns <- readr::read_csv('data-derived/api-cost-turns.csv',show_col_types=FALSE) |> filter(arm %in% names(ARMS))
-run_metrics <- run_metrics |> rename(harness_cost_usd=cost_usd) |>
-  left_join(api_trials |> select(arm,slug,cost_usd=point),by=c('arm','slug'))
-stopifnot(nrow(run_metrics)==204L,!anyNA(run_metrics$cost_usd))
-bundle_decisions <- bundle_decision_cells(run_metrics)
-validate_proposed_gate(bundle_decisions,inputs$labels)
-bundle_paths <- readr::read_csv('data-derived/bundle-path-checks.csv',show_col_types=FALSE) |> filter(arm %in% names(ARMS))
-stopifnot(!any(bundle_paths$invalid_path),!any(bundle_paths$invalid_active_answer),
-  all(bundle_paths$active_questions==bundle_paths$active_answered),
-  sum(bundle_paths$final)==nrow(bundle_decisions))
 dir.create('output/tables',recursive=TRUE,showWarnings=FALSE)
 save_table <- function(x,name) {
-  # Internal source-column names are translated before publication.
   names(x)[names(x)=='kit'] <- 'ARBITER_label'
   names(x)[names(x)=='nokit'] <- 'Baseline_label'
-  if('arm' %in% names(x)) x <- x[order(match(x$arm,c('ARBITER-Sonnet','Baseline-Sonnet',
-    'All-Low','Meta'))),,drop=FALSE]
-  name <- publication_filename(name)
-  x <- publication_labels(x)
-  readr::write_csv(x,paste0('output/tables/',name,'.csv'),na='')
+  if('arm' %in% names(x)) x <- x[order(match(x$arm,c('ARBITER-Sonnet','Baseline-Sonnet','All-Low','Meta'))),,drop=FALSE]
+  readr::write_csv(publication_labels(x),paste0('output/tables/',publication_filename(name),'.csv'),na='')
 }
-cost_summary <- api_trials |> group_by(arm) |> summarise(across(
-  c(point,lower,upper,harness,side_5m_point,side_5m_lower,side_5m_upper),
-  list(total=sum,median=median)),.groups='drop')
-save_table(cost_summary,'api-cost-summary')
-save_table(api_turns |> mutate(has_side=side_input+side_write1+side_write5+side_read+side_output>0,
-  request_excess=gap_input<0|gap_write1<0|gap_write5<0|gap_read<0) |> group_by(arm) |> summarise(across(
-  matches('^(request|result|side|gap)_(input|write1|write5|read|output)$'),sum),
-  requests=sum(requests),high_requests=sum(high_requests),compaction_events=sum(compaction_events),
-  turns_with_side_calls=sum(has_side),
-  turns_with_request_excess=sum(request_excess),
-  side_without_compaction=sum(side_without_compaction),.groups='drop'),'api-token-reconciliation')
-save_table(process_summary(run_metrics),'process-summary')
-save_table(process_display(run_metrics,weights),'table5')
-save_table(paired_process_difference(run_metrics,weights),'process-differences')
-save_table(audit_summary(run_metrics,weights,bundle_bindings),'audit-summary')
-save_table(evidence_distribution(run_metrics),'evidence-bases-distribution')
-save_table(bundle_decisions,'bundle-domain-checks')
-save_table(tibble(seed=SEED,replicates=B,coding_sample_seed=20261019L,
-  rng_kind=RNGkind()[1],quantile_type=7),'reproducibility')
-primary <- bind_rows(lapply(c('Consensus','A','Z','Split sensitivity'),function(s) win_share(cells,weights,s)))
-save_table(primary,'primary-endpoint')
-
-agreement_outputs <- function(labels,reference,exclude_missing=FALSE) {
-  all_low <- labels |> filter(arm=='ARBITER-Sonnet') |> mutate(arm='All-Low',label='Low')
-  labels <- bind_rows(labels,all_low)
-  groups <- c('D1-D5',paste0('D',1:5),'Overall')
-  results <- differences <- list()
-  for(g in groups) {
-    x <- if(g=='D1-D5') filter(labels,domain!='Overall') else filter(labels,domain==g)
-    if(!nrow(x)) next
-    reps <- list()
-    for(a in unique(x$arm)) {
-      d <- x |> filter(arm==a,!is.na(meta))
-      if(!nrow(d)) next
-      reps[[a]] <- agreement_replicates(d,weights,exclude_missing)
-      if(a=='All-Low') reps[[a]][c('kappa','AC2','sensitivity'),] <- NA_real_
-      results[[paste(g,a)]] <- interval_table(reps[[a]]) |>
-        mutate(arm=a,domain=g,reference=reference,n=sum(!exclude_missing|!is.na(d$label)),
-          missing=sum(is.na(d$label)),count=NA_integer_)
-      out <- results[[paste(g,a)]]
-      kept <- if(exclude_missing) filter(d,!is.na(label)) else d
-      for(m in c('accuracy','sensitivity','specificity')) {
-        eligible <- switch(m,accuracy=rep(TRUE,nrow(kept)),
-          sensitivity=kept$meta!='Low',specificity=kept$meta=='Low')
-        correct <- switch(m,accuracy=!is.na(kept$label)&kept$label==kept$meta,
-          sensitivity=!is.na(kept$label)&kept$label!='Low',
-          specificity=!is.na(kept$label)&kept$label=='Low')
-        out$count[out$metric==m] <- sum(correct & eligible)
-        out$n[out$metric==m] <- sum(eligible)
-      }
-      results[[paste(g,a)]] <- out
-    }
-    for(model in 'Sonnet') {
-      aa <- paste0('ARBITER-',model); bb <- paste0('Baseline-',model)
-      if(all(c(aa,bb) %in% names(reps))) differences[[paste(g,model)]] <-
-        interval_table(reps[[aa]]-reps[[bb]]) |> mutate(comparison=paste(aa,'minus',bb),
-          domain=g,reference=reference)
-    }
-  }
-  list(estimates=bind_rows(results),differences=bind_rows(differences))
-}
-meta_agreement <- agreement_outputs(inputs$labels,'Meta')
-save_table(meta_agreement$estimates,'agreement-meta')
-save_table(meta_agreement$differences,'agreement-meta-differences')
-composite <- agreement_outputs(composite_reference(inputs),'Composite')
-save_table(composite$estimates,'agreement-composite')
-save_table(composite$differences,'agreement-composite-differences')
-for(a in c('A','Z')) {
-  out <- agreement_outputs(composite_reference(inputs,a),paste('Adjudicator',a))
-  save_table(out$estimates,paste0('composite-',a))
-  save_table(out$differences,paste0('composite-',a,'-differences'))
-}
-save_table(checks,'domain-consistency-cells')
-save_table(invalid_path_sensitivity(inputs,checks),'invalid-path-sensitivity')
-save_table(checks |> filter(startsWith(arm,'ARBITER'),status=='Reported departure'),'algorithm-mismatches')
-save_table(checks |> count(arm,status),'algorithm-validation-summary')
-save_table(question_map(),'question-map')
-overall <- overall_checks(inputs$labels)
-save_table(overall,'overall-consistency-cells')
-overall_rates <- consistency_rates(overall,weights) |> mutate(domain='Overall')
-domain_rates <- bind_rows(lapply(c('D1-D5',paste0('D',1:5)),function(d) {
-  x <- if(d=='D1-D5') checks else filter(checks,domain==d)
-  x <- filter(x,!startsWith(arm,'ARBITER'))
-  consistency_rates(x,weights) |> mutate(domain=d)
-}))
-consistency <- bind_rows(overall_rates,domain_rates,bundle_decision_rates(bundle_decisions,inputs$labels,weights),
-  audit_summary(run_metrics,weights,bundle_bindings) |> rename(status=metric) |> mutate(domain='Audit',missing=NA_integer_))
-save_table(consistency,'table3-supplement')
-save_table(consistency |> filter(arm %in% c('Meta','ARBITER-Sonnet','Baseline-Sonnet')),'table3')
-
-reliability_pair <- function(x,y,name) {
-  d <- cells |> transmute(slug,meta=.data[[x]],label=.data[[y]])
-  interval_table(agreement_replicates(d,weights)) |> filter(metric %in% c('kappa','AC2','accuracy')) |>
-    mutate(comparison=name,n=nrow(d),count=if_else(metric=='accuracy',sum(d$meta==d$label),NA_integer_))
-}
-reliability <- bind_rows(reliability_pair('own_A','own_Z','A vs Z independent'),
-  reliability_pair('chosen_label_A','chosen_label_Z','A vs Z preferred'),
-  bind_rows(lapply(c('A','Z'),function(a) bind_rows(lapply(c('meta','kit','nokit'),function(s)
-    reliability_pair(s,paste0('own_',a),paste(a,'independent vs',
-      c(meta='meta label',kit='ARBITER-Sonnet',nokit='Baseline-Sonnet')[[s]])))))))
-reliability <- reliability |> mutate(population=if_else(grepl('independent vs',comparison),
-  'Disputed cells only (selected for disagreement with the meta label); not an estimate of overall meta-label accuracy',
-  'Disputed cells only'))
-save_table(reliability,'table4-reliability')
-leniency <- meta_leniency(cells,weights)
-save_table(leniency,'meta-leniency')
-save_table(cells |> filter(consensus) |> count(meta,preferred) |>
-  complete(meta=LABELS,preferred=LABELS,fill=list(n=0)),'meta-consensus-confusion')
-grounding <- bind_rows(lapply(names(ARMS),function(a)
-  grounding_share(filter(inputs$signals,arm==a),weights) |> mutate(arm=a)))
-save_table(grounding,'grounding')
-save_table(inputs$signals |> filter(startsWith(arm,'Baseline'),active) |>
-  group_by(arm) |> summarise(n=n(),answer_code_only=sum(!is.na(justification) &
-    trimws(justification) %in% c('Y','PY','PN','N','NI','NA')),.groups='drop'),
-  'baseline-justification-content')
-save_table(signalling_agreement(inputs,weights),'signalling-agreement')
-
-confusion <- inputs$labels |> filter(!is.na(meta)) |>
-  mutate(predicted=coalesce(label,'Missing')) |> count(arm,domain,meta,predicted) |>
-  complete(arm,domain,meta=LABELS,predicted=c(LABELS,'Missing'),fill=list(n=0))
-save_table(confusion,'confusion-matrices')
-forest <- bind_rows(lapply(split(filter(inputs$labels,domain!='Overall'),
-  interaction(filter(inputs$labels,domain!='Overall')$meta_id,
-    filter(inputs$labels,domain!='Overall')$arm,drop=TRUE)),function(d) {
-      interval_table(agreement_replicates(d,weights)) |> filter(metric=='kappa') |>
-        mutate(meta_id=d$meta_id[1],arm=d$arm[1],n=nrow(d))
-    }))
-save_table(forest,'forest-meta')
+run_unchanged(inputs,checks,weights,load_run_metrics())
 save_table(cells,'adjudication-analysis-cells')
-localisation <- localise_errors(inputs,cells)
-for(name in c('cells','counts','frequency','issues','eligibility'))
-  save_table(localisation[[name]],paste0('error-localisation-',name))
-save_table(localisation$candidates,'discussion-quote-candidates')
-if(file.exists('R/materials.R')) { source('R/materials.R'); build_materials(inputs,cells) }
-# Figure 1 is maintained separately. Its code and outputs are not regenerated here.
-save_table(published_direction_counts(cells),'published-direction-domain')
-save_table(vindicated_disagreements(cells),'vindicated-disagreements')
-save_table(severity_win_share(cells,weights),'severity-win-share')
-save_table(no_decisive_counts(localisation$cells),'no-decisive-counts')
-posthoc <- rules_only_recomputation(inputs$labels,checks,cells,weights)
-for(nm in names(posthoc)) save_table(posthoc[[nm]],paste0('rules-only-recomputation-',nm))
+save_table(primary_analyses(cells,weights),'primary-endpoint')
+expert <- expert_agreement(inputs,weights)
+for(n in names(expert)) save_table(expert[[n]],paste0('independent-',n))
+save_table(expert_reliability(inputs,weights),'expert-reliability')
+save_table(expert_unweighted(inputs,weights),'expert-unweighted')
 save_table(direction_of_disagreement(cells,weights),'direction-of-disagreement')
-stopifnot(system2('python3','verify-round14-bundles.py')==0)
-save_table(independent_paired_difference(cells,weights),'independent-paired-difference')
-save_table(composite_components(inputs,cells),'composite-components')
-save_table(question51_mechanism(inputs,localisation),'question51-mechanism')
-save_table(label_target_summary(inputs),'label-target-summary')
-save_table(label_binding_counts(inputs),'label-target-binding-counts')
-save_table(unweighted_agreement(inputs$labels,weights),'agreement-unweighted')
+validation <- validate_derived_overall(inputs)
+save_table(validation,'derived-overall-validation')
+message('Derived Overall mismatches: ',sum(!validation$matches),'/',nrow(validation))
+save_table(forced_choice_summary(cells),'forced-choice')
+save_table(revised_rating_summary(inputs),'revised-ratings')
+parsed <- parse_signalling_evidence(inputs$evidence)
+readr::write_csv(parsed,'data-derived/expert-signalling-components.csv',na='')
+save_table(parsed |> filter(issue!=''),'signalling-parse-issues')
+comparison <- match_signalling(parsed,inputs$signals)
+readr::write_csv(comparison,'data-derived/expert-signalling-comparisons.csv',na='')
+save_table(signalling_disagreement_summary(comparison),'signalling-disagreement-types')
+signals <- signalling_agreement(comparison,weights)
+for(n in names(signals)) save_table(signals[[n]],paste0('signalling-',n))
+save_table(answer_change_summary(parsed),'answer-changes')
+rules <- rules_only_analysis(inputs,checks,cells,weights)
+for(n in names(rules)) save_table(rules[[n]],paste0('rules-only-',n))
 save_table(reporting_checklist(),'reporting-checklist-skeleton')
-build_main_tables(inputs)
-build_manuscript_figures(cells)
-build_supplement(inputs)
-build_figure_legends()
-build_results_sentences()
-finish_publication_outputs()
+build_displays(inputs,cells)
+writeLines(capture.output(sessionInfo()),'output/session-info.txt')
+stopifnot(system2('quarto',c('render','results.qmd'))==0L)
+stopifnot(system2('quarto',c('render','supplement.qmd'))==0L)

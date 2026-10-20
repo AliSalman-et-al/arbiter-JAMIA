@@ -70,44 +70,9 @@ bundle_review_records <- function(canonical,arm,slug) {
   }))))
 }
 
-bundle_trace_records <- function(canonical,slug,eligible) {
-  labels <- c(low='Low',some_concerns='Some concerns',high='High')
-  sources <- canonical$batch$trials[[1]]$sources
-  bind_rows(lapply(seq_len(nrow(eligible)),function(i) {
-    cell <- eligible[i,]
-    d <- Filter(function(d) paste0('D',match(d$domain_id,c('domain:randomization','domain:deviations',
-      'domain:missing','domain:measurement','domain:selection')))==cell$domain,canonical$domain_records)[[1]]
-    a <- Filter(function(a) a$question_id %in% unlist(d$active_questions),d$answers)
-    answer_set <- paste(vapply(a,function(a) paste0(question_map()$question[
-      match(a$question_id,question_map()$question_id)],'=',answer_abbreviation(a$answer)),character(1)),collapse='; ')
-    bind_rows(lapply(a,function(a) bind_rows(lapply(a$bases,function(b) {
-      if(is.null(b$evidence)) return(NULL)
-      e <- canonical$proposal$evidence[[b$evidence]]
-      # Evidence files are also included in proposal evidence in these bundles.
-      if(is.null(e)||is.null(e$page)||is.null(e$quote)) return(NULL)
-      s <- Filter(function(s) s$id==e$source_id,sources)
-      if(!length(s)) return(NULL)
-      quote <- stringr::str_squish(e$quote)
-      words <- strsplit(quote,'\\s+')[[1]]
-      # Contiguous prefix only: never construct a quotation from justification.
-      passage <- paste(head(words,30),collapse=' ')
-      if(length(words)>30) passage <- paste0(passage,' …')
-      tibble(slug=slug,domain=cell$domain,meta=cell$meta,ARBITER_label=cell$kit,
-        Baseline_label=cell$nokit,preferred=cell$preferred,
-        question=question_map()$question[match(a$question_id,question_map()$question_id)],
-        answer=answer_abbreviation(a$answer),signalling_answers=answer_set,
-        proposed=unname(labels[d$decision$proposed]),passage=passage,
-        source=s[[1]]$label,page=e$page,start_line=e$start_line,end_line=e$end_line,
-        source_version=e$source_version,evidence_id=e$identity,full_passage=quote,
-        passage_words=min(length(words),30L))
-    }))))
-  }))
-}
-
 extract_bundle_review <- function(inputs,root='..',output='data-derived') {
-  cells <- adjudication_cells(inputs) |> filter(consensus,kit==preferred,kit!=meta)
-  paths <- traces <- bindings <- list()
-  for(arm in c('ARBITER-Sonnet','ARBITER-Haiku')) for(slug in inputs$trials$slug) {
+  paths <- bindings <- list()
+  for(arm in names(ARMS)[startsWith(names(ARMS),'ARBITER')]) for(slug in inputs$trials$slug) {
     path <- file.path(root,ARMS[[arm]],'bundles',paste0(slug,'.rob2.zip'))
     if(!file.exists(path)) stop('Bundle absent: ',path)
     canonical <- json_zip(path,'canonical.json')
@@ -121,21 +86,12 @@ extract_bundle_review <- function(inputs,root='..',output='data-derived') {
     bindings[[paste(arm,slug)]] <- tibble(arm=arm,slug=slug,
       !!!as.list(counts))
     paths[[paste(arm,slug)]] <- bundle_review_records(canonical,arm,slug)
-    eligible <- filter(cells,.data$slug==.env$slug)
-    if(arm=='ARBITER-Sonnet' && nrow(eligible)) {
-      canonical$proposal$evidence <- evidence
-      verification <- json_zip(path,'verification.json')
-      traces[[slug]] <- bundle_trace_records(canonical,slug,eligible) |>
-        mutate(verification_status=verification$result,
-          verification_checks=paste(unlist(verification$checks),collapse='; '),
-          verification_scope='Independent bundle verifier')
-    }
+
   }
   checks <- bind_rows(paths)
   stopifnot(!any(checks$invalid_path),!any(checks$invalid_active_answer),
     all(checks$active_questions==checks$active_answered))
   readr::write_csv(checks,file.path(output,'bundle-path-checks.csv'))
   readr::write_csv(bind_rows(bindings),file.path(output,'bundle-binding-counts.csv'))
-  readr::write_csv(bind_rows(traces),file.path(output,'bundle-trace-evidence.csv'))
   invisible(checks)
 }

@@ -1,0 +1,8 @@
+file,width_px,height_px,dpi_x,dpi_y,compression
+output/manuscript/Figure3.tiff,4110,2834,600.0,600.0,tiff_lzw
+output/manuscript/Figure4.tiff,4110,5078,600.0,600.0,tiff_lzw
+output/manuscript/Figure5.tiff,4110,3070,600.0,600.0,tiff_lzw
+output/manuscript/Figure6.tiff,4110,5787,600.0,600.0,tiff_lzw
+output/manuscript/eFigure1.tiff,4110,4724,600.0,600.0,tiff_lzw
+output/manuscript/eFigure2.tiff,4110,3307,600.0,600.0,tiff_lzw
+output/manuscript/eFigure3.tiff,4110,5787,600.0,600.0,tiff_lzw

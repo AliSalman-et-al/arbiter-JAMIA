@@ -1,0 +1,38 @@
+[
+  {
+    "adjudicator": "1",
+    "source": "ARBITER",
+    "n": 1507,
+    "disagreements": 617,
+    "within": 322,
+    "cross": 295,
+    "within_percent": 52.188006482982175
+  },
+  {
+    "adjudicator": "1",
+    "source": "Unassisted",
+    "n": 1417,
+    "disagreements": 732,
+    "within": 377,
+    "cross": 355,
+    "within_percent": 51.50273224043716
+  },
+  {
+    "adjudicator": "2",
+    "source": "ARBITER",
+    "n": 1501,
+    "disagreements": 504,
+    "within": 368,
+    "cross": 136,
+    "within_percent": 73.01587301587301
+  },
+  {
+    "adjudicator": "2",
+    "source": "Unassisted",
+    "n": 1414,
+    "disagreements": 566,
+    "within": 388,
+    "cross": 178,
+    "within_percent": 68.55123674911661
+  }
+]

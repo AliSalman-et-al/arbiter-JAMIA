@@ -12,21 +12,31 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 **Meta label**: The published RoB 2 judgement for a trial, taken from the source meta-analysis. The data files call it "human". Do not call it "the human label" or "ground truth".
 
-**Adjudicator**: One of two blinded human reviewers who re-assessed the disputed cells. Outputs call them Adjudicator 1 and Adjudicator 2. The data files call them A and Z: A is Adjudicator 1 and Z is Adjudicator 2.
+**Adjudicator**: One of two blinded human experts who assessed every D1-D5 cell of the analysis set, without AI, using a structured form. Outputs call them Adjudicator 1 and Adjudicator 2, matching data files `-1` and `-2`. An earlier disagreement-only adjudication was discarded and is not part of the analysis.
 
-**Independent judgement**: An adjudicator's own domain judgement, made from the trial documents and frozen before they saw any label. No AI was used. The data files call it `own`.
+**Independent rating**: An adjudicator's own signalling answers and domain rating for a cell, frozen before they saw any label. The data files call it `Independent`.
+_Avoid_: own judgement, independent judgement
 
-**Preferred judgement**: The label an adjudicator picked as most defensible among three blinded reviewers. Each blinded reviewer was a meta label, a baseline-arm label or an ARBITER-arm label, in random order. The data files call it `chosen_label`.
+**Forced choice**: The label an adjudicator picked as most defensible among three blinded labels (meta, baseline arm, ARBITER arm, in random order, without rationales). It is scored by label: every source whose label equals the chosen label is preferred. The data files call it `Chosen label`; `Chosen reviewer` is not used.
+_Avoid_: preferred judgement
+
+**Revised rating**: An adjudicator's own final rating after seeing the three labels. It may differ from all three. Descriptive only, because seeing the labels may anchor it. The data files call it `Revised`.
+
+**Derived Overall**: The Overall judgement the official RoB 2 rule gives from an adjudicator's independent domain ratings.
 
 ## Units
 
 **Cell**: One trial × one domain (D1 to D5, or Overall).
 
-**Disputed cell**: A D1-D5 cell where ARBITER-Sonnet or baseline-Sonnet differs from the meta label. Only disputed cells were adjudicated.
+**Disputed cell**: A D1-D5 cell where ARBITER-Sonnet or baseline-Sonnet differs from the meta label. It names a subset only; every cell was adjudicated.
 
-**Analysis set**: The 102 trials that all four arms assessed. Three trials are excluded because ARBITER does not support their design: atwine-2020, haney-2004 and herrmann-2016.
+**Discordant cell**: A D1-D5 cell where the ARBITER and baseline arm labels differ. The forced-choice primary endpoint is computed on discordant cells.
 
-**Composite reference**: A reference label for every D1-D5 cell. On disputed cells where both adjudicators gave the same preferred judgement, it is that judgement. On every other cell, it is the meta label.
+**Concordant cell**: A D1-D5 cell where the meta, ARBITER and baseline labels are all equal. The forced choice carries no information there.
+
+**Agreed reference**: The cells where both adjudicators' independent ratings are equal, with that rating as the reference.
+
+**Analysis set**: The 102 trials that both reported arms assessed. Three trials are excluded because ARBITER does not support their design: atwine-2020, haney-2004 and herrmann-2016.
 
 ## Judgements
 
@@ -42,8 +52,6 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 **Disagreement with Published**: A cell where a source's label differs from the meta label. Do not call it a "departure".
 
-**Vindicated disagreement**: A disagreement with Published where the consensus preferred judgement equals the disagreeing source's label.
-
 **Direction of disagreement**: Whether a source's label is stricter (more severe) or more lenient (less severe) than the published label for the same cell, on Low < Some concerns < High. The literature calls a model's stricter labels "over-flagging". Use "stricter" and "more lenient" in outputs, never "over-flagging" or "under-flagging", because those words assume the published label is right.
 
 **Rules-only recomputation**: The unassisted arm's labels with every algorithm violation replaced by the label the official algorithm gives from that arm's own signalling answers. It asks how much of ARBITER's advantage the rule engine alone would supply. Do not call it "Unassisted with ARBITER".
@@ -52,7 +60,7 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 **Input parity**: Both arms received the same files for each trial: articles, supplements, registry records, protocols and SAPs.
 
-**Decisive question**: A signalling question where a losing source's answer contradicts the adjudicators' independent answer, and where substituting the adjudicators' answer alone changes the algorithm's judgement.
+**Decisive question**: A signalling question where a losing source's answer contradicts an adjudicator's independent answer, and where substituting the adjudicators' answer alone changes the algorithm's judgement.
 
 **All-Low rule**: A reference rule that predicts Low for every cell. Do not call it a "baseline", which means the baseline arm. It shows how much of an accuracy figure comes from Low being the most common label.
 
@@ -66,11 +74,13 @@ These are the labels used in manuscript text, figures and tables. The internal t
 | Baseline-Sonnet | Unassisted | Unassisted |
 | Meta label | Published label | Published label |
 | All-Low rule | All-Low rule | All-Low rule |
-| Adjudicator A / Z | Adjudicator 1 / 2 | Adjudicator 1 / 2 |
+| Adjudicator (file -1 / -2) | Adjudicator 1 / 2 | Adjudicator 1 / 2 |
 | Meta label (first use) | published review label | published review label |
 | Not Low | Some concerns or High | Some concerns or High |
 | Discordant cell | cell where the two arms disagreed | cell where the two arms disagreed |
-| Consensus preferred judgement | the adjudicators' agreed choice | the adjudicators' agreed choice |
+| Agreed forced choice | the adjudicators' agreed choice | the adjudicators' agreed choice |
+| Independent rating | the adjudicator's independent rating | the adjudicator's independent rating |
+| Agreed reference | cells where both adjudicators' independent ratings agreed | cells where both adjudicators' independent ratings agreed |
 | Decisive question | question that alone changed the rating | question that alone changed the rating |
 | LLM agent | AI model (Figure 1: AI model (LLM agent)) | AI model |
 | ARBITER server | ARBITER (rule-based software, no AI) (Figure 1: ARBITER server) | ARBITER server |

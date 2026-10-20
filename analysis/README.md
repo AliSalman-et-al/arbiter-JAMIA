@@ -1,49 +1,33 @@
-# ARBITER JAMIA analysis
+# Rebuild the ARBITER analysis
 
-The section 5.4 gate passes for all 510 ARBITER domain ratings. Main results and supplement rebuild
-all numerical outputs directly from the source inputs.
+Run these commands from `analysis/`:
 
-From this directory, using R 4.6.1 and Quarto 1.10.19:
-
-```powershell
-& 'C:/Program Files/R/R-4.6.1/bin/Rscript.exe' -e "renv::restore()"
-& 'C:/Program Files/R/R-4.6.1/bin/Rscript.exe' -e "testthat::test_dir('tests/testthat')"
-$env:QUARTO_R = 'C:/Program Files/R/R-4.6.1/bin'
-quarto render
+```sh
+Rscript -e 'renv::restore()'
+Rscript run.R
+Rscript -e 'testthat::test_dir("tests/testthat")'
+Rscript verify-output.R
 ```
 
-Rendering results.qmd rebuilds outputs; supplement.qmd reads those outputs in project render order. No cached computations are required. Inputs in the parent directory are read-only. HTML is local review material and ignored by git. Bootstrap seed: 20261018; 10,000 replicates. Section 5.6 localises losses through independent signalling answers and the validated algorithms; no human coding is required.
+`run.R` reads the two Sonnet arms and the two full-coverage blinded expert workbooks, computes all estimates, and builds the figures, Word documents and HTML views. The inputs remain read-only. `tests/testthat/` is the single test suite. `verify-output.R` verifies CSV provenance, protected artwork, unchanged analyses, provisional counts, artifact presence and reader-facing leaks.
 
-The analysis uses R only. `R/` contains pure estimands and resampling functions;
-`run.R` orchestrates numerical exports, materials and figures. Tables retain
-full precision, interval bounds and valid bootstrap counts. All missing-data
-and denominator choices are documented in DEVIATIONS.md. Localisation audit rows,
-parse issues, class counts, question frequencies and fixed-rule Discussion quote
-candidates are exported under output/tables/.
+The frozen lockfile records R 4.6.1. This Linux rebuild uses the documented R 4.3.3 substitution. `readxl` 1.6.0 and its dependencies are already recorded in `renv.lock`; missing packages were installed into the project renv library. `output/session-info.txt` records the environment actually used. All intervals use 10,000 trial-cluster bootstrap samples within meta-analysis, seed 20261018, with shared weights for paired estimates.
 
-The binding section 5.8 amendment is included. `data-derived/` contains two reported
-per-arm process/audit CSVs. To regenerate them with the raw logs and
-bundles present, run `Rscript R/extract-run-metrics.R` from analysis/. It streams
-JSONL, validates usage against metadata and stops if logs are absent. Rendering
-reads only those derived CSVs, never raw logs or bundles. ARBITER proposals are
-checked independently against the official algorithms; recorded overrides are
-listed separately from baseline algorithm violations.
+The author-defined design dated 2026-10-21 is in `../docs/round15/BRIEF.md` and `../ANALYSIS-PLAN.md`. `round15-report.md` records results, data discrepancies and verification. Historical reports are retained unchanged in `archive/`. `public-release-exclusions.txt` records release exclusions for raw and historical material.
 
-`round2-report.md` records all requested headline numbers and the complete
-deviation log. Generate it after rendering with `Rscript report-round2.R`.
+`R/load.R` checks every workbook label against the arm exports and requires exactly 102 trials and 510 unique domain cells per expert. `R/signalling.R` preserves answer components and records unresolved rows. `R/expert-agreement.R` implements the independent references, forced choice, direction counts and rules-only recomputation. `R/unchanged.R` retains the parent published-label, rule, audit and process calculations. Display CSVs, source traces and numerical estimates are in `output/tables/`; publication artifacts are in `output/manuscript/`.
 
-Round 3 additionally reads two committed bundle-review CSVs. Regenerate these
-with `Rscript extract-bundle-review.R` from analysis/; this needs committed
-bundles, not raw turn logs. It checks every domain history record's active
-questions and answers, then extracts trace candidates from cited evidence.
-`round3-report.md` records review fixes and verification. Table CSVs retain
-numeric precision; rendered tables format percentages and confidence intervals.
+Raw logs are not required to rebuild the analysis. The explicit extraction commands below regenerate committed derived metrics when their raw inputs are available and stop when those inputs are absent:
 
-The author amendment 69c73c6 supersedes harness pricing. Run
-`Rscript extract-api-costs.R` to reconstruct the frozen API list-price equivalents
-from raw logs. The supplementary time/cost table uses per-trial point estimates. The supplement contains
-five-minute side-write sensitivity, unusable harness figures and
-request/result/side-call token reconciliation. Re-run `Rscript report-round3.R`
-after rendering to update the round 3 report from the committed table outputs.
+```sh
+Rscript R/extract-run-metrics.R
+Rscript extract-bundle-review.R
+Rscript extract-api-costs.R
+python3 reverify-bundles.py
+```
 
-Round 14 reports the two Sonnet arms only. Post hoc analyses are explicitly labelled. See round14-report.md and verify-round14*.py/R for reproduction and invariance checks. On Linux, use Rscript and Quarto; the original Windows commands above document the frozen environment.
+The full AVATAR trace uses committed bundle projections. Trial PDFs are not redistributed; the benchmark records source identifiers and content hashes.
+
+New expert-reference Overall comparisons use n = 102 for ARBITER and Unassisted, and n = 81 observed Published labels. Twenty-one published reviews gave no Overall label; these are excluded, never counted as disagreements. ARBITER and Unassisted are also reported on the same n = 81 trials, and every paired Overall contrast involving Published is restricted to that subset. Agreed-reference rows further restrict to equal expert ratings; each row prints n.
+
+`signalling-disagreement-types.csv` partitions all evaluable five-level arm–expert disagreements into within-direction Y↔PY or N↔PN changes and cross-direction changes (including NI versus either direction). The counts appear under eTable 5. Figure 6 shows collapsed question differences; eFigure 3 retains both scales and all sparse questions.

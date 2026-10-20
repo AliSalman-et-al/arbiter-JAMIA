@@ -1,0 +1,8 @@
+Word pages 113 pixel-identical to prior rendered pages 106 changed/new 7
+/tmp/round15-a3-qa/TRIPOD-LLM/page-3.png
+/tmp/round15-a3-qa/Supplement/page-11.png
+/tmp/round15-a3-qa/Supplement/page-19.png
+/tmp/round15-a3-qa/Supplement/page-30.png
+/tmp/round15-a3-qa/Supplement/page-47.png
+/tmp/round15-a3-qa/Supplement/page-80.png
+/tmp/round15-a3-qa/Table2/page-1.png

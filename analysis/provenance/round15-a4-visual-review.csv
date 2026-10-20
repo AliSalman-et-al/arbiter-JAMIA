@@ -1,0 +1,114 @@
+document,page,words,outside_page,outside_examples,review
+TRIPOD-LLM,1,296,0,,Pixel-identical to prior inspected page; prior review retained.
+TRIPOD-LLM,2,370,0,,Pixel-identical to prior inspected page; prior review retained.
+TRIPOD-LLM,3,340,0,,Pixel-identical to prior inspected page; prior review retained.
+TRIPOD-LLM,4,289,0,,Pixel-identical to prior inspected page; prior review retained.
+TRIPOD-LLM,5,98,0,,Pixel-identical to prior inspected page; prior review retained.
+Table1,1,187,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,1,170,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,2,477,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,3,215,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,4,235,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,5,260,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,6,186,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,7,185,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,8,185,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,9,185,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,10,185,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,11,510,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,12,277,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,13,273,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,14,279,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,15,290,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,16,325,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,17,337,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,18,326,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,19,477,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,20,217,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,21,294,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,22,82,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,23,164,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,24,56,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,25,280,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,26,257,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,27,284,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,28,253,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,29,176,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,30,67,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,31,223,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,32,230,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,33,78,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,34,188,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,35,190,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,36,95,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,37,164,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,38,275,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,39,273,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,40,279,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,41,342,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,42,101,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,43,104,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,44,322,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,45,334,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,46,326,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,47,502,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,48,156,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,49,238,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,50,127,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,51,195,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,52,268,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,53,136,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,54,331,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,55,80,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,56,159,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,57,227,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,58,228,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,59,235,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,60,64,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,61,171,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,62,142,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,63,179,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,64,68,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,65,161,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,66,182,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,67,129,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,68,145,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,69,112,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,70,207,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,71,135,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,72,199,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,73,133,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,74,186,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,75,148,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,76,168,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,77,212,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,78,21,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,79,42,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,80,55,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,81,103,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,82,165,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,83,108,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,84,203,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,85,26,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,86,64,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,87,100,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,88,30,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,89,46,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,90,137,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,91,106,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,92,83,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,93,243,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,94,291,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,95,920,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,96,260,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,97,107,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,98,190,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,99,296,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,100,961,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,101,632,0,,Pixel-identical to prior inspected page; prior review retained.
+Supplement,102,201,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,103,176,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Supplement,104,230,0,,Changed page visually reviewed; no layout regression. Resolution-dependent raster omissions cross-checked with alternate scales and extracted text.
+Table3,1,206,0,,Pixel-identical to prior inspected page; prior review retained.
+Table2,1,312,0,,Pixel-identical to prior inspected page; prior review retained.
+Table4,1,382,0,,Pixel-identical to prior inspected page; prior review retained.

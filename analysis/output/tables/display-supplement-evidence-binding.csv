@@ -1,0 +1,10 @@
+Source,Metric,Count,n,Value
+ARBITER (Sonnet 5.5),Evidence coverage,1538,1538,100.0% (100.0–100.0)
+ARBITER (Sonnet 5.5),Bundle verification,102,102,100.0% (100.0–100.0)
+ARBITER (Sonnet 5.5),Structural evidence binding (overall),1421,1421,100.0% (100.0–100.0)
+ARBITER (Sonnet 5.5),Text-span evidence binding,1407,1407,100.0% (100.0–100.0)
+ARBITER (Sonnet 5.5),Visual evidence binding,14,14,100.0% (100.0–100.0)
+ARBITER (Sonnet 5.5),Other evidence records,0,1421,0.0% (0.0–0.0)
+ARBITER (Sonnet 5.5),Trials using visual evidence,8,102,7.8% (2.9–12.7)
+Unassisted (Sonnet 5.5),Evidence coverage,—,—,—
+Unassisted (Sonnet 5.5),Bundle verification,—,—,—

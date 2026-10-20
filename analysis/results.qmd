@@ -1,49 +1,40 @@
 ---
-title: "ARBITER manuscript results"
+title: "ARBITER results against blinded expert ratings"
 ---
 
 ```{r}
-if(Sys.getenv('ARBITER_PRESENTATION_ONLY')=='1') source('build-round12.R') else source('run.R')
-source('R/report.R')
-main_tables <- list(main_table2(),reliability_table(),main_table3(),prior_work_table())
-legends <- figure_legend_sections()
+source('R/load.R')
+source('R/presentation.R')
+source('R/displays.R')
 ```
 
-The benchmark compares ARBITER with an Unassisted model on 102 trials from 16 meta-analyses. Blinded adjudication of disputed domain judgements is the primary quantitative evidence. Each arm assessed each trial once.
+Two blinded human experts independently rated every trial domain without AI. The figures and tables below use the frozen independent ratings and the separate forced-choice endpoint.
 
-```{r}
-for(i in 1:6) {
-  cat('\n## ',names(legends)[i],'\n\n',sep='')
-  alt <- sub('.*Alt text: ', '', legends[[i]])
-  cat('<img class="img-fluid" src="output/manuscript/Figure',i,'.png" alt="',htmltools::htmlEscape(gsub('\n',' ',alt),attribute=TRUE),'">\n\n',sep='')
-  cat(legends[[i]],'\n')
-}
-```
-
-```{r}
-for(i in 1:4) {
-  cat('\n## Table ',i,'. ',MAIN_TABLE_TITLES[i],'\n\n',sep='')
-  cat(flextable::flextable_to_rmd(main_table_flextable(main_tables[[i]],i)),sep='\n')
-}
-```
-
-## Key results
+## Results
 
 ```{r}
 cat(readLines('output/manuscript/results-sentences.md',encoding='UTF-8'),sep='\n')
 ```
 
-## How to reproduce
+## Figures
 
-Use ARBITER 1.0.0, public commit `2f549ae`. The [GitHub repository](https://github.com/alisalman-et-al/arbiter-JAMIA) contains the analysis code, source identifiers, derived run metrics and adjudication data. Trial PDFs are not redistributed. The [supplement HTML](supplement.html) mirrors [Supplement.docx](output/manuscript/Supplement.docx).
-
-From the repository root:
-
-```sh
-cd analysis
-Rscript -e "renv::restore()"
-Rscript -e "testthat::test_dir('tests/testthat')"
-quarto render
+```{r}
+for(i in 1:6) cat('\n### Figure ',i,'\n\n![Figure ',i,'](output/manuscript/Figure',i,'.png)\n\n',sep='')
+cat(readLines('output/manuscript/figure-legends.md',encoding='UTF-8'),sep='\n')
 ```
 
-The optional extraction command `uv run python extract-avatar-trace.py` refreshes the illustrative trace when the local run bundle and rationale log are available; rendering uses committed derived files. Code is in `analysis/R/`, tests in `analysis/tests/testthat/`, curated metadata in `analysis/data-curated/`, derived data in `analysis/data-derived/`, numerical exports in `analysis/output/tables/`, and publication files in `analysis/output/manuscript/`.
+## Tables
+
+```{r}
+for(i in 1:4) {
+  cat('\n### Table ',i,'\n\n',sep='')
+  body <- system2('quarto',c('pandoc',paste0('output/manuscript/Table',i,'.docx'),'--to=html'),stdout=TRUE)
+  stopifnot(is.null(attr(body,'status')))
+  cat(body,sep='\n')
+  cat('\n\n[Download Word table](output/manuscript/Table',i,'.docx)\n\n',sep='')
+}
+```
+
+## Reproduction
+
+The analysis pipeline, test suite and output verifier reproduce these results. The numerical CSVs and source traces accompany the figures. [Supplementary methods and results](supplement.html) provide all secondary estimates and reporting details. Trial PDFs are not redistributed.

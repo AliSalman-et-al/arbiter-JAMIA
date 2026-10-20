@@ -1,6 +1,0 @@
-{
-  "bundles": 102,
-  "json_members": 1888,
-  "candidate_keys": [],
-  "finding": "No rejected-save or attempted-save records in committed bundle JSON; 53/637 cannot be derived. Successful histories do not provide the attempted-save denominator."
-}

@@ -1,7 +1,0 @@
-metric,estimate,lower,upper,valid_replicates,analysis,n,count,note,direction
-ARBITER,0.9777777777777777,0.926829268292683,1,10000,Post hoc severity stratification,45,44,,ARBITER more severe
-Unassisted,0.022222222222222223,0,0.07317073170731707,10000,Post hoc severity stratification,45,1,,ARBITER more severe
-Neither,0,0,0,10000,Post hoc severity stratification,45,0,,ARBITER more severe
-ARBITER,0.5882352941176471,0.35714285714285715,0.8,10000,Post hoc severity stratification,17,10,,ARBITER less severe
-Unassisted,0.35294117647058826,0.14285714285714285,0.5790570175438581,10000,Post hoc severity stratification,17,6,,ARBITER less severe
-Neither,0.058823529411764705,0,0.18181818181818182,10000,Post hoc severity stratification,17,1,,ARBITER less severe

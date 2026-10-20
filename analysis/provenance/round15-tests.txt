@@ -1,0 +1,26 @@
+- One or more packages recorded in the lockfile are not installed.
+- Use `renv::status()` for more details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+algorithms: .............................
+api-cost: .
+binding: ..................................................
+bundle-reverification: ................
+estimands: .......................
+experts: .................................................
+inputs: .......
+invalid-paths: .................
+process: ............
+
+══ DONE ════════════════════════════════════════════════════════════════════════
+ failed skipped   error warning  passed 
+      0       0       0       0     204 

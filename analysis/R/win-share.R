@@ -1,8 +1,8 @@
 win_share <- function(cells,weights,analysis='Consensus') {
   cells <- cells[cells$discordant,]
   if(analysis=='Consensus') cells <- cells[cells$consensus,]
-  preferred <- switch(analysis,Consensus=cells$preferred,A=cells$chosen_label_A,
-    Z=cells$chosen_label_Z,`Split sensitivity`=cells$preferred)
+  preferred <- switch(analysis,Consensus=cells$preferred,`Adjudicator 1`=cells$chosen_label_1,
+    `Adjudicator 2`=cells$chosen_label_2,`Split sensitivity`=cells$preferred)
   arbiter <- !is.na(preferred) & preferred==cells$kit
   baseline <- !is.na(preferred) & preferred==cells$nokit
   # Split cells are forced losses for ARBITER, without inventing a baseline win.

@@ -1,0 +1,27 @@
+Slug,Domain,Original,Recomputed,Discordant,Consensus
+an-2021,D1,Some concerns,High,FALSE,TRUE
+chiba-2021,D1,Some concerns,Low,FALSE,TRUE
+dian-2018,D1,Low,Some concerns,FALSE,TRUE
+gupta-2024,D1,Low,High,FALSE,TRUE
+sung-2020,D1,Low,Some concerns,FALSE,TRUE
+castoldi-2020,D2,Some concerns,High,TRUE,FALSE
+ibrahim-2017,D2,Some concerns,Low,FALSE,FALSE
+stopdapt-3,D2,Some concerns,High,FALSE,TRUE
+albert-2013,D3,Some concerns,High,TRUE,FALSE
+ashar-2022,D3,Some concerns,High,TRUE,TRUE
+levin-2016,D3,Some concerns,High,FALSE,TRUE
+bendix-1996,D4,Some concerns,Low,FALSE,TRUE
+boedt-2023,D4,Low,High,FALSE,TRUE
+fulop-2021,D4,Some concerns,Low,FALSE,TRUE
+abbasi-2012,D5,Some concerns,High,FALSE,TRUE
+aboelfadl-2022,D5,Some concerns,High,FALSE,TRUE
+attal-2021,D5,Some concerns,High,FALSE,TRUE
+award-chn3-2023,D5,Low,Some concerns,FALSE,TRUE
+baillard-2018,D5,Low,Some concerns,FALSE,TRUE
+chiba-2021,D5,Some concerns,High,FALSE,TRUE
+dian-2018,D5,Some concerns,High,FALSE,TRUE
+envision,D5,Some concerns,High,FALSE,TRUE
+grant-2017,D5,Some concerns,High,FALSE,TRUE
+jindani-2016,D5,Low,Some concerns,TRUE,TRUE
+stopdapt-3,D5,Some concerns,High,TRUE,FALSE
+sung-2020,D5,Some concerns,High,TRUE,TRUE

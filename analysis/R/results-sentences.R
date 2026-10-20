@@ -1,36 +1,47 @@
-# Generated prose reads frozen analysis CSVs rather than hand-entered estimates.
 results_sentences <- function() {
-  p <- manuscript_data('primary-endpoint') |> filter(analysis=='Consensus',metric=='ARBITER')
-  d <- manuscript_data('published-direction-domain') |> filter(domain=='All',direction=='Less severe')
-  f <- manuscript_data('error-localisation-frequency') |> filter(population=='Primary',source=='Baseline-Sonnet',question==5.1)
-  r <- manuscript_data('no-decisive-counts') |> filter(source=='Baseline-Sonnet')
-  a <- manuscript_data('agreement-meta') |> filter(domain=='D1-D5',metric=='kappa',arm %in% c('ARBITER-Sonnet','Baseline-Sonnet'))
-  s <- manuscript_data('table2') |> filter(domain=='D1-D5',metric=='sensitivity',arm %in% c('ARBITER-Sonnet','Baseline-Sonnet'))
-  dep <- manuscript_data('table3') |> filter(arm=='Baseline-Sonnet',domain=='D1-D5',status=='Departure')
-  rel <- manuscript_data('table4-reliability') |> filter(metric=='accuracy',grepl('independent vs ARBITER',comparison))
-  flow <- manuscript_data('adjudication-analysis-cells')
-  trials <- load_inputs()$trials
-  process <- manuscript_data('table5')
-  number_words <- function(n) c('one','two','three','four','five','six','seven','eight','nine')[n]
-  pct <- function(x) fmt_number(100*x,1)
-  direction <- manuscript_data('direction-of-disagreement')
-  strict <- manuscript_data('vindicated-disagreements') |> distinct(source,direction,all_n) |>
-    group_by(source) |> summarise(stricter=sum(all_n[direction=='More severe']),total=sum(all_n),.groups='drop')
-  mechanism <- manuscript_data('question51-mechanism')
-  rules <- manuscript_data('rules-only-recomputation-changed')
-  wins <- manuscript_data('rules-only-recomputation-win_share') |> filter(metric=='Baseline')
-  pub <- manuscript_data('rules-only-recomputation-agreement') |> filter(domain=='D1-D5',metric=='accuracy')
-  agreed <- manuscript_data('rules-only-recomputation-agreed_choice')
+  p <- read_display('primary-endpoint') |> filter(analysis=='Consensus',metric=='ARBITER')
+  a <- read_display('independent-estimates') |> filter(domain=='D1-D5',metric=='accuracy',adjudicator %in% c('1','2'))
+  direction <- read_display('direction-of-disagreement') |> filter(source=='ARBITER',direction=='Stricter',outcome=='Expert matches model')
+  audit <- read_display('audit-summary') |> filter(arm=='ARBITER (Sonnet 5.5)')
+  breaks <- read_display('table3') |> filter(arm=='Unassisted (Sonnet 5.5)',domain=='D1-D5',status=='Any rule break')
+  pub <- read_display('table1') |> filter(domain=='D1-D5',metric=='kappa',arm!='All-Low rule')
+  process <- read_display('table5')
+  rules <- read_display('rules-only-changed')
+  signals <- read_display('signalling-estimates') |> filter(group=='Overall',level=='collapsed')
+  rel <- read_display('expert-reliability')
+  reliability <- rel |> filter(domain=='D1-D5',metric=='accuracy')
+  kappa <- rel |> filter(domain=='D1-D5',metric=='kappa')
+  d3 <- rel |> filter(domain=='D3',metric=='accuracy')
+  differences <- read_display('independent-differences') |> filter(metric=='accuracy',comparison=='ARBITER minus Unassisted',adjudicator %in% c('1','2'))
+  overall <- differences |> filter(domain=='Overall',population=='Observed Published Overall')
+  signal_diff <- read_display('signalling-differences') |> filter(level=='collapsed')
+  signal_all <- signal_diff |> filter(group=='Overall')
+  signal_d5 <- signal_diff |> filter(group=='D5')
+  signal_d3 <- signal_diff |> filter(group=='D3',adjudicator=='2')
+  repaired <- read_display('rules-only-agreement') |> filter(domain=='D1-D5',metric=='accuracy',source=='Unassisted',adjudicator %in% c('1','2'))
+  repaired_choice <- read_display('rules-only-primary') |> filter(analysis=='Consensus',metric=='Unassisted')
+  original_choice <- read_display('primary-endpoint') |> filter(analysis=='Consensus',metric=='Unassisted')
+  pct <- function(v) fmt_number(100*v,1)
+  one <- function(who) {
+    x <- filter(a,adjudicator==who)
+    d <- filter(differences,adjudicator==who,domain=='D1-D5')
+    sprintf('Adjudicator %s independently agreed with ARBITER on %s/%s cells (%s%%), Unassisted on %s/%s (%s%%) and Published on %s/%s (%s%%); the paired ARBITER − Unassisted difference was %s percentage points (95%% CI %s–%s; Table 2).',
+      who,x$count[1],x$n[1],pct(x$estimate[1]),x$count[2],x$n[2],pct(x$estimate[2]),x$count[3],x$n[3],pct(x$estimate[3]),pct(d$estimate),pct(d$lower),pct(d$upper))
+  }
+  before <- filter(a,source=='Unassisted')
+  quotations <- filter(audit,metric=='Text-span evidence binding')
   c(
-    sprintf('The benchmark covered %s trials assessed in two arms, with %s domain disagreements reviewed independently (Figure 3).',nrow(trials),nrow(flow)),
-    sprintf('Both models agreed poorly with published review labels (weighted κ %s for ARBITER and %s for Unassisted; Table 1; Figure 4A); where they disagreed, they were usually stricter: ARBITER %s/%s and Unassisted %s/%s.',fmt_number(a$estimate[1]),fmt_number(a$estimate[2]),strict$stricter[1],strict$total[1],strict$stricter[2],strict$total[2]),
-    sprintf('Adjudicators usually upheld stricter model ratings: %s/%s for ARBITER and %s/%s for Unassisted; for more lenient ratings, the corresponding counts were %s/%s and %s/%s (Figure 4B).',direction$count[1],direction$n[1],direction$count[3],direction$n[3],direction$count[2],direction$n[2],direction$count[4],direction$n[4]),
-    sprintf('Among adjudicated cells where the two arms disagreed, both adjudicators preferred ARBITER’s rating in %s of %s cells (%s%%; 95%% CI %s–%s; Figure 5); their independent ratings agreed with ARBITER in %s and %s of %s reviewed ratings (Table 2).',p$count,p$n,pct(p$estimate),pct(p$lower),pct(p$upper),rel$count[1],rel$count[2],rel$n[1]),
-    sprintf('Among the %s eligible Unassisted ratings the adjudicators did not choose, %s hinged on at least one question that alone changed the rating; the analysis-plan question (%s) did so in %s (Figure 6). In the post hoc rules-only recomputation, %s of the original 62 arm disagreements changed, each to ARBITER’s rating, which the adjudicators had preferred; the other %s were unchanged (eTable %s).',sum(r$eligible),sum(r$with_decisive),format(f$question,nsmall=1),f$n,sum(rules$consensus & rules$discordant,na.rm=TRUE),62-sum(rules$consensus & rules$discordant,na.rm=TRUE),supplement_number('Post hoc: rules-only changes make three arm disagreements ties')),
-    sprintf('In the post hoc description of the %s question 5.1 losses, %s had a supplied registry record, protocol or SAP, but none of the Unassisted justifications mentioned any of these documents (eTable %s).',nrow(mechanism),sum(mechanism$registry_or_protocol_or_sap),supplement_number('Post hoc: supplied documents and answers in question 5.1 losses')),
-    sprintf('Without ARBITER, %s of %s evaluable domain ratings broke the RoB 2 rules (%s%%; 95%% CI %s–%s; Table 3); ARBITER had zero domain rule breaks by design and no recorded overrides, and every quotation was found in its content-hashed stored source.',dep$count,dep$n,pct(dep$estimate),pct(dep$lower),pct(dep$upper)),
-    sprintf('ARBITER’s system runtime was a median [IQR] of %s minutes per trial versus %s for Unassisted; API list-price equivalents were US$%s versus US$%s. The runs used a subscription. Paired mean differences were %s minutes and US$%s (95%% CIs; eTable %s).',fmt_process_text(process[[2]][1]),fmt_process_text(process[[3]][1]),fmt_process_text(process[[2]][2]),fmt_process_text(process[[3]][2]),fmt_process_text(process[[4]][1]),fmt_process_text(process[[4]][2]),supplement_number('Time, cost and token use per trial by model'))
-  )
+    sprintf('Among cells where the arms disagreed and the adjudicators made the same forced choice, they preferred ARBITER’s rating in %s/%s (%s%%; 95%% CI %s–%s; Figure 5).',p$count,p$n,pct(p$estimate),pct(p$lower),pct(p$upper)),
+    one('1'),one('2'),
+    sprintf('On the %s trials with observed Published Overall, the paired ARBITER − Unassisted difference in agreement with derived Overall was %s percentage points (95%% CI %s–%s) for Adjudicator 1 and %s (%s–%s) for Adjudicator 2 (Table 2).',overall$n[1],pct(overall$estimate[1]),pct(overall$lower[1]),pct(overall$upper[1]),pct(overall$estimate[2]),pct(overall$lower[2]),pct(overall$upper[2])),
+    sprintf('For ARBITER ratings stricter than Published, the independent expert rating matched ARBITER in %s/%s cells for Adjudicator 1 and %s/%s for Adjudicator 2 (Figure 4B).',direction$count[1],direction$n[1],direction$count[2],direction$n[2]),
+    sprintf('Unassisted broke the RoB 2 rules in %s/%s evaluable domain ratings (%s%%; 95%% CI %s–%s), while all %s/%s cited text records were bound to quotations found in content-hashed stored sources (Table 3).',breaks$count,breaks$n,pct(breaks$estimate),pct(breaks$lower),pct(breaks$upper),quotations$count,quotations$n),
+    sprintf('Agreement with Published was poor for both arms (weighted κ %s for ARBITER and %s for Unassisted; Table 1).',fmt_number(pub$estimate[1]),fmt_number(pub$estimate[2])),
+    sprintf('Median [IQR] system runtime was %s minutes per trial for ARBITER and %s for Unassisted; API list-price equivalents were US$%s and US$%s per trial, respectively (eTable 16).',fmt_process_text(process[[2]][1]),fmt_process_text(process[[3]][1]),fmt_process_text(process[[2]][2]),fmt_process_text(process[[3]][2])),
+    sprintf('Rules-only recomputation changed %s Unassisted domain ratings, including %s of the original arm-discordant cells. On the %s cells with an agreed forced choice, Unassisted matched that choice in %s cells before recomputation and %s afterwards. Agreement with the independent ratings fell from %s/%s to %s/%s for Adjudicator 1 and from %s/%s to %s/%s for Adjudicator 2; applying the rule fix did not raise agreement with either expert (eTable 6).',nrow(rules),sum(rules$discordant),repaired_choice$n,original_choice$count,repaired_choice$count,before$count[1],before$n[1],repaired$count[1],repaired$n[1],before$count[2],before$n[2],repaired$count[2],repaired$n[2]),
+    sprintf('Across evaluable signalling answers, collapsed agreement was %s%% and %s%% for ARBITER and Unassisted against Adjudicator 1, and %s%% and %s%% against Adjudicator 2. On paired answers, the ARBITER − Unassisted differences were %s percentage points (95%% CI %s–%s) and %s (%s–%s), respectively (Figure 6; eTable 5).',pct(signals$estimate[1]),pct(signals$estimate[2]),pct(signals$estimate[3]),pct(signals$estimate[4]),pct(signal_all$estimate[1]),pct(signal_all$lower[1]),pct(signal_all$upper[1]),pct(signal_all$estimate[2]),pct(signal_all$lower[2]),pct(signal_all$upper[2])),
+    sprintf('For Adjudicator 1, the largest collapsed domain gap was in D5: %s percentage points (95%% CI %s–%s). For Adjudicator 2, the D5 gap was %s (95%% CI %s), and the largest gap was in D3 (%s; 95%% CI %s–%s). Question-specific paired differences are shown in Figure 6 and domain-level agreement in eFigure 2.',pct(signal_d5$estimate[1]),pct(signal_d5$lower[1]),pct(signal_d5$upper[1]),pct(signal_d5$estimate[2]),gsub('^\\(|\\)$','',fmt_ci(100*signal_d5$lower[2],100*signal_d5$upper[2],1)),pct(signal_d3$estimate),pct(signal_d3$lower),pct(signal_d3$upper)),
+    signalling_disagreement_sentence(),
+    sprintf('The experts independently agreed on %s/%s domain ratings (%s%%; weighted κ %s); agreement was lowest in D3 (%s/%s; eTable 8).',reliability$count,reliability$n,pct(reliability$estimate),fmt_number(kappa$estimate),d3$count,d3$n))
 }
-build_results_sentences <- function() writeLines(enc2utf8(paste(results_sentences(),collapse='\n\n')),
-  'output/manuscript/results-sentences.md',useBytes=TRUE)
+build_results_sentences <- function() writeLines(enc2utf8(paste(results_sentences(),collapse='\n\n')),'output/manuscript/results-sentences.md',useBytes=TRUE)

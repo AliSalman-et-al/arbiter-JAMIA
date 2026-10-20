@@ -403,3 +403,15 @@ No Python is used. This file records conservative resolutions as they arise.
     trial. Full arm justifications and source inventories remain exported. Rules-only
     shares retain the original disagreements, and three corrections become ties
     with ARBITER rather than new exclusive Unassisted wins. No retained estimate changes.
+
+## 2026-10-21 Full-coverage blinded expert reference
+
+The authors discarded the previous disagreement-only adjudication and supplied two new workbooks with independent, forced-choice and revised ratings for all 102 trials × five domains. Neither expert used AI for a judgement. Each froze the independent ratings and signalling answers before viewing the blinded labels. The new design and all new analyses were defined after these data were collected, as recorded in docs/round15/BRIEF.md. The primary estimand, label-based credit and stratified trial-cluster bootstrap retain their prespecified mechanics. Strictness strata and rules-only recomputation are post hoc; revised ratings and retention/change summaries are descriptive.
+
+The pipeline now loads both workbooks directly, checks all source labels and covers every trial-domain cell. Independent-reference agreement replaces the former derived reference. Signalling comparisons use explicit component matches and keep NA separate from NI; unresolved and unmatched answers are not imputed. Canonical derived Overall takes the worst domain without imposing optional escalation. Validation preserves and reports every workbook difference.
+
+The lockfile already records readxl 1.6.0. Missing packages were installed into the Linux project library. R 4.3.3 replaces the lockfile's R 4.6.1 for this run; the frozen lockfile remains intact and session-info.txt records the actual environment. Protected Figures 1 and 2 and the unchanged analyses are compared directly with HEAD. No manuscript files are edited by this work package.
+
+### 2026-10-21: observed Published Overall labels
+
+Author clarification: new expert-reference Overall comparisons exclude the 21 missing Published labels rather than counting them as disagreements. ARBITER and Unassisted use all 102 trials and are also reported on the same 81 trials with observed Published Overall. All paired Overall contrasts involving Published use those 81 trials. Agreed-reference comparisons further require equal expert ratings. Rows and footnotes state denominators. D1–D5 and unchanged analyses are unaffected.

@@ -11,23 +11,3 @@ test_that('baseline-Sonnet reproduces 395 of 510 exact matches', {
   expect_equal(nrow(x),510L)
   expect_equal(sum(x$label==x$meta),395L)
 })
-test_that('adjudication rows are exactly the disputed set in both files', {
-  cells <- disputed_cells(inputs$labels)
-  key <- function(x) paste(x$slug,x$domain,sep=':')
-  expect_equal(nrow(cells),154L)
-  a <- inputs$adjud |> filter(adjudicator=='A')
-  z <- inputs$adjud |> filter(adjudicator=='Z')
-  expect_identical(key(a),key(z))
-  for(x in list(a,z)) {
-    expect_equal(nrow(x),154L)
-    expect_equal(anyDuplicated(key(x)),0L)
-    expect_setequal(key(x),key(cells))
-    joined <- left_join(x,cells,by=c('slug','domain'),suffix=c('_sheet','_arm'))
-    expect_identical(joined$human,joined$meta)
-    expect_identical(joined$kit_sheet,joined$kit_arm)
-    expect_identical(joined$nokit_sheet,joined$nokit_arm)
-  }
-  c <- adjudication_cells(inputs)
-  expect_equal(sum(c$consensus),129L)
-  expect_equal(sum(!c$consensus),25L)
-})

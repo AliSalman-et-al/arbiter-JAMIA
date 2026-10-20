@@ -1,0 +1,107 @@
+test_that('new workbooks exactly cover all trial domains and arm labels', {
+  expect_equal(count(inputs$adjud,adjudicator)$n,c(510L,510L))
+  expect_true(validate_adjudication(inputs$adjud,inputs$labels,inputs$trials))
+  x <- inputs$adjud;x$human[1] <- 'High'
+  expect_error(validate_adjudication(x,inputs$labels,inputs$trials),'mismatch')
+  expect_error(validate_adjudication(inputs$adjud[-1,],inputs$labels,inputs$trials))
+  x <- inputs$adjud;x$independent[1] <- NA
+  expect_error(validate_adjudication(x,inputs$labels,inputs$trials))
+})
+test_that('primary endpoint and independent agreement populations reproduce', {
+  cells <- adjudication_cells(inputs)
+  expect_equal(sum(cells$disputed),154L)
+  expect_equal(sum(cells$discordant),80L)
+  expect_equal(sum(cells$consensus&cells$discordant),60L)
+  expect_equal(sum(cells$independent_1==cells$independent_2),388L)
+  x <- win_share(cells,stratified_cluster_weights(inputs$trials,100,7))
+  expect_equal(x$count,c(53L,7L,0L))
+})
+test_that('choice ties credit all matching source labels and exclude concordance', {
+  x <- tibble(slug=c('a','b'),disputed=c(TRUE,FALSE),meta='Low',kit=c('High','Low'),nokit=c('High','Low'),chosen_label_1=c('High','Low'),chosen_label_2=c('High','Low'))
+  y <- forced_choice_summary(x)
+  expect_equal(y$count,c(0L,1L,1L,0L,1L,1L))
+  expect_true(all(y$n==1L))
+})
+test_that('Overall follows the worst domain without imposing optional escalation', {
+  expect_identical(derived_overall(rep('Low',5)),'Low')
+  expect_identical(derived_overall(c('Some concerns','Some concerns',rep('Low',3))),'Some concerns')
+  expect_identical(derived_overall(c('High',rep('Low',4))),'High')
+  expect_true(is.na(derived_overall(c(NA,rep('Low',4)))))
+  v <- validate_derived_overall(inputs)
+  expect_true(all(v$matches[v$column %in% c('independent','chosen_label','revised','nokit')]))
+})
+test_that('answer parsing preserves components and refuses unresolved answers', {
+  expect_equal(parse_answer_components('PY')$answer,'PY')
+  p <- parse_answer_components('P: PN; W/BP: N')
+  expect_equal(p$component,c('p','w/bp'));expect_equal(p$answer,c('PN','N'))
+  expect_equal(parse_answer_components('NI: pain and ODI, PRT vs placebo')$answer,'NI')
+  expect_true(is.na(parse_answer_components('Split')$answer))
+  expect_equal(normalise_change('Changed for P: PY→NA; retained for W/BP'),'mixed')
+  expect_equal(normalise_change('Retained: clinical Y; laboratory PN'),'retained')
+  expect_equal(collapse_signal(c('Y','PY','N','PN','NI','NA')),c('Y/PY','Y/PY','N/PN','N/PN','NI','NA'))
+})
+test_that('component matching never broadcasts a scalar and excludes NA', {
+  p <- tibble(slug='a',domain='D1',question='1.1',phase='Independent',adjudicator='1',component=c('p','q'),answer=c('Y','N'),issue='')
+  s <- tibble(slug='a',domain='D1',question='1.1',arm='ARBITER-Sonnet',answer='yes',active=TRUE)
+  expect_false(any(match_signalling(p,s)$evaluable))
+  s$answer <- 'p: Y; q: N'
+  m <- match_signalling(p,s)
+  expect_equal(sum(m$evaluable),2L);expect_equal(sum(m$five_match),2L)
+})
+test_that('direction outcomes partition every eligible arm disagreement', {
+  d <- tibble(slug=c('a','b','c'),meta='Low',kit='High',nokit='Low',independent_1=c('High','Low','Some concerns'),independent_2=c('Low','Low','High'))
+  w <- stratified_cluster_weights(tibble(slug=letters[1:3],meta_id='m'),100,7)
+  x <- direction_of_disagreement(d,w) |> filter(source=='ARBITER',direction=='Stricter')
+  expect_equal(x$count,c(1L,1L,1L,1L,2L,0L))
+  expect_true(all(x$n==3L))
+  expect_equal(sum(x$count[x$adjudicator=='2']),3L)
+})
+test_that('stated changes preserve component-specific transitions', {
+  e <- tibble(slug='a',phase='Reviewer comparison',domain='D4',question='4.3',
+    raw_answer='P: NA; W/BP: N',raw_change='Changed for P: PY→NA; retained for W/BP',
+    adjudicator='1',workbook_row=2L)
+  p <- parse_signalling_evidence(e)
+  expect_equal(p$from_answer[1],'PY');expect_equal(p$to_answer[1],'NA')
+  expect_true(is.na(p$from_answer[2]));expect_equal(p$change,c('mixed','mixed'))
+})
+test_that('lettered components separated by slashes remain separate', {
+  p <- parse_answer_components('(a) PY / (b) PN')
+  expect_equal(p$component,c('(a)','(b)'))
+  expect_equal(p$answer,c('PY','PN'))
+})
+
+test_that('Overall excludes absent Published labels and supplies matched cohorts', {
+  x <- expert_agreement(inputs,stratified_cluster_weights(inputs$trials,100,7))
+  e <- x$estimates |> filter(domain=='Overall',adjudicator %in% c('1','2'))
+  expect_true(all(e$n[e$population=='All trials']==102L))
+  expect_false(any(e$source=='Published' & e$population=='All trials'))
+  expect_true(all(e$n[e$population=='Observed Published Overall']==81L))
+  expect_setequal(e$source[e$population=='Observed Published Overall'],c('ARBITER','Unassisted','Published'))
+  d <- x$differences |> filter(domain=='Overall',adjudicator %in% c('1','2'))
+  expect_true(all(d$n[grepl('Published',d$comparison)]==81L))
+  expect_true(all(d$n[d$population=='All trials']==102L))
+  c <- x$confusion |> filter(domain=='Overall',adjudicator=='1') |> group_by(source) |> summarise(n=sum(n))
+  expect_equal(c$n[match(c('ARBITER','Unassisted','Published'),c$source)],c(102L,102L,81L))
+  u <- expert_unweighted(inputs,stratified_cluster_weights(inputs$trials,100,7)) |> filter(domain=='Overall')
+  expect_true(all(u$n[u$population=='All trials']==102L))
+  expect_true(all(u$n[u$population=='Observed Published Overall']==81L))
+  expect_setequal(u$source[u$population=='Observed Published Overall'],c('ARBITER','Unassisted','Published'))
+})
+test_that('answer-change denominators count workbook questions once', {
+  parsed <- tibble(phase='Reviewer comparison',adjudicator='1',workbook_row=c(2L,2L,3L),change=c('mixed','mixed','retained'))
+  x <- answer_change_summary(parsed)
+  expect_equal(x$count,c(1L,1L))
+  expect_equal(x$n,c(2L,2L))
+})
+
+test_that('five-level disagreements separate probability choices from direction changes', {
+  answer <- c('Y','PY','N','PN','Y','N','NI','Y','NA')
+  arm_answer <- c('PY','Y','PN','N','N','NI','PY','Y','Y')
+  x <- tibble(adjudicator='1',source='ARBITER',evaluable=answer!='NA',
+    five_match=answer==arm_answer,collapsed_match=collapse_signal(answer)==collapse_signal(arm_answer))
+  out <- signalling_disagreement_summary(x)
+  expect_equal(out$n,8L)
+  expect_equal(out$five_level_disagreements,7L)
+  expect_equal(out$within_direction,4L)
+  expect_equal(out$cross_direction,3L)
+})

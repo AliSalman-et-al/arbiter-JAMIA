@@ -1,0 +1,5 @@
+Whitespace, manuscript, workbooks, lockfile: PASS
+All 13 archived reports byte-identical: PASS
+All 58 original numerical/source CSVs byte-identical to round 2: PASS
+HEAD unchanged: c2980a7ea75a8be44962e6288effa01795b3e809
+No commit or push.

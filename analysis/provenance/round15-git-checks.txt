@@ -1,0 +1,5 @@
+whitespace: PASS (exit 0)
+lockfile unchanged: PASS (exit 0)
+manuscript untouched: PASS (exit 0)
+workbooks untouched: PASS (exit 0)
+HEAD unchanged: c2980a7ea75a8be44962e6288effa01795b3e809

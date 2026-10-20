@@ -1,0 +1,10 @@
+Whitespace: exit 0
+
+Manuscript untouched: exit 0
+
+Workbooks untouched: exit 0
+
+Lockfile untouched: exit 0
+
+All 13 archived reports byte-identical to parent originals.
+HEAD: c2980a7ea75a8be44962e6288effa01795b3e809

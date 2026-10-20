@@ -1,0 +1,7 @@
+Whitespace: PASS
+Manuscript untouched: PASS
+Workbooks untouched: PASS
+Lockfile untouched: PASS
+All 13 archived reports byte-identical to parent originals: PASS
+All 58 numerical/source CSVs byte-identical to round-1 snapshot: PASS
+HEAD unchanged: c2980a7ea75a8be44962e6288effa01795b3e809

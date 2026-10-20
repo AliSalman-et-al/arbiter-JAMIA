@@ -1,0 +1,344 @@
+domain,reference,predicted,n,adjudicator,source
+D1,High,High,4,1,ARBITER
+D1,Low,Low,75,1,ARBITER
+D1,Some concerns,Low,8,1,ARBITER
+D1,Some concerns,Some concerns,15,1,ARBITER
+D1,High,High,2,1,Unassisted
+D1,High,Low,1,1,Unassisted
+D1,High,Some concerns,1,1,Unassisted
+D1,Low,Low,75,1,Unassisted
+D1,Some concerns,Low,6,1,Unassisted
+D1,Some concerns,Some concerns,17,1,Unassisted
+D1,High,High,1,1,Published
+D1,High,Low,3,1,Published
+D1,Low,High,1,1,Published
+D1,Low,Low,70,1,Published
+D1,Low,Some concerns,4,1,Published
+D1,Some concerns,High,3,1,Published
+D1,Some concerns,Low,11,1,Published
+D1,Some concerns,Some concerns,9,1,Published
+D2,High,High,2,1,ARBITER
+D2,High,Low,5,1,ARBITER
+D2,High,Some concerns,9,1,ARBITER
+D2,Low,High,1,1,ARBITER
+D2,Low,Low,67,1,ARBITER
+D2,Low,Some concerns,3,1,ARBITER
+D2,Some concerns,High,1,1,ARBITER
+D2,Some concerns,Low,10,1,ARBITER
+D2,Some concerns,Some concerns,4,1,ARBITER
+D2,High,High,2,1,Unassisted
+D2,High,Low,9,1,Unassisted
+D2,High,Some concerns,5,1,Unassisted
+D2,Low,High,2,1,Unassisted
+D2,Low,Low,62,1,Unassisted
+D2,Low,Some concerns,7,1,Unassisted
+D2,Some concerns,High,1,1,Unassisted
+D2,Some concerns,Low,12,1,Unassisted
+D2,Some concerns,Some concerns,2,1,Unassisted
+D2,High,High,1,1,Published
+D2,High,Low,9,1,Published
+D2,High,Some concerns,6,1,Published
+D2,Low,Low,62,1,Published
+D2,Low,Some concerns,9,1,Published
+D2,Some concerns,Low,15,1,Published
+D3,High,High,12,1,ARBITER
+D3,High,Low,17,1,ARBITER
+D3,High,Some concerns,17,1,ARBITER
+D3,Low,Low,27,1,ARBITER
+D3,Low,Some concerns,1,1,ARBITER
+D3,Some concerns,Low,24,1,ARBITER
+D3,Some concerns,Some concerns,4,1,ARBITER
+D3,High,High,11,1,Unassisted
+D3,High,Low,24,1,Unassisted
+D3,High,Some concerns,11,1,Unassisted
+D3,Low,Low,26,1,Unassisted
+D3,Low,Some concerns,2,1,Unassisted
+D3,Some concerns,Low,28,1,Unassisted
+D3,High,High,5,1,Published
+D3,High,Low,30,1,Published
+D3,High,Some concerns,11,1,Published
+D3,Low,Low,28,1,Published
+D3,Some concerns,Low,25,1,Published
+D3,Some concerns,Some concerns,3,1,Published
+D4,High,High,1,1,ARBITER
+D4,High,Low,1,1,ARBITER
+D4,High,Some concerns,2,1,ARBITER
+D4,Low,Low,76,1,ARBITER
+D4,Low,Some concerns,1,1,ARBITER
+D4,Some concerns,Low,12,1,ARBITER
+D4,Some concerns,Some concerns,9,1,ARBITER
+D4,High,High,1,1,Unassisted
+D4,High,Low,1,1,Unassisted
+D4,High,Some concerns,2,1,Unassisted
+D4,Low,Low,76,1,Unassisted
+D4,Low,Some concerns,1,1,Unassisted
+D4,Some concerns,High,2,1,Unassisted
+D4,Some concerns,Low,16,1,Unassisted
+D4,Some concerns,Some concerns,3,1,Unassisted
+D4,High,Low,2,1,Published
+D4,High,Some concerns,2,1,Published
+D4,Low,Low,74,1,Published
+D4,Low,Some concerns,3,1,Published
+D4,Some concerns,Low,17,1,Published
+D4,Some concerns,Some concerns,4,1,Published
+D5,Low,Low,26,1,ARBITER
+D5,Some concerns,Low,27,1,ARBITER
+D5,Some concerns,Some concerns,49,1,ARBITER
+D5,Low,Low,26,1,Unassisted
+D5,Some concerns,High,2,1,Unassisted
+D5,Some concerns,Low,45,1,Unassisted
+D5,Some concerns,Some concerns,29,1,Unassisted
+D5,Low,Low,26,1,Published
+D5,Some concerns,High,3,1,Published
+D5,Some concerns,Low,55,1,Published
+D5,Some concerns,Some concerns,18,1,Published
+Overall,High,High,17,1,ARBITER
+Overall,High,Low,11,1,ARBITER
+Overall,High,Some concerns,27,1,ARBITER
+Overall,Low,Low,5,1,ARBITER
+Overall,Some concerns,High,1,1,ARBITER
+Overall,Some concerns,Low,24,1,ARBITER
+Overall,Some concerns,Some concerns,17,1,ARBITER
+Overall,High,High,15,1,Unassisted
+Overall,High,Low,22,1,Unassisted
+Overall,High,Some concerns,18,1,Unassisted
+Overall,Low,Low,5,1,Unassisted
+Overall,Some concerns,High,1,1,Unassisted
+Overall,Some concerns,Low,34,1,Unassisted
+Overall,Some concerns,Some concerns,7,1,Unassisted
+Overall,High,High,14,1,Published
+Overall,High,Low,21,1,Published
+Overall,High,Some concerns,14,1,Published
+Overall,Low,Low,2,1,Published
+Overall,Some concerns,High,3,1,Published
+Overall,Some concerns,Low,19,1,Published
+Overall,Some concerns,Some concerns,8,1,Published
+D1,High,High,4,2,ARBITER
+D1,High,Low,1,2,ARBITER
+D1,Low,Low,79,2,ARBITER
+D1,Low,Some concerns,1,2,ARBITER
+D1,Some concerns,Low,3,2,ARBITER
+D1,Some concerns,Some concerns,14,2,ARBITER
+D1,High,High,2,2,Unassisted
+D1,High,Low,2,2,Unassisted
+D1,High,Some concerns,1,2,Unassisted
+D1,Low,Low,77,2,Unassisted
+D1,Low,Some concerns,3,2,Unassisted
+D1,Some concerns,Low,3,2,Unassisted
+D1,Some concerns,Some concerns,14,2,Unassisted
+D1,High,High,1,2,Published
+D1,High,Low,4,2,Published
+D1,Low,High,1,2,Published
+D1,Low,Low,73,2,Published
+D1,Low,Some concerns,6,2,Published
+D1,Some concerns,High,3,2,Published
+D1,Some concerns,Low,7,2,Published
+D1,Some concerns,Some concerns,7,2,Published
+D2,High,High,2,2,ARBITER
+D2,High,Low,1,2,ARBITER
+D2,High,Some concerns,1,2,ARBITER
+D2,Low,High,1,2,ARBITER
+D2,Low,Low,76,2,ARBITER
+D2,Low,Some concerns,9,2,ARBITER
+D2,Some concerns,High,1,2,ARBITER
+D2,Some concerns,Low,5,2,ARBITER
+D2,Some concerns,Some concerns,6,2,ARBITER
+D2,High,High,2,2,Unassisted
+D2,High,Low,2,2,Unassisted
+D2,Low,High,1,2,Unassisted
+D2,Low,Low,75,2,Unassisted
+D2,Low,Some concerns,10,2,Unassisted
+D2,Some concerns,High,2,2,Unassisted
+D2,Some concerns,Low,6,2,Unassisted
+D2,Some concerns,Some concerns,4,2,Unassisted
+D2,High,Low,2,2,Published
+D2,High,Some concerns,2,2,Published
+D2,Low,High,1,2,Published
+D2,Low,Low,74,2,Published
+D2,Low,Some concerns,11,2,Published
+D2,Some concerns,Low,10,2,Published
+D2,Some concerns,Some concerns,2,2,Published
+D3,High,High,11,2,ARBITER
+D3,High,Low,1,2,ARBITER
+D3,High,Some concerns,6,2,ARBITER
+D3,Low,Low,54,2,ARBITER
+D3,Low,Some concerns,1,2,ARBITER
+D3,Some concerns,High,1,2,ARBITER
+D3,Some concerns,Low,13,2,ARBITER
+D3,Some concerns,Some concerns,15,2,ARBITER
+D3,High,High,9,2,Unassisted
+D3,High,Low,4,2,Unassisted
+D3,High,Some concerns,5,2,Unassisted
+D3,Low,Low,54,2,Unassisted
+D3,Low,Some concerns,1,2,Unassisted
+D3,Some concerns,High,2,2,Unassisted
+D3,Some concerns,Low,20,2,Unassisted
+D3,Some concerns,Some concerns,7,2,Unassisted
+D3,High,High,2,2,Published
+D3,High,Low,10,2,Published
+D3,High,Some concerns,6,2,Published
+D3,Low,High,1,2,Published
+D3,Low,Low,54,2,Published
+D3,Some concerns,High,2,2,Published
+D3,Some concerns,Low,19,2,Published
+D3,Some concerns,Some concerns,8,2,Published
+D4,High,High,1,2,ARBITER
+D4,High,Some concerns,3,2,ARBITER
+D4,Low,Low,78,2,ARBITER
+D4,Some concerns,Low,11,2,ARBITER
+D4,Some concerns,Some concerns,9,2,ARBITER
+D4,High,High,2,2,Unassisted
+D4,High,Some concerns,2,2,Unassisted
+D4,Low,Low,78,2,Unassisted
+D4,Some concerns,High,1,2,Unassisted
+D4,Some concerns,Low,15,2,Unassisted
+D4,Some concerns,Some concerns,4,2,Unassisted
+D4,High,Low,1,2,Published
+D4,High,Some concerns,3,2,Published
+D4,Low,Low,76,2,Published
+D4,Low,Some concerns,2,2,Published
+D4,Some concerns,Low,16,2,Published
+D4,Some concerns,Some concerns,4,2,Published
+D5,High,Some concerns,2,2,ARBITER
+D5,Low,Low,42,2,ARBITER
+D5,Low,Some concerns,5,2,ARBITER
+D5,Some concerns,Low,11,2,ARBITER
+D5,Some concerns,Some concerns,42,2,ARBITER
+D5,High,High,1,2,Unassisted
+D5,High,Some concerns,1,2,Unassisted
+D5,Low,Low,45,2,Unassisted
+D5,Low,Some concerns,2,2,Unassisted
+D5,Some concerns,High,1,2,Unassisted
+D5,Some concerns,Low,26,2,Unassisted
+D5,Some concerns,Some concerns,26,2,Unassisted
+D5,High,High,1,2,Published
+D5,High,Low,1,2,Published
+D5,Low,High,1,2,Published
+D5,Low,Low,44,2,Published
+D5,Low,Some concerns,2,2,Published
+D5,Some concerns,High,1,2,Published
+D5,Some concerns,Low,36,2,Published
+D5,Some concerns,Some concerns,16,2,Published
+Overall,High,High,16,2,ARBITER
+Overall,High,Some concerns,10,2,ARBITER
+Overall,Low,Low,23,2,ARBITER
+Overall,Low,Some concerns,1,2,ARBITER
+Overall,Some concerns,High,2,2,ARBITER
+Overall,Some concerns,Low,17,2,ARBITER
+Overall,Some concerns,Some concerns,33,2,ARBITER
+Overall,High,High,15,2,Unassisted
+Overall,High,Low,4,2,Unassisted
+Overall,High,Some concerns,7,2,Unassisted
+Overall,Low,Low,24,2,Unassisted
+Overall,Some concerns,High,1,2,Unassisted
+Overall,Some concerns,Low,33,2,Unassisted
+Overall,Some concerns,Some concerns,18,2,Unassisted
+Overall,High,High,11,2,Published
+Overall,High,Low,6,2,Published
+Overall,High,Some concerns,7,2,Published
+Overall,Low,Low,16,2,Published
+Overall,Some concerns,High,6,2,Published
+Overall,Some concerns,Low,20,2,Published
+Overall,Some concerns,Some concerns,15,2,Published
+D1,High,High,4,Agreed reference,ARBITER
+D1,Low,Low,71,Agreed reference,ARBITER
+D1,Some concerns,Some concerns,14,Agreed reference,ARBITER
+D1,High,High,2,Agreed reference,Unassisted
+D1,High,Low,1,Agreed reference,Unassisted
+D1,High,Some concerns,1,Agreed reference,Unassisted
+D1,Low,Low,71,Agreed reference,Unassisted
+D1,Some concerns,Some concerns,14,Agreed reference,Unassisted
+D1,High,High,1,Agreed reference,Published
+D1,High,Low,3,Agreed reference,Published
+D1,Low,High,1,Agreed reference,Published
+D1,Low,Low,67,Agreed reference,Published
+D1,Low,Some concerns,3,Agreed reference,Published
+D1,Some concerns,High,3,Agreed reference,Published
+D1,Some concerns,Low,5,Agreed reference,Published
+D1,Some concerns,Some concerns,6,Agreed reference,Published
+D2,High,High,2,Agreed reference,ARBITER
+D2,High,Low,1,Agreed reference,ARBITER
+D2,High,Some concerns,1,Agreed reference,ARBITER
+D2,Low,High,1,Agreed reference,ARBITER
+D2,Low,Low,67,Agreed reference,ARBITER
+D2,Low,Some concerns,2,Agreed reference,ARBITER
+D2,Some concerns,High,1,Agreed reference,ARBITER
+D2,Some concerns,Low,4,Agreed reference,ARBITER
+D2,Some concerns,Some concerns,2,Agreed reference,ARBITER
+D2,High,High,2,Agreed reference,Unassisted
+D2,High,Low,2,Agreed reference,Unassisted
+D2,Low,High,1,Agreed reference,Unassisted
+D2,Low,Low,62,Agreed reference,Unassisted
+D2,Low,Some concerns,7,Agreed reference,Unassisted
+D2,Some concerns,High,1,Agreed reference,Unassisted
+D2,Some concerns,Low,5,Agreed reference,Unassisted
+D2,Some concerns,Some concerns,1,Agreed reference,Unassisted
+D2,High,Low,2,Agreed reference,Published
+D2,High,Some concerns,2,Agreed reference,Published
+D2,Low,Low,61,Agreed reference,Published
+D2,Low,Some concerns,9,Agreed reference,Published
+D2,Some concerns,Low,7,Agreed reference,Published
+D3,High,High,11,Agreed reference,ARBITER
+D3,High,Low,1,Agreed reference,ARBITER
+D3,High,Some concerns,6,Agreed reference,ARBITER
+D3,Low,Low,27,Agreed reference,ARBITER
+D3,Some concerns,Low,5,Agreed reference,ARBITER
+D3,Some concerns,Some concerns,4,Agreed reference,ARBITER
+D3,High,High,9,Agreed reference,Unassisted
+D3,High,Low,4,Agreed reference,Unassisted
+D3,High,Some concerns,5,Agreed reference,Unassisted
+D3,Low,Low,26,Agreed reference,Unassisted
+D3,Low,Some concerns,1,Agreed reference,Unassisted
+D3,Some concerns,Low,9,Agreed reference,Unassisted
+D3,High,High,2,Agreed reference,Published
+D3,High,Low,10,Agreed reference,Published
+D3,High,Some concerns,6,Agreed reference,Published
+D3,Low,Low,27,Agreed reference,Published
+D3,Some concerns,Low,6,Agreed reference,Published
+D3,Some concerns,Some concerns,3,Agreed reference,Published
+D4,High,High,1,Agreed reference,ARBITER
+D4,High,Some concerns,1,Agreed reference,ARBITER
+D4,Low,Low,71,Agreed reference,ARBITER
+D4,Some concerns,Low,5,Agreed reference,ARBITER
+D4,Some concerns,Some concerns,7,Agreed reference,ARBITER
+D4,High,High,1,Agreed reference,Unassisted
+D4,High,Some concerns,1,Agreed reference,Unassisted
+D4,Low,Low,71,Agreed reference,Unassisted
+D4,Some concerns,High,1,Agreed reference,Unassisted
+D4,Some concerns,Low,9,Agreed reference,Unassisted
+D4,Some concerns,Some concerns,2,Agreed reference,Unassisted
+D4,High,Some concerns,2,Agreed reference,Published
+D4,Low,Low,69,Agreed reference,Published
+D4,Low,Some concerns,2,Agreed reference,Published
+D4,Some concerns,Low,9,Agreed reference,Published
+D4,Some concerns,Some concerns,3,Agreed reference,Published
+D5,Low,Low,26,Agreed reference,ARBITER
+D5,Some concerns,Low,11,Agreed reference,ARBITER
+D5,Some concerns,Some concerns,42,Agreed reference,ARBITER
+D5,Low,Low,26,Agreed reference,Unassisted
+D5,Some concerns,High,1,Agreed reference,Unassisted
+D5,Some concerns,Low,26,Agreed reference,Unassisted
+D5,Some concerns,Some concerns,26,Agreed reference,Unassisted
+D5,Low,Low,26,Agreed reference,Published
+D5,Some concerns,High,1,Agreed reference,Published
+D5,Some concerns,Low,36,Agreed reference,Published
+D5,Some concerns,Some concerns,16,Agreed reference,Published
+Overall,High,High,16,Agreed reference,ARBITER
+Overall,High,Some concerns,8,Agreed reference,ARBITER
+Overall,Low,Low,5,Agreed reference,ARBITER
+Overall,Some concerns,High,1,Agreed reference,ARBITER
+Overall,Some concerns,Low,8,Agreed reference,ARBITER
+Overall,Some concerns,Some concerns,14,Agreed reference,ARBITER
+Overall,High,High,14,Agreed reference,Unassisted
+Overall,High,Low,4,Agreed reference,Unassisted
+Overall,High,Some concerns,6,Agreed reference,Unassisted
+Overall,Low,Low,5,Agreed reference,Unassisted
+Overall,Some concerns,Low,17,Agreed reference,Unassisted
+Overall,Some concerns,Some concerns,6,Agreed reference,Unassisted
+Overall,High,High,10,Agreed reference,Published
+Overall,High,Low,6,Agreed reference,Published
+Overall,High,Some concerns,7,Agreed reference,Published
+Overall,Low,Low,2,Agreed reference,Published
+Overall,Some concerns,High,2,Agreed reference,Published
+Overall,Some concerns,Low,7,Agreed reference,Published
+Overall,Some concerns,Some concerns,8,Agreed reference,Published

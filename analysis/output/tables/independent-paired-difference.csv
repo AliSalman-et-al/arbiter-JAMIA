@@ -1,3 +1,0 @@
-metric,estimate,lower,upper,valid_replicates,adjudicator,n,ARBITER_count,Unassisted_count,analysis
-accuracy,0.24675324675324675,0.16196665285832643,0.32886126810314376,10000,Adjudicator 1,154,107,69,Post hoc paired difference
-accuracy,0.2857142857142857,0.1984732824427481,0.3741935483870968,10000,Adjudicator 2,154,120,76,Post hoc paired difference

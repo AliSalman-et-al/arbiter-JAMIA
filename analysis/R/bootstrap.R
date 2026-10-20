@@ -14,7 +14,7 @@ stratified_cluster_weights <- function(trials, replicates=10000L, seed=20261018L
 
 bootstrap_rows <- function(data,weights) {
   # Include the original data as column 1, then all bootstrap replicates.
-  cbind(1,weights[match(data$slug,rownames(weights)),,drop=FALSE])
+  cbind(matrix(1,nrow(data),1),weights[match(data$slug,rownames(weights)),,drop=FALSE])
 }
 
 interval_table <- function(values) {

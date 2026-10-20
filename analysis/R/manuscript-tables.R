@@ -1,13 +1,4 @@
-LEGACY_TABLE_TITLES <- c(
-  'Sixteen meta-analyses across 15 specialties supplied the benchmark',
-  'ARBITER detected more of the risk flagged by published reviews, at lower specificity',
-  'Without ARBITER, 1 in 8 domain ratings broke the RoB 2 rules',
-  'Before seeing any label, both adjudicators’ own ratings agreed with ARBITER far more than with the unassisted model or the published review')
 manuscript_data <- function(name) read_manuscript_data(name)
-COMPOSITE_NOTE <- paste('Reference: the adjudicators’ agreed choice where both agreed; published labels elsewhere.',
-  'Excludes 25 divided decisions (485 cells per arm). Only three labels were offered.',
-  'Unreviewed cells where both arms matched published labels are assumed correct.',
-  'Both features inflate absolute values.')
 TOPIC_ABBREVIATIONS <- paste('ACL, anterior cruciate ligament; CDK4/6, cyclin-dependent kinases 4 and 6;',
   'eGFR, estimated glomerular filtration rate; GLP-1, glucagon-like peptide-1; HER2, human epidermal growth factor receptor 2;',
   'HR, hormone receptor; IgA, immunoglobulin A; SGLT2, sodium-glucose cotransporter 2.')
@@ -99,86 +90,6 @@ main_table3 <- function() {
     group_row(filter(out,domain=='Audit') |> select(Measure,Unassisted,ARBITER),'Evidence and audit'))
 }
 
-reliability_table <- function() {
-  x <- manuscript_data('table4-reliability') |> filter(metric!='AC2') |> agreement_display('comparison')
-  between <- filter(x,startsWith(comparison,'A vs Z')) |>
-    mutate(comparison=if_else(grepl('independent',comparison),'Independent ratings','Ratings chosen after seeing labels'))
-  parts <- lapply(c('A','Z'),function(a) {
-    d <- filter(x,startsWith(comparison,paste(a,'independent'))) |>
-      mutate(comparison=reader_label(sub('.* vs ','',comparison)),comparison=if_else(comparison=='published label','Published',comparison))
-    group_row(d,paste('Adjudicator',if(a=='A') 1 else 2,'own rating compared with …'))
-  })
-  delta <- manuscript_data('independent-paired-difference') |>
-    transmute(comparison=paste('Adjudicator',if_else(adjudicator=='A','1','2')),
-      `Weighted κ`='—',`Exact agreement`=paste0(fmt_number(100*estimate,1),' ',fmt_ci(100*lower,100*upper,1)))
-  bind_rows(group_row(between,'Between adjudicators'),parts[[1]],parts[[2]],
-    group_row(delta,'Post hoc: paired agreement difference (percentage points)')) |>
-    rename(Comparison=comparison,`Raw agreement`=`Exact agreement`)
-}
-legacy_table_notes <- function() {
-  notes <- list(
-  paste('SC, Some concerns; RoB 2, risk of bias tool for randomised trials. Counts are published labels pooled across D1\u2013D5.',
-    paste0('Per-domain distributions: eTable ',supplement_number('Published label distributions by domain'),'.'),
-    'Overall given indicates whether published Overall labels are available; total is labelled trials/all trials.',
-    'The analysis excludes three unsupported-design trials from all arms. Metadata are curated from the source meta-analyses.',TOPIC_ABBREVIATIONS),
-  paste('Published means published review label. Values are coefficients or percentages (95% CI); denominators are in block labels. ¹ Sensitivity for Some concerns or High; specificity is the share of published Low ratings also rated Low. All-Low rule has no variance; only accuracy and specificity are reported. Paired differences are coefficients or percentage points; — indicates undefined or not applicable.',paste0('AC2 and composite-reference results: eTables ',supplement_number('Agreement against Published, all sources and domains'),' and ',supplement_number('Agreement against the composite reference, Sonnet only'),'. Full paired differences: eTables ',supplement_number('Paired differences against Published'),' and ',supplement_number('Paired differences against the composite reference'),'.'),'Overall judgements were not adjudicated. Published labels were frequently less severe than the adjudicators’ agreed choice (Figure 4).',CI_NOTE),
-  paste('Values are n/N (x.x%; 95% CI a–b) where an interval is shown. A rule break means a rating contradicts its own answers or a required question was skipped.',
-    'ARBITER computes proposed ratings from the official rules and requires complete answers; recorded overrides: 0/510.',
-    'One ARBITER Overall rating used the permitted escalation; both arms followed the Overall rules in every trial.',
-    paste0('Full checks and skipped-question sensitivity: eTables ',supplement_number('RoB 2 consistency and structural audit, all sources and domains'),' and ',supplement_number('Invalid answer path sensitivity'),'.'),
-    'One Unassisted domain lacks a rating and answers and is excluded (509 evaluable).',
-    'Evidence coverage counts required answers citing a passage or image. Text and image checks count distinct cited records.',
-    'ARBITER extracts quoted text and renders cited images. The model writes image descriptions; these are not checked against the images.',
-    'The independent verifier checks the audit file structure, not clinical correctness or completion. Unassisted evidence records are unavailable.',CI_NOTE),
-  paste('All comparisons use the 154 domain ratings reviewed because at least one arm differed from the published label.',
-    'These comparisons cannot estimate agreement or published-label accuracy in the full benchmark.',
-      'Adjudicators used no AI; each independent rating was made and frozen before the adjudicator saw any label. They then saw only three labels in an order randomised per cell, without rationales or quotations. ',
-      'Linearly weighted Cohen\u2019s \u03ba; AC2 is in eTable PLACEHOLDER_RELIABILITY; raw agreement is n/N (x.x%; 95% CI a–b). Post hoc paired differences are ARBITER minus Unassisted agreement with the same independent rating, in percentage points.',CI_NOTE))
-  lapply(notes,function(x) reader_label(gsub('PLACEHOLDER_RELIABILITY',supplement_number('Independent and selected ratings: full agreement including AC2'),x,fixed=TRUE)))
-}
-build_main_tables <- function(inputs) {
-  dir.create('output/manuscript',recursive=TRUE,showWarnings=FALSE)
-  tables <- list(main_table2(),reliability_table(),main_table3(),prior_work_table())
-  captions <- paste0('Table ',1:4,'. ',MAIN_TABLE_TITLES)
-  notes <- main_table_notes()
-  for(i in seq_along(tables)) {
-    doc <- manuscript_doc() |> officer::body_add_par(captions[i],style='heading 1') |>
-      flextable::body_add_flextable(main_table_flextable(tables[[i]],i,notes[[i]]))
-    print(doc,target=paste0('output/manuscript/Table',i,'.docx'))
-  }
-  invisible(tables)
-}
-main_table_widths <- function(i) {
-  list(c(1.35,1.35,1.35,1.35,1.45),c(3.1,1.65,2.1),c(2.95,2.2,1.7),c(1.20,.55,.85,.70,.75,.48,.55,.98,.90))[[i]]
-}
-# Word joiners preserve the en dash while prohibiting a line break on either side.
-main_table_no_break_ranges <- function(x) {
-  x[] <- lapply(x,function(v) gsub('D1[\u2013-]D5','D1\u2060\u2013\u2060D5',v))
-  x
-}
-main_table_padding <- function(i) if(i %in% 1:2) 1 else 3
-main_table_flextable <- function(x,i,note=main_table_notes()[[i]]) {
-  x <- main_table_no_break_ranges(x)
-  ft <- house_table(x,note) |> flextable::width(j=seq_len(ncol(x)),width=main_table_widths(i))
-  ft <- flextable::padding(ft,padding.left=main_table_padding(i),
-    padding.right=main_table_padding(i),part='all')
-  if(FALSE) {
-    ft <- flextable::padding(ft,padding.top=2,padding.bottom=2,part='all') |>
-      flextable::set_header_labels(values=setNames(
-        'Published\u00a0D1\u2060–\u2060D5\u00a0labels\n(Low/SC/High)',names(x)[5])) |>
-      flextable::hline(i=nrow(x)-1,border=officer::fp_border(width=.6),part='body') |>
-      flextable::bold(i=nrow(x),j=1,part='body')
-  }
-  if(i<4) ft <- style_group_rows(ft,x)
-  ft
-}
-
-MAIN_TABLE_TITLES <- c(LEGACY_TABLE_TITLES[c(2,4,3)],
-  'ARBITER combines rule enforcement, quotation checks and blinded adjudication')
-main_table_notes <- function() {
-  old <- legacy_table_notes()
-  list(old[[2]],old[[4]],old[[3]],prior_work_note())
-}
 prior_work_table <- function() {
   x <- readr::read_csv('data-curated/prior-work-comparison.csv',show_col_types=FALSE)
   stopifnot(all(c('registry_or_protocol_given','identical_inputs_across_compared_arms','reference_key') %in% names(x)),
@@ -199,6 +110,6 @@ prior_work_note <- function() {
     'Partly means: code, spreadsheet or incomplete rules; enforcement, some configurations or incomplete answer checks; breaks, overall-only or qualitative checks; quotations, semantic judging without occurrence/integrity checks; audit, retained responses without a verifiable source bundle; agent, enabled browsing or retrieval without demonstrated agent tool calls; reference, limited re-review, historical independent teams or text-relevance review; registry/protocol, compressed or restricted delivery.',
     'Structured prompting alone is not enforced rules. Registry/protocol includes SAPs and available records; a registration number alone does not qualify.',
     paste0('This study gave both compared arms identical inputs; other matched model/workflow comparisons also used identical underlying sources (see eTable ',supplement_number('Evidence and quotation locations for the prior-work comparison'),').'),
-    'a, Compressed ancillary records; overall-only checks. b, Post hoc Excel derivation; six development trials. c, Prompt rules. d, RoB 2 cohort; protocols when available. e, Masked panel; actual browsing unmeasured. f, One trial, 38 runs. g, Retrieval and retained edits. h, Post hoc support judging. i, ROBINS-I; selected concordant references. j, Recorded overrides permitted; none in 510 domains; disputed-cell adjudication. k, RobotReviewer used RoB 1; its blinded panel judged text relevance.',
+    'a, Compressed ancillary records; overall-only checks. b, Post hoc Excel derivation; six development trials. c, Prompt rules. d, RoB 2 cohort; protocols when available. e, Masked panel; actual browsing unmeasured. f, One trial, 38 runs. g, Retrieval and retained edits. h, Post hoc support judging. i, ROBINS-I; selected concordant references. j, Recorded overrides permitted; none in 510 domains; blinded dual expert rating of all domains. k, RobotReviewer used RoB 1; its blinded panel judged text relevance.',
     paste0('Reference callouts resolve in the manuscript bibliography. Condensed cell evidence and quotation locations: eTable ',supplement_number('Evidence and quotation locations for the prior-work comparison'),'.'))
 }

@@ -1,0 +1,109 @@
+Expert,Source,Domain,Reference,Low,Some Concerns,High,Missing,N
+1,ARBITER,D1,Low,75,0,0,0,102
+1,ARBITER,D1,Some concerns,8,15,0,0,102
+1,ARBITER,D1,High,0,0,4,0,102
+1,ARBITER,D2,Low,67,3,1,0,102
+1,ARBITER,D2,Some concerns,10,4,1,0,102
+1,ARBITER,D2,High,5,9,2,0,102
+1,ARBITER,D3,Low,27,1,0,0,102
+1,ARBITER,D3,Some concerns,24,4,0,0,102
+1,ARBITER,D3,High,17,17,12,0,102
+1,ARBITER,D4,Low,76,1,0,0,102
+1,ARBITER,D4,Some concerns,12,9,0,0,102
+1,ARBITER,D4,High,1,2,1,0,102
+1,ARBITER,D5,Low,26,0,0,0,102
+1,ARBITER,D5,Some concerns,27,49,0,0,102
+1,ARBITER,D5,High,0,0,0,0,102
+1,ARBITER,Overall,Low,5,0,0,0,102
+1,ARBITER,Overall,Some concerns,24,17,1,0,102
+1,ARBITER,Overall,High,11,27,17,0,102
+1,Published,D1,Low,70,4,1,0,102
+1,Published,D1,Some concerns,11,9,3,0,102
+1,Published,D1,High,3,0,1,0,102
+1,Published,D2,Low,62,9,0,0,102
+1,Published,D2,Some concerns,15,0,0,0,102
+1,Published,D2,High,9,6,1,0,102
+1,Published,D3,Low,28,0,0,0,102
+1,Published,D3,Some concerns,25,3,0,0,102
+1,Published,D3,High,30,11,5,0,102
+1,Published,D4,Low,74,3,0,0,102
+1,Published,D4,Some concerns,17,4,0,0,102
+1,Published,D4,High,2,2,0,0,102
+1,Published,D5,Low,26,0,0,0,102
+1,Published,D5,Some concerns,55,18,3,0,102
+1,Published,D5,High,0,0,0,0,102
+1,Published,Overall,Low,2,0,0,0,81
+1,Published,Overall,Some concerns,19,8,3,0,81
+1,Published,Overall,High,21,14,14,0,81
+1,Unassisted,D1,Low,75,0,0,0,102
+1,Unassisted,D1,Some concerns,6,17,0,0,102
+1,Unassisted,D1,High,1,1,2,0,102
+1,Unassisted,D2,Low,62,7,2,0,102
+1,Unassisted,D2,Some concerns,12,2,1,0,102
+1,Unassisted,D2,High,9,5,2,0,102
+1,Unassisted,D3,Low,26,2,0,0,102
+1,Unassisted,D3,Some concerns,28,0,0,0,102
+1,Unassisted,D3,High,24,11,11,0,102
+1,Unassisted,D4,Low,76,1,0,0,102
+1,Unassisted,D4,Some concerns,16,3,2,0,102
+1,Unassisted,D4,High,1,2,1,0,102
+1,Unassisted,D5,Low,26,0,0,0,102
+1,Unassisted,D5,Some concerns,45,29,2,0,102
+1,Unassisted,D5,High,0,0,0,0,102
+1,Unassisted,Overall,Low,5,0,0,0,102
+1,Unassisted,Overall,Some concerns,34,7,1,0,102
+1,Unassisted,Overall,High,22,18,15,0,102
+2,ARBITER,D1,Low,79,1,0,0,102
+2,ARBITER,D1,Some concerns,3,14,0,0,102
+2,ARBITER,D1,High,1,0,4,0,102
+2,ARBITER,D2,Low,76,9,1,0,102
+2,ARBITER,D2,Some concerns,5,6,1,0,102
+2,ARBITER,D2,High,1,1,2,0,102
+2,ARBITER,D3,Low,54,1,0,0,102
+2,ARBITER,D3,Some concerns,13,15,1,0,102
+2,ARBITER,D3,High,1,6,11,0,102
+2,ARBITER,D4,Low,78,0,0,0,102
+2,ARBITER,D4,Some concerns,11,9,0,0,102
+2,ARBITER,D4,High,0,3,1,0,102
+2,ARBITER,D5,Low,42,5,0,0,102
+2,ARBITER,D5,Some concerns,11,42,0,0,102
+2,ARBITER,D5,High,0,2,0,0,102
+2,ARBITER,Overall,Low,23,1,0,0,102
+2,ARBITER,Overall,Some concerns,17,33,2,0,102
+2,ARBITER,Overall,High,0,10,16,0,102
+2,Published,D1,Low,73,6,1,0,102
+2,Published,D1,Some concerns,7,7,3,0,102
+2,Published,D1,High,4,0,1,0,102
+2,Published,D2,Low,74,11,1,0,102
+2,Published,D2,Some concerns,10,2,0,0,102
+2,Published,D2,High,2,2,0,0,102
+2,Published,D3,Low,54,0,1,0,102
+2,Published,D3,Some concerns,19,8,2,0,102
+2,Published,D3,High,10,6,2,0,102
+2,Published,D4,Low,76,2,0,0,102
+2,Published,D4,Some concerns,16,4,0,0,102
+2,Published,D4,High,1,3,0,0,102
+2,Published,D5,Low,44,2,1,0,102
+2,Published,D5,Some concerns,36,16,1,0,102
+2,Published,D5,High,1,0,1,0,102
+2,Published,Overall,Low,16,0,0,0,81
+2,Published,Overall,Some concerns,20,15,6,0,81
+2,Published,Overall,High,6,7,11,0,81
+2,Unassisted,D1,Low,77,3,0,0,102
+2,Unassisted,D1,Some concerns,3,14,0,0,102
+2,Unassisted,D1,High,2,1,2,0,102
+2,Unassisted,D2,Low,75,10,1,0,102
+2,Unassisted,D2,Some concerns,6,4,2,0,102
+2,Unassisted,D2,High,2,0,2,0,102
+2,Unassisted,D3,Low,54,1,0,0,102
+2,Unassisted,D3,Some concerns,20,7,2,0,102
+2,Unassisted,D3,High,4,5,9,0,102
+2,Unassisted,D4,Low,78,0,0,0,102
+2,Unassisted,D4,Some concerns,15,4,1,0,102
+2,Unassisted,D4,High,0,2,2,0,102
+2,Unassisted,D5,Low,45,2,0,0,102
+2,Unassisted,D5,Some concerns,26,26,1,0,102
+2,Unassisted,D5,High,0,1,1,0,102
+2,Unassisted,Overall,Low,24,0,0,0,102
+2,Unassisted,Overall,Some concerns,33,18,1,0,102
+2,Unassisted,Overall,High,4,7,15,0,102

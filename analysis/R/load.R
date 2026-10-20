@@ -53,24 +53,63 @@ load_inputs <- function(root='..') {
     if(kit) s <- left_join(s,question_map(),by='question_id') else s$question <- s$question_id
     signals[[arm]] <- s |> mutate(active=active=='yes')
   }
-  adjud <- lapply(c('A','Z'),function(who) {
-    readxl::read_xlsx(file.path(root,'human-adjudication',paste0('adjudication-cells-with-explanations-',who,'.xlsx'))) |>
-      mutate(adjudicator=who) |> filter(!slug %in% EXCLUDED)
-  })
-  list(labels=bind_rows(labels), signals=bind_rows(signals), adjud=bind_rows(adjud),
-    trials=read_input(file.path(root,'rob2-meta-benchmark-set/TRIAL-SUMMARY.csv')) |> filter(!slug %in% EXCLUDED),
+  labels <- bind_rows(labels)
+  trials <- read_input(file.path(root,'rob2-meta-benchmark-set/TRIAL-SUMMARY.csv')) |> filter(!slug %in% EXCLUDED)
+  stopifnot(nrow(trials)==102L,!anyDuplicated(trials$slug))
+  adjud <- bind_rows(lapply(1:2,function(who) {
+    readxl::read_xlsx(file.path(root,'human-adjudication',paste0('adjudication-with-explanations-',who,'.xlsx')),
+      sheet='Adjudications',col_types='text') |>
+      transmute(slug=Trial,domain=Domain,human=clean_label(Human),kit=clean_label(Kit),
+        nokit=clean_label(`No-kit`),independent=clean_label(Independent),
+        chosen_label=clean_label(`Chosen label`),revised=clean_label(Revised),adjudicator=as.character(who)) |>
+      filter(!slug %in% EXCLUDED)
+  }))
+  validate_adjudication(adjud,labels,trials)
+  evidence <- bind_rows(lapply(1:2,function(who) {
+    readxl::read_xlsx(file.path(root,'human-adjudication',paste0('adjudication-with-explanations-',who,'.xlsx')),
+      sheet='Signalling evidence',col_types='text') |>
+      transmute(slug=Trial,phase=Phase,domain=Domain,question=Question,raw_answer=Answer,
+        raw_change=`Retained or changed`,evidence=`Evidence and locators`,guidance=`RoB 2 guidance`,
+        adjudicator=as.character(who),workbook_row=row_number()+1L) |> filter(!slug %in% EXCLUDED)
+  }))
+  stopifnot(all(count(evidence,adjudicator)$n==4488L),
+    !anyDuplicated(paste(evidence$adjudicator,evidence$slug,evidence$phase,evidence$question)),
+    all(evidence$question %in% question_map()$question),
+    all(evidence$domain==paste0('D',substr(evidence$question,1,1))))
+  sources <- bind_rows(lapply(1:2,function(who) {
+    readxl::read_xlsx(file.path(root,'human-adjudication',paste0('adjudication-with-explanations-',who,'.xlsx')),
+      sheet='Trial sources',col_types='text') |> mutate(adjudicator=as.character(who))
+  }))
+  overall_sheet <- readxl::read_xlsx(file.path(root,'human-adjudication/adjudication-with-explanations-2.xlsx'),
+    sheet='Overall (derived)',col_types='text')
+  list(labels=labels,signals=bind_rows(signals),adjud=adjud,trials=trials,evidence=evidence,
+    sources=sources,overall_sheet=overall_sheet,
     targets=read_input(file.path(root,'rob2-meta-benchmark-set/LABEL-TARGETS.csv')) |> filter(!slug %in% EXCLUDED))
 }
-disputed_cells <- function(labels) {
-  labels |> filter(arm %in% c('ARBITER-Sonnet','Baseline-Sonnet'),domain!='Overall') |>
-    select(slug,meta_id,domain,meta,arm,label) |> pivot_wider(names_from=arm,values_from=label) |>
-    rename(kit=`ARBITER-Sonnet`,nokit=`Baseline-Sonnet`) |>
-    mutate(disputed=is.na(kit)|is.na(nokit)|kit!=meta|nokit!=meta) |> filter(disputed)
+label_cells <- function(labels) {
+  labels |> filter(domain!='Overall') |> select(slug,meta_id,domain,meta,arm,label) |>
+    pivot_wider(names_from=arm,values_from=label) |> rename(kit=`ARBITER-Sonnet`,nokit=`Baseline-Sonnet`) |>
+    mutate(disputed=is.na(kit)|is.na(nokit)|kit!=meta|nokit!=meta,discordant=is.na(kit)|is.na(nokit)|kit!=nokit)
+}
+disputed_cells <- function(labels) label_cells(labels) |> filter(disputed)
+validate_adjudication <- function(adjud,labels,trials) {
+  expected <- label_cells(labels)
+  for(who in c('1','2')) {
+    x <- adjud |> filter(adjudicator==who)
+    stopifnot(nrow(x)==510L,!anyDuplicated(paste(x$slug,x$domain)),setequal(x$slug,trials$slug),
+      setequal(paste(x$slug,x$domain),paste(expected$slug,expected$domain)),
+      !anyNA(x$independent),!anyNA(x$chosen_label),!anyNA(x$revised))
+    x <- left_join(x,expected,by=c('slug','domain'),suffix=c('_sheet','_arm'))
+    same <- function(a,b) all((is.na(a)&is.na(b))|(!is.na(a)&!is.na(b)&a==b))
+    if(!same(x$human,x$meta)||!same(x$kit_sheet,x$kit_arm)||!same(x$nokit_sheet,x$nokit_arm))
+      stop('Workbook arm-label mismatch for adjudicator ',who)
+  }
+  invisible(TRUE)
 }
 adjudication_cells <- function(inputs) {
-  a <- inputs$adjud |> select(slug,domain,adjudicator,own,chosen_label) |>
-    pivot_wider(names_from=adjudicator,values_from=c(own,chosen_label))
-  disputed_cells(inputs$labels) |> left_join(a,by=c('slug','domain')) |>
-    mutate(consensus=chosen_label_A==chosen_label_Z,discordant=kit!=nokit,
-      preferred=if_else(consensus,chosen_label_A,NA_character_))
+  a <- inputs$adjud |> select(slug,domain,adjudicator,independent,chosen_label,revised) |>
+    pivot_wider(names_from=adjudicator,values_from=c(independent,chosen_label,revised))
+  label_cells(inputs$labels) |> left_join(a,by=c('slug','domain')) |>
+    mutate(consensus=chosen_label_1==chosen_label_2,
+      preferred=if_else(consensus,chosen_label_1,NA_character_))
 }

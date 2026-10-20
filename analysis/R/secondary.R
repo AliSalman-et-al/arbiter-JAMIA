@@ -1,3 +1,17 @@
+consistency_rates <- function(checks,weights) {
+  bind_rows(lapply(split(checks,checks$arm),function(x) {
+    evaluable <- x$status!='Not evaluable'
+    statuses <- if('domain' %in% names(x)) c('Consistent','Violation','Invalid answer path','Departure') else
+      c('Consistent','Permitted escalation','Violation')
+    bind_rows(lapply(statuses,function(s) {
+      event <- if(s=='Departure') x$status %in% c('Violation','Invalid answer path') else x$status==s
+      interval_table(share_estimate(x,event,weights,evaluable)) |>
+        mutate(arm=x$arm[1],status=s,n=sum(evaluable),count=sum(event),
+          missing=sum(!evaluable))
+    }))
+  }))
+}
+
 overall_checks <- function(labels) {
   meta <- labels |> filter(arm=='ARBITER-Sonnet') |> mutate(label=meta,arm='Meta')
   bind_rows(labels,meta) |> select(arm,slug,domain,label) |>
@@ -40,18 +54,5 @@ independent_signals <- function(adjud) {
       question=sub('\\s*=.*','',tokens),
       reference=unname(short[sub('.*=\\s*','',tokens)]))
   }))
-}
-
-signalling_agreement <- function(inputs,weights) {
-  reference <- independent_signals(inputs$adjud)
-  collapse <- c(yes='Y/PY',probably_yes='Y/PY',no='N/PN',probably_no='N/PN',
-    no_information='NI/NA',not_applicable='NI/NA')
-  # The independent questions define eligibility, including an explicit NA answer.
-  x <- reference |> inner_join(inputs$signals |> select(arm,slug,domain,question,answer),
-    by=c('slug','domain','question'),relationship='many-to-many') |>
-    mutate(prediction=unname(collapse[answer]),correct=!is.na(prediction)&prediction==reference)
-  bind_rows(lapply(split(x,interaction(x$arm,x$adjudicator,x$question,drop=TRUE)),function(d)
-    interval_table(share_estimate(d,d$correct,weights)) |> mutate(arm=d$arm[1],
-      adjudicator=d$adjudicator[1],question=d$question[1],n=nrow(d),correct=sum(d$correct))))
 }
 

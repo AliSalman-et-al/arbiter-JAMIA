@@ -5,6 +5,12 @@ avatar_trace_blocks <- function(inputs) {
   mapping <- question_map(TRUE)
   sources <- d$batch$trials[[1]]$sources
   source_labels <- setNames(vapply(sources,function(s) s$label,character(1)),vapply(sources,function(s) s$id,character(1)))
+  source_labels <- vapply(source_labels,function(label) {
+    if(label=='ehae585.pdf') return('AVATAR long-term follow-up report')
+    if(label=='CIRCULATIONAHA.121.057639.pdf') return('AVATAR original trial report')
+    if(grepl('SAP_000.pdf',label,fixed=TRUE)) return('Current registry-linked statistical analysis plan')
+    label
+  },character(1))
   judg <- function(x) c(low='Low',some_concerns='Some concerns',high='High')[[x]]
   requested <- '../no-kit-sonnet-5.5/results-102/model-signalling-answers.csv'
   versioned <- '../no-kit-sonnet-5.5/model-signalling-answers.csv'

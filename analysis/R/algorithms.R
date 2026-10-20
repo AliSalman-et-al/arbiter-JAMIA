@@ -150,3 +150,9 @@ validate_gate <- function(checks) {
   if(nrow(sonnet)) stop('Section 5.4 validation gate failed: unexpected ARBITER inconsistency.',call.=FALSE)
   invisible(TRUE)
 }
+
+# Canonical Overall is the worst domain; optional escalation is never imposed.
+derived_overall <- function(domains) {
+  if(length(domains)!=5L || anyNA(domains) || any(!domains %in% LABELS)) return(NA_character_)
+  LABELS[max(match(domains,LABELS))]
+}

@@ -44,13 +44,3 @@ agreement_replicates <- function(data,weights,exclude_missing=FALSE) {
   rbind(kappa=weighted_kappa(counts),AC2=gwet_ac2(counts),accuracy=exact_accuracy(counts),
     sensitivity=not_low_sensitivity(counts),specificity=not_low_specificity(counts))
 }
-
-composite_reference <- function(inputs,adjudicator=NULL) {
-  cells <- adjudication_cells(inputs)
-  x <- inputs$labels |> filter(arm %in% c('ARBITER-Sonnet','Baseline-Sonnet'),domain!='Overall') |>
-    left_join(cells |> select(slug,domain,consensus,preferred,chosen_label_A,chosen_label_Z),by=c('slug','domain'))
-  if(is.null(adjudicator)) x |> filter(is.na(consensus)|consensus) |>
-    mutate(meta=coalesce(preferred,meta)) else
-      x |> mutate(meta=coalesce(.data[[paste0('chosen_label_',adjudicator)]],meta))
-}
-

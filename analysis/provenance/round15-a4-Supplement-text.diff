@@ -1,0 +1,56 @@
+--- accepted
++++ rebuilt
+@@ -40 +40 @@
+-The ARBITER semantic question identifiers map one-to-one to the official numbered questions in question-map.csv; Unassisted numeric identifiers already match the experts. Comparisons require explicit answers to the same question and component on both sides. Scalar answers are never broadcast across components. NA, inactive questions, missing answers, unmatched components and unresolved strings are not evaluable and are counted separately. Five-level matching distinguishes Y, PY, N, PN and NI. Collapsed matching combines Y/PY and N/PN; NI remains separate. Paired differences retain only components evaluable in both arms.
++The ARBITER semantic question identifiers map one-to-one to the official numbered questions (eTable 5); Unassisted numeric identifiers already match the experts. Comparisons require explicit answers to the same question and component on both sides. Scalar answers are never broadcast across components. NA, inactive questions, missing answers, unmatched components and unresolved strings are not evaluable and are counted separately. Five-level matching distinguishes Y, PY, N, PN and NI. Collapsed matching combines Y/PY and N/PN; NI remains separate. Paired differences retain only components evaluable in both arms.
+@@ -47 +47 @@
+-LABEL-TARGETS.csv links each published label to its review, source table, outcome, time point and contrast, with quoted binding evidence where stated and an explicit inference otherwise. The assessment prompt targets the labelled result rather than automatically the trial primary outcome, with the definition, printed result and locator from the trial report. Among the 102 included trials, 33 targets match an explicitly stated result, 11 match one of several covered outcomes, and 32 match an inferred result; 7 partly match, 9 differ and 10 have unknown binding. These categories are retained rather than treating all targets as exact matches. Twelve published label sets (60 domain labels) cover every outcome taken from a trial; another 10 label sets (50 domain labels) have no identified result, and seven more label sets (35 domain labels) jointly cover pain and disability; thus 29 sets (145 domain labels) do not isolate a single result (19 broad and 10 unknown). Binding was inferred rather than explicitly stated for 62 label sets, overlapping these categories. Source: benchmark README-FOR-ALI.md, LABEL-TARGETS.csv and per-review BINDING.md; label-target-summary.csv recomputes matching categories.
++The benchmark label-target documentation links each published label to its review, source table, outcome, time point and contrast, with quoted binding evidence where stated and an explicit inference otherwise. The assessment prompt targets the labelled result rather than automatically the trial primary outcome, with the definition, printed result and locator from the trial report. Among the 102 included trials, 33 targets match an explicitly stated result, 11 match one of several covered outcomes, and 32 match an inferred result; 7 partly match, 9 differ and 10 have unknown binding. These categories are retained rather than treating all targets as exact matches. Twelve published label sets (60 domain labels) cover every outcome taken from a trial; another 10 label sets (50 domain labels) have no identified result, and seven more label sets (35 domain labels) jointly cover pain and disability; thus 29 sets (145 domain labels) do not isolate a single result (19 broad and 10 unknown). Binding was inferred rather than explicitly stated for 62 label sets, overlapping these categories. The benchmark documentation and per-review binding evidence support these categories (eTable 11).
+@@ -49 +49 @@
+-Trial reports span publication years 1996–2025; the 16 source reviews were published in 2025–2026. Years come from TRIAL-SUMMARY.csv and trial-label years where that field is blank; the benchmark README identifies the SANCTUARY report as 2025. Anthropic documents June 2026 as the training-data cut-off for claude-sonnet-5-5 (model documentation, https://platform.claude.com/docs/en/models/sonnet-5-5/overview, and provider help, https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data; checked 19 October 2026). Dates cannot establish whether a report was used in training.
++Trial reports span publication years 1996–2025; the 16 source reviews were published in 2025–2026. Years come from the benchmark trial summaries and trial-label years where that field is blank (eTable 11); the benchmark documentation identifies the SANCTUARY report as 2025. Anthropic documents June 2026 as the training-data cut-off for claude-sonnet-5-5 (model documentation, https://platform.claude.com/docs/en/models/sonnet-5-5/overview, and provider help, https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data; checked 19 October 2026). Dates cannot establish whether a report was used in training.
+@@ -367 +367 @@
+-Source: ehae585.pdf
++Source: AVATAR long-term follow-up report
+@@ -373 +373 @@
+-Source: Current registry-linked sap: SAP_000.pdf
++Source: Current registry-linked statistical analysis plan
+@@ -380 +380 @@
+-Source: ehae585.pdf
++Source: AVATAR long-term follow-up report
+@@ -386 +386 @@
+-Source: ehae585.pdf
++Source: AVATAR long-term follow-up report
+@@ -393 +393 @@
+-Source: CIRCULATIONAHA.121.057639.pdf
++Source: AVATAR original trial report
+@@ -399 +399 @@
+-Source: ehae585.pdf
++Source: AVATAR long-term follow-up report
+@@ -406 +406 @@
+-Source: Current registry-linked sap: SAP_000.pdf
++Source: Current registry-linked statistical analysis plan
+@@ -412 +412 @@
+-Source: CIRCULATIONAHA.121.057639.pdf
++Source: AVATAR original trial report
+@@ -419 +419 @@
+-Source: ehae585.pdf
++Source: AVATAR long-term follow-up report
+@@ -432 +432 @@
+-Source: ehae585.pdf
++Source: AVATAR long-term follow-up report
+@@ -438 +438 @@
+-Source: ehae585.pdf
++Source: AVATAR long-term follow-up report
+@@ -451 +451 @@
+-Source: CIRCULATIONAHA.121.057639.pdf
++Source: AVATAR original trial report
+@@ -458 +458 @@
+-Source: ehae585.pdf
++Source: AVATAR long-term follow-up report
+@@ -464 +464 @@
+-Source: CIRCULATIONAHA.121.057639.pdf
++Source: AVATAR original trial report
+@@ -479 +479 @@
+-Model claude-sonnet-5-5, medium effort; Claude Code 2.1.278; ARBITER 1.0.0 public commit 2f549ae30f056ff441ea61a04b719968716f2219. Each trial ran once per arm. Runs used a subscription; costs are frozen-rate API list-price equivalents. R and package versions are in session-info.txt and renv.lock.
++Model claude-sonnet-5-5, medium effort; Claude Code 2.1.278; ARBITER 1.0.0 public commit 2f549ae30f056ff441ea61a04b719968716f2219. Each trial ran once per arm. Runs used a subscription; costs are frozen-rate API list-price equivalents. The reproducibility records include the R and package versions.

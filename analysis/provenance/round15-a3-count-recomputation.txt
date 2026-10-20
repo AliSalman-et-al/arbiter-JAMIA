@@ -1,0 +1,5 @@
+('1', 'ARBITER') {'n': 1507, 'five_level_disagreements': 617, 'within_direction': 322, 'cross_direction': 295}
+('1', 'Unassisted') {'n': 1417, 'five_level_disagreements': 732, 'cross_direction': 355, 'within_direction': 377}
+('2', 'ARBITER') {'n': 1501, 'five_level_disagreements': 504, 'within_direction': 368, 'cross_direction': 136}
+('2', 'Unassisted') {'n': 1414, 'five_level_disagreements': 566, 'within_direction': 388, 'cross_direction': 178}
+PASS: independent Python answer-code recomputation equals every new CSV count.
