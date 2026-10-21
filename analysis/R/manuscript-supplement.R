@@ -30,12 +30,12 @@ METHODS_APPENDIX <- c(
 METHODS_APPENDIX <- c(METHODS_APPENDIX,
  'Blinded expert assessment'=paste('Two blinded human experts independently rated every trial domain, without AI, and froze their ratings and signalling answers before viewing labels. They then made a forced choice among three labels shown in random order without rationales, followed by a revised rating. Choice is scored by label; ties credit every matching source. Concordant cells are excluded from preference summaries. The primary estimate uses arm disagreements with equal choices. Revised ratings are descriptive.'),
  'Independent reference and Overall'=paste('Agreement is evaluated against each independent rating, the arithmetic mean of the two expert-specific estimates, and the agreed reference. Derived Overall is the worst independent domain rating; optional escalation is not imposed. The workbook validation separately records every difference in all available columns. Published Overall is compared only on observed labels (n = 81); 21 published reviews gave no Overall label and are excluded, never counted as disagreements. ARBITER and Unassisted use all trials (n = 102) and the same observed subset (n = 81). Every paired Overall contrast involving Published uses that subset (n = 81). Agreed-reference denominators are restricted further to equal expert ratings and printed on each row.'),
- 'Signalling question mapping and eligibility'=paste('The ARBITER semantic question identifiers map one-to-one to the official numbered questions (eTable 5); Unassisted numeric identifiers already match the experts. Comparisons require explicit answers to the same question and component on both sides. Scalar answers are never broadcast across components. NA, inactive questions, missing answers, unmatched components and unresolved strings are not evaluable and are counted separately. Five-level matching distinguishes Y, PY, N, PN and NI. Collapsed matching combines Y/PY and N/PN; NI remains separate. Paired differences retain only components evaluable in both arms.'),
+ 'Signalling question mapping and eligibility'=paste('The ARBITER semantic question identifiers map one-to-one to the official numbered questions (see Signalling question mapping and eligibility); Unassisted numeric identifiers already match the experts. Comparisons require explicit answers to the same question and component on both sides. Scalar answers are never broadcast across components. NA, inactive questions, missing answers, unmatched components and unresolved strings are not evaluable and are counted separately. Five-level matching distinguishes Y, PY, N, PN and NI. Collapsed matching combines Y/PY and N/PN; NI remains separate. Paired differences retain only components evaluable in both arms.'),
  'Input parity and label targets'=paste('Both arms received the same supplied articles, supplements, registry records and protocol or SAP files. The De Waal registry input belongs to a different trial. Published-label target bindings can be broad, inferred or mismatched; the benchmark and label-target tables document these categories.'),
- 'Design status and limitations'=paste('The primary estimand and stratified trial bootstrap were prespecified. All new reference analyses were defined by the authors on 21 October 2026 after adjudication data collection; strictness strata and rules-only analyses are post hoc. There are only two experts, with modest agreement, especially in D3. Experts could consult sources beyond the arms’ inputs. Forced choice among three labels may anchor choices. Overall is derived rather than rated directly. System-level attribution, no structured-prompt comparator, a single run per arm, possible training exposure, unassessed quotation support, outcome mismatch and the De Waal input error limit interpretation.'))
+ 'Design status and limitations'=paste('The primary endpoint, independent-rating comparisons with each source, expert reliability, signalling-answer agreement, published-label agreement, rule audit, time and cost were prespecified in the 18 October 2026 plan. Prespecified comparisons were applied to all 510 cells because the experts assessed every cell. Derived Overall against experts, direction of disagreement, rules-only recomputation, strictness strata and severity analyses are exploratory. There are only two experts, with modest agreement, especially in D3. Experts could consult sources beyond the arms’ inputs. Forced choice among three labels may anchor choices. Overall is derived rather than rated directly. System-level attribution, no structured-prompt comparator, a single run per arm, possible training exposure, unassessed quotation support, outcome mismatch and the De Waal input error limit interpretation.'))
 METHODS_APPENDIX <- c(METHODS_APPENDIX,
-  'Published-label target matching' = paste('The benchmark label-target documentation links each published label to its review, source table, outcome, time point and contrast, with quoted binding evidence where stated and an explicit inference otherwise. The assessment prompt targets the labelled result rather than automatically the trial primary outcome, with the definition, printed result and locator from the trial report. Among the 102 included trials, 33 targets match an explicitly stated result, 11 match one of several covered outcomes, and 32 match an inferred result; 7 partly match, 9 differ and 10 have unknown binding. These categories are retained rather than treating all targets as exact matches. Twelve published label sets (60 domain labels) cover every outcome taken from a trial; another 10 label sets (50 domain labels) have no identified result, and seven more label sets (35 domain labels) jointly cover pain and disability; thus 29 sets (145 domain labels) do not isolate a single result (19 broad and 10 unknown). Binding was inferred rather than explicitly stated for 62 label sets, overlapping these categories. The benchmark documentation and per-review binding evidence support these categories (eTable 11).'),
-  'Dates and training exposure' = paste('Trial reports span publication years 1996–2025; the 16 source reviews were published in 2025–2026. Years come from the benchmark trial summaries and trial-label years where that field is blank (eTable 11); the benchmark documentation identifies the SANCTUARY report as 2025. Anthropic documents June 2026 as the training-data cut-off for claude-sonnet-5-5 (model documentation, https://platform.claude.com/docs/en/models/sonnet-5-5/overview, and provider help, https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data; checked 19 October 2026). Dates cannot establish whether a report was used in training.'))
+  'Published-label target matching' = paste('The benchmark label-target documentation links each published label to its review, source table, outcome, time point and contrast, with quoted binding evidence where stated and an explicit inference otherwise. The assessment prompt targets the labelled result rather than automatically the trial primary outcome, with the definition, printed result and locator from the trial report. Among the 102 included trials, 33 targets match an explicitly stated result, 11 match one of several covered outcomes, and 32 match an inferred result; 7 partly match, 9 differ and 10 have unknown binding. These categories are retained rather than treating all targets as exact matches. Twelve published label sets (60 domain labels) cover every outcome taken from a trial; another 10 label sets (50 domain labels) have no identified result, and seven more label sets (35 domain labels) jointly cover pain and disability; thus 29 sets (145 domain labels) do not isolate a single result (19 broad and 10 unknown). Binding was inferred rather than explicitly stated for 62 label sets, overlapping these categories. The benchmark documentation and per-review binding evidence support these categories (see Published-label target matching).'),
+  'Dates and training exposure' = paste('Trial reports span publication years 1996–2025; the 16 source reviews were published in 2025–2026. Years come from the benchmark trial summaries and trial-label years where that field is blank (see Published-label target matching); the benchmark documentation identifies the SANCTUARY report as 2025. Anthropic documents June 2026 as the training-data cut-off for claude-sonnet-5-5 (model documentation, https://platform.claude.com/docs/en/models/sonnet-5-5/overview, and provider help, https://support.claude.com/en/articles/8114494-how-up-to-date-is-claude-s-training-data; checked 19 October 2026). Dates cannot establish whether a report was used in training.'))
 SUPPLEMENT_SPECS <- list(
  c('Confusion matrices against each independent expert','independent-confusion','raw'),
  c('Full independent agreement and paired contrasts','independent-estimates','expert'),
@@ -58,6 +58,16 @@ SUPPLEMENT_SPECS <- list(
  c('Evidence binding','audit-summary','estimate'),
  c('Derived Overall validation differences','derived-overall-validation','mismatches'),
  c('Evidence and quotation locations for the prior-work comparison','prior-work-evidence','raw'))
+ROUND15_SUPPLEMENT_SPECS <- SUPPLEMENT_SPECS
+SUPPLEMENT_SPECS <- c(SUPPLEMENT_SPECS,list(c('Exploratory binary agreement against each expert','independent-binary','estimate')))
+order_titles <- c('Benchmark trials','Expert reliability','Primary endpoint sensitivities and post hoc strata',
+  'Full independent agreement and paired contrasts','Confusion matrices against each independent expert',
+  'Agreed reference and paired contrasts','Exploratory binary agreement against each expert',
+  'Direction of disagreement against independent experts','Published label agreement','Unweighted agreement with published labels',
+  'Full signalling question agreement','Rules only recomputation','Rule consistency and audit','Evidence binding',
+  'Time cost and token use')
+all_titles <- vapply(SUPPLEMENT_SPECS,`[`,character(1),1)
+SUPPLEMENT_SPECS <- SUPPLEMENT_SPECS[match(c(order_titles,setdiff(all_titles,order_titles)),all_titles)]
 supplement_number <- function(caption) match(caption,vapply(SUPPLEMENT_SPECS,`[`,character(1),1))
 clean_display <- function(x) {
   if('measure' %in% names(x)) x$measure <- tools::toTitleCase(gsub('_',' ',x$measure,fixed=TRUE))
@@ -72,6 +82,7 @@ clean_display <- function(x) {
   }
   names(x) <- tools::toTitleCase(gsub('_',' ',names(x),fixed=TRUE))
   names(x)[names(x)=='Arm'] <- 'Source'
+  names(x)[names(x)=='Adjudicator'] <- 'Expert'
   x
 }
 unweighted_display <- function(x) {
@@ -105,7 +116,7 @@ supplement_entries <- function(inputs) {
     if(spec[2]=='prior-work-evidence') x <- x |> mutate(across(where(is.character),reader_evidence_references))
     if(spec[3]=='expert') x <- bind_rows(expert_display(x),
       expert_display(read_display('independent-differences') |> mutate(source=comparison,count=NA_integer_)),
-      expert_display(read_display('expert-reliability') |> mutate(adjudicator='Expert-to-expert',source='Adjudicator 2')))
+      expert_display(read_display('expert-reliability') |> mutate(adjudicator='Expert-to-expert',source='Expert 2')))
     if(spec[3]=='estimate') {
       x <- if(spec[2]=='signalling-estimates') signalling_display(x) else
         if(spec[2]=='independent-differences') expert_display(mutate(x,source=comparison,count=NA_integer_)) else
@@ -124,31 +135,38 @@ supplement_entries <- function(inputs) {
     list(number=i,title=spec[1],data=clean_display(x),source=spec[2])
   })
 }
-add_paginated_table <- function(doc,x,title,note='',rows_per_page=25L) {
+add_paginated_table <- function(doc,x,title,note='',rows_per_page=20L) {
   slug <- tolower(gsub('[^A-Za-z0-9]+','-',title))
   readr::write_csv(x,paste0('output/tables/display-supplement-',slug,'.csv'),na='')
+  limit <- if(ncol(x)>6L) 18L else if(ncol(x)==6L && names(x)[2]=='Comparison') 30L else 20L
+  rows_per_page <- min(rows_per_page,limit)
   # Explicit chunks prevent narrow tables from spilling without their context.
   index <- seq_len(nrow(x))
   chunks <- ceiling(index/rows_per_page)
-  if(nrow(x)%%rows_per_page==1L && length(unique(chunks))>1L)
+  if(nrow(x)%%rows_per_page %in% 1:4 && length(unique(chunks))>1L)
     chunks <- floor((index-1L)*length(unique(chunks))/nrow(x))+1L
   groups <- split(index,chunks)
   if(!length(groups)) return(manuscript_par(doc,'No rows.'))
   for(k in seq_along(groups)) {
     if(k>1) doc <- officer::body_add_break(doc) |> manuscript_par(paste(title,'continued'),style='heading 2')
-    ft <- house_table(x[groups[[k]],,drop=FALSE],if(k==length(groups)) note else NULL)
+    ft <- house_table(x[groups[[k]],,drop=FALSE],if(k==length(groups)) note else NULL) |>
+      flextable::padding(padding.top=1,padding.bottom=1,part='all') |>
+      flextable::height_all(height=.01,part='all')
     if(ncol(x)==5L && names(x)[1]=='Guideline') ft <- flextable::width(ft,j=1:5,width=c(.7,.4,1.05,2.75,1.95))
-    if(ncol(x)==6L && names(x)[1]=='Reference') ft <- flextable::width(ft,j=1:6,width=c(1,1,1.4,.35,1.8,1.3))
+    if(ncol(x)==6L && names(x)[1]=='Reference') ft <- flextable::width(ft,j=1:6,width=c(1,.8,1.65,.35,1.65,1.4))
+    if(ncol(x)==6L && names(x)[1]=='Expert' && names(x)[2]=='Comparison') ft <- flextable::width(ft,j=1:6,width=c(.55,1.65,.6,1,.45,2.6))
+    if(ncol(x)==8L && 'Outcome' %in% names(x)) ft <- flextable::width(ft,j=1:8,width=c(.55,.85,.5,.9,1.5,.45,.35,1.75))
     if(ncol(x)==3L && names(x)[1]=='Study') ft <- flextable::width(ft,j=1:3,width=c(1.1,4.85,.9))
     doc <- flextable::body_add_flextable(doc,ft)
   }
   doc
 }
 supplement_note <- function(e) {
-  population <- if(e$number %in% c(1,2,7)) paste(expert_population_note(),table2_note()) else if(e$number==6)
-    'n = 60 for equal choices; n = 80 for expert-specific and split-sensitivity rows. Label ties credit both arms, so preference counts can overlap.' else if(e$number==8)
-    'n = 510 for pooled D1–D5; n = 102 for each domain and derived Overall.' else if(e$number==20)
-    'All n = 29 differences from n = 612 column–trial checks are shown: 21 published reviews gave no Overall label; seven High escalations are permitted; one Published Low label differs from derived Some concerns. Missing Published labels are excluded from expert agreement, never counted as disagreements.' else ''
+  population <- if(e$source %in% c('independent-confusion','independent-estimates','independent-differences')) expert_population_note() else
+    if(e$source=='rules-only-primary') 'Equal-choice n = 60; expert-specific and split-sensitivity n = 80. Label ties credit both arms.' else
+    if(e$source=='expert-reliability') 'D1–D5: 510 cells; each domain and derived Overall: 102 trials.' else
+    if(e$source=='independent-binary') 'Exploratory. Some concerns or High is positive. Sensitivity denominators are expert-positive cells; specificity denominators are expert-Low cells. D1–D5 pools 510 cells; each domain has 102. Paired differences are in percentage points and use shared trial-cluster weights.' else
+    if(e$source=='derived-overall-validation') 'All 29 differences from 612 column–trial checks are shown: 21 absent published Overall labels, seven permitted High escalations and one Published Low versus derived Some concerns.' else ''
   paste(paste0('eTable ',e$number,'.'),CI_NOTE,population,
     'SC, Some concerns; NI, no information; NA, not applicable. Counts and denominators refer to the named cells or answers.')
 }
@@ -165,18 +183,22 @@ build_supplement <- function(inputs) {
     message('Supplement eTable ',e$number,': ',e$title)
     doc <- officer::body_add_break(doc) |> manuscript_par(paste0('eTable ',e$number,' ',e$title),style='heading 2')
     doc <- add_paginated_table(doc,e$data,e$title,supplement_note(e),
-      if(e$number==21L) 5L else if(ncol(e$data)>6) 18L else 25L)
-    if(e$number==2) {
+      if(e$source=='prior-work-evidence') 5L else if(ncol(e$data)>6) 18L else 20L)
+    if(e$source=='independent-binary') {
+      doc <- officer::body_add_break(doc) |> manuscript_par('Paired binary differences',style='heading 2') |>
+        add_paginated_table(clean_display(binary_difference_display(read_display('independent-binary-differences'))),'Paired binary differences',supplement_note(e),30L)
+    }
+    if(e$source=='independent-estimates') {
       doc <- officer::body_add_break(doc) |> manuscript_par('Unweighted agreement with each expert',style='heading 2') |>
         add_paginated_table(clean_display(unweighted_display(read_display('expert-unweighted'))),'Unweighted agreement with each expert',paste(expert_population_note(),CI_NOTE))
     }
-    if(e$number==4) {
+    if(e$source=='revised-ratings') {
       x <- clean_display(read_display('answer-changes'))
       doc <- officer::body_add_break(doc) |> manuscript_par('Retained and changed signalling answers',style='heading 2') |>
         add_paginated_table(x,'Retained and changed signalling answers','Counts use original workbook question rows, including mixed component changes.')
     }
-    if(e$number==5) {
-      doc <- officer::body_add_break(doc) |> manuscript_par('Five-level disagreement types (eTable 5)',style='heading 2') |>
+    if(e$source=='signalling-estimates') {
+      doc <- officer::body_add_break(doc) |> manuscript_par('Five-level disagreement types',style='heading 2') |>
         add_paginated_table(clean_display(read_display('signalling-disagreement-types')),'Five-level disagreement types',
           'All evaluable answers for each source and expert. Within-direction: Y↔PY or N↔PN. Cross-direction: disagreements between Y/PY, N/PN or NI. The two counts partition five-level disagreements; N includes agreements.')
       doc <- officer::body_add_break(doc) |> manuscript_par('Paired signalling differences',style='heading 2') |>
@@ -184,19 +206,23 @@ build_supplement <- function(inputs) {
       doc <- officer::body_add_break(doc) |> manuscript_par('Signalling comparison eligibility',style='heading 2') |>
         add_paginated_table(clean_display(read_display('signalling-eligibility')),'Signalling comparison eligibility')
     }
-    if(e$number==6) {
+    if(e$source=='rules-only-primary') {
       doc <- officer::body_add_break(doc) |> manuscript_par('Independent agreement after rules only recomputation',style='heading 2') |>
         add_paginated_table(clean_display(expert_display(read_display('rules-only-agreement'))),'Independent agreement after rules only recomputation',paste(expert_population_note(),CI_NOTE))
       doc <- officer::body_add_break(doc) |> manuscript_par('Cells changed by rules only recomputation',style='heading 2') |>
         add_paginated_table(clean_display(read_display('rules-only-changed')),'Cells changed by rules only recomputation')
     }
   }
-  doc <- officer::body_add_break(doc) |> manuscript_par('eFigure 1 Published label agreement varied across reviews',style='heading 2') |>
-    officer::body_add_img(src='output/manuscript/eFigure1.png',width=6.7,height=7.7) |> manuscript_par(CI_NOTE)
-  doc <- officer::body_add_break(doc) |> manuscript_par('eFigure 2 Domain level signalling agreement',style='heading 2') |>
-    officer::body_add_img(src='output/manuscript/eFigure2.png',width=6.7,height=5.4) |> manuscript_par(paste('ARBITER: blue circles; Unassisted: orange squares. Experts are separated by facet. Five-level and collapsed exact agreement, with all domain denominators in eTable 5.',CI_NOTE))
-  doc <- officer::body_add_break(doc) |> manuscript_par('eFigure 3 All signalling question paired differences',style='heading 2') |>
-    officer::body_add_img(src='output/manuscript/eFigure3.png',width=6.7,height=8.0) |> manuscript_par(paste('Both collapsed and five-level scales are shown, including questions with fewer than 20 paired answers. Blue circles show ARBITER − Unassisted; expert identity is given by row labels. Full numerical values are in eTable 5.',CI_NOTE))
+  message('Supplement: figures')
+  captions <- c('Absolute agreement by domain and derived Overall','Collapsed question-level paired differences',
+    'Published label agreement across reviews','Domain-level signalling agreement','All signalling question paired differences')
+  heights <- c(5.8,8,7.7,5.4,8)
+  for(i in seq_along(captions)) {
+    doc <- officer::body_add_break(doc) |> manuscript_par(paste('eFigure',i,captions[i]),style='heading 2') |>
+      officer::body_add_img(src=paste0('output/manuscript/eFigure',i,'.png'),width=6.7,height=heights[i]) |>
+      manuscript_par(paste('Independent domain and signalling comparisons are prespecified; derived Overall comparisons are exploratory. Denominators are shown in the accompanying tables. Short ticks in eFigure 1 show expert-to-expert agreement.',CI_NOTE))
+  }
+  message('Supplement: AVATAR complete trace')
   doc <- officer::body_add_break(doc) |> manuscript_par('AVATAR complete trace',style='heading 1')
   for(b in avatar_trace_blocks(inputs)) {
     readr::write_csv(b$data,paste0('output/tables/avatar-trace-',if(startsWith(b$title,'Part A')) 'answers' else 'evidence','.csv'),na='')
@@ -210,11 +236,14 @@ build_supplement <- function(inputs) {
       }
     }
   }
+  message('Supplement: prompts and provenance')
   doc <- officer::body_add_break(doc) |> manuscript_par('Prompt templates and run provenance',style='heading 2')
   prompts <- read_display('prompt-template-example')
   for(i in seq_len(nrow(prompts))) doc <- doc |> manuscript_par(prompts$type[i],style='heading 2') |> manuscript_par(prompts$prompt[i])
   doc <- manuscript_par(doc,'Model claude-sonnet-5-5, medium effort; Claude Code 2.1.278; ARBITER 1.0.0 public commit 2f549ae30f056ff441ea61a04b719968716f2219. Each trial ran once per arm. Runs used a subscription; costs are frozen-rate API list-price equivalents. The reproducibility records include the R and package versions.')
+  message('Supplement: writing Word document')
   print(doc,target='output/manuscript/Supplement.docx')
+  message('Supplement: reporting map')
   build_reporting_map()
   invisible(entries)
 }
@@ -228,10 +257,10 @@ build_reporting_map <- function() {
 
 # Reader citations preserve the technical locators in the source CSV, outside the display.
 reader_evidence_references <- function(x) {
-  replacements <- c('bundle-domain-checks.csv'='eTable 14',
-    'table3-supplement.csv'='eTable 14', 'audit-summary.csv'='eTable 19',
+  replacements <- c('bundle-domain-checks.csv'=paste('eTable',supplement_number('Rule consistency and audit')),
+    'table3-supplement.csv'=paste('eTable',supplement_number('Rule consistency and audit')), 'audit-summary.csv'=paste('eTable',supplement_number('Evidence binding')),
     'canonical.json and verification.json'='canonical bundle records and verification receipts',
     'docs/round15/BRIEF.md'='the full-coverage expert assessment specification')
   for(old in names(replacements)) x <- gsub(old,replacements[[old]],x,fixed=TRUE)
-  x
+  gsub('(?<!e)Table 2[.]','Table 3.',x,perl=TRUE)
 }

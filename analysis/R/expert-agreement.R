@@ -1,4 +1,4 @@
-# All new reference analyses were defined by the authors on 2026-10-21.
+# Independent domain comparisons were prespecified; derived Overall is exploratory.
 expert_references <- function(inputs,phase='independent') {
   x <- inputs$adjud |> transmute(slug,domain,adjudicator,reference=.data[[phase]])
   overall <- x |> group_by(slug,adjudicator) |> summarise(reference=derived_overall(reference),.groups='drop') |> mutate(domain='Overall')

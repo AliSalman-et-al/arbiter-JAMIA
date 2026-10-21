@@ -1,0 +1,205 @@
+--- 
+
++++ 
+
+@@ -8217,3 +8217,3 @@
+
+ Source-version hash: a890f771fd05
+-Full verbatim quote: 3-year follow-up information available for all patients. For binary outcomes,
+we used a generalized linear model assuming a binomial distribution with a
+log link function to report risk ratios and 95% CI. We conducted subgroup
+analyses accompanied by a P for interaction to assess the consistency of the
+treatment effect on the primary outcome according to the following pre-
+defined variables: age (<65 vs. ≥65), sex, baseline ejection fraction (<60%
+vs. ≥60%), and country of trial site. P-values and 95% CI for secondary out
+comes and secondary analyses of the primary outcome were not adjusted
+for multiple testing and are considered exploratory. For the post hoc ana
+lyses of echocardiography readouts of valve severity and LVEF in patients
+in the conservative group, we calculated the mean change from baseline
+to 12-month follow-up for all patients in the conservative group with avail
+able data and the mean change from baseline to final follow-up for all pa
+tients in the conservative group that underwent surgery and had available
+data. We conducted paired t-tests to derive P-values and 95% CI for the
+mean changes from baseline.11 This analysis was repeated for patients in
+the conservative group that underwent AVR. Analyses were performed
+using Stata, version 18.0.
+Results
+Patients and follow-up
+Main patient characteristics at baseline are summarized in Table 2. The
+average age of enrolled patients was 67 years, 57% were men, the ma
+jority of patients had a degenerative aetiology of AS (84.7%), and the
+median estimated operative mortality according to the Society of
+Thoracic Surgeons predicted risk of mortality score was 1.7%. No sig
+nificant heterogeneity between both groups was noted. All patients
+were included in the analysis. Median follow-up for all patients was
+63 months [interquartile range (IQR) 48-75). Median follow-up in sur
+vivors was 68 months (IQR 58-79). One patient, who was randomized
+to early surgery, has been lost to follow-up, and this patient was cen
+sored when the last follow-up information was available and included
+in the intention-to-treat analysis (Figure 1).
+Aortic valve replacement procedures
+In the early surgery group, AVR was performed in 72 of the 78 patients
+(92.3%). Among the six patients that did not undergo AVR per random
+ization, one patient, as above mentioned, was lost to follow-up, and one
+died prior to valve surgery. Four patients were available for the extended
+follow-up. Among them, one patient died unoperated after 2113 days;
+two became symptomatic and underwent intervention after 691 and
+791 days, respectively; and one remained asymptomatic and AVR free
+throughout the entire follow-up (Figure 1). The median time from ran
+domization to AVR in the early surgery group was 55 days (IQR 36-79).
+Thirty-five out of the 79 patients (44.3%) in the conservative treatment
+group had surgery during follow-up. Median time from randomization
+to surgery in the conservative treatment group was 476 days (IQR
+226-1098). At the time of AVR, the mean age of patients in the control
+p = 0.002
+HR = 0.42 (95% CI 0.24 to 0.73)
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+Primary composite endpoint
+incidence
+79
+61
+52
+29
+11
+Control
+78
+69
+67
+48
+13
+Early surgery
+Participants, n
+0
+20
+40
+60
+80
+Time (Months)
+Early surgery
+Conservative treatment
+Figure 2 Cumulative incidence of primary composite outcome (intention-to-treat population)
+Table 3 Indications for aortic valve replacement in the
+conservative treatment group
+Symptom onset (including increased fatigue)
+18 (51.4%)
+AS progression
+6 (17.1%)
+Decrease in LVEF
+3 (8.6%)
+Combination of factors
+8 (22.9%)
+AS, aortic stenosis; LVEF, left ventricular ejection fraction.
+Aortic valve replacement vs. conservative treatment 4531
+Downloaded from academic.oup.com/eurheartj/article/45/42/4526/7742145 by guest on 03 October 2026
+
+[Extracted table 1]
+|Symptom onset (including increased fatigue) 1|8 (51.4%)|
+|---|---|
+|AS progression 6 (17.1%)||
+|Decrease in LVEF|3 (8.6%)|
+|Combination of factors 8 (22.9%)||
++Full verbatim quote: 3-year follow-up information available for all patients. For binary outcomes,
+we used a generalized linear model assuming a binomial distribution with a
+log link function to report risk ratios and 95% CI. We conducted subgroup
+analyses accompanied by a P for interaction to assess the consistency of the
+treatment effect on the primary outcome according to the following pre-
+defined variables: age (<65 vs. ≥65), sex, baseline ejection fraction (<60%
+vs. ≥60%), and country of trial site. P-values and 95% CI for secondary out
+comes and secondary analyses of the primary outcome were not adjusted
+for multiple testing and are considered exploratory. For the post hoc ana
+lyses of echocardiography readouts of valve severity and LVEF in patients
+in the conservative group, we calculated the mean change from baseline
+to 12-month follow-up for all patients in the conservative group with avail
+able data and the mean change from baseline to final follow-up for all pa
+tients in the conservative group that underwent surgery and had available
+data. We conducted paired t-tests to derive P-values and 95% CI for the
+mean changes from baseline.11 This analysis was repeated for patients in
+the conservative group that underwent AVR. Analyses were performed
+using Stata, version 18.0.
+Results
+Patients and follow-up
+Main patient characteristics at baseline are summarized in Table 2. The
+average age of enrolled patients was 67 years, 57% were men, the ma
+jority of patients had a degenerative aetiology of AS (84.7%), and the
+median estimated operative mortality according to the Society of
+Thoracic Surgeons predicted risk of mortality score was 1.7%. No sig
+nificant heterogeneity between both groups was noted. All patients
+were included in the analysis. Median follow-up for all patients was
+63 months [interquartile range (IQR) 48-75). Median follow-up in sur
+vivors was 68 months (IQR 58-79). One patient, who was randomized
+to early surgery, has been lost to follow-up, and this patient was cen
+sored when the last follow-up information was available and included
+in the intention-to-treat analysis (Figure 1).
+Aortic valve replacement procedures
+In the early surgery group, AVR was performed in 72 of the 78 patients
+(92.3%). Among the six patients that did not undergo AVR per random
+ization, one patient, as above mentioned, was lost to follow-up, and one
+died prior to valve surgery. Four patients were available for the extended
+follow-up. Among them, one patient died unoperated after 2113 days;
+two became symptomatic and underwent intervention after 691 and
+791 days, respectively; and one remained asymptomatic and AVR free
+throughout the entire follow-up (Figure 1). The median time from ran
+domization to AVR in the early surgery group was 55 days (IQR 36-79).
+Thirty-five out of the 79 patients (44.3%) in the conservative treatment
+group had surgery during follow-up. Median time from randomization
+to surgery in the conservative treatment group was 476 days (IQR
+226-1098). At the time of AVR, the mean age of patients in the control
+p = 0.002
+HR = 0.42 (95% CI 0.24 to 0.73)
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+Primary composite endpoint
+incidence
+79
+61
+52
+29
+11
+Control
+78
+69
+67
+48
+13
+Early surgery
+Participants, n
+0
+20
+40
+60
+80
+Time (Months)
+Early surgery
+Conservative treatment
+Figure 2 Cumulative incidence of primary composite outcome (intention-to-treat population)
+Table 3 Indications for aortic valve replacement in the
+conservative treatment group
+Symptom onset (including increased fatigue)
+18 (51.4%)
+AS progression
+6 (17.1%)
+Decrease in LVEF
+3 (8.6%)
+Combination of factors
+8 (22.9%)
+AS, aortic stenosis; LVEF, left ventricular ejection fraction.
+Aortic valve replacement vs. conservative treatment 4531
+Downloaded from academic.oup.com/eurheartj/article/45/42/4526/7742145 by guest on 03 October 2026
+[Extracted table 1]
+|Symptom onset (including increased fatigue) 1|8 (51.4%)|
+|---|---|
+|AS progression 6 (17.1%)||
+|Decrease in LVEF|3 (8.6%)|
+|Combination of factors 8 (22.9%)||
+ eh_d54a2600ddc753b3

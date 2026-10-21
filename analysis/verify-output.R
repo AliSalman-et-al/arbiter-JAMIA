@@ -94,7 +94,7 @@ unchanged <- c('agreement-meta','agreement-meta-differences','table1','table1-di
   'audit-summary','bundle-domain-checks','api-cost-summary','api-token-reconciliation','process-summary','process-differences',
   'table5','evidence-bases-distribution','overall-consistency-cells','domain-consistency-cells','invalid-path-sensitivity')
 paths <- paste0('analysis/output/tables/',unchanged,'.csv')
-diffs <- system2('git',c('-C','..','diff','0cbdfc3','--',paths),stdout=TRUE)
+diffs <- system2('git',c('-C','..','diff','fee1225','--',paths),stdout=TRUE)
 writeLines(diffs,'provenance/unchanged-analysis.diff')
 stopifnot(!length(diffs))
 prior <- readr::read_csv('data-curated/prior-work-comparison.csv',show_col_types=FALSE)
@@ -102,18 +102,18 @@ parent <- system2('git',c('show','HEAD:analysis/data-curated/prior-work-comparis
 parent <- readr::read_csv(I(paste(parent,collapse='\n')),show_col_types=FALSE)
 stopifnot(identical(prior[setdiff(names(prior),'reference_standard')],parent[setdiff(names(parent),'reference_standard')]))
 writeLines(system2('git',c('-C','..','diff','HEAD','--','analysis/data-curated/prior-work-comparison.csv'),stdout=TRUE),'provenance/prior-work-data.diff')
-record('PASS 17 unchanged CSVs: empty git diff against HEAD; prior-work data identical except the authorised reference description.')
+record('PASS 17 unchanged CSVs: empty git diff against fee1225; prior-work data identical except the authorised reference description.')
 figures <- list.files('output/manuscript',pattern='^Figure[12][.](pdf|png|tiff|svg)$',full.names=TRUE)
 stopifnot(length(figures)==8L)
 artwork <- list()
 for(p in figures) {
   actual <- system2('git',c('hash-object',p),stdout=TRUE)
-  expected <- system2('git',c('rev-parse',paste0('HEAD:analysis/',p)),stdout=TRUE)
+  expected <- system2('git',c('rev-parse',paste0('fee1225:analysis/',p)),stdout=TRUE)
   stopifnot(identical(actual,expected))
   artwork[[p]] <- tibble(file=p,actual_git_blob=actual,parent_git_blob=expected)
 }
 readr::write_csv(bind_rows(artwork),'provenance/protected-artwork.csv')
-record('PASS Figures 1 and 2: all eight PNG/PDF/SVG/TIFF files byte-identical to HEAD.')
+record('PASS Figures 1 and 2: all eight PNG/PDF/SVG/TIFF files byte-identical to fee1225.')
 trace <- readr::read_csv('output/tables/display-source-trace.csv',show_col_types=FALSE,col_types=readr::cols(.default='c'))
 for(file in unique(trace$file)) {
   x <- readr::read_csv(paste0('output/tables/',file,'.csv'),show_col_types=FALSE)
@@ -135,14 +135,12 @@ compact <- compact_expert_table(
   readr::read_csv('output/tables/independent-estimates.csv',show_col_types=FALSE),
   readr::read_csv('output/tables/independent-differences.csv',show_col_types=FALSE),
   readr::read_csv('output/tables/expert-reliability.csv',show_col_types=FALSE))
-stopifnot(identical(as.matrix(compact),as.matrix(readr::read_csv('output/tables/display-table1.csv',show_col_types=FALSE,na=character()))),nrow(compact)==9L)
-record('PASS compact Table 1 regenerates exactly: four references × two cohorts plus expert-to-expert foot row; Overall uses the observed Published subset.')
+stopifnot(identical(as.matrix(compact),as.matrix(readr::read_csv('output/tables/display-table2.csv',show_col_types=FALSE,na=character()))),nrow(compact)==10L)
+record('PASS compact Table 2: source rows against three references, paired differences, matched Overall and expert-to-expert foot rows.')
 questions <- question_difference_plot()$data
 all_questions <- question_difference_plot(TRUE)$data
 stopifnot(all(questions$n>=20L),all(as.character(questions$level)=='Collapsed'),
   is.null(question_difference_plot()$labels$title),any(all_questions$n==0L),nrow(all_questions)>nrow(questions))
-mean_rows <- filter(compact,Reference=='Mean of experts')
-stopifnot(!any(grepl('/',unlist(mean_rows[c('ARBITER','Unassisted','Published')]),fixed=TRUE)))
 comparison <- readr::read_csv('data-derived/expert-signalling-comparisons.csv',show_col_types=FALSE)
 counts <- read_display('signalling-disagreement-types')
 five <- readr::read_csv('output/tables/signalling-estimates.csv',show_col_types=FALSE) |> filter(group=='Overall',level=='five')
@@ -158,8 +156,8 @@ for(i in seq_len(nrow(counts))) {
     row$within_direction==sum(within),row$cross_direction==sum(disagree & !within),
     row$within_direction+row$cross_direction==row$five_level_disagreements)
 }
-record('PASS independent answer-code recomputation of every within/cross-direction count; mean-of-experts cells omit counts; Figure 6 is collapsed only with no title.')
-record('PASS Figure 6 retains only question/expert rows with at least 20 paired answers; eFigure 3 retains every sparse and zero-answer row.')
+record('PASS independent answer-code recomputation of every within/cross-direction count; within/cross-direction counts reproduce directly from answer codes.')
+record('PASS eFigure 2 retains only question/expert rows with at least 20 paired answers; eFigure 5 retains every sparse and zero-answer row.')
 # Word tables must contain every displayed value in the CSV in reading order.
 docx_text <- function(path) {
   con <- unz(path,'word/document.xml')
@@ -197,7 +195,7 @@ stopifnot('Source' %in% names(entry('Published label agreement')),
   'Source' %in% names(entry('Evidence binding')),
   'Unweighted κ' %in% names(entry('Unweighted agreement with published labels')),
   !any(unlist(entry('Derived Overall validation differences')) %in% c('kit','nokit','human')))
-matrices <- entries[[1]]$data
+matrices <- entry('Confusion matrices against each independent expert')
 counts <- rowSums(sapply(matrices[c('Low','Some Concerns','High','Missing')],as.numeric))
 raw <- readr::read_csv('output/tables/independent-confusion.csv',show_col_types=FALSE)
 stopifnot(sum(counts)==sum(raw$n[raw$adjudicator %in% c('1','2')]))
@@ -262,5 +260,58 @@ for(f in reader) {
   txt <- paste(readLines(f,warn=FALSE),collapse='\n')
   stopifnot(!grepl('(?i)\\b(?:no-kit|meta label|vindicated|decisive|over-flagging)\\b|A/Z',txt,perl=TRUE))
 }
-record('PASS generated Results, legends and main-table reader text has no retired-design labels. Source quotations and immutable artwork receive contextual review in round15-report.md.')
+record('PASS generated Results, legends and main-table reader text has no retired-design labels. Source quotations and immutable artwork receive contextual review in round16-report.md.')
+writeLines(log,'provenance/output-verification.txt')
+
+severity <- readr::read_csv('output/tables/severity-distribution.csv',show_col_types=FALSE)
+stopifnot(identical(severity |> filter(population=='D1-D5',label=='Low') |> pull(count),c(427,375,407,277,346)))
+binary <- readr::read_csv('output/tables/independent-binary.csv',show_col_types=FALSE)
+for(expert in c('1','2')) for(src in c('ARBITER','Unassisted','Published')) for(dom in c('D1-D5',paste0('D',1:5))) {
+  wb <- if(expert=='1') a else b
+  if(dom!='D1-D5') wb <- wb[wb$Domain==dom,]
+  truth <- wb$Independent!='Low'
+  prediction <- wb[[switch(src,ARBITER='Kit',Unassisted='No-kit',Published='Human')]]!='Low'
+  rows <- filter(binary,adjudicator==expert,source==src,domain==dom)
+  stopifnot(rows$n[rows$metric=='sensitivity']==sum(truth),rows$count[rows$metric=='sensitivity']==sum(truth&prediction),
+    rows$n[rows$metric=='specificity']==sum(!truth),rows$count[rows$metric=='specificity']==sum(!truth&!prediction))
+}
+record('PASS independent workbook severity counts and every expert binary pooled/domain numerator and denominator.')
+# Preserve all prior statistical estimates, including supplementary analyses.
+stat_files <- list.files('output/tables',pattern='[.]csv$',full.names=TRUE)
+compared <- character()
+for(path in stat_files) {
+  before <- suppressWarnings(system2('git',c('show',paste0('fee1225:analysis/',path)),stdout=TRUE,stderr=FALSE))
+  if(!is.null(attr(before,'status'))) next
+  old <- readr::read_csv(I(paste(before,collapse='\n')),show_col_types=FALSE)
+  current <- readr::read_csv(path,show_col_types=FALSE)
+  fields <- intersect(c('estimate','lower','upper','count','n','valid_replicates'),names(old))
+  if(!length(fields)) next
+  stopifnot(identical(old[fields],current[fields]))
+  compared <- c(compared,basename(path))
+}
+writeLines(compared,'provenance/round16-estimate-invariance.txt')
+record(paste('PASS every numeric estimate/count/denominator/CI unchanged in',length(compared),'Round 15 analysis CSVs against fee1225.'))
+writeLines(log,'provenance/output-verification.txt')
+# Complete reader-language scan. Clinical quotations keep their source wording.
+reader_documents <- list.files('output/manuscript',pattern='[.]docx$',full.names=TRUE)
+reader_strings <- c(setNames(lapply(reader_documents,docx_text),reader_documents),
+  list(results_html=result_html,supplement_html=supplement_html,
+    results_sentences=paste(readLines('output/manuscript/results-sentences.md'),collapse=' '),
+    figure_legends=paste(readLines('output/manuscript/figure-legends.md'),collapse=' ')))
+hard_ban <- '(?i)haiku|A/Z|adjudicator[[:space:]]+[12AZ]\\b|composite reference|vindicated|decisive question|over-flagging|expert-level|matched experts|ground truth|supported by evidence'
+stopifnot(!any(vapply(reader_strings,function(s) grepl(hard_ban,s,perl=TRUE),logical(1))))
+contexts <- bind_rows(lapply(names(reader_strings),function(name) {
+  s <- reader_strings[[name]]
+  pos <- gregexpr('(?i)\\b(first|composite|accuracy)\\b',s,perl=TRUE)[[1]]
+  if(identical(as.integer(pos),-1L)) return(tibble())
+  tibble(document=name,context=vapply(pos,function(p) substr(s,max(1,p-80),p+120),character(1)))
+}))
+readr::write_csv(contexts,'provenance/round16-leak-contexts.csv')
+stopifnot(!grepl('(?i)\\b(first|composite|accuracy)\\b',reader_strings$results_sentences,perl=TRUE))
+record('PASS complete reader-language scan; remaining first/composite/accuracy contexts are recorded for review of unchanged clinical quotations and rationale.')
+writeLines(log,'provenance/output-verification.txt')
+expected_binary_display <- clean_display(binary_difference_display(read_display('independent-binary-differences')))
+saved_binary_display <- readr::read_csv('output/tables/display-supplement-paired-binary-differences.csv',show_col_types=FALSE,col_types=readr::cols(.default='c'),na=character())
+stopifnot(identical(as.matrix(expected_binary_display),as.matrix(saved_binary_display)))
+record('PASS new binary-difference display regenerates in percentage points, with identical numerators, denominators and intervals.')
 writeLines(log,'provenance/output-verification.txt')

@@ -41,22 +41,6 @@ agreement_display <- function(x,ids=c('arm','domain'),difference=FALSE) {
     rename_with(~c(kappa='Weighted \u03ba',AC2='AC2',accuracy='Exact agreement',
       sensitivity='Sensitivity¹',specificity='Specificity')[.x],all_of(metrics))
 }
-main_table2 <- function() {
-  pub <- manuscript_data('table2')
-  block <- function(x,label) {
-    if(any(x$metric=='sensitivity')) label <- paste0(label,'; Some concerns or High: N = ',unique(x$n[x$metric=='sensitivity'])[1],'; Low N = ',unique(x$n[x$metric=='specificity'])[1])
-    x <- filter(x,metric!='AC2'); x$count <- NULL; x$n <- NULL
-    x <- agreement_display(x,'arm') |> mutate(arm=reader_label(arm)) |> rename(Source=arm)
-    group_row(x,label)
-  }
-  dif <- manuscript_data('table2-differences') |> filter(metric!='AC2') |>
-    filter(comparison=='ARBITER-Sonnet minus Baseline-Sonnet') |>
-    mutate(Row=paste(if_else(reference=='Meta','Published','Composite'),reader_label(domain),sep=': ')) |>
-    agreement_display('Row',TRUE) |> rename(Source=Row)
-  bind_rows(block(filter(pub,domain=='D1-D5'),'Against Published labels — D1–D5 (510 cells)'),
-    block(filter(pub,domain=='Overall'),'Against Published labels — Overall (81 trials)'),
-    group_row(dif,'Paired difference, ARBITER − Unassisted')) |> replace_na(as.list(setNames(rep('',5),names(dif))))
-}
 MEASURE_LABELS <- c('Consistent'='Consistent with RoB 2',
   'Violation'='Rating contradicts its own answers', 'Invalid answer path'='Required question skipped',
   'Departure'='Any rule break','Proposed agreement'='Proposed judgement matches algorithm',

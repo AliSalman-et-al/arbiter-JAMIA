@@ -1,0 +1,10 @@
+{
+  "severity_rows_verified": 30,
+  "document_flags_verified": 408,
+  "document_trial_counts": {
+    "protocol": 26,
+    "sap": 22,
+    "registry": 73,
+    "supplement": 69
+  }
+}

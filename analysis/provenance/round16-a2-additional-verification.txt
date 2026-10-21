@@ -1,0 +1,8 @@
+PASS all 98 accepted WP-A CSVs unchanged, including new Round 16 estimates and numbering inputs
+PASS all six rebuilt Word documents retain identical wording and table cells; one extra blank line in a source quotation is removed and reporting-map continuation headers follow rebuilt pagination; the supplement has no duplicated Results prose to replace
+PASS numbering map unchanged; Results first eTable citations run consecutively 1–15, grouped as ranges
+PASS all Results number tokens resolve to source-cell trace values, including matched Overall, direction, published binary intervals and process counts
+PASS final Figure 3 population/side labels, Figure 4 exploratory heading and Figure 5A annotation removal verified from PDFs
+PASS all five supplemental figures retain identical PNG/TIFF pixels
+PASS every Figure 6 confidence interval fits inside the shared 55–95% axis limits
+PASS all R generators identical to the versions used at the start of the clean full rebuild

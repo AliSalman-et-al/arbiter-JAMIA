@@ -1,0 +1,113 @@
+- One or more packages recorded in the lockfile are not installed.
+- Use `renv::status()` for more details.
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Derived Overall mismatches: 29/612
+Supplement eTable 1: Benchmark trials
+Supplement eTable 2: Expert reliability
+Supplement eTable 3: Primary endpoint sensitivities and post hoc strata
+Supplement eTable 4: Full independent agreement and paired contrasts
+Supplement eTable 5: Confusion matrices against each independent expert
+Supplement eTable 6: Agreed reference and paired contrasts
+Supplement eTable 7: Exploratory binary agreement against each expert
+Supplement eTable 8: Direction of disagreement against independent experts
+Supplement eTable 9: Published label agreement
+Supplement eTable 10: Unweighted agreement with published labels
+Supplement eTable 11: Full signalling question agreement
+Supplement eTable 12: Rules only recomputation
+Supplement eTable 13: Rule consistency and audit
+Supplement eTable 14: Evidence binding
+Supplement eTable 15: Time cost and token use
+Supplement eTable 16: Forced choice on disputed cells
+Supplement eTable 17: Revised ratings and retained or changed answers
+Supplement eTable 18: Invalid answer path sensitivity
+Supplement eTable 19: API cost estimates and reconstruction bounds
+Supplement eTable 20: Token reconciliation
+Supplement eTable 21: Derived Overall validation differences
+Supplement eTable 22: Evidence and quotation locations for the prior-work comparison
+Supplement: figures
+Supplement: AVATAR complete trace
+Supplement: prompts and provenance
+Supplement: writing Word document
+Supplement: reporting map
+- One or more packages recorded in the lockfile are not installed.
+- Use `renv::status()` for more details.
+
+
+processing file: results.qmd
+1/9                  
+2/9 [unnamed-chunk-1]
+3/9                  
+4/9 [unnamed-chunk-2]
+5/9                  
+6/9 [unnamed-chunk-3]
+7/9                  
+8/9 [unnamed-chunk-4]
+9/9                  
+output file: results.knit.md
+
+pandoc 
+  to: html
+  output-file: results.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  knitr:
+    opts_chunk:
+      results: asis
+  title: ARBITER results against blinded expert ratings
+  
+Output created: results.html
+
+- One or more packages recorded in the lockfile are not installed.
+- Use `renv::status()` for more details.
+
+
+processing file: supplement.qmd
+1/3                  
+2/3 [unnamed-chunk-1]
+3/3                  
+output file: supplement.knit.md
+
+pandoc 
+  to: html
+  output-file: supplement.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  knitr:
+    opts_chunk:
+      results: asis
+  title: ARBITER supplementary methods and results
+  
+Output created: supplement.html
+

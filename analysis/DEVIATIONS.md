@@ -406,7 +406,7 @@ No Python is used. This file records conservative resolutions as they arise.
 
 ## 2026-10-21 Full-coverage blinded expert reference
 
-The authors discarded the previous disagreement-only adjudication and supplied two new workbooks with independent, forced-choice and revised ratings for all 102 trials × five domains. Neither expert used AI for a judgement. Each froze the independent ratings and signalling answers before viewing the blinded labels. The new design and all new analyses were defined after these data were collected, as recorded in docs/round15/BRIEF.md. The primary estimand, label-based credit and stratified trial-cluster bootstrap retain their prespecified mechanics. Strictness strata and rules-only recomputation are post hoc; revised ratings and retention/change summaries are descriptive.
+The authors discarded the previous disagreement-only adjudication and supplied two new workbooks with independent, forced-choice and revised ratings for all 102 trials × five domains. Neither expert used AI for a judgement. Each froze the independent ratings and signalling answers before viewing the blinded labels. Outcome-status correction dated 2026-10-21 (Round 16): independent domain comparisons, expert reliability and signalling-answer agreement were prespecified in the 2026-10-18 plan and applied to all 510 cells because the experts assessed every cell. Derived Overall against experts and the additions listed in the Round 16 entry are exploratory. The primary estimand, label-based credit and stratified trial-cluster bootstrap retain their prespecified mechanics. Strictness strata and rules-only recomputation are post hoc; revised ratings and retention/change summaries are descriptive.
 
 The pipeline now loads both workbooks directly, checks all source labels and covers every trial-domain cell. Independent-reference agreement replaces the former derived reference. Signalling comparisons use explicit component matches and keep NA separate from NI; unresolved and unmatched answers are not imputed. Canonical derived Overall takes the worst domain without imposing optional escalation. Validation preserves and reports every workbook difference.
 
@@ -415,3 +415,10 @@ The lockfile already records readxl 1.6.0. Missing packages were installed into 
 ### 2026-10-21: observed Published Overall labels
 
 Author clarification: new expert-reference Overall comparisons exclude the 21 missing Published labels rather than counting them as disagreements. ARBITER and Unassisted use all 102 trials and are also reported on the same 81 trials with observed Published Overall. All paired Overall contrasts involving Published use those 81 trials. Agreed-reference comparisons further require equal expert ratings. Rows and footnotes state denominators. D1–D5 and unchanged analyses are unaffected.
+
+
+## 2026-10-21: Round 16 outcome labels and displays
+
+2026-10-21: prespecified comparisons from the 2026-10-18 plan applied to all 510 cells because the experts assessed every cell; additions listed as exploratory.
+
+Independent domain comparisons, expert reliability and signalling comparisons retain the 18 October prespecified status. Expert-derived Overall, direction, rules-only recomputation, strictness strata, severity distributions and binary expert comparisons are exploratory. Round 15 estimates and protected artwork remain unchanged.

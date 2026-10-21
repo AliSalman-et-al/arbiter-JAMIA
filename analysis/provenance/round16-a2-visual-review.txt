@@ -1,0 +1,7 @@
+PASS 127 LibreOffice-rendered Word pages reviewed: Tables 1–4 (one page each), Supplement (118 pages), TRIPOD-LLM (5 pages).
+PASS all Word pages inspected in contact sheets; main tables and Supplement binary pages 33/37 also inspected at full size. No empty pages, out-of-page words, clipped rows or overlapping text.
+PASS all nine generated figures inspected. Final Figures 3–6 additionally inspected from separately rendered PDFs; attached connectors, exploratory heading, removed in-panel denominators, facet spacing and complete CIs confirmed.
+PASS Results HTML rendered with installed headless Chrome: full new prose, Figures 3–6 and revised legends inspected.
+PASS Supplement HTML rendered with installed headless Chrome: binary table and source-quotation section inspected; Word/HTML content equality passed the output verifier.
+T3 preview_snapshot failed twice: Preview automation snapshot timed out after 15000ms. The CUA inventory had no browser and createBrowserTab returned Browser is not available: iab. Installed headless Chrome provided the HTML visual fallback.
+PASS 26 contextual language flags reviewed and retained: unchanged clinical/source quotation contexts concerning chronology, authorship, composite clinical outcomes and data accuracy. No prohibited new claims or retired-reference labels.

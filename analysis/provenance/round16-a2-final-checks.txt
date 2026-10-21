@@ -1,0 +1,5 @@
+PASS no commit: HEAD fee1225
+PASS docs/manuscript/ untouched
+PASS git diff --check
+PASS final report embeds exact regenerated Results text
+PASS clean build and every post-build check exited zero

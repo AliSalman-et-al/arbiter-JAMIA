@@ -1,0 +1,3 @@
+/home/ali/.cache/uv/archive-v0/-LzoxsLgNAadfJkB/lib/python3.13/site-packages/fitz/__init__.py:17: FutureWarning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+  warnings.warn(
+Pages 128 empty 0 out-of-page words 0

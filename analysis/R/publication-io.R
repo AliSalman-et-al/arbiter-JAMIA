@@ -8,7 +8,7 @@ PUBLICATION_LABELS <- c('ARBITER-Sonnet'='ARBITER (Sonnet 5.5)',
  'Violation'='Rating contradicts its own answers','Invalid answer path'='Required question skipped',
  'Departure'='Any rule break')
 publication_labels <- function(x,decode=FALSE) {
- map <- PUBLICATION_LABELS
+ map <- c(PUBLICATION_LABELS, 'Adjudicator 1'='Expert 1','Adjudicator 2'='Expert 2')
  if(decode) map <- setNames(names(map),unname(map))
  convert <- function(v) {
    v <- gsub('\r\n','\n',v,fixed=TRUE)

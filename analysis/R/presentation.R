@@ -38,11 +38,11 @@ reader_label <- function(x, supplement=FALSE) {
     'More severe'='Stricter','Less severe'='More lenient',
     'Split sensitivity'='Counting split decisions against ARBITER','Algorithm violation'='Rating contradicts its own answers',
     'Invalid answer path'='Required question skipped','Any departure'='Any rule break',
-    'consensus cells'='cells where both adjudicators agreed','split cells'='cells where adjudicators split',
-    'Consensus losses'='Ratings not chosen by either adjudicator','Not Low'='Some concerns or High','not low'='Some concerns or High',
-    'consensus preferred judgement'='the adjudicators’ agreed choice',
-    'consensus preferred'='the adjudicators’ agreed choice',
-    'preferred judgement'='the adjudicators’ agreed choice',
+    'consensus cells'='cells where both experts agreed','split cells'='cells where experts split',
+    'Consensus losses'='Ratings not chosen by either expert','Not Low'='Some concerns or High','not low'='Some concerns or High',
+    'consensus preferred judgement'='the experts’ agreed choice',
+    'consensus preferred'='the experts’ agreed choice',
+    'preferred judgement'='the experts’ agreed choice',
     'discordant cells'='cells where the two arms disagreed','discordant'='differing',
     'ARBITER-Sonnet'=if(supplement) 'ARBITER (Sonnet 5.5)' else 'ARBITER',
     'Baseline-Sonnet'=if(supplement) 'Unassisted (Sonnet 5.5)' else 'Unassisted',
@@ -57,7 +57,7 @@ reader_label <- function(x, supplement=FALSE) {
   x <- gsub('D1-D5','D1\u2013D5',x,fixed=TRUE)
   x[x=='kappa'] <- 'Weighted κ'; x[x=='accuracy'] <- 'Exact agreement'
   x[x=='sensitivity'] <- 'Sensitivity'; x[x=='specificity'] <- 'Specificity'; x[x=='share'] <- 'Share'
-  x[x=='Consensus'] <- 'Both adjudicators agreed'
+  x[x=='Consensus'] <- 'Both experts agreed'
   x[x=='Meta'] <- 'Published'
   x
 }

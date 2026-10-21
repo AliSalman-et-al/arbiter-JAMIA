@@ -1,4 +1,4 @@
-Adjudicator,Source,Domain,Metric,n,Value
+Expert,Source,Domain,Metric,n,Value
 1,ARBITER,D1,Unweighted κ,102,0.79 (0.65–0.90)
 2,ARBITER,D1,Unweighted κ,102,0.85 (0.73–0.97)
 1,Published,D1,Unweighted κ,102,0.41 (0.23–0.56)

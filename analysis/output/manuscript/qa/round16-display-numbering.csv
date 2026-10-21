@@ -1,0 +1,39 @@
+kind,old_number,new_number,content
+Table,New,1,Benchmark and reference characteristics
+Table,1 + 3,2,Agreement with each reference
+Table,2,3,Integrity and process
+Table,4,4,Prior work
+Figure,1,1,Architecture
+Figure,2,2,AVATAR workflow
+Figure,3,3,Two-branch flow
+Figure,4,4,Primary forest
+Figure panel,New,5A,Paired agreement differences
+Figure panel,5B,5B,Direction of disagreement
+Figure,6,eFigure 2,Collapsed question differences
+Figure panel,5A,eFigure 1,Absolute agreement
+eFigure,1,3,Published-label forest
+eFigure,2,4,Domain signalling
+eFigure,3,5,All question differences
+Figure,New,6,Answers or arithmetic
+eTable,11,1,Benchmark trials
+eTable,8,2,Expert reliability
+eTable,10,3,Primary endpoint sensitivities and post hoc strata
+eTable,2,4,Full independent agreement and paired contrasts
+eTable,1,5,Confusion matrices against each independent expert
+eTable,7,6,Agreed reference and paired contrasts
+eTable,New,7,Exploratory binary agreement against each expert
+eTable,9,8,Direction of disagreement against independent experts
+eTable,12,9,Published label agreement
+eTable,13,10,Unweighted agreement with published labels
+eTable,5,11,Full signalling question agreement
+eTable,6,12,Rules only recomputation
+eTable,14,13,Rule consistency and audit
+eTable,19,14,Evidence binding
+eTable,16,15,Time cost and token use
+eTable,3,16,Forced choice on disputed cells
+eTable,4,17,Revised ratings and retained or changed answers
+eTable,15,18,Invalid answer path sensitivity
+eTable,17,19,API cost estimates and reconstruction bounds
+eTable,18,20,Token reconciliation
+eTable,20,21,Derived Overall validation differences
+eTable,21,22,Evidence and quotation locations for the prior-work comparison

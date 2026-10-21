@@ -1,4 +1,4 @@
-Adjudicator,Source,Metric,Direction,Outcome,Count,n,Value
+Expert,Source,Metric,Direction,Outcome,Count,n,Value
 1,ARBITER,Share,Stricter,Expert matches model,64,88,72.7% (65.9–79.4)
 1,ARBITER,Share,Stricter,Expert matches Published,5,88,5.7% (1.4–10.3)
 1,ARBITER,Share,Stricter,Expert matches neither,19,88,21.6% (14.7–28.7)

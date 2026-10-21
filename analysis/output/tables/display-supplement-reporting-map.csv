@@ -4,8 +4,8 @@ TRIPOD-LLM,2,Abstract,Manuscript abstract; results-sentences.md (author assembly
 TRIPOD-LLM,3a,Context,Manuscript Introduction (author assembly; ANALYSIS-PLAN section 7),Manuscript prose location; verify during author assembly.
 TRIPOD-LLM,3b,Intended users,Manuscript Introduction; eMethods Design status and limitations,Reported at the named display or supplement location.
 TRIPOD-LLM,4,Objectives,eMethods Blinded expert assessment,Reported at the named display or supplement location.
-TRIPOD-LLM,5a,Data sources,eMethods Published-label target matching; eTable 11,Reported at the named display or supplement location.
-TRIPOD-LLM,5b,Data distribution,eTable 11 Benchmark trials; label-target CSVs,Reported at the named display or supplement location.
+TRIPOD-LLM,5a,Data sources,eMethods Published-label target matching; eTable 1,Reported at the named display or supplement location.
+TRIPOD-LLM,5b,Data distribution,eTable 1 Benchmark trials; label-target CSVs,Reported at the named display or supplement location.
 TRIPOD-LLM,5c,Text dates,eMethods Dates and training exposure,Reported at the named display or supplement location.
 TRIPOD-LLM,5d,Preprocessing,eMethods Algorithms and validation; prompt templates,Reported at the named display or supplement location.
 TRIPOD-LLM,5e,Missingness,eMethods Independent reference and Overall; Table 2,Reported at the named display or supplement location.
@@ -14,16 +14,16 @@ TRIPOD-LLM,6b,Development,N/A: fixed provider model; no model development or fin
 TRIPOD-LLM,6c,Inference settings,Supplement Prompt templates and run provenance,Reported at the named display or supplement location.
 TRIPOD-LLM,6d,Outputs,eMethods Algorithms and validation; prompt templates,Reported at the named display or supplement location.
 TRIPOD-LLM,6e,Classification,eMethods Algorithms and validation; Published-label target matching,Reported at the named display or supplement location.
-TRIPOD-LLM,7a,Generative metrics,Table 2; eMethods Evidence binding and verification,Reported at the named display or supplement location.
+TRIPOD-LLM,7a,Generative metrics,Table 3; eMethods Evidence binding and verification,Reported at the named display or supplement location.
 TRIPOD-LLM,7b,Metric relevance,eMethods Blinded expert assessment; Independent reference and Overall,Reported at the named display or supplement location.
 TRIPOD-LLM,7c,Outcome definition,eMethods Published-label target matching,Reported at the named display or supplement location.
 TRIPOD-LLM,7d,Assessors,eMethods Blinded expert assessment; Manuscript Methods rater credentials (author completion required),"Author information required; the planned location is identified, but the statement is not supplied by these data."
 TRIPOD-LLM,7e,Comparators,eMethods Input parity and label targets; prompt templates; Table 3,Reported at the named display or supplement location.
 TRIPOD-LLM,8a,Annotation guidance,eMethods Algorithms and validation; Blinded expert assessment,Reported at the named display or supplement location.
-TRIPOD-LLM,8b,Annotation agreement,Table 1; eTable 2 Full independent agreement and paired contrasts; eTable 8 Expert reliability,Reported at the named display or supplement location.
+TRIPOD-LLM,8b,Annotation agreement,Table 2; eTable 4 Full independent agreement and paired contrasts; eTable 2 Expert reliability,Reported at the named display or supplement location.
 TRIPOD-LLM,8c,Annotator experience,Manuscript Methods rater credentials (author completion required),"Author information required; the planned location is identified, but the statement is not supplied by these data."
 TRIPOD-LLM,9a,Prompt design,Supplement Prompt templates and run provenance,Reported at the named display or supplement location.
-TRIPOD-LLM,9b,Prompt data,Supplement Prompt templates and run provenance; eTable 11,Reported at the named display or supplement location.
+TRIPOD-LLM,9b,Prompt data,Supplement Prompt templates and run provenance; eTable 1,Reported at the named display or supplement location.
 TRIPOD-LLM,10,Summarization preprocessing,N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification,N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification
 TRIPOD-LLM,11,Alignment evaluation,N/A: no instruction tuning or alignment training was performed,N/A: no instruction tuning or alignment training was performed
 TRIPOD-LLM,12,Compute,Supplement Prompt templates and run provenance; eMethods API list-price reconstruction; time/cost eTables,Reported at the named display or supplement location.
@@ -36,10 +36,10 @@ TRIPOD-LLM,14e,Data access,Manuscript Data availability; results.html How to rep
 TRIPOD-LLM,14f,Code access,results.html How to reproduce; Supplement Prompt templates and run provenance,Reported at the named display or supplement location.
 TRIPOD-LLM,15,Public involvement,Manuscript Public involvement statement (author confirmation required),"Author information required; the planned location is identified, but the statement is not supplied by these data."
 TRIPOD-LLM,16a,Data flow,Figure 3,Reported at the named display or supplement location.
-TRIPOD-LLM,16b,Data characteristics,eTable 11,Reported at the named display or supplement location.
-TRIPOD-LLM,16c,Clinical distributions,eTable 11; N/A for individual-patient distributions: report-level benchmark,Reported at the named display or supplement location.
+TRIPOD-LLM,16b,Data characteristics,eTable 1,Reported at the named display or supplement location.
+TRIPOD-LLM,16c,Clinical distributions,eTable 1; N/A for individual-patient distributions: report-level benchmark,Reported at the named display or supplement location.
 TRIPOD-LLM,16d,Analysis counts,Figure 3; Tables 1–3,Reported at the named display or supplement location.
-TRIPOD-LLM,17,Performance,Figures 4–6; Tables 1–3; eTable 2 full contrasts; eTable 5 signalling questions and disagreement types; Figure 6 collapsed question differences; eFigure 3 five-level and collapsed differences; eFigure 2 domain agreement,Reported at the named display or supplement location.
+TRIPOD-LLM,17,Performance,Figures 4–6; Tables 1–3; eTable 4 full contrasts; eTable 11 signalling questions and disagreement types; eFigure 2 collapsed question differences; eFigure 5 five-level and collapsed differences; eFigure 4 domain agreement,Reported at the named display or supplement location.
 TRIPOD-LLM,18,Model updating,N/A: no model updating or adaptation was performed,N/A: no model updating or adaptation was performed
 TRIPOD-LLM,19a,Interpretation,Manuscript Discussion (author assembly); results-sentences.md,Manuscript prose location; verify during author assembly.
 TRIPOD-LLM,19b,Limitations,eMethods Design status and limitations,Reported at the named display or supplement location.
@@ -50,16 +50,16 @@ TRIPOD-LLM,19f,User expertise,Manuscript Discussion human oversight (author asse
 TRIPOD-LLM,19g,Future research,Manuscript Discussion future work (author assembly),Manuscript prose location; verify during author assembly.
 GRRAS,1,Title/abstract identification,Manuscript title and abstract (author assembly),Manuscript prose location; verify during author assembly.
 GRRAS,2,Measurement instrument,eMethods Algorithms and validation,Reported at the named display or supplement location.
-GRRAS,3,Subject population,eTable 11; Figure 3,Reported at the named display or supplement location.
+GRRAS,3,Subject population,eTable 1; Figure 3,Reported at the named display or supplement location.
 GRRAS,4,Rater population,Manuscript Methods rater credentials (author completion required),"Author information required; the planned location is identified, but the statement is not supplied by these data."
 GRRAS,5,Rationale,eMethods Blinded expert assessment,Reported at the named display or supplement location.
 GRRAS,6,Sample size rationale,Benchmark README-FOR-ALI.md sampling; Figure 3 (fixed available sample),Reported at the named display or supplement location.
-GRRAS,7,Sampling,eTable 11; benchmark README-FOR-ALI.md,Reported at the named display or supplement location.
+GRRAS,7,Sampling,eTable 1; benchmark README-FOR-ALI.md,Reported at the named display or supplement location.
 GRRAS,8,Rating process and blinding,eMethods Blinded expert assessment,Reported at the named display or supplement location.
 GRRAS,9,Independent ratings,Table 1; eMethods Blinded expert assessment,Reported at the named display or supplement location.
 GRRAS,10,Statistical methods,eMethods Independent reference and Overall,Reported at the named display or supplement location.
 GRRAS,11,Actual sample counts,Figure 3; Table 1,Reported at the named display or supplement location.
-GRRAS,12,Sample/rater characteristics,eTable 11; Manuscript Methods rater credentials (author completion required),"Author information required; the planned location is identified, but the statement is not supplied by these data."
+GRRAS,12,Sample/rater characteristics,eTable 1; Manuscript Methods rater credentials (author completion required),"Author information required; the planned location is identified, but the statement is not supplied by these data."
 GRRAS,13,Estimates and uncertainty,Tables 1–3; Figures 4–5,Reported at the named display or supplement location.
 GRRAS,14,Practical relevance,Manuscript Discussion (author assembly),Manuscript prose location; verify during author assembly.
 GRRAS,15,Detailed results,Supplementary analyses; results.html; repository CSVs,Reported at the named display or supplement location.

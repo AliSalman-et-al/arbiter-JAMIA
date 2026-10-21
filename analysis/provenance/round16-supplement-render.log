@@ -1,0 +1,33 @@
+- One or more packages recorded in the lockfile are not installed.
+- Use `renv::status()` for more details.
+
+
+processing file: supplement.qmd
+1/3                  
+2/3 [unnamed-chunk-1]
+3/3                  
+output file: supplement.knit.md
+
+pandoc 
+  to: html
+  output-file: supplement.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  knitr:
+    opts_chunk:
+      results: asis
+  title: ARBITER supplementary methods and results
+  
+Output created: supplement.html
+

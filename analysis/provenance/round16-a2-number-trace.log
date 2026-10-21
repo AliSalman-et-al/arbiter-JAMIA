@@ -1,0 +1,89 @@
+Extracted 397 numeric tokens from the entire manuscript.
+Output-traced: 221; non-result/editorial: 176; UNTRACED: 0.
+Sources: 98 output CSVs, generated results sentences and Tables 1–4.
+Non-result tokens (not claimed to trace to statistical outputs):
+  -5: model identifier (2 occurrence(s))
+  04: URL (2 occurrence(s))
+  056: URL (2 occurrence(s))
+  1: adjudicator identifier (9 occurrence(s))
+  1: display cross-reference (5 occurrence(s))
+  1: domain identifier (1 occurrence(s))
+  1: reference callout (2 occurrence(s))
+  1.0.0: software version (analysis plan) (1 occurrence(s))
+  10: display cross-reference (2 occurrence(s))
+  10: reference callout (2 occurrence(s))
+  11: display cross-reference (1 occurrence(s))
+  11: reference callout (2 occurrence(s))
+  12: date (run README or editorial search/access date) (1 occurrence(s))
+  12: display cross-reference (2 occurrence(s))
+  13: display cross-reference (2 occurrence(s))
+  13: reference callout (2 occurrence(s))
+  14: date (run README or editorial search/access date) (1 occurrence(s))
+  14: display cross-reference (2 occurrence(s))
+  14: reference callout (4 occurrence(s))
+  15: display cross-reference (2 occurrence(s))
+  15: reference callout (2 occurrence(s))
+  16: display cross-reference (2 occurrence(s))
+  16: reference callout (2 occurrence(s))
+  17: display cross-reference (2 occurrence(s))
+  17: reference callout (2 occurrence(s))
+  18: display cross-reference (2 occurrence(s))
+  18: reference callout (2 occurrence(s))
+  19: date (run README or editorial search/access date) (1 occurrence(s))
+  19: display cross-reference (2 occurrence(s))
+  19: reference callout (2 occurrence(s))
+  2: URL (2 occurrence(s))
+  2: adjudicator identifier (9 occurrence(s))
+  2: display cross-reference (5 occurrence(s))
+  2: instrument identifier (14 occurrence(s))
+  2: reference callout (1 occurrence(s))
+  2: software commit (analysis plan) (1 occurrence(s))
+  2.1.278: harness version (run README) (1 occurrence(s))
+  20: display cross-reference (2 occurrence(s))
+  20: reference callout (1 occurrence(s))
+  2026: date (run README or editorial search/access date) (5 occurrence(s))
+  21: date (run README or editorial search/access date) (2 occurrence(s))
+  21: display cross-reference (1 occurrence(s))
+  21: reference callout (1 occurrence(s))
+  22: reference callout (1 occurrence(s))
+  2219: URL (2 occurrence(s))
+  23: reference callout (1 occurrence(s))
+  250: editorial metadata / journal requirement (1 occurrence(s))
+  3: display cross-reference (5 occurrence(s))
+  3: domain identifier (3 occurrence(s))
+  3: reference callout (1 occurrence(s))
+  30: URL (2 occurrence(s))
+  4: display cross-reference (4 occurrence(s))
+  4: reference callout (1 occurrence(s))
+  4000: editorial metadata / journal requirement (1 occurrence(s))
+  441: URL (2 occurrence(s))
+  5: display cross-reference (5 occurrence(s))
+  5: domain identifier (3 occurrence(s))
+  5: reference callout (1 occurrence(s))
+  549: URL (2 occurrence(s))
+  549: software commit (analysis plan) (1 occurrence(s))
+  6: display cross-reference (3 occurrence(s))
+  6: reference callout (1 occurrence(s))
+  61: URL (2 occurrence(s))
+  7: display cross-reference (2 occurrence(s))
+  7: reference callout (1 occurrence(s))
+  719968716: URL (2 occurrence(s))
+  8: display cross-reference (2 occurrence(s))
+  8: reference callout (2 occurrence(s))
+  9: display cross-reference (2 occurrence(s))
+  9: reference callout (2 occurrence(s))
+  95: interval convention (10 occurrence(s))
+Section word counts (whitespace words; headings and numeric citation callouts excluded):
+  Abstract: 249
+  Background and significance: 382
+  Objective: 54
+  Materials and methods: 1396
+  Results: 750
+  Discussion: 888
+  Back matter: 199
+  Conclusion (within Discussion): 45
+  Main text total: 3470/4000; abstract: 249/250
+Displays in order of initial citation: Figure 1; Figure 2; eTable 1; eTable 2; eTable 3; eTable 4; eTable 5; eTable 6; eTable 7; eTable 8; eTable 9; eTable 10; eTable 11; eTable 12; eTable 13; eTable 14; eTable 15; eTable 16; eTable 17; eTable 18; eTable 19; eTable 20; Figure 3; Figure 4; Table 1; Figure 5; Table 2; Table 3; eFigure 1; Figure 6; eFigure 2; eFigure 3; Table 4; eTable 21
+Citation-order assertion: PASS (all four display classes)
+eMethods is cited separately as an unnumbered supplementary item.
+PASS

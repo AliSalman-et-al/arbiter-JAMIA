@@ -1,0 +1,6 @@
+PASS 128 Word pages reviewed in contact sheets; main tables and new binary pages also reviewed full-size.
+PASS nine changed figure PDFs rendered and reviewed.
+PASS original, greyscale and deuteranopia comparisons for all nine changed figures reviewed.
+PASS no empty pages or out-of-page words (round16-page-checks.csv).
+PASS final Figure 3 geometry reviewed.
+PASS 26 contextual language flags reviewed: unchanged clinical quotes/rationale.
