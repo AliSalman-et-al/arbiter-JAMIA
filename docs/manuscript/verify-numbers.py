@@ -104,13 +104,13 @@ def metadata_spans(text):
         "display cross-reference": r"\b(?:Figures?|Tables?|eTables?|eFigures?)\s+\d+(?:[AB]|[–-]\d+)?(?:,\d+(?:[–-]\d+)?)*",
         "instrument identifier": r"\bRoB 2\b",
         "domain identifier": r"\bD[1-5](?:[–-]D[1-5])?\b",
-        "adjudicator identifier": r"\bAdjudicator [12]\b",
+        "expert identifier": r"\bExperts? [12](?: and [12])?\b",
         "interval convention": r"\b95%",
         "model identifier": r"`claude-sonnet-5-5`",
         "harness version (run README)": r"Claude Code 2\.1\.278",
         "software version (analysis plan)": r"ARBITER 1\.0\.0",
         "software commit (analysis plan)": r"2f549ae(?:30f056ff441ea61a04b719968716f2219)?",
-        "date (run README or editorial search/access date)": r"\b(?:12|14|19|21) October 2026\b",
+        "date (run README or editorial search/access date)": r"\b(?:12|14|18|19|21) October 2026\b",
         "literature shorthand year (bibliography)": r"(?:Hartling 2019|Zhang 2024)",
     }
     for label, pattern in patterns.items():
@@ -185,8 +185,52 @@ def headline_checks(text):
     audit = selected("table3.csv", arm="Unassisted (Sonnet 5.5)", domain="D1-D5", status="Any rule break")
     check((audit.get("count"), audit.get("n")) == ("65", "509"), "Rule audit changed")
     check("65/509" in text and "1407/1407" in text, "Audit claims missing")
-    check("after data collection" in sections(text)["Objective"], "Post-collection definition missing")
-    check("Applying the rules to the unassisted model's own answers did not close the gap" in text and "post hoc" in text.lower(), "Recomputation interpretation missing")
+    methods = sections(text)["Materials and methods"]
+    check("These outcomes were specified in the version-controlled analysis plan of 18 October 2026, "
+          "before the expert ratings reported here were analysed; because the experts assessed every cell, "
+          "the planned comparisons were applied to all 510 cells." in methods,
+          "Full-coverage prespecified comparison disclosure missing")
+    check("defined after data collection" not in text and "post hoc" not in methods.lower(),
+          "Obsolete outcome labels retained")
+    check("Rules-only recomputation did not close the gap" in sections(text)["Abstract"],
+          "Abstract recomputation interpretation missing")
+    check(re.findall(r"^### (.+)$", methods, re.M) == ["System design", "Benchmark and assessment arms",
+          "Expert reference standard", "Outcomes", "Statistical analysis"], "Methods structure changed")
+    check(not re.search(r"\be(?:Tables?|Figures?)\s+\d", methods),
+          "Numbered supplementary display cited in Methods")
+    check(len(re.findall("to our knowledge", text, re.I)) == 1, "Gap qualifier must occur once")
+    for source, count in (("Published", 427), ("ARBITER", 375), ("Unassisted", 407),
+                          ("Expert 1", 277), ("Expert 2", 346)):
+        row = selected("severity-distribution.csv", source=source, population="D1-D5", label="Low")
+        check((row.get("count"), row.get("n")) == (str(count), "510"),
+              f"Severity distribution changed: {source}")
+        check(f"{count}/510" in sections(text)["Results"], f"Severity count missing: {source}")
+    for expert, metric, values in (("1", "sensitivity", (16.3, 10.6, 22.1)),
+                                   ("1", "specificity", (2.2, 0.7, 3.9)),
+                                   ("2", "sensitivity", (19.5, 12.8, 26.4)),
+                                   ("2", "specificity", (0.0, -2.5, 2.6))):
+        row = selected("independent-binary-differences.csv", adjudicator=expert, metric=metric,
+                       domain="D1-D5", comparison="ARBITER minus Unassisted")
+        check(tuple(round(float(row.get(k, "nan")) * 100, 1)
+                    for k in ("estimate", "lower", "upper")) == values,
+              f"Expert binary difference changed: {expert}, {metric}")
+        interval = (f"{values[1]}–{values[2]}" if values[1] >= 0
+                    else f"{values[1]} to {values[2]}").replace("-", "−")
+        check(f"{values[0]} ({interval})" in text, f"Binary difference missing: {expert}, {metric}")
+    for metric, scale, values in (("accuracy", 100, (-1.8, -5.1, 1.6)),
+                                  ("kappa", 1, (0.06, -0.03, 0.14)),
+                                  ("sensitivity", 100, (15.7, 6.8, 24.4)),
+                                  ("specificity", 100, (-4.4, -7.6, -1.2))):
+        row = selected("agreement-meta-differences.csv", metric=metric, domain="D1-D5",
+                       reference="Published",
+                       comparison="ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)")
+        places = 2 if metric == "kappa" else 1
+        check(tuple(round(float(row.get(k, "nan")) * scale, places)
+                    for k in ("estimate", "lower", "upper")) == values,
+              f"Published-label paired difference changed: {metric}")
+    row = selected("expert-reliability-matched.csv", metric="accuracy", domain="Overall")
+    check((row.get("count"), row.get("n")) == ("42", "81") and "42/81" in text,
+          "Matched expert Overall reliability changed")
     return failures
 
 
@@ -208,7 +252,7 @@ def display_citations(text):
 def citation_order_checks(text):
     ordered = display_citations(text)
     failures = []
-    for kind, count in (("Figure", 6), ("Table", 4), ("eTable", 21), ("eFigure", 3)):
+    for kind, count in (("Figure", 6), ("Table", 4), ("eTable", 22), ("eFigure", 5)):
         observed = [item for item in ordered if item.startswith(kind + " ")]
         expected = [f"{kind} {i}" for i in range(1, count + 1)]
         if observed != expected:
@@ -246,7 +290,7 @@ def main():
     failures = headline_checks(text)
     if counts["Abstract"] > 250 or main_count > 4000:
         failures.append("JAMIA word limit exceeded")
-    banned = re.findall(r"\b(?:first|over-flagging|second reviewer|unchangeable|tamper-proof|Haiku|ground truth|accuracy|correct|kit)\b|supported by evidence",
+    banned = re.findall(r"\b(?:first|over-flagging|second reviewer|unchangeable|tamper-proof|Haiku|ground truth|accuracy|correct|kit|hid|reversed|masked|expert-level|matched experts|Adjudicator)\b|supported by evidence",
                         text, re.I)
     if banned:
         failures.append(f"Prohibited wording: {banned}")
