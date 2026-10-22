@@ -1,49 +1,49 @@
-Source,Measure,Value
-ARBITER (Sonnet 5.5),Request Input,9794
-ARBITER (Sonnet 5.5),Request Write1,50698919
-ARBITER (Sonnet 5.5),Request Write5,0
-ARBITER (Sonnet 5.5),Request Read,512761030
-ARBITER (Sonnet 5.5),Result Input,9794
-ARBITER (Sonnet 5.5),Result Write1,50695878
-ARBITER (Sonnet 5.5),Result Write5,0
-ARBITER (Sonnet 5.5),Result Read,512867801
-ARBITER (Sonnet 5.5),Result Output,2237043
-ARBITER (Sonnet 5.5),Side Input,5777447
-ARBITER (Sonnet 5.5),Side Write1,13464429
-ARBITER (Sonnet 5.5),Side Write5,0
-ARBITER (Sonnet 5.5),Side Read,203137779
-ARBITER (Sonnet 5.5),Side Output,2388538
-ARBITER (Sonnet 5.5),Gap Input,0
-ARBITER (Sonnet 5.5),Gap Write1,-3041
-ARBITER (Sonnet 5.5),Gap Write5,0
-ARBITER (Sonnet 5.5),Gap Read,106771
-ARBITER (Sonnet 5.5),Requests,4897
-ARBITER (Sonnet 5.5),High Requests,3272
-ARBITER (Sonnet 5.5),Compaction Events,322
-ARBITER (Sonnet 5.5),Turns with Side Calls,122
-ARBITER (Sonnet 5.5),Turns with Request Excess,3
-ARBITER (Sonnet 5.5),Side without Compaction,0
-Unassisted (Sonnet 5.5),Request Input,644
-Unassisted (Sonnet 5.5),Request Write1,1910531
-Unassisted (Sonnet 5.5),Request Write5,0
-Unassisted (Sonnet 5.5),Request Read,3585005
-Unassisted (Sonnet 5.5),Result Input,644
-Unassisted (Sonnet 5.5),Result Write1,1910531
-Unassisted (Sonnet 5.5),Result Write5,0
-Unassisted (Sonnet 5.5),Result Read,3585005
-Unassisted (Sonnet 5.5),Result Output,248579
-Unassisted (Sonnet 5.5),Side Input,0
-Unassisted (Sonnet 5.5),Side Write1,0
-Unassisted (Sonnet 5.5),Side Write5,0
-Unassisted (Sonnet 5.5),Side Read,0
-Unassisted (Sonnet 5.5),Side Output,0
-Unassisted (Sonnet 5.5),Gap Input,0
-Unassisted (Sonnet 5.5),Gap Write1,0
-Unassisted (Sonnet 5.5),Gap Write5,0
-Unassisted (Sonnet 5.5),Gap Read,0
-Unassisted (Sonnet 5.5),Requests,322
-Unassisted (Sonnet 5.5),High Requests,0
-Unassisted (Sonnet 5.5),Compaction Events,0
-Unassisted (Sonnet 5.5),Turns with Side Calls,0
-Unassisted (Sonnet 5.5),Turns with Request Excess,0
-Unassisted (Sonnet 5.5),Side without Compaction,0
+Source,Measure,Value,Unit
+ARBITER (Sonnet 5.5),Request Input,"9,794",Tokens
+ARBITER (Sonnet 5.5),Request One-Hour Cache Writes,"50,698,919",Tokens
+ARBITER (Sonnet 5.5),Request Five-Minute Cache Writes,0,Tokens
+ARBITER (Sonnet 5.5),Request Read,"512,761,030",Tokens
+ARBITER (Sonnet 5.5),Result Input,"9,794",Tokens
+ARBITER (Sonnet 5.5),Result One-Hour Cache Writes,"50,695,878",Tokens
+ARBITER (Sonnet 5.5),Result Five-Minute Cache Writes,0,Tokens
+ARBITER (Sonnet 5.5),Result Read,"512,867,801",Tokens
+ARBITER (Sonnet 5.5),Result Output,"2,237,043",Tokens
+ARBITER (Sonnet 5.5),Side Input,"5,777,447",Tokens
+ARBITER (Sonnet 5.5),Side One-Hour Cache Writes,"13,464,429",Tokens
+ARBITER (Sonnet 5.5),Side Five-Minute Cache Writes,0,Tokens
+ARBITER (Sonnet 5.5),Side Read,"203,137,779",Tokens
+ARBITER (Sonnet 5.5),Side Output,"2,388,538",Tokens
+ARBITER (Sonnet 5.5),Gap Input,0,Tokens
+ARBITER (Sonnet 5.5),Gap One-Hour Cache Writes,"−3,041",Tokens
+ARBITER (Sonnet 5.5),Gap Five-Minute Cache Writes,0,Tokens
+ARBITER (Sonnet 5.5),Gap Read,"106,771",Tokens
+ARBITER (Sonnet 5.5),Requests,"4,897",Requests
+ARBITER (Sonnet 5.5),High Requests,"3,272",Requests
+ARBITER (Sonnet 5.5),Compaction Events,322,Events
+ARBITER (Sonnet 5.5),Turns with Side Calls,122,Turns
+ARBITER (Sonnet 5.5),Turns with Request Excess,3,Turns
+ARBITER (Sonnet 5.5),Side without Compaction,0,Turns
+Unassisted (Sonnet 5.5),Request Input,644,Tokens
+Unassisted (Sonnet 5.5),Request One-Hour Cache Writes,"1,910,531",Tokens
+Unassisted (Sonnet 5.5),Request Five-Minute Cache Writes,0,Tokens
+Unassisted (Sonnet 5.5),Request Read,"3,585,005",Tokens
+Unassisted (Sonnet 5.5),Result Input,644,Tokens
+Unassisted (Sonnet 5.5),Result One-Hour Cache Writes,"1,910,531",Tokens
+Unassisted (Sonnet 5.5),Result Five-Minute Cache Writes,0,Tokens
+Unassisted (Sonnet 5.5),Result Read,"3,585,005",Tokens
+Unassisted (Sonnet 5.5),Result Output,"248,579",Tokens
+Unassisted (Sonnet 5.5),Side Input,0,Tokens
+Unassisted (Sonnet 5.5),Side One-Hour Cache Writes,0,Tokens
+Unassisted (Sonnet 5.5),Side Five-Minute Cache Writes,0,Tokens
+Unassisted (Sonnet 5.5),Side Read,0,Tokens
+Unassisted (Sonnet 5.5),Side Output,0,Tokens
+Unassisted (Sonnet 5.5),Gap Input,0,Tokens
+Unassisted (Sonnet 5.5),Gap One-Hour Cache Writes,0,Tokens
+Unassisted (Sonnet 5.5),Gap Five-Minute Cache Writes,0,Tokens
+Unassisted (Sonnet 5.5),Gap Read,0,Tokens
+Unassisted (Sonnet 5.5),Requests,322,Requests
+Unassisted (Sonnet 5.5),High Requests,0,Requests
+Unassisted (Sonnet 5.5),Compaction Events,0,Events
+Unassisted (Sonnet 5.5),Turns with Side Calls,0,Turns
+Unassisted (Sonnet 5.5),Turns with Request Excess,0,Turns
+Unassisted (Sonnet 5.5),Side without Compaction,0,Turns

@@ -1,29 +1,5 @@
-Population,Source,Expert 1,Expert 2,Published
-D1–D5,ARBITER,"371/510 (72.7%)
-κ 0.51","433/510 (84.9%)
-κ 0.69","386/510 (75.7%)
-κ 0.34"
-D1–D5,Unassisted,"332/510 (65.1%)
-κ 0.35","400/510 (78.4%)
-κ 0.53","395/510 (77.5%)
-κ 0.28"
-D1–D5,Published,"301/510 (59.0%)
-κ 0.21","362/510 (71.0%)
-κ 0.29",
-D1–D5,ARBITER − Unassisted,7.6 (5.1–10.2),6.5 (3.5–9.4),−1.8 (−5.1 to 1.6)
-Overall,ARBITER,"32/81 (39.5%)
-κ 0.20","60/81 (74.1%)
-κ 0.66","47/81 (58.0%)
-κ 0.44"
-Overall,Unassisted,"21/81 (25.9%)
-κ 0.13","46/81 (56.8%)
-κ 0.47","48/81 (59.3%)
-κ 0.42"
-Overall,Published,"24/81 (29.6%)
-κ 0.11","42/81 (51.9%)
-κ 0.38",
-Overall,ARBITER − Unassisted,13.6 (6.2–21.0),17.3 (8.6–25.9),−1.2 (−11.1 to 8.6)
-D1–D5,Expert-to-expert,"388/510 (76.1%)
-κ 0.59",,
-Overall,Expert-to-expert,"42/81 (51.9%)
-κ 0.33",,
+Population,"ARBITER, No./total (%) (95% CI)"
+Agreed choices (formal primary),53/60 (88%; 80–96)
+Expert 1,63/80 (79%; 70–87)
+Expert 2,61/80 (76%; 68–85)
+All splits counted against ARBITER,53/80 (66%; 58–75)

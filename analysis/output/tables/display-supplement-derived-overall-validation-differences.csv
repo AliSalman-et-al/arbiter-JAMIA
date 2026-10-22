@@ -1,30 +1,30 @@
 Slug,Column,Workbook,Calculated,Matches
-abbasi-2012,Published,High,Some concerns,FALSE
-aboelfadl-2022,Published,High,Some concerns,FALSE
-albert-2013,Published,High,Some concerns,FALSE
-ashar-2022,Published,High,Some concerns,FALSE
-baillard-2006,Published,—,High,FALSE
-baillard-2018,Published,—,Low,FALSE
-barratt-2024,Published,—,Low,FALSE
-bendix-1996,Published,High,Some concerns,FALSE
-bendix-2000,Published,High,Some concerns,FALSE
-canvas-program,Published,—,Low,FALSE
-chua-2022,Published,—,High,FALSE
-dapa-hf,Published,—,Low,FALSE
-declare-timi-58,Published,—,Low,FALSE
-deliver,Published,—,Low,FALSE
-empa-reg-outcome,Published,—,Low,FALSE
-emperor-preserved,Published,—,Low,FALSE
-emperor-reduced,Published,—,Low,FALSE
-envision,Published,—,Low,FALSE
-frat-2019,Published,—,Low,FALSE
-fulop-2021,ARBITER,High,Some concerns,FALSE
-guitton-2019,Published,—,Low,FALSE
-gupta-2024,Published,Low,Some concerns,FALSE
-jaber-2016,Published,—,Low,FALSE
-lv-2023,Published,—,Some concerns,FALSE
-nefigard,Published,—,Low,FALSE
-rosen-2021,Published,—,High,FALSE
-sanctuary,Published,—,Low,FALSE
-stop-igan,Published,—,Some concerns,FALSE
-testing,Published,—,Some concerns,FALSE
+abbasi-2012,Published,High,Some concerns,No
+aboelfadl-2022,Published,High,Some concerns,No
+albert-2013,Published,High,Some concerns,No
+ashar-2022,Published,High,Some concerns,No
+baillard-2006,Published,—,High,No
+baillard-2018,Published,—,Low,No
+barratt-2024,Published,—,Low,No
+bendix-1996,Published,High,Some concerns,No
+bendix-2000,Published,High,Some concerns,No
+canvas-program,Published,—,Low,No
+chua-2022,Published,—,High,No
+dapa-hf,Published,—,Low,No
+declare-timi-58,Published,—,Low,No
+deliver,Published,—,Low,No
+empa-reg-outcome,Published,—,Low,No
+emperor-preserved,Published,—,Low,No
+emperor-reduced,Published,—,Low,No
+envision,Published,—,Low,No
+frat-2019,Published,—,Low,No
+fulop-2021,ARBITER,High,Some concerns,No
+guitton-2019,Published,—,Low,No
+gupta-2024,Published,Low,Some concerns,No
+jaber-2016,Published,—,Low,No
+lv-2023,Published,—,Some concerns,No
+nefigard,Published,—,Low,No
+rosen-2021,Published,—,High,No
+sanctuary,Published,—,Low,No
+stop-igan,Published,—,Some concerns,No
+testing,Published,—,Some concerns,No

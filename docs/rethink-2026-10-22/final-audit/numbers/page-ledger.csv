@@ -1,0 +1,126 @@
+﻿document,page,display,numerical_inspection,image_inspected_by_numbers,result
+Manuscript,1,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Manuscript,2,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Manuscript,3,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Manuscript,4,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Manuscript,5,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Manuscript,6,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Manuscript,7,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Manuscript,8,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Manuscript,9,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Manuscript,10,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Manuscript,11,Manuscript,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+Supplement,1,,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,2,,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,3,,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,4,,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,5,eTable 1,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,6,eTable 1,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,7,eTable 2,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,8,eTable 2,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,9,eTable 2,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,10,eTable 2,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,11,eTable 2,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,12,eTable 2,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,13,eTable 2,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,14,eTable 2,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,15,Unweighted agreement with each expert,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,16,Unweighted agreement with each expert,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,17,eTable 3,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,18,eTable 4,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,19,eTable 5,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,20,eTable 5,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,21,eTable 5,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,22,eTable 5,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,23,eTable 5,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,24,eTable 5,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,25,eTable 6,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,26,eTable 6,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,27,eTable 7,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,28,eTable 8,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,29,eTable 8,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,30,eTable 8,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,31,eTable 8,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,32,Paired binary differences,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,33,eTable 9,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,34,eTable 10,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,35,eTable 11,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,36,eTable 11,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,37,eTable 12,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,38,Retained and changed signalling answers,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,39,eTable 13,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,40,eTable 13,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,41,eTable 13,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,42,eTable 13,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,43,eTable 13,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,44,eTable 13,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,45,Five-level disagreement types,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,46,Paired signalling differences,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,47,Paired signalling differences,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,48,Paired signalling differences,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,49,Signalling comparison eligibility,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,50,Signalling comparison eligibility,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,51,Signalling comparison eligibility,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,52,Signalling comparison eligibility,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,53,eTable 14,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,54,Independent agreement after rules-only,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,55,Independent agreement after rules-only,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,56,Independent agreement after rules-only,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,57,Independent agreement after rules-only,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,58,Independent agreement after rules-only,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,59,Cells changed by rules-only,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,60,Cells changed by rules-only,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,61,eTable 15,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,62,eTable 16,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,63,eTable 16,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,64,eTable 17,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,65,eTable 17,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,66,eTable 18,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,67,eTable 18,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,68,eTable 18,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,69,eTable 18,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,70,eTable 19,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,71,eTable 20,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,72,eTable 21,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,73,eTable 21,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,74,eTable 22,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,75,eTable 22,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,76,eTable 22,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,77,eTable 23,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,78,eFigure 1,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,79,eFigure 2,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,80,eFigure 3,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,81,eFigure 4,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,82,eFigure 5,actual page image + source/CSV contracts,True,see display-ledger issues for this display; no standalone page layout certification
+Supplement,83,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,84,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,85,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,86,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,87,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,88,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,89,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,90,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,91,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,92,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,93,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,94,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,95,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,96,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,97,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,98,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,99,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,100,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,101,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,102,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,103,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,104,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,105,AVATAR complete trace,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Supplement,106,Prompt provenance,page text inventory + document/CSV contract; visual review assigned to other owner,False,see display-ledger issues for this display; no standalone page layout certification
+Table1,1,Table1,actual page image + source/CSV contracts,True,PASS numerical rows
+Table2,1,Table2,actual page image + source/CSV contracts,True,PASS numerical rows
+Table3,1,Table3,actual page image + source/CSV contracts,True,PASS numerical rows
+TRIPOD-LLM,1,TRIPOD-LLM,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+TRIPOD-LLM,2,TRIPOD-LLM,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+TRIPOD-LLM,3,TRIPOD-LLM,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+TRIPOD-LLM,4,TRIPOD-LLM,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner
+TRIPOD-LLM,5,TRIPOD-LLM,page text inventory + document/CSV contract; visual review assigned to other owner,False,PASS manuscript number/reporting-map contract; visual other owner

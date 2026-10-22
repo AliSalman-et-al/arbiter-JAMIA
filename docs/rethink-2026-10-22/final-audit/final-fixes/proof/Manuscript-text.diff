@@ -1,0 +1,219 @@
+--- old page 1
++++ new page 1
+@@ -55,7 +55,7 @@
+ counts:
+ main
+ text
+-2931;
++2932;
+ structured
+ abstract
+ 229.
+--- old page 2
++++ new page 2
+@@ -96,7 +96,7 @@
+ experts’
+ agreed
+ choice
+-favoured
++favored
+ ARBITER
+ in
+ 53/60
+--- old page 3
++++ new page 3
+@@ -7,7 +7,7 @@
+ how
+ evidence
+ from
+-randomised
++randomized
+ trials
+ is
+ interpreted.
+@@ -97,9 +97,9 @@
+ earlier
+ instrument.[4–5]
+ Evidence-synthesis
+-organisations
++organizations
+ therefore
+-emphasise
++emphasize
+ human
+ oversight
+ and
+--- old page 5
++++ new page 5
+@@ -49,7 +49,7 @@
+ the
+ published
+ review’s
+-labelled
++labeled
+ result
+ using
+ its
+--- old page 6
++++ new page 6
+@@ -42,7 +42,7 @@
+ used
+ for
+ any
+-judgement.
++judgment.
+ Each
+ expert
+ recorded
+@@ -77,7 +77,7 @@
+ ARBITER—in
+ an
+ order
+-randomised
++randomized
+ for
+ each
+ cell,
+--- old page 8
++++ new page 8
+@@ -163,7 +163,8 @@
+ independent
+ observations.
+ No
+-p-values
++P
++values
+ or
+ multiplicity
+ adjustments
+--- old page 9
++++ new page 9
+@@ -122,7 +122,7 @@
+ formal
+ primary
+ endpoint
+-favoured
++favored
+ ARBITER
+ in
+ 53/60
+--- old page 10
++++ new page 10
+@@ -96,6 +96,7 @@
+ split-loss
+ assumption.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 12
++++ new page 12
+@@ -135,6 +135,18 @@
+ median
+ (IQR)
+ 4.10)
++Unassisted
++rule-break
++cells
++show
++No./total
++(%;
++95%
++CI);
++CI
++bounds
++are
++percentages.
+ Domain
+ rules
+ use
+@@ -224,6 +236,7 @@
+ not
+ measured.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 13
++++ new page 13
+@@ -35,7 +35,7 @@
+ preference
+ endpoint
+ also
+-favoured
++favored
+ ARBITER.
+ The
+ full-cohort
+--- old page 14
++++ new page 14
+@@ -206,7 +206,7 @@
+ direct
+ human-use
+ evaluation.
+-Generalisability
++Generalizability
+ is
+ bounded
+ by
+--- old page 15
++++ new page 15
+@@ -49,14 +49,14 @@
+ evaluation.
+ BACK
+ MATTER
+-Acknowledgements
++Acknowledgments
+ and
+ AI
+ use
+ [Non-author
+ contributors
+ and
+-acknowledgements].
++acknowledgments].
+ AI
+ assisted
+ preparation
+--- old page 19
++++ new page 19
+@@ -45,7 +45,7 @@
+ labels
+ show
+ actions;
+-grey
++gray
+ text
+ names
+ the
+--- old page 22
++++ new page 22
+@@ -105,6 +105,7 @@
+ is
+ supplementary.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+@@ -134,7 +135,7 @@
+ Both
+ pooled
+ gains
+-favour
++favor
+ ARBITER;
+ D5
+ gains
+--- old page 23
++++ new page 23
+@@ -118,6 +118,7 @@
+ eFigure
+ 4.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000

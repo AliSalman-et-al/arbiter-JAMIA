@@ -1,27 +1,27 @@
-Slug,Domain,Original,Recomputed,Discordant,Consensus
-an-2021,D1,Some concerns,High,FALSE,TRUE
-chiba-2021,D1,Some concerns,Low,FALSE,TRUE
-dian-2018,D1,Low,Some concerns,FALSE,TRUE
-gupta-2024,D1,Low,High,FALSE,TRUE
-sung-2020,D1,Low,Some concerns,FALSE,TRUE
-castoldi-2020,D2,Some concerns,High,TRUE,FALSE
-ibrahim-2017,D2,Some concerns,Low,FALSE,FALSE
-stopdapt-3,D2,Some concerns,High,FALSE,TRUE
-albert-2013,D3,Some concerns,High,TRUE,FALSE
-ashar-2022,D3,Some concerns,High,TRUE,TRUE
-levin-2016,D3,Some concerns,High,FALSE,TRUE
-bendix-1996,D4,Some concerns,Low,FALSE,TRUE
-boedt-2023,D4,Low,High,FALSE,TRUE
-fulop-2021,D4,Some concerns,Low,FALSE,TRUE
-abbasi-2012,D5,Some concerns,High,FALSE,TRUE
-aboelfadl-2022,D5,Some concerns,High,FALSE,TRUE
-attal-2021,D5,Some concerns,High,FALSE,TRUE
-award-chn3-2023,D5,Low,Some concerns,FALSE,TRUE
-baillard-2018,D5,Low,Some concerns,FALSE,TRUE
-chiba-2021,D5,Some concerns,High,FALSE,TRUE
-dian-2018,D5,Some concerns,High,FALSE,TRUE
-envision,D5,Some concerns,High,FALSE,TRUE
-grant-2017,D5,Some concerns,High,FALSE,TRUE
-jindani-2016,D5,Low,Some concerns,TRUE,TRUE
-stopdapt-3,D5,Some concerns,High,TRUE,FALSE
-sung-2020,D5,Some concerns,High,TRUE,TRUE
+Slug,Domain,Original,Recomputed,Original arms differed,Experts chose the same label
+an-2021,D1,Some concerns,High,No,Yes
+chiba-2021,D1,Some concerns,Low,No,Yes
+dian-2018,D1,Low,Some concerns,No,Yes
+gupta-2024,D1,Low,High,No,Yes
+sung-2020,D1,Low,Some concerns,No,Yes
+castoldi-2020,D2,Some concerns,High,Yes,No
+ibrahim-2017,D2,Some concerns,Low,No,No
+stopdapt-3,D2,Some concerns,High,No,Yes
+albert-2013,D3,Some concerns,High,Yes,No
+ashar-2022,D3,Some concerns,High,Yes,Yes
+levin-2016,D3,Some concerns,High,No,Yes
+bendix-1996,D4,Some concerns,Low,No,Yes
+boedt-2023,D4,Low,High,No,Yes
+fulop-2021,D4,Some concerns,Low,No,Yes
+abbasi-2012,D5,Some concerns,High,No,Yes
+aboelfadl-2022,D5,Some concerns,High,No,Yes
+attal-2021,D5,Some concerns,High,No,Yes
+award-chn3-2023,D5,Low,Some concerns,No,Yes
+baillard-2018,D5,Low,Some concerns,No,Yes
+chiba-2021,D5,Some concerns,High,No,Yes
+dian-2018,D5,Some concerns,High,No,Yes
+envision,D5,Some concerns,High,No,Yes
+grant-2017,D5,Some concerns,High,No,Yes
+jindani-2016,D5,Low,Some concerns,Yes,Yes
+stopdapt-3,D5,Some concerns,High,Yes,No
+sung-2020,D5,Some concerns,High,Yes,Yes

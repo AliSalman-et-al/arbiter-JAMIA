@@ -1,0 +1,196 @@
+{
+  "PASS": true,
+  "records": [
+    {
+      "page": 125,
+      "quote_starts": 0,
+      "source_hashes": 0,
+      "contexts": [],
+      "question_4_3": true,
+      "first_lines": [
+        "4.3 Assessors aware of received intervention",
+        "ARBITER: Yes"
+      ]
+    },
+    {
+      "page": 127,
+      "quote_starts": 1,
+      "source_hashes": 1,
+      "contexts": [],
+      "question_4_3": false,
+      "first_lines": [
+        "5.3 Result selected from eligible analyses",
+        "ARBITER: Probably no"
+      ]
+    },
+    {
+      "page": 128,
+      "quote_starts": 2,
+      "source_hashes": 2,
+      "contexts": [],
+      "question_4_3": false,
+      "first_lines": [
+        "eh_22d01d9384e1a677",
+        "Source: Current registry-linked statistical analysis plan"
+      ]
+    },
+    {
+      "page": 129,
+      "quote_starts": 1,
+      "source_hashes": 1,
+      "contexts": [
+        "eh_3ce4199af9d487f3"
+      ],
+      "question_4_3": false,
+      "first_lines": [
+        "eh_3ce4199af9d487f3",
+        "Source: AVATAR long-term follow-up report"
+      ]
+    },
+    {
+      "page": 130,
+      "quote_starts": 0,
+      "source_hashes": 0,
+      "contexts": [
+        "eh_3ce4199af9d487f3",
+        "eh_3ce4199af9d487f3",
+        "eh_3ce4199af9d487f3"
+      ],
+      "question_4_3": false,
+      "first_lines": [
+        "Context: eh_3ce4199af9d487f3 (quote continued)",
+        "hospitaliza tion for heart failure (HF), compared with patients who were randomized to conservative treatment.5"
+      ]
+    },
+    {
+      "page": 131,
+      "quote_starts": 0,
+      "source_hashes": 0,
+      "contexts": [
+        "eh_3ce4199af9d487f3",
+        "eh_3ce4199af9d487f3",
+        "eh_3ce4199af9d487f3"
+      ],
+      "question_4_3": false,
+      "first_lines": [
+        "Context: eh_3ce4199af9d487f3 (quote continued)",
+        "patients who could not come in person was made by phone. For any event that was registered, the medical"
+      ]
+    },
+    {
+      "page": 132,
+      "quote_starts": 3,
+      "source_hashes": 3,
+      "contexts": [],
+      "question_4_3": false,
+      "first_lines": [
+        "eh_4b5761bf573cc287",
+        "Source: AVATAR original trial report"
+      ]
+    },
+    {
+      "page": 133,
+      "quote_starts": 2,
+      "source_hashes": 2,
+      "contexts": [],
+      "question_4_3": false,
+      "first_lines": [
+        "eh_7ad155913c1c5826",
+        "Source: AVATAR original trial report"
+      ]
+    },
+    {
+      "page": 134,
+      "quote_starts": 2,
+      "source_hashes": 2,
+      "contexts": [
+        "eh_92eed84c7b98e37c"
+      ],
+      "question_4_3": false,
+      "first_lines": [
+        "Context: eh_92eed84c7b98e37c (quote continued)",
+        "(IQR) 5.6 (5.3-6.7) 5.6 (5.1-6.8) .70 Echocardiography LVESV, mL, median (IQR) 28 (20-41) 33 (22-42) .96"
+      ]
+    },
+    {
+      "page": 135,
+      "quote_starts": 0,
+      "source_hashes": 0,
+      "contexts": [
+        "eh_af1340e6c28a70eb",
+        "eh_af1340e6c28a70eb",
+        "eh_af1340e6c28a70eb"
+      ],
+      "question_4_3": false,
+      "first_lines": [
+        "Context: eh_af1340e6c28a70eb (quote continued)",
+        "bioprosthetic valve and 50/107 received a mechanical valve (46.7%). In the early surgery group, 34/72 (47.2%)"
+      ]
+    },
+    {
+      "page": 136,
+      "quote_starts": 0,
+      "source_hashes": 0,
+      "contexts": [
+        "eh_af1340e6c28a70eb",
+        "eh_af1340e6c28a70eb",
+        "eh_af1340e6c28a70eb"
+      ],
+      "question_4_3": false,
+      "first_lines": [
+        "Context: eh_af1340e6c28a70eb (quote continued)",
+        "annual rate of sudden cardiac death was twice higher in the conservatively treated group as compared with early"
+      ]
+    },
+    {
+      "page": 137,
+      "quote_starts": 1,
+      "source_hashes": 1,
+      "contexts": [
+        "eh_c8e0958840636206"
+      ],
+      "question_4_3": false,
+      "first_lines": [
+        "eh_c8e0958840636206",
+        "Source: AVATAR long-term follow-up report"
+      ]
+    },
+    {
+      "page": 138,
+      "quote_starts": 0,
+      "source_hashes": 0,
+      "contexts": [
+        "eh_c8e0958840636206",
+        "eh_c8e0958840636206",
+        "eh_c8e0958840636206"
+      ],
+      "question_4_3": false,
+      "first_lines": [
+        "Context: eh_c8e0958840636206 (quote continued)",
+        "months [interquartile range (IQR) 48-75). Median follow-up in sur vivors was 68 months (IQR 58-79). One patient,"
+      ]
+    },
+    {
+      "page": 139,
+      "quote_starts": 2,
+      "source_hashes": 2,
+      "contexts": [],
+      "question_4_3": false,
+      "first_lines": [
+        "eh_d54a2600ddc753b3",
+        "Source: ClinicalTrials.gov NCT02436655"
+      ]
+    },
+    {
+      "page": 140,
+      "quote_starts": 2,
+      "source_hashes": 2,
+      "contexts": [],
+      "question_4_3": false,
+      "first_lines": [
+        "eh_e66d374e838e8c6d",
+        "Source: AVATAR long-term follow-up report"
+      ]
+    }
+  ]
+}

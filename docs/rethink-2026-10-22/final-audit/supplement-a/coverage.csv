@@ -1,0 +1,55 @@
+physical_page,image,display,inspected,method,status_and_evidence
+001,page0001-001.png,Navigation map,YES,individual view_image at reading size,SA07: no page locations/supporting-display entries
+002,page0001-002.png,Algorithms; price reconstruction; evidence binding,YES,individual view_image at reading size,PASS: legible; structural/semantic and price/expenditure boundaries explicit
+003,page0001-003.png,Inference; expert sequence; Overall populations,YES,individual view_image at reading size,PASS: fixed-review bootstrap and 81/102 distinction explicit
+004,page0001-004.png,Signalling eligibility; inputs; limits,YES,individual view_image at reading size,PASS: readable; no target-matching differentiation; bounded interpretation
+005,page0001-005.png,eTable 1 benchmark start,YES,individual view_image at reading size,SA05: undefined SC/topic abbreviations; note on p6 inappropriate
+006,page0001-006.png,eTable 1 continuation and totals,YES,individual view_image at reading size,SA05: bootstrap note on count inventory
+007,page0001-007.png,eTable 2 Expert 1 and Expert 2 pooled start,YES,individual view_image at reading size,SA05/SA08: mixed panels and split Expert 2 pooled block
+008,page0001-008.png,eTable 2 Expert 2 and means,YES,individual view_image at reading size,SA07/SA08: unnumbered continuation; mid-block break
+009,page0001-009.png,eTable 2 means; agreed reference start,YES,individual view_image at reading size,SA07/SA08: column headers only; panel fragmentation
+010,page0001-010.png,eTable 2 agreed reference; paired contrasts start,YES,individual view_image at reading size,SA05/SA08: estimates/contrasts share headings; split panels
+011,page0001-011.png,eTable 2 Expert 1/2 and mean contrasts,YES,individual view_image at reading size,SA07/SA08: header-only continuation; fragmentary blocks
+012,page0001-012.png,eTable 2 domain contrasts,YES,individual view_image at reading size,SA07/SA08: header-only continuation; fragmentary blocks
+013,page0001-013.png,eTable 2 D5 and agreed-reference contrasts,YES,individual view_image at reading size,SA07/SA08: long unnumbered continuation; values legible
+014,page0001-014.png,eTable 2 final contrasts; expert agreement; note,YES,individual view_image at reading size,SA05: irrelevant Overall populations dominate note
+015,page0001-015.png,Unweighted expert agreement start,YES,individual view_image at reading size,SA07/SA08: supporting display absent from map; continued p16
+016,page0001-016.png,Unweighted expert agreement final and note,YES,individual view_image at reading size,SA05: agreed-reference/contrast boilerplate absent from data
+017,page0001-017.png,eTable 3 category distributions,YES,individual view_image at reading size,SA05: bootstrap and Overall note on domain-only counts
+018,page0001-018.png,eTable 4 expert reliability,YES,individual view_image at reading size,SA05: note includes absent Overall; data/intervals legible
+019,page0001-019.png,eTable 5 Expert 1 ARBITER confusion,YES,individual view_image at reading size,SA05/SA07: orientation not locally defined; numbering lost later
+020,page0001-020.png,eTable 5 Expert 1 Published confusion,YES,individual view_image at reading size,SA05/SA07: orientation not locally defined; unnumbered continuation
+021,page0001-021.png,eTable 5 Expert 1 Unassisted confusion,YES,individual view_image at reading size,SA05/SA07: orientation not locally defined; header-only continuation
+022,page0001-022.png,eTable 5 Expert 2 ARBITER confusion,YES,individual view_image at reading size,SA05/SA07: orientation not locally defined; unnumbered continuation
+023,page0001-023.png,eTable 5 Expert 2 Published confusion,YES,individual view_image at reading size,SA05/SA07: orientation not locally defined; header-only continuation
+024,page0001-024.png,eTable 5 Expert 2 Unassisted confusion and note,YES,individual view_image at reading size,SA05: percentage/contrast/CI note on count matrices
+025,page0001-025.png,eTable 6 Published agreement start,YES,individual view_image at reading size,SA03: Sensitivity superscript lacks matching note; class/coefficients undefined
+026,page0001-026.png,eTable 6 All-Low and final note,YES,individual view_image at reading size,SA03: reporting convention/dashes undefined
+027,page0001-027.png,eTable 7 unweighted Published agreement,YES,individual view_image at reading size,SA03: coefficient and Overall observed population note missing
+028,page0001-028.png,eTable 8 Expert 1 pooled/D1/D2 binary,YES,individual view_image at reading size,SA07/SA08: long table; class definition deferred to p31
+029,page0001-029.png,eTable 8 Expert 1 D3/D4/D5 binary,YES,individual view_image at reading size,SA07/SA08: unnumbered continuation; legible values
+030,page0001-030.png,eTable 8 Expert 2 pooled/D1/D2 binary,YES,individual view_image at reading size,SA07/SA08: header-only continuation; legible values
+031,page0001-031.png,eTable 8 Expert 2 D3/D4/D5 and note,YES,individual view_image at reading size,PASS local: binary class/denominators and intervals explained; SA07/SA08 navigation
+032,page0001-032.png,Paired binary differences,YES,individual view_image at reading size,PASS local: pp units and comparison named; SA07 missing map entry
+033,page0001-033.png,eTable 9 primary and sensitivities,YES,individual view_image at reading size,SA04: stricter comparator unspecified; primary and assumed split loss correct
+034,page0001-034.png,eTable 10 disputed choices,YES,individual view_image at reading size,SA05/SA06: generic CI note; nonexclusive credits unexplained
+035,page0001-035.png,eTable 11 directional disagreements start,YES,individual view_image at reading size,SA04: stricter relative to Published not stated
+036,page0001-036.png,eTable 11 direction continuation and note,YES,individual view_image at reading size,SA04: selection rule remains undefined
+037,page0001-037.png,eTable 12 revised labels,YES,individual view_image at reading size,SA05: CI note without intervals; post-exposure caveat present
+038,page0001-038.png,Retained and changed answers,YES,individual view_image at reading size,PASS local: counts/denominator and mixed components visible; SA07 map omission
+039,page0001-039.png,eTable 13 Expert 1 absolute signalling start,YES,individual view_image at reading size,"SA07/SA08: readable, source-specific denominators visible; later explanation remote"
+040,page0001-040.png,eTable 13 Expert 1 Q2/Q3 absolute signalling,YES,individual view_image at reading size,SA07/SA08: sparse/zero rows retained; fragmented continuation
+041,page0001-041.png,eTable 13 Expert 1 Q4/Q5; Expert 2 start,YES,individual view_image at reading size,SA07/SA08: expert block crosses page; values legible
+042,page0001-042.png,eTable 13 Expert 2 domains/Q1/Q2,YES,individual view_image at reading size,SA07/SA08: header-only continuation; values legible
+043,page0001-043.png,eTable 13 Expert 2 Q2/Q3/Q4,YES,individual view_image at reading size,SA07/SA08: zero/sparse rows retained; unnumbered continuation
+044,page0001-044.png,eTable 13 Expert 2 Q4/Q5 final and note,YES,individual view_image at reading size,PASS local: source-specific versus paired eligibility explained; SA07/SA08 fragmentation
+045,page0001-045.png,Five-level disagreement types,YES,individual view_image at reading size,PASS local: within/cross counts partition; definitions explicit; SA07 map omission
+046,page0001-046.png,Paired signalling differences Expert 1 start,YES,individual view_image at reading size,SA01: no units/subtraction direction; duplicate dashes at n=0
+047,page0001-047.png,Paired signalling Expert 1 end/Expert 2 start,YES,individual view_image at reading size,SA01: no units/subtraction direction; SA07/SA08 fragmented blocks
+048,page0001-048.png,Paired signalling Expert 2 final and note,YES,individual view_image at reading size,SA01: final note supplies bootstrap only; units/direction absent
+049,page0001-049.png,Signalling eligibility Expert 1 ARBITER start,YES,individual view_image at reading size,SA09: component units/exclusion reasons unexplained; SA08 split block
+050,page0001-050.png,Signalling eligibility Expert 1 Unassisted,YES,individual view_image at reading size,SA09: redundant TRUE/FALSE; no local denominator note
+051,page0001-051.png,Signalling eligibility Expert 2 ARBITER,YES,individual view_image at reading size,SA09: component units/reasons unexplained; SA08 split block
+052,page0001-052.png,Signalling eligibility Expert 2 Unassisted final,YES,individual view_image at reading size,SA09: no final explanatory note
+053,page0001-053.png,eTable 14 rules-only primary/sensitivities,YES,individual view_image at reading size,SA02: 21 Neither combines observed and assumed split losses
+054,page0001-054.png,Rules-only independent agreement start,YES,individual view_image at reading size,PASS local: columns/values legible; no local arithmetic anomaly; SA07 supporting-display navigation

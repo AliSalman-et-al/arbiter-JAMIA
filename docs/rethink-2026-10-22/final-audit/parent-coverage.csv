@@ -1,0 +1,22 @@
+artifact,coverage,method,initial_verdict,required_followup
+Figure1.png,complete,individual vision at reading size,PASS,protected byte identity after rebuild
+Figure2.png,complete,individual vision at reading size,PASS,protected byte identity after rebuild
+Figure3.png,complete,individual vision at reading size,PASS,final legend and alt text
+Figure4.png,complete,individual vision at reading size,PASS,final legend and alt text
+Figure5.png,complete,individual vision at reading size,ISSUES,standalone domain names and alt text
+Table1.docx,page1,individual rendered page vision,ISSUES,user requires gt redesign
+Table2.docx,page1,individual rendered page vision,ISSUES,user requires gt redesign
+Table3.docx,page1,individual rendered page vision,ISSUES,user requires gt redesign
+Manuscript.docx,page01,individual rendered page vision,ISSUES,title page and abstract separation; define RoB 2
+Manuscript.docx,page02,individual rendered page vision,ISSUES,abstract conclusion orphan and heading hierarchy
+Manuscript.docx,page03,individual rendered page vision,PASS,final double spacing
+Manuscript.docx,page04,individual rendered page vision,PASS,final double spacing; author qualifications pending
+Manuscript.docx,page05,individual rendered page vision,PASS,final double spacing
+Manuscript.docx,page06,individual rendered page vision,ISSUES,insert Tables 1 and 2 at first citation
+Manuscript.docx,page07,individual rendered page vision,ISSUES,insert Table 3 and remove internal editorial phrasing
+Manuscript.docx,page08,individual rendered page vision,PASS,preserve positive bounded OCAR resolution
+Manuscript.docx,page09,individual rendered page vision,ISSUES,replace known public URL placeholders; author declarations pending
+Manuscript.docx,page10,individual rendered page vision,PASS,retain verified reference data
+Manuscript.docx,page11,individual rendered page vision,ISSUES,append five main legends and meaningful alt text
+results.html,DOM and initial/results/table viewport,Brave browser UI,ISSUES,native gt tables; local captions; meaningful alt; coherent headings
+Pages packaging,all current local href and src paths,staged-package link verifier,ISSUES,old publisher omitted linked DOCX files; staging script now checks every local link

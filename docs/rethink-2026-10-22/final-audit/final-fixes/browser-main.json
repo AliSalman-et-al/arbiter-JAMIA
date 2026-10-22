@@ -1,0 +1,7 @@
+{
+  "toolIcon": {
+    "_tag": "website",
+    "pageUrl": "http://127.0.0.1:8873/results.html"
+  },
+  "value": "{\"tables\":[{\"right\":[],\"width\":657.6000366210938},{\"right\":[{\"text\":\"ARBITER, No./total (%) (95% CI)\",\"align\":\"right\",\"left\":\"8px\",\"right\":\"8px\"},{\"text\":\"53/60 (88%; 80–96)\",\"align\":\"right\",\"left\":\"8px\",\"right\":\"8px\"}],\"width\":657.6000366210938},{\"right\":[{\"text\":\"ARBITER\",\"align\":\"right\",\"left\":\"8px\",\"right\":\"8px\"},{\"text\":\"Unassisted\",\"align\":\"right\",\"left\":\"8px\",\"right\":\"8px\"}],\"width\":657.6000366210938}],\"binding\":\"Image regions linked to their page\\t14/14 (100%)\\tNot available\\t—\",\"cssParagraphLeaks\":0}"
+}

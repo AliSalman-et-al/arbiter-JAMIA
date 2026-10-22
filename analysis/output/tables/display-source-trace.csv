@@ -41331,65 +41331,65 @@ reporting-checklist-skeleton,63,page,Final pagination pending
 reporting-checklist-skeleton,64,page,Final pagination pending
 reporting-checklist-skeleton,1,section,Manuscript title (ANALYSIS-PLAN section 7)
 reporting-checklist-skeleton,2,section,Manuscript abstract; results-sentences.md (author assembly)
-reporting-checklist-skeleton,3,section,Manuscript Introduction (author assembly; ANALYSIS-PLAN section 7)
-reporting-checklist-skeleton,4,section,Manuscript Introduction; eMethods Design status and limitations
+reporting-checklist-skeleton,3,section,Manuscript Background and significance (author assembly; ANALYSIS-PLAN section 7)
+reporting-checklist-skeleton,4,section,Manuscript Background and significance; eMethods Interpretive limits
 reporting-checklist-skeleton,5,section,eMethods Blinded expert assessment
-reporting-checklist-skeleton,6,section,eMethods Published-label target matching; eTable 1
-reporting-checklist-skeleton,7,section,eTable 1 Benchmark trials; label-target CSVs
-reporting-checklist-skeleton,8,section,eMethods Dates and training exposure
+reporting-checklist-skeleton,6,section,eMethods Input parity and label targets; supplementary table
+reporting-checklist-skeleton,7,section,Supplement section 1 Benchmark trials
+reporting-checklist-skeleton,8,section,eMethods Interpretive limits
 reporting-checklist-skeleton,9,section,eMethods Algorithms and validation; prompt templates
-reporting-checklist-skeleton,10,section,eMethods Independent reference and Overall; Table 2
-reporting-checklist-skeleton,11,section,Supplement Prompt templates and run provenance; eMethods Dates and training exposure
+reporting-checklist-skeleton,10,section,eMethods Independent reference and Overall; supplement section 5
+reporting-checklist-skeleton,11,section,Supplement Prompt templates and run provenance; eMethods Interpretive limits
 reporting-checklist-skeleton,12,section,N/A: fixed provider model; no model development or fine-tuning
 reporting-checklist-skeleton,13,section,Supplement Prompt templates and run provenance
 reporting-checklist-skeleton,14,section,eMethods Algorithms and validation; prompt templates
-reporting-checklist-skeleton,15,section,eMethods Algorithms and validation; Published-label target matching
+reporting-checklist-skeleton,15,section,eMethods Algorithms and validation; Input parity and label targets
 reporting-checklist-skeleton,16,section,Table 3; eMethods Evidence binding and verification
 reporting-checklist-skeleton,17,section,eMethods Blinded expert assessment; Independent reference and Overall
-reporting-checklist-skeleton,18,section,eMethods Published-label target matching
+reporting-checklist-skeleton,18,section,eMethods Input parity and label targets
 reporting-checklist-skeleton,19,section,eMethods Blinded expert assessment; Manuscript Methods rater credentials (author completion required)
 reporting-checklist-skeleton,20,section,eMethods Input parity and label targets; prompt templates; Table 3
 reporting-checklist-skeleton,21,section,eMethods Algorithms and validation; Blinded expert assessment
-reporting-checklist-skeleton,22,section,Table 2; eTable 4 Full independent agreement and paired contrasts; eTable 2 Expert reliability
+reporting-checklist-skeleton,22,section,Figure 4; supplement sections 2 and 5
 reporting-checklist-skeleton,23,section,Manuscript Methods rater credentials (author completion required)
 reporting-checklist-skeleton,24,section,Supplement Prompt templates and run provenance
-reporting-checklist-skeleton,25,section,Supplement Prompt templates and run provenance; eTable 1
+reporting-checklist-skeleton,25,section,Supplement Prompt templates and run provenance; supplementary table
 reporting-checklist-skeleton,26,section,N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification
 reporting-checklist-skeleton,27,section,N/A: no instruction tuning or alignment training was performed
 reporting-checklist-skeleton,28,section,Supplement Prompt templates and run provenance; eMethods API list-price reconstruction; time/cost eTables
 reporting-checklist-skeleton,29,section,Manuscript Ethics declaration (author completion required)
 reporting-checklist-skeleton,30,section,Manuscript Funding declaration (author completion required)
 reporting-checklist-skeleton,31,section,Manuscript Competing interests (author completion required)
-reporting-checklist-skeleton,32,section,ANALYSIS-PLAN.md; analysis/DEVIATIONS.md; eMethods Independent reference and Overall
+reporting-checklist-skeleton,32,section,eMethods Independent reference and Overall; formal primary endpoint and exploratory analyses in Methods
 reporting-checklist-skeleton,33,section,Manuscript Protocol/registration statement (author confirmation required)
-reporting-checklist-skeleton,34,section,Manuscript Data availability; results.html How to reproduce
-reporting-checklist-skeleton,35,section,results.html How to reproduce; Supplement Prompt templates and run provenance
+reporting-checklist-skeleton,34,section,Manuscript Data availability; Results report Reproduction
+reporting-checklist-skeleton,35,section,Results report Reproduction; Supplement Prompt templates and run provenance
 reporting-checklist-skeleton,36,section,Manuscript Public involvement statement (author confirmation required)
 reporting-checklist-skeleton,37,section,Figure 3
-reporting-checklist-skeleton,38,section,eTable 1
-reporting-checklist-skeleton,39,section,eTable 1; N/A for individual-patient distributions: report-level benchmark
+reporting-checklist-skeleton,38,section,supplementary table
+reporting-checklist-skeleton,39,section,supplementary table; N/A for individual-patient distributions: report-level benchmark
 reporting-checklist-skeleton,40,section,Figure 3; Tables 1–3
-reporting-checklist-skeleton,41,section,Figures 4–6; Tables 1–3; eTable 4 full contrasts; eTable 11 signalling questions and disagreement types; eFigure 2 collapsed question differences; eFigure 5 five-level and collapsed differences; eFigure 4 domain agreement
+reporting-checklist-skeleton,41,section,Figures 4–5; Tables 1–3; supplementary table full contrasts; supplementary table signalling questions and disagreement types; eFigure 2 collapsed question differences; eFigure 5 five-level and collapsed differences; eFigure 4 source-specific signalling agreement
 reporting-checklist-skeleton,42,section,N/A: no model updating or adaptation was performed
 reporting-checklist-skeleton,43,section,Manuscript Discussion (author assembly); results-sentences.md
-reporting-checklist-skeleton,44,section,eMethods Design status and limitations
-reporting-checklist-skeleton,45,section,eMethods Published-label target matching; Design status and limitations
-reporting-checklist-skeleton,46,section,eMethods Design status and limitations; Manuscript Discussion deployment (author assembly)
-reporting-checklist-skeleton,47,section,Table 2; eMethods Algorithms and validation; Design status and limitations
+reporting-checklist-skeleton,44,section,eMethods Interpretive limits
+reporting-checklist-skeleton,45,section,eMethods Input parity and label targets; Interpretive limits
+reporting-checklist-skeleton,46,section,eMethods Interpretive limits; Manuscript Discussion deployment (author assembly)
+reporting-checklist-skeleton,47,section,Table 3; eMethods Algorithms and validation; Interpretive limits
 reporting-checklist-skeleton,48,section,Manuscript Discussion human oversight (author assembly)
 reporting-checklist-skeleton,49,section,Manuscript Discussion future work (author assembly)
 reporting-checklist-skeleton,50,section,Manuscript title and abstract (author assembly)
 reporting-checklist-skeleton,51,section,eMethods Algorithms and validation
-reporting-checklist-skeleton,52,section,eTable 1; Figure 3
+reporting-checklist-skeleton,52,section,supplementary table; Figure 3
 reporting-checklist-skeleton,53,section,Manuscript Methods rater credentials (author completion required)
 reporting-checklist-skeleton,54,section,eMethods Blinded expert assessment
 reporting-checklist-skeleton,55,section,Benchmark README-FOR-ALI.md sampling; Figure 3 (fixed available sample)
-reporting-checklist-skeleton,56,section,eTable 1; benchmark README-FOR-ALI.md
+reporting-checklist-skeleton,56,section,supplementary table; benchmark README-FOR-ALI.md
 reporting-checklist-skeleton,57,section,eMethods Blinded expert assessment
 reporting-checklist-skeleton,58,section,Table 1; eMethods Blinded expert assessment
 reporting-checklist-skeleton,59,section,eMethods Independent reference and Overall
 reporting-checklist-skeleton,60,section,Figure 3; Table 1
-reporting-checklist-skeleton,61,section,eTable 1; Manuscript Methods rater credentials (author completion required)
+reporting-checklist-skeleton,61,section,supplementary table; Manuscript Methods rater credentials (author completion required)
 reporting-checklist-skeleton,62,section,Tables 1–3; Figures 4–5
 reporting-checklist-skeleton,63,section,Manuscript Discussion (author assembly)
 reporting-checklist-skeleton,64,section,Supplementary analyses; results.html; repository CSVs

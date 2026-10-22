@@ -1,0 +1,41 @@
+display,quantity,numerator,denominator,unit,reference,uncertainty_or_interval,meaning_and_absence
+Figure 3,benchmark coverage,102,102,trials,16 fixed reviews,descriptive count,Each of 102 supported trials contributes five domain ratings
+Figure 3,independent ratings,510,510,trial-domain ratings,each expert,descriptive count,Full domain cohort
+Figure 3,primary eligible branch,80,80,discordant cells,ARBITER vs Unassisted,descriptive count,Arms differ on these cells
+Figure 3,agreed expert choices,60,80,discordant cells,two experts,descriptive count,20 split cells do not enter primary consensus estimate
+Figure 3,split expert choices,20,80,discordant cells,two experts,descriptive count,Included as ARBITER losses in conservative sensitivity
+Figure 4,pooled exact agreement,371,510,trial-domain ratings,Expert 1,72.7% (95% CI 69.8 to 75.5),Reference-specific match rate
+Figure 4,pooled exact agreement,332,510,trial-domain ratings,Expert 1,65.1% (95% CI 62.2 to 68.0),Minimal-prompt comparator match rate
+Figure 4,paired exact difference,39,510,paired trial-domain ratings,Expert 1,7.6 percentage points (95% CI 5.1 to 10.2),39 net extra matches
+Figure 4,pooled exact agreement,433,510,trial-domain ratings,Expert 2,84.9% (95% CI 82.2 to 87.5),Reference-specific match rate
+Figure 4,pooled exact agreement,400,510,trial-domain ratings,Expert 2,78.4% (95% CI 75.1 to 81.6),Minimal-prompt comparator match rate
+Figure 4,paired exact difference,33,510,paired trial-domain ratings,Expert 2,6.5 percentage points (95% CI 3.5 to 9.4),33 net extra matches
+Figure 4,expert-to-expert exact agreement,388,510,trial-domain ratings,Expert 1 vs Expert 2,76.1% (95% CI 73.1 to 78.8),Reference variability not ceiling
+Figure 4,D3 exact agreement,43,102,trial-domain ratings,Expert 1,42.2% (95% CI 34.3 to 49.0),Substantial disagreement
+Figure 4,D3 exact agreement,80,102,trial-domain ratings,Expert 2,78.4% (95% CI 71.6 to 84.3),Same tool has different match rate by expert
+Figure 4,D5 paired exact difference,20,102,paired trial-domain ratings,Expert 1,19.6 percentage points (95% CI 11.8 to 27.5),Largest domain gain
+Figure 4,D5 paired exact difference,12,102,paired trial-domain ratings,Expert 2,11.8 percentage points (95% CI 2.9 to 20.6),Largest domain gain
+Table 2,primary ARBITER matches,53,60,agreed-choice discordant cells,expert consensus,88.3% (95% CI 79.7 to 96.3),Conditional preference match not accuracy
+Table 2,Expert 1 sensitivity ARBITER matches,63,80,discordant cells,Expert 1,78.8% (95% CI 70.4 to 86.9),Each expert assessed separately
+Table 2,Expert 2 sensitivity ARBITER matches,61,80,discordant cells,Expert 2,76.2% (95% CI 67.6 to 84.5),Each expert assessed separately
+Table 2,split-as-loss ARBITER matches,53,80,discordant cells,conservative sensitivity,66.2% (95% CI 58.0 to 74.6),20 split choices treated as ARBITER losses
+Table 1,Published label distribution Low,427,510,trial-domain labels,Published,83.7% (95% CI 81.0 to 86.5),Strong Low prevalence
+Table 1,Published label distribution Some concerns,69,510,trial-domain labels,Published,13.5%,Descriptive distribution
+Table 1,Published label distribution High,14,510,trial-domain labels,Published,2.7%,Descriptive distribution
+Table 1,Published Overall observed,81,102,trials,Published Overall,descriptive count,21 missing labels excluded from Published Overall comparisons
+Figure 5,D3 five-level paired difference,-10.3,,percentage points,Expert 1,95% CI -17.2 to -3.2;n=165 paired components,Negative means lower exact answer agreement
+Figure 5,D3 collapsed paired difference,8.5,,percentage points,Expert 1,95% CI 3.5 to 13.7;n=165 paired components,Collapse merges Y/PY and N/PN
+Figure 5,D5 five-level paired difference,30.9,,percentage points,Expert 1,95% CI 24.8 to 36.7;n=301 paired components,Exact answer matching
+Figure 5,D5 collapsed paired difference,11.3,,percentage points,Expert 1,95% CI 8.2 to 14.6;n=301 paired components,Collapse merges Y/PY and N/PN
+Table 3,ARBITER rule consistency,510,510,domain ratings,own answers and official algorithm,0 by design,Procedural compliance not semantic correctness
+Table 3,Unassisted any rule break,65,509,evaluable domain ratings,own answers and official algorithm,12.8% (95% CI 10.0 to 15.6); one cell not evaluable,26 contradictions and 39 required-question omissions
+Table 3,active answers with source record,1538,1538,active answers,stored evidence bundle,100% structural coverage,Does not establish semantic support
+Table 3,text span records linked,1407,1407,text-span records,stored source,100% structural binding,Quote occurrence does not validate reasoning
+Table 3,visual evidence linked,14,14,image records,source page region,100% structural binding,8 of 102 trials used visual evidence
+Table 3,bundles verified,102,102,trial bundles,independent structural verifier,100% pass,Structural verification only
+Table 3,median runtime,7.6,,minutes per trial,ARBITER, IQR 6.1 to 10.5,One run per trial
+Table 3,median runtime,0.5,,minutes per trial,Unassisted,IQR 0.4 to 0.5,One run per trial
+Table 3,paired mean runtime difference,11.0,,minutes per trial,ARBITER minus Unassisted,95% CI 8.4 to 14.1,Mean difference is not the median difference
+Table 3,API list-price equivalent,3.78,,US dollars per trial,ARBITER,IQR 3.46 to 4.10,Estimated list-price equivalent not invoice or labor cost
+Table 3,API list-price equivalent,0.09,,US dollars per trial,Unassisted,IQR 0.07 to 0.13,Estimated list-price equivalent not invoice or labor cost
+Table 3,paired mean API difference,3.68,,US dollars per trial,ARBITER minus Unassisted,95% CI 3.61 to 3.75,No claim of cost-effectiveness

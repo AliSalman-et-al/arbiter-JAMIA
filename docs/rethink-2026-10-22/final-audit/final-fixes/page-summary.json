@@ -1,0 +1,44 @@
+{
+  "Manuscript": {
+    "old_pages": 23,
+    "new_pages": 23,
+    "changed_visual_pages": "1\u20133, 5\u20136, 8\u201310, 12\u201315, 19, 22\u201323",
+    "unchanged_visual_pages": "4, 7, 11, 16\u201318, 20\u201321",
+    "changed_count": 15
+  },
+  "Supplement": {
+    "old_pages": 137,
+    "new_pages": 141,
+    "changed_visual_pages": "2\u20133, 5, 9\u201324, 27, 40\u201352, 54\u201355, 58\u201368, 74\u201380, 84\u201386, 97\u2013100, 105\u2013141",
+    "unchanged_visual_pages": "1, 4, 6\u20138, 25\u201326, 28\u201339, 53, 56\u201357, 69\u201373, 81\u201383, 87\u201396, 101\u2013104",
+    "changed_count": 97
+  },
+  "Table1": {
+    "old_pages": 1,
+    "new_pages": 1,
+    "changed_visual_pages": "None",
+    "unchanged_visual_pages": "1",
+    "changed_count": 0
+  },
+  "Table2": {
+    "old_pages": 1,
+    "new_pages": 1,
+    "changed_visual_pages": "1",
+    "unchanged_visual_pages": "None",
+    "changed_count": 1
+  },
+  "Table3": {
+    "old_pages": 1,
+    "new_pages": 1,
+    "changed_visual_pages": "1",
+    "unchanged_visual_pages": "None",
+    "changed_count": 1
+  },
+  "TRIPOD-LLM": {
+    "old_pages": 8,
+    "new_pages": 8,
+    "changed_visual_pages": "None",
+    "unchanged_visual_pages": "1\u20138",
+    "changed_count": 0
+  }
+}

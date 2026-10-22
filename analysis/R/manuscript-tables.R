@@ -2,7 +2,7 @@ manuscript_data <- function(name) read_manuscript_data(name)
 TOPIC_ABBREVIATIONS <- paste('ACL, anterior cruciate ligament; CDK4/6, cyclin-dependent kinases 4 and 6;',
   'eGFR, estimated glomerular filtration rate; GLP-1, glucagon-like peptide-1; HER2, human epidermal growth factor receptor 2;',
   'HR, hormone receptor; IgA, immunoglobulin A; SGLT2, sodium-glucose cotransporter 2.')
-CI_NOTE <- 'CI, confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.'
+CI_NOTE <- 'CI, 95% confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.'
 AGREEMENT_NOTE <- paste('Linearly weighted Cohen\u2019s \u03ba and Gwet\u2019s AC2.',
   'Exact agreement, sensitivity and specificity are n/N (%); their CI bounds are percentages.',
   'Some concerns or High is the positive class. All-Low rule has no variance; only accuracy and specificity are reported.',
@@ -39,11 +39,11 @@ agreement_display <- function(x,ids=c('arm','domain'),difference=FALSE) {
   },character(1))
   x |> select(all_of(ids),metric,value) |> pivot_wider(names_from=metric,values_from=value) |>
     rename_with(~c(kappa='Weighted \u03ba',AC2='AC2',accuracy='Exact agreement',
-      sensitivity='Sensitivity¹',specificity='Specificity')[.x],all_of(metrics))
+      sensitivity='Sensitivity',specificity='Specificity')[.x],all_of(metrics))
 }
 MEASURE_LABELS <- c('Consistent'='Consistent with RoB 2',
   'Violation'='Rating contradicts its own answers', 'Invalid answer path'='Required question skipped',
-  'Departure'='Any rule break','Proposed agreement'='Proposed judgement matches algorithm',
+  'Departure'='Any rule break','Proposed agreement'='Proposed judgment matches algorithm',
   'Recorded override'='Recorded override','Permitted escalation'='Permitted escalation',
   'Evidence coverage'='Answers citing ≥1 supporting passage or image',
   'Text-span evidence binding'='Quoted text linked to its source',

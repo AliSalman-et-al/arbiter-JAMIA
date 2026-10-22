@@ -1,0 +1,40 @@
+{
+  "embedded_main_tables": "all cells and notes exactly match standalone tables (whitespace normalized)",
+  "Table3": "14/14 (100%) and explicit rule-break CI definition in both artifacts",
+  "P_style": "italic uppercase P values verified in actual Word runs",
+  "FVA01_03_VB01": "ordered contrasts; local 95% CI definition; tailored unweighted notes",
+  "zero_eligible_rows": 16,
+  "VB03_04": "standalone domains/coding/collapse; precise eTable13 denominator locator",
+  "verbatim_trace_cells": 241,
+  "trace_metadata_context_keep_with_next": 82,
+  "results_html_tables": 3,
+  "supplement_html_tables": 98,
+  "changed_output_files": [
+    "analysis/output/manuscript/figure-legends.md",
+    "analysis/output/manuscript/Figure3.pdf",
+    "analysis/output/manuscript/Figure3.png",
+    "analysis/output/manuscript/Figure3.tiff",
+    "analysis/output/manuscript/Manuscript.docx",
+    "analysis/output/manuscript/results-sentences.md",
+    "analysis/output/manuscript/Supplement.docx",
+    "analysis/output/manuscript/Table1.docx",
+    "analysis/output/manuscript/Table2.docx",
+    "analysis/output/manuscript/Table3.docx",
+    "analysis/output/manuscript/TRIPOD-LLM.docx",
+    "analysis/output/manuscript/qa/manuscript-assembled.md",
+    "analysis/output/manuscript/qa/reporting-gt.html",
+    "analysis/output/manuscript/qa/supplement-body.html",
+    "analysis/output/manuscript/qa/supplement-gt.html",
+    "analysis/output/manuscript/qa/supplement-native.html",
+    "analysis/output/manuscript/qa/Table1.html",
+    "analysis/output/manuscript/qa/Table2.html",
+    "analysis/output/manuscript/qa/Table3.html"
+  ],
+  "raw_export_bytes_unchanged": true,
+  "unchanged_artwork_files": 49,
+  "baseline_stale_table_confirmed": false,
+  "baseline_pdf_table3_rounding": {
+    "Manuscript_100": true,
+    "Table3_100": true
+  }
+}

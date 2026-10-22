@@ -1,0 +1,20 @@
+{
+  "PASS": true,
+  "pages": {
+    "Manuscript": 23,
+    "Supplement": 137,
+    "Table1": 1,
+    "Table2": 1,
+    "Table3": 1,
+    "TRIPOD-LLM": 8
+  },
+  "total_pages": 171,
+  "main_words": 2931,
+  "abstract_words": 229,
+  "main_tables": 3,
+  "supplement_table_panels": 98,
+  "reporting_table_panels": 8,
+  "visual_scope": "Representative final pages and every changed figure/layout pattern; independent exhaustive final-page vision and live-site QA belong to parent.",
+  "numerical_invariance": "4639 protected files; 38 numerical CSVs; zero mismatches",
+  "publication": "Not committed, pushed or deployed by implementation worker"
+}

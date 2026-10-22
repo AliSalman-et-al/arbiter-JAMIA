@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{font-family:var(--font-sans,Arial);color:var(--foreground);font-size:15px;line-height:1.5;margin:0}
+h2{font-size:21px;margin:0 0 8px}p{margin:8px 0 16px}.sub{color:var(--muted-foreground);font-size:13px}
+.story{display:grid;grid-template-columns:90px 1fr;gap:0;margin:18px 0;border-top:1px solid var(--border)}
+.label,.copy{padding:13px 0;border-bottom:1px solid var(--border)}.label{font-weight:700;color:var(--accent-foreground)}.copy{padding-left:14px}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0 16px}th,td{text-align:left;vertical-align:top;padding:9px 7px;border-bottom:1px solid var(--border)}th{color:var(--muted-foreground);font-weight:600}
+details{margin:14px 0}summary{cursor:pointer;font-weight:600}.tag{font-size:12px;font-weight:700;color:var(--muted-foreground);letter-spacing:.06em}
+@media(max-width:450px){.story{grid-template-columns:72px 1fr}.copy{padding-left:9px}body{font-size:14px}}
+</style></head><body>
+<div class="tag">PROPOSED STORY · FOR DISCUSSION</div>
+<h2>A checkable workflow, tested against independent judgment</h2>
+<p class="sub">Figures 1 and 2 remain intact. OCAR follows Schimel: Opening, Challenge, Action, Resolution.</p>
+<div class="story">
+<div class="label">Opening</div><div class="copy">Evidence appraisal needs judgments that reviewers can inspect and defend.</div>
+<div class="label">Challenge</div><div class="copy">Enforcing rules and checking quotations cannot establish that an AI interpreted the evidence correctly. Published review labels are also an imperfect reference.</div>
+<div class="label">Action</div><div class="copy">Build ARBITER’s auditable workflow; compare it with the same model given a minimal prompt and identical supplied files; obtain independent-first ratings from two blinded experts across 510 domain cells.</div>
+<div class="label">Resolution</div><div class="copy">ARBITER’s judgments agreed more often with both experts in this benchmark. Published-label agreement showed no clear advantage. Procedural checks and judgment quality need separate evaluation.</div>
+</div>
+<table aria-label="Evidence supporting the candidate story"><thead><tr><th>Evidence</th><th>Observed result</th><th>Boundary</th></tr></thead><tbody>
+<tr><td>Independent ratings</td><td>Agreement gain: +7.6 and +6.5 percentage points</td><td>Two experts; 510 cells each</td></tr>
+<tr><td>Conditional preference</td><td>53/60 agreed choices favored ARBITER</td><td>80 arm disagreements; 20 split choices</td></tr>
+<tr><td>Published labels</td><td>Agreement difference: −1.8 points<br>95% CI −5.1 to 1.6</td><td>Some result targets are uncertain</td></tr>
+</tbody></table>
+<p class="sub">Values from the current frozen analysis outputs; no new analysis or figure replacement has been performed.</p>
+<details><summary>Swarm findings and coverage</summary>
+<table><thead><tr><th>Luna High slice</th><th>Verdict</th><th>Main implication</th></tr></thead><tbody>
+<tr><td>Literature</td><td>ISSUES</td><td>Novelty lies in the enforced combination and evaluation; individual features have precedents.</td></tr>
+<tr><td>Reference validity</td><td>ISSUES</td><td>Separate expert agreement, conditional preference, and result matching.</td></tr>
+<tr><td>Data audit</td><td>ISSUES</td><td>Primary counts reproduce; comparator and single-run limits remain.</td></tr>
+</tbody></table>
+<p class="sub">All three completed. Data/output families audited with spot checks; all current main and supplementary figures inspected. Not every raw log or trial PDF was revalidated. Zotero: 94 collection records inventoried. Targeted literature review, with access gaps recorded in the reports.</p></details>
+</body></html>

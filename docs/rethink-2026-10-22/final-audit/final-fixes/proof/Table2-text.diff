@@ -1,0 +1,10 @@
+--- old page 1
++++ new page 1
+@@ -96,6 +96,7 @@
+ split-loss
+ assumption.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000

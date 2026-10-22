@@ -74,25 +74,36 @@ fmt_ci <- function(lower,upper,digits=2L,suppress_degenerate=FALSE) {
     fmt_number(lower,digits)==fmt_number(upper,digits)] <- ''
   out[!is.finite(lower)|!is.finite(upper)] <- '\u2014'; out
 }
+# JAMA frequency precision is determined by the actual denominator. Paired
+# percentage-point effects and ordinal coefficients keep their own precision.
+fmt_percent <- function(x,n,digits=1L) {
+  m <- max(length(x),length(n));x <- rep_len(x,m);n <- rep_len(n,m)
+  vapply(seq_len(m),function(i) fmt_number(100*x[i],if(is.finite(n[i]) && n[i]<100) 0L else digits),character(1))
+}
+fmt_percent_ci <- function(lower,upper,n) {
+  m <- max(length(lower),length(upper),length(n));lower<-rep_len(lower,m);upper<-rep_len(upper,m);n<-rep_len(n,m)
+  vapply(seq_len(m),function(i) fmt_ci(100*lower[i],100*upper[i],if(is.finite(n[i]) && n[i]<100) 0L else 1L),character(1))
+}
 fmt_fraction <- function(n,N) {
-  out <- paste0(n,'/',N,' (',fmt_number(100*n/N,1),'%)')
+  out <- paste0(format(n,trim=TRUE,scientific=FALSE,big.mark=','),'/',format(N,trim=TRUE,scientific=FALSE,big.mark=','),' (',fmt_percent(n/N,N),'%)')
   out[!is.finite(n)|!is.finite(N)|N<=0] <- '\u2014'; out
 }
 fmt_process_text <- function(x) {
   x <- gsub('\\(([0-9.,]+) to ([0-9.,]+)\\)','(\\1\u2013\\2)',x)
   x <- gsub('\\[([0-9.,]+) to ([0-9.,]+)\\]','[\\1\u2013\\2]',x)
   x <- sub('^-([0-9])','\u2212\\1',x)
-  gsub('([ (])-([0-9])','\\1\u2212\\2',x)
+  x <- gsub('([ (])-([0-9])','\\1\u2212\\2',x)
+  x <- gsub('[IQR]','(IQR)',x,fixed=TRUE)
+  gsub('\\[([0-9.,]+)[–-]([0-9.,]+)\\]','(\\1–\\2)',x)
 }
 fmt_estimate <- function(x,proportion=FALSE) {
-  out <- fmt_number(x$estimate)
   if(proportion) {
-    out <- if(all(c('count','n') %in% names(x))) fmt_fraction(x$count,x$n) else paste0(fmt_number(100*x$estimate,1),'%')
-  }
-  value <- trimws(paste0(out,' ',fmt_ci(x$lower*if(proportion) 100 else 1,x$upper*if(proportion) 100 else 1,if(proportion) 1L else 2L,
-    suppress_degenerate=proportion)))
-  if(proportion) value <- gsub('%) (', '%; ',value,fixed=TRUE)
-  value[!is.finite(x$estimate)] <- '\u2014'; value
+    n <- if('n' %in% names(x)) x$n else rep(NA_real_,nrow(x))
+    out <- if(all(c('count','n') %in% names(x))) ifelse(is.finite(x$count),fmt_fraction(x$count,x$n),paste0(fmt_percent(x$estimate,n),'%')) else paste0(fmt_percent(x$estimate,n),'%')
+    value <- paste0(out,' ',fmt_percent_ci(x$lower,x$upper,n))
+    value <- gsub('%) (','%; ',value,fixed=TRUE)
+  } else value <- paste0(fmt_number(x$estimate),' ',fmt_ci(x$lower,x$upper))
+  value[!is.finite(x$estimate)] <- '—';trimws(value)
 }
 display_frame <- function(x,supplement=TRUE) {
   x <- as.data.frame(x)
@@ -106,44 +117,145 @@ display_frame <- function(x,supplement=TRUE) {
   names(x) <- reader_label(names(x),supplement)
   x
 }
+# Shared native gt presentation. Both exports are made from these objects.
 house_table <- function(x,footnote=NULL,width=6.85) {
-  ft <- flextable::flextable(x) |>
-    flextable::font(fontname='Arial',part='all') |>
-    flextable::fontsize(size=9,part='all') |>
-    flextable::border_remove() |>
-    flextable::hline_top(part='header',border=officer::fp_border(width=1)) |>
-    flextable::hline_bottom(part='header',border=officer::fp_border(width=.6)) |>
-    flextable::hline_bottom(part='body',border=officer::fp_border(width=1)) |>
-    flextable::bold(part='header') |>
-    flextable::padding(padding=3,part='all') |>
-    flextable::valign(valign='top',part='all') |>
-    flextable::align(align='left',part='all') |>
-    flextable::autofit() |>
-    flextable::width(width=width/ncol(x)) |>
-    flextable::fontsize(size=9,part='all') |>
-    flextable::set_table_properties(layout='fixed',opts_word=list(split=FALSE,repeat_headers=TRUE))
-  if(!is.null(footnote)) ft <- ft |> flextable::add_footer_lines(footnote) |>
-    flextable::font(fontname='Arial',part='footer') |>
-    flextable::fontsize(size=9,part='footer')
-  flextable::paginate(ft,init=FALSE,hdr_ftr=TRUE)
+  x <- as.data.frame(x,check.names=FALSE)
+  for(k in names(x)) if(is.logical(x[[k]])) x[[k]] <- ifelse(x[[k]],'Yes','No')
+  groups <- which(apply(x[,-1,drop=FALSE],1,function(v) all(is.na(v)|v=='')))
+  if(length(groups)) {
+    labels <- rep('',nrow(x)); current <- ''
+    for(i in seq_len(nrow(x))) { if(i %in% groups) current <- x[[1]][i]; labels[i] <- current }
+    x$.section <- labels; x <- x[-groups,,drop=FALSE]
+    tab <- gt::gt(x,rowname_col=names(x)[1],groupname_col='.section')
+  } else tab <- gt::gt(x,rowname_col=names(x)[1])
+  cols <- setdiff(names(x),c(names(x)[1],'.section'))
+  numeric <- cols[vapply(x[cols],function(v) mean(grepl('^[−+0-9—]|^Not available$|^Yes$|^No$',as.character(v)))>.75,logical(1))]
+  tab <- tab |> gt::tab_options(table.font.names='Arial',table.font.size='10pt',
+    table.width=gt::px(width*96),data_row.padding=gt::px(4),column_labels.padding=gt::px(5),
+    data_row.padding.horizontal=gt::px(8),column_labels.padding.horizontal=gt::px(8),
+    table.border.top.width=gt::px(1),table.border.bottom.width=gt::px(1),table.border.top.color='#444444',table.border.bottom.color='#444444',
+    table.border.left.style='none',table.border.right.style='none',
+    table_body.hlines.style='none',table_body.vlines.style='none',stub.border.style='none',
+    column_labels.vlines.style='none',column_labels.border.lr.style='none',
+    row_group.border.left.style='none',row_group.border.right.style='none',
+    source_notes.border.lr.style='none',source_notes.border.bottom.style='none',
+    column_labels.font.weight='bold',
+    column_labels.border.bottom.width=gt::px(1),table_body.hlines.width=gt::px(0),
+    row_group.background.color='#F4F4F4',row_group.font.weight='bold',
+    source_notes.font.size='10pt',source_notes.padding=gt::px(4)) |>
+    gt::cols_align('left',columns=gt::everything()) |> gt::tab_stubhead(label=names(x)[1])
+  if(length(numeric)) tab <- gt::cols_align(tab,'right',columns=tidyselect::all_of(numeric))
+  # Preserve native gt alignment and gutters under Quarto/Bootstrap table rules.
+  tab <- gt::opt_css(tab,css=paste(
+    '.gt_table .gt_row, .gt_table .gt_col_heading { padding-left: 8px !important; padding-right: 8px !important; }',
+    '.gt_table .gt_right { text-align: right !important; }',
+    '.gt_table .gt_left { text-align: left !important; }',
+    '.gt_table .gt_center { text-align: center !important; }'))
+  visible <- setdiff(names(x),'.section')
+  weights <- vapply(x[visible],function(v) min(50,max(8,as.numeric(stats::quantile(nchar(as.character(v)),.8,na.rm=TRUE)))),numeric(1))
+  weights <- pmax(weights,pmin(nchar(visible),25))
+  if(length(visible)==2) weights <- c(34,66)
+  # Column roles, rather than short cell strings, set widths in result matrices.
+  if(all(c('Exact agreement (95% CI)','Weighted κ (95% CI)') %in% visible)) weights <- c(.85,.9,1.4,.4,1.75,1.55)
+  else if(all(c('Sensitivity','Specificity') %in% visible)) weights <- c(1.05,.75,.9,.8,1.1,1.15,1.1)
+  else if(all(c('Low','Some concerns','High','Missing') %in% visible)) weights <- c(.65,1.15,.7,1.15,.5,.95,.5,.85,.4)
+  else if('Recomputed' %in% visible) weights <- c(.95,.7,1.05,1.15,1.65,1.4)
+  else if('Original violations' %in% visible) weights <- c(1.15,.4,.95,.8,.95,.75,.85,1.0)
+  else if(all(c('Analysis','Metric','Count','N','Value') %in% visible)) weights <- c(2.1,2,.5,.5,1.75)
+  else if(all(c('Expert','Source','Domain','Metric','Count','N','Value') %in% visible)) weights <- c(.65,1.15,.75,1.0,.6,.4,2.3)
+  else if(all(c('Expert','Comparison','Domain','Metric','N','Value') %in% visible)) weights <- c(.65,1.8,.75,1.0,.4,2.25)
+  else if(all(c('Expert','Source','Domain','Metric','N','Value') %in% visible)) weights <- c(.65,1.1,.8,1.0,.4,2.9)
+  else if(all(c('Expert','Source','Metric','Direction','Outcome','Count','N','Value') %in% visible)) weights <- c(.65,1,.65,.8,1.3,.6,.4,1.45)
+  else if('Specialty' %in% visible) weights <- c(1.25,1.25,2,.55,1.2,.6)
+  else if('Guideline' %in% visible) weights <- c(.75,.45,1,3.1,1.55)
+  else {
+    # Reserve readable identifier gutters, then distribute the remaining width.
+    minimum <- ifelse(visible %in% c('N','Item'),.45,
+      ifelse(visible %in% c('Count','Trials','Expert'),.65,ifelse(visible %in% c('Domain','Group','Population'),.8,.85)))
+    weights <- pmax(width*weights/sum(weights),minimum)
+  }
+  widths <- lapply(100*weights/sum(weights),gt::pct);names(widths)<-visible
+  tab <- gt::cols_width(tab,.list=lapply(seq_along(widths),function(i) rlang::new_formula(rlang::sym(names(widths)[i]),widths[[i]])))
+  if(all(c('Low','Some concerns','High','Missing') %in% names(x)))
+    tab <- gt::tab_spanner(tab,label='Source prediction (cell counts)',columns=tidyselect::all_of(c('Low','Some concerns','High','Missing')))
+  if(!is.null(footnote) && nzchar(footnote)) tab <- gt::tab_source_note(tab,footnote)
+  attr(tab,'publication_widths') <- unname(weights/sum(weights)*width*1440)
+  attr(tab,'publication_groups') <- if(length(groups)) unique(labels) else character()
+  attr(tab,'publication_note') <- footnote
+  tab
+}
+# gt 1.4.0's Word adapter omits width/padding settings and hard-codes
+# single cell borders. Apply the gt design to its native OOXML at this boundary.
+# No table content is rebuilt or converted from HTML.
+add_gt <- function(doc,tab) {
+  stopifnot(inherits(tab,'gt_tbl'))
+  ns <- 'http://schemas.openxmlformats.org/wordprocessingml/2006/main'
+  raw <- paste0('<root xmlns:w="',ns,'">',gt::as_word(tab,split=FALSE,keep_with_next=FALSE),'</root>')
+  root <- xml2::read_xml(raw)
+  table <- xml2::xml_find_first(root,'.//w:tbl')
+  props <- xml2::xml_find_first(table,'w:tblPr')
+  xml2::xml_remove(xml2::xml_find_all(props,'w:tblW|w:tblLayout'))
+  widths <- round(attr(tab,'publication_widths'))
+  xml2::xml_add_child(props,'w:tblW',`w:type`='dxa',`w:w`=as.character(sum(widths)))
+  xml2::xml_add_child(props,'w:tblLayout',`w:type`='fixed')
+  grid <- xml2::xml_add_child(table,'w:tblGrid',.where=1)
+  for(w in widths) xml2::xml_add_child(grid,'w:gridCol',`w:w`=as.character(w))
+  rows <- xml2::xml_find_all(table,'w:tr')
+  for(i in seq_along(rows)) {
+    row <- rows[[i]]; cells <- xml2::xml_find_all(row,'w:tc')
+    txt <- paste(xml2::xml_text(xml2::xml_find_all(row,'.//w:t')),collapse='')
+    note <- !is.null(attr(tab,'publication_note')) && identical(txt,attr(tab,'publication_note'))
+    header <- length(xml2::xml_find_all(row,'w:trPr/w:tblHeader'))>0
+    group <- txt %in% attr(tab,'publication_groups')
+    column <- 1L
+    for(cell in cells) {
+      cp <- xml2::xml_find_first(cell,'w:tcPr')
+      if(inherits(cp,'xml_missing')) cp <- xml2::xml_add_child(cell,'w:tcPr',.where=0)
+      span <- as.integer(xml2::xml_attr(xml2::xml_find_first(cp,'w:gridSpan'),'val'))
+      if(is.na(span)) span <- 1L
+      xml2::xml_remove(xml2::xml_find_all(cp,'w:tcW|w:tcBorders|w:tcMar'))
+      ix <- seq.int(column,min(length(widths),column+span-1L))
+      xml2::xml_add_child(cp,'w:tcW',`w:type`='dxa',`w:w`=as.character(sum(widths[ix])))
+      column <- column+span
+      mar <- xml2::xml_add_child(cp,'w:tcMar')
+      for(side in c('top','bottom','start','end')) xml2::xml_add_child(mar,paste0('w:',side),`w:type`='dxa',`w:w`=if(side %in% c('top','bottom')) '35' else '70')
+      borders <- xml2::xml_add_child(cp,'w:tcBorders')
+      for(side in c('top','bottom','start','end')) {
+        rule <- !note && ((header && side %in% c('top','bottom')) || (group && side=='top'))
+        xml2::xml_add_child(borders,paste0('w:',side),`w:val`=if(rule) 'single' else 'nil',`w:sz`=if(rule) '6' else '0',`w:color`='666666')
+      }
+      if(group) xml2::xml_add_child(cp,'w:shd',`w:fill`='F4F4F4')
+      for(run in xml2::xml_find_all(cell,'.//w:r')) {
+        rp <- xml2::xml_find_first(run,'w:rPr')
+        if(inherits(rp,'xml_missing')) rp <- xml2::xml_add_child(run,'w:rPr',.where=0)
+        xml2::xml_remove(xml2::xml_find_all(rp,'w:sz|w:rFonts'))
+        xml2::xml_add_child(rp,'w:rFonts',`w:ascii`='Arial',`w:hAnsi`='Arial')
+        xml2::xml_add_child(rp,'w:sz',`w:val`='20')
+        if(header || group) xml2::xml_add_child(rp,'w:b')
+      }
+    }
+  }
+  officer::body_add_xml(doc,paste(vapply(xml2::xml_children(root),as.character,character(1)),collapse=''))
 }
 manuscript_doc <- function() {
   doc <- officer::read_docx() |>
-    officer::docx_set_paragraph_style('ManuscriptBody','Manuscript body',fp_t=officer::fp_text(font.family='Arial',font.size=10)) |>
-    officer::docx_set_paragraph_style('Titre1','heading 1',fp_p=officer::fp_par(keep_with_next=TRUE,padding.top=8,padding.bottom=6),
-      fp_t=officer::fp_text(font.family='Arial',font.size=12,bold=TRUE)) |>
-    officer::docx_set_paragraph_style('Titre2','heading 2',fp_p=officer::fp_par(keep_with_next=TRUE,padding.top=6,padding.bottom=4),
-      fp_t=officer::fp_text(font.family='Arial',font.size=10,bold=TRUE))
+    officer::docx_set_paragraph_style('ManuscriptBody','Manuscript body',fp_p=officer::fp_par(line_spacing=1.3,padding.bottom=5),fp_t=officer::fp_text(font.family='Arial',font.size=10)) |>
+    officer::docx_set_paragraph_style('Titre1','heading 1',fp_p=officer::fp_par(keep_with_next=TRUE,padding.top=8,padding.bottom=6),fp_t=officer::fp_text(font.family='Arial',font.size=12,bold=TRUE,color='black')) |>
+    officer::docx_set_paragraph_style('Titre2','heading 2',fp_p=officer::fp_par(keep_with_next=TRUE,padding.top=6,padding.bottom=4),fp_t=officer::fp_text(font.family='Arial',font.size=10,bold=TRUE,color='black'))
   officer::body_set_default_section(doc,officer::prop_section(
     page_size=officer::page_size(width=8.27,height=11.69),
     page_margins=officer::page_mar(top=.6,bottom=.6,left=.65,right=.65)))
 }
-manuscript_par <- function(x,value,style='Manuscript body') officer::body_add_par(x,value,style=style)
+manuscript_par <- function(x,value,style='Manuscript body') {
+  if(grepl('heading',style)) value <- sub('^(e?Table [0-9]+[A-C]?|e?Figure [0-9]+) ','\\1. ',value)
+  officer::body_add_par(x,value,style=style)
+}
 write_word_table <- function(x,file,caption,footnote) {
-  doc <- manuscript_doc() |> officer::body_add_par(caption,style='heading 1') |>
-    flextable::body_add_flextable(house_table(x,footnote))
+  tab <- house_table(x,footnote)
+  doc <- manuscript_doc() |> manuscript_par(caption,style='heading 1') |> add_gt(tab)
   print(doc,target=file)
 }
+
 register_figure_fonts <- function() {
   fonts <- c('Fira Sans','Fira Sans Condensed')
   paths <- c('assets/fonts/FiraSans-Regular.ttf','assets/fonts/FiraSansCondensed-Regular.ttf')
@@ -168,10 +280,4 @@ theme_manuscript <- function() {
 group_row <- function(x,label) {
   header <- x[1,,drop=FALSE]; header[] <- ''; header[[1]] <- label
   dplyr::bind_rows(header,x)
-}
-style_group_rows <- function(ft,x) {
-  rows <- which(apply(as.data.frame(x)[,-1,drop=FALSE],1,function(v) all(is.na(v)|v=='')))
-  for(r in rows) ft <- flextable::merge_at(ft,i=r,j=seq_len(ncol(x)),part='body')
-  if(length(rows)) ft <- flextable::bold(ft,i=rows,part='body')
-  ft
 }

@@ -1,0 +1,12795 @@
+--- old page 2
++++ new page 2
+@@ -454,6 +454,6 @@
+ run
+ provenance
+ .................................................................................................................
+-137
++141
+ Page
+ 2
+--- old page 3
++++ new page 3
+@@ -67,7 +67,7 @@
+ the
+ worst
+ domain
+-judgement,
++judgment,
+ with
+ High
+ permitted
+@@ -285,7 +285,7 @@
+ costs
+ are
+ unusable:
+-unrecognised
++unrecognized
+ model
+ and
+ unknown
+@@ -452,7 +452,7 @@
+ re-extraction
+ or
+ a
+-judgement
++judgment
+ of
+ whether
+ a
+--- old page 5
++++ new page 5
+@@ -77,7 +77,8 @@
+ or
+ exploratory;
+ no
+-p-values
++P
++values
+ or
+ multiplicity
+ adjustments
+--- old page 9
++++ new page 9
+@@ -219,21 +219,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -246,6 +250,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 10
++++ new page 10
+@@ -190,21 +190,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -217,6 +221,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 11
++++ new page 11
+@@ -184,21 +184,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -211,6 +215,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 12
++++ new page 12
+@@ -183,21 +183,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -210,6 +214,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 13
++++ new page 13
+@@ -192,21 +192,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -219,6 +223,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 14
++++ new page 14
+@@ -186,21 +186,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -213,6 +217,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 15
++++ new page 15
+@@ -188,21 +188,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -215,6 +219,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 16
++++ new page 16
+@@ -194,21 +194,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -221,6 +225,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 17
++++ new page 17
+@@ -192,21 +192,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -219,6 +223,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 18
++++ new page 18
+@@ -183,21 +183,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -210,6 +214,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 19
++++ new page 19
+@@ -190,21 +190,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -217,6 +221,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 20
++++ new page 20
+@@ -240,21 +240,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -267,6 +271,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 21
++++ new page 21
+@@ -59,21 +59,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -86,6 +90,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 22
++++ new page 22
+@@ -153,28 +153,52 @@
+ (−0.01
+ to
+ 0.14)
+-Each
++Unweighted
++Cohen
++κ
++against
++each
+ independent
+-expert
+-separately;
+-pooled
+-510
+-cells
++expert;
++each
++domain
++has
++102
++cells.
++Overall
++(all)
++uses
++102
++trials
++for
++ARBITER
+ and
+-domain
+-102
+-cells.
+-Unweighted
+-κ
+-and
+-exact
+-agreement
+-(%);
+-denominators
+-appear
++Unassisted.
++Overall
++(observed)
++uses
++the
++common
++81
++trials
++with
++Published
++labels
++for
++every
++source,
++excluding
++21
++missing
++Published
++labels.
++N
++is
++printed
+ by
+ row.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 23
++++ new page 23
+@@ -142,28 +142,52 @@
+ 102
+ 0.24
+ (0.08–0.42)
+-Each
++Unweighted
++Cohen
++κ
++against
++each
+ independent
+-expert
+-separately;
+-pooled
+-510
+-cells
++expert;
++each
++domain
++has
++102
++cells.
++Overall
++(all)
++uses
++102
++trials
++for
++ARBITER
+ and
+-domain
+-102
+-cells.
+-Unweighted
+-κ
+-and
+-exact
+-agreement
+-(%);
+-denominators
+-appear
++Unassisted.
++Overall
++(observed)
++uses
++the
++common
++81
++trials
++with
++Published
++labels
++for
++every
++source,
++excluding
++21
++missing
++Published
++labels.
++N
++is
++printed
+ by
+ row.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 24
++++ new page 24
+@@ -82,28 +82,52 @@
+ 81
+ 0.31
+ (0.19–0.43)
+-Each
++Unweighted
++Cohen
++κ
++against
++each
+ independent
+-expert
+-separately;
+-pooled
+-510
+-cells
+-and
++expert;
++each
+ domain
++has
+ 102
+ cells.
+-Unweighted
+-κ
++Overall
++(all)
++uses
++102
++trials
++for
++ARBITER
+ and
+-exact
+-agreement
+-(%);
+-denominators
+-appear
++Unassisted.
++Overall
++(observed)
++uses
++the
++common
++81
++trials
++with
++Published
++labels
++for
++every
++source,
++excluding
++21
++missing
++Published
++labels.
++N
++is
++printed
+ by
+ row.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 27
++++ new page 27
+@@ -122,6 +122,7 @@
+ linearly
+ weighted.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 40
++++ new page 40
+@@ -293,6 +293,7 @@
+ not-applicable
+ coefficient.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 41
++++ new page 41
+@@ -236,6 +236,7 @@
+ not-applicable
+ coefficient.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 42
++++ new page 42
+@@ -130,59 +130,32 @@
+ κ
+ is
+ unweighted;
+-AC2
++exact
++agreement
+ is
+-Gwet
+-AC2.
+-Some
+-concerns
+-or
+-High
+-is
+-positive;
+-sensitivity
++n/N
++(%)
++with
++percentage
++CI
++bounds.
++Each
++domain
++has
++102
++cells;
++Overall
+ uses
+-Published-positive
+-cells
+-and
+-specificity
+-uses
+-Published-Low
+-cells.
+-Pooled
+-domains:
+-510;
+-each
+-domain:
+-102;
+-Overall:
+ 81
+ observed
++Published
++labels,
++excluding
++21
++missing
+ labels.
+-All-Low
+-reports
+-agreement
+-and
+-specificity
+-only
+-by
+-reporting
+-convention;
+-—
+-denotes
+-an
+-omitted
+-or
+-not-applicable
+-coefficient.
+-Percentage
+-CI
+-bounds
+-accompany
+-n/N
+-(%)
+-metrics.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 43
++++ new page 43
+@@ -155,6 +155,7 @@
+ percentage
+ points.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 44
++++ new page 44
+@@ -157,6 +157,7 @@
+ percentage
+ points.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 45
++++ new page 45
+@@ -157,6 +157,7 @@
+ percentage
+ points.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 46
++++ new page 46
+@@ -157,6 +157,7 @@
+ percentage
+ points.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 47
++++ new page 47
+@@ -157,6 +157,7 @@
+ percentage
+ points.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 48
++++ new page 48
+@@ -157,6 +157,7 @@
+ percentage
+ points.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 49
++++ new page 49
+@@ -211,6 +211,7 @@
+ percentage
+ points.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 50
++++ new page 50
+@@ -135,6 +135,7 @@
+ percentage
+ points.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 51
++++ new page 51
+@@ -245,6 +245,7 @@
+ are
+ exploratory.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 52
++++ new page 52
+@@ -72,6 +72,7 @@
+ are
+ exploratory.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 54
++++ new page 54
+@@ -190,6 +190,7 @@
+ or
+ neither.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 55
++++ new page 55
+@@ -192,6 +192,7 @@
+ or
+ neither.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 58
++++ new page 58
+@@ -234,6 +234,19 @@
+ with
+ NI
+ separate.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
+ Numerators
+ and
+ denominators
+@@ -242,7 +255,15 @@
+ in
+ absolute-rate
+ cells.
++—
++means
++no
++eligible
++source-specific
++question
++components.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 59
++++ new page 59
+@@ -150,6 +150,19 @@
+ with
+ NI
+ separate.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
+ Numerators
+ and
+ denominators
+@@ -158,7 +171,15 @@
+ in
+ absolute-rate
+ cells.
++—
++means
++no
++eligible
++source-specific
++question
++components.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 60
++++ new page 60
+@@ -202,6 +202,19 @@
+ with
+ NI
+ separate.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
+ Numerators
+ and
+ denominators
+@@ -210,7 +223,15 @@
+ in
+ absolute-rate
+ cells.
++—
++means
++no
++eligible
++source-specific
++question
++components.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 61
++++ new page 61
+@@ -202,6 +202,19 @@
+ with
+ NI
+ separate.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
+ Numerators
+ and
+ denominators
+@@ -210,7 +223,15 @@
+ in
+ absolute-rate
+ cells.
++—
++means
++no
++eligible
++source-specific
++question
++components.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 62
++++ new page 62
+@@ -204,6 +204,19 @@
+ with
+ NI
+ separate.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
+ Numerators
+ and
+ denominators
+@@ -212,7 +225,15 @@
+ in
+ absolute-rate
+ cells.
++—
++means
++no
++eligible
++source-specific
++question
++components.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 63
++++ new page 63
+@@ -202,6 +202,19 @@
+ with
+ NI
+ separate.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
+ Numerators
+ and
+ denominators
+@@ -210,7 +223,15 @@
+ in
+ absolute-rate
+ cells.
++—
++means
++no
++eligible
++source-specific
++question
++components.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 64
++++ new page 64
+@@ -94,6 +94,19 @@
+ with
+ NI
+ separate.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
+ Numerators
+ and
+ denominators
+@@ -102,7 +115,15 @@
+ in
+ absolute-rate
+ cells.
++—
++means
++no
++eligible
++source-specific
++question
++components.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 65
++++ new page 65
+@@ -45,6 +45,19 @@
+ source
+ and
+ expert.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
+ Within-direction:
+ Y↔PY
+ or
+@@ -62,8 +75,13 @@
+ partition
+ five-level
+ disagreements;
++the
+ N
+-includes
++column
++counts
++eligible
++components,
++including
+ agreements.
+ Page
+ 65
+--- old page 66
++++ new page 66
+@@ -193,7 +193,7 @@
+ (pp);
+ positive
+ values
+-favour
++favor
+ ARBITER.
+ n
+ counts
+@@ -233,6 +233,7 @@
+ paired
+ component.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 67
++++ new page 67
+@@ -168,7 +168,7 @@
+ (pp);
+ positive
+ values
+-favour
++favor
+ ARBITER.
+ n
+ counts
+@@ -208,6 +208,7 @@
+ paired
+ component.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 68
++++ new page 68
+@@ -196,7 +196,7 @@
+ (pp);
+ positive
+ values
+-favour
++favor
+ ARBITER.
+ n
+ counts
+@@ -236,6 +236,7 @@
+ paired
+ component.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 74
++++ new page 74
+@@ -167,6 +167,7 @@
+ by
+ assumption.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 75
++++ new page 75
+@@ -308,6 +308,7 @@
+ or
+ coefficients.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 76
++++ new page 76
+@@ -335,6 +335,7 @@
+ or
+ coefficients.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 77
++++ new page 77
+@@ -330,6 +330,7 @@
+ or
+ coefficients.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 78
++++ new page 78
+@@ -329,6 +329,7 @@
+ or
+ coefficients.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 79
++++ new page 79
+@@ -313,6 +313,7 @@
+ or
+ coefficients.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 80
++++ new page 80
+@@ -270,6 +270,7 @@
+ or
+ coefficients.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 84
++++ new page 84
+@@ -274,21 +274,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -301,6 +305,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 85
++++ new page 85
+@@ -282,21 +282,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
++subtract
+ the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -309,6 +313,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 86
++++ new page 86
+@@ -213,21 +213,25 @@
+ percentage;
+ paired
+ differences
+-are
+-ARBITER
+-minus
+-the
++subtract
++the
++second
+ named
+-comparator
++source
++from
++the
++first,
+ in
+ percentage
+-points;
+-κ
+-differences
+-use
+-the
++points
++for
++exact
++agreement
++and
+ coefficient
+-scale.
++units
++for
++κ.
+ κ
+ is
+ linearly
+@@ -240,6 +244,7 @@
+ expert-specific
+ estimates.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 97
++++ new page 97
+@@ -141,6 +141,7 @@
+ an
+ answer.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 98
++++ new page 98
+@@ -145,6 +145,7 @@
+ human
+ time.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 99
++++ new page 99
+@@ -175,7 +175,7 @@
+ unusable
+ diagnostic
+ records:
+-unrecognised
++unrecognized
+ model
+ and
+ unknown
+--- old page 100
++++ new page 100
+@@ -141,7 +141,7 @@
+ unusable
+ diagnostic
+ records:
+-unrecognised
++unrecognized
+ model
+ and
+ unknown
+--- old page 105
++++ new page 105
+@@ -28,7 +28,7 @@
+ squares
+ and
+ Published
+-dark-grey
++dark-gray
+ triangles,
+ in
+ that
+@@ -75,7 +75,29 @@
+ 95%
+ percentile
+ intervals.
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 106
++++ new page 106
+@@ -52,7 +52,48 @@
+ in
+ eFigure
+ 5.
+-Collapsing
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
+ combines
+ Y/PY
+ and
+@@ -61,6 +102,7 @@
+ NI
+ separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+@@ -70,7 +112,8 @@
+ trials
+ resampled
+ within
+-meta-analysis;
++meta-
++analysis;
+ seed
+ 20261018.
+ Page
+--- old page 107
++++ new page 107
+@@ -52,7 +52,48 @@
+ in
+ eFigure
+ 5.
+-Collapsing
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
+ combines
+ Y/PY
+ and
+@@ -61,6 +102,7 @@
+ NI
+ separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+@@ -70,7 +112,8 @@
+ trials
+ resampled
+ within
+-meta-analysis;
++meta-
++analysis;
+ seed
+ 20261018.
+ Page
+--- old page 108
++++ new page 108
+@@ -52,7 +52,48 @@
+ in
+ eFigure
+ 5.
+-Collapsing
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
+ combines
+ Y/PY
+ and
+@@ -61,6 +102,7 @@
+ NI
+ separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+@@ -70,7 +112,8 @@
+ trials
+ resampled
+ within
+-meta-analysis;
++meta-
++analysis;
+ seed
+ 20261018.
+ Page
+--- old page 109
++++ new page 109
+@@ -52,7 +52,48 @@
+ in
+ eFigure
+ 5.
+-Collapsing
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
+ combines
+ Y/PY
+ and
+@@ -61,6 +102,7 @@
+ NI
+ separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+@@ -70,7 +112,8 @@
+ trials
+ resampled
+ within
+-meta-analysis;
++meta-
++analysis;
+ seed
+ 20261018.
+ Page
+--- old page 110
++++ new page 110
+@@ -52,7 +52,48 @@
+ in
+ eFigure
+ 5.
+-Collapsing
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
+ combines
+ Y/PY
+ and
+@@ -61,6 +102,7 @@
+ NI
+ separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+@@ -70,7 +112,8 @@
+ trials
+ resampled
+ within
+-meta-analysis;
++meta-
++analysis;
+ seed
+ 20261018.
+ Page
+--- old page 111
++++ new page 111
+@@ -45,6 +45,7 @@
+ within
+ reviews.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 112
++++ new page 112
+@@ -39,7 +39,86 @@
+ 95%
+ percentile
+ intervals.
++Numerators
++and
++source/expert/domain-specific
++eligible
++denominators
++are
++in
++eTable
++13,
++Full
++signalling
++question
++agreement,
++domain-summary
++rows.
++These
++denominators
++differ
++from
++the
++paired
++eligible
++intersections
++printed
++in
++eFigures
++2
++and
++5.
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
++combines
++Y/PY
++and
++N/PN,
++with
++NI
++separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 113
++++ new page 113
+@@ -44,7 +44,57 @@
+ on
+ each
+ row.
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
++combines
++Y/PY
++and
++N/PN,
++with
++NI
++separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 114
++++ new page 114
+@@ -44,7 +44,57 @@
+ on
+ each
+ row.
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
++combines
++Y/PY
++and
++N/PN,
++with
++NI
++separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 115
++++ new page 115
+@@ -44,7 +44,57 @@
+ on
+ each
+ row.
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
++combines
++Y/PY
++and
++N/PN,
++with
++NI
++separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 116
++++ new page 116
+@@ -44,7 +44,57 @@
+ on
+ each
+ row.
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
++combines
++Y/PY
++and
++N/PN,
++with
++NI
++separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 117
++++ new page 117
+@@ -44,7 +44,57 @@
+ on
+ each
+ row.
++D1,
++randomisation
++process;
++D2,
++deviations
++from
++intended
++interventions;
++D3,
++missing
++outcome
++data;
++D4,
++outcome
++measurement;
++D5,
++selection
++of
++the
++reported
++result.
++Y,
++yes;
++PY,
++probably
++yes;
++N,
++no;
++PN,
++probably
++no;
++NI,
++no
++information.
++Five-level
++coding
++keeps
++all
++five
++answers;
++collapsed
++coding
++combines
++Y/PY
++and
++N/PN,
++with
++NI
++separate.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000
+--- old page 118
++++ new page 118
+@@ -168,69 +168,5 @@
+ —
+ Unassisted:
+ Yes
+-1.3
+-Preintervention
+-imbalance
+-suggesting
+-a
+-randomisation
+-problem
+-ARBITER:
+-No
+-Evidence
+-handles
+-(type):
+-eh_92eed84c7b98e37c
+-(direct
+-support);
+-eh_58abdac52262aa33
+-(context)
+-Justification:
+-Group
+-sizes
+-were
+-78
+-vs
+-79.
+-Of
+-about
+-25
+-baseline
+-comparisons
+-in
+-Table
+-2,
+-only
+-age
+-(P=.02)
+-and
+-haemoglobin
+-(P=.01)
+-were
+-nominally
+-significant,
+-and
+-diabetes
+-was
+-P=.07.
+-The
+-age
+-difference
+-is
+-1
+-year
+-in
+-medians.
+-This
+-is
+-compatible
+-with
+-chance
+-and
+-none
+-approaches
+-P<0.001.
+-Unknowns:
+-—
+ Page
+ 118
+--- old page 119
++++ new page 119
+@@ -1,3 +1,67 @@
++1.3
++Preintervention
++imbalance
++suggesting
++a
++randomisation
++problem
++ARBITER:
++No
++Evidence
++handles
++(type):
++eh_92eed84c7b98e37c
++(direct
++support);
++eh_58abdac52262aa33
++(context)
++Justification:
++Group
++sizes
++were
++78
++vs
++79.
++Of
++about
++25
++baseline
++comparisons
++in
++Table
++2,
++only
++age
++(P=.02)
++and
++haemoglobin
++(P=.01)
++were
++nominally
++significant,
++and
++diabetes
++was
++P=.07.
++The
++age
++difference
++is
++1
++year
++in
++medians.
++This
++is
++compatible
++with
++chance
++and
++none
++approaches
++P<0.001.
++Unknowns:
++—
+ Counterevidence:
+ Basis
+ 1:
+--- old page 120
++++ new page 120
+@@ -153,88 +153,5 @@
+ —
+ Unassisted:
+ Yes
+-2.3
+-Deviations
+-arising
+-from
+-trial
+-context
+-ARBITER:
+-Probably
+-no
+-Evidence
+-handles
+-(type):
+-eh_c8e0958840636206
+-(direct
+-support);
+-eh_22d01d9384e1a677
+-(context);
+-eh_4b5761bf573cc287
+-(context);
+-eh_05e667d2d41d3858
+-(context)
+-Justification:
+-Crossover
+-from
+-conservative
+-care
+-to
+-surgery
+-(35/79)
+-was
+-driven
+-by
+-protocol-defined
+-indications
+-(symptom
+-onset,
+-AS
+-progression,
+-LVEF
+-decline),
+-as
+-Table
+-3
+-and
+-the
+-protocol
+-show,
+-so
+-it
+-is
+-consistent
+-with
+-the
+-protocol
+-rather
+-than
+-trial-context
+-driven.
+-Surgical
+-delays
+-beyond
+-8
+-weeks
+-arose
+-from
+-the
+-COVID-19
+-public-health
+-emergency
+-and
+-were
+-documented
+-as
+-an
+-anticipated
+-minor
+-deviation
+-in
+-the
+-SAP
+-amendment.
+-Four
+-early-surgery
+ Page
+ 120
+--- old page 121
++++ new page 121
+@@ -1,3 +1,86 @@
++2.3
++Deviations
++arising
++from
++trial
++context
++ARBITER:
++Probably
++no
++Evidence
++handles
++(type):
++eh_c8e0958840636206
++(direct
++support);
++eh_22d01d9384e1a677
++(context);
++eh_4b5761bf573cc287
++(context);
++eh_05e667d2d41d3858
++(context)
++Justification:
++Crossover
++from
++conservative
++care
++to
++surgery
++(35/79)
++was
++driven
++by
++protocol-defined
++indications
++(symptom
++onset,
++AS
++progression,
++LVEF
++decline),
++as
++Table
++3
++and
++the
++protocol
++show,
++so
++it
++is
++consistent
++with
++the
++protocol
++rather
++than
++trial-context
++driven.
++Surgical
++delays
++beyond
++8
++weeks
++arose
++from
++the
++COVID-19
++public-health
++emergency
++and
++were
++documented
++as
++an
++anticipated
++minor
++deviation
++in
++the
++SAP
++amendment.
++Four
++early-surgery
+ patients
+ did
+ not
+@@ -145,21 +228,5 @@
+ —
+ Unassisted:
+ Yes
+-2.7
+-Substantial
+-impact
+-of
+-analysing
+-outside
+-assigned
+-groups
+-ARBITER:
+-Not
+-asked
+-(inactive;
+-branching)
+-Unassisted:
+-Not
+-applicable
+ Page
+ 121
+--- old page 122
++++ new page 122
+@@ -1,140 +1,11 @@
+-D3
+-judgement
+-/
+-rationale
+-ARBITER:
+-Proposed:
+-Low;
+-adopted:
+-Low
+-Unassisted:
+-Low
+-All
+-157
+-patients
+-were
+-analysed.
+-One
+-patient
+-lost
+-to
+-follow-up
+-was
+-censored.
+-3.1
+-Outcome
+-data
+-available
+-for
+-nearly
+-everyone
+-ARBITER:
+-Yes
+-Evidence
+-handles
+-(type):
+-eh_e66d374e838e8c6d
+-(direct
+-support)
+-Justification:
+-All
+-157
+-randomized
+-patients
+-were
+-analysed
+-and
+-median
+-follow-up
+-was
+-63
+-months.
+-Only
+-one
+-patient
+-(early-surgery
+-arm)
+-was
+-lost
+-to
+-follow-up
+-and
+-censored
+-at
+-last
+-contact,
+-so
+-1/157
+-(0.6%)
+-has
+-incomplete
+-outcome
+-data.
+-This
+-is
+-far
+-fewer
+-than
+-the
+-observed
+-deaths,
+-so
+-any
+-outcome
+-for
+-that
+-patient
+-could
+-not
+-materially
+-change
+-the
+-HR
++2.7
++Substantial
++impact
+ of
+-0.44.
+-Unknowns:
+-—
+-Counterevidence:
+-—
+-Unassisted:
+-Yes
+-3.2
+-Evidence
+-against
+-bias
+-from
+-missing
+-data
+-ARBITER:
+-Not
+-asked
+-(inactive;
+-branching)
+-Unassisted:
+-Not
+-applicable
+-3.3
+-Missingness
+-potentially
+-depends
+-on
+-true
+-outcome
+-ARBITER:
+-Not
+-asked
+-(inactive;
+-branching)
+-Unassisted:
+-Not
+-applicable
+-3.4
+-Missingness
+-likely
+-depends
+-on
+-true
+-outcome
++analysing
++outside
++assigned
++groups
+ ARBITER:
+ Not
+ asked
+--- old page 123
++++ new page 123
+@@ -1,4 +1,4 @@
+-D4
++D3
+ judgement
+ /
+ rationale
+@@ -9,213 +9,139 @@
+ Low
+ Unassisted:
+ Low
+-Death
+-is
+-an
+-objective
+-outcome.
+-Assessors
++All
++157
++patients
+ were
+-not
+-blinded
++analysed.
++One
++patient
++lost
+ to
+-allocation,
+-but
+-this
+-cannot
+-plausibly
+-bias
+-an
+-all-cause
+-death
+-count.
+-4.1
+-Inappropriate
+-measurement
+-method
++follow-up
++was
++censored.
++3.1
++Outcome
++data
++available
++for
++nearly
++everyone
+ ARBITER:
+-Probably
+-no
++Yes
+ Evidence
+ handles
+ (type):
+-eh_3ce4199af9d487f3
++eh_e66d374e838e8c6d
+ (direct
+ support)
+ Justification:
+-All-cause
+-death
++All
++157
++randomized
++patients
++were
++analysed
++and
++median
++follow-up
++was
++63
++months.
++Only
++one
++patient
++(early-surgery
++arm)
++was
++lost
++to
++follow-up
++and
++censored
++at
++last
++contact,
++so
++1/157
++(0.6%)
++has
++incomplete
++outcome
++data.
++This
+ is
+-a
+-pre-specified,
+-objective
+-event
+-ascertained
+-through
+-scheduled
+-follow-up
+-(6-
+-monthly
+-in
+-year
+-1,
+-then
+-yearly),
+-phone
+-contact
+-when
+-in-person
+-visits
+-were
++far
++fewer
++than
++the
++observed
++deaths,
++so
++any
++outcome
++for
++that
++patient
++could
+ not
+-possible,
+-and
+-review
++materially
++change
++the
++HR
+ of
+-medical
+-records
+-for
+-any
+-registered
+-event.
+-Nothing
+-suggests
+-an
+-insensitive
+-method
+-or
+-an
+-instrument
+-with
+-poor
+-validity.
++0.44.
+ Unknowns:
+ —
+ Counterevidence:
+ —
+ Unassisted:
+-No
+-4.2
+-Measurement
+-differs
+-across
+-groups
++Yes
++3.2
++Evidence
++against
++bias
++from
++missing
++data
+ ARBITER:
+-Probably
+-no
+-Evidence
+-handles
+-(type):
+-eh_3ce4199af9d487f3
+-(direct
+-support)
+-Justification:
+-Both
+-arms
+-followed
+-the
+-same
+-protocol
+-schedule,
+-and
+-COVID-related
+-phone
+-follow-up
+-applied
+-to
+-patients
+-regardless
+-of
+-arm.
+-Death
+-is
+-hard
+-to
+-miss,
+-so
+-any
+-difference
+-in
+-contact
+-opportunities
+-(e.g.
+-surgery
+-visits)
+-is
+-unlikely
+-to
+-change
+-ascertainment
+-of
+-death.
+-Unknowns:
+-Whether
+-vital
+-status
+-was
+-verified
+-from
+-registries
+-in
+-both
+-arms
+-is
+-not
+-stated.
+-Counterevidence:
+-—
++Not
++asked
++(inactive;
++branching)
+ Unassisted:
+-No
+-4.3
+-Assessors
+-aware
+-of
+-received
+-intervention
++Not
++applicable
++3.3
++Missingness
++potentially
++depends
++on
++true
++outcome
+ ARBITER:
+-Yes
+-Evidence
+-handles
+-(type):
+-eh_3ce4199af9d487f3
+-(direct
+-support)
+-Justification:
+-The
+-trial
+-was
+-open-label
+-(registry
+-masking:
+-none),
+-and
+-the
+-report
+-states
+-that
+-DSMB
+-members
+-were
+-not
+-blinded
+-to
+-allocation
+-when
+-reviewing
+-events.
+-Site
+-investigators
+-recording
+-deaths
+-were
+-also
+-aware
+-of
+-the
+-allocation.
+-Unknowns:
+-—
+-Counterevidence:
+-—
++Not
++asked
++(inactive;
++branching)
++Unassisted:
++Not
++applicable
++3.4
++Missingness
++likely
++depends
++on
++true
++outcome
++ARBITER:
++Not
++asked
++(inactive;
++branching)
++Unassisted:
++Not
++applicable
+ Page
+ 123
+--- old page 124
++++ new page 124
+@@ -1,12 +1,38 @@
++D4
++judgement
++/
++rationale
++ARBITER:
++Proposed:
++Low;
++adopted:
++Low
+ Unassisted:
+-Not
+-applicable
+-4.4
+-Assessment
+-potentially
+-influenced
+-by
+-awareness
++Low
++Death
++is
++an
++objective
++outcome.
++Assessors
++were
++not
++blinded
++to
++allocation,
++but
++this
++cannot
++plausibly
++bias
++an
++all-cause
++death
++count.
++4.1
++Inappropriate
++measurement
++method
+ ARBITER:
+ Probably
+ no
+@@ -14,58 +40,131 @@
+ handles
+ (type):
+ eh_3ce4199af9d487f3
+-(inference)
++(direct
++support)
+ Justification:
+ All-cause
+ death
+ is
++a
++pre-specified,
++objective
++event
++ascertained
++through
++scheduled
++follow-up
++(6-
++monthly
++in
++year
++1,
++then
++yearly),
++phone
++contact
++when
++in-person
++visits
++were
++not
++possible,
++and
++review
++of
++medical
++records
++for
++any
++registered
++event.
++Nothing
++suggests
+ an
+-observer-reported
+-outcome
+-that
+-involves
+-no
+-judgement,
+-so
+-knowledge
+-of
+-the
+-intervention
+-is
+-unlikely
+-to
+-influence
+-its
+-assessment,
+-even
+-though
+-the
+-assessors
+-were
+-aware
+-of
+-the
+-allocation.
++insensitive
++method
++or
++an
++instrument
++with
++poor
++validity.
+ Unknowns:
+ —
+ Counterevidence:
+ —
+ Unassisted:
+-Not
+-applicable
+-4.5
+-Assessment
+-likely
+-influenced
+-by
+-awareness
++No
++4.2
++Measurement
++differs
++across
++groups
+ ARBITER:
+-Not
+-asked
+-(inactive;
+-branching)
++Probably
++no
++Evidence
++handles
++(type):
++eh_3ce4199af9d487f3
++(direct
++support)
++Justification:
++Both
++arms
++followed
++the
++same
++protocol
++schedule,
++and
++COVID-related
++phone
++follow-up
++applied
++to
++patients
++regardless
++of
++arm.
++Death
++is
++hard
++to
++miss,
++so
++any
++difference
++in
++contact
++opportunities
++(e.g.
++surgery
++visits)
++is
++unlikely
++to
++change
++ascertainment
++of
++death.
++Unknowns:
++Whether
++vital
++status
++was
++verified
++from
++registries
++in
++both
++arms
++is
++not
++stated.
++Counterevidence:
++—
+ Unassisted:
+-Not
+-applicable
++No
+ Page
+ 124
+--- old page 125
++++ new page 125
+@@ -1,314 +1,122 @@
+-D5
+-judgement
+-/
+-rationale
++4.3
++Assessors
++aware
++of
++received
++intervention
+ ARBITER:
+-Proposed:
+-Some
+-concerns;
+-adopted:
+-Some
+-concerns
+-Unassisted:
+-Low
+-Time
+-to
+-death
+-was
+-a
+-prespecified
+-secondary
+-endpoint
+-with
+-a
+-registered
+-5-year
+-time
+-frame.
+-It
+-was
+-analysed
+-with
+-a
+-single
+-Cox
+-model,
+-and
+-the
+-SAP
+-amendment
+-only
+-addresses
+-COVID-19
+-delays.
+-I
+-found
+-no
+-sign
+-of
+-selective
+-reporting.
+-A
+-small
+-concern
+-is
+-that
+-the
+-extended
+-follow-up
+-was
+-a
+-later
+-analysis,
+-but
+-it
+-matches
+-the
+-registered
+-time
+-frame.
+-5.1
+-Analysis
+-plan
+-finalised
+-before
+-unblinding
+-ARBITER:
+-No
+-information
++Yes
+ Evidence
+ handles
+ (type):
+-eh_d54a2600ddc753b3
+-(context);
+-eh_7ad155913c1c5826
+-(context);
+-eh_30fa222ec5523dcc
+-(context);
+-eh_7961ea6680167af2
+-(context)
++eh_3ce4199af9d487f3
++(direct
++support)
+ Justification:
+ The
+-registry
+-entry
+-(first
+-submitted
+-30
+-Apr
+-2015,
+-before
+-enrolment
+-began
+-in
+-June
+-2015)
+-names
+-all-
+-cause
+-death
+-only
+-as
+-a
+-component
+-of
+-composite
+-outcomes.
+-It
+-does
+-not
+-list
+-time
+-to
+-all-cause
+-death
+-as
+-a
+-separate
+-outcome.
+-The
+-Circulation
+-2022
+-and
+-EHJ
+-2024
+-reports
+-describe
+-'time
+-to
+-death'
+-as
+-a
+-prespecified
+-secondary
+-end
+-point
+-analysed
+-with
+-Kaplan-Meier
+-and
+-Cox
+-models,
+-citing
+-a
+-published
+-protocol.
+-That
+-protocol
+-is
+-not
+-among
+-the
+-captured
+-Sources,
++trial
++was
++open-label
++(registry
++masking:
++none),
+ and
+ the
+ report
+-statements
+-are
++states
++that
++DSMB
++members
++were
+ not
+-date-stamped
+-before
+-unblinded
+-data.
+-The
+-only
+-SAP-type
+-document
+-is
+-an
+-amendment
+-dated
+-4
+-Jan
+-2021
+-about
+-COVID
+-surgical
+-delays.
+-No
+-dated
+-source
+-therefore
+-specifies
+-this
+-measurement
+-and
+-analysis.
++blinded
++to
++allocation
++when
++reviewing
++events.
++Site
++investigators
++recording
++deaths
++were
++also
++aware
++of
++the
++allocation.
+ Unknowns:
+-Whether
+-the
+-published
+-protocol
+-listed
+-time
+-to
+-all-cause
+-death
+-and
+-its
+-Cox
+-analysis,
+-and
+-its
+-date
+-relative
+-to
+-unblinded
+-data.
++—
+ Counterevidence:
+ —
+ Unassisted:
+-Probably
+-yes
+-5.2
+-Result
+-selected
+-from
+-eligible
+-outcome
+-measurements
++Not
++applicable
++4.4
++Assessment
++potentially
++influenced
++by
++awareness
+ ARBITER:
+ Probably
+ no
+ Evidence
+ handles
+ (type):
+-eh_30fa222ec5523dcc
+-(direct
+-support);
+-eh_d54a2600ddc753b3
+-(context)
++eh_3ce4199af9d487f3
++(inference)
+ Justification:
+ All-cause
+ death
+ is
+-a
+-single,
+-unambiguous
+-event,
++an
++observer-reported
++outcome
++that
++involves
++no
++judgement,
+ so
+-there
++knowledge
++of
++the
++intervention
+ is
+-essentially
+-one
+-way
++unlikely
+ to
+-measure
++influence
++its
++assessment,
++even
++though
+ the
+-outcome
+-domain.
+-The
+-registered
+-time
+-frames
++assessors
+ were
+-36
+-months
+-and
+-5
+-years.
+-The
+-2024
+-report
+-states
+-that
+-all-cause
+-death
+-was
+-analysed
+-over
++aware
++of
+ the
+-full
+-follow-up
+-and
+-also
+-restricted
+-to
+-3
+-years,
+-so
+-no
+-eligible
+-time
+-point
+-appears
+-to
+-have
+-been
+-omitted
+-in
+-favour
+-of
+-a
+-more
+-favourable
+-one.
++allocation.
+ Unknowns:
+ —
+ Counterevidence:
+ —
+ Unassisted:
+-Probably
+-no
++Not
++applicable
++4.5
++Assessment
++likely
++influenced
++by
++awareness
++ARBITER:
++Not
++asked
++(inactive;
++branching)
++Unassisted:
++Not
++applicable
+ Page
+ 125
+--- old page 126
++++ new page 126
+@@ -1,9 +1,232 @@
+-5.3
++D5
++judgement
++/
++rationale
++ARBITER:
++Proposed:
++Some
++concerns;
++adopted:
++Some
++concerns
++Unassisted:
++Low
++Time
++to
++death
++was
++a
++prespecified
++secondary
++endpoint
++with
++a
++registered
++5-year
++time
++frame.
++It
++was
++analysed
++with
++a
++single
++Cox
++model,
++and
++the
++SAP
++amendment
++only
++addresses
++COVID-19
++delays.
++I
++found
++no
++sign
++of
++selective
++reporting.
++A
++small
++concern
++is
++that
++the
++extended
++follow-up
++was
++a
++later
++analysis,
++but
++it
++matches
++the
++registered
++time
++frame.
++5.1
++Analysis
++plan
++finalised
++before
++unblinding
++ARBITER:
++No
++information
++Evidence
++handles
++(type):
++eh_d54a2600ddc753b3
++(context);
++eh_7ad155913c1c5826
++(context);
++eh_30fa222ec5523dcc
++(context);
++eh_7961ea6680167af2
++(context)
++Justification:
++The
++registry
++entry
++(first
++submitted
++30
++Apr
++2015,
++before
++enrolment
++began
++in
++June
++2015)
++names
++all-
++cause
++death
++only
++as
++a
++component
++of
++composite
++outcomes.
++It
++does
++not
++list
++time
++to
++all-cause
++death
++as
++a
++separate
++outcome.
++The
++Circulation
++2022
++and
++EHJ
++2024
++reports
++describe
++'time
++to
++death'
++as
++a
++prespecified
++secondary
++end
++point
++analysed
++with
++Kaplan-Meier
++and
++Cox
++models,
++citing
++a
++published
++protocol.
++That
++protocol
++is
++not
++among
++the
++captured
++Sources,
++and
++the
++report
++statements
++are
++not
++date-stamped
++before
++unblinded
++data.
++The
++only
++SAP-type
++document
++is
++an
++amendment
++dated
++4
++Jan
++2021
++about
++COVID
++surgical
++delays.
++No
++dated
++source
++therefore
++specifies
++this
++measurement
++and
++analysis.
++Unknowns:
++Whether
++the
++published
++protocol
++listed
++time
++to
++all-cause
++death
++and
++its
++Cox
++analysis,
++and
++its
++date
++relative
++to
++unblinded
++data.
++Counterevidence:
++—
++Unassisted:
++Probably
++yes
++5.2
+ Result
+ selected
+ from
+ eligible
+-analyses
++outcome
++measurements
+ ARBITER:
+ Probably
+ no
+@@ -13,55 +236,73 @@
+ eh_30fa222ec5523dcc
+ (direct
+ support);
+-eh_f625637d366df2a0
++eh_d54a2600ddc753b3
+ (context)
+ Justification:
+-Time-to-event
+-secondary
+-outcomes
++All-cause
++death
++is
++a
++single,
++unambiguous
++event,
++so
++there
++is
++essentially
++one
++way
++to
++measure
++the
++outcome
++domain.
++The
++registered
++time
++frames
+ were
++36
++months
++and
++5
++years.
++The
++2024
++report
++states
++that
++all-cause
++death
++was
+ analysed
+-with
+-the
+-same
+-Kaplan-Meier,
+-log-rank
+-and
+-Cox
+-model
+-(treatment
+-only)
+-used
+-for
+-the
+-primary
+-outcome,
+-and
+-the
+-same
+-method
+-was
+-used
++over
++the
++full
++follow-up
++and
++also
++restricted
++to
++3
++years,
++so
++no
++eligible
++time
++point
++appears
++to
++have
++been
++omitted
+ in
+-the
+-2022
+-paper.
+-No
+-covariate-adjusted
+-or
+-alternative
+-models
+-are
+-described,
+-and
+-the
+-long-term
+-and
+-3-year
+-analyses
+-are
+-both
+-reported.
++favour
++of
++a
++more
++favourable
++one.
+ Unknowns:
+ —
+ Counterevidence:
+@@ -69,171 +310,5 @@
+ Unassisted:
+ Probably
+ no
+-Overall
+-ARBITER:
+-Proposed:
+-Some
+-concerns;
+-adopted:
+-Some
+-concerns
+-Justification:
+-Any
+-domain
+-Some
+-concerns,
+-with
+-no
+-High
+-domain:
+-Overall
+-Some
+-concerns.
+-Unassisted:
+-Low
+-Part
+-B.
+-Evidence
+-records
+-eh_05e667d2d41d3858
+-Source:
+-AVATAR
+-long-term
+-follow-up
+-report
+-Page:
+-9
+-Lines:
+-76–83
+-Source-version
+-hash:
+-a890f771fd05
+-Full
+-verbatim
+-quote:
+-follow-up
+-and
+-lengthening
+-AVR
+-delays.
+-Pre-defined
+-physical
+-visits
+-were
+-substituted
+-by
+-phone
+-follow-up.
+-Such
+-surveillance
+-within
+-the
+-watchful
+-waiting
+-may
+-hypothetically
+-impact
+-timely
+-detection
+-of
+-symptoms
+-conse
+-quently
+-leading
+-to
+-increased
+-clinical
+-risk,
+-including
+-sudden
+-death.
+-Nevertheless,
+-in
+-the
+-conservative
+-group,
+-none
+-of
+-the
+-patients
+-experi
+-enced
+-MACE
+-or
+-died
+-while
+-awaiting
+-the
+-scheduled
+-surgery.
+-It
+-is
+-of
+-note
+-that
+-in
+-the
+-small
+-number
+-of
+-patients
+-undergoing
+-TAVR,
+-delays
+-ap
+-peared
+-shorter
+-as
+-compared
+-with
+-the
+-surgical
+-intervention.
+-eh_22d01d9384e1a677
+-Source:
+-Current
+-registry-linked
+-statistical
+-analysis
+-plan
+-Page:
+-2
+-Lines:
+-1–12
+-Source-version
+-hash:
+-ba0a93294998
+-Full
+-verbatim
+-quote:
+-Amendmen
+-to
+-statystical
+-analysis
+-1.
+-Patients
+-randomized
+-to
+-AVR
+-surgery
+-who
+-received
+-delayed
+-surgery
+-(more
+-than
+-8
+-weeks
+-after
+-randomization)
+-due
+-to
+-COVID
+--19
+-public
+-health
+-emergency
+-will
+-be
+ Page
+ 126
+--- old page 127
++++ new page 127
+@@ -1,357 +1,193 @@
+-documented
++5.3
++Result
++selected
++from
++eligible
++analyses
++ARBITER:
++Probably
++no
++Evidence
++handles
++(type):
++eh_30fa222ec5523dcc
++(direct
++support);
++eh_f625637d366df2a0
++(context)
++Justification:
++Time-to-event
++secondary
++outcomes
++were
++analysed
++with
++the
++same
++Kaplan-Meier,
++log-rank
+ and
+-this
+-delay
+-will
+-be
+-defined
+-as
+-an
+-anticipated
+-minor
+-deviation
+-from
++Cox
++model
++(treatment
++only)
++used
++for
+ the
+-clinical
+-protocol
+-2.
+-Appropriate
+-statistical
+-procedures
+-will
+-be
+-performed
++primary
++outcome,
+ and
+-results
+-will
+-be
+-published
+-according
+-to
+ the
+-FDA
+-guidance
+-"Conduct
+-of
+-Clinical
+-Trials
+-of
+-Medical
+-Products
+-During
++same
++method
++was
++used
++in
+ the
+-COVID-19
+-Public
+-Health
+-Emergency
+-Guidance
+-for
+-Industry,
+-investigators,
++2022
++paper.
++No
++covariate-adjusted
++or
++alternative
++models
++are
++described,
+ and
+-Institutional
+-Review
+-Boards"
+-eh_30fa222ec5523dcc
++the
++long-term
++and
++3-year
++analyses
++are
++both
++reported.
++Unknowns:
++—
++Counterevidence:
++—
++Unassisted:
++Probably
++no
++Overall
++ARBITER:
++Proposed:
++Some
++concerns;
++adopted:
++Some
++concerns
++Justification:
++Any
++domain
++Some
++concerns,
++with
++no
++High
++domain:
++Overall
++Some
++concerns.
++Unassisted:
++Low
++Part
++B.
++Evidence
++records
++eh_05e667d2d41d3858
+ Source:
+ AVATAR
+ long-term
+ follow-up
+ report
+ Page:
+-5
++9
+ Lines:
+-13–24
++76–83
+ Source-version
+ hash:
+ a890f771fd05
+ Full
+ verbatim
+ quote:
+-Statistical
+-analysis
+-We
+-conducted
+-all
+-analyses
+-according
++follow-up
++and
++lengthening
++AVR
++delays.
++Pre-defined
++physical
++visits
++were
++substituted
++by
++phone
++follow-up.
++Such
++surveillance
++within
++the
++watchful
++waiting
++may
++hypothetically
++impact
++timely
++detection
++of
++symptoms
++conse
++quently
++leading
+ to
+-the
+-intention-to-treat
+-principle,
+-where
+-all
+-patients
+-were
+-included
++increased
++clinical
++risk,
++including
++sudden
++death.
++Nevertheless,
+ in
+ the
+-analysis
+-as
+-they
+-were
+-randomized.
+-For
+-the
+-analysis
++conservative
++group,
++none
+ of
+ the
+-primary
+-outcome,
+-we
+-built
+-a
+-Kaplan-Meier
+-graph
++patients
++experi
++enced
++MACE
++or
++died
++while
++awaiting
++the
++scheduled
++surgery.
++It
++is
++of
++note
++that
++in
++the
++small
++number
++of
++patients
++undergoing
++TAVR,
++delays
++ap
++peared
++shorter
++as
++compared
+ with
+-a
+-log
+-rank
+-P-value
+-to
+-test
+-for
+-a
+-difference
+-between
+-early
+-surgery
+-and
+-control
+-intervention
+-at
+-a
+-two-sided
+-α
+-value
+-of
+-0.05
+-and
+-used
+-a
+-Cox
+-propor
+-tional
+-hazards
+-model
+-to
+-derive
+-hazard
+-ratios
+-(HRs)
+-with
+-95%
+-confidence
+-in
+-tervals
+-(CIs)
+-for
+-treatment
+-effect
+-estimation.
+-Time-to-event
+-secondary
+-outcomes
+-were
+-analysed
+-using
+ the
+-same
+-meth
+-ods
+-applied
+-for
+-the
+-analysis
+-of
+-the
+-primary
+-outcome.
+-For
+-MACE,
+-all-cause
+-death,
+-HF
+-hospitalization,
+-and
+-cardiovascular
+-death,
+-we
+-repeated
+-the
+-ana
+-lysis
+-as
+-described
+-above
+-restricted
+-to
+-a
+-3-year
+-follow-up,
+-with
+-complete
+-eh_3ce4199af9d487f3
+-Source:
+-AVATAR
+-long-term
+-follow-up
+-report
+-Page:
+-3
+-Lines:
+-1–116
+-Source-version
+-hash:
+-a890f771fd05
+-Full
+-verbatim
+-quote:
+-Introduction
+-Aortic
+-stenosis
+-(AS)
+-is
+-the
+-single
+-most
+-common
+-valvular
+-heart
+-disease
+-re
+-quiring
+-intervention
+-in
+-developed
+-countries
+-and
+-is
+-projected
+-to
+-double
+-by
+-2050
+-in
+-both
+-the
+-USA
+-and
+-Europe.1
+-The
+-approach
+-to
+-symptomatic
+-pa
+-tients
+-with
+-severe
+-AS
+-is
+-straightforward.
+-Surgical
+-aortic
+-valve
+-replacement
+-(AVR)
+-and,
+-more
+-recently,
+-transcatheter
+-aortic
+-valve
+-implantation
+-(TAVI)
+-procedures
+-are
+-Class
+-I
+-recommendation
+-to
+-relieve
+-symptoms
+-and
+-im
+-prove
+-survival
+-in
+-symptomatic
+-patients
+-with
+-severe
+-AS.2,3
+-Conversely,
+-the
+-question
+-of
+-when
+-and
+-how
+-to
+-treat
+-truly
+-asymptom
+-atic
+-patients
+-with
+-severe
+-AS
+-and
+-normal
+-left
+-ventricular
+-(LV)
+-systolic
+-function
+-is
+-still
+-subject
+-to
+-debate
+-and
+-ongoing
+-research.
+-To
+-date,
+-two
+-randomized
+-trials
+-have
+-demonstrated
+-benefit
+-of
+-early
+-AVR
+-in
+-compari
+-son
+-with
+-conservative
+-strategy
+-in
+-asymptomatic
+-patients
+-with
+-severe
+-and
+-very
+-severe
+-AS
+-patients.4,5
+-In
+-addition,
+-there
+-are
+-several
+-ongoing
+-randomized
+-trials
+-investigating
+-the
+-role
+-of
+-early
+-TAVI
+-and/or
++surgical
++intervention.
+ Page
+ 127
+--- old page 128
++++ new page 128
+@@ -1,553 +1,241 @@
+-early
+-sur
+-gical
++eh_22d01d9384e1a677
++Source:
++Current
++registry-linked
++statistical
++analysis
++plan
++Page:
++2
++Lines:
++1–12
++Source-version
++hash:
++ba0a93294998
++Full
++verbatim
++quote:
++Amendmen
++to
++statystical
++analysis
++1.
++Patients
++randomized
++to
+ AVR
++surgery
++who
++received
++delayed
++surgery
++(more
++than
++8
++weeks
++after
++randomization)
++due
++to
++COVID
++-19
++public
++health
++emergency
++will
++be
++documented
++and
++this
++delay
++will
++be
++defined
++as
++an
++anticipated
++minor
++deviation
++from
++the
++clinical
++protocol
++2.
++Appropriate
++statistical
++procedures
++will
++be
++performed
++and
++results
++will
++be
++published
++according
++to
++the
++FDA
++guidance
++"Conduct
++of
++Clinical
++Trials
++of
++Medical
++Products
++During
++the
++COVID-19
++Public
++Health
++Emergency
++Guidance
++for
++Industry,
++investigators,
++and
++Institutional
++Review
++Boards"
++eh_30fa222ec5523dcc
++Source:
++AVATAR
++long-term
++follow-up
++report
++Page:
++5
++Lines:
++13–24
++Source-version
++hash:
++a890f771fd05
++Full
++verbatim
++quote:
++Statistical
++analysis
++We
++conducted
++all
++analyses
++according
++to
++the
++intention-to-treat
++principle,
++where
++all
++patients
++were
++included
+ in
+-asymptomatic
+-AS.
+-The
+-Aortic
+-Valve
+-Replacement
+-Versus
+-Conservative
+-Treatment
+-in
+-Asymptomatic
+-Severe
+-Aortic
+-Stenosis
+-(AVATAR)
+-trial
+-is
+-an
+-investigator-
+-initiated,
+-prospective,
+-multinational,
+-randomized,
+-controlled,
+-parallel-group,
+-event-driven
+-trial
+-that
+-compared
+-the
+-safety
+-and
+-efficacy
+-of
++the
++analysis
++as
++they
++were
++randomized.
++For
++the
++analysis
++of
++the
++primary
++outcome,
++we
++built
++a
++Kaplan-Meier
++graph
++with
++a
++log
++rank
++P-value
++to
++test
++for
++a
++difference
++between
+ early
+ surgery
++and
++control
++intervention
++at
++a
++two-sided
++α
++value
++of
++0.05
++and
++used
++a
++Cox
++propor
++tional
++hazards
++model
++to
++derive
++hazard
++ratios
++(HRs)
++with
++95%
++confidence
+ in
+-the
++tervals
++(CIs)
++for
+ treatment
+-of
+-truly
+-asymptomatic
+-patients
++effect
++estimation.
++Time-to-event
++secondary
++outcomes
++were
++analysed
++using
++the
++same
++meth
++ods
++applied
++for
++the
++analysis
++of
++the
++primary
++outcome.
++For
++MACE,
++all-cause
++death,
++HF
++hospitalization,
++and
++cardiovascular
++death,
++we
++repeated
++the
++ana
++lysis
++as
++described
++above
++restricted
++to
++a
++3-year
++follow-up,
+ with
+-severe
+-AS
+-and
+-LV
+-ejec
+-tion
+-fraction
+-(LVEF)
+-≥
+-50%
+-vs.
+-conservative
+-treatment
+-with
+-watchful
+-wait
+-ing
+-strategy
+-and
+-AVR
+-only
+-after
+-symptom
+-onset,
+-or
+-other
+-guidelines
+-directed
+-Class
+-I
+-or
+-II
+-indications
+-for
+-AVR.3,6
+-In
+-the
+-primary
+-analysis
+-of
+-the
+-AVATAR
+-trial,
+-asymptomatic
+-AS
+-patients
+-randomized
+-to
+-early
+-surgery
+-had
+-a
+-lower
+-incidence
+-of
+-the
+-composite
+-primary
+-outcome
+-comprising
+-all-
+-cause
+-death,
+-acute
+-myocardial
+-infarction,
+-stroke,
+-or
+-unplanned
+-hospitaliza
+-tion
+-for
+-heart
+-failure
+-(HF),
+-compared
+-with
+-patients
+-who
+-were
+-randomized
+-to
+-conservative
+-treatment.5
+-We
+-now
+-report
+-the
+-results
+-of
+-the
+-AVATAR
+-trial
+-after
+-extended
+-follow-up
+-at
+-5
+-years.
+-Methods
+-Study
+-design
+-and
+-oversight
+-The
+-AVATAR
+-trial
+-(ClinicalTrials.gov
+-identifier
+-NCT02436655)
+-protocol
+-and
+-protocol
+-update
+-were
+-designed
+-by
+-the
+-first
+-co-authors
+-and
+-steering
+-committee
+-co-chairmen
+-and
+-was
+-approved
+-by
+-the
+-steering
+-committee
+-of
+-the
+-AVATAR
+-trial.7,8
+-The
+-clinical
+-and
+-outcomes
+-data
+-were
+-collected
+-by
+-per
+-sonnel
+-at
+-the
+-participating
+-sites
+-and
+-were
+-sent
+-directly
+-to
+-the
+-data
+-coordinat
+-ing
+-centre
+-at
+-the
+-University
+-Clinical
+-Center
+-of
+-Serbia.
+-No
+-extramural
+-funding
+-was
+-used
+-to
+-support
+-this
+-work.
+-The
+-authors,
+-members
+-of
+-the
+-steering
+-com
+-mittee,
+-and
+-investigators
+-are
+-solely
+-responsible
+-for
+-the
+-design
+-and
+-conduct
+-of
+-this
+-trial,
+-all
+-analyses,
+-drafting
+-and
+-editing
+-of
+-the
+-article,
+-and
+-its
+-final
+-contents.
+-Independent
+-statistician
+-conducted
+-the
+-long-term
+-data
+-analyses.
+-The
+-trial
+-was
+-conducted
+-in
+-accordance
+-with
+-the
+-Declaration
+-of
+-Helsinki.
+-All
+-participants
+-provided
+-written
+-informed
+-consent.
+-An
+-independent
+-data
+-and
+-safety
+-monitoring
+-board
+-(DSMB)
+-adjudicated
+-all
+-serious
+-adverse
+-events
+-and
+-oversaw
+-the
+-safety
+-of
+-the
+-trial.
+-The
+-article
+-was
+-prepared
+-by
+-the
+-first
+-author
+-and
+-steering
+-committee
+-co-chairmen
+-and
+-was
+-reviewed
+-and
+-edited
+-by
+-mem
+-bers
+-of
+-the
+-steering
+-committee
+-and
+-authors.
+-All
+-authors
+-reviewed
+-the
+-article,
+-approved
+-its
+-submission
+-for
+-publication,
+-and
+-vouched
+-for
+-the
+-accuracy
+-and
+-completeness
+-of
+-the
+-data
+-and
+-for
+-the
+-fidelity
+-of
+-the
+-trial
+-to
+-the
+-protocol.
+-Study
+-population
+-The
+-study
+-inclusion
+-and
+-exclusion
+-criteria
+-are
+-shown
+-in
+-Table
+-1;
+-trial
+-flowchart
+-is
+-shown
+-in
+-Figure
+-1.
+-Briefly,
+-a
+-total
+-of
+-157
+-patients
+-with
+-severe
+-AS
+-according
+-to
+-the
+-guidelines
+-were
+-enrolled
+-in
+-the
+-trial:
+-79
+-were
+-randomized
+-to
+-conservative
+-treatment
+-and
+-78
+-were
+-randomized
+-to
+-early
+-surgery.
+-To
+-prove
+-truly
+-asymp
+-tomatic
+-status,
+-exercise
+-testing
+-was
+-performed
+-in
+-all
+-candidates
+-to
+-evaluate
+-symptom
+-status
+-according
+-to
+-a
+-standardized
+-protocol
+-using
+-treadmill
+-or
+-semi-
+-supine
+-ergo-bicycle.
+-To
+-consider
+-exercise
+-testing
+-negative,
+-which
+-was
+-manda
+-tory
+-for
+-inclusion,
+-all
+-candidates
+-needed
+-to
+-reach
+-a
+-projected
+-submaximal
+-heart
+-rate.
+-Positive
+-exercise
+-test
+-included
+-onset
+-of
+-AS-
+-related
+-symptoms,
+-fall
+-in
+-systolic
+-blood
+-pressure
+-(≥20
+-mmHg
+-from
+-the
+-baseline
+-values),
+-or
+-Electrocardiography
+-(ECG)
+-or
+-stress
+-echocardiography
+-signs
+-of
+-myocardial
+-ischaemia.9
+-Follow-up
+-and
+-trial
+-endpoints
+-Patients
+-were
+-followed
+-according
+-to
+-the
+-protocol
+-every
+-6
+-months
+-for
+-the
+-first
+-year
+-and
+-then
+-yearly
+-with
+-the
+-in-person
+-visits
+-at
+-the
+-participating
+-study
+-centre.
+-As
+-the
+-trial
+-was
+-affected
+-by
+-the
+-Covid-19
+-pandemic,
+-contact
+-with
+-patients
+-who
+-could
+-not
+-come
+-in
+-person
+-was
+-made
+-by
+-phone.
+-For
+-any
+-event
+-that
+-was
+-registered,
+-the
+-medical
+-records
+-were
+-asked
+-for
++complete
+ Page
+ 128
+--- old page 129
++++ new page 129
+@@ -1,422 +1,286 @@
+-and
+-reviewed.
+-Adverse
+-clinical
+-events
+-were
+-adjudicated
+-by
+-the
+-DSMB
+-per
+-protocol
+-defini
+-tions.7,8
+-Data
+-and
+-safety
+-monitoring
+-board
+-members
+-were
+-not
+-blinded
+-to
+-the
+-treatment
+-allocation
+-during
+-events
+-review.
+-They
+-adjudicated
+-the
+-events
+-by
+-consensus.
+-Table
+-1
+-Eligibility
+-inclusion/exclusion
+-criteria
+-Inclusion
+-criteria
+-•
+-Men
+-and
+-women
+-of
+-any
+-ethnic
+-origin
+-aged
+-≥18
+-years
+-•
+-Written
+-informed
+-consent
+-•
+-Vmax
+-across
+-the
+-aortic
+-valve
+->
+-4
+-m/s
+-or
+-P
+-mean
+-≥
+-40
+-mmHg
+-and
+-AVA
+-≤
+-1
+-cm2
+-or
+-AVAi
+-≤
+-0.6
+-cm2/m2
+-at
+-rest
+-•
+-Without
+-reported
+-symptoms
+-•
+-Society
+-of
+-Thoracic
+-Surgeons
+-score
+-<
+-8%
+-Exclusion
+-criteria
+-Participation
+-in
+-another
+-clinical
+-trial
+-within
+-30
+-days
+-prior
+-to
+-randomization
+-•
+-Pregnant
+-or
+-nursing
+-women
+-•
+-Mental
+-condition
+-rendering
+-the
+-patient
+-unable
+-to
+-understand
+-the
+-nature,
+-scope,
+-and
+-possible
+-consequences
+-of
+-the
+-study
+-or
+-to
+-follow
+-the
+-protocol
+-•
+-Positive
+-stress-test
+-defined
+-as
+-follows:
+-(a)
+-Anginal
+-chest
+-pain
+-during
+-testing
+-(b)
+-Syncope
+-or
+-dizziness
+-during
+-testing
+-(c)
+-Decrease
+-in
+-systolic
+-blood
+-pressure
+-during
+-exercise
+-≥
+-20
+-mmHg
+-(d)
+-Malignant
+-arrhythmia
+-during
+-exercise
+-testing
+-(VT
+-or
+-VF)
+-•
+-Left
+-ventricular
+-ejection
+-fraction
+-<
+-50%
+-at
+-rest
+-•
+-Very
+-severe
+-AS
+-defined
+-as
+-Vmax
+->
+-5.5
+-m/s
+-at
+-rest
+-•
+-Significant
+-disease
+-of
+-other
+-valves:
+-mitral
+-stenosis
+-with
+-Pmean
+->
+-5
+-mg,
+-or
+-any
+-significant
+-regurgitation
+-≥
+-3+
+-•
+-Recent
+-previous
+-myocardial
+-infarction
+-(<1
+-year)
+-•
+-Need
+-for
+-additional
+-aortic
+-root
+-replacement
+-(i.e.
+-Bentall)
+-or
+-ascending
+-aorta
+-surgery
+-in
+-asymptomatic
+-patients
+-undergoing
+-AVR
+-•
+-Previous
+-coronary
+-bypass
+-surgery
+-•
+-Previous
+-any
+-heart
+-valve
+-surgery
+-•
+-Impaired
+-renal
+-function,
+-i.e.
+-creatinine
+->
+-200
+-μmol/L
+-or
+-glomerular
+-filtration
+-rate
+-<
+-30
+-mL/min/1.73
+-m2
+-•
+-Significant
+-pulmonary
+-hypertension
+-at
+-rest
+-(systolic
+-pulmonary
+-artery
+-pressure
+->
+-50
+-mmHg)
+-•
+-Uncontrolled
+-hypertension
+-at
+-rest
+-(systolic
+-blood
+-pressure
+->
+-180
+-mmHg
+-and
+-diastolic
+-blood
+-pressure
+->
+-100
+-mmHg)
+-•
+-Significant
+-comorbidity
+-with
+-reduced
+-life
+-expectancy
+-(<3
+-years)
+-•
+-Uncontrolled
+-diabetes
+-mellitus
+-(HbA1c
+->
+-9%)
+-•
+-Significant
+-chronic
+-obstructive
+-pulmonary
+-disease
+-(FEV1
+-<
+-70%
+-of
+-predicted
+-value)
+-eh_4b5761bf573cc287
+-Source:
+-AVATAR
+-original
+-trial
+-report
+-Page:
+-4
+-Lines:
+-8–15
+-Source-version
+-hash:
+-592b9a6c531c
+-Full
+-verbatim
+-quote:
+-Patients
+-in
+-the
+-conservative
+-treatment
+-group
+-were
+-referred
+-for
+-surgery
+-in
+-case
+-of
+-onset
+-of
+-AS-related
+-symptoms,
+-if
+-the
+-LVEF
+-decreased
+-to
+-<50%,
+-or
+-if
+-the
+-peak
+-aortic
+-jet
+-velocity
+-increased
+-each
+-year
+-by
+->0.3
+-m/s
+-on
+-follow-up
+-echocardiog-
+-raphy,
+-according
+-to
+-European
+-Society
+-of
+-Cardiology
+-guide-
+-lines
+-on
+-valvular
+-disease
+-at
+-the
+-time
+-the
+-study
+-was
+-designed.11
+-Conservative
+-treatment
+-included
+-the
+-treatment
+-of
+-risk
+-factors
+-and
+-comorbidities.
+-eh_58abdac52262aa33
++eh_3ce4199af9d487f3
+ Source:
+ AVATAR
+ long-term
+ follow-up
+ report
+ Page:
+-5
++3
++Lines:
++1–116
++Source-version
++hash:
++a890f771fd05
++Full
++verbatim
++quote:
++Introduction
++Aortic
++stenosis
++(AS)
++is
++the
++single
++most
++common
++valvular
++heart
++disease
++re
++quiring
++intervention
++in
++developed
++countries
++and
++is
++projected
++to
++double
++by
++2050
++in
++both
++the
++USA
++and
++Europe.1
++The
++approach
++to
++symptomatic
++pa
++tients
++with
++severe
++AS
++is
++straightforward.
++Surgical
++aortic
++valve
++replacement
++(AVR)
++and,
++more
++recently,
++transcatheter
++aortic
++valve
++implantation
++(TAVI)
++procedures
++are
++Class
++I
++recommendation
++to
++relieve
++symptoms
++and
++im
++prove
++survival
++in
++symptomatic
++patients
++with
++severe
++AS.2,3
++Conversely,
++the
++question
++of
++when
++and
++how
++to
++treat
++truly
++asymptom
++atic
++patients
++with
++severe
++AS
++and
++normal
++left
++ventricular
++(LV)
++systolic
++function
++is
++still
++subject
++to
++debate
++and
++ongoing
++research.
++To
++date,
++two
++randomized
++trials
++have
++demonstrated
++benefit
++of
++early
++AVR
++in
++compari
++son
++with
++conservative
++strategy
++in
++asymptomatic
++patients
++with
++severe
++and
++very
++severe
++AS
++patients.4,5
++In
++addition,
++there
++are
++Context:
++eh_3ce4199af9d487f3
++(quote
++continued)
++several
++ongoing
++randomized
++trials
++investigating
++the
++role
++of
++early
++TAVI
++and/or
++early
++sur
++gical
++AVR
++in
++asymptomatic
++AS.
++The
++Aortic
++Valve
++Replacement
++Versus
++Conservative
++Treatment
++in
++Asymptomatic
++Severe
++Aortic
++Stenosis
++(AVATAR)
++trial
++is
++an
++investigator-
++initiated,
++prospective,
++multinational,
++randomized,
++controlled,
++parallel-group,
++event-driven
++trial
++that
++compared
++the
++safety
++and
++efficacy
++of
++early
++surgery
++in
++the
++treatment
++of
++truly
++asymptomatic
++patients
++with
++severe
++AS
++and
++LV
++ejec
++tion
++fraction
++(LVEF)
++≥
++50%
++vs.
++conservative
++treatment
++with
++watchful
++wait
++ing
++strategy
++and
++AVR
++only
++after
++symptom
++onset,
++or
++other
++guidelines
++directed
++Class
++I
++or
++II
++indications
++for
++AVR.3,6
++In
++the
++primary
++analysis
++of
++the
++AVATAR
++trial,
++asymptomatic
++AS
++patients
++randomized
++to
++early
++surgery
++had
++a
++lower
++incidence
++of
++the
++composite
++primary
++outcome
++comprising
++all-
++cause
++death,
++acute
++myocardial
++infarction,
++stroke,
++or
++unplanned
+ Page
+ 129
+--- old page 130
++++ new page 130
+@@ -1,220 +1,423 @@
+-Lines:
+-47–50
+-Source-version
+-hash:
+-a890f771fd05
+-Full
+-verbatim
+-quote:
+-Diabetes
+-mellitus
+-14
+-(17.9%)
+-23
+-(29.1%)
+-.07
+-eh_7961ea6680167af2
+-Source:
+-Current
+-registry-linked
+-statistical
+-analysis
+-plan
+-Page:
+-1
+-Lines:
+-1–8
+-Source-version
+-hash:
+-ba0a93294998
+-Full
+-verbatim
+-quote:
+-Avatar
+-trial
++Context:
++eh_3ce4199af9d487f3
++(quote
++continued)
++hospitaliza
++tion
++for
++heart
++failure
++(HF),
++compared
++with
++patients
++who
++were
++randomized
++to
++conservative
++treatment.5
++We
++now
++report
++the
++results
++of
++the
++AVATAR
++trial
++after
++extended
++follow-up
++at
++5
++years.
++Methods
++Study
++design
++and
++oversight
++The
++AVATAR
++trial
++(ClinicalTrials.gov
++identifier
++NCT02436655)
+ protocol
+--Amendment
+-to
+-surgical
+-delays-
+-Aortic
+-Valve
+-Replacement
+-Versus
+-Conservative
+-Treatment
+-in
+-Asymptomatic
+-Severe
+-Aortic
+-Stenosis
+-(AVATAR
+-trial)
+-NCT
+-number
+-:
+-NCT02436655.
+-Date
+-of
+-amendment:
+-04.01.2021
+-eh_7ad155913c1c5826
+-Source:
++and
++protocol
++update
++were
++designed
++by
++the
++first
++co-authors
++and
++steering
++committee
++co-chairmen
++and
++was
++approved
++by
++the
++steering
++committee
++of
++the
+ AVATAR
+-original
+-trial
+-report
+-Page:
+-4
+-Lines:
+-16–35
+-Source-version
+-hash:
+-592b9a6c531c
+-Full
+-verbatim
+-quote:
+-Trial
+-End
+-Points
+-The
+-primary
+-end
+-point
+-was
++trial.7,8
++The
++clinical
++and
++outcomes
++data
++were
++collected
++by
++per
++sonnel
++at
++the
++participating
++sites
++and
++were
++sent
++directly
++to
++the
++data
++coordinat
++ing
++centre
++at
++the
++University
++Clinical
++Center
++of
++Serbia.
++No
++extramural
++funding
++was
++used
++to
++support
++this
++work.
++The
++authors,
++members
++of
++the
++steering
++com
++mittee,
++and
++investigators
++are
++solely
++responsible
++for
++the
++design
++and
++conduct
++of
++this
++trial,
++all
++analyses,
++drafting
++and
++editing
++of
++the
++article,
++and
++its
++final
++Context:
++eh_3ce4199af9d487f3
++(quote
++continued)
++contents.
++Independent
++statistician
++conducted
++the
++long-term
++data
++analyses.
++The
++trial
++was
++conducted
++in
++accordance
++with
++the
++Declaration
++of
++Helsinki.
++All
++participants
++provided
++written
++informed
++consent.
++An
++independent
++data
++and
++safety
++monitoring
++board
++(DSMB)
++adjudicated
++all
++serious
++adverse
++events
++and
++oversaw
++the
++safety
++of
++the
++trial.
++The
++article
++was
++prepared
++by
++the
++first
++author
++and
++steering
++committee
++co-chairmen
++and
++was
++reviewed
++and
++edited
++by
++mem
++bers
++of
++the
++steering
++committee
++and
++authors.
++All
++authors
++reviewed
++the
++article,
++approved
++its
++submission
++for
++publication,
++and
++vouched
++for
++the
++accuracy
++and
++completeness
++of
++the
++data
++and
++for
++the
++fidelity
++of
++the
++trial
++to
++the
++protocol.
++Study
++population
++The
++study
++inclusion
++and
++exclusion
++criteria
++are
++shown
++in
++Table
++1;
++trial
++flowchart
++is
++shown
++in
++Figure
++1.
++Briefly,
+ a
+-composite
+-of
+-all-cause
+-mortality
++total
++of
++157
++patients
++with
++severe
++AS
++according
++to
++the
++guidelines
++were
++enrolled
++in
++the
++trial:
++79
++Context:
++eh_3ce4199af9d487f3
++(quote
++continued)
++were
++randomized
++to
++conservative
++treatment
++and
++78
++were
++randomized
++to
++early
++surgery.
++To
++prove
++truly
++asymp
++tomatic
++status,
++exercise
++testing
++was
++performed
++in
++all
++candidates
++to
++evaluate
++symptom
++status
++according
++to
++a
++standardized
++protocol
++using
++treadmill
+ or
+-major
+-adverse
+-cardiovascular
+-events
+-(MACEs)
+-composed
+-of
+-acute
++semi-
++supine
++ergo-bicycle.
++To
++consider
++exercise
++testing
++negative,
++which
++was
++manda
++tory
++for
++inclusion,
++all
++candidates
++needed
++to
++reach
++a
++projected
++submaximal
++heart
++rate.
++Positive
++exercise
++test
++included
++onset
++of
++AS-related
++symptoms,
++fall
++in
++systolic
++blood
++pressure
++(≥20
++mmHg
++from
++the
++baseline
++values),
++or
++Electrocardiography
++(ECG)
++or
++stress
++echocardiography
++signs
++of
+ myocardial
+-infarction,
+-stroke,
+-and
+-unplanned
+-HF
+-hospital-
+-ization
+-needing
+-intravenous
+-treatment
++ischaemia.9
++Follow-up
++and
++trial
++endpoints
++Patients
++were
++followed
++according
++to
++the
++protocol
++every
++6
++months
++for
++the
++first
++year
++and
++then
++yearly
+ with
+-diuretics
+-or
+-inotro-
+-pes.
+-Prespecified
+-secondary
+-end
+-points
+-included
+-the
+-following:
+-•
+-In-hospital
+-and
+-30-day
+-postoperative
+-mortality
+-in
+-oper-
+-ated
+-patients
+-in
+-both
+-groups
+-•
+-Repeat
+-aortic
+-valve
+-surgery
+-in
+-operated
+-patients
+-in
+-both
+-groups
+-•
+-Repeated
+-MACEs,
+-including
+-stroke,
+-acute
+-myocardial
+-infarction,
+-or
+-unplanned
+-HF
+-hospitalization
+-needing
+-IV
+-diuretic
+-treatment
+-•
+-Major
+-bleeding
+-defined
+-as
+-types
+-3,
+-4,
+-and
+-5
+-according
+-to
+-the
+-consensus
+-report
+-from
+-the
+-Bleeding
+-Academic
+-Research
+-Consortium13
+-•
+-Thromboembolic
+-complications
+-on
+-the
+-basis
+-of
+-clinical
+-symptoms,
+-signs,
+-and
+-imaging
+-studies
+-•
+-Time
+-to
+-death
+-•
+-Time
+-to
+-first
+-HF
+-hospitalization
+-eh_92eed84c7b98e37c
+-Source:
+-AVATAR
+-long-term
+-follow-up
+-report
+-Page:
+-5
+-Lines:
+-26–136
+-Source-version
+-hash:
+-a890f771fd05
++the
++in-person
++visits
++at
++the
++participating
++study
++centre.
++As
++the
++trial
++was
++affected
++by
++the
++Covid-19
++pandemic,
++contact
++with
+ Page
+ 130
+--- old page 131
++++ new page 131
+@@ -1,370 +1,365 @@
+-Full
+-verbatim
+-quote:
++Context:
++eh_3ce4199af9d487f3
++(quote
++continued)
++patients
++who
++could
++not
++come
++in
++person
++was
++made
++by
++phone.
++For
++any
++event
++that
++was
++registered,
++the
++medical
++records
++were
++asked
++for
++and
++reviewed.
++Adverse
++clinical
++events
++were
++adjudicated
++by
++the
++DSMB
++per
++protocol
++defini
++tions.7,8
++Data
++and
++safety
++monitoring
++board
++members
++were
++not
++blinded
++to
++the
++treatment
++allocation
++during
++events
++review.
++They
++adjudicated
++the
++events
++by
++consensus.
+ Table
+-2
+-Selected
+-baseline
+-characteristics
++1
++Eligibility
++inclusion/exclusion
++criteria
++Inclusion
++criteria
++•
++Men
++and
++women
++of
++any
++ethnic
++origin
++aged
++≥18
++years
++•
++Written
++informed
++consent
++•
++Vmax
++across
++the
++aortic
++valve
++>
++4
++m/s
++or
++P
++mean
++≥
++40
++mmHg
++and
++AVA
++≤
++1
++cm2
++or
++AVAi
++≤
++0.6
++cm2/m2
++at
++rest
++•
++Without
++reported
++symptoms
++•
++Society
++of
++Thoracic
++Surgeons
++score
++<
++8%
++Exclusion
++criteria
++Participation
++in
++another
++clinical
++trial
++within
++30
++days
++prior
++to
++randomization
++•
++Pregnant
++or
++nursing
++women
++•
++Mental
++condition
++rendering
++the
++patient
++unable
++to
++understand
++the
++nature,
++Context:
++eh_3ce4199af9d487f3
++(quote
++continued)
++scope,
++and
++possible
++consequences
+ of
+ the
+ study
+-population
+-Early
+-surgery
+-group
+-(n
+-=
+-78)
+-Conservative
+-treatment
+-group
+-(n
+-=
+-79)
+-P-value
+-Demographics
+-and
+-comorbidities
+-Age,
+-years,
+-median
+-(IQR)
+-68
+-(63-73)
+-69
+-(64-75)
+-.02
+-Sex
+-(female)
+-32
+-(41.0%)
+-35
+-(44.3%)
+-.67
+-STS
+-score,
+-median
+-(IQR)
+-1.6
+-(1.1-2.2)
+-1.8
+-(1.2-
+-2.7)
+-.67
+-Days
+-from
+-randomization
++or
+ to
+-surgery,
+-median
+-(IQR)
+-55
+-(36-79)
+-476
+-(226-1098)
+-<.001
+-Diabetes
+-mellitus
+-14
+-(17.9%)
+-23
+-(29.1%)
+-.07
+-Hypertension
+-69
+-(88.4%)
+-70
+-(88.6%)
+-.44
+-History
+-of
+-PCI
+-1
+-(1.3%)
+-2
+-(2.5%)
+-.44
+-History
+-of
+-stroke
+-2
+-(2.5%)
+-2
+-(2.5%)
+-.92
+-Peripheral
+-arterial
++follow
++the
++protocol
++•
++Positive
++stress-test
++defined
++as
++follows:
++(a)
++Anginal
++chest
++pain
++during
++testing
++(b)
++Syncope
++or
++dizziness
++during
++testing
++(c)
++Decrease
++in
++systolic
++blood
++pressure
++during
++exercise
++≥
++20
++mmHg
++(d)
++Malignant
++arrhythmia
++during
++exercise
++testing
++(VT
++or
++VF)
++•
++Left
++ventricular
++ejection
++fraction
++<
++50%
++at
++rest
++•
++Very
++severe
++AS
++defined
++as
++Vmax
++>
++5.5
++m/s
++at
++rest
++•
++Significant
+ disease
+-0
+-(0%)
+-1
+-(1.36%)
+-.80
+-Laboratory
+-parameters
+-BNP,
+-pg/mLa,
+-median
+-(IQR)
+-83
+-(53-127)
+-89
+-(58-149)
+-.61
+-NT-proBNP,
+-pg/mLa,
+-median
+-(IQR)
+-381
+-(153-660)
+-347
+-(186-
+-722)
+-.45
+-Haemoglobin,
+-g/L,
+-median
+-(IQR)
+-141
+-(131-150)
+-134
+-(128-141)
+-.01
+-Creatinine,
+-μmol/L,
+-median
+-(IQR)
+-80
+-(66-94)
+-76
+-(67-92)
+-.27
+-Blood
+-glucose,
+-mmol/L,
+-median
+-(IQR)
+-5.6
+-(5.3-6.7)
+-5.6
+-(5.1-6.8)
+-.70
+-Echocardiography
+-LVESV,
+-mL,
+-median
+-(IQR)
+-28
+-(20-41)
+-33
+-(22-42)
+-.96
+-LVEDV,
+-mL,
+-median
+-(IQR)
+-113
+-(89-142)
+-113
+-(96-126)
+-.54
+-LV
+-mass
+-index,
+-g/m2,
+-median
+-(IQR)
+-152
+-(133-175)
+-160
+-(139-183)
+-.67
+-Left
+-atrium,
+-cm
+-4.1
+-(3.8-4.4)
+-4.2
+-(3.9-4.4)
+-.68
+-SVi,
+-mL/m2,
+-median
+-(IQR)
+-39
+-(33-48)
+-42
+-(34-51)
+-.58
+-PA
+-systolic
+-pressure,
+-mmHg,
+-median
+-(IQR)
+-30
+-(26-36)
+-30
+-(27-37)
+-.82
+-Vmax,
+-m/s,
+-median
+-(IQR)
+-4.5
+-(4.3-4.8)
+-4.5
+-(4.2-4.7)
+-.13
+-Pmean,
+-mmHg,
+-median
+-(IQR)
+-51
+-(44-58)
+-50
+-(43-59)
+-.16
+-Pmax,
+-mmHg,
+-median
+-(IQR)
+-82
+-(74-90)
+-79
+-(70-90)
+-.18
+-AVA,
+-cm2,
+-median
+-(IQR)
+-0.73
+-(0.55-0.84)
+-0.74
+-(0.59-0.89)
+-.29
+-AVAi,
+-cm2/m2,
+-median
+-(IQR)
+-0.37
+-(0.3-0.42)
+-0.37
+-(0.31-0.46)
+-.08
+-E/eʹ,
+-median
+-(IQR)
+-12.2
+-(9.6-16.3)
+-12.2
+-(8.8-18.1)
+-.54
+-eh_975aac3202107531
+-Source:
+-ClinicalTrials.gov
+-NCT02436655
+-Page:
+-1
+-Lines:
+-67–68
+-Source-version
+-hash:
+-d32e23eb2a1e
+-Full
+-verbatim
+-quote:
+-####
+-Masking
+-info
+--
+-Masking:
+-NONE
+-eh_af1340e6c28a70eb
+-Source:
+-AVATAR
+-long-term
+-follow-up
+-report
+-Page:
+-7
+-Lines:
+-1–148
+-Source-version
+-hash:
+-a890f771fd05
+-Full
+-verbatim
+-quote:
+-group
+-was
+-67.9
+-years,
+-while
+-the
+-mean
+-age
+-of
+-patients
+-in
+-the
+-early
+-surgery
+-group
+-was
+-65.4
+-years
+-(P
+-=
+-.19).
+-Four
+-patients
+-in
+-the
+-conservative
+-treat
+-ment
+-group
+-underwent
+-TAVI
+-procedure.
+-Indications
++of
++other
++valves:
++mitral
++stenosis
++with
++Pmean
++>
++5
++mg,
++or
++any
++significant
++regurgitation
++≥
++3+
++•
++Recent
++previous
++myocardial
++infarction
++(<1
++year)
++•
++Need
+ for
++additional
++aortic
++root
++replacement
++(i.e.
++Bentall)
++or
++ascending
++aorta
+ surgery
+ in
+-the
+-conservative
+-treatment
+-group
+-are
+-shown
+-in
+-Table
+-3.
+-Median
+-time
+-to
+-sur
+-gery
+-upon
+-establishing
+-the
+-indication
+-was
+-123
+-days
+-(IQR
+-90-297
+-days).
+-There
+-were
+-no
+-significant
+-baseline
+-differences
+-between
+-the
++asymptomatic
+ patients
++undergoing
++AVR
++•
++Previous
++coronary
++bypass
++surgery
++•
++Previous
++any
++heart
++valve
++surgery
++•
++Impaired
++renal
++function,
++i.e.
++creatinine
++>
++200
++μmol/L
++or
++glomerular
++filtration
++rate
++<
++30
++mL/min/1.73
++m2
++•
++Context:
++eh_3ce4199af9d487f3
++(quote
++continued)
++Significant
++pulmonary
++hypertension
++at
++rest
++(systolic
++pulmonary
++artery
++pressure
++>
++50
++mmHg)
++•
++Uncontrolled
++hypertension
++at
++rest
++(systolic
++blood
++pressure
++>
++180
++mmHg
++and
++diastolic
++blood
++pressure
++>
++100
++mmHg)
++•
++Significant
++comorbidity
++with
++reduced
++life
++expectancy
++(<3
++years)
++•
++Uncontrolled
++diabetes
++mellitus
++(HbA1c
++>
++9%)
++•
++Significant
++chronic
++obstructive
++pulmonary
++disease
++(FEV1
++<
++70%
++of
++predicted
++value)
+ Page
+ 131
+--- old page 132
++++ new page 132
+@@ -1,571 +1,154 @@
+-in
+-the
+-conservative
+-group
+-who
+-remained
+-AVR-free
+-during
+-follow-up
+-and
+-those
+-who
+-later
+-underwent
+-AVR
+-(see
+-Supplementary
+-data
+-online,
+-Table
+-S1).
++eh_4b5761bf573cc287
++Source:
++AVATAR
++original
++trial
++report
++Page:
++4
++Lines:
++8–15
++Source-version
++hash:
++592b9a6c531c
++Full
++verbatim
++quote:
+ Patients
+-in
+-the
+-conservative
+-group
+-on
+-the
+-watchful
+-waiting,
+-in
+-cluding
+-those
+-undergoing
+-valve
+-surgery,
+-experienced
+-a
+-progressive
+-increase
+-in
+-the
+-aortic
+-valve
+-severity
+-associated
+-with
+-a
+-significant
+-decline
+-in
+-LVEF
+-over
+-time
+-(see
+-Supplementary
+-data
+-online,
+-Tables
+-S2
+-and
+-S3,
+-respectively).
+-In
+-total,
+-57/107
+-(53.3%)
+-patients
+-received
+-a
+-bioprosthetic
+-valve
+-and
+-50/107
+-received
+-a
+-mechanical
+-valve
+-(46.7%).
+-In
+-the
+-early
+-surgery
+-group,
+-34/72
+-(47.2%)
+-received
+-a
+-bioprosthetic
+-valve,
+-while
+-23/35
+-(65.7%)
+-pa
+-tients
+-received
+-a
+-bioprosthetic
+-valve
+ in
+ the
+ conservative
+ treatment
+ group
+-(P
+-=
+-.32).
+-Three
+-patients
++were
++referred
++for
++surgery
+ in
+-early
+-surgery
+-group
+-(3/78;
+-3.8%)
++case
++of
++onset
++of
++AS-related
++symptoms,
++if
++the
++LVEF
++decreased
++to
++<50%,
++or
++if
++the
++peak
++aortic
++jet
++velocity
++increased
++each
++year
++by
++>0.3
++m/s
++on
++follow-up
++echocardiog-
++raphy,
++according
++to
++European
++Society
++of
++Cardiology
++guide-
++lines
++on
++valvular
++disease
++at
++the
++time
++the
++study
++was
++designed.11
++Conservative
++treatment
++included
++the
++treatment
++of
++risk
++factors
+ and
+-four
+-pa
+-tients
++comorbidities.
++eh_58abdac52262aa33
++Source:
++AVATAR
++long-term
++follow-up
++report
++Page:
++5
++Lines:
++47–50
++Source-version
++hash:
++a890f771fd05
++Full
++verbatim
++quote:
++Diabetes
++mellitus
++14
++(17.9%)
++23
++(29.1%)
++.07
++eh_7961ea6680167af2
++Source:
++Current
++registry-linked
++statistical
++analysis
++plan
++Page:
++1
++Lines:
++1–8
++Source-version
++hash:
++ba0a93294998
++Full
++verbatim
++quote:
++Avatar
++trial
++protocol
++-Amendment
++to
++surgical
++delays-
++Aortic
++Valve
++Replacement
++Versus
++Conservative
++Treatment
+ in
+-the
+-conservative
+-treatment
+-group
+-(4/35;
+-11.4%)
+-have
+-undergone
+-concomitant
+-coronary
+-artery
+-bypass
+-grafting.
+-No
+-peri-procedural
+-myo
+-cardial
+-infarction
+-has
+-been
+-noticed.
+-The
+-intraoperative
+-mortality
+-was
+-low
+-in
+-both
+-groups
+-(1.3%
+-in
+-the
+-early
+-surgery
+-vs.
+-2.5%
+-in
+-the
+-conservative
+-group;
+-P
+-=
+-.54).
+-There
+-was
+-no
+-difference
+-in
+-length
++Asymptomatic
++Severe
++Aortic
++Stenosis
++(AVATAR
++trial)
++NCT
++number
++:
++NCT02436655.
++Date
+ of
+-hospitalization
+-in
+-the
+-early
+-surgery
+-group
+-vs.
+-operated
+-patients
+-in
+-the
+-conservative
+-treatment
+-group
+-(8.8
+-vs.
+-9.1
+-days;
+-P
+-=
+-.87).
+-Details
+-of
+-post-operative
+-aortic
+-valve
+-function,
+-procedural
+-time,
+-and
+-mean
+-hospitalization
+-length
+-between
+-both
+-groups
+-are
+-shown
+-in
+-Supplementary
+-data
+-online,
+-Table
+-S4.
+-Three
+-pa
+-tients
+-(3/78,
+-3.8%)
+-in
+-the
+-early
+-surgery
+-group,
+-and
+-1/35
+-(2.86%)
+-patient
+-in
+-the
+-conservative
+-treatment
+-group
+-underwent
+-redo
+-AVR
+-procedure
+-(P
+-=
+-.79;
+-Supplementary
+-data
+-online,
+-Table
+-S5.
+-Outcomes
+-There
+-were
+-a
+-total
+-of
+-55
+-primary
+-outcome
+-events
+-comprising
+-a
+-com
+-posite
+-of
+-all-cause
+-mortality
+-or
+-acute
+-myocardial
+-infarction,
+-stroke,
+-and
+-unplanned
+-HF
+-hospitalization.
+-A
+-primary
+-outcome
+-event
+-occurred
+-in
+-18/78
+-patients
+-(23.1%)
+-in
+-the
+-early
+-surgery
+-group
+-and
+-in
+-37/79
+-pa
+-tients
+-(46.8%)
+-in
+-the
+-conservative
+-treatment
+-group
+-(HR
+-with
+-early
+-sur
+-gery
+-vs.
+-conservative
+-treatment
+-0.42;
+-95%
+-CI
+-0.24-0.73,
+-P
+-=
+-.002;
+-Figure
+-2).
+-Forty
+-patients
+-died
+-during
+-follow-up:
+-13/78
+-(16.7%)
+-in
+-the
+-early
+-surgery
+-group
+-and
+-27/79
+-(34.17%)
+-in
+-the
+-conservative
+-treatment
+-group.
+-In
+-the
+-early
+-surgery
+-group,
+-11/72
+-patients
+-died
+-after
+-valve
+-surgery
+-at
+-median
+-of
+-362
+-days
+-(IQR
+-116-1211),
+-of
+-which
+-8
+-were
+-cardiovascular
+-deaths.
+-In
+-the
+-conservative
+-group,
+-8/35
+-patients
+-died
+-after
+-surgery
+-at
+-shorter
+-median
+-of
+-131
+-days
+-(IQR
+-47.8-603),
+-of
+-which
+-5
+-were
+-cardiovas
+-cular
+-deaths.
+-Mortality
+-causes
+-for
+-individual
+-subjects
+-are
+-detailed
+-in
+-Supplementary
+-data
+-online,
+-Tables
+-S6A
+-and
+-S6B.
+-Kaplan-Meier
+-estimates
+-of
+-the
+-individual
+-endpoints
+-of
+-all-cause
+-death
+-and
+-HF
+-hospitalization
+-were
+-significantly
+-lower
+-in
+-the
+-early
+-surgery
+-compared
+-with
+-the
+-conservative
+-group
+-(HR
+-0.44;
+-95%
+-CI
+-0.23-0.85,
+-P
+-=
+-.012,
+-for
+-all-cause
+-death
+-and
+-HR
+-0.21;
+-95%
+-CI
+-0.06-0.73,
+-P
+-=
+-.007,
+-for
+-HF
+-hospitalizations)
+-(Figure
+-3
+-and
+-Table
+-4).
+-The
+-risk
+-of
+-repeated
+-MACE
+-was
+-significantly
+-higher
+-in
+-the
+-conservative
+-treatment
+-group
+-(Table
+-4).
+-Sudden
+-cardiac
+-death
+-occurred
+-in
+-9/79
+-patients
+-(11.4%)
+-in
+-the
+-con
+-servative
+-group
+-compared
+-with
+-4/78
+-patients
+-(5.1%)
+-in
+-the
+-early
+-surgery
+-group
+-(P
+-=
+-.17;
+-Table
+-4).
+-The
+-annual
+-rate
+-of
+-sudden
+-cardiac
+-death
+-was
+-twice
+-higher
+-in
+-the
+-conservatively
+-treated
+-group
+-as
+-compared
+-with
+-early
+-surgery
+-group
+-(2.2%
+-vs.
+-1%;
+-P
+-=
+-.32).
+-If
+-not
+-considering
+-symptomatic
+-pa
+-tients
+-in
+-the
+-watchful
+-waiting
+-group
+-who
+-died
+-suddenly
+-at
+-home,
+-the
+-an
+-nual
+-rate
+-of
+-sudden
+-cardiac
+-death
+-in
+-the
+-conservative
+-group
+-reached
+-1.48%.
+-One
+-patient
+-randomized
+-to
+-the
+-early
+-surgery
+-group
+-died
+-sud
+-denly
+-while
+-awaiting
+-the
+-surgery.
+-There
+-was
+-a
+-trend
+-for
+-higher
++amendment:
++04.01.2021
+ Page
+ 132
+--- old page 133
++++ new page 133
+@@ -1,472 +1,306 @@
+-rates
+-of
++eh_7ad155913c1c5826
++Source:
++AVATAR
++original
++trial
++report
++Page:
++4
++Lines:
++16–35
++Source-version
++hash:
++592b9a6c531c
++Full
++verbatim
++quote:
++Trial
++End
++Points
++The
++primary
++end
++point
++was
++a
++composite
++of
++all-cause
++mortality
++or
++major
++adverse
+ cardiovascular
+-deaths
+-in
+-the
+-conservative
+-treatment
+-group
+-over
+-time
+-(19.3%
+-vs.
+-11.6%;
+-P
+-=
+-.1;
+-Figure
+-4).
+-The
+-incidence
+-of
+-serious
+-adverse
+ events
+-was
+-also
+-significantly
+-higher
+-in
+-the
+-conservative
+-treatment
+-group
+-(49.4%
+-vs.
+-26.4%;
+-P
+-=
+-.013)
+-(Table
+-4).
+-No
+-difference
+-between
+-groups
+-was
+-observed
+-in
+-the
+-safety
+-outcomes
+-including
+-major
+-bleeding
+-and
+-thromboembolic
+-complications
+-(5.1%
+-vs.
+-3.8%;
+-P
+-=
+-.69;
+-and
+-5.1%
+-vs.
+-3.8%;
+-P
+-=
+-.69;
+-respectively;
+-Table
+-4).
+-In
+-a
+-post
+-hoc
+-heterogeneity
+-analysis
+-in
+-the
+-study
+-population,
+-no
+-signifi
+-cant
+-interaction
+-for
+-heterogeneity
+-was
+-noted
+-for
+-any
+-of
+-the
+-analysed
+-parameters
+-(see
+-Supplementary
+-data
+-online,
+-Figure
+-S1)
+-indicating
+-that
+-results
+-are
+-consistent
+-across
+-different
+-patients'
+-subgroups.
+-Discussion
+-The
+-main
+-findings
+-from
+-the
+-extended
+-follow-up
+-of
+-the
+-AVATAR
+-trial
+-can
+-be
+-summarized
+-as
+-follows:
+-(i)
+-the
+-primary
+-composite
+-outcome
+-comprising
+-of
+-all-cause
+-death,
++(MACEs)
++composed
++of
+ acute
+ myocardial
+ infarction,
+ stroke,
+ and
++unplanned
+ HF
+-hospitalizations
+-was
+-significantly
+-and
+-consistently
+-lower
++hospital-
++ization
++needing
++intravenous
++treatment
+ with
+-the
+-early
++diuretics
++or
++inotro-
++pes.
++Prespecified
++secondary
++end
++points
++included
++the
++following:
++•
++In-hospital
++and
++30-day
++postoperative
++mortality
++in
++oper-
++ated
++patients
++in
++both
++groups
++•
++Repeat
++aortic
++valve
+ surgery
+-approach
+-compared
+-with
+-the
+-conservative
+-treatment
+-ap
+-proach;
+-(ii)
++in
++operated
+ patients
+-on
+-conservative
+-strategy
+-appeared
+-at
+-almost
+-50%
+-p
+-=
+-0.01
+-HR
+-=
+-0.44
+-(95%
+-CI
+-0.23
+-to
+-0.85)
+-0%
+-10%
+-20%
+-30%
+-40%
+-50%
+-60%
+-All-cause
+-death
+-incidence
+-79
+-71
+-61
+-39
+-14
+-Control
+-78
+-72
+-71
+-52
+-15
+-Early
+-surgery
+-Participants,
+-n
+-0
+-20
+-40
+-60
+-80
+-Time
+-(Months)
+-Early
+-surgery
+-Conservative
+-treatment
+-p
+-=
+-0.007
+-HR
+-=
+-0.21
+-(95%
+-CI
+-0.06
+-to
+-0.73)
+-0%
+-10%
+-20%
+-30%
+-40%
+-50%
+-60%
++in
++both
++groups
++•
++Repeated
++MACEs,
++including
++stroke,
++acute
++myocardial
++infarction,
++or
++unplanned
+ HF
+ hospitalization
+-incidence
+-79
+-65
+-55
+-32
+-11
+-Control
+-78
+-71
+-70
+-51
+-15
+-Early
+-surgery
+-Participants,
+-n
+-0
+-20
+-40
+-60
+-80
++needing
++IV
++diuretic
++treatment
++•
++Major
++bleeding
++defined
++as
++types
++3,
++4,
++and
++5
++according
++to
++the
++consensus
++report
++from
++the
++Bleeding
++Academic
++Research
++Consortium13
++•
++Thromboembolic
++complications
++on
++the
++basis
++of
++clinical
++symptoms,
++signs,
++and
++imaging
++studies
++•
+ Time
+-(Months)
+-Early
+-surgery
+-Conservative
+-treatment
+-Figure
+-3
+-Cumulative
+-incidence
+-of
+-all-cause
++to
+ death
+-(upper
+-panel)
+-and
+-heart
+-failure
++•
++Time
++to
++first
++HF
+ hospitalization
+-(lower
+-panel)
+-(intention-to-
+-treat
+-population)
+-4532
+-Banovic
+-et
+-al.
+-Downloaded
+-from
+-academic.oup.com/eurheartj/article/45/42/4526/7742145
+-by
+-guest
+-on
+-03
+-October
+-2026
+-eh_c8e0958840636206
++eh_92eed84c7b98e37c
+ Source:
+ AVATAR
+ long-term
+ follow-up
+ report
+ Page:
+-6
++5
+ Lines:
+-1–99
++26–136
+ Source-version
+ hash:
+ a890f771fd05
+ Full
+ verbatim
+ quote:
+-3-year
+-follow-up
+-information
+-available
+-for
+-all
+-patients.
+-For
+-binary
+-outcomes,
+-we
+-used
+-a
+-generalized
+-linear
+-model
+-assuming
+-a
+-binomial
+-distribution
+-with
+-a
+-log
+-link
+-function
++Table
++2
++Selected
++baseline
++characteristics
++of
++the
++study
++population
++Early
++surgery
++group
++(n
++=
++78)
++Conservative
++treatment
++group
++(n
++=
++79)
++P-value
++Demographics
++and
++comorbidities
++Age,
++years,
++median
++(IQR)
++68
++(63-73)
++69
++(64-75)
++.02
++Sex
++(female)
++32
++(41.0%)
++35
++(44.3%)
++.67
++STS
++score,
++median
++(IQR)
++1.6
++(1.1-2.2)
++1.8
++(1.2-
++2.7)
++.67
++Days
++from
++randomization
+ to
+-report
+-risk
+-ratios
+-and
+-95%
+-CI.
+-We
+-conducted
+-subgroup
+-analyses
+-accompanied
+-by
+-a
+-P
+-for
+-interaction
+-to
+-assess
+-the
+-consistency
+-of
+-the
+-treatment
+-effect
+-on
+-the
+-primary
+-outcome
+-according
+-to
+-the
+-following
+-pre-
+-defined
+-variables:
+-age
+-(<65
+-vs.
+-≥65),
+-sex,
+-baseline
+-ejection
+-fraction
+-(<60%
+-vs.
+-≥60%),
+-and
+-country
+-of
+-trial
+-site.
+-P-values
+-and
+-95%
+-CI
+-for
+-secondary
+-out
+-comes
+-and
+-secondary
+-analyses
+-of
+-the
+-primary
+-outcome
+-were
+-not
+-adjusted
+-for
+-multiple
+-testing
+-and
+-are
+-considered
+-exploratory.
+-For
+-the
+-post
+-hoc
+-ana
+-lyses
+-of
+-echocardiography
+-readouts
+-of
+-valve
+-severity
+-and
+-LVEF
+-in
+-patients
+-in
+-the
+-conservative
+-group,
+-we
+-calculated
+-the
+-mean
+-change
+-from
+-baseline
+-to
+-12-month
+-follow-up
+-for
+-all
+-patients
+-in
+-the
+-conservative
+-group
+-with
+-avail
+-able
+-data
+-and
+-the
+-mean
+-change
+-from
+-baseline
+-to
+-final
+-follow-up
+-for
+-all
+-pa
+-tients
+-in
++surgery,
++median
++(IQR)
++55
++(36-79)
++476
++(226-1098)
++<.001
++Diabetes
++mellitus
++14
++(17.9%)
++23
++(29.1%)
++.07
++Hypertension
++69
++(88.4%)
++70
++(88.6%)
++.44
++History
++of
++PCI
++1
++(1.3%)
++2
++(2.5%)
++.44
++History
++of
++stroke
++2
++(2.5%)
++2
++(2.5%)
++.92
++Peripheral
++arterial
++disease
++0
++(0%)
++1
++(1.36%)
++.80
++Laboratory
++parameters
++BNP,
++pg/mLa,
++median
++(IQR)
++83
++(53-127)
++89
++(58-149)
++.61
++NT-proBNP,
++pg/mLa,
++median
++(IQR)
++381
++(153-660)
++347
++(186-
++722)
++.45
++Haemoglobin,
++g/L,
++median
++(IQR)
++141
++(131-150)
++134
++(128-141)
++.01
++Creatinine,
++μmol/L,
++median
++(IQR)
++80
++(66-94)
++76
++(67-92)
++.27
++Blood
++glucose,
++mmol/L,
++median
+ Page
+ 133
+--- old page 134
++++ new page 134
+@@ -1,478 +1,298 @@
+-the
+-conservative
+-group
+-that
+-underwent
+-surgery
+-and
+-had
+-available
+-data.
+-We
+-conducted
+-paired
+-t-tests
+-to
+-derive
+-P-
+-values
+-and
+-95%
+-CI
+-for
+-the
+-mean
+-changes
+-from
+-baseline.11
+-This
+-analysis
+-was
+-repeated
+-for
+-patients
+-in
+-the
+-conservative
+-group
+-that
+-underwent
+-AVR.
+-Analyses
+-were
+-performed
+-using
+-Stata,
+-version
+-18.0.
+-Results
+-Patients
+-and
+-follow-up
+-Main
+-patient
+-characteristics
+-at
+-baseline
+-are
+-summarized
+-in
+-Table
+-2.
+-The
+-average
+-age
+-of
+-enrolled
+-patients
+-was
+-67
+-years,
+-57%
+-were
+-men,
+-the
+-ma
+-jority
+-of
+-patients
+-had
+-a
+-degenerative
+-aetiology
+-of
+-AS
+-(84.7%),
+-and
+-the
+-median
+-estimated
+-operative
+-mortality
+-according
+-to
+-the
+-Society
+-of
+-Thoracic
+-Surgeons
+-predicted
+-risk
+-of
+-mortality
+-score
+-was
+-1.7%.
+-No
+-sig
+-nificant
+-heterogeneity
+-between
+-both
+-groups
+-was
+-noted.
+-All
+-patients
+-were
+-included
+-in
+-the
+-analysis.
+-Median
+-follow-up
+-for
+-all
+-patients
+-was
+-63
+-months
+-[interquartile
+-range
+-(IQR)
+-48-75).
+-Median
+-follow-up
+-in
+-sur
+-vivors
+-was
+-68
+-months
+-(IQR
+-58-79).
+-One
+-patient,
+-who
+-was
+-randomized
+-to
+-early
+-surgery,
+-has
+-been
+-lost
+-to
+-follow-up,
+-and
+-this
+-patient
+-was
+-cen
+-sored
+-when
+-the
+-last
+-follow-up
+-information
+-was
+-available
+-and
+-included
+-in
+-the
+-intention-to-treat
+-analysis
+-(Figure
+-1).
+-Aortic
+-valve
+-replacement
+-procedures
+-In
+-the
+-early
+-surgery
+-group,
+-AVR
+-was
+-performed
+-in
+-72
+-of
+-the
+-78
+-patients
+-(92.3%).
+-Among
+-the
+-six
+-patients
+-that
+-did
+-not
+-undergo
+-AVR
+-per
+-random
+-ization,
+-one
+-patient,
+-as
+-above
+-mentioned,
+-was
+-lost
+-to
+-follow-up,
+-and
+-one
+-died
+-prior
+-to
+-valve
+-surgery.
+-Four
+-patients
+-were
+-available
+-for
+-the
+-extended
+-follow-up.
+-Among
+-them,
+-one
+-patient
+-died
+-unoperated
+-after
+-2113
+-days;
+-two
+-became
+-symptomatic
+-and
+-underwent
+-intervention
+-after
+-691
+-and
+-791
+-days,
+-respectively;
+-and
+-one
+-remained
+-asymptomatic
+-and
+-AVR
+-free
+-throughout
+-the
+-entire
+-follow-up
+-(Figure
+-1).
+-The
+-median
+-time
+-from
+-ran
+-domization
+-to
+-AVR
+-in
+-the
+-early
+-surgery
+-group
+-was
+-55
+-days
+-(IQR
+-36-79).
+-Thirty-five
+-out
+-of
+-the
++Context:
++eh_92eed84c7b98e37c
++(quote
++continued)
++(IQR)
++5.6
++(5.3-6.7)
++5.6
++(5.1-6.8)
++.70
++Echocardiography
++LVESV,
++mL,
++median
++(IQR)
++28
++(20-41)
++33
++(22-42)
++.96
++LVEDV,
++mL,
++median
++(IQR)
++113
++(89-142)
++113
++(96-126)
++.54
++LV
++mass
++index,
++g/m2,
++median
++(IQR)
++152
++(133-175)
++160
++(139-183)
++.67
++Left
++atrium,
++cm
++4.1
++(3.8-4.4)
++4.2
++(3.9-4.4)
++.68
++SVi,
++mL/m2,
++median
++(IQR)
++39
++(33-48)
++42
++(34-51)
++.58
++PA
++systolic
++pressure,
++mmHg,
++median
++(IQR)
++30
++(26-36)
++30
++(27-37)
++.82
++Vmax,
++m/s,
++median
++(IQR)
++4.5
++(4.3-4.8)
++4.5
++(4.2-4.7)
++.13
++Pmean,
++mmHg,
++median
++(IQR)
++51
++(44-58)
++50
++(43-59)
++.16
++Pmax,
++mmHg,
++median
++(IQR)
++82
++(74-90)
+ 79
+-patients
+-(44.3%)
+-in
+-the
+-conservative
+-treatment
+-group
+-had
+-surgery
+-during
+-follow-up.
+-Median
+-time
+-from
+-randomization
+-to
+-surgery
+-in
+-the
+-conservative
+-treatment
+-group
+-was
+-476
+-days
+-(IQR
+-226-1098).
+-At
+-the
+-time
+-of
+-AVR,
+-the
+-mean
+-age
+-of
+-patients
+-in
+-the
+-control
+-p
+-=
+-0.002
+-HR
+-=
+-0.42
+-(95%
+-CI
+-0.24
+-to
+-0.73)
+-0%
+-10%
+-20%
+-30%
+-40%
+-50%
+-60%
+-Primary
+-composite
+-endpoint
+-incidence
+-79
+-61
+-52
+-29
+-11
+-Control
+-78
+-69
+-67
+-48
+-13
+-Early
+-surgery
+-Participants,
+-n
+-0
+-20
+-40
+-60
+-80
+-Time
+-(Months)
+-Early
+-surgery
+-Conservative
+-treatment
+-Figure
+-2
+-Cumulative
+-incidence
+-of
+-primary
+-composite
+-outcome
+-(intention-to-treat
+-population)
+-Table
+-3
+-Indications
+-for
+-aortic
+-valve
+-replacement
+-in
+-the
+-conservative
+-treatment
+-group
+-Symptom
+-onset
+-(including
+-increased
+-fatigue)
+-18
+-(51.4%)
+-AS
+-progression
+-6
+-(17.1%)
+-Decrease
+-in
+-LVEF
+-3
+-(8.6%)
+-Combination
+-of
+-factors
+-8
+-(22.9%)
+-AS,
+-aortic
+-stenosis;
+-LVEF,
+-left
+-ventricular
+-ejection
+-fraction.
+-Aortic
+-valve
+-replacement
+-vs.
+-conservative
+-treatment
+-4531
+-Downloaded
+-from
+-academic.oup.com/eurheartj/article/45/42/4526/7742145
+-by
+-guest
+-on
+-03
+-October
+-2026
+-[Extracted
+-table
+-1]
+-|Symptom
+-onset
+-(including
+-increased
+-fatigue)
+-1|8
+-(51.4%)|
+-|---|---|
+-|AS
+-progression
+-6
+-(17.1%)||
+-|Decrease
+-in
+-LVEF|3
+-(8.6%)|
+-|Combination
+-of
+-factors
+-8
+-(22.9%)||
+-eh_d54a2600ddc753b3
++(70-90)
++.18
++AVA,
++cm2,
++median
++(IQR)
++0.73
++(0.55-0.84)
++0.74
++(0.59-0.89)
++.29
++AVAi,
++cm2/m2,
++median
++(IQR)
++0.37
++(0.3-0.42)
++0.37
++(0.31-0.46)
++.08
++E/eʹ,
++median
++(IQR)
++12.2
++(9.6-16.3)
++12.2
++(8.8-18.1)
++.54
++eh_975aac3202107531
+ Source:
+ ClinicalTrials.gov
+ NCT02436655
+ Page:
+ 1
+ Lines:
+-95–101
++67–68
++Source-version
++hash:
++d32e23eb2a1e
++Full
++verbatim
++quote:
++####
++Masking
++info
++-
++Masking:
++NONE
++eh_af1340e6c28a70eb
++Source:
++AVATAR
++long-term
++follow-up
++report
++Page:
++7
++Lines:
++1–148
++Source-version
++hash:
++a890f771fd05
++Full
++verbatim
++quote:
++group
++was
++67.9
++years,
++while
++the
++mean
++age
++of
++patients
++in
++the
++early
++surgery
++group
++was
++65.4
++years
++(P
++=
++.19).
++Four
++patients
++in
++the
++conservative
++treat
++ment
++group
++underwent
++TAVI
++procedure.
++Indications
++for
++surgery
++in
++the
++conservative
++treatment
++group
++are
++shown
++in
++Table
++3.
++Median
++time
++to
++sur
++gery
++upon
++establishing
++the
++indication
++was
++123
++days
++(IQR
++90-297
++days).
++There
++were
++no
++significant
++baseline
++differences
++between
++the
++patients
++in
++the
++conservative
++group
++who
++remained
++AVR-free
++during
++follow-up
++and
++those
++who
++later
++underwent
++AVR
++(see
++Supplementary
++data
++online,
++Table
++S1).
++Patients
++in
++the
++conservative
++group
++on
++the
++watchful
++waiting,
++in
++cluding
++those
++undergoing
++valve
++surgery,
++experienced
++a
++progressive
++increase
++in
++the
++aortic
++valve
++severity
++associated
++with
++a
++significant
++decline
++in
++LVEF
++over
++time
++(see
++Supplementary
++data
++online,
++Tables
++S2
++and
++S3,
++respectively).
++In
++total,
++57/107
++(53.3%)
++patients
++received
++a
+ Page
+ 134
+--- old page 135
++++ new page 135
+@@ -1,289 +1,436 @@
+-Source-version
+-hash:
+-d32e23eb2a1e
+-Full
+-verbatim
+-quote:
+-###
+-Primary
+-outcome
+-1:
+-all
+-cause
+-death,
+-Major
+-Adverse
+-Cardiac
+-Event
+-(MACE)
+-including:
+-(
+-Acute
+-Myocardial
+-Infarction
+--
+-AMI,
+-Stroke
+--
+-CVI,
+-unplanned
++Context:
++eh_af1340e6c28a70eb
++(quote
++continued)
++bioprosthetic
++valve
++and
++50/107
++received
++a
++mechanical
++valve
++(46.7%).
++In
++the
++early
++surgery
++group,
++34/72
++(47.2%)
++received
++a
++bioprosthetic
++valve,
++while
++23/35
++(65.7%)
++pa
++tients
++received
++a
++bioprosthetic
++valve
++in
++the
++conservative
++treatment
++group
++(P
++=
++.32).
++Three
++patients
++in
++early
++surgery
++group
++(3/78;
++3.8%)
++and
++four
++pa
++tients
++in
++the
++conservative
++treatment
++group
++(4/35;
++11.4%)
++have
++undergone
++concomitant
++coronary
++artery
++bypass
++grafting.
++No
++peri-procedural
++myo
++cardial
++infarction
++has
++been
++noticed.
++The
++intraoperative
++mortality
++was
++low
++in
++both
++groups
++(1.3%
++in
++the
++early
++surgery
++vs.
++2.5%
++in
++the
++conservative
++group;
++P
++=
++.54).
++There
++was
++no
++difference
++in
++length
++of
+ hospitalization
+-for
+-Heart
+-failure
+-(HF)
+-needing
+-intravenous
+-treatment
+--
+-Measure:
+-all
+-cause
+-death,
+-Major
+-Adverse
+-Cardiac
+-Event
+-(MACE)
+-including:
+-(
+-Acute
+-Myocardial
+-Infarction
+--
+-AMI,
+-Stroke
+--
+-CVI,
+-unplanned
++in
++the
++early
++surgery
++group
++vs.
++operated
++patients
++in
++the
++conservative
++treatment
++group
++(8.8
++vs.
++9.1
++days;
++P
++=
++.87).
++Details
++of
++post-operative
++aortic
++valve
++function,
++procedural
++time,
++and
++mean
+ hospitalization
+-for
+-Heart
+-failure
+-(HF)
+-needing
+-intravenous
+-treatment
+--
+-Time
+-frame:
+-36
+-months
+-###
+-Primary
+-outcome
+-2:
+-all
+-cause
+-death,
+-Major
+-Adverse
+-Cardiac
+-Event
+-(MACE)
+-including:
+-(
+-Acute
+-Myocardial
+-Infarction
+--
+-AMI,
+-Stroke
+--
+-CVI,
+-unplanned
+-hospitalization
+-for
+-Heart
+-failure
+-(HF)
+-needing
+-intravenous
+-treatment
+--
+-Measure:
+-all
+-cause
+-death,
+-Major
+-Adverse
+-Cardiac
+-Event
+-(MACE)
+-including:
+-(
+-Acute
+-Myocardial
+-Infarction
+--
+-AMI,
+-Stroke
+--
+-CVI,
+-unplanned
+-hospitalization
+-for
+-Heart
+-failure
+-(HF)
+-needing
+-intravenous
+-treatment
+--
+-Time
+-frame:
+-5
+-years
+-eh_d6c269341c7d8a5d
+-Source:
+-AVATAR
+-original
+-trial
+-report
+-Page:
+-3
+-Lines:
+-46–50
+-Source-version
+-hash:
+-592b9a6c531c
+-Full
+-verbatim
+-quote:
+-randomly
+-assigned
+-to
+-early
+-surgery
+-or
+-conservative
+-treatment
+-using
+-a
+-web-based
+-interactive
+-response
+-system.
+-The
+-assign-
+-ment
+-to
+-each
+-treatment
+-group
+-was
+-computer-generated
+-and
+-stratified
+-according
+-to
+-the
+-participating
+-centers
+-by
+-means
+-of
+-a
+-permuted-block
+-sequence
+-with
+-variable
+-block
+-size.
+-Details
+-eh_e66d374e838e8c6d
+-Source:
+-AVATAR
+-long-term
+-follow-up
+-report
+-Page:
+-6
+-Lines:
+-26–32
+-Source-version
+-hash:
+-a890f771fd05
+-Full
+-verbatim
+-quote:
+-nificant
+-heterogeneity
++length
+ between
+ both
+ groups
++Context:
++eh_af1340e6c28a70eb
++(quote
++continued)
++are
++shown
++in
++Supplementary
++data
++online,
++Table
++S4.
++Three
++pa
++tients
++(3/78,
++3.8%)
++in
++the
++early
++surgery
++group,
++and
++1/35
++(2.86%)
++patient
++in
++the
++conservative
++treatment
++group
++underwent
++redo
++AVR
++procedure
++(P
++=
++.79;
++Supplementary
++data
++online,
++Table
++S5.
++Outcomes
++There
++were
++a
++total
++of
++55
++primary
++outcome
++events
++comprising
++a
++com
++posite
++of
++all-cause
++mortality
++or
++acute
++myocardial
++infarction,
++stroke,
++and
++unplanned
++HF
++hospitalization.
++A
++primary
++outcome
++event
++occurred
++in
++18/78
++patients
++(23.1%)
++in
++the
++early
++surgery
++group
++and
++in
++37/79
++pa
++tients
++(46.8%)
++in
++the
++conservative
++treatment
++group
++(HR
++with
++early
++sur
++gery
++vs.
++conservative
++treatment
++0.42;
++95%
++CI
++0.24-0.73,
++P
++=
++.002;
++Figure
++2).
++Forty
++patients
++died
++during
++follow-up:
++13/78
++(16.7%)
++in
++the
++early
++surgery
++group
++and
++27/79
++(34.17%)
++in
++the
++conservative
++treatment
++group.
++In
++the
++early
++surgery
++group,
++11/72
++patients
++died
++after
++valve
++surgery
++at
++median
++of
++362
++days
++Context:
++eh_af1340e6c28a70eb
++(quote
++continued)
++(IQR
++116-1211),
++of
++which
++8
++were
++cardiovascular
++deaths.
++In
++the
++conservative
++group,
++8/35
++patients
++died
++after
++surgery
++at
++shorter
++median
++of
++131
++days
++(IQR
++47.8-603),
++of
++which
++5
++were
++cardiovas
++cular
++deaths.
++Mortality
++causes
++for
++individual
++subjects
++are
++detailed
++in
++Supplementary
++data
++online,
++Tables
++S6A
++and
++S6B.
++Kaplan-Meier
++estimates
++of
++the
++individual
++endpoints
++of
++all-cause
++death
++and
++HF
++hospitalization
++were
++significantly
++lower
++in
++the
++early
++surgery
++compared
++with
++the
++conservative
++group
++(HR
++0.44;
++95%
++CI
++0.23-0.85,
++P
++=
++.012,
++for
++all-cause
++death
++and
++HR
++0.21;
++95%
++CI
++0.06-0.73,
++P
++=
++.007,
++for
++HF
++hospitalizations)
++(Figure
++3
++and
++Table
++4).
++The
++risk
++of
++repeated
++MACE
+ was
+-noted.
+-All
+-patients
+-were
+-included
+-in
+-the
+-analysis.
+-Median
+-follow-up
+-for
+-all
+-patients
+-was
+-63
+-months
+-[interquartile
+-range
+-(IQR)
+-48-75).
+-Median
+-follow-up
+-in
+-sur
+-vivors
+-was
+-68
+-months
+-(IQR
+-58-79).
+-One
+-patient,
+-who
+-was
+-randomized
+-to
+-early
+-surgery,
+-has
+-been
+-lost
+-to
+-follow-up,
+-and
+-this
+-patient
+-was
+-cen
+-sored
+-when
+-the
+-last
+-follow-up
+-information
+-was
+-available
+-and
+-included
+-in
+-the
+-intention-to-treat
+-analysis
+-(Figure
+-1).
+-eh_f625637d366df2a0
+-Source:
+-AVATAR
+-original
+-trial
+-report
+-Page:
+-4
++significantly
++higher
++in
++the
++conservative
++treatment
++group
++(Table
++4).
++Sudden
++cardiac
++death
++occurred
++in
++9/79
++patients
++(11.4%)
++in
++the
++con
++servative
++group
++compared
++with
++4/78
++patients
++(5.1%)
++in
++the
++early
++surgery
++group
++(P
++=
++.17;
++Table
++4).
++The
+ Page
+ 135
+--- old page 136
++++ new page 136
+@@ -1,84 +1,387 @@
+-Lines:
+-62–69
+-Source-version
+-hash:
+-592b9a6c531c
+-Full
+-verbatim
+-quote:
+-were
++Context:
++eh_af1340e6c28a70eb
++(quote
++continued)
++annual
++rate
++of
++sudden
++cardiac
++death
++was
++twice
++higher
++in
++the
++conservatively
++treated
++group
++as
+ compared
++with
++early
++surgery
++group
++(2.2%
++vs.
++1%;
++P
++=
++.32).
++If
++not
++considering
++symptomatic
++pa
++tients
++in
++the
++watchful
++waiting
++group
++who
++died
++suddenly
++at
++home,
++the
++an
++nual
++rate
++of
++sudden
++cardiac
++death
++in
++the
++conservative
++group
++reached
++1.48%.
++One
++patient
++randomized
++to
++the
++early
++surgery
++group
++died
++sud
++denly
++while
++awaiting
++the
++surgery.
++There
++was
++a
++trend
++for
++higher
++rates
++of
++cardiovascular
++deaths
++in
++the
++conservative
++treatment
++group
++over
++time
++(19.3%
++vs.
++11.6%;
++P
++=
++.1;
++Figure
++4).
++The
++incidence
++of
++serious
++adverse
++events
++was
++also
++significantly
++higher
++in
++the
++conservative
++treatment
++group
++(49.4%
++vs.
++26.4%;
++P
++=
++.013)
++(Table
++4).
++No
++difference
++between
++groups
++was
++observed
++in
++the
++safety
++outcomes
++including
++major
++bleeding
++and
++thromboembolic
++complications
++(5.1%
++vs.
++3.8%;
++P
++=
++.69;
++and
++5.1%
++vs.
++3.8%;
++P
++=
++.69;
++Context:
++eh_af1340e6c28a70eb
++(quote
++continued)
++respectively;
++Table
++4).
++In
++a
++post
++hoc
++heterogeneity
++analysis
++in
++the
++study
++population,
++no
++signifi
++cant
++interaction
++for
++heterogeneity
++was
++noted
++for
++any
++of
++the
++analysed
++parameters
++(see
++Supplementary
++data
++online,
++Figure
++S1)
++indicating
++that
++results
++are
++consistent
++across
++different
++patients'
++subgroups.
++Discussion
++The
++main
++findings
++from
++the
++extended
++follow-up
++of
++the
++AVATAR
++trial
++can
++be
++summarized
++as
++follows:
++(i)
++the
++primary
++composite
++outcome
++comprising
++of
++all-cause
++death,
++acute
++myocardial
++infarction,
++stroke,
++and
++HF
++hospitalizations
++was
++significantly
++and
++consistently
++lower
++with
++the
++early
++surgery
++approach
++compared
++with
++the
++conservative
++treatment
++ap
++proach;
++(ii)
++patients
++on
++conservative
++strategy
++appeared
++at
++almost
++50%
++p
++=
++0.01
++HR
++=
++0.44
++(95%
++CI
++0.23
++to
++0.85)
++0%
++10%
++20%
++30%
++40%
++50%
++60%
++All-cause
++death
++incidence
++79
++71
++61
++39
++14
++Control
++78
++72
++71
++52
++15
++Early
++surgery
++Participants,
++n
++0
++20
++40
++60
++80
++Time
++Context:
++eh_af1340e6c28a70eb
++(quote
++continued)
++(Months)
++Early
++surgery
++Conservative
++treatment
++p
++=
++0.007
++HR
++=
++0.21
++(95%
++CI
++0.06
++to
++0.73)
++0%
++10%
++20%
++30%
++40%
++50%
++60%
++HF
++hospitalization
++incidence
++79
++65
++55
++32
++11
++Control
++78
++71
++70
++51
++15
++Early
++surgery
++Participants,
++n
++0
++20
++40
++60
++80
++Time
++(Months)
++Early
++surgery
++Conservative
++treatment
++Figure
++3
++Cumulative
++incidence
++of
++all-cause
++death
++(upper
++panel)
++and
++heart
++failure
++hospitalization
++(lower
++panel)
++(intention-to-treat
++population)
++4532
++Banovic
++et
++al.
++Downloaded
++from
++academic.oup.com/eurheartj/article/45/42/4526/7742145
+ by
+-using
+-2-sample
+-t
+-tests.
+-A
+-Kaplan-Meier
+-estimator
+-was
+-used
+-to
+-estimate
+-the
+-distribution
+-of
+-time
+-to
+-pri-
+-mary
+-and
+-time-to-event
+-secondary
+-end
+-points
+-(eg,
+-survival
+-and
+-time
+-to
+-first
+-HF
+-hospitalization)
+-and
+-a
+-log-rank
+-test
+-to
+-compare
+-them
+-between
+-the
+-2
+-treatment
+-groups.
+-A
+-Cox
+-proportional-
+-hazards
+-regression
+-model
+-that
+-included
+-treatment
+-was
+-used
+-to
+-estimate
+-the
+-hazard
+-ratio
+-comparing
+-the
+-early
+-surgery
+-and
+-the
+-conservative
+-treatment
+-groups.
+-For
+-dichotomous
+-second-
++guest
++on
++03
++October
++2026
+ Page
+ 136
+--- old page 137
++++ new page 137
+@@ -1,232 +1,306 @@
+-Prompt
+-templates
+-and
+-run
+-provenance
+-ARBITER
+-template
+-/arbiter-assess
+-Assess
++eh_c8e0958840636206
++Source:
++AVATAR
++long-term
++follow-up
++report
++Page:
++6
++Lines:
++1–99
++Source-version
++hash:
++a890f771fd05
++Full
++verbatim
++quote:
++3-year
++follow-up
++information
++available
++for
++all
++patients.
++For
++binary
++outcomes,
++we
++used
++a
++generalized
++linear
++model
++assuming
++a
++binomial
++distribution
++with
++a
++log
++link
++function
++to
++report
+ risk
+-of
+-bias
+-for
+-{outcome}
++ratios
++and
++95%
++CI.
++We
++conducted
++subgroup
++analyses
++accompanied
++by
++a
++P
++for
++interaction
++to
++assess
++the
++consistency
++of
++the
++treatment
++effect
++on
++the
++primary
++outcome
++according
++to
++the
++following
++pre-
+ defined
+-as
+-{definition}
+-in
+-{trial}.
+-ARBITER
+-example
+-/arbiter-assess
+-Assess
++variables:
++age
++(<65
++vs.
++≥65),
++sex,
++baseline
++ejection
++fraction
++(<60%
++vs.
++≥60%),
++and
++country
++of
++trial
++site.
++P-values
++and
++95%
++CI
++for
++secondary
++out
++comes
++and
++secondary
++analyses
++of
++the
++primary
++outcome
++were
++not
++adjusted
++for
++multiple
++testing
++and
++are
++considered
++exploratory.
++For
++the
++post
++hoc
++ana
++lyses
++of
++echocardiography
++readouts
++of
++valve
++severity
++and
++LVEF
++in
++patients
++in
++the
++conservative
++group,
++we
++calculated
++the
++mean
++change
++from
++baseline
++to
++12-month
++follow-up
++for
++all
++patients
++in
++the
++conservative
++group
++with
++avail
++able
++Context:
++eh_c8e0958840636206
++(quote
++continued)
++data
++and
++the
++mean
++change
++from
++baseline
++to
++final
++follow-up
++for
++all
++pa
++tients
++in
++the
++conservative
++group
++that
++underwent
++surgery
++and
++had
++available
++data.
++We
++conducted
++paired
++t-tests
++to
++derive
++P-values
++and
++95%
++CI
++for
++the
++mean
++changes
++from
++baseline.11
++This
++analysis
++was
++repeated
++for
++patients
++in
++the
++conservative
++group
++that
++underwent
++AVR.
++Analyses
++were
++performed
++using
++Stata,
++version
++18.0.
++Results
++Patients
++and
++follow-up
++Main
++patient
++characteristics
++at
++baseline
++are
++summarized
++in
++Table
++2.
++The
++average
++age
++of
++enrolled
++patients
++was
++67
++years,
++57%
++were
++men,
++the
++ma
++jority
++of
++patients
++had
++a
++degenerative
++aetiology
++of
++AS
++(84.7%),
++and
++the
++median
++estimated
++operative
++mortality
++according
++to
++the
++Society
++of
++Thoracic
++Surgeons
++predicted
+ risk
+ of
+-bias
+-for
+-Adverse
+-events
+-graded
+-by
+-CTCAE
+-v4.0;
+-'Grade
+-3
+-(severe
+-AEs)'
+-row
+-of
+-Table
+-3;
+-patients
+-with
+-grade
+-3
+-events
+-in
+-Table
+-4
+-defined
+-as
+-Table
+-3
+-Grade
+-3
+-(severe
+-AEs)
+-number
+-of
+-AEs:
+-600
+-mg
+-6,
+-900
+-mg
+-5,
+-1,200
+-mg
+-9
+-(all
+-subjects
+-20);
+-Grade
+-4:
+-0;
+-Grade
+-5
+-(death):
+-1
+-per
+-arm.
+-Table
+-4
+-total
+-no.
+-of
+-patients
+-with
+-grade
+-3
+-events:
+-2,
+-4,
+-5.
+-Abstract:
+-'Grade
+-3
+-adverse
+-events
+-occurred
+-in
+-only
+-2
+-patients
+-in
+-the
+-600-mg
+-arm,
+-4
+-patients
+-in
+-the
+-900-mg
+-arm,
+-and
+-5
+-patients
+-in
+-the
+-1,200-mg
+-arm.'
+-in
+-aarnoutse-2017.
+-Unassisted
+-template
+-Assess
+-risk
+-of
+-bias
+-for
+-{outcome}
+-defined
+-as
+-{definition}
+-in
+-{trial}.
+-Unassisted
+-output-format
+-instruction
+-When
+-you
+-have
+-finished,
+-give
+-your
+-answers
+-in
+-this
+-format:
+-a
+-table
+-with
+-one
+-row
+-per
+-signalling
+-question
+-(columns:
+-domain,
+-question
+-number,
+-answer
+-as
+-Y,
+-PY,
+-PN,
+-N,
+-NI
+-or
+-NA),
+-and
+-then
+-a
+-final
+-line
+-exactly
+-like
+-"FINAL:
+-D1=<judgement>;
+-D2=<judgement>;
+-D3=<judgement>;
+-D4=<judgement>;
+-D5=<judgement>;
+-Overall=<judgement>",
+-where
+-each
+-judgement
+-is
+-Low,
+-Some
+-concerns
+-or
+-High.
+-Model
+-claude-sonnet-5-5,
+-medium
+-effort;
+-Claude
+-Code
+-2.1.278;
+-ARBITER
+-1.0.0
+-public
+-commit
+-2f549ae30f056ff441ea61a04b719968716f2219.
+-Each
+-trial
+-ran
+-once
+-per
+-arm.
+-Runs
+-used
+-a
+-subscription;
+-costs
+-are
+-frozen-rate
+-API
+-list-price
+-equivalents.
+-The
+-reproducibility
+-records
+-include
+-the
+-R
+-and
+-package
+-versions.
++mortality
++score
++was
++1.7%.
++No
++sig
++nificant
++heterogeneity
++between
++both
++groups
++was
++noted.
++All
++patients
++were
++included
++in
++the
++analysis.
++Median
++follow-up
++for
++all
++patients
++was
++63
+ Page
+ 137
+--- old page 138
++++ new page 138
+@@ -0,0 +1,354 @@
++Context:
++eh_c8e0958840636206
++(quote
++continued)
++months
++[interquartile
++range
++(IQR)
++48-75).
++Median
++follow-up
++in
++sur
++vivors
++was
++68
++months
++(IQR
++58-79).
++One
++patient,
++who
++was
++randomized
++to
++early
++surgery,
++has
++been
++lost
++to
++follow-up,
++and
++this
++patient
++was
++cen
++sored
++when
++the
++last
++follow-up
++information
++was
++available
++and
++included
++in
++the
++intention-to-treat
++analysis
++(Figure
++1).
++Aortic
++valve
++replacement
++procedures
++In
++the
++early
++surgery
++group,
++AVR
++was
++performed
++in
++72
++of
++the
++78
++patients
++(92.3%).
++Among
++the
++six
++patients
++that
++did
++not
++undergo
++AVR
++per
++random
++ization,
++one
++patient,
++as
++above
++mentioned,
++was
++lost
++to
++follow-up,
++and
++one
++died
++prior
++to
++valve
++surgery.
++Four
++patients
++were
++available
++for
++the
++extended
++follow-up.
++Among
++them,
++one
++patient
++died
++unoperated
++after
++2113
++days;
++two
++became
++symptomatic
++and
++underwent
++intervention
++after
++691
++and
++791
++days,
++respectively;
++and
++one
++remained
++asymptomatic
++and
++AVR
++free
++throughout
++the
++entire
++follow-up
++(Figure
++1).
++The
++median
++Context:
++eh_c8e0958840636206
++(quote
++continued)
++time
++from
++ran
++domization
++to
++AVR
++in
++the
++early
++surgery
++group
++was
++55
++days
++(IQR
++36-79).
++Thirty-five
++out
++of
++the
++79
++patients
++(44.3%)
++in
++the
++conservative
++treatment
++group
++had
++surgery
++during
++follow-up.
++Median
++time
++from
++randomization
++to
++surgery
++in
++the
++conservative
++treatment
++group
++was
++476
++days
++(IQR
++226-1098).
++At
++the
++time
++of
++AVR,
++the
++mean
++age
++of
++patients
++in
++the
++control
++p
++=
++0.002
++HR
++=
++0.42
++(95%
++CI
++0.24
++to
++0.73)
++0%
++10%
++20%
++30%
++40%
++50%
++60%
++Primary
++composite
++endpoint
++incidence
++79
++61
++52
++29
++11
++Control
++78
++69
++67
++48
++13
++Early
++surgery
++Participants,
++n
++0
++20
++40
++60
++80
++Time
++(Months)
++Early
++surgery
++Conservative
++treatment
++Figure
++2
++Cumulative
++incidence
++of
++primary
++composite
++outcome
++(intention-to-treat
++population)
++Table
++3
++Indications
++for
++aortic
++valve
++replacement
++in
++the
++conservative
++treatment
++group
++Symptom
++onset
++(including
++increased
++fatigue)
++18
++(51.4%)
++AS
++progression
++6
++(17.1%)
++Decrease
++in
++LVEF
++3
++(8.6%)
++Combination
++of
++Context:
++eh_c8e0958840636206
++(quote
++continued)
++factors
++8
++(22.9%)
++AS,
++aortic
++stenosis;
++LVEF,
++left
++ventricular
++ejection
++fraction.
++Aortic
++valve
++replacement
++vs.
++conservative
++treatment
++4531
++Downloaded
++from
++academic.oup.com/eurheartj/article/45/42/4526/7742145
++by
++guest
++on
++03
++October
++2026
++[Extracted
++table
++1]
++|Symptom
++onset
++(including
++increased
++fatigue)
++1|8
++(51.4%)|
++|---|---|
++|AS
++progression
++6
++(17.1%)||
++|Decrease
++in
++LVEF|3
++(8.6%)|
++|Combination
++of
++factors
++8
++(22.9%)||
++Page
++138
+--- old page 139
++++ new page 139
+@@ -0,0 +1,203 @@
++eh_d54a2600ddc753b3
++Source:
++ClinicalTrials.gov
++NCT02436655
++Page:
++1
++Lines:
++95–101
++Source-version
++hash:
++d32e23eb2a1e
++Full
++verbatim
++quote:
++###
++Primary
++outcome
++1:
++all
++cause
++death,
++Major
++Adverse
++Cardiac
++Event
++(MACE)
++including:
++(
++Acute
++Myocardial
++Infarction
++-
++AMI,
++Stroke
++-
++CVI,
++unplanned
++hospitalization
++for
++Heart
++failure
++(HF)
++needing
++intravenous
++treatment
++-
++Measure:
++all
++cause
++death,
++Major
++Adverse
++Cardiac
++Event
++(MACE)
++including:
++(
++Acute
++Myocardial
++Infarction
++-
++AMI,
++Stroke
++-
++CVI,
++unplanned
++hospitalization
++for
++Heart
++failure
++(HF)
++needing
++intravenous
++treatment
++-
++Time
++frame:
++36
++months
++###
++Primary
++outcome
++2:
++all
++cause
++death,
++Major
++Adverse
++Cardiac
++Event
++(MACE)
++including:
++(
++Acute
++Myocardial
++Infarction
++-
++AMI,
++Stroke
++-
++CVI,
++unplanned
++hospitalization
++for
++Heart
++failure
++(HF)
++needing
++intravenous
++treatment
++-
++Measure:
++all
++cause
++death,
++Major
++Adverse
++Cardiac
++Event
++(MACE)
++including:
++(
++Acute
++Myocardial
++Infarction
++-
++AMI,
++Stroke
++-
++CVI,
++unplanned
++hospitalization
++for
++Heart
++failure
++(HF)
++needing
++intravenous
++treatment
++-
++Time
++frame:
++5
++years
++eh_d6c269341c7d8a5d
++Source:
++AVATAR
++original
++trial
++report
++Page:
++3
++Lines:
++46–50
++Source-version
++hash:
++592b9a6c531c
++Full
++verbatim
++quote:
++randomly
++assigned
++to
++early
++surgery
++or
++conservative
++treatment
++using
++a
++web-based
++interactive
++response
++system.
++The
++assign-
++ment
++to
++each
++treatment
++group
++was
++computer-generated
++and
++stratified
++according
++to
++the
++participating
++centers
++by
++means
++of
++a
++permuted-block
++sequence
++with
++variable
++block
++size.
++Details
++Page
++139
+--- old page 140
++++ new page 140
+@@ -0,0 +1,178 @@
++eh_e66d374e838e8c6d
++Source:
++AVATAR
++long-term
++follow-up
++report
++Page:
++6
++Lines:
++26–32
++Source-version
++hash:
++a890f771fd05
++Full
++verbatim
++quote:
++nificant
++heterogeneity
++between
++both
++groups
++was
++noted.
++All
++patients
++were
++included
++in
++the
++analysis.
++Median
++follow-up
++for
++all
++patients
++was
++63
++months
++[interquartile
++range
++(IQR)
++48-75).
++Median
++follow-up
++in
++sur
++vivors
++was
++68
++months
++(IQR
++58-79).
++One
++patient,
++who
++was
++randomized
++to
++early
++surgery,
++has
++been
++lost
++to
++follow-up,
++and
++this
++patient
++was
++cen
++sored
++when
++the
++last
++follow-up
++information
++was
++available
++and
++included
++in
++the
++intention-to-treat
++analysis
++(Figure
++1).
++eh_f625637d366df2a0
++Source:
++AVATAR
++original
++trial
++report
++Page:
++4
++Lines:
++62–69
++Source-version
++hash:
++592b9a6c531c
++Full
++verbatim
++quote:
++were
++compared
++by
++using
++2-sample
++t
++tests.
++A
++Kaplan-Meier
++estimator
++was
++used
++to
++estimate
++the
++distribution
++of
++time
++to
++pri-
++mary
++and
++time-to-event
++secondary
++end
++points
++(eg,
++survival
++and
++time
++to
++first
++HF
++hospitalization)
++and
++a
++log-rank
++test
++to
++compare
++them
++between
++the
++2
++treatment
++groups.
++A
++Cox
++proportional-
++hazards
++regression
++model
++that
++included
++treatment
++was
++used
++to
++estimate
++the
++hazard
++ratio
++comparing
++the
++early
++surgery
++and
++the
++conservative
++treatment
++groups.
++For
++dichotomous
++second-
++Page
++140
+--- old page 141
++++ new page 141
+@@ -0,0 +1,232 @@
++Prompt
++templates
++and
++run
++provenance
++ARBITER
++template
++/arbiter-assess
++Assess
++risk
++of
++bias
++for
++{outcome}
++defined
++as
++{definition}
++in
++{trial}.
++ARBITER
++example
++/arbiter-assess
++Assess
++risk
++of
++bias
++for
++Adverse
++events
++graded
++by
++CTCAE
++v4.0;
++'Grade
++3
++(severe
++AEs)'
++row
++of
++Table
++3;
++patients
++with
++grade
++3
++events
++in
++Table
++4
++defined
++as
++Table
++3
++Grade
++3
++(severe
++AEs)
++number
++of
++AEs:
++600
++mg
++6,
++900
++mg
++5,
++1,200
++mg
++9
++(all
++subjects
++20);
++Grade
++4:
++0;
++Grade
++5
++(death):
++1
++per
++arm.
++Table
++4
++total
++no.
++of
++patients
++with
++grade
++3
++events:
++2,
++4,
++5.
++Abstract:
++'Grade
++3
++adverse
++events
++occurred
++in
++only
++2
++patients
++in
++the
++600-mg
++arm,
++4
++patients
++in
++the
++900-mg
++arm,
++and
++5
++patients
++in
++the
++1,200-mg
++arm.'
++in
++aarnoutse-2017.
++Unassisted
++template
++Assess
++risk
++of
++bias
++for
++{outcome}
++defined
++as
++{definition}
++in
++{trial}.
++Unassisted
++output-format
++instruction
++When
++you
++have
++finished,
++give
++your
++answers
++in
++this
++format:
++a
++table
++with
++one
++row
++per
++signalling
++question
++(columns:
++domain,
++question
++number,
++answer
++as
++Y,
++PY,
++PN,
++N,
++NI
++or
++NA),
++and
++then
++a
++final
++line
++exactly
++like
++"FINAL:
++D1=<judgement>;
++D2=<judgement>;
++D3=<judgement>;
++D4=<judgement>;
++D5=<judgement>;
++Overall=<judgement>",
++where
++each
++judgement
++is
++Low,
++Some
++concerns
++or
++High.
++Model
++claude-sonnet-5-5,
++medium
++effort;
++Claude
++Code
++2.1.278;
++ARBITER
++1.0.0
++public
++commit
++2f549ae30f056ff441ea61a04b719968716f2219.
++Each
++trial
++ran
++once
++per
++arm.
++Runs
++used
++a
++subscription;
++costs
++are
++frozen-rate
++API
++list-price
++equivalents.
++The
++reproducibility
++records
++include
++the
++R
++and
++package
++versions.
++Page
++141

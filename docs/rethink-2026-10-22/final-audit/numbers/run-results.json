@@ -1,0 +1,38 @@
+{
+  "status": "ISSUES",
+  "actual_head": "951dddd3e28e0d6316c641491667353e0b851a78",
+  "numbered_displays": 36,
+  "ledger_rows": 46,
+  "all_final_check_exit_codes": {
+    "existing_R_verifier": 0,
+    "existing_testthat": 0,
+    "existing_manuscript_verifier": 0,
+    "existing_invariance_verifier": 0,
+    "source_contracts": 0,
+    "independent_counts": 0
+  },
+  "tests": {
+    "pass": 220,
+    "fail": 0,
+    "warn": 0,
+    "skip": 0
+  },
+  "material_findings": [
+    "N1",
+    "N2",
+    "N3",
+    "N4",
+    "N7",
+    "N10"
+  ],
+  "minor_findings": [
+    "N5",
+    "N6",
+    "N8",
+    "N9"
+  ],
+  "optional": [
+    "N11"
+  ],
+  "blocked": false
+}

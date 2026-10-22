@@ -1,0 +1,8 @@
+claim,value,evidence
+Expert 1 all-cell agreement,"{'ARBITER': 371, 'Unassisted': 332, 'Published': 301}",Independent workbook Adjudications
+Expert 2 all-cell agreement,"{'ARBITER': 433, 'Unassisted': 400, 'Published': 362}",Independent workbook Adjudications
+Overall confusion populations,ARBITER/Unassisted 102; Published 81; experts derived by worst-domain rule,source domain-label CSVs and each original workbook
+Primary selection,80 discordant; 60 agreed; 20 splits; 53 ARBITER; 7 Unassisted,"both Adjudications sheets, keyed Trial/Domain"
+ARBITER-Sonnet resource medians,"{'minutes': 7.612500000000001, 'USD equivalent': 3.7778825}",per-trial run metrics; rate reconstruction independently checked
+Baseline-Sonnet resource medians,"{'minutes': 0.45333333333333337, 'USD equivalent': 0.09411515000000001}",per-trial run metrics; rate reconstruction independently checked
+Structural records,1421 cited/bound; 1407 text; 14 images; 8 trials visual,"bundle-binding-counts.csv, Sonnet only"

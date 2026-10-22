@@ -1,0 +1,21 @@
+# Local visual proof renders and exploratory browser captures; keep audit ledgers.
+*.png
+*.jpg
+*.pdf
+*.docx
+*.log
+legacy-inspection/
+render-probe/
+rendered/
+final-audit/site-stage/
+final-audit/remediation/proof-v*/
+final-audit/remediation/table-proof/
+html-body-probe.txt
+supplement-*-probe.html
+final-audit/final-fixes/proof-first-pass/
+final-audit/final-fixes/proof/*-old.txt
+final-audit/final-fixes/proof/*-new.txt
+zotero-collection.json
+final-audit/numbers/page-text.json
+final-audit/remediation/gt-word-*.txt
+final-audit/remediation/manuscript-proof.txt

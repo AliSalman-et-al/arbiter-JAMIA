@@ -2,13 +2,16 @@
 title: "ARBITER results against blinded expert ratings"
 ---
 
+[Home](index.html) · [Results](results.html) · [Supplement](supplement.html) · [Software](https://github.com/AliSalman-et-al/ARBITER/) · [Study repository and reproduction](https://github.com/AliSalman-et-al/arbiter-JAMIA)
+
+ARBITER is an available workflow that separates model interpretation from executable rules for the Cochrane risk-of-bias tool for randomised trials (RoB 2) and retains sources, answers and evidence for inspection. We compared its complete Sonnet workflow with the same model given a minimal prompt and identical supplied files for 102 trials from 16 reviews. Two experts independently rated all 510 domain cells before viewing labels. A separate conditional forced-choice endpoint used the 60 agreed choices among 80 arm-discordant cells.
+
 ```{r}
 source('R/load.R')
 source('R/presentation.R')
 source('R/displays.R')
+source('R/manuscript-legends.R')
 ```
-
-Two blinded human experts independently rated every trial domain without AI. The figures and tables below use the frozen independent ratings and the separate forced-choice endpoint.
 
 ## Results
 
@@ -19,22 +22,29 @@ cat(readLines('output/manuscript/results-sentences.md',encoding='UTF-8'),sep='\n
 ## Figures
 
 ```{r}
-for(i in 1:6) cat('\n### Figure ',i,'\n\n![Figure ',i,'](output/manuscript/Figure',i,'.png)\n\n',sep='')
-cat(readLines('output/manuscript/figure-legends.md',encoding='UTF-8'),sep='\n')
+captions <- main_figure_captions()
+alts <- main_figure_alts()
+for(i in 1:5) {
+ cat('\n### Figure ',i,'\n\n![](output/manuscript/Figure',i,'.png){fig-alt="',alts[i],'"}\n\n',captions[i],'\n\n',sep='')
+ cat('[Download figure PDF](output/manuscript/Figure',i,'.pdf) · [PNG](output/manuscript/Figure',i,'.png)\n\n',sep='')
+}
 ```
 
 ## Tables
 
 ```{r}
-for(i in 1:4) {
-  cat('\n### Table ',i,'\n\n',sep='')
-  body <- system2('quarto',c('pandoc',paste0('output/manuscript/Table',i,'.docx'),'--to=html'),stdout=TRUE)
-  stopifnot(is.null(attr(body,'status')))
-  cat(body,sep='\n')
-  cat('\n\n[Download Word table](output/manuscript/Table',i,'.docx)\n\n',sep='')
+titles <- c('Benchmark and reference context','Conditional primary endpoint and core sensitivities','Process checks and computational resources')
+for(i in 1:3) {
+  cat('\n### Table ',i,'. ',titles[i],'\n\n',sep='')
+  raw <- paste(readLines(paste0('output/manuscript/qa/Table',i,'.html'),encoding='UTF-8'),collapse='\n')
+  raw <- sub('data-quarto-disable-processing="false"','data-quarto-disable-processing="true"',raw,fixed=TRUE)
+  cat('\n```{=html}\n',raw,'\n```\n',sep='')
+  cat('\n\n[Download editable Word table](output/manuscript/Table',i,'.docx)\n\n',sep='')
 }
 ```
 
+[Download the manuscript with editable tables and figure legends](output/manuscript/Manuscript.docx).
+
 ## Reproduction
 
-The analysis pipeline, test suite and output verifier reproduce these results. The numerical CSVs and source traces accompany the figures. [Supplementary methods and results](supplement.html) provide all secondary estimates and reporting details. Trial PDFs are not redistributed.
+The [study repository](https://github.com/AliSalman-et-al/arbiter-JAMIA) contains the analysis pipeline, test suite, numerical exports and output verifier. [Supplementary methods and results](supplement.html) provide secondary estimates, full question-level panels, prompts, the worked trace and reporting locations. Trial PDFs are not redistributed.

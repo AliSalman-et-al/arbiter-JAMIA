@@ -1,0 +1,58 @@
+document,page,display,inspected,verdict,evidence_or_issue
+Supplement,55,Rules-only independent agreement continued,yes,PASS,Repeated header; counts and intervals remain in their columns
+Supplement,56,Rules-only independent agreement continued,yes,PASS,Domain rows and interval wrapping readable
+Supplement,57,Rules-only independent agreement continued,yes,PASS,Observed Overall and agreed-reference denominators visible
+Supplement,58,Rules-only independent agreement final page,yes,PASS,Population note distinguishes 102 and 81 and excludes missing labels
+Supplement,59,Cells changed by rules-only recomputation,yes,ISSUES,B02 undefined source and Boolean flags
+Supplement,60,Cells changed by rules-only recomputation continued,yes,ISSUES,B02 no explanatory note on final page
+Supplement,61,eTable15 Invalid answer path sensitivity,yes,ISSUES,B01 bootstrap footnote on count-only table; resolution codes undefined locally
+Supplement,62,eTable16 Derived Overall agreement and paired contrasts,yes,PASS,102 and 81 source rows and restricted agreed-reference populations readable
+Supplement,63,eTable16 continued,yes,PASS,Paired effects carry pp; eligibility note present; no clipping
+Supplement,64,eTable17 Derived Overall validation differences,yes,PASS,All displayed rows legible; absent values remain dashes
+Supplement,65,eTable17 continued,yes,ISSUES,B01 irrelevant bootstrap note; explanatory 21/7/1 count note itself agrees with CSV
+Supplement,66,eTable18 Rule consistency and audit,yes,PASS,Separate section introduction bounds structural and computational claims
+Supplement,67,eTable18 continued,yes,PASS,Repeated header; conformance count and denominator columns aligned
+Supplement,68,eTable18 continued,yes,PASS,1421/1407/14 evidence objects separate; Unassisted 509 evaluable cells visible
+Supplement,69,eTable18 final page,yes,ISSUES,B01 count-only bootstrap note and undefined absent comparator dashes
+Supplement,70,eTable19 Evidence binding,yes,ISSUES,B01 local unavailable-data dash definition missing; structural-support boundary present
+Supplement,71,eTable20 Time cost and token use,yes,PASS,Units and median-IQR versus paired-mean-CI distinction explicit; no human-time inference
+Supplement,72,eTable21 API cost estimates and reconstruction bounds,yes,ISSUES,B03 currency and technical measure definitions missing locally
+Supplement,73,eTable21 continued,yes,ISSUES,B03 and B01; generic bootstrap note supplies no cost glossary
+Supplement,74,eTable22 Token reconciliation,yes,ISSUES,B04 mixed token and event measures lack units and definitions
+Supplement,75,eTable22 continued,yes,ISSUES,B04 definitions missing; integer values and repeated headers readable
+Supplement,76,eTable22 final page,yes,ISSUES,B04 and B01; bootstrap note attached to reconciliation counts
+Supplement,77,eTable23 Prior work evidence ledger,yes,PASS,All eight rows checked against consolidated blueprint and retained citations; qualified comparison and primary links
+Supplement,78,eFigure1 Absolute agreement by domain and Overall,yes,PASS,Axes and source shapes clear; Overall mixed 102/81 populations explicitly stated
+Supplement,79,eFigure2 Collapsed question differences,yes,ISSUES,B05 tiny question/expert/n labels and vertically compressed artwork; thresholds and pp axis explicit
+Supplement,80,eFigure3 Published agreement across reviews,yes,ISSUES,B05 tiny undefined-kappa annotations; all 16 reviews remain visible and axes include negative values
+Supplement,81,eFigure4 Domain signalling agreement,yes,PASS,Expert and coding facets separate; colors-shapes and 0-100 percent scale clear; eligible-source boundary stated
+Supplement,82,eFigure5 Complete question differences,yes,ISSUES,B05 tiny row labels and vertical compression; zero-n and sparse rows retained; uncertainty within axis limits
+Supplement,83,AVATAR Part A D1 and Q1.1,yes,ISSUES,B06 two-row page chunking; answer and evidence handle text itself legible
+Supplement,84,AVATAR Q1.2-Q1.3,yes,ISSUES,B06 sparse page; source handles and counterevidence retained
+Supplement,85,AVATAR D2 and Q2.1,yes,ISSUES,B06 sparse page; comparator rationale identifiable
+Supplement,86,AVATAR Q2.2-Q2.3,yes,ISSUES,B06 sparse page; long handles wrap within margins
+Supplement,87,AVATAR Q2.4-Q2.5,yes,ISSUES,B06 almost empty page holding two inactive questions
+Supplement,88,AVATAR Q2.6-Q2.7,yes,ISSUES,B06 sparse page; inactive question identified
+Supplement,89,AVATAR D3 and Q3.1,yes,ISSUES,B06 sparse page; 1/157 and 0.6 percent retained as recorded output
+Supplement,90,AVATAR Q3.2-Q3.3,yes,ISSUES,B06 almost empty page holding two inactive questions
+Supplement,91,AVATAR Q3.4 and D4,yes,ISSUES,B06 domain transition isolated from following answers
+Supplement,92,AVATAR Q4.1-Q4.2,yes,ISSUES,B06 sparse page; uncertainty text readable
+Supplement,93,AVATAR Q4.3-Q4.4,yes,ISSUES,B06 sparse page; inference type and comparator missing-path answers retained
+Supplement,94,AVATAR Q4.5 and D5,yes,ISSUES,B06 domain transition isolated from following answers
+Supplement,95,AVATAR Q5.1-Q5.2,yes,ISSUES,B06 sparse page; qualified no-information rationale retained
+Supplement,96,AVATAR Q5.3 Overall and Part B first records,yes,ISSUES,B06 answer/evidence transition; record text readable
+Supplement,97,AVATAR evidence 30fa and 3ce4,yes,PASS,Long retained excerpts remain within page; metadata precedes text
+Supplement,98,AVATAR evidence 3ce4 continued,yes,PASS,Continuation readable; no missing text against evidence CSV
+Supplement,99,AVATAR evidence 4b57 and 58ab,yes,PASS,Handles and source-page-line metadata readable
+Supplement,100,AVATAR evidence 7961 and 7ad1,yes,PASS,Registry-plan and trial-report sources distinct
+Supplement,101,AVATAR evidence 92ee and 975a,yes,PASS,Flattened table remains explicitly verbatim evidence; source hash and labels readable
+Supplement,102,AVATAR evidence af13 and c8e0 start,yes,ISSUES,B06 next-record heading/source/page/lines stranded before source hash and quote
+Supplement,103,AVATAR evidence c8e0 continued,yes,ISSUES,B06 source hash and quote separated from identifying handle on previous page
+Supplement,104,AVATAR evidence d54a and d6c2,yes,PASS,Registry outcome and randomization excerpts readable; no clipping
+Supplement,105,AVATAR evidence e66d and f625,yes,PASS,Source handles and excerpts match retained evidence CSV
+Supplement,106,Prompt templates and run provenance,yes,PASS,ARBITER and comparator templates distinct; Sonnet identifier/evaluated commit/one run per arm and equivalent-cost boundary explicit
+TRIPOD-LLM,1,Reporting map items1-6c,yes,ISSUES,B07 draft/internal locators and unsupported reported status for text dates
+TRIPOD-LLM,2,Reporting map items6d-10,yes,ISSUES,B07 unnamed supplementary-table locator; author-credential gaps correctly identified
+TRIPOD-LLM,3,Reporting map items11-16c,yes,ISSUES,B07 unnamed table references and non-final locators; declaration gaps separately identified
+TRIPOD-LLM,4,Reporting map items16d-GRRAS3,yes,ISSUES,B07 author-assembly statuses and unnamed performance-table references
+TRIPOD-LLM,5,Reporting map GRRAS4-15,yes,ISSUES,B07 internal benchmark README and unnamed table locators; author gaps explicitly acknowledged

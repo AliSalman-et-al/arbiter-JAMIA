@@ -1,0 +1,29 @@
+--- old page 1
++++ new page 1
+@@ -135,6 +135,18 @@
+ C.
+ Computational
+ resources
++Unassisted
++rule-break
++cells
++show
++No./total
++(%;
++95%
++CI);
++CI
++bounds
++are
++percentages.
+ Domain
+ rules
+ use
+@@ -224,6 +236,7 @@
+ not
+ measured.
+ CI,
++95%
+ confidence
+ interval;
+ 10,000

@@ -1,63 +1,63 @@
-Expert,Source,Domain,Evaluable,Reason,Count
-1,ARBITER,D1,TRUE,Evaluable,306
-1,ARBITER,D2,FALSE,Arm question inactive,340
-1,ARBITER,D2,FALSE,Component not matched,17
-1,ARBITER,D2,FALSE,Not applicable,4
-1,ARBITER,D2,TRUE,Evaluable,362
-1,ARBITER,D3,FALSE,Arm question inactive,192
-1,ARBITER,D3,FALSE,Component not matched,39
-1,ARBITER,D3,FALSE,Not applicable,3
-1,ARBITER,D3,TRUE,Evaluable,198
-1,ARBITER,D4,FALSE,Arm question inactive,159
-1,ARBITER,D4,FALSE,Component not matched,30
-1,ARBITER,D4,FALSE,Not applicable,1
-1,ARBITER,D4,TRUE,Evaluable,339
-1,ARBITER,D5,FALSE,Component not matched,12
-1,ARBITER,D5,TRUE,Evaluable,302
-1,Unassisted,D1,FALSE,Component not matched,3
-1,Unassisted,D1,TRUE,Evaluable,303
-1,Unassisted,D2,FALSE,Arm question inactive,340
-1,Unassisted,D2,FALSE,Component not matched,19
-1,Unassisted,D2,FALSE,Not applicable,11
-1,Unassisted,D2,TRUE,Evaluable,353
-1,Unassisted,D3,FALSE,Arm question inactive,214
-1,Unassisted,D3,FALSE,Component not matched,42
-1,Unassisted,D3,FALSE,Not applicable,8
-1,Unassisted,D3,TRUE,Evaluable,168
-1,Unassisted,D4,FALSE,Arm question inactive,205
-1,Unassisted,D4,FALSE,Component not matched,31
-1,Unassisted,D4,FALSE,Not applicable,1
-1,Unassisted,D4,TRUE,Evaluable,292
-1,Unassisted,D5,FALSE,Component not matched,13
-1,Unassisted,D5,TRUE,Evaluable,301
-2,ARBITER,D1,TRUE,Evaluable,306
-2,ARBITER,D2,FALSE,Arm question inactive,341
-2,ARBITER,D2,FALSE,Component not matched,8
-2,ARBITER,D2,FALSE,Not applicable,9
-2,ARBITER,D2,TRUE,Evaluable,360
-2,ARBITER,D3,FALSE,Arm question inactive,188
-2,ARBITER,D3,FALSE,Component not matched,46
-2,ARBITER,D3,FALSE,Not applicable,3
-2,ARBITER,D3,TRUE,Evaluable,194
-2,ARBITER,D4,FALSE,Arm question inactive,159
-2,ARBITER,D4,FALSE,Component not matched,18
-2,ARBITER,D4,FALSE,Not applicable,1
-2,ARBITER,D4,TRUE,Evaluable,340
-2,ARBITER,D5,FALSE,Component not matched,8
-2,ARBITER,D5,TRUE,Evaluable,301
-2,Unassisted,D1,FALSE,Component not matched,3
-2,Unassisted,D1,TRUE,Evaluable,303
-2,Unassisted,D2,FALSE,Arm question inactive,343
-2,Unassisted,D2,FALSE,Component not matched,10
-2,Unassisted,D2,FALSE,Not applicable,13
-2,Unassisted,D2,TRUE,Evaluable,352
-2,Unassisted,D3,FALSE,Arm question inactive,208
-2,Unassisted,D3,FALSE,Component not matched,49
-2,Unassisted,D3,FALSE,Not applicable,8
-2,Unassisted,D3,TRUE,Evaluable,166
-2,Unassisted,D4,FALSE,Arm question inactive,205
-2,Unassisted,D4,FALSE,Component not matched,19
-2,Unassisted,D4,FALSE,Not applicable,1
-2,Unassisted,D4,TRUE,Evaluable,293
-2,Unassisted,D5,FALSE,Component not matched,9
-2,Unassisted,D5,TRUE,Evaluable,300
+Expert,Source,Domain,Reason,Count
+1,ARBITER,D1,Evaluable,306
+1,Unassisted,D1,Component not matched,3
+1,Unassisted,D1,Evaluable,303
+1,ARBITER,D2,Arm question inactive,340
+1,ARBITER,D2,Component not matched,17
+1,ARBITER,D2,Not applicable,4
+1,ARBITER,D2,Evaluable,362
+1,Unassisted,D2,Arm question inactive,340
+1,Unassisted,D2,Component not matched,19
+1,Unassisted,D2,Not applicable,11
+1,Unassisted,D2,Evaluable,353
+1,ARBITER,D3,Arm question inactive,192
+1,ARBITER,D3,Component not matched,39
+1,ARBITER,D3,Not applicable,3
+1,ARBITER,D3,Evaluable,198
+1,Unassisted,D3,Arm question inactive,214
+1,Unassisted,D3,Component not matched,42
+1,Unassisted,D3,Not applicable,8
+1,Unassisted,D3,Evaluable,168
+1,ARBITER,D4,Arm question inactive,159
+1,ARBITER,D4,Component not matched,30
+1,ARBITER,D4,Not applicable,1
+1,ARBITER,D4,Evaluable,339
+1,Unassisted,D4,Arm question inactive,205
+1,Unassisted,D4,Component not matched,31
+1,Unassisted,D4,Not applicable,1
+1,Unassisted,D4,Evaluable,292
+1,ARBITER,D5,Component not matched,12
+1,ARBITER,D5,Evaluable,302
+1,Unassisted,D5,Component not matched,13
+1,Unassisted,D5,Evaluable,301
+2,ARBITER,D1,Evaluable,306
+2,Unassisted,D1,Component not matched,3
+2,Unassisted,D1,Evaluable,303
+2,ARBITER,D2,Arm question inactive,341
+2,ARBITER,D2,Component not matched,8
+2,ARBITER,D2,Not applicable,9
+2,ARBITER,D2,Evaluable,360
+2,Unassisted,D2,Arm question inactive,343
+2,Unassisted,D2,Component not matched,10
+2,Unassisted,D2,Not applicable,13
+2,Unassisted,D2,Evaluable,352
+2,ARBITER,D3,Arm question inactive,188
+2,ARBITER,D3,Component not matched,46
+2,ARBITER,D3,Not applicable,3
+2,ARBITER,D3,Evaluable,194
+2,Unassisted,D3,Arm question inactive,208
+2,Unassisted,D3,Component not matched,49
+2,Unassisted,D3,Not applicable,8
+2,Unassisted,D3,Evaluable,166
+2,ARBITER,D4,Arm question inactive,159
+2,ARBITER,D4,Component not matched,18
+2,ARBITER,D4,Not applicable,1
+2,ARBITER,D4,Evaluable,340
+2,Unassisted,D4,Arm question inactive,205
+2,Unassisted,D4,Component not matched,19
+2,Unassisted,D4,Not applicable,1
+2,Unassisted,D4,Evaluable,293
+2,ARBITER,D5,Component not matched,8
+2,ARBITER,D5,Evaluable,301
+2,Unassisted,D5,Component not matched,9
+2,Unassisted,D5,Evaluable,300

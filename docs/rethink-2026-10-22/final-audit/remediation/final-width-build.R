@@ -1,0 +1,5 @@
+source('R/load.R')
+for(f in setdiff(list.files('R',pattern='[.]R$',full.names=TRUE),'R/load.R')) source(f)
+build_supplement(load_inputs())
+build_manuscript_document()
+stopifnot(system2('quarto',c('render','supplement.qmd'))==0L)

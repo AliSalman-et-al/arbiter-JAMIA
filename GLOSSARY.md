@@ -4,7 +4,7 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 ## Arms and sources
 
-**ARBITER**: Agentic Risk of Bias Inference Tool for Evidence Reviews. An AI model reads and answers; rule-based software (the ARBITER server, no AI) stores the sources, checks every quotation, applies the RoB 2 rules and writes the audit file.
+**ARBITER**: Agentic Risk of Bias Inference Tool for Evidence Reviews, an installable tool for use in evidence-review workflows. An AI model reads and answers; rule-based software (the ARBITER server, no AI) stores the sources, checks every quotation, applies the RoB 2 rules and writes the audit file.
 
 **ARBITER arm**: A model run that uses the ARBITER MCP server and the arbiter-assess skill. The data files call it "kit". The manuscript reports one ARBITER arm, ARBITER-Sonnet. The Haiku arms exist in the data but are not reported anywhere.
 
@@ -57,7 +57,7 @@ _Avoid_: preferred judgement
 
 **Direction of disagreement**: Whether a source's label is stricter (more severe) or more lenient (less severe) than the published label for the same cell, on Low < Some concerns < High. The literature calls a model's stricter labels "over-flagging". Use "stricter" and "more lenient" in outputs, never "over-flagging" or "under-flagging", because those words assume the published label is right.
 
-**Rules-only recomputation**: The unassisted arm's labels with every algorithm violation replaced by the label the official algorithm gives from that arm's own signalling answers. It asks how much of ARBITER's advantage the rule engine alone would supply. Do not call it "Unassisted with ARBITER".
+**Rules-only recomputation**: The unassisted arm's labels with every algorithm violation replaced by the label the official algorithm gives from that arm's own signalling answers. It tests whether correcting inconsistent final labels closes the observed agreement gap; it does not isolate the causal contribution of ARBITER's rule engine. Invalid answer paths and missing ratings remain unchanged. Do not call it "Unassisted with ARBITER".
 
 **Quotation found**: A quotation whose text exists in ARBITER's stored copy of the cited source. It does not mean the quotation supports the answer. Use "found in the stored source", never "supported by evidence".
 

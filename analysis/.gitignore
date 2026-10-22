@@ -4,3 +4,9 @@ Rplots.pdf
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Transient publication experiments and extracted media; final assets stay tracked.
+output/supplement-media/
+output/manuscript/qa/gt-*
+output/manuscript/qa/benchmark-panels.docx
+output/manuscript/qa/manuscript-assembled.md

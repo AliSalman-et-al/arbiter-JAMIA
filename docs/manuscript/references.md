@@ -16,42 +16,32 @@
 
 8. Marshall IJ, Kuiper J, Wallace BC. RobotReviewer: evaluation of a system for automatically assessing bias in clinical trials. *J Am Med Inform Assoc* 2016;23:193–201. doi:[10.1093/jamia/ocv044](https://doi.org/10.1093/jamia/ocv044).
 
-9. Nyrhi L, Ponkilainen V, Laaksonen J, et al. Large language models for risk-of-bias assessment in randomised clinical trials—a comparative validation study. *EBioMedicine* 2026;126:106238. doi:[10.1016/j.ebiom.2026.106238](https://doi.org/10.1016/j.ebiom.2026.106238).
+9. Hevia A, Chintalapati S, Lai VKW, et al. ROBOTO2: An Interactive System and Dataset for LLM-assisted Clinical Trial Risk of Bias Assessment. In: *Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations*. Association for Computational Linguistics, 2025:12–25. doi:[10.18653/v1/2025.emnlp-demos.2](https://doi.org/10.18653/v1/2025.emnlp-demos.2).
 
-10. Hevia A, Chintalapati S, Lai VKW, et al. ROBOTO2: An Interactive System and Dataset for LLM-assisted Clinical Trial Risk of Bias Assessment. In: *Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations*. Association for Computational Linguistics, 2025:12–25. doi:[10.18653/v1/2025.emnlp-demos.2](https://doi.org/10.18653/v1/2025.emnlp-demos.2).
+10. Gandhi S, Shokravi A, Chelliahpillai Y, et al. Evaluating large language model performance in Risk of Bias assessments: A cross-sectional validation study. *PLoS One* 2026;21:e0353155. doi:[10.1371/journal.pone.0353155](https://doi.org/10.1371/journal.pone.0353155).
 
-11. Gandhi S, Shokravi A, Chelliahpillai Y, et al. Evaluating large language model performance in Risk of Bias assessments: A cross-sectional validation study. *PLoS One* 2026;21:e0353155. doi:[10.1371/journal.pone.0353155](https://doi.org/10.1371/journal.pone.0353155).
+11. Huang J, Lai H, Zhao W, et al. Large Language Model–Assisted Risk-of-Bias Assessment in Randomized Controlled Trials Using the Revised Risk-of-Bias Tool: Evaluation Study. *J Med Internet Res* 2025;27:e70450. doi:[10.2196/70450](https://doi.org/10.2196/70450).
 
-12. Taneri PE. Human Versus Artificial Intelligence: Comparing Cochrane Authors' and ChatGPT's Risk of Bias Assessments. *Cochrane Evidence Synthesis and Methods* 2025;3:e70044. doi:[10.1002/cesm.70044](https://doi.org/10.1002/cesm.70044).
+12. Xiong YT, Wang YC, Sun YN, et al. Impact of prompt engineering on large language models for risk of bias assessment: a comparative study. *BMJ Evid Based Med* 2026;31:332–41. doi:[10.1136/bmjebm-2025-114055](https://doi.org/10.1136/bmjebm-2025-114055).
 
-13. Lai YJ, Lin SH, Liu JW. Evaluating the Accuracy of Large Language Models in Risk-of-Bias Assessment Using Version 2 of the Cochrane Risk-of-Bias Tool for Randomized Trials: Exploratory Feasibility Study. *J Med Internet Res* 2026;28:e84915. doi:[10.2196/84915](https://doi.org/10.2196/84915).
+13. Nyrhi L, Ponkilainen V, Laaksonen J, et al. Large language models for risk-of-bias assessment in randomised clinical trials—a comparative validation study. *EBioMedicine* 2026;126:106238. doi:[10.1016/j.ebiom.2026.106238](https://doi.org/10.1016/j.ebiom.2026.106238).
 
-14. Huang J, Lai H, Zhao W, et al. Large Language Model–Assisted Risk-of-Bias Assessment in Randomized Controlled Trials Using the Revised Risk-of-Bias Tool: Evaluation Study. *J Med Internet Res* 2025;27:e70450. doi:[10.2196/70450](https://doi.org/10.2196/70450).
+14. Taneri PE. Human Versus Artificial Intelligence: Comparing Cochrane Authors' and ChatGPT's Risk of Bias Assessments. *Cochrane Evidence Synthesis and Methods* 2025;3:e70044. doi:[10.1002/cesm.70044](https://doi.org/10.1002/cesm.70044).
 
-15. Choi J, Swan H, Kim MJ, et al. Variability, algorithm conformance, and accuracy of large language model–based tools for risk-of-bias (RoB 2.0) assessment of randomized trials: a pilot study. *Journal of Evidence-Based Practice* 2026;2:91–97. doi:[10.63528/jebp.2026.00011](https://doi.org/10.63528/jebp.2026.00011).
+15. Lai YJ, Lin SH, Liu JW. Evaluating the Accuracy of Large Language Models in Risk-of-Bias Assessment Using Version 2 of the Cochrane Risk-of-Bias Tool for Randomized Trials: Exploratory Feasibility Study. *J Med Internet Res* 2026;28:e84915. doi:[10.2196/84915](https://doi.org/10.2196/84915).
 
-16. Liang Z, Sheffield C, Butera G, et al. Retrieve-Then-Verify for Evaluating Evidence Support and Hallucination in Large Language Model–Generated Medical Information: Empirical Study. *JMIR AI* 2026;5:e93761. doi:[10.2196/93761](https://doi.org/10.2196/93761).
+16. Choi J, Swan H, Kim MJ, et al. Variability, algorithm conformance, and accuracy of large language model–based tools for risk-of-bias (RoB 2.0) assessment of randomized trials: a pilot study. *Journal of Evidence-Based Practice* 2026;2:91–97. doi:[10.63528/jebp.2026.00011](https://doi.org/10.63528/jebp.2026.00011).
 
-17. Saadi S, Fleti F, Rajjoub OH, et al. Comparison of three large language models' ability to assess the risk of bias using ROBINS-I tool. *BMJ Digital Health & AI* 2026;2:e000034. doi:[10.1136/bmjdh-2026-000034](https://doi.org/10.1136/bmjdh-2026-000034).
+17. Eisele-Metzger A, Lieberum JL, Toews M, et al. Exploring the potential of Claude 2 for risk of bias assessment: Using a large language model to assess randomized controlled trials with RoB 2. *Res Synth Methods* 2025;16:491–508. doi:[10.1017/rsm.2025.12](https://doi.org/10.1017/rsm.2025.12).
 
-18. Deng R, Martin G, Wang T, et al. CPGPrompt: translating clinical guidelines into large language model-executable decision support. *J Am Med Inform Assoc* 2026;33:855–62. doi:[10.1093/jamia/ocag026](https://doi.org/10.1093/jamia/ocag026).
+18. Sahu V. Five methodological considerations for validating LLMs in risk of bias assessment. *Res Synth Methods* 2026;17:1054–56. doi:[10.1017/rsm.2026.10073](https://doi.org/10.1017/rsm.2026.10073).
 
-19. Eisele-Metzger A, Lieberum JL, Toews M, et al. Exploring the potential of Claude 2 for risk of bias assessment: Using a large language model to assess randomized controlled trials with RoB 2. *Res Synth Methods* 2025;16:491–508. doi:[10.1017/rsm.2025.12](https://doi.org/10.1017/rsm.2025.12).
+19. Gartlehner G, Kugley S, Crotty K, et al. Artificial Intelligence–Assisted Data Extraction With a Large Language Model: A Study Within Reviews. *Ann Intern Med* 2025;178:1763–71. doi:[10.7326/ANNALS-25-00739](https://doi.org/10.7326/ANNALS-25-00739).
 
-20. Sahu V. Five methodological considerations for validating LLMs in risk of bias assessment. *Res Synth Methods* 2026;17:1054–56. doi:[10.1017/rsm.2026.10073](https://doi.org/10.1017/rsm.2026.10073).
+20. Gallifant J, Afshar M, Ameen S, et al. The TRIPOD-LLM reporting guideline for studies using large language models. *Nat Med* 2025;31:60–69. doi:[10.1038/s41591-024-03425-5](https://doi.org/10.1038/s41591-024-03425-5).
 
-21. Gartlehner G, Kugley S, Crotty K, et al. Artificial Intelligence–Assisted Data Extraction With a Large Language Model: A Study Within Reviews. *Ann Intern Med* 2025;178:1763–71. doi:[10.7326/ANNALS-25-00739](https://doi.org/10.7326/ANNALS-25-00739).
+21. Kottner J, Audigé L, Brorson S, et al. Guidelines for Reporting Reliability and Agreement Studies (GRRAS) were proposed. *J Clin Epidemiol* 2011;64:96–106. doi:[10.1016/j.jclinepi.2010.03.002](https://doi.org/10.1016/j.jclinepi.2010.03.002).
 
-22. Gallifant J, Afshar M, Ameen S, et al. The TRIPOD-LLM reporting guideline for studies using large language models. *Nat Med* 2025;31:60–69. doi:[10.1038/s41591-024-03425-5](https://doi.org/10.1038/s41591-024-03425-5).
+22. Li Y, Yang F, Wu M, Li J. Human-AI collaboration enhances the performance of large language models in risk of bias assessment. *BMC Med Res Methodol* 2026;26:37. doi:[10.1186/s12874-025-02763-3](https://doi.org/10.1186/s12874-025-02763-3).
 
-23. Kottner J, Audigé L, Brorson S, et al. Guidelines for Reporting Reliability and Agreement Studies (GRRAS) were proposed. *J Clin Epidemiol* 2011;64:96–106. doi:[10.1016/j.jclinepi.2010.03.002](https://doi.org/10.1016/j.jclinepi.2010.03.002).
-
-## Verification notes for authors (not part of the reference list)
-
-Checked 19 October 2026 using DOI content negotiation (CSL JSON), Crossref registration metadata and primary publisher records. Each listed DOI was matched to the title printed above. DOI content negotiation follows the DOI resolver to registration-agency metadata; this verifies identity, not access to the article full text. Rate-limited requests were retried. RAISE resolves through DataCite and identifies a living OSF project, rather than an individual journal article. ROBOTO2's proceedings DOI and title also match the ACL Anthology record at https://aclanthology.org/2025.emnlp-demos.2/.
-
-Bibliographic corrections to supplied shorthand: “Hartling 2019” is Bertizzolo et al.; “Zhang 2024” is Yao et al. in Trials, rather than J Clin Epidemiol. Minozzi's implementation-instruction paper was published online in 2021 and appears in the 2022 journal volume. CPGPrompt uses LLM navigation of decision trees, not a wholly deterministic guideline engine. These corrections do not change the cited findings.
-
-The public study dataset has no verified DOI supplied in the brief. Its complete dataset citation must be added when the authors create the archive; the Data availability statement retains an explicit placeholder. No DOI has been invented for ARBITER software: Methods links directly to the supplied public version commit.
-
-Revision scope: references 11–14 also document structured RoB 2 prompting in prior studies; they do not establish that the present minimal-prompt comparator represents those designs. The Round 16 revision adds no references or DOIs and retains the title–DOI verification recorded above. Gartlehner (reference 21) remains a design precedent for blinded label comparison; it is not cited as evidence that its sampling design matches the full-coverage expert reference used here. The manuscript’s novelty claim concerns the combined enforced workflow and reference covering every domain, rather than the existence of independent panels in prior studies.
+23. Liu N, Zhang T, Liang P. Evaluating verifiability in generative search engines. In: *Findings of the Association for Computational Linguistics: EMNLP 2023*. Association for Computational Linguistics, 2023:7001–25. doi:[10.18653/v1/2023.findings-emnlp.467](https://doi.org/10.18653/v1/2023.findings-emnlp.467).

@@ -21,65 +21,77 @@ reporting_checklist <- function() {
   locations <- c(
     '1'='Manuscript title (ANALYSIS-PLAN section 7)',
     '2'='Manuscript abstract; results-sentences.md (author assembly)',
-    '3a'='Manuscript Introduction (author assembly; ANALYSIS-PLAN section 7)',
-    '3b'='Manuscript Introduction; eMethods Design status and limitations',
+    '3a'='Manuscript Background and significance (author assembly; ANALYSIS-PLAN section 7)',
+    '3b'='Manuscript Background and significance; eMethods Interpretive limits',
     '4'='eMethods Blinded expert assessment',
-    '5a'='eMethods Published-label target matching; eTable 1',
-    '5b'='eTable 1 Benchmark trials; label-target CSVs', '5c'='eMethods Dates and training exposure',
+    '5a'='eMethods Input parity and label targets; supplementary table',
+    '5b'='Supplement section 1 Benchmark trials', '5c'='eMethods Interpretive limits',
     '5d'='eMethods Algorithms and validation; prompt templates',
-    '5e'='eMethods Independent reference and Overall; Table 2',
-    '6a'='Supplement Prompt templates and run provenance; eMethods Dates and training exposure',
+    '5e'='eMethods Independent reference and Overall; supplement section 5',
+    '6a'='Supplement Prompt templates and run provenance; eMethods Interpretive limits',
     '6b'='N/A: fixed provider model; no model development or fine-tuning',
     '6c'='Supplement Prompt templates and run provenance', '6d'='eMethods Algorithms and validation; prompt templates',
-    '6e'='eMethods Algorithms and validation; Published-label target matching',
+    '6e'='eMethods Algorithms and validation; Input parity and label targets',
     '7a'='Table 3; eMethods Evidence binding and verification',
     '7b'='eMethods Blinded expert assessment; Independent reference and Overall',
-    '7c'='eMethods Published-label target matching',
+    '7c'='eMethods Input parity and label targets',
     '7d'='eMethods Blinded expert assessment; Manuscript Methods rater credentials (author completion required)',
     '7e'='eMethods Input parity and label targets; prompt templates; Table 3',
     '8a'='eMethods Algorithms and validation; Blinded expert assessment',
-    '8b'='Table 2; eTable 4 Full independent agreement and paired contrasts; eTable 2 Expert reliability',
+    '8b'='Figure 4; supplement sections 2 and 5',
     '8c'='Manuscript Methods rater credentials (author completion required)',
     '9a'='Supplement Prompt templates and run provenance',
-    '9b'='Supplement Prompt templates and run provenance; eTable 1',
+    '9b'='Supplement Prompt templates and run provenance; supplementary table',
     '10'='N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification',
     '11'='N/A: no instruction tuning or alignment training was performed',
     '12'='Supplement Prompt templates and run provenance; eMethods API list-price reconstruction; time/cost eTables',
     '13'='Manuscript Ethics declaration (author completion required)',
     '14a'='Manuscript Funding declaration (author completion required)',
     '14b'='Manuscript Competing interests (author completion required)',
-    '14c'='ANALYSIS-PLAN.md; analysis/DEVIATIONS.md; eMethods Independent reference and Overall',
+    '14c'='eMethods Independent reference and Overall; formal primary endpoint and exploratory analyses in Methods',
     '14d'='Manuscript Protocol/registration statement (author confirmation required)',
-    '14e'='Manuscript Data availability; results.html How to reproduce',
-    '14f'='results.html How to reproduce; Supplement Prompt templates and run provenance',
+    '14e'='Manuscript Data availability; Results report Reproduction',
+    '14f'='Results report Reproduction; Supplement Prompt templates and run provenance',
     '15'='Manuscript Public involvement statement (author confirmation required)',
-    '16a'='Figure 3', '16b'='eTable 1', '16c'='eTable 1; N/A for individual-patient distributions: report-level benchmark',
-    '16d'='Figure 3; Tables 1–3', '17'='Figures 4–6; Tables 1–3; eTable 4 full contrasts; eTable 11 signalling questions and disagreement types; eFigure 2 collapsed question differences; eFigure 5 five-level and collapsed differences; eFigure 4 domain agreement',
+    '16a'='Figure 3', '16b'='supplementary table', '16c'='supplementary table; N/A for individual-patient distributions: report-level benchmark',
+    '16d'='Figure 3; Tables 1–3', '17'='Figures 4–5; Tables 1–3; supplementary table full contrasts; supplementary table signalling questions and disagreement types; eFigure 2 collapsed question differences; eFigure 5 five-level and collapsed differences; eFigure 4 source-specific signalling agreement',
     '18'='N/A: no model updating or adaptation was performed',
     '19a'='Manuscript Discussion (author assembly); results-sentences.md',
-    '19b'='eMethods Design status and limitations', '19c'='eMethods Published-label target matching; Design status and limitations',
-    '19d'='eMethods Design status and limitations; Manuscript Discussion deployment (author assembly)',
-    '19e'='Table 2; eMethods Algorithms and validation; Design status and limitations',
+    '19b'='eMethods Interpretive limits', '19c'='eMethods Input parity and label targets; Interpretive limits',
+    '19d'='eMethods Interpretive limits; Manuscript Discussion deployment (author assembly)',
+    '19e'='Table 3; eMethods Algorithms and validation; Interpretive limits',
     '19f'='Manuscript Discussion human oversight (author assembly)',
     '19g'='Manuscript Discussion future work (author assembly)')
   tripod <- tripod |> mutate(section=unname(locations[item]))
   grras_locations <- c('Manuscript title and abstract (author assembly)',
-    'eMethods Algorithms and validation','eTable 1; Figure 3',
+    'eMethods Algorithms and validation','supplementary table; Figure 3',
     'Manuscript Methods rater credentials (author completion required)',
     'eMethods Blinded expert assessment',
     'Benchmark README-FOR-ALI.md sampling; Figure 3 (fixed available sample)',
-    'eTable 1; benchmark README-FOR-ALI.md',
+    'supplementary table; benchmark README-FOR-ALI.md',
     'eMethods Blinded expert assessment',
     'Table 1; eMethods Blinded expert assessment',
     'eMethods Independent reference and Overall','Figure 3; Table 1',
-    'eTable 1; Manuscript Methods rater credentials (author completion required)',
+    'supplementary table; Manuscript Methods rater credentials (author completion required)',
     'Tables 1–3; Figures 4–5','Manuscript Discussion (author assembly)',
     'Supplementary analyses; results.html; repository CSVs')
   grras <- grras |> mutate(section=grras_locations)
-  bind_rows(tripod,grras) |> mutate(page='Final pagination pending',
-    applicability_and_notes=case_when(startsWith(section,'N/A:')~section,
-      grepl('author completion|author confirmation',section)~'Author information required; the planned location is identified, but the statement is not supplied by these data.',
-      grepl('author assembly',section)~'Manuscript prose location; verify during author assembly.',
-      TRUE~'Reported at the named display or supplement location.')) |>
-    select(guideline,item,topic,page,section,applicability_and_notes,source)
+  map <- bind_rows(tripod,grras)
+  map$section <- gsub(' [(](author assembly|ANALYSIS-PLAN)[^)]*[)]','',map$section)
+  map$section <- gsub('results-sentences.md','Manuscript Results',map$section,fixed=TRUE)
+  map$section <- gsub('Benchmark README-FOR-ALI.md sampling; Figure 3 (fixed available sample)','Manuscript Benchmark and assessment arms; Figure 3; eTable 1 (fixed available benchmark)',map$section,fixed=TRUE)
+  map$section <- gsub('benchmark README-FOR-ALI.md','Manuscript Benchmark and assessment arms',map$section,fixed=TRUE)
+  map$section <- gsub('supplementary table full contrasts','eTable 2 and eTable 16',map$section,fixed=TRUE)
+  map$section <- gsub('supplementary table signalling questions and disagreement types','eTables 13, 13A and 13B',map$section,fixed=TRUE)
+  map$section <- gsub('supplementary table','eTable 1',map$section,fixed=TRUE)
+  map$section <- gsub('time/cost eTables','eTables 20–22',map$section,fixed=TRUE)
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='5c'] <- 'Text-date coverage is not reported; author information required'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='14c'] <- 'Manuscript Statistical analysis; formal primary endpoint and exploratory analyses; protocol/archive identifier requires author confirmation'
+  map$section[map$guideline=='GRRAS' & map$item=='9'] <- 'Manuscript Independent expert references; eMethods Blinded expert assessment'
+  map <- map |> mutate(page='Stable section/display locator',
+    applicability_and_notes=case_when(
+      startsWith(section,'N/A:')~'Not applicable: fixed model and task',
+      grepl('author completion|author confirmation|author information|author information required',section,ignore.case=TRUE)~'Partial: author information required',
+      TRUE~'Reported at the named current section or display'))
+  map |> select(guideline,item,topic,page,section,applicability_and_notes,source)
 }

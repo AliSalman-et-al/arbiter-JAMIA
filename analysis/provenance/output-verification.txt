@@ -12,19 +12,21 @@ PASS 17 unchanged CSVs: empty git diff against fee1225; prior-work data identica
 PASS Figures 1 and 2: all eight PNG/PDF/SVG/TIFF files byte-identical to fee1225.
 PASS 49892 source-cell trace records resolve to final CSV values.
 PASS results sentences and figure legends exactly regenerate from final CSVs and the protected supplied legends.
-PASS compact Table 2: source rows against three references, paired differences, matched Overall and expert-to-expert foot rows.
+PASS Table 2: formal conditional endpoint and three core sensitivities reproduce from numerical exports.
 PASS independent answer-code recomputation of every within/cross-direction count; within/cross-direction counts reproduce directly from answer codes.
 PASS eFigure 2 retains only question/expert rows with at least 20 paired answers; eFigure 5 retains every sparse and zero-answer row.
 PASS current display builders reproduce every supplemental display CSV and its Word footnote exactly.
 PASS supplementary source labels, unweighted κ labels, public validation labels and complete confusion-matrix totals.
 PASS every AVATAR answer, rationale and full evidence-record field occurs in the supplement.
 PASS all supplementary and reporting-map display rows occur in their Word documents in CSV column order.
-PASS all four Word tables contain every corresponding display-CSV cell.
+PASS all three Word tables contain every corresponding display-CSV cell.
 PASS final HTML: every Results sentence and main/supplementary display-CSV cell appears; no retired supplement sections remain.
 PASS unreported-model leak scan over all textual outputs, all Word documents and both HTML views.
 PASS reader-facing text contains no filenames or overstated five-level disagreement wording; technical link targets are excluded.
-PASS generated Results, legends and main-table reader text has no retired-design labels. Source quotations and immutable artwork receive contextual review in round16-report.md.
+PASS generated Results, legends and main-table reader text has no retired-design labels. Source quotations and immutable artwork are covered by the rebuild QA record.
 PASS independent workbook severity counts and every expert binary pooled/domain numerator and denominator.
-PASS every numeric estimate/count/denominator/CI unchanged in 45 Round 15 analysis CSVs against fee1225.
+PASS every numeric estimate/count/denominator/CI unchanged in 38 analysis CSVs against approved baseline 951dddd.
 PASS complete reader-language scan; remaining first/composite/accuracy contexts are recorded for review of unchanged clinical quotations and rationale.
 PASS new binary-difference display regenerates in percentage points, with identical numerators, denominators and intervals.
+PASS current five-figure/three-table inventory and chronology-free supplement.
+PASS review-level forest retains both arms from all 16 reviews, including degenerate or undefined intervals.

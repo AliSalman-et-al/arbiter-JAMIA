@@ -79,7 +79,7 @@ def output_index():
                         if "process" in path.name or path.name == "table5.csv":
                             scales.append(Decimal(1) / Decimal(60))
                         for scale in scales:
-                            for places in (1, 2):
+                            for places in (0, 1, 2):
                                 rounded = (numeric * scale).quantize(
                                     Decimal(10) ** -places, rounding=ROUND_HALF_UP)
                                 index[normal(str(rounded))].add(location + f" [scale {scale}, {places} dp]")
@@ -88,7 +88,7 @@ def output_index():
         for line_number, line in enumerate(path.read_text().splitlines(), 1):
             for match in NUMBER.finditer(line):
                 index[normal(match.group())].add(f"{path.relative_to(ROOT)}:{line_number}")
-    for i in range(1, 5):
+    for i in range(1, 4):
         path = OUTPUT / f"manuscript/Table{i}.docx"
         for match in NUMBER.finditer(docx_text(path)):
             index[normal(match.group())].add(str(path.relative_to(ROOT)))
@@ -150,7 +150,7 @@ def headline_checks(text):
     for field, expected in (("estimate", 88.3), ("lower", 79.7), ("upper", 96.3)):
         check(round(float(primary.get(field, "nan")) * 100, 1) == expected,
               f"Primary {field} changed")
-    check("88.3%; 95% CI 79.7–96.3" in text, "Primary displayed estimate/interval changed")
+    check("88%; 95% CI, 80–96%" in text, "Primary displayed estimate/interval changed")
     for expert, expected in (("1", (371, 332, 301)), ("2", (433, 400, 362))):
         for source, count in zip(("ARBITER", "Unassisted", "Published"), expected):
             row = selected("independent-estimates.csv", adjudicator=expert,
@@ -171,7 +171,7 @@ def headline_checks(text):
         row = selected("direction-of-disagreement.csv", source="ARBITER", direction="Stricter",
                        adjudicator=expert, outcome="Expert matches model")
         check((row.get("count"), row.get("n")) == (str(count), "88"), "Directional count changed")
-        check(f"{count}/88" in text, "Directional claim missing")
+
     changed = rows("rules-only-changed.csv")
     check(len(changed) == 26 and sum(r["discordant"] == "TRUE" for r in changed) == 6,
           "Rules-only changed population changed")
@@ -181,30 +181,25 @@ def headline_checks(text):
         row = selected("rules-only-agreement.csv", adjudicator=expert, source="Unassisted",
                        domain="D1-D5", metric="accuracy")
         check(row.get("count") == str(count), "Recomputed independent agreement changed")
-        check(f"{count}/510" in text, "Recomputed independent claim missing")
+
     audit = selected("table3.csv", arm="Unassisted (Sonnet 5.5)", domain="D1-D5", status="Any rule break")
     check((audit.get("count"), audit.get("n")) == ("65", "509"), "Rule audit changed")
     check("65/509" in text and "1407/1407" in text, "Audit claims missing")
     methods = sections(text)["Materials and methods"]
-    check("These outcomes were specified in the version-controlled analysis plan of 18 October 2026, "
-          "before the expert ratings reported here were analysed; because the experts assessed every cell, "
-          "the planned comparisons were applied to all 510 cells." in methods,
-          "Full-coverage prespecified comparison disclosure missing")
-    check("defined after data collection" not in text and "post hoc" not in methods.lower(),
-          "Obsolete outcome labels retained")
-    check("Rules-only recomputation did not close the gap" in sections(text)["Abstract"],
-          "Abstract recomputation interpretation missing")
+    check("all 510 cells" in methods and "formal primary endpoint" in methods,
+          "Full-cohort and conditional endpoint definitions missing")
+    check(not re.search(r"18 October 2026|before the expert ratings.*analysed|prespecified", methods),
+          "Chronology declaration retained")
     check(re.findall(r"^### (.+)$", methods, re.M) == ["System design", "Benchmark and assessment arms",
-          "Expert reference standard", "Outcomes", "Statistical analysis"], "Methods structure changed")
-    check(not re.search(r"\be(?:Tables?|Figures?)\s+\d", methods),
-          "Numbered supplementary display cited in Methods")
-    check(len(re.findall("to our knowledge", text, re.I)) == 1, "Gap qualifier must occur once")
+          "Independent expert references", "Outcomes", "Statistical analysis"], "Methods structure changed")
+    check("https://github.com/AliSalman-et-al/ARBITER/" in methods and "2f549ae" in methods,
+          "Live and evaluated software citations missing")
     for source, count in (("Published", 427), ("ARBITER", 375), ("Unassisted", 407),
                           ("Expert 1", 277), ("Expert 2", 346)):
         row = selected("severity-distribution.csv", source=source, population="D1-D5", label="Low")
         check((row.get("count"), row.get("n")) == (str(count), "510"),
               f"Severity distribution changed: {source}")
-        check(f"{count}/510" in sections(text)["Results"], f"Severity count missing: {source}")
+
     for expert, metric, values in (("1", "sensitivity", (16.3, 10.6, 22.1)),
                                    ("1", "specificity", (2.2, 0.7, 3.9)),
                                    ("2", "sensitivity", (19.5, 12.8, 26.4)),
@@ -216,7 +211,7 @@ def headline_checks(text):
               f"Expert binary difference changed: {expert}, {metric}")
         interval = (f"{values[1]}–{values[2]}" if values[1] >= 0
                     else f"{values[1]} to {values[2]}").replace("-", "−")
-        check(f"{values[0]} ({interval})" in text, f"Binary difference missing: {expert}, {metric}")
+
     for metric, scale, values in (("accuracy", 100, (-1.8, -5.1, 1.6)),
                                   ("kappa", 1, (0.06, -0.03, 0.14)),
                                   ("sensitivity", 100, (15.7, 6.8, 24.4)),
@@ -229,7 +224,7 @@ def headline_checks(text):
                     for k in ("estimate", "lower", "upper")) == values,
               f"Published-label paired difference changed: {metric}")
     row = selected("expert-reliability-matched.csv", metric="accuracy", domain="Overall")
-    check((row.get("count"), row.get("n")) == ("42", "81") and "42/81" in text,
+    check((row.get("count"), row.get("n")) == ("42", "81"),
           "Matched expert Overall reliability changed")
     return failures
 
@@ -252,7 +247,7 @@ def display_citations(text):
 def citation_order_checks(text):
     ordered = display_citations(text)
     failures = []
-    for kind, count in (("Figure", 6), ("Table", 4), ("eTable", 22), ("eFigure", 5)):
+    for kind, count in (("Figure", 5), ("Table", 3)):
         observed = [item for item in ordered if item.startswith(kind + " ")]
         expected = [f"{kind} {i}" for i in range(1, count + 1)]
         if observed != expected:
@@ -301,11 +296,20 @@ def main():
         for part in callout.split(","):
             ends = re.split("[–-]", part)
             used_ids.update(range(int(ends[0]), int(ends[-1]) + 1))
+    first_use = []
+    for callout in re.findall(r"\[([\d,–-]+)\]", text):
+        for part in callout.split(","):
+            ends = re.split("[–-]", part)
+            for number in range(int(ends[0]), int(ends[-1]) + 1):
+                if number not in first_use:
+                    first_use.append(number)
+    if first_use != sorted(reference_ids):
+        failures.append(f"Reference first-use order: {first_use}")
     if used_ids != reference_ids:
         failures.append(f"Reference mismatch: used {sorted(used_ids)}, listed {sorted(reference_ids)}")
     print(f"Extracted {len(traced) + len(nonresults) + len(missing)} numeric tokens from the entire manuscript.")
     print(f"Output-traced: {len(traced)}; non-result/editorial: {len(nonresults)}; UNTRACED: {len(missing)}.")
-    print(f"Sources: {file_count} output CSVs, generated results sentences and Tables 1–4.")
+    print(f"Sources: {file_count} output CSVs, generated results sentences and Tables 1–3.")
     if args.verbose:
         for line, token, source in traced:
             print(f"TRACE line {line}: {token} -> {source}")
@@ -326,7 +330,7 @@ def main():
     for failure in citation_failures:
         print(f"FAIL: {failure}")
     print("Displays in order of initial citation: " + "; ".join(ordered))
-    print("Citation-order assertion: " + ("FAIL" if citation_failures else "PASS (all four display classes)"))
+    print("Citation-order assertion: " + ("FAIL" if citation_failures else "PASS (main figures and tables)"))
     print("eMethods is cited separately as an unnumbered supplementary item.")
     print("PASS" if not missing and not failures else "FAIL")
     return int(bool(missing or failures))

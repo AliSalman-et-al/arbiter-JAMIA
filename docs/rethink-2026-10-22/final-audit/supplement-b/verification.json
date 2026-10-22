@@ -1,0 +1,162 @@
+{
+  "head": "951dddd3e28e0d6316c641491667353e0b851a78",
+  "method": "Full individual-page visual inspection using tools.view_image; independent CSV-cell presence and count arithmetic checks below. Cell presence is not a substitute for visual or semantic review.",
+  "supplement_page_count": 106,
+  "tripod_page_count": 5,
+  "table_proof_checks": [
+    {
+      "display": "cells-changed-by-rules-only-recomputation",
+      "pages": "59-60",
+      "rows": 26,
+      "cells": 156,
+      "missing_cells": []
+    },
+    {
+      "display": "invalid-answer-path-sensitivity",
+      "pages": "61-61",
+      "rows": 12,
+      "cells": 96,
+      "missing_cells": []
+    },
+    {
+      "display": "derived-overall-agreement-and-paired-contrasts",
+      "pages": "62-63",
+      "rows": 37,
+      "cells": 222,
+      "missing_cells": []
+    },
+    {
+      "display": "derived-overall-validation-differences",
+      "pages": "64-65",
+      "rows": 29,
+      "cells": 145,
+      "missing_cells": []
+    },
+    {
+      "display": "rule-consistency-and-audit",
+      "pages": "66-69",
+      "rows": 78,
+      "cells": 390,
+      "missing_cells": []
+    },
+    {
+      "display": "evidence-binding",
+      "pages": "70-70",
+      "rows": 9,
+      "cells": 45,
+      "missing_cells": []
+    },
+    {
+      "display": "time-cost-and-token-use",
+      "pages": "71-71",
+      "rows": 10,
+      "cells": 40,
+      "missing_cells": []
+    },
+    {
+      "display": "api-cost-estimates-and-reconstruction-bounds",
+      "pages": "72-73",
+      "rows": 28,
+      "cells": 84,
+      "missing_cells": []
+    },
+    {
+      "display": "token-reconciliation",
+      "pages": "74-76",
+      "rows": 48,
+      "cells": 144,
+      "missing_cells": []
+    },
+    {
+      "display": "prior-work-evidence-ledger",
+      "pages": "77-77",
+      "rows": 8,
+      "cells": 32,
+      "missing_cells": []
+    },
+    {
+      "display": "avatar-trace-answers",
+      "pages": "83-96",
+      "rows": 28,
+      "cells": 196,
+      "missing_cells": []
+    },
+    {
+      "display": "avatar-trace-evidence",
+      "pages": "96-105",
+      "rows": 16,
+      "cells": 96,
+      "missing_cells": []
+    }
+  ],
+  "arithmetic_checks": {
+    "changed_rows_26": true,
+    "changed_rows_all_labels_differ": true,
+    "validation_rows_29": true,
+    "validation_missing_published_21": true,
+    "validation_permitted_escalations_7": true,
+    "validation_published_low_some_concerns_1": true,
+    "invalid_violations_equal_original_plus_additional": true
+  },
+  "proof_sha256": {
+    "docs\\rethink-2026-10-22\\rendered\\Supplement.pdf": "28e95ca071369c5492a048114abf037bf8b3dc4e52c169628a1dc747ad044f74",
+    "docs\\rethink-2026-10-22\\rendered\\TRIPOD-LLM.pdf": "e511133cff18ca7e644bdbe36f079d36dae962f544b6425afd7b912409669e1b",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-055.png": "4eb132f4cd9ee18dbfaea3ac19c24b1c89c67e5c4fea5166baa0e713a13ed3eb",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-056.png": "2a8d11dabe885726ae00e1d32ead3758124327d86254f72d4c070724615d8476",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-057.png": "fa6fab344a8fde6306b32e76b64ceaf472d95dada5d8539db363a6cac6a7f08c",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-058.png": "e79c996951ead1a3800ecf535e48ae28eda3b9796e9af4bada7e2eff68ff23ee",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-059.png": "f3abf352e85b3e1e6ef017fe45b5d6916737a8a89ff347f66ec6f6b7058c45e5",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-060.png": "b07fb1f9f745d364c571962b0657cee2002eac6f5ccaa2da097e12bc5b6b6674",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-061.png": "2c97a35fc3667e53d47f745e79f1a271fcc7e65d056140a5479a559bd6f9a40f",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-062.png": "d004a8979c6945b4de5d59910e904dd7d3f88c7e32681178e621fa8c543152f9",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-063.png": "79cc6c93e6a7145cca8f18da5c87e4a281faa6200612b0c95a56464a8d8a1f44",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-064.png": "f663fad668e0edc3202621d60638d284c99a3c5e731824544e98340bed5fd390",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-065.png": "af6576454d4df6944cedcb6e8a99a39e515297da98f772cfe4ef42d74535214b",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-066.png": "fb659639327bfcd771b8b02bf8b9d79aff9c8c12b580d1eccf1e537aa28d6bc0",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-067.png": "7211070ef623ac8ed33e5c856b81f2d92c37f395e42785e034e8ddd45b812610",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-068.png": "8f63cf407f25154bdae7db8e8457002395ec9a6aa567490fce517b1a3b472077",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-069.png": "d5d80ef04825ad968787b43af34d23edb7b5cdf16e7b5e5c61103c5ce37748b0",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-070.png": "e8aea2b39f4042bee704ae1a0c9f10571a7165b8720c3b5c61284ddf0da36e2b",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-071.png": "0094f292d4984cd586d519309b349baed66ab2ba5fcea1711d3a9a3ec5ba9f9b",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-072.png": "6369a82efa574781ac9887c544c38fc000dd0f72a426ed0148a078f5d370d89b",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-073.png": "49f9ca6950ed7ca605f4dfdaaa81a8defb868c809e2ae77808a2f2e9a99b126b",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-074.png": "e8f94e7f8cc924b5bfe59e3454ad23cb9fa1bf7a1e1261dd464e9bcb19e4631b",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-075.png": "4724cb3d2d873f8406b9a16a925817d2427057130e3efd7bbe58f56be5bd6f69",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-076.png": "bf6b3337e8a73ba1a370b16113124971bcef0f7016e4aeb49c5172a65e48693d",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-077.png": "c4264cf0a825a3ba7e276c34ece9eabe5fb2bcaa6543e2b4f8a14bbe1b3313e1",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-078.png": "d78385676b8d2cbf67063b473f6789dab3c0dba4486e01dba94eba0479456c23",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-079.png": "12b9d27736c0222eac1ff70b8dbd985399d7e83b30491e5f1d91ff366607a1af",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-080.png": "f7808f0415522e8785c4f1b922de3c1b20c8dd5e1cfcfb3832b89232024e048c",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-081.png": "bf685da4d226c9a1104389ca02df11c83a97564060a98d3fd758ed14dc92b674",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-082.png": "94de231016485edf7d63d17e642f66e959d8bf94a71a9f363fdf22e5fb248064",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-083.png": "946fa7be6cc38f40d65555d6018b8074d23005728fa1b47792f8dc1850bdb3fd",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-084.png": "52852cd4f11a633e657755217e494ef51462c10be3ccdfbce68ce43660fe627c",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-085.png": "fa8ded839353e45179088d4c464a0b837af138b2b6ae8ccd182db44dc71e04f8",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-086.png": "aa94f3b0bb8c343cf5b60db53d6d42c335d734e9f446a1de72cac44991b0b901",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-087.png": "f3b50014aad297aa39680d8aee07daaab9048b7f9eb096e38e13eb42a142c8a1",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-088.png": "b12807ea576b514b6c9a74340fa696c04693af84d91868901a3467c5f4b45ea9",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-089.png": "8cb9110ca185449a8cda5d07a77f46b038f2e5b9d13c5c75a63567c0d1ef6b89",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-090.png": "520b87a21604b9875e15d3e1e1d855ed8b3b729ee160a30d1f7595c1d5d195bf",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-091.png": "ebf4b7307739e699e6aacf501109800854c69f52c9dddfcacb2b7b93fb60bca9",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-092.png": "8c7124c93dfeb31d955ef780e6f0ee98bc72c514a5773c4eb5f04548fe8b1801",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-093.png": "af725f044b2c124d8b80df5061ba00d31d0e1a2f4f5ee3f038fe5d996d73d64d",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-094.png": "e2e9808f6730c597d63734d9e9f8ae1ef593f3939ca99183affa6de3b452ec2b",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-095.png": "7c13854fef3b81e3d8c8e3c9f101f9f2093e68d5c669224a842b21132a717078",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-096.png": "99751b22c9e76d42434f6692d26b06ad5d9c56514302c2fcebe418bd5f84658a",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-097.png": "85e1e418919cc05d0dbddf4111eb1757303ae79feb79753a98fddf736576ba32",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-098.png": "436bd15fe0ffc0932656f54d45450ba60e432cbb6ecf3b307267d0929cc48773",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-099.png": "d83230baedbb016aede8e40740562407e81ad680405cba44bbd2c98147d7cb11",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-100.png": "bc511f65faf43597d1659c64ca5546cee06aa79d466def237075cbc8df489dc2",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-101.png": "421adf67853d53a470a94f7f4918c1c28559102caec2dc16aa48b0722e9a79c6",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-102.png": "3a000462dc38c255149a75902bd8d024edd915dc81d154af46f410285aad6a37",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-103.png": "d07b888d56612fc95ad097d172a938590d6b081994c2624d3e7e112c0c31664e",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-104.png": "0ace115e1fad75b2ee75cb82266bbc6e33854e80f6c902370c60bb847b2f762d",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-105.png": "a8acb340e27134ae916a5ba713ccbba59410922d2f224aedf438f493c1a90c2e",
+    "docs\\rethink-2026-10-22\\rendered\\Supplement\\page0001-106.png": "153cd6421fd97af56ab17483a21c420889b411e5a2d91e98a500966ef01e6c31",
+    "docs\\rethink-2026-10-22\\rendered\\TRIPOD-LLM\\page0001-1.png": "7aee5e121b057eb898e7ef2f442d9749738032aefd447f791f8195be6415c793",
+    "docs\\rethink-2026-10-22\\rendered\\TRIPOD-LLM\\page0001-2.png": "0e49cc96a0648bf66d0c9133c1f20171be45743bf7d24de470edeac24b61c712",
+    "docs\\rethink-2026-10-22\\rendered\\TRIPOD-LLM\\page0001-3.png": "e39b4b21fc490c8b2aa748d80d1cbb570a966867a6e185d179f6d1d06a810b0f",
+    "docs\\rethink-2026-10-22\\rendered\\TRIPOD-LLM\\page0001-4.png": "9af137b26d9ed6df62b6be404112601beb0e0c7571de5bc7422acb7e72f878d0",
+    "docs\\rethink-2026-10-22\\rendered\\TRIPOD-LLM\\page0001-5.png": "b630a7f36ac45971f1966ea089f7edaa7ffb24b40ee395b1e36fc4330a302d29"
+  }
+}

@@ -1,4 +1,4 @@
-CI_NOTE <- '95% percentile intervals; 10,000 trial-cluster bootstrap replicates stratified by meta-analysis; seed 20261018.'
+CI_NOTE <- 'CI, 95% confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.'
 read_display <- function(name) {
   readr::read_csv(paste0('output/tables/',name,'.csv'),show_col_types=FALSE)
 }
@@ -16,13 +16,19 @@ write_display_trace <- function() {
 expert_population_note <- function() {
   paste('N is the denominator on each row. D1–D5: n = 510 per expert and n = 388 for the agreed reference; individual domains: n = 102 per expert, with agreed-reference n shown by row.',
     'Overall (all): n = 102 per expert for ARBITER and Unassisted. Overall (observed): n = 81 per expert for all three sources and every paired contrast involving Published; ARBITER and Unassisted are also reported on these same n = 81 trials.',
-    'Twenty-one (21) published reviews gave no Overall label; these missing labels are excluded, never counted as disagreements. Agreed-reference Overall uses n = 52 among all trials and n = 42 among the observed-label subset, restricting each population to equal expert ratings. Expert-to-expert Overall: n = 102. Exact agreement is a percentage; paired differences are percentage points or coefficients.')
+    'Twenty-one trials had no observed Published Overall label; these missing labels are excluded, never counted as disagreements. Agreed-reference Overall uses n = 52 among all trials and n = 42 among the observed-label subset, restricting each population to equal expert ratings. Expert-to-expert Overall: n = 102. Exact agreement is a percentage; paired differences are percentage points or coefficients.')
 }
 expert_display <- function(x,pooled=FALSE) {
   if(pooled) x <- filter(x,domain %in% c('D1-D5','Overall'))
   if('population' %in% names(x)) x <- x |> mutate(domain=if_else(domain=='Overall',
     if_else(population=='Observed Published Overall','Overall (observed)','Overall (all)'),domain))
-  x |> mutate(value=if_else(metric=='accuracy',paste0(if_else(!is.na(count),paste0(count,'/',n,' ('),''),fmt_number(100*estimate,1),'%',if_else(!is.na(count),') ', ' '),fmt_ci(100*lower,100*upper,1)),paste0(fmt_number(estimate),' ',fmt_ci(lower,upper)))) |>
+  x$value <- vapply(seq_len(nrow(x)),function(i) {
+    r <- x[i,]
+    if(!is.finite(r$estimate)) return('—')
+    if(r$metric=='accuracy' && grepl(' minus ',r$source)) return(paste0(fmt_number(100*r$estimate,1),' pp ',fmt_ci(100*r$lower,100*r$upper,1)))
+    fmt_estimate(r,r$metric=='accuracy')
+  },character(1))
+  x |>
     select(adjudicator,domain,source,n,metric,value) |> pivot_wider(names_from=metric,values_from=value) |>
     rename(Reference=adjudicator,Domain=domain,Source=source,N=n,`Exact agreement (95% CI)`=accuracy,`Weighted κ (95% CI)`=kappa) |>
     mutate(Reference=if_else(Reference %in% c('1','2'),paste('Expert',Reference),Reference))
@@ -30,10 +36,12 @@ expert_display <- function(x,pooled=FALSE) {
 estimate_display <- function(x) {
   ids <- intersect(c('adjudicator','arm','source','comparison','population','domain','group','level','analysis','metric','direction','outcome'),names(x))
   x$value <- vapply(seq_len(nrow(x)),function(i) {
-    if(!is.finite(x$estimate[i])) return('—')
-    prop <- !('metric' %in% names(x)) || !x$metric[i] %in% c('kappa','AC2')
-    mult <- if(prop) 100 else 1
-    paste0(fmt_number(x$estimate[i]*mult,if(prop) 1 else 2),if(prop) '%' else '', ' ',fmt_ci(x$lower[i]*mult,x$upper[i]*mult,if(prop) 1 else 2))
+    r <- x[i,]
+    if(!is.finite(r$estimate)) return('—')
+    prop <- !('metric' %in% names(x)) || !r$metric %in% c('kappa','AC2')
+    difference <- 'comparison' %in% names(x) && grepl(' minus ',r$comparison)
+    if(difference && prop) return(paste0(fmt_number(100*r$estimate,1),' pp ',fmt_ci(100*r$lower,100*r$upper,1)))
+    fmt_estimate(r,prop)
   },character(1))
   x |> select(all_of(ids),any_of(c('count','n')),value)
 }
@@ -99,42 +107,90 @@ characteristics_table <- function(inputs) {
   }
   rows
 }
-process_integrity_table <- function() {
-  x <- main_table3() |> select(Measure,ARBITER,Unassisted)
-  p <- read_display('table5')[1:2,] |> mutate(across(where(is.character),fmt_process_text))
-  for(j in 2:4) p[[j]] <- sub(' ', '\n',p[[j]],fixed=TRUE)
-  names(p) <- c('Measure','ARBITER','Unassisted','Paired mean difference (95% CI)')
-  bind_rows(x,p) |> mutate(across(everything(),~replace_na(.x,'')))
+benchmark_context_table <- function(inputs) {
+  x <- characteristics_table(inputs)
+  x |> filter(!grepl('Overall|Expert-to-expert|D1–D5: (ARBITER|Unassisted)',Characteristic))
 }
-build_displays <- function(inputs,cells) {
+primary_endpoint_table <- function() {
+  x <- read_display('primary-endpoint') |> filter(metric=='ARBITER',analysis %in% c('Consensus','Expert 1','Expert 2','Split sensitivity'))
+  x |> transmute(Population=recode(analysis,Consensus='Agreed choices (formal primary)',`Split sensitivity`='All splits counted against ARBITER'),
+    `ARBITER, No./total (%) (95% CI)`=fmt_estimate(x,TRUE))
+}
+process_integrity_table <- function() {
+  x <- main_table3() |> select(Measure,ARBITER,Unassisted) |>
+    filter(!grepl('^D[1-5] rule|^Overall|^Domain ratings|^Evidence and audit',Measure)) |>
+    mutate(Measure=sub('supporting passage','passage',Measure,fixed=TRUE))
+  p <- read_display('table5')[1:2,] |> mutate(across(where(is.character),fmt_process_text))
+  names(p) <- c('Measure','ARBITER','Unassisted','Paired mean difference (95% CI)')
+  p$Measure <- c('Runtime (minutes/trial), median (IQR)','API list-price equivalent (US$/trial), median (IQR)')
+  bind_rows(tibble(Measure='A. Rule conformance',ARBITER='',Unassisted=''),
+    tibble(Measure='Domain outputs reproduced from proposals',ARBITER='510/510 (100.0%)',Unassisted='Not available'),x[1:3,],
+    tibble(Measure='B. Structural record checks',ARBITER='',Unassisted=''),x[4:nrow(x),],
+    tibble(Measure='C. Computational resources',ARBITER='',Unassisted=''),p) |>
+    mutate(across(everything(),~replace_na(.x,'')),
+      `Paired mean difference (95% CI)`=if_else(`Paired mean difference (95% CI)`=='' & !grepl('^[ABC][.]',Measure),'—',`Paired mean difference (95% CI)`))
+}
+build_main_tables <- function(inputs) {
   dir.create('output/manuscript/qa',recursive=TRUE,showWarnings=FALSE)
   independent <- read_display('independent-estimates'); paired <- read_display('independent-differences'); reliability <- read_display('expert-reliability')
-  table2 <- compact_expert_table(independent,paired,reliability)
+  table2 <- primary_endpoint_table()
   read_display('table1');read_display('table1-differences');read_display('table3')
-  table4 <- prior_work_table()
-  table4$`Independent reference or adjudication`[grepl('This study',table4$Study)] <- 'Blinded dual expert rating of all domains'
-  tables <- list(characteristics_table(inputs),table2,process_integrity_table(),table4)
-  titles <- c('Benchmark and reference characteristics','Agreement with each reference',
-    'Rule conformance, evidence checks, time and cost','ARBITER combines rule enforcement and an independent expert reference')
-  notes <- c('Severity categories are Low, Some concerns and High. D1–D5: 510 cells per source; Overall: 81 trials for Published and 102 for other sources. Document counts are trials with each role recorded in the ARBITER source inventory, among 102 included trials; roles can overlap. SAP, statistical analysis plan. Expert-to-expert D3 is the lowest domain; pooled reliability covers D1–D5.',
-    table2_note(),
-    paste('Domain rules use evaluable ratings (ARBITER 510; Unassisted 509); Overall uses 102 trials. Evidence denominators count active answers or distinct evidence records as indicated; verifier denominator is 102 bundles. ARBITER has no recorded domain overrides; one Overall escalation is permitted. Evidence checks establish quotation occurrence and structural binding, without assessing answer support. Runtime and API list-price equivalents use 102 paired trials; source summaries are median [IQR], contrasts are paired mean differences. Cost is a frozen-rate equivalent, not expenditure.',CI_NOTE),
-    prior_work_note())
-  readr::write_csv(display_numbering(),'output/manuscript/qa/round16-display-numbering.csv')
-  for(i in 1:4) {
+  tables <- list(benchmark_context_table(inputs),table2,process_integrity_table())
+  titles <- c('Benchmark and reference context','Conditional primary endpoint and core sensitivities',
+    'Process checks and computational resources')
+  notes <- c('Reference categories are Low, Some concerns and High; each reference contributes 510 domain cells. Document counts are trials with each role recorded in the source inventory among 102 trials; roles can overlap. SAP, statistical analysis plan. Detailed distributions for all sources and derived Overall appear in the supplement.',
+    paste('The formal primary endpoint conditions on 80 arm-discordant cells and the 60 for which the experts made an agreed choice; 20 choices split. Expert-specific sensitivities use all 80. The final row counts all 20 splits against ARBITER by assumption, without assigning Unassisted wins. Expert 1 chose neither arm in 4/80 cells; this is distinct from the split-loss assumption.',CI_NOTE),
+    paste('Unassisted rule-break cells show No./total (%; 95% CI); CI bounds are percentages. Domain rules use evaluable ratings (ARBITER 510; Unassisted 509); one Unassisted cell is unevaluable. Evidence denominators count active answers or distinct evidence records as indicated; verifier denominator is 102 bundles. ARBITER has no recorded domain overrides; one Overall escalation is permitted. Evidence checks establish quotation occurrence and structural binding, without assessing answer support. Runtime and API list-price equivalents use 102 paired trials; source summaries are median (IQR), contrasts are paired mean differences. Cost is a frozen-rate equivalent, not expenditure. — means not applicable; Not available means not measured.',CI_NOTE))
+  readr::write_csv(display_numbering(),'output/manuscript/qa/display-numbering.csv')
+  for(i in 1:3) {
     x <- tables[[i]];readr::write_csv(x,paste0('output/tables/display-table',i,'.csv'),na='')
     doc <- manuscript_doc() |> manuscript_par(paste0('Table ',i,' ',titles[i]),style='heading 1')
-    if(i==4) doc <- officer::body_set_default_section(doc,officer::prop_section(page_size=officer::page_size(orient='landscape'),page_margins=officer::page_mar(top=.6,bottom=.6,left=.65,right=.65)))
-    ft <- house_table(x,notes[i],if(i==4) 10.3 else 6.85)
-    if(i<4) ft <- style_group_rows(ft,x)
-    if(i==1) ft <- flextable::width(ft,j=1:2,width=c(1.7,5.15))
-    if(i==2) ft <- flextable::width(ft,j=1:5,width=c(.8,1.25,1.6,1.6,1.6))
-    doc <- flextable::body_add_flextable(doc,ft)
+    tab <- house_table(x,notes[i],6.85)
+    writeLines(gt::as_raw_html(tab,inline_css=FALSE),paste0('output/manuscript/qa/Table',i,'.html'))
+    doc <- add_gt(doc,tab)
     print(doc,target=paste0('output/manuscript/Table',i,'.docx'))
   }
-  build_manuscript_figures(cells)
+}
+
+build_displays <- function(inputs,cells,rebuild_figures=TRUE) {
+  build_main_tables(inputs)
+  if(rebuild_figures) build_manuscript_figures(cells)
   build_supplement(inputs)
   build_figure_legends()
   build_results_sentences()
   write_display_trace()
+  build_manuscript_document()
+}
+
+build_manuscript_document <- function() {
+  main <- readLines('../docs/manuscript/manuscript.md',encoding='UTF-8')
+  main <- main[!grepl('^Word counts:',main)]
+  text <- c(main,'',readLines('../docs/manuscript/references.md',encoding='UTF-8'))
+  path <- 'output/manuscript/qa/manuscript-assembled.md'
+  writeLines(enc2utf8(text),path,useBytes=TRUE)
+  stopifnot(system2('quarto',c('pandoc',path,'--from=markdown','--to=docx','--output=output/manuscript/Manuscript.docx'))==0L)
+  normalize_manuscript_styles('output/manuscript/Manuscript.docx')
+  python <- Sys.getenv('ARBITER_PYTHON',unset=Sys.which('python'))
+  if(!nzchar(python)) python <- Sys.which('python3')
+  if(!nzchar(python)) stop('Install Python with python-docx and lxml, or set ARBITER_PYTHON to that interpreter.')
+  stopifnot(system2(python,'../docs/manuscript/assemble-publication.py')==0L)
+}
+
+# Keep Pandoc's unnumbered headings and use explicit black in the Word styles.
+normalize_manuscript_styles <- function(file) {
+  target <- normalizePath(file,winslash='/',mustWork=TRUE)
+  folder <- tempfile('manuscript-style-');dir.create(folder)
+  on.exit(unlink(folder,recursive=TRUE),add=TRUE)
+  utils::unzip(target,exdir=folder)
+  path <- file.path(folder,'word/styles.xml')
+  xml <- xml2::read_xml(path)
+  styles <- xml2::xml_find_all(xml,"//w:style[starts-with(@w:styleId,'Heading') or @w:styleId='Title' or @w:styleId='Subtitle']")
+  for(style in styles) {
+    props <- xml2::xml_find_first(style,'w:rPr')
+    if(inherits(props,'xml_missing')) props <- xml2::xml_add_child(style,'w:rPr')
+    xml2::xml_remove(xml2::xml_find_all(props,'w:color'))
+    xml2::xml_add_child(props,'w:color',`w:val`='000000')
+  }
+  xml2::write_xml(xml,path)
+  zip::zipr(target,files=list.files(folder,all.files=TRUE,no..=TRUE),root=folder,include_directories=FALSE)
 }

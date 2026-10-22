@@ -1,0 +1,639 @@
+document,bookmark,page,text,old_pdf_pages,page_disposition
+Table1,loc_0,1,Table 1. Benchmark and reference context,1,same page
+Table2,loc_0,1,Table 2. Conditional primary endpoint and core sensitivities,1,same page
+Table3,loc_0,1,Table 3. Process checks and computational resources,1,same page
+Manuscript,abstract,2,"ABSTRACT
+Objective. To present an inspectable workflow for the Cochrane risk-of-bias tool for randomised trials (RoB 2) and compare its judgments with a same-model minimal-prompt comparator against independent experts.
+Materials and Methods. ARBITER separates model interpretation from executable decision rules and retains sources, answers and evidence for review. Both arms used Sonnet and identical supplied documents for 102 trials from 16 reviews. Two experts independently assessed all 510 domain cells before viewing labels. The formal primary endpoint was ARBITER preference among agreed choices on arm-discordant cells. Paired intervals resampled trials within fixed reviews.
+Results. The experts’ agreed choice favored ARBITER in 53/60 cells (88%; 95% CI, 80–96%), from 80 arm-discordant cells with 20 split choices. Exact agreement was 371/510 (72.7%) versus 332/510 (65.1%) against Expert 1 and 433/510 (84.9%) versus 400/510 (78.4%) against Expert 2. Paired gains were 7.6 percentage points (95% CI, 5.1–10.2) and 6.5 (3.5–9.4), with the largest observed domain gains in selection of the reported result. Published-label agreement differed by −1.8 points (−5.1 to 1.6). All 510 ARBITER domain outputs followed executable rules; structural checks did not assess semantic evidence support. Median runtime was 7.6 versus 0.5 minutes per trial.
+Discussion. The complete workflow improved agreement with both experts in this benchmark, with substantial domain and reference dependence. The comparison does not isolate individual components or measure human workload.
+Conclusion. ARBITER makes assessment records inspectable and improved agreement with independent experts in this benchmark.",,multiple/no exact old text matches
+Manuscript,acknowledgments-and-ai-use,15,"Acknowledgments and AI use
+[Non-author contributors and acknowledgments]. AI assisted preparation of this manuscript draft. [Authors to verify the drafting-tool identity/version, extent of use, human review and any additional AI assistance, and provide matching cover-letter disclosure]. The expert assessments and forced-choice adjudication used no AI.",,multiple/no exact old text matches
+Manuscript,author-contributions,15,"Author contributions
+[Author names mapped to CRediT roles; confirmation of final approval and accountability].",15,same page
+Manuscript,back-matter,16,"BACK MATTER
+Acknowledgments and AI use
+[Non-author contributors and acknowledgments]. AI assisted preparation of this manuscript draft. [Authors to verify the drafting-tool identity/version, extent of use, human review and any additional AI assistance, and provide matching cover-letter disclosure]. The expert assessments and forced-choice adjudication used no AI.
+Funding
+[Funding sources, grant identifiers and funder role, or an explicit statement of no funding].
+Competing interests
+[Author-specific competing interests, including relevant relationships to ARBITER, or an explicit declaration of none].
+Author contributions
+[Author names mapped to CRediT roles; confirmation of final approval and accountability].
+Ethics, registration and public involvement
+[Ethics approval or exemption determination and consent requirements, including the expert assessment and forced-choice component]. [Study registration status and identifier, if applicable]. [Patient and public involvement statement].
+Data availability
+The public study repository provides analysis code, derived data, expert assessment sheets, prompts and reproducibility materials. An archival DOI and complete dataset citation remain pending. ARBITER source is available at the public software commit. The results report and supplement provide the figures, editable tables and reproduction links. Trial PDFs will not be redistributed; trial DOIs and source-file hashes will identify the inputs. Author declarations and archival registration remain pending completion.",,multiple/no exact old text matches
+Manuscript,background-and-significance,4,"BACKGROUND AND SIGNIFICANCE
+Risk-of-bias judgments influence how evidence from randomized trials is interpreted. The Cochrane risk-of-bias tool for randomised trials (RoB 2) structures assessment of a specific trial result through signalling questions, domain algorithms and an Overall judgment.[1] A final label compresses decisions about which evidence applies, what it means and how answers follow the decision rules. Reviewers need access to that basis to assess and defend a judgment. Applying RoB 2 remains demanding: experienced assessors can disagree, and implementation instructions can improve reliability.[2–3] Published reviews also disagree when assessing the same trials with the earlier instrument.[4–5] Evidence-synthesis organizations therefore emphasize human oversight and transparent reporting for AI-assisted judgments.[6–7]
+Automated appraisal already has a lineage of supporting evidence and interactive review. RobotReviewer paired automated judgments with extracted text, and ROBoto2 combines RoB 2 assessment with retrieved evidence and user correction.[8–9] Gandhi and colleagues compared model assessments with review labels and fresh human assessments.[10] Huang and colleagues evaluated structured prompts and answer-derived ratings.[11] Same-model comparisons of direct commands and constrained prompts have also been studied for the earlier risk-of-bias instrument.[12] These precedents make the practical question more specific than whether structure or evidence can help: what does an available, inspectable RoB 2 workflow produce, and how do its judgments compare with a defined alternative?
+Procedure and judgment quality require separate evaluation. Software can faithfully apply rules to an inappropriate answer, and a quotation can occur in a source without supporting the judgment attached to it. Published review labels provide an accessible reference but may differ from fresh assessments or concern a broader result. Prior studies have examined domain agreement, repeated assessments and reference dependence.[10–11,13–18] Their percentages cannot rank systems across different inputs, references and datasets. A same-model comparison with separate independent expert references can instead show the magnitude and limits of improvement within one benchmark.",,multiple/no exact old text matches
+Manuscript,benchmark-and-assessment-arms,6,"Benchmark and assessment arms
+The benchmark comprised trials from published meta-analyses, with source reviews, specialties and label distributions documented in the supplementary benchmark table. Assessment prompts targeted the published review’s labeled result using its outcome, time point, contrast and printed result, rather than automatically choosing the trial’s primary outcome. Published labels could concern broad, inferred or different assessment targets. We retained the full domain cohort for all Published-reference comparisons and interpreted target uncertainty qualitatively. De Waal’s supplied registry record belonged to another trial and did not establish relevant information about the assessed result.
+Both arms received identical underlying trial sources: articles, supplements, registry projections, protocols and statistical analysis plans available in the captured input set. Unassisted received copies of the registry projections and acquired documents from the ARBITER run; nothing was fetched anew. Document availability varied by trial. Unassisted was a minimal-prompt condition: its prompt contained the assessment task sentence followed by one fixed output-format sentence, with no RoB 2 guidance. It could read and search local documents, but had no ARBITER service, assessment skill or web access. ARBITER additionally received the assessment skill and its guidance. Input parity therefore concerns trial evidence, not identical instructions or processing. The comparison tests the complete system; it cannot isolate the effects of guidance, software or additional processing time.
+Both arms used claude-sonnet-5-5, medium effort, in Claude Code 2.1.278 with isolated settings, connectors and memory disabled. The installable source is available from the public repository. The evaluated software is ARBITER 1.0.0, public commit 2f549ae. Each arm assessed each trial once. The ARBITER harness approved the proposed result unchanged. The protocol allowed “Continue.” at most twice per phase without coaching. The prompt templates and the Unassisted output-format instruction are reproduced in eMethods, including the ARBITER skill invocation and a filled example. The prompts were distinct. Several prior studies instead used structured RoB 2 prompts, so this comparator does not represent all prior prompting designs.[10–11,14–15]",,multiple/no exact old text matches
+Manuscript,competing-interests,15,"Competing interests
+[Author-specific competing interests, including relevant relationships to ARBITER, or an explicit declaration of none].",15,same page
+Manuscript,conclusion,2,Conclusion. ARBITER makes assessment records inspectable and improved agreement with independent experts in this benchmark.,2,same page
+Manuscript,conclusion-1,15,"Conclusion
+ARBITER makes the basis of a RoB 2 assessment available for inspection and improved agreement with two independent experts in this same-model benchmark. Domain and reference dependence remain central to interpretation. Its procedural safeguards support reviewable appraisal; its judgment quality and effects in use require continued empirical evaluation.",15,same page
+Manuscript,data-availability,16,"Data availability
+The public study repository provides analysis code, derived data, expert assessment sheets, prompts and reproducibility materials. An archival DOI and complete dataset citation remain pending. ARBITER source is available at the public software commit. The results report and supplement provide the figures, editable tables and reproduction links. Trial PDFs will not be redistributed; trial DOIs and source-file hashes will identify the inputs. Author declarations and archival registration remain pending completion.",16,same page
+Manuscript,discussion,2,"Discussion. The complete workflow improved agreement with both experts in this benchmark, with substantial domain and reference dependence. The comparison does not isolate individual components or measure human workload.",2,same page
+Manuscript,discussion-1,15,"DISCUSSION
+ARBITER provides an inspectable RoB 2 workflow, and its complete Sonnet implementation agreed more often with each independent expert than the same model given a minimal prompt in this benchmark. The formal conditional preference endpoint also favored ARBITER. The full-cohort comparisons place that result in context: the gains were measurable against both experts but varied by domain, and substantial disagreement remained. The retained record and the empirical agreement findings support complementary parts of the contribution.
+ARBITER builds on evidence-assisted appraisal tools. RobotReviewer exposed supporting text, ROBoto2 supports interactive RoB 2 review, and structured prompting and answer-derived judgments have been evaluated elsewhere.[8–12] ARBITER’s contribution is its available implementation of a model/software division: the model interprets trial evidence, while software stores sources, binds evidence records and executes decision rules. The evaluated contrast includes guidance, tool use and additional computation. It does not identify which component accounts for the improvement, nor does it show superiority over the structured prompts used in other studies. Human–AI collaboration studies address a further question, how assistance changes reviewer work, which this offline evaluation did not measure.[22]
+Domain results identify both progress and remaining difficulty. D5 showed the largest observed gains, whereas D3 produced very different absolute agreement against the two experts. RoB 2 application difficulties and reference variability are established concerns.[2–3] Reporting each expert separately preserves that uncertainty. Agreement between the experts does not define an error-free standard or a maximum attainable model score. Likewise, an interval excluding zero for one domain or expert and including zero for another does not demonstrate a difference between those effects. The bootstrap quantifies trial variation within the fixed reviews, not variation across future reviewers, reviews or model runs.
+Reference dependence changes the interpretation of the same model outputs. Published labels were predominantly Low, and the small Published-reference difference contrasted with the expert-reference gains. Target uncertainty and different judgment thresholds may contribute; disagreement alone cannot establish that the Published labels were wrong. The signalling diagnostics add a distinct caution. In D3, collapsing probable and definite answers changes a negative exact-match contrast to a positive one against Expert 1. This is evidence about answer patterns, not an unqualified improvement. D5’s smaller collapsed gain against Expert 2 also limits a uniform explanation. Neither these diagnostics nor rules-only label repair isolates a causal mechanism.
+The inspectable record makes a practical review action possible: a reviewer can follow a domain rating to its signalling answers and the retained source locations, then decide whether the interpretation is defensible. Executable rules reduce inconsistency between answers and adopted labels, while recorded overrides preserve the reason for departures. Structural verification establishes occurrence and binding, not semantic evidence support; citation evaluation in other settings makes the same distinction between coverage and support.[23] Image descriptions remain model-written. The extra runtime and list-price equivalents describe the computational burden of producing this record. Whether it reduces checking time, changes decisions or encourages automation bias requires direct human-use evaluation.
+Generalizability is bounded by one model configuration, one run per arm, a minimal-prompt comparator, 16 fixed reviews and two experts. Experts could consult additional sources, and reports may have appeared in model training. Supplied-source errors also matter, as the unrelated De Waal registry record illustrates. Forced choices may be influenced by offered labels, although independent ratings and answers were frozen before exposure. Derived Overall is a secondary summary of the same domains, not independent confirmation. Repeated runs, comparisons with structured prompts and components, independent assessment of evidence support, and prospective reviewer studies would test stability and practical value. The current implementation nevertheless supplies a concrete basis for those evaluations: an available workflow whose assessment pathway can be inspected and whose gains and remaining disagreements are visible.
+Conclusion
+ARBITER makes the basis of a RoB 2 assessment available for inspection and improved agreement with two independent experts in this same-model benchmark. Domain and reference dependence remain central to interpretation. Its procedural safeguards support reviewable appraisal; its judgment quality and effects in use require continued empirical evaluation.",,multiple/no exact old text matches
+Manuscript,front-matter-notes,1,"Article type: Research and Applications. Main displays comprise five figures and three tables.
+Authors: [Author names, degrees and order]. Affiliations: [Departments, institutions, cities and countries]. Correspondence: [Corresponding author name, postal address, email and telephone].
+Keywords: artificial intelligence; risk of bias; evidence synthesis; reproducibility; clinical trials.
+Word counts: main text 2932; structured abstract 229.",,multiple/no exact old text matches
+Manuscript,funding,15,"Funding
+[Funding sources, grant identifiers and funder role, or an explicit statement of no funding].",15,same page
+Manuscript,independent-expert-references,6,"Independent expert references
+Two blinded human experts assessed all 102 trials × D1–D5 using a structured form, with no AI used for any judgment. Each expert recorded signalling answers and a domain rating for each cell and froze both as the independent rating before seeing any label. Each then saw three blinded labels—published, Unassisted and ARBITER—in an order randomized for each cell, without rationales, and chose the most defensible label. Each subsequently gave a revised rating, which could differ from all offered labels, and recorded answer retention or change. Experts could consult sources beyond the arms’ inputs. Gartlehner’s blinded adjudication of discordant data-extraction items supplied the design precedent.[19] [Expert qualifications, experience and training]. The assessment form and procedures are in eMethods.",,multiple/no exact old text matches
+Manuscript,loc_11,3,BACKGROUND AND SIGNIFICANCE,3,same page
+Manuscript,loc_15,4,OBJECTIVE,4,same page
+Manuscript,loc_17,4,MATERIALS AND METHODS,4,same page
+Manuscript,loc_18,4,System design,4,same page
+Manuscript,loc_21,5,Benchmark and assessment arms,5,same page
+Manuscript,loc_25,6,Independent expert references,6,same page
+Manuscript,loc_27,6,Outcomes,6,same page
+Manuscript,loc_33,8,Statistical analysis,8,same page
+Manuscript,loc_35,8,RESULTS,8,same page
+Manuscript,loc_37,9,Table 1. Benchmark and reference context,9,same page
+Manuscript,loc_39,10,Table 2. Conditional primary endpoint and core sensitivities,10,same page
+Manuscript,loc_43,12,Table 3. Process checks and computational resources,12,same page
+Manuscript,loc_45,13,DISCUSSION,13,same page
+Manuscript,loc_5,2,ABSTRACT,2,same page
+Manuscript,loc_52,15,Conclusion,15,same page
+Manuscript,loc_54,15,BACK MATTER,15,same page
+Manuscript,loc_55,15,Acknowledgments and AI use,,multiple/no exact old text matches
+Manuscript,loc_57,15,Funding,15,same page
+Manuscript,loc_59,15,Competing interests,15,same page
+Manuscript,loc_61,15,Author contributions,15,same page
+Manuscript,loc_63,15,"Ethics, registration and public involvement",15,same page
+Manuscript,loc_65,16,Data availability,16,same page
+Manuscript,loc_92,19,FIGURE LEGENDS,19,same page
+Manuscript,materials-and-methods,2,"Materials and Methods. ARBITER separates model interpretation from executable decision rules and retains sources, answers and evidence for review. Both arms used Sonnet and identical supplied documents for 102 trials from 16 reviews. Two experts independently assessed all 510 domain cells before viewing labels. The formal primary endpoint was ARBITER preference among agreed choices on arm-discordant cells. Paired intervals resampled trials within fixed reviews.",2,same page
+Manuscript,materials-and-methods-1,8,"MATERIALS AND METHODS
+System design
+ARBITER separates evidence interpretation from deterministic checks. The AI model reads trial documents, identifies the result and answers signalling questions; rule-based software stores a content-hashed copy of each source, extracts quoted spans, binds cited evidence to its source and applies the official algorithms (Figure 1). A reviewer approves the proposed result before domain assessment and can inspect the answers and cited evidence afterward. Each required answer must have an evidence basis. Text quotations are server-extracted spans; image regions are rendered and linked to source pages. Model-written image descriptions are not independently checked against image content. The exported HTML report and audit file retain sources, answers, evidence and decisions for independent verification.
+ARBITER computes proposed ratings and permits a reasoned, recorded override with its rationale and evidence. Thus, the software guarantees a checked proposal and an auditable route for any departure; it does not make interpretation infallible. We checked proposed and adopted ratings separately. AVATAR illustrates the workflow for all-cause death after early surgery versus watchful waiting in asymptomatic severe aortic stenosis (Figure 2; complete AVATAR trace in the supplement). It was selected to explain the process, rather than represent typical performance. Its stored documents did not establish a dated analysis plan for the assessed result.
+Benchmark and assessment arms
+The benchmark comprised trials from published meta-analyses, with source reviews, specialties and label distributions documented in the supplementary benchmark table. Assessment prompts targeted the published review’s labeled result using its outcome, time point, contrast and printed result, rather than automatically choosing the trial’s primary outcome. Published labels could concern broad, inferred or different assessment targets. We retained the full domain cohort for all Published-reference comparisons and interpreted target uncertainty qualitatively. De Waal’s supplied registry record belonged to another trial and did not establish relevant information about the assessed result.
+Both arms received identical underlying trial sources: articles, supplements, registry projections, protocols and statistical analysis plans available in the captured input set. Unassisted received copies of the registry projections and acquired documents from the ARBITER run; nothing was fetched anew. Document availability varied by trial. Unassisted was a minimal-prompt condition: its prompt contained the assessment task sentence followed by one fixed output-format sentence, with no RoB 2 guidance. It could read and search local documents, but had no ARBITER service, assessment skill or web access. ARBITER additionally received the assessment skill and its guidance. Input parity therefore concerns trial evidence, not identical instructions or processing. The comparison tests the complete system; it cannot isolate the effects of guidance, software or additional processing time.
+Both arms used claude-sonnet-5-5, medium effort, in Claude Code 2.1.278 with isolated settings, connectors and memory disabled. The installable source is available from the public repository. The evaluated software is ARBITER 1.0.0, public commit 2f549ae. Each arm assessed each trial once. The ARBITER harness approved the proposed result unchanged. The protocol allowed “Continue.” at most twice per phase without coaching. The prompt templates and the Unassisted output-format instruction are reproduced in eMethods, including the ARBITER skill invocation and a filled example. The prompts were distinct. Several prior studies instead used structured RoB 2 prompts, so this comparator does not represent all prior prompting designs.[10–11,14–15]
+Independent expert references
+Two blinded human experts assessed all 102 trials × D1–D5 using a structured form, with no AI used for any judgment. Each expert recorded signalling answers and a domain rating for each cell and froze both as the independent rating before seeing any label. Each then saw three blinded labels—published, Unassisted and ARBITER—in an order randomized for each cell, without rationales, and chose the most defensible label. Each subsequently gave a revised rating, which could differ from all offered labels, and recorded answer retention or change. Experts could consult sources beyond the arms’ inputs. Gartlehner’s blinded adjudication of discordant data-extraction items supplied the design precedent.[19] [Expert qualifications, experience and training]. The assessment form and procedures are in eMethods.
+Outcomes
+The formal primary endpoint was the share of cells where the arms disagreed and both experts made the same forced choice whose chosen label matched ARBITER. A cell was a trial–domain pair. Credit followed label equality: every source matching the chosen label received credit; neither arm received credit if neither label matched. Cells where all three labels matched provided no preference information. Primary sensitivities used each expert on all arm disagreements and counted split choices as ARBITER losses without assigning Unassisted wins.
+Each source was compared with each expert across all 510 cells. Secondary outcomes were agreement with each expert’s independent domain ratings, expert-to-expert agreement, signalling-answer agreement, published-label agreement, rule conformance, evidence checks, runtime and cost. Exact agreement and paired percentage-point differences described the magnitude of agreement with each independent expert. Linearly weighted Cohen’s κ provided complementary ordinal context. Published labels were scored as another source against each expert. We also reported confusion matrices, unweighted κ, expert means and agreement restricted to cells where the experts’ independent ratings agreed.
+Signalling-answer comparisons used explicit answers matched by trial, domain, question and component. Five-level matching distinguished yes, probably yes, no, probably no and no information; collapsed matching combined affirmative and negative levels, leaving no information separate. Missing, inactive, not applicable, unmatched and unresolved answers were excluded; paired contrasts required evaluable answers in both arms. Published-label comparisons used weighted κ, exact agreement, sensitivity for Some concerns or High and specificity, with Gwet’s AC2 supplementary. The All-Low rule described label prevalence; its κ was suppressed because predictions had no variance. Missing predictions counted as disagreement.
+Rule checks applied the official RoB 2 algorithms to each arm’s own answers, using effect of assignment for the deviations domain.[1] The domains cover randomisation, deviations from intended interventions, missing outcome data, outcome measurement and selection of the reported result. A rating contradicting its answers or a skipped required question formed a rule break; absent ratings and answers were unevaluable. A sensitivity resolved invalid required answers recursively as negative or no information. Overall checks allowed escalation when multiple domains had Some concerns. Evidence coverage counted required active answers citing a passage or image; quotation and bundle audits checked source binding and structural integrity, rather than whether evidence justified an answer. Runtime summed wall-clock turn durations. Cost reconstruction used recorded token components and frozen provider rates, with cache and side-call handling detailed in eMethods. Runs used a subscription; dollar figures were API list-price equivalents rather than expenditure.
+Exploratory analyses comprised derived Overall against experts, direction of disagreement, rules-only recomputation, relative-severity strata and severity distributions, including binary sensitivity and specificity against each expert. Derived Overall applied the official rule to independent domains, taking the worst domain without optional escalation for multiple Some concerns. Published Overall comparisons used the 81 trials with an observed label; the other 21 were excluded. Overall results are supplementary. Additional comparisons used all 102 trials, with denominators stated. Directional analyses partitioned stricter or more lenient ratings relative to published labels into expert matches to the arm, published label or neither. Rules-only recomputation replaced Unassisted ratings contradicting their answers with the official output, retaining invalid paths and missing ratings. Original disagreement populations stayed fixed; new ties could credit both arms. Forced choices across all disputed cells and revised ratings were descriptive; seeing labels could anchor revised responses.
+Statistical analysis
+We used 10,000 stratified trial-cluster bootstrap resamples, seed 20261018, retaining the number of trials within each meta-analysis and all cells from each sampled trial. Trials were sampled within the 16 fixed reviews, carrying paired arms and all domain ratings together. Percentile intervals describe 95% uncertainty conditional on those reviews and these two experts; they do not quantify sampling of new reviews, experts or model runs. Paired contrasts used identical resampling weights. Expert means averaged expert-specific estimates within each shared resample rather than pooling independent observations. No P values or multiplicity adjustments were used. Only the formal primary endpoint was confirmatory; other outcomes were secondary or exploratory as indicated. Reporting follows TRIPOD-LLM and GRRAS, with an accompanying item map and author-completion fields.[20–21]",,multiple/no exact old text matches
+Manuscript,objective,2,Objective. To present an inspectable workflow for the Cochrane risk-of-bias tool for randomised trials (RoB 2) and compare its judgments with a same-model minimal-prompt comparator against independent experts.,2,same page
+Manuscript,objective-1,4,"OBJECTIVE
+We present ARBITER, an available workflow that separates model interpretation from executable RoB 2 checks and retains the assessment pathway for inspection. We evaluated its complete Sonnet workflow against the same model given a minimal prompt and identical supplied trial documents. The evaluation combined separate independent expert comparisons across all five domains, a formal conditional forced-choice endpoint, process checks and computational-resource measurements.",,multiple/no exact old text matches
+Manuscript,outcomes,8,"Outcomes
+The formal primary endpoint was the share of cells where the arms disagreed and both experts made the same forced choice whose chosen label matched ARBITER. A cell was a trial–domain pair. Credit followed label equality: every source matching the chosen label received credit; neither arm received credit if neither label matched. Cells where all three labels matched provided no preference information. Primary sensitivities used each expert on all arm disagreements and counted split choices as ARBITER losses without assigning Unassisted wins.
+Each source was compared with each expert across all 510 cells. Secondary outcomes were agreement with each expert’s independent domain ratings, expert-to-expert agreement, signalling-answer agreement, published-label agreement, rule conformance, evidence checks, runtime and cost. Exact agreement and paired percentage-point differences described the magnitude of agreement with each independent expert. Linearly weighted Cohen’s κ provided complementary ordinal context. Published labels were scored as another source against each expert. We also reported confusion matrices, unweighted κ, expert means and agreement restricted to cells where the experts’ independent ratings agreed.
+Signalling-answer comparisons used explicit answers matched by trial, domain, question and component. Five-level matching distinguished yes, probably yes, no, probably no and no information; collapsed matching combined affirmative and negative levels, leaving no information separate. Missing, inactive, not applicable, unmatched and unresolved answers were excluded; paired contrasts required evaluable answers in both arms. Published-label comparisons used weighted κ, exact agreement, sensitivity for Some concerns or High and specificity, with Gwet’s AC2 supplementary. The All-Low rule described label prevalence; its κ was suppressed because predictions had no variance. Missing predictions counted as disagreement.
+Rule checks applied the official RoB 2 algorithms to each arm’s own answers, using effect of assignment for the deviations domain.[1] The domains cover randomisation, deviations from intended interventions, missing outcome data, outcome measurement and selection of the reported result. A rating contradicting its answers or a skipped required question formed a rule break; absent ratings and answers were unevaluable. A sensitivity resolved invalid required answers recursively as negative or no information. Overall checks allowed escalation when multiple domains had Some concerns. Evidence coverage counted required active answers citing a passage or image; quotation and bundle audits checked source binding and structural integrity, rather than whether evidence justified an answer. Runtime summed wall-clock turn durations. Cost reconstruction used recorded token components and frozen provider rates, with cache and side-call handling detailed in eMethods. Runs used a subscription; dollar figures were API list-price equivalents rather than expenditure.
+Exploratory analyses comprised derived Overall against experts, direction of disagreement, rules-only recomputation, relative-severity strata and severity distributions, including binary sensitivity and specificity against each expert. Derived Overall applied the official rule to independent domains, taking the worst domain without optional escalation for multiple Some concerns. Published Overall comparisons used the 81 trials with an observed label; the other 21 were excluded. Overall results are supplementary. Additional comparisons used all 102 trials, with denominators stated. Directional analyses partitioned stricter or more lenient ratings relative to published labels into expert matches to the arm, published label or neither. Rules-only recomputation replaced Unassisted ratings contradicting their answers with the official output, retaining invalid paths and missing ratings. Original disagreement populations stayed fixed; new ties could credit both arms. Forced choices across all disputed cells and revised ratings were descriptive; seeing labels could anchor revised responses.",,multiple/no exact old text matches
+Manuscript,references,18,"References
+Sterne JAC, Savović J, Page MJ, et al. RoB 2: a revised tool for assessing risk of bias in randomised trials. BMJ 2019;366:l4898. doi:10.1136/bmj.l4898.
+Minozzi S, Cinquini M, Gianola S, et al. The revised Cochrane risk of bias tool for randomized trials (RoB 2) showed low interrater reliability and challenges in its application. J Clin Epidemiol 2020;126:37–44. doi:10.1016/j.jclinepi.2020.06.015.
+Minozzi S, Dwan K, Borrelli F, et al. Reliability of the revised Cochrane risk-of-bias tool for randomised trials (RoB2) improved with the use of implementation instruction. J Clin Epidemiol 2022;141:99–105. doi:10.1016/j.jclinepi.2021.09.021.
+Bertizzolo L, Bossuyt P, Atal I, et al. Disagreements in risk of bias assessment for randomised controlled trials included in more than one Cochrane systematic reviews: a research on research study using cross-sectional design. BMJ Open 2019;9:e028382. doi:10.1136/bmjopen-2018-028382.
+Yao Y, Shen J, Luo J, et al. Disagreements in risk of bias assessment for randomized controlled trials in hypertension-related Cochrane reviews. Trials 2024;25:405. doi:10.1186/s13063-024-08145-2.
+Flemyng E, Noel-Storr A, Macura B, et al. Position statement on artificial intelligence (AI) use in evidence synthesis across Cochrane, the Campbell Collaboration, JBI, and the Collaboration for Environmental Evidence 2025. JBI Evid Synth 2025;23:2162–66. doi:10.11124/JBIES-25-00480.
+Thomas J, Flemyng E, Noel-Storr A, et al. Responsible use of AI in evidence SynthEsis (RAISE): recommendations and guidance. OSF. doi:10.17605/OSF.IO/FWAUD. Accessed 19 October 2026. Living project; the DOI identifies the guidance collection.
+Marshall IJ, Kuiper J, Wallace BC. RobotReviewer: evaluation of a system for automatically assessing bias in clinical trials. J Am Med Inform Assoc 2016;23:193–201. doi:10.1093/jamia/ocv044.
+Hevia A, Chintalapati S, Lai VKW, et al. ROBOTO2: An Interactive System and Dataset for LLM-assisted Clinical Trial Risk of Bias Assessment. In: Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations. Association for Computational Linguistics, 2025:12–25. doi:10.18653/v1/2025.emnlp-demos.2.
+Gandhi S, Shokravi A, Chelliahpillai Y, et al. Evaluating large language model performance in Risk of Bias assessments: A cross-sectional validation study. PLoS One 2026;21:e0353155. doi:10.1371/journal.pone.0353155.
+Huang J, Lai H, Zhao W, et al. Large Language Model–Assisted Risk-of-Bias Assessment in Randomized Controlled Trials Using the Revised Risk-of-Bias Tool: Evaluation Study. J Med Internet Res 2025;27:e70450. doi:10.2196/70450.
+Xiong YT, Wang YC, Sun YN, et al. Impact of prompt engineering on large language models for risk of bias assessment: a comparative study. BMJ Evid Based Med 2026;31:332–41. doi:10.1136/bmjebm-2025-114055.
+Nyrhi L, Ponkilainen V, Laaksonen J, et al. Large language models for risk-of-bias assessment in randomised clinical trials—a comparative validation study. EBioMedicine 2026;126:106238. doi:10.1016/j.ebiom.2026.106238.
+Taneri PE. Human Versus Artificial Intelligence: Comparing Cochrane Authors’ and ChatGPT’s Risk of Bias Assessments. Cochrane Evidence Synthesis and Methods 2025;3:e70044. doi:10.1002/cesm.70044.
+Lai YJ, Lin SH, Liu JW. Evaluating the Accuracy of Large Language Models in Risk-of-Bias Assessment Using Version 2 of the Cochrane Risk-of-Bias Tool for Randomized Trials: Exploratory Feasibility Study. J Med Internet Res 2026;28:e84915. doi:10.2196/84915.
+Choi J, Swan H, Kim MJ, et al. Variability, algorithm conformance, and accuracy of large language model–based tools for risk-of-bias (RoB 2.0) assessment of randomized trials: a pilot study. Journal of Evidence-Based Practice 2026;2:91–97. doi:10.63528/jebp.2026.00011.
+Eisele-Metzger A, Lieberum JL, Toews M, et al. Exploring the potential of Claude 2 for risk of bias assessment: Using a large language model to assess randomized controlled trials with RoB 2. Res Synth Methods 2025;16:491–508. doi:10.1017/rsm.2025.12.
+Sahu V. Five methodological considerations for validating LLMs in risk of bias assessment. Res Synth Methods 2026;17:1054–56. doi:10.1017/rsm.2026.10073.
+Gartlehner G, Kugley S, Crotty K, et al. Artificial Intelligence–Assisted Data Extraction With a Large Language Model: A Study Within Reviews. Ann Intern Med 2025;178:1763–71. doi:10.7326/ANNALS-25-00739.
+Gallifant J, Afshar M, Ameen S, et al. The TRIPOD-LLM reporting guideline for studies using large language models. Nat Med 2025;31:60–69. doi:10.1038/s41591-024-03425-5.
+Kottner J, Audigé L, Brorson S, et al. Guidelines for Reporting Reliability and Agreement Studies (GRRAS) were proposed. J Clin Epidemiol 2011;64:96–106. doi:10.1016/j.jclinepi.2010.03.002.
+Li Y, Yang F, Wu M, Li J. Human-AI collaboration enhances the performance of large language models in risk of bias assessment. BMC Med Res Methodol 2026;26:37. doi:10.1186/s12874-025-02763-3.
+Liu N, Zhang T, Liang P. Evaluating verifiability in generative search engines. In: Findings of the Association for Computational Linguistics: EMNLP 2023. Association for Computational Linguistics, 2023:7001–25. doi:10.18653/v1/2023.findings-emnlp.467.",,multiple/no exact old text matches
+Manuscript,results,2,"Results. The experts’ agreed choice favored ARBITER in 53/60 cells (88%; 95% CI, 80–96%), from 80 arm-discordant cells with 20 split choices. Exact agreement was 371/510 (72.7%) versus 332/510 (65.1%) against Expert 1 and 433/510 (84.9%) versus 400/510 (78.4%) against Expert 2. Paired gains were 7.6 percentage points (95% CI, 5.1–10.2) and 6.5 (3.5–9.4), with the largest observed domain gains in selection of the reported result. Published-label agreement differed by −1.8 points (−5.1 to 1.6). All 510 ARBITER domain outputs followed executable rules; structural checks did not assess semantic evidence support. Median runtime was 7.6 versus 0.5 minutes per trial.",,multiple/no exact old text matches
+Manuscript,results-1,12,"RESULTS
+The benchmark included 102 trials from 16 reviews after three unsupported designs were excluded, yielding 510 trial-domain cells (Figure 3; Table 1). Both experts independently assessed every cell. Supplied-source availability varied across trials. Published labels were Low in 427/510 cells (83.7%), compared with 277/510 (54.3%) and 346/510 (67.8%) for Experts 1 and 2. An all-Low rule would therefore match 83.7% of Published domain labels, illustrating the need to interpret exact agreement alongside category distributions and ordinal agreement. The experts agreed on 388/510 domain ratings (76.1%; linearly weighted κ 0.59); this describes reference variability rather than a performance ceiling.
+Table 1. Benchmark and reference context
+Characteristic
+Value
+
+Trials
+102
+
+Meta-analyses
+16
+
+Specialties
+15
+
+Trials with protocol
+26/102 (25.5%)
+
+Trials with registry
+73/102 (71.6%)
+
+Trials with SAP
+22/102 (21.6%)
+
+Trials with supplement
+69/102 (67.6%)
+
+D1–D5: Published
+Low: 427/510 (83.7%); Some concerns: 69/510 (13.5%); High: 14/510 (2.7%)
+
+D1–D5: Expert 1
+Low: 277/510 (54.3%); Some concerns: 163/510 (32.0%); High: 70/510 (13.7%)
+
+D1–D5: Expert 2
+Low: 346/510 (67.8%); Some concerns: 131/510 (25.7%); High: 33/510 (6.5%)
+
+Reference categories are Low, Some concerns and High; each reference contributes 510 domain cells. Document counts are trials with each role recorded in the source inventory among 102 trials; roles can overlap. SAP, statistical analysis plan. Detailed distributions for all sources and derived Overall appear in the supplement.
+
+The formal primary endpoint favored ARBITER in 53/60 agreed choices (88%; 95% CI, 80–96%), versus 7/60 (12%) for Unassisted (Table 2). These choices came from 80 cells where arm labels differed; the experts split in 20. Expert-specific preference shares were 63/80 (79%) and 61/80 (76%). Counting every split choice against ARBITER gave 53/80 (66%). These conditional preference results do not describe agreement across all 510 cells.
+Table 2. Conditional primary endpoint and core sensitivities
+Population
+ARBITER, No./total (%) (95% CI)
+
+Agreed choices (formal primary)
+53/60 (88%; 80–96)
+
+Expert 1
+63/80 (79%; 70–87)
+
+Expert 2
+61/80 (76%; 68–85)
+
+All splits counted against ARBITER
+53/80 (66%; 58–75)
+
+The formal primary endpoint conditions on 80 arm-discordant cells and the 60 for which the experts made an agreed choice; 20 choices split. Expert-specific sensitivities use all 80. The final row counts all 20 splits against ARBITER by assumption, without assigning Unassisted wins. Expert 1 chose neither arm in 4/80 cells; this is distinct from the split-loss assumption. CI, 95% confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.
+
+Across the full cohort, ARBITER matched Expert 1 in 371/510 cells (72.7%) versus 332/510 (65.1%) for Unassisted, a paired gain of 7.6 percentage points (95% CI, 5.1–10.2). Against Expert 2, the corresponding counts were 433/510 (84.9%) and 400/510 (78.4%), a gain of 6.5 points (3.5–9.4) (Figure 4). ARBITER’s weighted κ was 0.51 and 0.69, compared with 0.35 and 0.53 for Unassisted. D5, selection of the reported result, had the largest observed gains: 19.6 points (11.8–27.5) and 11.8 (2.9–20.6). D3, missing outcome data, was strongly reference-dependent: ARBITER matched 43/102 ratings from Expert 1 (42.2%) and 80/102 from Expert 2 (78.4%); the experts agreed in 54/102 cells. Published labels matched the experts in 301/510 and 362/510 cells. Against Published across all 510 cells, ARBITER and Unassisted matched 386/510 (75.7%) and 395/510 (77.5%), respectively, a paired difference of −1.8 points (95% CI, −5.1 to 1.6).
+The signalling-answer overview showed why coding and eligibility matter (Figure 5). In D3 against Expert 1, the five-level paired difference was −10.3 points (95% CI, −17.2 to −3.2), whereas the collapsed difference was +8.5 (3.5–13.7), both using 165 paired components. Combining yes with probably yes, and no with probably no, changes what agreement means. In D5, collapsed gains were +11.3 points against Expert 1 but +3.7 (−0.3 to 7.4) against Expert 2. Complete question results and source-specific absolute rates are supplementary. Exploratory rules-only recomputation changed 26 Unassisted labels while retaining recorded answers, invalid paths and missingness; this was a consistency diagnostic rather than an estimate of the rules engine’s causal effect.
+Process checks established separate procedural properties (Table 3). All 510 ARBITER domain outputs reproduced from the algorithms, with no recorded domain overrides. Unassisted had 65/509 evaluable rule breaks, comprising 26 contradictory ratings and 39 required-question omissions; one cell was unevaluable. All 1538 active required answers cited a passage or image. All 1407/1407 text spans and 14 image records met source-binding checks, and all 102 bundles passed structural verification. These counts refer to different objects and do not establish whether the cited evidence supports an answer.
+Table 3. Process checks and computational resources
+Measure
+ARBITER
+Unassisted
+Paired mean difference (95% CI)
+
+A. Rule conformance
+
+Domain outputs reproduced from proposals
+510/510 (100.0%)
+Not available
+—
+
+Rating contradicts its own answers
+0 by design
+26/509 (5.1%; 3.3–6.9)
+—
+
+Required question skipped
+0 by design
+39/509 (7.7%; 5.7–10.0)
+—
+
+Any rule break
+0 by design
+65/509 (12.8%; 10.0–15.6)
+—
+
+B. Structural record checks
+
+Answers citing ≥1 passage or image
+1,538/1,538 (100.0%)
+Not available
+—
+
+Quoted text linked to its source
+1,407/1,407 (100.0%)
+Not available
+—
+
+Image regions linked to their page
+14/14 (100%)
+Not available
+—
+
+Audit file passes the independent verifier
+102/102 (100.0%)
+Not available
+—
+
+C. Computational resources
+
+Runtime (minutes/trial), median (IQR)
+7.6 (6.1–10.5)
+0.5 (0.4–0.5)
+11.0 (8.4–14.1)
+
+API list-price equivalent (US$/trial), median (IQR)
+3.78 (3.46–4.10)
+0.09 (0.07–0.13)
+3.68 (3.61–3.75)
+
+Unassisted rule-break cells show No./total (%; 95% CI); CI bounds are percentages. Domain rules use evaluable ratings (ARBITER 510; Unassisted 509); one Unassisted cell is unevaluable. Evidence denominators count active answers or distinct evidence records as indicated; verifier denominator is 102 bundles. ARBITER has no recorded domain overrides; one Overall escalation is permitted. Evidence checks establish quotation occurrence and structural binding, without assessing answer support. Runtime and API list-price equivalents use 102 paired trials; source summaries are median (IQR), contrasts are paired mean differences. Cost is a frozen-rate equivalent, not expenditure. — means not applicable; Not available means not measured. CI, 95% confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.
+
+ARBITER required more computation. Median (IQR) runtime was 7.6 (6.1–10.5) versus 0.5 (0.4–0.5) minutes per trial; the paired mean difference was 11.0 minutes (95% CI, 8.4–14.1). API list-price equivalents were US$3.78 (3.46–4.10) versus US$0.09 (0.07–0.13), with a paired mean difference of US$3.68 (3.61–3.75). These are computational-resource estimates, not human-time savings or invoice costs. The supplement groups full agreement evidence, primary sensitivities, signalling diagnostics, derived Overall and missingness, and process/resource details by the questions they support. Derived Overall uses 102 expert-assessed trials and only 81 observed Published labels; 21 missing labels are excluded. Post-exposure ratings remain separate from independent assessments.",,multiple/no exact old text matches
+Manuscript,statistical-analysis,8,"Statistical analysis
+We used 10,000 stratified trial-cluster bootstrap resamples, seed 20261018, retaining the number of trials within each meta-analysis and all cells from each sampled trial. Trials were sampled within the 16 fixed reviews, carrying paired arms and all domain ratings together. Percentile intervals describe 95% uncertainty conditional on those reviews and these two experts; they do not quantify sampling of new reviews, experts or model runs. Paired contrasts used identical resampling weights. Expert means averaged expert-specific estimates within each shared resample rather than pooling independent observations. No P values or multiplicity adjustments were used. Only the formal primary endpoint was confirmatory; other outcomes were secondary or exploratory as indicated. Reporting follows TRIPOD-LLM and GRRAS, with an accompanying item map and author-completion fields.[20–21]",,multiple/no exact old text matches
+Manuscript,system-design,5,"System design
+ARBITER separates evidence interpretation from deterministic checks. The AI model reads trial documents, identifies the result and answers signalling questions; rule-based software stores a content-hashed copy of each source, extracts quoted spans, binds cited evidence to its source and applies the official algorithms (Figure 1). A reviewer approves the proposed result before domain assessment and can inspect the answers and cited evidence afterward. Each required answer must have an evidence basis. Text quotations are server-extracted spans; image regions are rendered and linked to source pages. Model-written image descriptions are not independently checked against image content. The exported HTML report and audit file retain sources, answers, evidence and decisions for independent verification.
+ARBITER computes proposed ratings and permits a reasoned, recorded override with its rationale and evidence. Thus, the software guarantees a checked proposal and an auditable route for any departure; it does not make interpretation infallible. We checked proposed and adopted ratings separately. AVATAR illustrates the workflow for all-cause death after early surgery versus watchful waiting in asymptomatic severe aortic stenosis (Figure 2; complete AVATAR trace in the supplement). It was selected to explain the process, rather than represent typical performance. Its stored documents did not establish a dated analysis plan for the assessed result.",,multiple/no exact old text matches
+Manuscript,X26e74a24f867deabfa9c1d5ee51de4ca1fc52bd,16,"ARBITER: an auditable workflow for AI-assisted risk-of-bias assessment
+Article type: Research and Applications. Main displays comprise five figures and three tables.
+Authors: [Author names, degrees and order]. Affiliations: [Departments, institutions, cities and countries]. Correspondence: [Corresponding author name, postal address, email and telephone].
+Keywords: artificial intelligence; risk of bias; evidence synthesis; reproducibility; clinical trials.
+Word counts: main text 2932; structured abstract 229.
+ABSTRACT
+Objective. To present an inspectable workflow for the Cochrane risk-of-bias tool for randomised trials (RoB 2) and compare its judgments with a same-model minimal-prompt comparator against independent experts.
+Materials and Methods. ARBITER separates model interpretation from executable decision rules and retains sources, answers and evidence for review. Both arms used Sonnet and identical supplied documents for 102 trials from 16 reviews. Two experts independently assessed all 510 domain cells before viewing labels. The formal primary endpoint was ARBITER preference among agreed choices on arm-discordant cells. Paired intervals resampled trials within fixed reviews.
+Results. The experts’ agreed choice favored ARBITER in 53/60 cells (88%; 95% CI, 80–96%), from 80 arm-discordant cells with 20 split choices. Exact agreement was 371/510 (72.7%) versus 332/510 (65.1%) against Expert 1 and 433/510 (84.9%) versus 400/510 (78.4%) against Expert 2. Paired gains were 7.6 percentage points (95% CI, 5.1–10.2) and 6.5 (3.5–9.4), with the largest observed domain gains in selection of the reported result. Published-label agreement differed by −1.8 points (−5.1 to 1.6). All 510 ARBITER domain outputs followed executable rules; structural checks did not assess semantic evidence support. Median runtime was 7.6 versus 0.5 minutes per trial.
+Discussion. The complete workflow improved agreement with both experts in this benchmark, with substantial domain and reference dependence. The comparison does not isolate individual components or measure human workload.
+Conclusion. ARBITER makes assessment records inspectable and improved agreement with independent experts in this benchmark.
+BACKGROUND AND SIGNIFICANCE
+Risk-of-bias judgments influence how evidence from randomized trials is interpreted. The Cochrane risk-of-bias tool for randomised trials (RoB 2) structures assessment of a specific trial result through signalling questions, domain algorithms and an Overall judgment.[1] A final label compresses decisions about which evidence applies, what it means and how answers follow the decision rules. Reviewers need access to that basis to assess and defend a judgment. Applying RoB 2 remains demanding: experienced assessors can disagree, and implementation instructions can improve reliability.[2–3] Published reviews also disagree when assessing the same trials with the earlier instrument.[4–5] Evidence-synthesis organizations therefore emphasize human oversight and transparent reporting for AI-assisted judgments.[6–7]
+Automated appraisal already has a lineage of supporting evidence and interactive review. RobotReviewer paired automated judgments with extracted text, and ROBoto2 combines RoB 2 assessment with retrieved evidence and user correction.[8–9] Gandhi and colleagues compared model assessments with review labels and fresh human assessments.[10] Huang and colleagues evaluated structured prompts and answer-derived ratings.[11] Same-model comparisons of direct commands and constrained prompts have also been studied for the earlier risk-of-bias instrument.[12] These precedents make the practical question more specific than whether structure or evidence can help: what does an available, inspectable RoB 2 workflow produce, and how do its judgments compare with a defined alternative?
+Procedure and judgment quality require separate evaluation. Software can faithfully apply rules to an inappropriate answer, and a quotation can occur in a source without supporting the judgment attached to it. Published review labels provide an accessible reference but may differ from fresh assessments or concern a broader result. Prior studies have examined domain agreement, repeated assessments and reference dependence.[10–11,13–18] Their percentages cannot rank systems across different inputs, references and datasets. A same-model comparison with separate independent expert references can instead show the magnitude and limits of improvement within one benchmark.
+OBJECTIVE
+We present ARBITER, an available workflow that separates model interpretation from executable RoB 2 checks and retains the assessment pathway for inspection. We evaluated its complete Sonnet workflow against the same model given a minimal prompt and identical supplied trial documents. The evaluation combined separate independent expert comparisons across all five domains, a formal conditional forced-choice endpoint, process checks and computational-resource measurements.
+MATERIALS AND METHODS
+System design
+ARBITER separates evidence interpretation from deterministic checks. The AI model reads trial documents, identifies the result and answers signalling questions; rule-based software stores a content-hashed copy of each source, extracts quoted spans, binds cited evidence to its source and applies the official algorithms (Figure 1). A reviewer approves the proposed result before domain assessment and can inspect the answers and cited evidence afterward. Each required answer must have an evidence basis. Text quotations are server-extracted spans; image regions are rendered and linked to source pages. Model-written image descriptions are not independently checked against image content. The exported HTML report and audit file retain sources, answers, evidence and decisions for independent verification.
+ARBITER computes proposed ratings and permits a reasoned, recorded override with its rationale and evidence. Thus, the software guarantees a checked proposal and an auditable route for any departure; it does not make interpretation infallible. We checked proposed and adopted ratings separately. AVATAR illustrates the workflow for all-cause death after early surgery versus watchful waiting in asymptomatic severe aortic stenosis (Figure 2; complete AVATAR trace in the supplement). It was selected to explain the process, rather than represent typical performance. Its stored documents did not establish a dated analysis plan for the assessed result.
+Benchmark and assessment arms
+The benchmark comprised trials from published meta-analyses, with source reviews, specialties and label distributions documented in the supplementary benchmark table. Assessment prompts targeted the published review’s labeled result using its outcome, time point, contrast and printed result, rather than automatically choosing the trial’s primary outcome. Published labels could concern broad, inferred or different assessment targets. We retained the full domain cohort for all Published-reference comparisons and interpreted target uncertainty qualitatively. De Waal’s supplied registry record belonged to another trial and did not establish relevant information about the assessed result.
+Both arms received identical underlying trial sources: articles, supplements, registry projections, protocols and statistical analysis plans available in the captured input set. Unassisted received copies of the registry projections and acquired documents from the ARBITER run; nothing was fetched anew. Document availability varied by trial. Unassisted was a minimal-prompt condition: its prompt contained the assessment task sentence followed by one fixed output-format sentence, with no RoB 2 guidance. It could read and search local documents, but had no ARBITER service, assessment skill or web access. ARBITER additionally received the assessment skill and its guidance. Input parity therefore concerns trial evidence, not identical instructions or processing. The comparison tests the complete system; it cannot isolate the effects of guidance, software or additional processing time.
+Both arms used claude-sonnet-5-5, medium effort, in Claude Code 2.1.278 with isolated settings, connectors and memory disabled. The installable source is available from the public repository. The evaluated software is ARBITER 1.0.0, public commit 2f549ae. Each arm assessed each trial once. The ARBITER harness approved the proposed result unchanged. The protocol allowed “Continue.” at most twice per phase without coaching. The prompt templates and the Unassisted output-format instruction are reproduced in eMethods, including the ARBITER skill invocation and a filled example. The prompts were distinct. Several prior studies instead used structured RoB 2 prompts, so this comparator does not represent all prior prompting designs.[10–11,14–15]
+Independent expert references
+Two blinded human experts assessed all 102 trials × D1–D5 using a structured form, with no AI used for any judgment. Each expert recorded signalling answers and a domain rating for each cell and froze both as the independent rating before seeing any label. Each then saw three blinded labels—published, Unassisted and ARBITER—in an order randomized for each cell, without rationales, and chose the most defensible label. Each subsequently gave a revised rating, which could differ from all offered labels, and recorded answer retention or change. Experts could consult sources beyond the arms’ inputs. Gartlehner’s blinded adjudication of discordant data-extraction items supplied the design precedent.[19] [Expert qualifications, experience and training]. The assessment form and procedures are in eMethods.
+Outcomes
+The formal primary endpoint was the share of cells where the arms disagreed and both experts made the same forced choice whose chosen label matched ARBITER. A cell was a trial–domain pair. Credit followed label equality: every source matching the chosen label received credit; neither arm received credit if neither label matched. Cells where all three labels matched provided no preference information. Primary sensitivities used each expert on all arm disagreements and counted split choices as ARBITER losses without assigning Unassisted wins.
+Each source was compared with each expert across all 510 cells. Secondary outcomes were agreement with each expert’s independent domain ratings, expert-to-expert agreement, signalling-answer agreement, published-label agreement, rule conformance, evidence checks, runtime and cost. Exact agreement and paired percentage-point differences described the magnitude of agreement with each independent expert. Linearly weighted Cohen’s κ provided complementary ordinal context. Published labels were scored as another source against each expert. We also reported confusion matrices, unweighted κ, expert means and agreement restricted to cells where the experts’ independent ratings agreed.
+Signalling-answer comparisons used explicit answers matched by trial, domain, question and component. Five-level matching distinguished yes, probably yes, no, probably no and no information; collapsed matching combined affirmative and negative levels, leaving no information separate. Missing, inactive, not applicable, unmatched and unresolved answers were excluded; paired contrasts required evaluable answers in both arms. Published-label comparisons used weighted κ, exact agreement, sensitivity for Some concerns or High and specificity, with Gwet’s AC2 supplementary. The All-Low rule described label prevalence; its κ was suppressed because predictions had no variance. Missing predictions counted as disagreement.
+Rule checks applied the official RoB 2 algorithms to each arm’s own answers, using effect of assignment for the deviations domain.[1] The domains cover randomisation, deviations from intended interventions, missing outcome data, outcome measurement and selection of the reported result. A rating contradicting its answers or a skipped required question formed a rule break; absent ratings and answers were unevaluable. A sensitivity resolved invalid required answers recursively as negative or no information. Overall checks allowed escalation when multiple domains had Some concerns. Evidence coverage counted required active answers citing a passage or image; quotation and bundle audits checked source binding and structural integrity, rather than whether evidence justified an answer. Runtime summed wall-clock turn durations. Cost reconstruction used recorded token components and frozen provider rates, with cache and side-call handling detailed in eMethods. Runs used a subscription; dollar figures were API list-price equivalents rather than expenditure.
+Exploratory analyses comprised derived Overall against experts, direction of disagreement, rules-only recomputation, relative-severity strata and severity distributions, including binary sensitivity and specificity against each expert. Derived Overall applied the official rule to independent domains, taking the worst domain without optional escalation for multiple Some concerns. Published Overall comparisons used the 81 trials with an observed label; the other 21 were excluded. Overall results are supplementary. Additional comparisons used all 102 trials, with denominators stated. Directional analyses partitioned stricter or more lenient ratings relative to published labels into expert matches to the arm, published label or neither. Rules-only recomputation replaced Unassisted ratings contradicting their answers with the official output, retaining invalid paths and missing ratings. Original disagreement populations stayed fixed; new ties could credit both arms. Forced choices across all disputed cells and revised ratings were descriptive; seeing labels could anchor revised responses.
+Statistical analysis
+We used 10,000 stratified trial-cluster bootstrap resamples, seed 20261018, retaining the number of trials within each meta-analysis and all cells from each sampled trial. Trials were sampled within the 16 fixed reviews, carrying paired arms and all domain ratings together. Percentile intervals describe 95% uncertainty conditional on those reviews and these two experts; they do not quantify sampling of new reviews, experts or model runs. Paired contrasts used identical resampling weights. Expert means averaged expert-specific estimates within each shared resample rather than pooling independent observations. No P values or multiplicity adjustments were used. Only the formal primary endpoint was confirmatory; other outcomes were secondary or exploratory as indicated. Reporting follows TRIPOD-LLM and GRRAS, with an accompanying item map and author-completion fields.[20–21]
+RESULTS
+The benchmark included 102 trials from 16 reviews after three unsupported designs were excluded, yielding 510 trial-domain cells (Figure 3; Table 1). Both experts independently assessed every cell. Supplied-source availability varied across trials. Published labels were Low in 427/510 cells (83.7%), compared with 277/510 (54.3%) and 346/510 (67.8%) for Experts 1 and 2. An all-Low rule would therefore match 83.7% of Published domain labels, illustrating the need to interpret exact agreement alongside category distributions and ordinal agreement. The experts agreed on 388/510 domain ratings (76.1%; linearly weighted κ 0.59); this describes reference variability rather than a performance ceiling.
+Table 1. Benchmark and reference context
+Characteristic
+Value
+
+Trials
+102
+
+Meta-analyses
+16
+
+Specialties
+15
+
+Trials with protocol
+26/102 (25.5%)
+
+Trials with registry
+73/102 (71.6%)
+
+Trials with SAP
+22/102 (21.6%)
+
+Trials with supplement
+69/102 (67.6%)
+
+D1–D5: Published
+Low: 427/510 (83.7%); Some concerns: 69/510 (13.5%); High: 14/510 (2.7%)
+
+D1–D5: Expert 1
+Low: 277/510 (54.3%); Some concerns: 163/510 (32.0%); High: 70/510 (13.7%)
+
+D1–D5: Expert 2
+Low: 346/510 (67.8%); Some concerns: 131/510 (25.7%); High: 33/510 (6.5%)
+
+Reference categories are Low, Some concerns and High; each reference contributes 510 domain cells. Document counts are trials with each role recorded in the source inventory among 102 trials; roles can overlap. SAP, statistical analysis plan. Detailed distributions for all sources and derived Overall appear in the supplement.
+
+The formal primary endpoint favored ARBITER in 53/60 agreed choices (88%; 95% CI, 80–96%), versus 7/60 (12%) for Unassisted (Table 2). These choices came from 80 cells where arm labels differed; the experts split in 20. Expert-specific preference shares were 63/80 (79%) and 61/80 (76%). Counting every split choice against ARBITER gave 53/80 (66%). These conditional preference results do not describe agreement across all 510 cells.
+Table 2. Conditional primary endpoint and core sensitivities
+Population
+ARBITER, No./total (%) (95% CI)
+
+Agreed choices (formal primary)
+53/60 (88%; 80–96)
+
+Expert 1
+63/80 (79%; 70–87)
+
+Expert 2
+61/80 (76%; 68–85)
+
+All splits counted against ARBITER
+53/80 (66%; 58–75)
+
+The formal primary endpoint conditions on 80 arm-discordant cells and the 60 for which the experts made an agreed choice; 20 choices split. Expert-specific sensitivities use all 80. The final row counts all 20 splits against ARBITER by assumption, without assigning Unassisted wins. Expert 1 chose neither arm in 4/80 cells; this is distinct from the split-loss assumption. CI, 95% confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.
+
+Across the full cohort, ARBITER matched Expert 1 in 371/510 cells (72.7%) versus 332/510 (65.1%) for Unassisted, a paired gain of 7.6 percentage points (95% CI, 5.1–10.2). Against Expert 2, the corresponding counts were 433/510 (84.9%) and 400/510 (78.4%), a gain of 6.5 points (3.5–9.4) (Figure 4). ARBITER’s weighted κ was 0.51 and 0.69, compared with 0.35 and 0.53 for Unassisted. D5, selection of the reported result, had the largest observed gains: 19.6 points (11.8–27.5) and 11.8 (2.9–20.6). D3, missing outcome data, was strongly reference-dependent: ARBITER matched 43/102 ratings from Expert 1 (42.2%) and 80/102 from Expert 2 (78.4%); the experts agreed in 54/102 cells. Published labels matched the experts in 301/510 and 362/510 cells. Against Published across all 510 cells, ARBITER and Unassisted matched 386/510 (75.7%) and 395/510 (77.5%), respectively, a paired difference of −1.8 points (95% CI, −5.1 to 1.6).
+The signalling-answer overview showed why coding and eligibility matter (Figure 5). In D3 against Expert 1, the five-level paired difference was −10.3 points (95% CI, −17.2 to −3.2), whereas the collapsed difference was +8.5 (3.5–13.7), both using 165 paired components. Combining yes with probably yes, and no with probably no, changes what agreement means. In D5, collapsed gains were +11.3 points against Expert 1 but +3.7 (−0.3 to 7.4) against Expert 2. Complete question results and source-specific absolute rates are supplementary. Exploratory rules-only recomputation changed 26 Unassisted labels while retaining recorded answers, invalid paths and missingness; this was a consistency diagnostic rather than an estimate of the rules engine’s causal effect.
+Process checks established separate procedural properties (Table 3). All 510 ARBITER domain outputs reproduced from the algorithms, with no recorded domain overrides. Unassisted had 65/509 evaluable rule breaks, comprising 26 contradictory ratings and 39 required-question omissions; one cell was unevaluable. All 1538 active required answers cited a passage or image. All 1407/1407 text spans and 14 image records met source-binding checks, and all 102 bundles passed structural verification. These counts refer to different objects and do not establish whether the cited evidence supports an answer.
+Table 3. Process checks and computational resources
+Measure
+ARBITER
+Unassisted
+Paired mean difference (95% CI)
+
+A. Rule conformance
+
+Domain outputs reproduced from proposals
+510/510 (100.0%)
+Not available
+—
+
+Rating contradicts its own answers
+0 by design
+26/509 (5.1%; 3.3–6.9)
+—
+
+Required question skipped
+0 by design
+39/509 (7.7%; 5.7–10.0)
+—
+
+Any rule break
+0 by design
+65/509 (12.8%; 10.0–15.6)
+—
+
+B. Structural record checks
+
+Answers citing ≥1 passage or image
+1,538/1,538 (100.0%)
+Not available
+—
+
+Quoted text linked to its source
+1,407/1,407 (100.0%)
+Not available
+—
+
+Image regions linked to their page
+14/14 (100%)
+Not available
+—
+
+Audit file passes the independent verifier
+102/102 (100.0%)
+Not available
+—
+
+C. Computational resources
+
+Runtime (minutes/trial), median (IQR)
+7.6 (6.1–10.5)
+0.5 (0.4–0.5)
+11.0 (8.4–14.1)
+
+API list-price equivalent (US$/trial), median (IQR)
+3.78 (3.46–4.10)
+0.09 (0.07–0.13)
+3.68 (3.61–3.75)
+
+Unassisted rule-break cells show No./total (%; 95% CI); CI bounds are percentages. Domain rules use evaluable ratings (ARBITER 510; Unassisted 509); one Unassisted cell is unevaluable. Evidence denominators count active answers or distinct evidence records as indicated; verifier denominator is 102 bundles. ARBITER has no recorded domain overrides; one Overall escalation is permitted. Evidence checks establish quotation occurrence and structural binding, without assessing answer support. Runtime and API list-price equivalents use 102 paired trials; source summaries are median (IQR), contrasts are paired mean differences. Cost is a frozen-rate equivalent, not expenditure. — means not applicable; Not available means not measured. CI, 95% confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.
+
+ARBITER required more computation. Median (IQR) runtime was 7.6 (6.1–10.5) versus 0.5 (0.4–0.5) minutes per trial; the paired mean difference was 11.0 minutes (95% CI, 8.4–14.1). API list-price equivalents were US$3.78 (3.46–4.10) versus US$0.09 (0.07–0.13), with a paired mean difference of US$3.68 (3.61–3.75). These are computational-resource estimates, not human-time savings or invoice costs. The supplement groups full agreement evidence, primary sensitivities, signalling diagnostics, derived Overall and missingness, and process/resource details by the questions they support. Derived Overall uses 102 expert-assessed trials and only 81 observed Published labels; 21 missing labels are excluded. Post-exposure ratings remain separate from independent assessments.
+DISCUSSION
+ARBITER provides an inspectable RoB 2 workflow, and its complete Sonnet implementation agreed more often with each independent expert than the same model given a minimal prompt in this benchmark. The formal conditional preference endpoint also favored ARBITER. The full-cohort comparisons place that result in context: the gains were measurable against both experts but varied by domain, and substantial disagreement remained. The retained record and the empirical agreement findings support complementary parts of the contribution.
+ARBITER builds on evidence-assisted appraisal tools. RobotReviewer exposed supporting text, ROBoto2 supports interactive RoB 2 review, and structured prompting and answer-derived judgments have been evaluated elsewhere.[8–12] ARBITER’s contribution is its available implementation of a model/software division: the model interprets trial evidence, while software stores sources, binds evidence records and executes decision rules. The evaluated contrast includes guidance, tool use and additional computation. It does not identify which component accounts for the improvement, nor does it show superiority over the structured prompts used in other studies. Human–AI collaboration studies address a further question, how assistance changes reviewer work, which this offline evaluation did not measure.[22]
+Domain results identify both progress and remaining difficulty. D5 showed the largest observed gains, whereas D3 produced very different absolute agreement against the two experts. RoB 2 application difficulties and reference variability are established concerns.[2–3] Reporting each expert separately preserves that uncertainty. Agreement between the experts does not define an error-free standard or a maximum attainable model score. Likewise, an interval excluding zero for one domain or expert and including zero for another does not demonstrate a difference between those effects. The bootstrap quantifies trial variation within the fixed reviews, not variation across future reviewers, reviews or model runs.
+Reference dependence changes the interpretation of the same model outputs. Published labels were predominantly Low, and the small Published-reference difference contrasted with the expert-reference gains. Target uncertainty and different judgment thresholds may contribute; disagreement alone cannot establish that the Published labels were wrong. The signalling diagnostics add a distinct caution. In D3, collapsing probable and definite answers changes a negative exact-match contrast to a positive one against Expert 1. This is evidence about answer patterns, not an unqualified improvement. D5’s smaller collapsed gain against Expert 2 also limits a uniform explanation. Neither these diagnostics nor rules-only label repair isolates a causal mechanism.
+The inspectable record makes a practical review action possible: a reviewer can follow a domain rating to its signalling answers and the retained source locations, then decide whether the interpretation is defensible. Executable rules reduce inconsistency between answers and adopted labels, while recorded overrides preserve the reason for departures. Structural verification establishes occurrence and binding, not semantic evidence support; citation evaluation in other settings makes the same distinction between coverage and support.[23] Image descriptions remain model-written. The extra runtime and list-price equivalents describe the computational burden of producing this record. Whether it reduces checking time, changes decisions or encourages automation bias requires direct human-use evaluation.
+Generalizability is bounded by one model configuration, one run per arm, a minimal-prompt comparator, 16 fixed reviews and two experts. Experts could consult additional sources, and reports may have appeared in model training. Supplied-source errors also matter, as the unrelated De Waal registry record illustrates. Forced choices may be influenced by offered labels, although independent ratings and answers were frozen before exposure. Derived Overall is a secondary summary of the same domains, not independent confirmation. Repeated runs, comparisons with structured prompts and components, independent assessment of evidence support, and prospective reviewer studies would test stability and practical value. The current implementation nevertheless supplies a concrete basis for those evaluations: an available workflow whose assessment pathway can be inspected and whose gains and remaining disagreements are visible.
+Conclusion
+ARBITER makes the basis of a RoB 2 assessment available for inspection and improved agreement with two independent experts in this same-model benchmark. Domain and reference dependence remain central to interpretation. Its procedural safeguards support reviewable appraisal; its judgment quality and effects in use require continued empirical evaluation.
+BACK MATTER
+Acknowledgments and AI use
+[Non-author contributors and acknowledgments]. AI assisted preparation of this manuscript draft. [Authors to verify the drafting-tool identity/version, extent of use, human review and any additional AI assistance, and provide matching cover-letter disclosure]. The expert assessments and forced-choice adjudication used no AI.
+Funding
+[Funding sources, grant identifiers and funder role, or an explicit statement of no funding].
+Competing interests
+[Author-specific competing interests, including relevant relationships to ARBITER, or an explicit declaration of none].
+Author contributions
+[Author names mapped to CRediT roles; confirmation of final approval and accountability].
+Ethics, registration and public involvement
+[Ethics approval or exemption determination and consent requirements, including the expert assessment and forced-choice component]. [Study registration status and identifier, if applicable]. [Patient and public involvement statement].
+Data availability
+The public study repository provides analysis code, derived data, expert assessment sheets, prompts and reproducibility materials. An archival DOI and complete dataset citation remain pending. ARBITER source is available at the public software commit. The results report and supplement provide the figures, editable tables and reproduction links. Trial PDFs will not be redistributed; trial DOIs and source-file hashes will identify the inputs. Author declarations and archival registration remain pending completion.",,multiple/no exact old text matches
+Manuscript,Xa795f839aa3476760733bd38e4d2d15944e6881,15,"Ethics, registration and public involvement
+[Ethics approval or exemption determination and consent requirements, including the expert assessment and forced-choice component]. [Study registration status and identifier, if applicable]. [Patient and public involvement statement].",15,same page
+Supplement,loc_0,1,ARBITER supplementary methods and results,1,same page
+Supplement,loc_10,2,Contents and stable display locators,2,same page
+Supplement,loc_101,12,eTable 2. Full independent agreement and paired contrasts (continued 4),12,same page
+Supplement,loc_103,13,eTable 2. Full independent agreement and paired contrasts (continued 5),13,same page
+Supplement,loc_105,14,eTable 2. Full independent agreement and paired contrasts (continued 6),14,same page
+Supplement,loc_107,15,eTable 2. Full independent agreement and paired contrasts (continued 7),15,same page
+Supplement,loc_109,16,eTable 2. Full independent agreement and paired contrasts (continued 8),16,same page
+Supplement,loc_111,17,eTable 2. Full independent agreement and paired contrasts (continued 9),17,same page
+Supplement,loc_113,18,eTable 2. Full independent agreement and paired contrasts (continued 10),18,same page
+Supplement,loc_115,19,eTable 2. Full independent agreement and paired contrasts (continued 11),19,same page
+Supplement,loc_117,20,eTable 2. Full independent agreement and paired contrasts (continued 12),20,same page
+Supplement,loc_119,21,eTable 2. Full independent agreement and paired contrasts (continued 13),21,same page
+Supplement,loc_121,22,eTable 2A. Unweighted agreement with each expert,22,same page
+Supplement,loc_123,23,eTable 2A. Unweighted agreement with each expert (continued 2),23,same page
+Supplement,loc_125,24,eTable 2A. Unweighted agreement with each expert (continued 3),24,same page
+Supplement,loc_127,25,eTable 3. Category distributions,25,same page
+Supplement,loc_129,26,eTable 3. Category distributions (continued 2),26,same page
+Supplement,loc_131,27,eTable 4. Expert reliability,27,same page
+Supplement,loc_133,28,eTable 5. Confusion matrices against each independent expert,28,same page
+Supplement,loc_135,29,eTable 5. Confusion matrices against each independent expert (continued 2),29,same page
+Supplement,loc_137,30,eTable 5. Confusion matrices against each independent expert (continued 3),30,same page
+Supplement,loc_139,31,eTable 5. Confusion matrices against each independent expert (continued 4),31,same page
+Supplement,loc_141,32,eTable 5. Confusion matrices against each independent expert (continued 5),32,same page
+Supplement,loc_143,33,eTable 5. Confusion matrices against each independent expert (continued 6),33,same page
+Supplement,loc_145,34,eTable 5. Confusion matrices against each independent expert (continued 7),34,same page
+Supplement,loc_147,35,eTable 5. Confusion matrices against each independent expert (continued 8),35,same page
+Supplement,loc_149,36,eTable 5. Confusion matrices against each independent expert (continued 9),36,same page
+Supplement,loc_151,37,eTable 5. Confusion matrices against each independent expert (continued 10),37,same page
+Supplement,loc_153,38,eTable 5. Confusion matrices against each independent expert (continued 11),38,same page
+Supplement,loc_155,39,eTable 5. Confusion matrices against each independent expert (continued 12),39,same page
+Supplement,loc_157,40,eTable 6. Published label agreement,40,same page
+Supplement,loc_159,41,eTable 6. Published label agreement (continued 2),41,same page
+Supplement,loc_161,42,eTable 7. Unweighted agreement with published labels,42,same page
+Supplement,loc_163,43,eTable 8. Exploratory binary agreement against each expert,43,same page
+Supplement,loc_165,44,eTable 8. Exploratory binary agreement against each expert (continued 2),44,same page
+Supplement,loc_167,45,eTable 8. Exploratory binary agreement against each expert (continued 3),45,same page
+Supplement,loc_169,46,eTable 8. Exploratory binary agreement against each expert (continued 4),46,same page
+Supplement,loc_171,47,eTable 8. Exploratory binary agreement against each expert (continued 5),47,same page
+Supplement,loc_173,48,eTable 8. Exploratory binary agreement against each expert (continued 6),48,same page
+Supplement,loc_175,49,eTable 8A. Paired binary differences,49,same page
+Supplement,loc_177,50,eTable 8A. Paired binary differences (continued 2),50,same page
+Supplement,loc_179,51,3. Primary endpoint and supporting analyses,51,same page
+Supplement,loc_181,51,eTable 9. Primary endpoint sensitivities and post hoc strata,51,same page
+Supplement,loc_183,52,eTable 9. Primary endpoint sensitivities and post hoc strata (continued 2),52,same page
+Supplement,loc_185,53,eTable 10. Forced choice on disputed cells,53,same page
+Supplement,loc_187,54,eTable 11. Direction of disagreement against independent experts,54,same page
+Supplement,loc_189,55,eTable 11. Direction of disagreement against independent experts (continued 2),55,same page
+Supplement,loc_191,56,eTable 12. Revised ratings and retained or changed answers,56,same page
+Supplement,loc_193,57,eTable 12A. Retained and changed signalling answers,57,same page
+Supplement,loc_195,58,4. Signalling diagnostics and rules-only recomputation,58,same page
+Supplement,loc_197,58,eTable 13. Full signalling question agreement,58,same page
+Supplement,loc_199,59,eTable 13. Full signalling question agreement (continued 2),59,same page
+Supplement,loc_201,60,eTable 13. Full signalling question agreement (continued 3),60,same page
+Supplement,loc_203,61,eTable 13. Full signalling question agreement (continued 4),61,same page
+Supplement,loc_205,62,eTable 13. Full signalling question agreement (continued 5),62,same page
+Supplement,loc_207,63,eTable 13. Full signalling question agreement (continued 6),63,same page
+Supplement,loc_209,64,eTable 13. Full signalling question agreement (continued 7),64,same page
+Supplement,loc_211,65,eTable 13A. Five-level disagreement types,65,same page
+Supplement,loc_213,66,eTable 13B. Paired signalling differences,66,same page
+Supplement,loc_215,67,eTable 13B. Paired signalling differences (continued 2),67,same page
+Supplement,loc_217,68,eTable 13B. Paired signalling differences (continued 3),68,same page
+Supplement,loc_219,69,eTable 13C. Signalling comparison eligibility,69,same page
+Supplement,loc_221,70,eTable 13C. Signalling comparison eligibility (continued 2),70,same page
+Supplement,loc_223,71,eTable 13C. Signalling comparison eligibility (continued 3),71,same page
+Supplement,loc_225,72,eTable 13C. Signalling comparison eligibility (continued 4),72,same page
+Supplement,loc_227,73,eTable 13C. Signalling comparison eligibility (continued 5),73,same page
+Supplement,loc_229,74,eTable 14. Rules only recomputation,74,same page
+Supplement,loc_231,75,eTable 14A. Independent agreement after rules only recomputation,75,same page
+Supplement,loc_233,76,eTable 14A. Independent agreement after rules only recomputation (continued 2),76,same page
+Supplement,loc_235,77,eTable 14A. Independent agreement after rules only recomputation (continued 3),77,same page
+Supplement,loc_237,78,eTable 14A. Independent agreement after rules only recomputation (continued 4),78,same page
+Supplement,loc_239,79,eTable 14A. Independent agreement after rules only recomputation (continued 5),79,same page
+Supplement,loc_241,80,eTable 14A. Independent agreement after rules only recomputation (continued 6),80,same page
+Supplement,loc_243,81,eTable 14B. Cells changed by rules only recomputation,81,same page
+Supplement,loc_245,82,eTable 14B. Cells changed by rules only recomputation (continued 2),82,same page
+Supplement,loc_247,83,eTable 15. Invalid answer path sensitivity,83,same page
+Supplement,loc_249,84,5. Derived Overall and missingness,84,same page
+Supplement,loc_251,84,eTable 16. Derived Overall agreement and paired contrasts,84,same page
+Supplement,loc_253,85,eTable 16. Derived Overall agreement and paired contrasts (continued 2),85,same page
+Supplement,loc_255,86,eTable 16. Derived Overall agreement and paired contrasts (continued 3),86,same page
+Supplement,loc_257,87,eTable 17. Derived Overall validation differences,87,same page
+Supplement,loc_259,88,eTable 17. Derived Overall validation differences (continued 2),88,same page
+Supplement,loc_261,89,6. Process and resources,89,same page
+Supplement,loc_263,89,eTable 18. Rule consistency and audit,89,same page
+Supplement,loc_265,90,eTable 18. Rule consistency and audit (continued 2),90,same page
+Supplement,loc_267,91,eTable 18. Rule consistency and audit (continued 3),91,same page
+Supplement,loc_269,92,eTable 18. Rule consistency and audit (continued 4),92,same page
+Supplement,loc_271,93,eTable 18. Rule consistency and audit (continued 5),93,same page
+Supplement,loc_273,94,eTable 18. Rule consistency and audit (continued 6),94,same page
+Supplement,loc_275,95,eTable 18. Rule consistency and audit (continued 7),95,same page
+Supplement,loc_277,96,eTable 18. Rule consistency and audit (continued 8),96,same page
+Supplement,loc_279,97,eTable 19. Evidence binding,97,same page
+Supplement,loc_281,98,eTable 20. Time cost and token use,98,same page
+Supplement,loc_283,99,eTable 21. API cost estimates and reconstruction bounds,99,same page
+Supplement,loc_285,100,eTable 21. API cost estimates and reconstruction bounds (continued 2),100,same page
+Supplement,loc_287,101,eTable 22. Token reconciliation,101,same page
+Supplement,loc_289,102,eTable 22. Token reconciliation (continued 2),102,same page
+Supplement,loc_291,103,eTable 22. Token reconciliation (continued 3),103,same page
+Supplement,loc_293,104,7. Prior work and reporting,104,same page
+Supplement,loc_295,104,eTable 23. Prior work evidence ledger,104,same page
+Supplement,loc_297,105,eFigure 1. Absolute agreement by domain and derived Overall,105,same page
+Supplement,loc_301,106,eFigure 2. Collapsed question-level paired differences  (D1 panel),106,same page
+Supplement,loc_305,107,eFigure 2. Collapsed question-level paired differences  (D2 panel),107,same page
+Supplement,loc_309,108,eFigure 2. Collapsed question-level paired differences  (D3 panel),108,same page
+Supplement,loc_313,109,eFigure 2. Collapsed question-level paired differences  (D4 panel),109,same page
+Supplement,loc_317,110,eFigure 2. Collapsed question-level paired differences  (D5 panel),110,same page
+Supplement,loc_321,111,eFigure 3. Published label agreement across reviews,111,same page
+Supplement,loc_325,112,eFigure 4. Domain-level signalling agreement,112,same page
+Supplement,loc_329,113,eFigure 5. All signalling question paired differences  (D1 panel),113,same page
+Supplement,loc_333,114,eFigure 5. All signalling question paired differences  (D2 panel),114,same page
+Supplement,loc_337,115,eFigure 5. All signalling question paired differences  (D3 panel),115,same page
+Supplement,loc_341,116,eFigure 5. All signalling question paired differences  (D4 panel),116,same page
+Supplement,loc_345,117,eFigure 5. All signalling question paired differences  (D5 panel),117,same page
+Supplement,loc_349,118,AVATAR complete trace,118,same page
+Supplement,loc_350,118,Part A. Answers and judgements,118,same page
+Supplement,loc_351,118,D1 judgement / rationale,118,same page
+Supplement,loc_354,118,1.1 Random allocation sequence,118,same page
+Supplement,loc_361,118,1.2 Concealment until enrolment and assignment,118,same page
+Supplement,loc_368,119,1.3 Preintervention imbalance suggesting a randomisation problem,118,page changed
+Supplement,loc_376,120,D2 judgement / rationale,120,same page
+Supplement,loc_379,120,2.1 Participants aware of assignment,120,same page
+Supplement,loc_386,120,2.2 Carers or intervention providers aware of assignment,120,same page
+Supplement,loc_393,121,2.3 Deviations arising from trial context,120,page changed
+Supplement,loc_400,121,2.4 Deviations affecting the outcome,121,same page
+Supplement,loc_403,121,2.5 Deviations balanced across groups,121,same page
+Supplement,loc_406,121,2.6 Appropriate analysis of assignment effect,121,same page
+Supplement,loc_413,122,2.7 Substantial impact of analysing outside assigned groups,121,page changed
+Supplement,loc_417,123,D3 judgement / rationale,122,page changed
+Supplement,loc_420,123,3.1 Outcome data available for nearly everyone,122,page changed
+Supplement,loc_427,123,3.2 Evidence against bias from missing data,122,page changed
+Supplement,loc_430,123,3.3 Missingness potentially depends on true outcome,122,page changed
+Supplement,loc_433,123,3.4 Missingness likely depends on true outcome,122,page changed
+Supplement,loc_437,124,D4 judgement / rationale,123,page changed
+Supplement,loc_440,124,4.1 Inappropriate measurement method,123,page changed
+Supplement,loc_447,124,4.2 Measurement differs across groups,123,page changed
+Supplement,loc_454,125,4.3 Assessors aware of received intervention,123,page changed
+Supplement,loc_461,125,4.4 Assessment potentially influenced by awareness,124,page changed
+Supplement,loc_468,125,4.5 Assessment likely influenced by awareness,124,page changed
+Supplement,loc_472,126,D5 judgement / rationale,125,page changed
+Supplement,loc_475,126,5.1 Analysis plan finalised before unblinding,125,page changed
+Supplement,loc_482,126,5.2 Result selected from eligible outcome measurements,125,page changed
+Supplement,loc_489,127,5.3 Result selected from eligible analyses,126,page changed
+Supplement,loc_496,127,Overall,126,page changed
+Supplement,loc_500,127,Part B. Evidence records,126,page changed
+Supplement,loc_501,127,eh_05e667d2d41d3858,126,page changed
+Supplement,loc_507,128,eh_22d01d9384e1a677,126,page changed
+Supplement,loc_513,128,eh_30fa222ec5523dcc,127,page changed
+Supplement,loc_519,129,eh_3ce4199af9d487f3,127,page changed
+Supplement,loc_539,132,eh_4b5761bf573cc287,129,page changed
+Supplement,loc_545,132,eh_58abdac52262aa33,129,page changed
+Supplement,loc_551,132,eh_7961ea6680167af2,130,page changed
+Supplement,loc_557,133,eh_7ad155913c1c5826,130,page changed
+Supplement,loc_563,133,eh_92eed84c7b98e37c,130,page changed
+Supplement,loc_571,134,eh_975aac3202107531,131,page changed
+Supplement,loc_577,134,eh_af1340e6c28a70eb,131,page changed
+Supplement,loc_595,137,eh_c8e0958840636206,133,page changed
+Supplement,loc_609,139,eh_d54a2600ddc753b3,134,page changed
+Supplement,loc_615,139,eh_d6c269341c7d8a5d,135,page changed
+Supplement,loc_621,140,eh_e66d374e838e8c6d,135,page changed
+Supplement,loc_627,140,eh_f625637d366df2a0,135,page changed
+Supplement,loc_634,141,Prompt templates and run provenance,137,page changed
+Supplement,loc_635,141,ARBITER template,137,page changed
+Supplement,loc_637,141,ARBITER example,137,page changed
+Supplement,loc_639,141,Unassisted template,137,page changed
+Supplement,loc_641,141,Unassisted output-format instruction,137,page changed
+Supplement,loc_66,3,Algorithms and validation,3,same page
+Supplement,loc_68,3,API list-price reconstruction,3,same page
+Supplement,loc_70,3,Evidence binding and verification,3,same page
+Supplement,loc_73,5,Inference,5,same page
+Supplement,loc_75,5,Blinded expert assessment,5,same page
+Supplement,loc_77,5,Independent reference and Overall,5,same page
+Supplement,loc_80,6,Signalling question mapping and eligibility,6,same page
+Supplement,loc_82,6,Input parity and label targets,6,same page
+Supplement,loc_84,6,Interpretive limits,6,same page
+Supplement,loc_87,7,1. Reproducibility and methods,7,same page
+Supplement,loc_89,7,eTable 1. Benchmark trials,7,same page
+Supplement,loc_91,8,eTable 1. Benchmark trials (continued 2),8,same page
+Supplement,loc_93,9,2. Full domain agreement evidence,9,same page
+Supplement,loc_95,9,eTable 2. Full independent agreement and paired contrasts,9,same page
+Supplement,loc_97,10,eTable 2. Full independent agreement and paired contrasts (continued 2),10,same page
+Supplement,loc_99,11,eTable 2. Full independent agreement and paired contrasts (continued 3),11,same page
+TRIPOD-LLM,loc_0,1,TRIPOD LLM and GRRAS reporting map,1,same page
+TRIPOD-LLM,loc_10,6,Reporting map (continued 6),6,same page
+TRIPOD-LLM,loc_12,7,Reporting map (continued 7),7,same page
+TRIPOD-LLM,loc_14,8,Reporting map (continued 8),8,same page
+TRIPOD-LLM,loc_2,2,Reporting map (continued 2),2,same page
+TRIPOD-LLM,loc_4,3,Reporting map (continued 3),3,same page
+TRIPOD-LLM,loc_6,4,Reporting map (continued 4),4,same page
+TRIPOD-LLM,loc_8,5,Reporting map (continued 5),5,same page
