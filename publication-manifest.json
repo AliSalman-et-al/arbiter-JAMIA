@@ -1,17 +1,17 @@
 {
-  "source_commit": "3569bacd6f74612ef77f0df7baa8bdeb8b6d6827",
+  "source_commit": "c5d56f578dc5bc304fb2ac8a31fb5788095c0ea6",
   "files": {
     "index.html": {
       "sha256": "efcc86e41d84942096d8e4623109fc1479193e71acf0e82787b4105af8e6c807",
       "bytes": 3053
     },
     "results.html": {
-      "sha256": "27d049d9fc51a45c15c3b54fd714bc0914a315f48cf1826821ccc646a231ee95",
-      "bytes": 4310495
+      "sha256": "eaa4deafb30b2cd3c3564999059817156d6488f095bc86ec655c474e225b8e1a",
+      "bytes": 4306438
     },
     "supplement.html": {
-      "sha256": "b87708887b689c81549998c27427fd58d1dcd6484508168d12478a0aa52b4302",
-      "bytes": 3946072
+      "sha256": "c9bfef0fb6c450eb751170d921ee73d8ebaab654ecafba97e1addd1b9cbed542",
+      "bytes": 3892433
     },
     "output/manuscript/Manuscript.docx": {
       "sha256": "0f1d41e2c5a841345646ca8bbf938cb2341703dada8e3d86122d277f31421c6e",
