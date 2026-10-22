@@ -3,22 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ARBITER benchmark analysis</title>
+<meta name="description" content="ARBITER workflow and same-model evaluation for inspectable risk-of-bias assessment.">
+<title>ARBITER workflow and evaluation</title>
 <style>
-  body { font-family: "Fira Sans", Arial, sans-serif; max-width: 44rem; margin: 4rem auto; padding: 0 1.25rem; color: #1f2a30; line-height: 1.55; }
-  h1 { font-size: 1.7rem; margin-bottom: .25rem; }
-  p.sub { color: #5b6770; margin-top: 0; }
-  a.card { display: block; border: 2px solid #1f2a30; border-radius: 10px; padding: 1rem 1.25rem; margin: 1rem 0; text-decoration: none; color: inherit; }
-  a.card:hover { background: #eef7fb; }
-  a.card strong { color: #00A1D5; font-size: 1.1rem; }
-  footer { margin-top: 3rem; font-size: .85rem; color: #5b6770; }
+  :root { color-scheme: light; }
+  body { font-family: system-ui, sans-serif; max-width: 48rem; margin: 3rem auto; padding: 0 1.25rem; color: #18252d; line-height: 1.6; }
+  h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); line-height: 1.2; }
+  h2 { font-size: 1.2rem; margin-top: 2rem; }
+  a { color: #00577d; text-underline-offset: .15em; }
+  a:focus-visible { outline: 3px solid #00577d; outline-offset: 4px; }
+  nav { border-top: 1px solid #aab6bd; border-bottom: 1px solid #aab6bd; margin: 2rem 0; }
+  nav a { display: block; padding: 1rem 0; text-decoration: none; }
+  nav a + a { border-top: 1px solid #dce2e6; }
+  nav strong { display: block; font-size: 1.15rem; text-decoration: underline; }
+  nav span { color: #384951; }
+  footer { margin-top: 2.5rem; font-size: .9rem; color: #485860; }
 </style>
 </head>
 <body>
-<h1>ARBITER benchmark analysis</h1>
-<p class="sub">Agentic Risk of Bias Inference Tool for Evidence Reviews: evaluation of LLM-assisted Cochrane RoB 2 assessment on 102 randomised trials from 16 meta-analyses.</p>
-<a class="card" href="results.html"><strong>Main results</strong><br>Figures, tables and the primary endpoint.</a>
-<a class="card" href="supplement.html"><strong>Supplementary results</strong><br>Expert-reference details, signalling-answer agreement, sensitivity and post hoc analyses, rule-consistency audit, process metrics, prior-work evidence and methods details.</a>
-<footer>Reports are rendered from the analysis pipeline in <a href="https://github.com/AliSalman-et-al/arbiter-JAMIA">AliSalman-et-al/arbiter-JAMIA</a>. ARBITER: <a href="https://github.com/AliSalman-et-al/ARBITER">AliSalman-et-al/ARBITER</a>.</footer>
+<main>
+<h1>ARBITER workflow and evaluation</h1>
+<p>ARBITER makes the basis of a Cochrane RoB 2 risk-of-bias assessment available for inspection: trial sources, signalling answers, cited evidence and rule-derived judgments.</p>
+<p>This study compared the complete workflow with the same model given a minimal prompt and the same supplied documents for 102 trials from 16 reviews. Agreement improved against two independent experts, with important differences across domains and references. Structural record checks and judgment quality are evaluated separately.</p>
+<nav aria-label="Study reports">
+  <a href="results.html"><strong>Main results</strong><span>How the workflow operates, what the paired evaluation found, and the limits of those findings.</span></a>
+  <a href="supplement.html"><strong>Supplementary methods and results</strong><span>Complete comparisons, diagnostic evidence, methods, prompts and a worked assessment trace.</span></a>
+</nav>
+<h2>Manuscript and reporting materials</h2>
+<p><a href="output/manuscript/Manuscript.docx">Manuscript (Word)</a> · <a href="output/manuscript/Supplement.docx">Supplement (Word)</a> · <a href="output/manuscript/TRIPOD-LLM.docx">Reporting map (Word)</a></p>
+<p>These are working research materials. Author details and declarations remain marked for completion in the manuscript; the archival DOI is pending.</p>
+<h2>Software and reproducibility</h2>
+<p><a href="https://github.com/AliSalman-et-al/ARBITER">ARBITER software</a> · <a href="https://github.com/AliSalman-et-al/ARBITER/tree/2f549ae30f056ff441ea61a04b719968716f2219">Evaluated software version</a> · <a href="https://github.com/AliSalman-et-al/arbiter-JAMIA">Study code and derived data</a></p>
+</main>
+<footer>Reports and publication displays are generated from the study analysis. Trial PDFs are not redistributed. <a href="publication-manifest.json">Publication file manifest</a>.</footer>
 </body>
 </html>
