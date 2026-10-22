@@ -71,7 +71,11 @@ def stage(destination: Path):
     for relative, source in sources.items():
         target = destination / relative
         target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(source, target)
+        if source.suffix == '.html':
+            # Git stores text as LF; hash the exact bytes Pages will serve.
+            target.write_bytes(source.read_bytes().replace(b'\r\n', b'\n'))
+        else:
+            shutil.copyfile(source, target)
         manifest["files"][relative] = {"sha256": hashlib.sha256(target.read_bytes()).hexdigest(),
                                       "bytes": target.stat().st_size}
     (destination / ".nojekyll").touch()
