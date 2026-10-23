@@ -42,6 +42,8 @@
 
 21. Kottner J, Audigé L, Brorson S, et al. Guidelines for Reporting Reliability and Agreement Studies (GRRAS) were proposed. *J Clin Epidemiol* 2011;64:96–106. doi:[10.1016/j.jclinepi.2010.03.002](https://doi.org/10.1016/j.jclinepi.2010.03.002).
 
-22. Li Y, Yang F, Wu M, Li J. Human-AI collaboration enhances the performance of large language models in risk of bias assessment. *BMC Med Res Methodol* 2026;26:37. doi:[10.1186/s12874-025-02763-3](https://doi.org/10.1186/s12874-025-02763-3).
+22. Liu N, Zhang T, Liang P. Evaluating verifiability in generative search engines. In: *Findings of the Association for Computational Linguistics: EMNLP 2023*. Association for Computational Linguistics, 2023:7001–25. doi:[10.18653/v1/2023.findings-emnlp.467](https://doi.org/10.18653/v1/2023.findings-emnlp.467).
 
-23. Liu N, Zhang T, Liang P. Evaluating verifiability in generative search engines. In: *Findings of the Association for Computational Linguistics: EMNLP 2023*. Association for Computational Linguistics, 2023:7001–25. doi:[10.18653/v1/2023.findings-emnlp.467](https://doi.org/10.18653/v1/2023.findings-emnlp.467).
+23. Li Y, Yang F, Wu M, Li J. Human-AI collaboration enhances the performance of large language models in risk of bias assessment. *BMC Med Res Methodol* 2026;26:37. doi:[10.1186/s12874-025-02763-3](https://doi.org/10.1186/s12874-025-02763-3).
+
+24. Joseph J, Vishwanath R, Sisirkumar JV. RoB2-Evaluator: Development and Technical Evaluation of a Rule-Constrained Large Language Model System for Cochrane Risk of Bias 2 Assessment. *medRxiv* [Preprint]. Posted 23 September 2026. doi:[10.64898/2026.09.22.26363693](https://doi.org/10.64898/2026.09.22.26363693).
