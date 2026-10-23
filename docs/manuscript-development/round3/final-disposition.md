@@ -27,3 +27,7 @@ GPT-6.1-Sol identified a stale R6 full-text-access statement and a missing expli
 ## Before submission
 
 Complete actual affiliations/correspondence and author order; expert qualifications, training, original instructions/form and target conventions; review identification/eligibility and exclusion classifications; prompt-development data, overlap and version-freeze history; funding, conflicts, contributions, ethics/consent determination, registration/public involvement, complete AI disclosure and archival identifier. These are visible pending fields. The manuscript must not be described as author-approved or submission complete until resolved.
+
+## Deployed release
+
+Source revision `bca49f80944bd1c7eb6fc2c18b897a30a3a54227` was pushed to main. Pages revision `f40eafb9eedc88f9254c2f4aa1102e87b645652d` deployed successfully in GitHub Actions run 39933295745. After completion, `scripts/verify-pages.py` verified all 50 deployed files byte-for-byte against the staged manifest, including the final Word hash above. Evidence: deployed-verification.json. The follow-up audit commit records this result and does not change publication content.
