@@ -9,6 +9,9 @@ Non-result identifiers, metadata and editorial counts are reported separately,
 never silently treated as verified study results. --verbose prints each token's
 source. This checks traceability, not whether a number supports its surrounding
 claim; explicit row-level checks below additionally protect the headline claims.
+External literature uses unique literal sentence spans and citation/DOI identity
+from round6/external-facts.tsv, separately from study-output traces. Recorded
+source metadata is required, but its scientific interpretation is not verified.
 Nothing is written. A missing empirical token, failed claim or word limit exits 1.
 """
 
@@ -26,6 +29,9 @@ from zipfile import ZipFile
 ROOT = Path(__file__).resolve().parents[2]
 MANUSCRIPT = Path(__file__).with_name("manuscript.md")
 REFERENCES = Path(__file__).with_name("references.md")
+EXTERNAL_FACTS = ROOT / "docs/manuscript-development/round6/external-facts.tsv"
+EXTERNAL_COLUMNS = {"id", "exact_text", "reference", "doi", "metric_context",
+                    "locator", "access_level", "boundary"}
 OUTPUT = ROOT / "analysis/output"
 NUMBER = re.compile(r"[−-]?\d+(?:,\d{3})*(?:\.\d+)*")
 VALUE = re.compile(r"[+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?\Z")
@@ -113,7 +119,7 @@ def metadata_spans(text):
         "URL": r"https?://[^\s)]+",
         "reference callout": r"\[[\d,–-]+\]",
         "display cross-reference": r"\b(?:Figures?|Tables?|eTables?|eFigures?)\s+\d+(?:[AB]|[–-]\d+)?(?:,\d+(?:[–-]\d+)?)*",
-        "instrument identifier": r"\bRoB 2\b",
+        "instrument identifier": r"\b(?:RoB [12]|ROBOTO2)\b",
         "domain identifier": r"\bD[1-5](?:[–-]D[1-5])?\b",
         "expert identifier": r"\bExperts? [12](?: and [12])?\b",
         "interval convention": r"\b95%",
@@ -137,9 +143,173 @@ def metadata_spans(text):
     return result
 
 
+def citation_ids(text):
+    result = set()
+    for callout in re.findall(r"\[([\d,–-]+)\]", text):
+        for part in callout.split(","):
+            ends = re.split("[–-]", part)
+            result.update(range(int(ends[0]), int(ends[-1]) + 1))
+    return result
+
+
+def sentence_spans(text):
+    """Literal prose units, retaining trailing numeric citation callouts."""
+    pattern = r".*?(?:[.!?](?:\[[\d,–-]+\])?(?=\s|$)|$)"
+    return [(m.start() + len(m[0]) - len(m[0].lstrip()), m.end())
+            for m in re.finditer(pattern, text) if m[0].strip()]
+
+
+OWN_STUDY = re.compile(
+    r"\b(?:ARBITER|Unassisted|our|we|this (?:study|benchmark)|the arms|the experts)\b", re.I)
+
+
+def empirical_numbers(text):
+    metadata = metadata_spans(text)
+    return [m for m in NUMBER.finditer(text)
+            if not any(a <= m.start() and m.end() <= b for a, b, _ in metadata)]
+
+
+def literature_contexts(text):
+    """Conservatively route cited literature prose away from study CSV lookup.
+
+    Attribution is structural, not semantic: uncited prose cannot in general be
+    identified as literature automatically. Ledger matching itself is literal.
+    """
+    result = []
+    for paragraph in re.finditer(r"[^\n]+", text):
+        if not citation_ids(paragraph[0]) or paragraph[0].startswith("#"):
+            continue
+        for a, b in sentence_spans(paragraph[0]):
+            sentence = paragraph[0][a:b]
+            if not OWN_STUDY.search(sentence):
+                result.append((paragraph.start() + a, paragraph.start() + b))
+    return result
+
+
+def external_claim_checks(text, references, ledger_path=EXTERNAL_FACTS):
+    """Validate literal occurrence and recorded provenance, never source truth.
+
+    Each row is a unique complete sentence/group in one paragraph. No numeric
+    whitelist, regex matching, occurrence selector or optional columns required.
+    Invalid rows grant no external classification, even if their numbers occur
+    in study outputs. Source access/metric/boundary descriptions remain human
+    attestations; we require them but do not claim to validate their meaning.
+    """
+    failures, spans = [], []
+    try:
+        with Path(ledger_path).open(encoding="utf-8-sig", newline="") as handle:
+            reader = csv.DictReader(handle, delimiter="\t")
+            if reader.fieldnames and len(reader.fieldnames) != len(set(reader.fieldnames)):
+                return [], ["External ledger has ambiguous duplicate column names"]
+            if not EXTERNAL_COLUMNS <= set(reader.fieldnames or []):
+                return [], ["External ledger missing required columns: " +
+                            ", ".join(sorted(EXTERNAL_COLUMNS - set(reader.fieldnames or [])))]
+            records = list(reader)
+    except OSError as error:
+        return [], [f"External ledger unavailable: {ledger_path}: {error}"]
+    bibliography = {int(m[1]): m[2] for m in re.finditer(
+        r"^(\d+)\.\s+(.*?)(?=^\d+\.\s|\Z)", references, re.M | re.S)}
+    ids, texts = set(), set()
+    for row_number, row in enumerate(records, 2):
+        label = f"External ledger row {row_number} ({row.get('id', '')})"
+        errors = []
+        if None in row or any(not (row.get(k) or "").strip() for k in EXTERNAL_COLUMNS):
+            failures.append(f"{label}: missing source metadata or malformed TSV row")
+            continue
+        exact = row["exact_text"]
+        if row["id"] in ids or exact in texts:
+            errors.append("duplicate id or exact_text")
+        ids.add(row["id"])
+        texts.add(exact)
+        if any(c in exact for c in "\t\r\n") or exact != exact.strip():
+            errors.append("exact_text must be a single verbatim prose line")
+        occurrences = [m.start() for m in re.finditer(re.escape(exact), text)]
+        if len(occurrences) != 1:
+            errors.append(f"exact_text occurrence count {len(occurrences)}; expected 1")
+        reference = row["reference"]
+        if not re.fullmatch(r"[1-9]\d*", reference):
+            errors.append("reference must be one numeric bibliography id")
+        elif int(reference) not in citation_ids(exact):
+            errors.append("reference not cited in exact_text")
+        doi = row["doi"]
+        if not re.fullmatch(r"10\.\d{4,9}/[^\s]+", doi, re.I):
+            errors.append("doi must be a plain DOI")
+        else:
+            source = bibliography.get(int(reference), "") if reference.isdigit() else ""
+            source_dois = re.findall(r"10\.\d{4,9}/[^\s\]\[()<>,]+", source, re.I)
+            if doi.lower() not in {d.rstrip(".").lower() for d in source_dois}:
+                errors.append("DOI does not identify the cited bibliography entry")
+        if "ophthalmic surgical research assessors" in " ".join(row[k] for k in EXTERNAL_COLUMNS).lower():
+            errors.append("superseded Gandhi OSRA expansion; original systematic review authors required")
+        if not empirical_numbers(exact):
+            errors.append("exact_text has no external empirical numeric tokens")
+        if any(OWN_STUDY.search(exact[a:b]) and empirical_numbers(exact[a:b])
+               for a, b in sentence_spans(exact)):
+            errors.append("own-study numeric sentence cannot be externally classified")
+        if len(occurrences) == 1:
+            start, end = occurrences[0], occurrences[0] + len(exact)
+            preceding = text[:start]
+            section = re.findall(r"^## (.+)$", preceding, re.M)
+            if not section or section[-1] not in {"Introduction", "Discussion"}:
+                errors.append("external span must be in Introduction or Discussion")
+            paragraph_start = text.rfind("\n", 0, start) + 1
+            paragraph_end = text.find("\n", end)
+            if paragraph_end < 0:
+                paragraph_end = len(text)
+            units = sentence_spans(text[paragraph_start:paragraph_end])
+            if (start - paragraph_start not in {a for a, _ in units} or
+                    end - paragraph_start not in {b for _, b in units}):
+                errors.append("exact_text must cover complete sentence(s), including citations")
+            if any(start < b and a < end for a, b, _ in spans):
+                errors.append("overlapping external spans")
+        if errors:
+            failures.extend(f"{label}: {error}" for error in errors)
+        else:
+            spans.append((start, end, f"{row['id']}; reference {reference}; doi:{doi}; "
+                          f"{row['locator']}; access: {row['access_level']}"))
+    if "ophthalmic surgical research assessors" in text.lower():
+        failures.append("Superseded Gandhi OSRA expansion in manuscript")
+    return spans, failures
+
+
+def classify_numbers(text, index, external_spans):
+    """External provenance has its own class and never enters the CSV index."""
+    metadata = metadata_spans(text)
+    contexts = literature_contexts(text)
+    traced, external, nonresults, missing = [], [], [], []
+    for match in NUMBER.finditer(text):
+        token = match.group()
+        line = text.count("\n", 0, match.start()) + 1
+        labels = [label for a, b, label in metadata if a <= match.start() and match.end() <= b]
+        sources = [source for a, b, source in external_spans if a <= match.start() and match.end() <= b]
+        if labels:
+            nonresults.append((line, token, labels[0]))
+        elif sources:
+            external.append((line, token, sources[0]))
+        elif any(a <= match.start() and match.end() <= b for a, b in contexts):
+            missing.append((line, token, "external literature requires exact ledger span"))
+        elif normal(token) in index:
+            traced.append((line, token, sorted(index[normal(token)])[0]))
+        else:
+            missing.append((line, token, text.splitlines()[line - 1]))
+    return traced, external, nonresults, missing
+
+
 def rows(filename):
     with (OUTPUT / "tables" / filename).open(encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
+
+
+def endpoint_definition_checks(methods):
+    """Accept reviewed equivalent definitions, independently of result values."""
+    outcomes = methods.split("### Outcomes\n", 1)[-1].split("### Statistical analysis\n", 1)[0]
+    full_cohort = bool(re.search(r"(?:all 510 cells|across 510 cells)", outcomes))
+    original = ("The denominator included only cells in which both experts chose the same label" in outcomes
+                and "among cells where the arms' ratings differed" in outcomes)
+    revised = ("The conditional label-choice analysis included the cells where the arms differed and both experts chose the same label." in outcomes
+               and "Its numerator counted agreed labels matching ARBITER." in outcomes)
+    return [] if full_cohort and (original or revised) else [
+        "Full-cohort and conditional endpoint definitions missing"]
 
 
 def headline_checks(text):
@@ -199,10 +369,7 @@ def headline_checks(text):
     check((audit.get("count"), audit.get("n")) == ("65", "509"), "Rule audit changed")
     check("65/509" in text and "1407/1407" in text, "Audit claims missing")
     methods = sections(text)["Materials and methods"]
-    check("all 510 cells" in methods and
-          "The denominator included only cells in which both experts chose the same label" in methods and
-          "among cells where the arms' ratings differed" in methods,
-          "Full-cohort and conditional endpoint definitions missing")
+    failures.extend(endpoint_definition_checks(methods))
     check(not re.search(r"formal primary endpoint|confirmatory|prespecified secondary", methods, re.I),
           "Superseded prospective outcome hierarchy retained")
     check(not re.search(r"18 October 2026|before the expert ratings.*analysed|prespecified", methods),
@@ -294,33 +461,46 @@ def structure_checks(text):
     return failures
 
 
+def wording_checks(text, external_spans):
+    pattern = (r"\b(?:first|over-flagging|second reviewer|unchangeable|tamper-proof|Haiku|ground truth|accuracy|correct|kit|hid|reversed|masked|expert-level|matched experts|Adjudicator)\b|supported by evidence")
+    reporting_order = [m.span() for m in re.finditer(
+        r"We report published-label agreement first, followed by independent-expert agreement", text)]
+    banned = []
+    for match in re.finditer(pattern, text, re.I):
+        # A source's sequential groups and masked human panel are legitimate
+        # literature descriptions; this does not permit priority/blinding claims
+        # elsewhere in the manuscript or exempt any other prohibited wording.
+        if match[0].lower() in {"first", "masked"} and any(
+                a <= match.start() and match.end() <= b for a, b, _ in external_spans):
+            continue
+        if match[0].lower() == "first" and any(
+                a <= match.start() and match.end() <= b for a, b in reporting_order):
+            continue
+        banned.append(match[0])
+    return [f"Prohibited wording: {banned}"] if banned else []
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--verbose", action="store_true")
     args = parser.parse_args()
     text = MANUSCRIPT.read_text()
+    required_sections = {"Abstract", "Introduction", "Materials and methods",
+                         "Results", "Discussion", "Back matter"}
+    if not required_sections <= sections(text).keys():
+        for failure in structure_checks(text):
+            print(f"FAIL: {failure}")
+        print("FAIL: Required manuscript sections missing; number audit cannot run on partial integration")
+        return 1
     index, file_count = output_index()
-    spans = metadata_spans(text)
-    traced, nonresults, missing = [], [], []
-    for match in NUMBER.finditer(text):
-        token = match.group()
-        line = text.count("\n", 0, match.start()) + 1
-        labels = [label for start, end, label in spans if start <= match.start() < end]
-        if labels:
-            nonresults.append((line, token, labels[0]))
-        elif normal(token) in index:
-            traced.append((line, token, sorted(index[normal(token)])[0]))
-        else:
-            missing.append((line, token, text.splitlines()[line - 1]))
+    refs = REFERENCES.read_text()
+    external_spans, external_failures = external_claim_checks(text, refs)
+    traced, external, nonresults, missing = classify_numbers(text, index, external_spans)
     counts, main_count = word_counts(text)
-    failures = structure_checks(text) + headline_checks(text)
+    failures = structure_checks(text) + headline_checks(text) + external_failures
     if counts["Abstract"] > 250 or main_count > 4000:
         failures.append("JAMIA word limit exceeded")
-    banned = re.findall(r"\b(?:first|over-flagging|second reviewer|unchangeable|tamper-proof|Haiku|ground truth|accuracy|correct|kit|hid|reversed|masked|expert-level|matched experts|Adjudicator)\b|supported by evidence",
-                        text, re.I)
-    if banned:
-        failures.append(f"Prohibited wording: {banned}")
-    refs = REFERENCES.read_text()
+    failures.extend(wording_checks(text, external_spans))
     reference_ids = {int(n) for n in re.findall(r"^(\d+)\.", refs, re.M)}
     used_ids = set()
     for callout in re.findall(r"\[([\d,–-]+)\]", text):
@@ -338,12 +518,17 @@ def main():
         failures.append(f"Reference first-use order: {first_use}")
     if used_ids != reference_ids:
         failures.append(f"Reference mismatch: used {sorted(used_ids)}, listed {sorted(reference_ids)}")
-    print(f"Extracted {len(traced) + len(nonresults) + len(missing)} numeric tokens from the entire manuscript.")
-    print(f"Output-traced: {len(traced)}; non-result/editorial: {len(nonresults)}; UNTRACED: {len(missing)}.")
+    print(f"Extracted {len(traced) + len(external) + len(nonresults) + len(missing)} numeric tokens from the entire manuscript.")
+    print(f"Output-traced: {len(traced)}; external-literature: {len(external)}; "
+          f"non-result/editorial: {len(nonresults)}; UNTRACED: {len(missing)}.")
     print(f"Sources: {file_count} output CSVs, generated results sentences and Tables 1–3.")
+    print(f"External ledger: {len(external_spans)} exact spans; {EXTERNAL_FACTS.relative_to(ROOT)}.")
+    print("External checks validate recorded traceability, not source truth or semantic validity.")
     if args.verbose:
         for line, token, source in traced:
             print(f"TRACE line {line}: {token} -> {source}")
+        for line, token, source in external:
+            print(f"EXTERNAL line {line}: {token} -> {source}")
     print("Non-result tokens (not claimed to trace to statistical outputs):")
     for (token, label), count in sorted(Counter((t, label) for _, t, label in nonresults).items()):
         print(f"  {token}: {label} ({count} occurrence(s))")
