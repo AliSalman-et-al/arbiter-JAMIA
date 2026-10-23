@@ -1,0 +1,13 @@
+# Parent source checks, round six
+
+## Minozzi 2022
+Primary PubMed abstract PMID34537386 directly inspected on 23 October 2026. It confirms four raters, 80 results/seven outcomes/16 RCTs; five-study calibration; condition/intervention-specific instructions; overall kappa -0.15 at calibration, 0.11 for first five and 0.42 for remaining eleven after instructions; 168.5 to 41 minutes per study and approximately 40 hours calibration/document preparation. This is sequential team evidence, not an isolated causal effect of instructions. Direct full-text download unavailable; these specific facts are abstract-verifiable.
+
+## Huang 2025: denominator correction
+Actual cached primary HTML inspected, including Methods and all Table4 cells: `/tmp/arbiter-r6-fulltexts/systems/huang.pmc-2025.html`. The reported D2 adherence percentages are 55% direct and 95% algorithm-derived against reviewers. HOWEVER Methods explicitly says every RCT was assessed twice. Table4 also has 67.5% for the 20-trial assignment subset and 83.8% for the full 40-trial set. The research report's inferred 11/20 and19/20 must NOT be used as observed counts. Report percentages with 20-trial adherence subset and repeated assessment context, or omit; do not infer a raw denominator without Appendix-level reconciliation. Both active writers received this correction. Title correction changes Usability Study to Evaluation Study; the local snapshot predates this title correction.
+
+## Previously inspected primary full texts
+Parent inspected Gandhi's PLOS Results paragraph confirming overall pairwise agreement 46%,36%,54%; Choi Table3 confirming mean ROBOTO2 conformance60%, all10 runs with skip violations, and4.3 mean violations; Liang primary XML confirming GPT5 mean evidence support64.3% under an automated judge (no recoverable raw denominator for aggregate in main paper); Soboczenski Table3 and modeled relative-time analysis confirming0.75 (0.62–0.92), which is not the ratio of raw755/824 second means. These are different outcomes and cannot be ranked as comparable performance scores.
+
+## Audit design for final imported facts
+External literature numbers need context-bound provenance separate from study-output numbers. For each imported claim retain its exact manuscript text, source identity/locator/access, metric and denominator or explicit aggregate definition. A numeric token found somewhere in a study CSV does not validate an external claim. The release audit must validate these ledger spans independently and keep row-level checks for ARBITER results. Narrative edits must not merely whitelist numbers or weaken claim checks.

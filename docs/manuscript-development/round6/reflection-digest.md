@@ -1,0 +1,24 @@
+# Active-session digest for reflection
+
+This is a parent-written digest of the visible conversation and retained task reports, not a verbatim transcript. The Codex mapping permits a digest; no unrelated project transcripts were searched.
+
+1. User requested JAMIA manuscript and Word/Pages publication, writing-book and clinical-writing guidance, Luna Medium research and Sol 6.1 Medium writing, with git checkpoints.
+2. Several research rounds produced literature reports and writing candidates. Parent and independent reviews checked scientific boundaries, exact numbers, citations, Word pages and deployment parity.
+3. User said earlier prose oversimplified jargon for an expert medical-research audience and recommended IMRaD. A later round restored expert register.
+4. User requested broader study of Irbaz Bin Riaz's publications beyond JAMIA. Four researchers examined clinical AI, evidence synthesis, voice and a publication census; parent retained article-level observations and corrected preprint/version and task-identity errors.
+5. User requested more RoB 2 burden/living-evidence background, ARBITER expansion and operational mechanism, with Published-label agreement first and exact agreement before coefficients.
+6. User supplied the team conversation describing benchmark assembly and target revision. User did not recall search dates/rankings or the extra General Medicine review rationale. User confirmed Atwine unsupported and said the stored design classification was wrong.
+7. User confirmed matched expert/arm inputs and task prompts, access to RoB 2 guidance, BEACON researcher status, separate development eval set and benchmark nonuse in development. User called previous primary/secondary labels arbitrary and requested relabeling.
+8. Parent delegated manuscript, supporting publication and analysis repairs. Manuscript included phrases such as “The selection team reported,” “Three trials designated by the author,” “Atwine's stored design classification is disputed,” and “The author reports that this benchmark was not used in development.”
+9. User explicitly requested analysis repair and a Sol worker. Worker preserved prior plan, renamed conditional-choice calculation, ran 224 test expectations and regenerated 58 numerical tables byte-identically in isolation.
+10. Full isolated single-call production run terminated with exit143; staged publication resumes and isolated verifier later passed. Parent reported these boundaries separately.
+11. Parent's shared verifier found stale documentary source trace records; a new worker repaired 15 trace cells, one table label and a historical filename mapping. Statistical exports and Word/artwork bytes remained unchanged.
+12. Clean include creation was repaired after Quarto parsed a missing manuscript include while rendering Results. Parent tested the missing-include path in isolation.
+13. Main manuscript became 3704 body words,214abstract,23references,25Wordpages. Independent scientific review found no actionable defects; independent proof inspected all25pages. Shared verifiers passed and all50deployedfiles matched release.
+14. User then said citations were insufficiently developed and asked to pull facts/numbers into arguments; gave “review-specific instructions and calibration were followed by improved agreement in one setting” as example. User requested Schimel scrutiny, Ali Salman/Dow and Riaz exemplars, Sol6.1arena,sharpen,reflect.
+15. Parent read canonical manuscript/references end to end, clinical-research-writing SKILL.md, Codex platform mapping, and actual Schimel passages on concrete/credible evidence, specialist audience, introduction versus literature review, questions, results/discussion,paragraphs,condensing,SCFL and limitations.
+16. Parent launched three Luna Medium research tasks for reliability/workload quantitative context, closest-system quantitative evidence, and AliSalman identity/Riaz writing exemplars. No canonical revision made yet.
+17. User added: “The current prose is not good, feels like more of a report than a proper scientific manuscript.” Parent acknowledged and broadened the planned arena from citation insertion to manuscript-level scientific rewriting with appropriate placement of provenance detail.
+18. Parent wrote round6/frame.md,rubric.md,schimel-reading.md and this digest. Arena candidates and reflection reviewers await research-stage capacity.
+
+Skills actually read/invoked in the visible work: /home/ali/Documents/Code/skills/clinical-research-writing/SKILL.md; /home/ali/.codex/plugins/cache/openai-primary-runtime/documents/26.1011.51657/skills/documents/SKILL.md; pstack arena,sharpen,reflect supplied by user and Codex mapping read. Existing prior reflection findings concern audience familiarity, author-style attribution and publication verification boundaries; avoid treating those as new.
