@@ -25,7 +25,7 @@ _Avoid_: preferred judgement
 
 **Revised rating**: An expert's own final rating after seeing the three labels. It may differ from all three. Descriptive only, because seeing the labels may anchor it. The data files call it `Revised`.
 
-**Derived Overall**: The Overall judgement the official RoB 2 rule gives from an expert's independent domain ratings.
+**Derived Overall**: The worst of an expert's five independent domain ratings. Optional escalation for multiple Some concerns domains is not imposed; this is a derived summary rather than a directly rated expert Overall judgement.
 
 ## Units
 
@@ -33,13 +33,13 @@ _Avoid_: preferred judgement
 
 **Disputed cell**: A D1-D5 cell where ARBITER-Sonnet or baseline-Sonnet differs from the meta label. It names a subset only; both experts rated every cell.
 
-**Discordant cell**: A D1-D5 cell where the ARBITER and baseline arm labels differ. The forced-choice primary endpoint is computed on discordant cells.
+**Discordant cell**: A D1-D5 cell where the ARBITER and baseline arm labels differ. Conditional blinded-label choice estimates use discordant cells; the agreed-choice estimate further requires equal expert choices.
 
 **Concordant cell**: A D1-D5 cell where the meta, ARBITER and baseline labels are all equal. The forced choice carries no information there.
 
 **Agreed reference**: The cells where both experts' independent ratings are equal, with that rating as the reference.
 
-**Analysis set**: The 102 trials that both reported arms assessed. Three trials are excluded because ARBITER does not support their design: atwine-2020, haney-2004 and herrmann-2016.
+**Analysis set**: The 102 trials that both reported arms assessed. Three trials remain excluded as unsupported designs: atwine-2020, haney-2004 and herrmann-2016. The author confirms Atwine is unsupported despite an incorrect stored model classification; no specific alternative design subtype is established.
 
 ## Judgements
 
@@ -61,9 +61,9 @@ _Avoid_: preferred judgement
 
 **Quotation found**: A quotation whose text exists in ARBITER's stored copy of the cited source. It does not mean the quotation supports the answer. Use "found in the stored source", never "supported by evidence".
 
-**Input parity**: Both arms received the same files for each trial: articles, supplements, registry records, protocols and SAPs.
+**Input parity**: Both arms received the same available trial files. The author confirms the experts received the same trial materials, supplements and ClinicalTrials.gov records and the same task targets (outcomes, contrast and numerical anchor), with access to Cochrane RoB 2 guidance. This does not imply that every document type existed for every trial or establish undocumented training or multi-outcome conventions.
 
-**All-Low rule**: A reference rule that predicts Low for every cell. Do not call it a "baseline", which means the baseline arm. It shows how much of an accuracy figure comes from Low being the most common label.
+**All-Low rule**: A reference rule that predicts Low for every cell. Do not call it a "baseline", which means the baseline arm. It shows how much of exact agreement comes from Low being the most common label.
 
 ## Reader-facing labels
 
@@ -92,3 +92,11 @@ These are the labels used in manuscript text, figures and tables. The internal t
 | Direction of disagreement | stricter / more lenient than the published label | stricter / more lenient than the published label |
 | Rules-only recomputation | Unassisted ratings recomputed from its own answers | Unassisted ratings recomputed from its own answers |
 | Quotation found | quotation found in the stored source | quotation found in the stored source |
+
+## Outcome status and legacy identifiers
+
+**Evaluation outcomes**: Published-label agreement, independent-expert agreement, conditional blinded-label choices and supporting domain, signalling, rule/source and computation checks. The author-directed reporting order was adopted after analysis on 23 October 2026; it establishes no formal primary/secondary or confirmatory hierarchy and no prospective prespecification.
+
+**Conditional blinded-label choice**: The label-match share among arm-discordant cells, restricted to equal expert choices for the agreed-choice estimate. Expert-specific, split-choice and existing post hoc strictness analyses retain their original eligibility and scoring. It is preference among offered labels, not accuracy.
+
+**Legacy analysis keys**: `primary-endpoint.csv`, `rules-only-primary.csv`, the rules-only list key `primary`, and module `secondary.R` are retained provenance/compatibility identifiers. Their names confer no scientific status; readers use conditional blinded-label choice or the relevant supporting-check label. The RoB 2 question identifier `selection:prespecified-analysis` concerns the assessed trial's analysis plan and is unrelated to this evaluation's planning chronology.

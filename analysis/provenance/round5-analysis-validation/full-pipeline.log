@@ -1,0 +1,25 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Derived Overall mismatches: 29/612
+Supplement eTable 1: Benchmark trials
+Supplement eTable 2: Full independent agreement and paired contrasts
+Supplement eTable 3: Category distributions
+Supplement eTable 4: Expert reliability
+Supplement eTable 5: Confusion matrices against each independent expert
+Supplement eTable 6: Published label agreement
+Supplement eTable 7: Unweighted agreement with published labels
+Supplement eTable 8: Exploratory binary agreement against each expert
+Supplement eTable 9: Blinded-label choices and post hoc strata
+Supplement eTable 10: Forced choice on disputed cells
+Supplement eTable 11: Direction of disagreement against independent experts
+Supplement eTable 12: Revised ratings and retained or changed answers
+Supplement eTable 13: Full signalling question agreement

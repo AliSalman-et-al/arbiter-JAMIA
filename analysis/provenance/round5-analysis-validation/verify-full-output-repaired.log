@@ -1,0 +1,41 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+PASS loader: 102 trials, 510 unique cells per expert; all 3060 workbook source labels match arm exports (including paired missing values). 
+PASS Figure 3 counts reproduce from adjudication-analysis-cells.csv. 
+PASS independent workbook recomputation: disputed 154; discordant 80; agreed_choice 60; ARBITER 53; Unassisted 7; agreed_reference 388; concordant 356 
+PASS independent base-R worst-domain Overall counts for every source, expert and full/matched cohort. 
+PASS Overall cohorts: ARBITER and Unassisted n=102 plus matched n=81; Published and paired Published contrasts n=81. Missing Published labels are excluded. 
+PASS independent direct equality counts for all six source/expert comparisons. 
+PASS direction counts partition each source/direction/expert population and reproduce every point estimate. 
+PASS every exported count/denominator proportion agrees with its estimate. 
+PASS Overall differences classified: 21 absent Published labels, seven permitted multi-domain High escalations, one Published Low versus derived Some concerns. 
+Derived Overall validation: 29 differences across 612 columns/trial checks; all expert independent, chosen and revised ratings match. 
+PASS 17 unchanged CSVs: empty git diff against fee1225; prior-work data identical except the authorised reference description. 
+PASS Figures 1 and 2: all eight PNG/PDF/SVG/TIFF files byte-identical to fee1225. 
+PASS 49892 source-cell trace records resolve to final CSV values. 
+PASS results sentences and figure legends exactly regenerate from final CSVs and the protected supplied legends. 
+PASS Table 2: conditional blinded-label choices and three core sensitivities reproduce from numerical exports. 
+PASS independent answer-code recomputation of every within/cross-direction count; within/cross-direction counts reproduce directly from answer codes. 
+PASS eFigure 2 retains only question/expert rows with at least 20 paired answers; eFigure 5 retains every sparse and zero-answer row. 
+PASS current display builders reproduce every supplemental display CSV and its Word footnote exactly. 
+PASS supplementary source labels, unweighted κ labels, public validation labels and complete confusion-matrix totals. 
+PASS every AVATAR answer, rationale and full evidence-record field occurs in the supplement, retaining full quotes across labelled continuations. 
+PASS all supplementary and reporting-map display rows occur in their Word documents in CSV column order. 
+PASS all three Word tables contain every corresponding display-CSV cell. 
+PASS final HTML: every Results sentence and main/supplementary display-CSV cell appears; no retired supplement sections remain. 
+PASS unreported-model leak scan over all textual outputs, all Word documents and both HTML views. 
+PASS reader-facing text contains no filenames or overstated five-level disagreement wording; technical link targets are excluded. 
+PASS generated Results, legends and main-table reader text has no retired-design labels. Source quotations and immutable artwork are covered by the rebuild QA record. 
+PASS independent workbook severity counts and every expert binary pooled/domain numerator and denominator. 
+PASS every numeric estimate/count/denominator/CI unchanged in 38 analysis CSVs against approved baseline 951dddd. 
+Error: !any(vapply(reader_strings, function(s) grepl(hard_ban, s, perl = TRUE),  .... is not TRUE
+Execution halted

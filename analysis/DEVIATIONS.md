@@ -422,3 +422,9 @@ Author clarification: new expert-reference Overall comparisons exclude the 21 mi
 2026-10-21: prespecified comparisons from the 2026-10-18 plan applied to all 510 cells because the experts assessed every cell; additions listed as exploratory.
 
 Independent domain comparisons, expert reliability and signalling comparisons retain the 18 October prespecified status. Expert-derived Overall, direction, rules-only recomputation, strictness strata, severity distributions and binary expert comparisons are exploratory. Round 15 estimates and protected artwork remain unchanged.
+
+## 2026-10-23: author-directed reporting reconciliation after analysis
+
+The latest author interview supersedes earlier primary/secondary and confirmatory designations in this historical log. The active `../ANALYSIS-PLAN.md` now specifies evaluation outcomes without that hierarchy, ordered Published exact agreement, independent-expert agreement, conditional blinded-label choices and supporting checks. This is a reporting change after analysis and establishes no prospective prespecification. The pre-reconciliation plan is retained in `provenance/ANALYSIS-PLAN-2026-10-23-before-reconciliation.md`; earlier entries remain historical records.
+
+Matched supplied expert/arm trial materials and task targets, Cochrane guidance access, the author-confirmed benchmark/development distinction and the retained Atwine exclusion clarify description and provenance. They do not change computational inputs, exclusions, estimands, component matching or bootstrap methods. No target-matching subgroup, new model or experiment was added. Legacy output filenames and the rules-only `primary` key remain compatibility identifiers only. See `../docs/manuscript-development/round5/analysis-repair.md` for exact validation commands, numerical comparisons and limitations.

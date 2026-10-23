@@ -1,0 +1,47 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Supplement eTable 1: Benchmark trials
+Supplement eTable 2: Full independent agreement and paired contrasts
+Supplement eTable 3: Category distributions
+Supplement eTable 4: Expert reliability
+Supplement eTable 5: Confusion matrices against each independent expert
+Supplement eTable 6: Published label agreement
+Supplement eTable 7: Unweighted agreement with published labels
+Supplement eTable 8: Exploratory binary agreement against each expert
+Supplement eTable 9: Blinded-label choices and post hoc strata
+Supplement eTable 10: Forced choice on disputed cells
+Supplement eTable 11: Direction of disagreement against independent experts
+Supplement eTable 12: Revised ratings and retained or changed answers
+Supplement eTable 13: Full signalling question agreement
+Supplement eTable 14: Rules only recomputation
+Supplement eTable 15: Invalid answer path sensitivity
+Supplement eTable 16: Derived Overall agreement and paired contrasts
+Supplement eTable 17: Derived Overall validation differences
+Supplement eTable 18: Rule consistency and audit
+Supplement eTable 19: Evidence binding
+Supplement eTable 20: Time cost and token use
+Supplement eTable 21: API cost estimates and reconstruction bounds
+Supplement eTable 22: Token reconciliation
+Supplement eTable 23: Prior work evidence ledger
+Supplement: figures
+Supplement: AVATAR complete trace
+Supplement: prompts and provenance
+Supplement: writing Word document
+Supplement: reporting map
+Traceback (most recent call last):
+  File "/tmp/arbiter-analysis-r5-y3nrs5du/analysis/../docs/manuscript/assemble-publication.py", line 8, in <module>
+    from docx import Document
+ModuleNotFoundError: No module named 'docx'
+Error in build_manuscript_document() : 
+  system2(python, "../docs/manuscript/assemble-publication.py") ==  .... is not TRUE
+Calls: build_displays -> build_manuscript_document -> stopifnot
+Execution halted

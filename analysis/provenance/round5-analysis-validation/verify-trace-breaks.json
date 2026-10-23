@@ -1,0 +1,34 @@
+{
+  "missing_under_old_extractor": 4,
+  "restored_with_breaks": 0,
+  "rows": [
+    {
+      "file": "avatar-trace-evidence.csv",
+      "row": 5,
+      "column": "Full verbatim quote",
+      "length": 6665,
+      "present_with_breaks": false
+    },
+    {
+      "file": "avatar-trace-evidence.csv",
+      "row": 10,
+      "column": "Full verbatim quote",
+      "length": 1629,
+      "present_with_breaks": false
+    },
+    {
+      "file": "avatar-trace-evidence.csv",
+      "row": 12,
+      "column": "Full verbatim quote",
+      "length": 5910,
+      "present_with_breaks": false
+    },
+    {
+      "file": "avatar-trace-evidence.csv",
+      "row": 13,
+      "column": "Full verbatim quote",
+      "length": 4003,
+      "present_with_breaks": false
+    }
+  ]
+}

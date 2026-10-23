@@ -1,4 +1,5 @@
-# Independent domain comparisons were prespecified; derived Overall is exploratory.
+# Agreement and conditional-choice evaluation outcomes; no endpoint hierarchy.
+# Derived Overall remains a worst-domain summary, not a direct expert Overall rating.
 expert_references <- function(inputs,phase='independent') {
   x <- inputs$adjud |> transmute(slug,domain,adjudicator,reference=.data[[phase]])
   overall <- x |> group_by(slug,adjudicator) |> summarise(reference=derived_overall(reference),.groups='drop') |> mutate(domain='Overall')
@@ -97,7 +98,7 @@ direction_of_disagreement <- function(cells,weights) {
     }))
   }))))
 }
-primary_analyses <- function(cells,weights) {
+conditional_choice_analyses <- function(cells,weights) {
   bind_rows(lapply(c('Consensus','Adjudicator 1','Adjudicator 2','Split sensitivity'),function(a) win_share(cells,weights,a)),
     bind_rows(lapply(c('Stricter','More lenient'),function(direction) {
       x <- cells |> filter(consensus,discordant,(match(kit,LABELS)>match(nokit,LABELS))==(direction=='Stricter'))
@@ -123,6 +124,7 @@ rules_only_analysis <- function(inputs,checks,cells,weights) {
     left_join(cells |> select(slug,domain,discordant,consensus),by=c('slug','domain'))
   # The original discordant population remains fixed even if a rule repair creates a tie.
   recells <- cells |> select(-nokit) |> left_join(replacements |> rename(nokit=recomputed),by=c('slug','domain'))
+  # Legacy export key: primary writes rules-only-primary.csv; no scientific priority.
   list(changed=changed,primary=bind_rows(lapply(c('Consensus','Adjudicator 1','Adjudicator 2','Split sensitivity'),function(a) win_share(recells,weights,a))),
     agreement=expert_agreement(inputs,weights,labels)$estimates)
 }

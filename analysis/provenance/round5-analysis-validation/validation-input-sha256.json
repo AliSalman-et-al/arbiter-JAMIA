@@ -1,0 +1,22 @@
+{
+  "analysis/data-derived/api-cost-trials.csv": "5b346647f2086f9a277d12ce9b72fa59120f66a19fcca67e1abafd57112a9a19",
+  "analysis/data-derived/api-cost-turns.csv": "7e22923609d2975adb80bc96967e8fc1e63b9d7d05445db1d30109134a794122",
+  "analysis/data-derived/arbiter-haiku.csv": "05827a653d5405c8a47353077b0967f3339d70ed03770b8cdd1ceee807b41fa6",
+  "analysis/data-derived/arbiter-sonnet.csv": "e9ca9f9ae008ce01daecc5fef4c727992812e68aebd19c79eb5433050ca07ff3",
+  "analysis/data-derived/baseline-haiku.csv": "982f8f6e9b551df831a02926661f0734cf8c565c738c4f88cbfeccfb14d2146a",
+  "analysis/data-derived/baseline-sonnet.csv": "ead30093c7d746d324128967d88f0da60e2b72015eb27c4a9eef7bb9bfa3b60f",
+  "analysis/data-derived/bundle-binding-counts.csv": "5bb958fc75aa8829564561ab6be70c553f8d413329cb1dbc4d06e10db7fc479d",
+  "analysis/data-derived/bundle-path-checks.csv": "848d79dda695344b674ae2147fed6b26494c49e55ec6f6900b1b0107a8a2fb55",
+  "analysis/data-derived/bundle-reverification.csv": "49fbb85bf9153015db7c36f6aa789848a2bf91349406e047871b216d476f4397",
+  "analysis/data-derived/expert-signalling-comparisons.csv": "1206b80a40f4e3c84c058e06c0111c09e18cdf834e3d1ae20d1e1d90f5394197",
+  "analysis/data-derived/expert-signalling-components.csv": "7b88ccedd173ef01609042b37d50b8d857298ba85ef6531a4585fca3a9d5373a",
+  "human-adjudication/adjudication-with-explanations-1.xlsx": "8e06b167279522d208bdbf1e68da400dcff0ec67927078264d4926c709f7db36",
+  "human-adjudication/adjudication-with-explanations-2.xlsx": "7779e0782ec25b37e081a1a714a56f7a2666216a86b640154bd90b0fd118a882",
+  "kit-sonnet-5.5/rob2kit-domain-labels.csv": "c31fc271d74a346b50ffeb4d13c5dbcfd325c124ae495a41773586a3d9befdd1",
+  "kit-sonnet-5.5/rob2kit-signalling-answers.csv": "aef3903eb178694327e6f7ae59029825d5ce8172c191ece1e852ba375797e7bb",
+  "no-kit-sonnet-5.5/model-domain-labels.csv": "4e65e99181f01c8da69a1cbcade4352c112e8f5428294ee0f997040efca8e00b",
+  "no-kit-sonnet-5.5/model-signalling-answers.csv": "3b061b9e21ffdba8f144645fa99cdd14ed574e4c770245254cb3d432c96f2acd",
+  "rob2-meta-benchmark-set/FILES.csv": "24a3a55bfe2ca1fc772332a5883f52f9127797d61c7cce869a6ed6279a3ede5a",
+  "rob2-meta-benchmark-set/LABEL-TARGETS.csv": "da8f34f1ba50458f6f912153aab7608b75b5e758a47d729f1dcba805424564f7",
+  "rob2-meta-benchmark-set/TRIAL-SUMMARY.csv": "d7faf6cff4cfd117b4f86c689a9ca2bad10ae21897b19778f119543b7ee5b20f"
+}

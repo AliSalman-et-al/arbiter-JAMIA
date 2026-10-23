@@ -147,7 +147,7 @@ invalid_path_sensitivity <- function(inputs,checks) {
 }
 validate_gate <- function(checks) {
   sonnet <- checks |> filter(arm=='ARBITER-Sonnet',status!='Consistent')
-  if(nrow(sonnet)) stop('Section 5.4 validation gate failed: unexpected ARBITER inconsistency.',call.=FALSE)
+  if(nrow(sonnet)) stop('Domain validation gate failed: unexpected ARBITER inconsistency.',call.=FALSE)
   invisible(TRUE)
 }
 

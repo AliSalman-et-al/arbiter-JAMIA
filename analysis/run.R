@@ -17,7 +17,8 @@ save_table <- function(x,name) {
 }
 run_unchanged(inputs,checks,weights,load_run_metrics())
 save_table(cells,'adjudication-analysis-cells')
-save_table(primary_analyses(cells,weights),'primary-endpoint')
+# Retain the historical filename for source traces and publication readers.
+save_table(conditional_choice_analyses(cells,weights),'primary-endpoint')
 expert <- expert_agreement(inputs,weights)
 for(n in names(expert)) save_table(expert[[n]],paste0('independent-',n))
 save_table(expert_reliability(inputs,weights),'expert-reliability')

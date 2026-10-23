@@ -1,0 +1,52 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Manuscript assembled: 3 native gt tables; 5 legends and alt texts; 3704 main words; 214 abstract words.
+ERROR: Include directive failed.
+  in file /tmp/arbiter-analysis-r5-y3nrs5du/analysis/manuscript.qmd, 
+  could not find file /tmp/arbiter-analysis-r5-y3nrs5du/analysis/.quarto/manuscript-page.md.
+
+Stack trace:
+    at retrieveInclude (file:///opt/quarto/bin/quarto.js:68912:17)
+    at standaloneInclude (file:///opt/quarto/bin/quarto.js:68945:13)
+    at processMarkdownIncludes (file:///opt/quarto/bin/quarto.js:69405:34)
+    at expandIncludes (file:///opt/quarto/bin/quarto.js:69170:9)
+    at async projectResolveFullMarkdownForFile (file:///opt/quarto/bin/quarto.js:76935:21)
+    at async fileExecutionEngine (file:///opt/quarto/bin/quarto.js:77386:22)
+    at async addFile (file:///opt/quarto/bin/quarto.js:92497:20)
+    at async Promise.all (index 0)
+    at async projectInputFilesInternal (file:///opt/quarto/bin/quarto.js:92554:19)
+    at async projectContext (file:///opt/quarto/bin/quarto.js:92126:36)
+    at async render (file:///opt/quarto/bin/quarto.js:142619:29)
+    at async _Command.actionHandler (file:///opt/quarto/bin/quarto.js:142901:24)
+    at async _Command.execute (file:///opt/quarto/bin/quarto.js:102249:7)
+    at async _Command.parseCommand (file:///opt/quarto/bin/quarto.js:102126:14)
+    at async quarto4 (file:///opt/quarto/bin/quarto.js:188304:5)
+    at async file:///opt/quarto/bin/quarto.js:188333:5
+    at async file:///opt/quarto/bin/quarto.js:188187:14
+    at async mainRunner (file:///opt/quarto/bin/quarto.js:188189:5)
+    at async file:///opt/quarto/bin/quarto.js:188326:3
+Traceback (most recent call last):
+  File "/tmp/arbiter-analysis-r5-y3nrs5du/analysis/../scripts/report-refresh.py", line 223, in <module>
+    build()
+    ~~~~~^^
+  File "/tmp/arbiter-analysis-r5-y3nrs5du/analysis/../scripts/report-refresh.py", line 185, in build
+    run('quarto', 'render', f'{page}.qmd')
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/arbiter-analysis-r5-y3nrs5du/analysis/../scripts/report-refresh.py", line 28, in run
+    subprocess.run([str(arg) for arg in args], cwd=ANALYSIS, check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ali/.local/share/uv/python/cpython-3.13.15-linux-x86_64-gnu/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['quarto', 'render', 'results.qmd']' returned non-zero exit status 1.
+Error: system2(python, c("../scripts/report-refresh.py")) == 0L is not TRUE
+Execution halted

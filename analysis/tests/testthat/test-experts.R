@@ -7,14 +7,19 @@ test_that('new workbooks exactly cover all trial domains and arm labels', {
   x <- inputs$adjud;x$independent[1] <- NA
   expect_error(validate_adjudication(x,inputs$labels,inputs$trials))
 })
-test_that('primary endpoint and independent agreement populations reproduce', {
+test_that('conditional blinded-label choices and independent agreement populations reproduce', {
   cells <- adjudication_cells(inputs)
   expect_equal(sum(cells$disputed),154L)
   expect_equal(sum(cells$discordant),80L)
   expect_equal(sum(cells$consensus&cells$discordant),60L)
   expect_equal(sum(cells$independent_1==cells$independent_2),388L)
-  x <- win_share(cells,stratified_cluster_weights(inputs$trials,100,7))
-  expect_equal(x$count,c(53L,7L,0L))
+  x <- conditional_choice_analyses(cells,stratified_cluster_weights(inputs$trials,100,7))
+  agreed <- filter(x,analysis=='Consensus')
+  expect_equal(agreed$count,c(53L,7L,0L))
+  expect_equal(agreed$n,rep(60L,3))
+  expect_equal(filter(x,analysis=='Adjudicator 1')$count,c(63L,13L,4L))
+  expect_equal(filter(x,analysis=='Adjudicator 2')$count,c(61L,19L,0L))
+  expect_equal(filter(x,analysis=='Split sensitivity')$n,rep(80L,3))
 })
 test_that('choice ties credit all matching source labels and exclude concordance', {
   x <- tibble(slug=c('a','b'),disputed=c(TRUE,FALSE),meta='Low',kit=c('High','Low'),nokit=c('High','Low'),chosen_label_1=c('High','Low'),chosen_label_2=c('High','Low'))

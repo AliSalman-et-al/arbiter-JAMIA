@@ -1,0 +1,39 @@
+The following package(s) will be updated:
+
+# CRAN -----------------------------------------------------------------------
+- bigD          [* -> 0.3.1]
+- bitops        [* -> 1.1-0]
+- commonmark    [* -> 2.0.0]
+- curl          [* -> 8.1.0]
+- gt            [* -> 1.4.0]
+- htmlwidgets   [* -> 1.6.4]
+- irrCAC        [* -> 1.4]
+- juicyjuice    [* -> 0.1.0]
+- litedown      [* -> 0.11]
+- markdown      [* -> 2.0]
+- reactable     [* -> 0.4.5]
+- reactR        [* -> 0.6.1]
+- V8            [* -> 8.2.0]
+
+# Downloading packages -------------------------------------------------------
+[?25l  (0/3) Downloading: V8, juicyjuice, gt                                                                                                                         [32m✔[0m V8 8.2.0                                 [657 kB in 1.4s]
+  (1/3) Downloading: juicyjuice, gt                                                                                                                             [32m✔[0m juicyjuice 0.1.0                         [1.1 MB in 2.2s]
+  (2/3) Downloading: gt                                                                                                                                         [32m✔[0m gt 1.4.0                                 [3.5 MB in 2.9s]
+                                                                                Successfully downloaded 3 packages in 3.3 seconds.
+
+# Installing packages --------------------------------------------------------
+[32m✔[0m bitops 1.1-0                             [copied from cache]
+[32m✔[0m commonmark 2.0.0                         [copied from cache]
+[32m✔[0m curl 8.1.0                               [copied from cache]
+[32m✔[0m bigD 0.3.1                               [copied from cache]
+[32m✔[0m htmlwidgets 1.6.4                        [copied from cache]
+[32m✔[0m reactable 0.4.5                          [copied from cache]
+[32m✔[0m reactR 0.6.1                             [copied from cache]
+[32m✔[0m litedown 0.11                            [copied from cache]
+[32m✔[0m markdown 2.0                             [copied from cache]
+[32m✔[0m irrCAC 1.4                               [copied from cache]
+  (0/3) Installing: V8                                                            (0/3) Installing: V8                                                            (0/3) Installing: V8                                                            (0/3) Installing: V8                                                            (0/3) Installing: V8                                                            (0/3) Installing: V8                                                            (0/3) Installing: V8                                                            (0/3) Installing: V8                                                            (0/3) Installing: V8                                                            (0/3) Installing: V8                                                            (0/3) Installing: V8                                                            (0/3) Installing: V8                                                                                                                                          [32m✔[0m V8 8.2.0                                 [built from source in 54s]
+  (1/3) Installing: juicyjuice                                                    (1/3) Installing: juicyjuice                                                                                                                                  [32m✔[0m juicyjuice 0.1.0                         [built from source in 1.7s]
+  (2/3) Installing: gt                                                            (2/3) Installing: gt                                                            (2/3) Installing: gt                                                            (2/3) Installing: gt                                                            (2/3) Installing: gt                                                            (2/3) Installing: gt                                                            (2/3) Installing: gt                                                            (2/3) Installing: gt                                                            (2/3) Installing: gt                                                            (2/3) Installing: gt                                                                                                                                          [32m✔[0m gt 1.4.0                                 [built from source in 43s]
+Successfully installed 13 packages in 98 seconds.
+[?25h

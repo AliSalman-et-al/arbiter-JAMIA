@@ -1,0 +1,87 @@
+- Querying repositories for available source packages ... Done!
+The following package(s) will be updated:
+
+# CRAN -----------------------------------------------------------------------
+- bigD          [* -> 0.3.1]
+- bitops        [* -> 1.1-0]
+- commonmark    [* -> 2.0.0]
+- curl          [* -> 8.1.0]
+- gt            [* -> 1.4.0]
+- htmlwidgets   [* -> 1.6.4]
+- irrCAC        [* -> 1.4]
+- juicyjuice    [* -> 0.1.0]
+- litedown      [* -> 0.11]
+- markdown      [* -> 2.0]
+- reactable     [* -> 0.4.5]
+- reactR        [* -> 0.6.1]
+- V8            [* -> 8.2.0]
+
+# Downloading packages -------------------------------------------------------
+[?25l  (0/11) Downloading: bitops, commonmark, bigD, htmlwidgets, ...                                                                                                [32m✔[0m bitops 1.1-0                             [11 kB in 0.65s]
+  (1/11) Downloading: commonmark, bigD, htmlwidgets, reactable, ...                                                                                             [32m✔[0m commonmark 2.0.0                         [147 kB in 0.78s]
+  (2/11) Downloading: bigD, htmlwidgets, reactable, V8, ...                                                                                                     [32m✔[0m markdown 2.0                             [24 kB in 0.85s]
+  (3/11) Downloading: bigD, htmlwidgets, reactable, V8, ...                                                                                                     [32m✔[0m litedown 0.11                            [113 kB in 0.88s]
+  (4/11) Downloading: bigD, htmlwidgets, reactable, V8, ...                                                                                                     [32m✔[0m V8 8.2.0                                 [657 kB in 1.0s]
+  (5/11) Downloading: bigD, htmlwidgets, reactable, reactR, ...                                                                                                 [32m✔[0m htmlwidgets 1.6.4                        [869 kB in 1.2s]
+  (6/11) Downloading: bigD, reactable, reactR, juicyjuice, ...                                                                                                  [32m✔[0m reactR 0.6.1                             [712 kB in 1.8s]
+  (7/11) Downloading: bigD, reactable, juicyjuice, gt                                                                                                           [32m✔[0m reactable 0.4.5                          [981 kB in 1.9s]
+  (8/11) Downloading: bigD, juicyjuice, gt                                                                                                                      [32m✔[0m juicyjuice 0.1.0                         [1.1 MB in 1.9s]
+  (9/11) Downloading: bigD, gt                                                                                                                                  [32m✔[0m bigD 0.3.1                               [1.3 MB in 2.4s]
+  (10/11) Downloading: gt                                                                                                                                       [32m✔[0m gt 1.4.0                                 [3.5 MB in 3.1s]
+                                                                                Successfully downloaded 11 packages in 3.4 seconds.
+
+# Installing packages --------------------------------------------------------
+[32m✔[0m curl 8.1.0                               [copied from cache]
+[32m✔[0m irrCAC 1.4                               [copied from cache]
+  (0/11) Installing: bigD, bitops, commonmark, htmlwidgets                        (0/11) Installing: bigD, bitops, commonmark, htmlwidgets                        (0/11) Installing: bigD, bitops, commonmark, htmlwidgets                        (0/11) Installing: bigD, bitops, commonmark, htmlwidgets                        (0/11) Installing: bigD, bitops, commonmark, htmlwidgets                                                                                                      [32m✔[0m bitops 1.1-0                             [built from source in 5.2s]
+  (1/11) Installing: bigD, commonmark, htmlwidgets                                (1/11) Installing: bigD, commonmark, htmlwidgets, reactR                        (1/11) Installing: bigD, commonmark, htmlwidgets, reactR                                                                                                      [32m✔[0m htmlwidgets 1.6.4                        [built from source in 7.0s]
+  (2/11) Installing: bigD, commonmark, reactR                                     (2/11) Installing: bigD, commonmark, reactR, V8                                 (2/11) Installing: bigD, commonmark, reactR, V8                                                                                                               [31m✖[0m V8 8.2.0                                
+  (3/11) Installing: bigD, commonmark, reactR                                     (3/11) Installing: bigD, commonmark, reactR                                                                                                                   [32m✔[0m reactR 0.6.1                             [built from source in 5.2s]
+  (4/11) Installing: bigD, commonmark                                             (4/11) Installing: bigD, commonmark, reactable                                  (4/11) Installing: bigD, commonmark, reactable                                  (4/11) Installing: bigD, commonmark, reactable                                                                                                                [32m✔[0m reactable 0.4.5                          [built from source in 7.0s]
+  (5/11) Installing: bigD, commonmark                                             (5/11) Installing: bigD, commonmark                                                                                                                           [32m✔[0m bigD 0.3.1                               [built from source in 21s]
+  (6/11) Installing: commonmark                                                   (6/11) Installing: commonmark                                                                                                                                 [32m✔[0m commonmark 2.0.0                         [built from source in 24s]
+  (7/11) Installing: litedown                                                     (7/11) Installing: litedown                                                                                                                                   [32m✔[0m litedown 0.11                            [built from source in 5.0s]
+  (8/11) Installing: markdown                                                     (8/11) Installing: markdown                                                                                                                                   [32m✔[0m markdown 2.0                             [built from source in 1.7s]
+Successfully installed 10 packages in 31 seconds.
+
+The following package(s) were not installed successfully:
+- [V8]: install failed
+- [gt]: dependency failed (juicyjuice)
+- [juicyjuice]: dependency failed (V8)
+You may need to manually download and install these packages.
+
+# V8 -------------------------------------------------------------------------
+* installing *source* package ‘V8’ ...
+** package ‘V8’ successfully unpacked and MD5 sums checked
+** using staged installation
+Found C++20 compiler: g++
+Using CXXCPP=g++ -std=gnu++20 -E
+Using PKG_CFLAGS=-I/usr/include/v8
+Using PKG_LIBS=-lv8 -lv8_libplatform
+-----------------------------[ ANTICONF ]-------------------------------
+Configuration failed to find the libv8 engine library. Try installing:
+ * deb: libv8-dev or libnode-dev (Debian / Ubuntu)
+ * rpm: v8-devel (Fedora, EPEL)
+ * brew: v8 (OSX)
+Alternatively, on Linux or MacOS you can set environment variable:
+    DOWNLOAD_STATIC_LIBV8=1
+to automatically download a static build of libv8 (recommended).
+To use a custom libv8, set V8_PKG_CFLAGS and V8_PKG_LIBS manually.
+---------------------------[ ERROR MESSAGE ]----------------------------
+<stdin>:1:10: fatal error: v8.h: No such file or directory
+compilation terminated.
+------------------------------------------------------------------------
+ERROR: configuration failed for package ‘V8’
+* removing ‘/tmp/arbiter-analysis-r5-y3nrs5du/library/.renv/1/V8’
+
+[?25hError: failed to install "gt", "V8", "juicyjuice"
+Traceback (most recent calls last):
+4: renv::restore(project = getwd(), library = "/tmp/arbiter-analysis-r5-y3nrs5du/library", 
+       packages = c("gt", "irrCAC"), prompt = FALSE)
+3: records <- renv_restore_run_actions(project, diff, current, lockfile, rebuild, strict, descriptions, retry) at restore.R#237
+2: stopf(
+     "failed to install %s",
+     paste(dQuote(failed), collapse = ", ")
+   ) at restore.R#284
+1: stop(sprintf(fmt, ...), call. = call.) at utils-format.R#3
+Execution halted
