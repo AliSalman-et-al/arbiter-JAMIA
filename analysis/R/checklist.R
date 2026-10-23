@@ -88,8 +88,20 @@ reporting_checklist <- function() {
   map$section[map$guideline=='TRIPOD-LLM' & map$item=='5c'] <- 'Text-date coverage is not reported; author information required'
   map$section[map$guideline=='TRIPOD-LLM' & map$item=='14c'] <- 'Manuscript Statistical analysis; formal primary endpoint and exploratory analyses; protocol/archive identifier requires author confirmation'
   map$section[map$guideline=='GRRAS' & map$item=='9'] <- 'Manuscript Independent expert references; eMethods Blinded expert assessment'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='5a'] <- 'eMethods Input parity and label targets; eTable 1; initial review identification and eligibility require author completion'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='8a'] <- 'eMethods Algorithms and validation; Blinded expert assessment; original blank form, instructions, target brief and multi-outcome judgment conventions require author completion'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='9a'] <- 'Supplement Prompt templates and run provenance; prompt design, selection and version-freeze provenance require author completion'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='9b'] <- 'Supplement Prompt templates and run provenance; eTable 1; development data and any benchmark overlap require author completion'
+  map$section[map$guideline=='GRRAS' & map$item=='7'] <- 'eTable 1; Manuscript Benchmark and assessment arms; eMethods Input parity and label targets; initial review identification and eligibility require author completion'
+  map$section[map$guideline=='GRRAS' & map$item=='8'] <- 'eMethods Blinded expert assessment; original blank form, instructions, target brief and multi-outcome judgment conventions require author completion'
   map <- map |> mutate(page='Stable section/display locator',
     applicability_and_notes=case_when(
+      guideline=='TRIPOD-LLM' & item=='5a'~'Partial: initial review identification and eligibility require author completion',
+      guideline=='TRIPOD-LLM' & item=='8a'~'Partial: original annotation materials and target guidance require author completion',
+      guideline=='TRIPOD-LLM' & item=='9a'~'Partial: final templates do not establish the prompt-development process',
+      guideline=='TRIPOD-LLM' & item=='9b'~'Partial: final templates and a filled example do not establish development data',
+      guideline=='GRRAS' & item=='7'~'Partial: within-review sampling is described; initial review selection requires author completion',
+      guideline=='GRRAS' & item=='8'~'Partial: assessment sequence is described; original materials and target guidance require author completion',
       startsWith(section,'N/A:')~'Not applicable: fixed model and task',
       grepl('author completion|author confirmation|author information|author information required',section,ignore.case=TRUE)~'Partial: author information required',
       TRUE~'Reported at the named current section or display'))

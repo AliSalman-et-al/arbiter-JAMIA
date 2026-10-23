@@ -1,0 +1,55 @@
+## Abstract
+
+### Objective
+
+To describe an inspectable workflow for the Cochrane risk-of-bias tool for randomised trials (RoB 2) and compare its judgments with independent expert assessments.
+
+### Materials and Methods
+
+ARBITER retains trial sources and evidence, records model-generated signalling answers, and applies RoB 2 rules in software. Its Sonnet workflow and a same-model minimal-prompt comparator assessed identical supplied documents for 102 trials from 16 reviews. Two experts independently rated five domains per trial (510 cells) before choosing among blinded labels. The formal primary endpoint was ARBITER preference among arm disagreements with agreed expert choices; all-cell agreement was secondary. Paired intervals resampled trials within fixed reviews.
+
+### Results
+
+ARBITER was preferred in 53/60 agreed choices (88%; 95% CI, 80–96%), drawn from 80 arm disagreements with 20 split choices. Agreement with Expert 1 was 371/510 (72.7%) versus 332/510 (65.1%), a paired gain of 7.6 percentage points (95% CI, 5.1–10.2). Agreement with Expert 2 was 433/510 (84.9%) versus 400/510 (78.4%), a gain of 6.5 points (3.5–9.4). Published-label agreement differed by −1.8 points (−5.1 to 1.6). All 510 ARBITER domain outputs followed executable rules. Structural checks did not establish evidence support. Median runtime was 7.6 versus 0.5 minutes per trial.
+
+### Discussion
+
+Agreement varied by domain and reference. The arms differed in instructions, tools and computation; component effects and human workload were not measured.
+
+### Conclusion
+
+ARBITER preserved inspectable assessment records and had greater agreement with both independent experts in this benchmark.
+
+## Background and significance
+
+A risk-of-bias judgment needs an examinable basis in the evidence for a particular trial result. The Cochrane risk-of-bias tool for randomised trials (RoB 2) makes that basis explicit through signalling questions and rules linking answers to domain ratings.[1] Applying the rules consistently and interpreting the trial evidence are distinct tasks. Experienced assessors have reported difficulty applying RoB 2 and have reached different judgments; condition-specific implementation instructions were associated with improved reliability in one review setting.[2–3] Studies using the earlier Cochrane instrument also found different assessments of the same trials across reviews.[4–5] For AI-assisted assessment, the question extends beyond the final rating to whether a reviewer can examine the evidence and decisions that produced it.
+
+Earlier systems address several parts of this problem. RobotReviewer paired automated ratings with extracted supporting sentences for the earlier instrument.[8] ROBOTO2 brings retrieved evidence, proposed signalling answers and reviewer corrections into an interactive RoB 2 workflow.[9] Structured RoB 2 prompting and ratings derived from signalling answers have also been evaluated,[10–11] while same-model comparisons for the earlier instrument show that prompt design itself is a substantive comparator choice.[12] These studies establish a basis for evidence-assisted appraisal, rather than a gap defined by the absence of structured tools. Evidence-synthesis organizations accordingly emphasize transparent records and human oversight when using AI.[6–7]
+
+The remaining evaluation question concerns what each implementation makes inspectable and what its judgments agree with. Rule conformance, documentary support and agreement with a human reference describe different properties. A rating can follow the rules even when an answer rests on an inappropriate passage. Conversely, disagreement with a published label need not imply disagreement with a new expert assessment. Prior studies have examined these properties using different inputs, references and repeated-assessment designs.[10–11,13,16] Evaluating them separately within a paired comparison can show both the agreement pattern and the limits of what the assessment record establishes.
+
+## Objective
+
+We examined how ARBITER preserves the basis of a RoB 2 assessment and how its complete Sonnet workflow compares with the same model given a minimal prompt and identical supplied trial documents. The formal primary endpoint was conditional expert preference. Secondary and supporting evaluations addressed agreement with each independent expert across all domains, rule conformance, evidence-record integrity and computational burden.
+
+## Discussion
+
+ARBITER preserved inspectable assessment records and agreed more often with each independent expert than the same model given a minimal prompt. The formal primary result favored ARBITER in 53/60 agreed choices among 80 assessments where the arms differed; the experts split in 20. The secondary comparisons place that selected result in the full cohort: agreement was 371/510 versus 332/510 against Expert 1 and 433/510 versus 400/510 against Expert 2. The paired gains of 7.6 percentage points (95% CI, 5.1–10.2) and 6.5 (3.5–9.4) describe greater agreement with these two references across all domains. They do not establish that the underlying interpretations were correct.
+
+The retained record separates operations that a final label would otherwise conceal. The model interprets the documents and answers the signalling questions. Software copies quotations directly from stored sources, links them to their locations and applies the RoB 2 decision rules to the recorded answers. In the illustrative AVATAR assessment, this permits inspection of whether the documents establish a dated analysis plan for the assessed result. The example explains the pathway; it does not represent typical performance. All domain outputs reproduced from the rules, and no domain overrides were recorded. This conformance concerns the proposed rating derived from the answers and, in these runs, the adopted rating. The workflow permits an override with recorded evidence and rationale, so conformance does not require every future adopted rating to equal the algorithm's proposal.
+
+The record also locates an unresolved validation task. Confirming that a quotation occurs in a stored document establishes its origin, not whether it supports the attached answer. Image descriptions likewise remain model-written. Liang and colleagues evaluated support for generated RoB 2 claims by retrieving trial passages and using an LLM to classify their relationship to each claim.[DOI:10.2196/93761] Their automated verifier is not independent human adjudication, but the study makes documentary support an explicit evaluation target alongside label agreement. ARBITER's structural audits leave that target unanswered. Independent checking of whether cited evidence supports the recorded answers would therefore complement the present process and agreement results.
+
+The comparison estimates the difference between two complete workflows. Both received the same supplied trial documents and used the same model configuration, but ARBITER also received assessment guidance and used different tools and more computation. The observed gains cannot be assigned to software-applied rules, retained evidence or any other component. Structured-prompt studies and interactive systems are closer alternatives than the minimal-prompt comparator for assessing what ARBITER adds beyond guided model use.[9–11] Choi's single-trial pilot separately examined repeated outputs and algorithm conformance,[16] while the recent RoB2-Evaluator preprint describes another constrained RoB 2 implementation.[24] ARBITER's multi-trial, single-run comparison complements these designs without establishing superiority over them or stability across repeated runs.
+
+The domain results resist a uniform account of the agreement advantage. Selection of the reported result had the largest observed gains, whereas missing outcome data (D3) agreement was 43/102 (42.2%) against Expert 1 and 80/102 (78.4%) against Expert 2. Against Expert 1, the D3 signalling-answer difference was −10.3 percentage points (95% CI, −17.2 to −3.2) with five response levels and +8.5 (3.5–13.7) after definite and probable answers were combined. Collapsing the answers changes what agreement measures; it does not remove the unfavorable five-level finding. The smaller collapsed D5 gain against Expert 2 also limits a general explanation based on signalling answers. Rules-only recomputation describes answer-to-rating consistency, but cannot identify which workflow component produced the agreement differences.
+
+Reference choice further bounds the conclusion. Published-label agreement differed by −1.8 percentage points (95% CI, −5.1 to 1.6), despite the positive differences against both independent experts. Published ratings were predominantly Low, and assessment targets could differ. These features may contribute to disagreement, but neither published assessments nor the two experts constitute an error-free standard. Separate expert results retain clinically familiar judgment variation.[2–3] Differences in whether individual intervals include zero do not establish differences between domains or references.
+
+Practical value requires a separate evaluation of reviewer use. In Jardim and colleagues' study of RobotReviewer with the earlier instrument, reviewers described using snippets to locate evidence and returning to the article when the snippets were insufficient.[DOI:10.1186/s12874-022-01649-y] That observation gives a concrete purpose to evidence display, but the study lacked a manual-only comparison and does not establish time savings for ARBITER. Here, higher runtime and list-price equivalents quantify computation. They do not measure human checking time, adoption, automation bias or effects on reviewer judgments.
+
+Finally, ordered, availability-dependent selection from fixed reviews limits generalization. Experts could consult additional sources, supplied documents could contain errors, and trial reports may have appeared in model training. Offered labels could influence forced choices and revised ratings, although the independent ratings were frozen beforehand. Derived Overall ratings summarize the same domain assessments rather than supplying independent confirmation. Bootstrap intervals reflect trial variation within the 16 fixed reviews, conditional on two experts and one observed run per arm. Repeated runs, structured comparators and direct studies of source checking would address distinct uncertainties left by this benchmark.
+
+### Conclusion
+
+ARBITER makes the evidence, signalling answers and rule-based decisions behind a RoB 2 assessment available for inspection. Its complete workflow had greater agreement with both independent experts than a same-model minimal-prompt comparator, with domain and reference dependence. The available assessment record and the paired agreement results support a bounded account of this implementation; whether reviewers can use the record to identify unsupported interpretations and improve their work remains unmeasured.

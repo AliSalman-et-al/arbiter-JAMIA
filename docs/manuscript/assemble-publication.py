@@ -87,6 +87,10 @@ for style in doc.styles:
             style.paragraph_format.keep_with_next=True
 for p in list(doc.paragraphs):
     original_style=p.style.name
+    # Bind the final reporting citation to its preceding word without changing prose.
+    for run in p.runs:
+        if 'fields.[14,15]' in run.text:
+            run.text=run.text.replace('fields.[14,15]', 'fields.\u2060[14,15]')
     if p.text=='Front-matter notes':
         p._element.getparent().remove(p._element)
         continue
@@ -146,6 +150,11 @@ for i in range(1,4):
                 p.paragraph_format.space_after=Pt(4)
                 for run in p.runs:run.bold=True
         if copied.tag==qn('w:tbl'):
+            if i==3:
+                # Reserve a clear gutter for the long image-region label.
+                for cell in copied.xpath('./w:tr/w:tc[1]'):
+                    if ''.join(cell.xpath('.//w:t/text()'))=='Image regions linked to their page':
+                        cell.xpath('./w:tcPr/w:tcMar/w:end')[0].set(qn('w:w'),'900')
             # Table cells must not inherit double spacing from manuscript prose.
             for cellp in copied.xpath('.//w:p'):
                 paragraph=Paragraph(cellp,doc._body)

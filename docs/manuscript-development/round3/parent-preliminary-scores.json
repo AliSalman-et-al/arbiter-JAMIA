@@ -1,0 +1,26 @@
+{
+  "candidate_a": {
+    "scientific_fidelity": 3,
+    "literature_synthesis": 4,
+    "medical_reader_clarity": 4,
+    "story_coherence": 4,
+    "flow_economy": 3
+  },
+  "candidate_b": {
+    "scientific_fidelity": 3,
+    "literature_synthesis": 4,
+    "medical_reader_clarity": 3,
+    "story_coherence": 3,
+    "flow_economy": 3
+  },
+  "provisional_preference": "A, pending independent cross-judge; both require label-match abstract and named Published contrast fixes",
+  "grafts_to_consider": [
+    "B explicit proposed/adopted distinction, shorten since Methods handles it",
+    "B smaller D5 collapsed gain against Expert2 retained in interpretation"
+  ],
+  "rejections": [
+    "Repeated counts and every caveat in Discussion",
+    "B final sentence ending on unmeasured benefit rather than supported contribution"
+  ],
+  "evidence": "Both candidate files and rationales read end-to-end before scoring"
+}

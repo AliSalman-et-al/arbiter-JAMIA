@@ -1,0 +1,27 @@
+{
+  "analysis/output/manuscript/Supplement.docx": {
+    "old_sha256": "264321266fc30f86d78f70ca648fe7a40538334d377cbe55f5890c8bb8dd9568",
+    "new_sha256": "1d35215f5bede9afa2b89729457f271e62bf57edf6c18e9594d3f416c0462cc7",
+    "rationale": "Reporting-only eMethods clarification, author-completion gaps, evaluated /rob2-assess prefix and scoped release provenance; all supplement table cells retained. See reporting-repair.md and integrity-review.md."
+  },
+  "analysis/output/manuscript/TRIPOD-LLM.docx": {
+    "old_sha256": "82085c83989bd7b7c847fb93bf70cd313cf2c5a8747f94c35f61511662bff88a",
+    "new_sha256": "9a3fbd6267de10247b417c59298bc73ba916368ab628be2c58c4fd38ba3440ae",
+    "rationale": "Six reporting rows (TRIPOD-LLM 5a, 8a, 9a, 9b; GRRAS 7, 8) explicitly mark incomplete provenance/guidance/selection as Partial; twelve section/note cells only."
+  },
+  "analysis/output/tables/prompt-template-example.csv": {
+    "old_sha256": "481263a32bc2407b80c1e0457140e14b59e0e0c38abc318d32a828ec640e53f6",
+    "new_sha256": "bc68b9b2c0821b97385e217e991681898416e327c5d9e21b787fd4332e6bcbaa",
+    "rationale": "Restore evaluated /rob2-assess prefix in two ARBITER prompts; retain example contents and all other fields."
+  },
+  "analysis/output/tables/display-supplement-reporting-map.csv": {
+    "old_sha256": "1042aaf23e01c12b463ab519a8979e742394fb37942cdf7766705fb427493e97",
+    "new_sha256": "2b5c4bec75cef84c16246484af0e92a357c393d6acf914498e346a06c37f0c0c",
+    "rationale": "Synchronize the same six Partial reporting rows and their section/note cells with the reviewed Word reporting map."
+  },
+  "analysis/output/tables/reporting-checklist-skeleton.csv": {
+    "old_sha256": "13799f75e2e5752158d6bf4322cf618d57f49cec4ce4663aabf2d0c37d6a1fe6",
+    "new_sha256": "06cbd10e3fd6645b80b273e1ea3c0c530f4130b0948343b1eed579be136ca12e",
+    "rationale": "Synchronize only the same six reporting rows; three Section cells gain documentary eTable 1 locators, without changing study values."
+  }
+}

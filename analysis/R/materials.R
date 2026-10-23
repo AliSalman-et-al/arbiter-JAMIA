@@ -19,9 +19,10 @@ build_materials <- function(inputs,cells) {
     domain %in% c('D1-D5','Overall')),'table2')
   save_table(meta_agreement$differences |> filter(comparison=='ARBITER-Sonnet minus Baseline-Sonnet',
     domain %in% c('D1-D5','Overall')),'table2-differences')
-  template_text <- '/arbiter-assess Assess risk of bias for {outcome} defined as {definition} in {trial}.'
+  # Evaluated command: kit-sonnet-5.5/run_case.py and README.md.
+  template_text <- '/rob2-assess Assess risk of bias for {outcome} defined as {definition} in {trial}.'
   example <- inputs$targets |> arrange(slug) |> slice_head(n=1)
-  filled <- paste0('/arbiter-assess Assess risk of bias for ',example$assess_outcome,
+  filled <- paste0('/rob2-assess Assess risk of bias for ',example$assess_outcome,
     ' defined as ',example$assess_values_as_printed,' in ',example$slug,'.')
   baseline_template <- 'Assess risk of bias for {outcome} defined as {definition} in {trial}.'
   format_instruction <- paste(readLines('../no-kit-sonnet-5.5/nokit-format.txt',warn=FALSE),collapse='\n')

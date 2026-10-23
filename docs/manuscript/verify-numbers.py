@@ -255,6 +255,20 @@ def citation_order_checks(text):
     return failures
 
 
+def structure_checks(text):
+    expected = ['Front-matter notes', 'Abstract', 'Background and significance',
+                'Objective', 'Materials and methods', 'Results', 'Discussion', 'Back matter']
+    observed = re.findall(r'^## (.+)$', text, re.M)
+    failures = [] if observed == expected else [f'Section order mismatch: {observed}']
+    abstract = sections(text).get('Abstract', '')
+    headings = re.findall(r'^### (.+)$', abstract, re.M)
+    if headings != ['Objective', 'Materials and Methods', 'Results', 'Discussion', 'Conclusion']:
+        failures.append(f'Abstract heading mismatch: {headings}')
+    if len(re.findall(r'^#(?: |$)', text, re.M)) != 1:
+        failures.append('Manuscript must contain exactly one top-level title')
+    return failures
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--verbose", action="store_true")
@@ -282,7 +296,7 @@ def main():
     counts["Conclusion (within Discussion)"] = words(discussion.split("### Conclusion\n", 1)[1])
     main_count = sum(counts[name] for name in
                      ("Background and significance", "Objective", "Materials and methods", "Results", "Discussion"))
-    failures = headline_checks(text)
+    failures = structure_checks(text) + headline_checks(text)
     if counts["Abstract"] > 250 or main_count > 4000:
         failures.append("JAMIA word limit exceeded")
     banned = re.findall(r"\b(?:first|over-flagging|second reviewer|unchangeable|tamper-proof|Haiku|ground truth|accuracy|correct|kit|hid|reversed|masked|expert-level|matched experts|Adjudicator)\b|supported by evidence",
