@@ -8,4 +8,4 @@ Execution boundary: the single-call R production run was interrupted; subsequent
 
 Remaining author completion: individual assessor experience/training and multi-outcome conventions, original blank form, complete prompt-development/freeze history, affiliations/correspondence, declarations/ethics and archival identifier. The manuscript is prepared for substantive review but not administratively submission-complete.
 
-Deployment identity will be recorded after the Pages build succeeds and live files are compared with the committed release manifest.
+Deployment verified: all 50 hosted files match source `a17f596d077951d3721d2e2864f5166c3db1e897`; Pages commit `c6baeaa4f2fd79f3096920ba121215a4322cef98`; successful Pages run `39956135497`. See `deployed-verification.json`. The initial Pages push encountered a remote temporary-pack storage error; a direct retry succeeded. No source or artifact alteration was needed.
