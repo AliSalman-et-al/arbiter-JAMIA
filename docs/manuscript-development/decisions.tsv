@@ -1,0 +1,4 @@
+ts	phase	decision	why	evidence	result
+2026-10-23	ground	Reuse existing manuscript and publication pipeline as baseline	Finalized estimates and audited editable tables already exist	docs/manuscript/manuscript.md; analysis/R/displays.R	baseline checks PASS
+2026-10-23	frame	Keep JAMIA organization and JAMA presentation	User request and existing style contract agree	docs/rethink-2026-10-22/final-audit/jama-style-contract.md	accepted
+2026-10-23	review	Reject journal reviewer proposal to restore old Round 16 title and abstract	Later accepted 22 October blueprint supersedes that brief; current task authorizes fresh writing within the final scientific scope	docs/rethink-2026-10-22/final-audit/acceptance.md; docs/rethink-2026-10-22/second-review/blueprint.md	correction recorded
