@@ -1,13 +1,13 @@
 {
-  "source_commit": "bca49f80944bd1c7eb6fc2c18b897a30a3a54227",
+  "source_commit": "343febaecae7ba506f8f520a7a5524c5ba154555",
   "files": {
     "index.html": {
       "sha256": "6d19ce8e345851a7e2d011595549bb96e73e52ab0d4b9aa69dae11d01fa99e16",
       "bytes": 3598
     },
     "manuscript.html": {
-      "sha256": "004ec785b3d78354a30b555f9f9ebb63a8744273c22026379105304e5c1a7c54",
-      "bytes": 4313558
+      "sha256": "85cc9d37fc23cc932edfcbcfe7fff783e60cae55059ccd5e7d5cb2dc04b04ec9",
+      "bytes": 4314751
     },
     "results.html": {
       "sha256": "f06e71f685905843fb239e27ab5e5b821b4d7503fcdb7077495df159b1259a67",
@@ -18,8 +18,8 @@
       "bytes": 2660683
     },
     "output/manuscript/Manuscript.docx": {
-      "sha256": "b782346fbe94a462c4b4d715bb5eefbee4f84a1b1df6b58b2db668d909676066",
-      "bytes": 31750
+      "sha256": "7dc0bd818f8c8a85d097e61ba23f6315f64c09c523c893c337da8519a9df6915",
+      "bytes": 32444
     },
     "output/manuscript/Supplement.docx": {
       "sha256": "1d35215f5bede9afa2b89729457f271e62bf57edf6c18e9594d3f416c0462cc7",
