@@ -20,6 +20,11 @@ def fetch(url):
 
 
 def verify(base, expected):
+    required = {'index.html', 'manuscript.html', 'results.html', 'supplement.html',
+                'output/manuscript/Manuscript.docx'}
+    missing = required - expected['files'].keys()
+    if missing:
+        raise RuntimeError('Publication manifest lacks required files: ' + ', '.join(sorted(missing)))
     base = base.rstrip("/") + "/"
     stamp = expected["source_commit"]
     remote = json.loads(fetch(urljoin(base, "publication-manifest.json") + f"?v={stamp}"))

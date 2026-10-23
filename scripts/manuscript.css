@@ -1,0 +1,14 @@
+/* JAMA-like table presentation; manuscript headings retain JAMIA organization. */
+main p, main a { overflow-wrap: anywhere; }
+.manuscript-table { overflow-x: auto; margin: 1.5rem 0; }
+.manuscript-table table { width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; font-size: 10pt; line-height: 1.3; }
+.manuscript-table th, .manuscript-table td { padding: .45rem .65rem; vertical-align: top; border-left: 0; border-right: 0; }
+.manuscript-table thead { border-top: 2px solid #333; border-bottom: 1px solid #777; }
+.manuscript-table tbody { border-bottom: 1px solid #777; }
+.manuscript-table p { margin: .25rem 0; }
+.manuscript-figure img { max-width: 100%; height: auto; }
+.manuscript-figure figcaption { margin-top: .75rem; color: inherit; }
+
+.manuscript-table .table-title { font-size: 1rem; margin-bottom: .5rem; }
+.manuscript-table[aria-label="Table 2"] td:nth-child(n+2),
+.manuscript-table[aria-label="Table 3"] td:nth-child(n+2) { text-align: right; font-variant-numeric: tabular-nums; }

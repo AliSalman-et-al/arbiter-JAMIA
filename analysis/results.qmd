@@ -1,47 +1,17 @@
 ---
 title: "ARBITER results against blinded expert ratings"
+format:
+  html:
+    css: ../scripts/manuscript.css
+execute:
+  enabled: false
 ---
 
-[Home](index.html) · [Results](results.html) · [Supplement](supplement.html) · [Software](https://github.com/AliSalman-et-al/ARBITER/) · [Study repository and reproduction](https://github.com/AliSalman-et-al/arbiter-JAMIA)
+[Home](index.html) · [Manuscript](manuscript.html) · [Results](results.html) · [Supplement](supplement.html) · [Software](https://github.com/AliSalman-et-al/ARBITER/) · [Study repository and reproduction](https://github.com/AliSalman-et-al/arbiter-JAMIA)
 
 ARBITER is an available workflow that separates model interpretation from executable rules for the Cochrane risk-of-bias tool for randomised trials (RoB 2) and retains sources, answers and evidence for inspection. We compared its complete Sonnet workflow with the same model given a minimal prompt and identical supplied files for 102 trials from 16 reviews. Two experts independently rated all 510 domain cells before viewing labels. A separate conditional forced-choice endpoint used the 60 agreed choices among 80 arm-discordant cells.
 
-```{r}
-source('R/load.R')
-source('R/presentation.R')
-source('R/displays.R')
-source('R/manuscript-legends.R')
-```
-
-## Results
-
-```{r}
-cat(readLines('output/manuscript/results-sentences.md',encoding='UTF-8'),sep='\n')
-```
-
-## Figures
-
-```{r}
-captions <- main_figure_captions()
-alts <- main_figure_alts()
-for(i in 1:5) {
- cat('\n### Figure ',i,'\n\n![](output/manuscript/Figure',i,'.png){fig-alt="',alts[i],'"}\n\n',captions[i],'\n\n',sep='')
- cat('[Download figure PDF](output/manuscript/Figure',i,'.pdf) · [PNG](output/manuscript/Figure',i,'.png)\n\n',sep='')
-}
-```
-
-## Tables
-
-```{r}
-titles <- c('Benchmark and reference context','Conditional primary endpoint and core sensitivities','Process checks and computational resources')
-for(i in 1:3) {
-  cat('\n### Table ',i,'. ',titles[i],'\n\n',sep='')
-  raw <- paste(readLines(paste0('output/manuscript/qa/Table',i,'.html'),encoding='UTF-8'),collapse='\n')
-  raw <- sub('data-quarto-disable-processing="false"','data-quarto-disable-processing="true"',raw,fixed=TRUE)
-  cat('\n```{=html}\n',raw,'\n```\n',sep='')
-  cat('\n\n[Download editable Word table](output/manuscript/Table',i,'.docx)\n\n',sep='')
-}
-```
+{{< include .quarto/results-page.md >}}
 
 [Download the manuscript with editable tables and figure legends](output/manuscript/Manuscript.docx).
 

@@ -15,6 +15,17 @@ The frozen lockfile records R 4.6.1 and includes `gt` 1.4.0 for native editable 
 
 For presentation-only changes, use `Rscript build-publication.R` to reuse finalized numerical exports without resampling. Quarto and Python with `python-docx` and `lxml` must be installed. The assembler uses Python on PATH; set `ARBITER_PYTHON` to select another interpreter. Main tables are built before insertion into the manuscript, and assembly checks every embedded cell against its standalone table. Update Word fields before exporting final visual proofs. The current audit, style contract and verification evidence are in `../docs/rethink-2026-10-22/final-audit/`.
 
+To refresh only the Results and Supplement web pages from **already finalized** publication artifacts, run this from the repository root:
+
+```sh
+python3 scripts/report-refresh.py
+python3 scripts/stage-pages.py /tmp/arbiter-pages
+```
+
+Use a Python interpreter with `python-docx` and `lxml` (for example, `"$ARBITER_PYTHON" scripts/report-refresh.py` when that variable names the interpreter); Quarto must be on PATH. This path requires no R packages and never recomputes analyses, tables, figures, or Word documents. It converts the three finalized `Table*.docx` files and `Supplement.docx` into native HTML, reads `results-sentences.md` and `figure-legends.md`, and renders `results.qmd` and `supplement.qmd`. The supplement retains all 98 tables, 13 images, full worked trace and 62 contents destinations. The helper checks every table cell and note, prose/legends, embedded image bytes, anchors, and unchanged protected artifact hashes. Evidence is in disposable `.quarto/report-refresh-verification.json`.
+
+The `.quarto/results-page.md` and `.quarto/supplement-page.md` includes and extracted media are generated inputs; use the helper before rendering those QMD files in a fresh checkout, and rerun it after finalized artifacts change. Direct `quarto render` alone does not regenerate those inputs. A complete presentation build with `build-publication.R` still needs its R dependencies; it invokes the HTML refresh helper after producing finalized Word outputs. Staging also requires a current `manuscript.html`; build that with `scripts/build-manuscript.py --html-only` before staging when needed. Do not substitute this HTML refresh for numerical validation when analytical inputs change.
+
 The Round 16 specification is in `../docs/round16/BRIEF.md` and `../ANALYSIS-PLAN.md`. Prespecified domain comparisons from the 18 October plan apply to all 510 cells; additions are labelled exploratory. `round16-report.md` records results, data discrepancies and verification. `provenance/ANALYSIS-PLAN-2026-10-18.md` is the unedited plan extracted from `e1c0ccf`. `../docs/round16/release-manifest.md` lists the clean-snapshot release paths. Historical reports are retained unchanged in `archive/`. `public-release-exclusions.txt` records release exclusions for raw and historical material.
 
 `R/load.R` checks every workbook label against the arm exports and requires exactly 102 trials and 510 unique domain cells per expert. `R/signalling.R` preserves answer components and records unresolved rows. `R/expert-agreement.R` implements the independent references, forced choice, direction counts and rules-only recomputation. `R/unchanged.R` retains the parent published-label, rule, audit and process calculations. Display CSVs, source traces and numerical estimates are in `output/tables/`; publication artifacts are in `output/manuscript/`.

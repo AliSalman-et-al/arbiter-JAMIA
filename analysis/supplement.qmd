@@ -1,19 +1,16 @@
 ---
 title: "ARBITER supplementary methods and results"
+format:
+  html:
+    css: ../scripts/manuscript.css
+execute:
+  enabled: false
 ---
 
-[Home](index.html) · [Results](results.html) · [Supplement](supplement.html) · [Software](https://github.com/AliSalman-et-al/ARBITER/) · [Study repository and reproduction](https://github.com/AliSalman-et-al/arbiter-JAMIA)
+[Home](index.html) · [Manuscript](manuscript.html) · [Results](results.html) · [Supplement](supplement.html) · [Software](https://github.com/AliSalman-et-al/ARBITER/) · [Study repository and reproduction](https://github.com/AliSalman-et-al/arbiter-JAMIA)
 
 [Download the Word supplement](output/manuscript/Supplement.docx). [TRIPOD-LLM and GRRAS reporting map](output/manuscript/TRIPOD-LLM.docx).
 
 Question-level figures are split into readable domain panels. Complete multipage PDFs: [eFigure 2](output/manuscript/eFigure2.pdf), [eFigure 5](output/manuscript/eFigure5.pdf).
 
-```{r}
-invisible(Sys.setlocale('LC_CTYPE','English_United States.utf8'))
-body_path <- 'output/manuscript/qa/supplement-body.html'
-stopifnot(system2('quarto',c('pandoc','output/manuscript/Supplement.docx','--to=html',
-  '--extract-media=output/supplement-media',paste0('--output=',body_path)))==0L)
-stopifnot(system2('C:/Users/Ali-Salman/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe','../docs/manuscript/native-table-html.py')==0L)
-raw <- paste(readLines('output/manuscript/qa/supplement-native.html',encoding='UTF-8'),collapse='\n')
-knitr::asis_output(paste0('\n```{=html}\n',raw,'\n```\n'))
-```
+{{< include .quarto/supplement-page.md >}}

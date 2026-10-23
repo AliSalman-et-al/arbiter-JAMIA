@@ -1,4 +1,4 @@
-# References
+## References
 
 1. Sterne JAC, Savović J, Page MJ, et al. RoB 2: a revised tool for assessing risk of bias in randomised trials. *BMJ* 2019;366:l4898. doi:[10.1136/bmj.l4898](https://doi.org/10.1136/bmj.l4898).
 

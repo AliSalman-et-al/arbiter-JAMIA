@@ -1,12 +1,15 @@
 """Focused checks for the production gt/Word/HTML presentation contract."""
 from pathlib import Path
 from zipfile import ZipFile
-import re,json,csv
+import re,json,csv,importlib.util
 from lxml import etree,html
 ROOT=Path(__file__).resolve().parents[2]
 OUT=ROOT/'analysis/output/manuscript'
 NS={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
 checks={}
+spec=importlib.util.spec_from_file_location('report_refresh',ROOT/'scripts/report-refresh.py')
+refresh=importlib.util.module_from_spec(spec)
+spec.loader.exec_module(refresh)
 for name in ['Table1','Table2','Table3','Manuscript','Supplement','TRIPOD-LLM']:
  with ZipFile(OUT/f'{name}.docx') as z:
   doc=etree.fromstring(z.read('word/document.xml'))
@@ -55,7 +58,9 @@ for name in ['results','supplement']:
  page=html.fromstring((ROOT/f'analysis/{name}.html').read_bytes())
  tables=page.xpath('//table')
  assert len(page.xpath('//h1'))==1,(name,'duplicate document h1')
- assert tables and all('gt_table' in t.get('class','') for t in tables),name
+ assert tables and all(t.xpath('ancestor::*[contains(concat(" ",normalize-space(@class)," ")," manuscript-table ")]') for t in tables),name
+ sources=[OUT/f'Table{i}.docx' for i in range(1,4)] if name=='results' else [OUT/'Supplement.docx']
+ assert refresh.html_cells(page)==[cells for source in sources for cells in refresh.word_cells(source)],(name,'HTML differs from finalized gt Word tables')
  assert not page.xpath('//table//blockquote'),name
  if name=='supplement':
   ids=set(page.xpath('//@id'))
@@ -72,10 +77,10 @@ for name in ['results','supplement']:
   if not href or re.match(r'[a-z]+:',href) or href.startswith('//'):continue
   if href=='index.html':continue # Landing page belongs to the parent packager.
   assert (ROOT/'analysis'/href).is_file(),(name,href)
- checks[name]={'native_gt_tables':len(tables),'no_blockquote_cells':True,'local_downloads_exist':True}
+ checks[name]={'native_tables_from_gt_word':len(tables),'source_cell_equality':True,'no_blockquote_cells':True,'local_downloads_exist':True}
  if name=='supplement':checks[name]['validated_contents_links']=len(navigation)
 source='\n'.join((ROOT/'analysis/R'/p).read_text(encoding='utf-8') for p in ['presentation.R','displays.R','manuscript-supplement.R'])
 assert 'flextable::' not in source
 assert 'gt::gt(' in source and 'gt::as_word(' in source and 'gt::as_raw_html(' in source
-checks['production_table_path']='gt objects -> native Word OOXML and native HTML'
+checks['production_table_path']='gt objects -> native Word OOXML -> verified native HTML'
 print(json.dumps({'PASS':True,'checks':checks},indent=2))

@@ -76,6 +76,10 @@ for section in doc.sections:
 for style in doc.styles:
     if style.type == 1:
         style.font.name='Arial';style.font.size=Pt(11);style.font.color.rgb=RGBColor(0,0,0)
+        for fonts in style.element.xpath('./w:rPr/w:rFonts'):
+            for key in list(fonts.attrib):
+                if key.endswith('Theme'):
+                    del fonts.attrib[key]
         style.paragraph_format.line_spacing=2
         style.paragraph_format.space_after=Pt(0)
         if style.name in ['Heading 1','Heading 2']:
@@ -126,6 +130,8 @@ Paragraph(countp,doc._body).add_run(f'Word counts: main text {main_words}; struc
 # Insert complete editable native gt table blocks immediately after first citation.
 for i in range(1,4):
     anchor=next(p for p in doc.paragraphs if re.search(rf'\bTable {i}\b',p.text))
+    anchor.paragraph_format.keep_together=True
+    anchor.paragraph_format.keep_with_next=False
     table_doc=Document(OUT/f'Table{i}.docx')
     for element in table_doc.element.body:
         if element.tag==qn('w:sectPr'):continue
@@ -136,7 +142,7 @@ for i in range(1,4):
             if p.text.startswith('Table '):
                 p.style=doc.styles['Heading 2']
                 p.paragraph_format.keep_with_next=True
-                p.paragraph_format.page_break_before=True
+                p.paragraph_format.page_break_before=False
                 p.paragraph_format.space_after=Pt(4)
                 for run in p.runs:run.bold=True
         if copied.tag==qn('w:tbl'):
@@ -146,28 +152,20 @@ for i in range(1,4):
                 paragraph.paragraph_format.line_spacing=1
                 paragraph.paragraph_format.space_before=Pt(0)
                 paragraph.paragraph_format.space_after=Pt(0)
+                paragraph.paragraph_format.keep_with_next=True
+            for cellp in copied.xpath('./w:tr[last()]//w:p'):
+                Paragraph(cellp,doc._body).paragraph_format.keep_with_next=False
         anchor._p.addnext(copied)
         anchor=Paragraph(copied,doc._body)  # XML sibling insertion only
 # All five main legends, with explicit alt text, at manuscript end.
-doc.add_page_break();doc.add_heading('FIGURE LEGENDS',level=1)
-legend=(OUT/'figure-legends.md').read_text(encoding='utf-8')
-# Main sections end at the first supplementary caption.
-legend=re.split(r'(?m)^eFigure 1[ .]',legend,maxsplit=1)[0]
-starts=list(re.finditer(r'(?m)^(?:\*\*)?Figure ([1-5])[ .]',legend))
-alt_defaults=[
-'Architecture separating model interpretation from software source storage, evidence binding and executable RoB 2 decisions. The retained record supports reviewer inspection.',
-'Illustrative AVATAR assessment linking trial-result judgments, answers and source evidence; the case explains the workflow and is not a representative performance sample.',
-'Paired evaluation of 102 trials and 510 cells against two independent experts. A separate conditional branch contains 80 arm-discordant cells, 60 agreed choices and 20 splits.',
-'Exact agreement and paired gains against each expert, pooled and by domain. Both pooled gains favor ARBITER; D5 gains are largest and D3 depends strongly on the expert reference. The full-cohort Published comparison is shown separately.',
-'Paired signalling-answer differences by domain and expert, separating five-level and collapsed coding. D3 changes direction with coding against Expert 1; D5 collapsed gains are smaller against Expert 2.']
-for j,m in enumerate(starts):
-    block=legend[m.start():starts[j+1].start() if j+1<len(starts) else len(legend)].replace('**','').strip()
-    caption=block.split('Alt text:',1)[0].strip()
-    if j:doc.add_page_break()
+doc.add_heading('FIGURE LEGENDS',level=1).paragraph_format.page_break_before=True
+spec = importlib.util.spec_from_file_location('manuscript_sources', ROOT/'scripts/manuscript-sources.py')
+metadata = importlib.util.module_from_spec(spec); spec.loader.exec_module(metadata)
+for j, (caption, alt) in enumerate(metadata.main_legends((OUT/'figure-legends.md').read_text(encoding='utf-8'))):
     cap=doc.add_paragraph(caption)
+    cap.paragraph_format.page_break_before=bool(j)
     cap.paragraph_format.keep_together=True
     cap.paragraph_format.keep_with_next=True
-    alt=block.split('Alt text:',1)[1].strip() if 'Alt text:' in block else alt_defaults[int(m[1])-1]
     altp=doc.add_paragraph('Alt text: '+alt)
     altp.paragraph_format.keep_together=True
 bookkeep(doc);doc.save(path)

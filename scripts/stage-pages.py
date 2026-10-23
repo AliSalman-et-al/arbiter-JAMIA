@@ -5,6 +5,7 @@ import argparse
 import hashlib
 from html.parser import HTMLParser
 import json
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -30,7 +31,7 @@ class Links(HTMLParser):
 def check_links(destination: Path):
     failures = []
     checked = 0
-    for filename in ("index.html", "results.html", "supplement.html"):
+    for filename in ("index.html", "manuscript.html", "results.html", "supplement.html"):
         parser = Links()
         parser.feed((destination / filename).read_text(encoding="utf-8"))
         for link in sorted(parser.local):
@@ -49,6 +50,7 @@ def stage(destination: Path):
         raise SystemExit("Choose a dedicated Pages worktree or staging directory.")
     sources = {
         "index.html": ROOT / "scripts/pages-index.html",
+        "manuscript.html": ROOT / "analysis/manuscript.html",
         "results.html": ROOT / "analysis/results.html",
         "supplement.html": ROOT / "analysis/supplement.html",
     }
@@ -73,7 +75,12 @@ def stage(destination: Path):
         target.parent.mkdir(parents=True, exist_ok=True)
         if source.suffix == '.html':
             # Git stores text as LF; hash the exact bytes Pages will serve.
-            target.write_bytes(source.read_bytes().replace(b'\r\n', b'\n'))
+            body = source.read_bytes().replace(b'\r\n', b'\n')
+            # Older rendered reports gain the same navigation as new Quarto pages.
+            if b'id="publication-navigation"' not in body and re.search(br'<body\b[^>]*>', body):
+                navigation = (ROOT / 'scripts/publication-nav.html').read_bytes()
+                body = re.sub(br'(<body\b[^>]*>)', lambda m: m[1] + b'\n' + navigation, body, count=1)
+            target.write_bytes(body)
         else:
             shutil.copyfile(source, target)
         manifest["files"][relative] = {"sha256": hashlib.sha256(target.read_bytes()).hexdigest(),

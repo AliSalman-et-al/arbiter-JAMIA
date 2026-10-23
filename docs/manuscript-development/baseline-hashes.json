@@ -98,5 +98,11 @@
   "analysis/output/tables/rules-only-agreement.csv": "d02c91cb5cbdc74d767031964658e429d71d8e6daf5221aa727a91c1a34115d8",
   "analysis/output/tables/display-supplement-evidence-binding.csv": "3d3c7ca1ea1362bfee74fa778052e63abdcf9ace6306a225877d6af7a8b76ee2",
   "analysis/output/manuscript/Figure1.pdf": "cdf60b48945d8376daca7c80205f0a154d66853016bae9942593e406a530dcab",
-  "analysis/output/manuscript/Figure2.pdf": "003e049f4c1b292abd5607ef29e355b212e2a53bac703f33908d6c147bb94f44"
+  "analysis/output/manuscript/Figure2.pdf": "003e049f4c1b292abd5607ef29e355b212e2a53bac703f33908d6c147bb94f44",
+  "analysis/output/manuscript/Table1.docx": "047d2b2bdb734e0340f87285ed4ef71c74f226fa224e94ca6b496a06d138ca82",
+  "analysis/output/manuscript/Table2.docx": "c09d2e4846c858164ced0b2f18805b12994cdc35011ee2f0dc29751c728e4d7a",
+  "analysis/output/manuscript/Table3.docx": "0186f6802d5cf46144084755385cea6878d2ef3e522716f98fd5f29fa2cf82f9",
+  "analysis/output/manuscript/Supplement.docx": "264321266fc30f86d78f70ca648fe7a40538334d377cbe55f5890c8bb8dd9568",
+  "analysis/output/manuscript/TRIPOD-LLM.docx": "82085c83989bd7b7c847fb93bf70cd313cf2c5a8747f94c35f61511662bff88a",
+  "analysis/output/manuscript/figure-legends.md": "edf58c45f6b1118839abc26adf2f631e5fd22f599c8b32b336046019f3d84a5b"
 }
