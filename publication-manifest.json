@@ -1,21 +1,25 @@
 {
-  "source_commit": "c5d56f578dc5bc304fb2ac8a31fb5788095c0ea6",
+  "source_commit": "3e150f4c666b2af7ff4e8d217ca66743954b0f02",
   "files": {
     "index.html": {
-      "sha256": "efcc86e41d84942096d8e4623109fc1479193e71acf0e82787b4105af8e6c807",
-      "bytes": 3053
+      "sha256": "6d19ce8e345851a7e2d011595549bb96e73e52ab0d4b9aa69dae11d01fa99e16",
+      "bytes": 3598
+    },
+    "manuscript.html": {
+      "sha256": "1edc3af983b96e4dcb429d19d78ae0e86bda042b3c1a45fa671848add9fee3bb",
+      "bytes": 4310726
     },
     "results.html": {
-      "sha256": "eaa4deafb30b2cd3c3564999059817156d6488f095bc86ec655c474e225b8e1a",
-      "bytes": 4306438
+      "sha256": "f06e71f685905843fb239e27ab5e5b821b4d7503fcdb7077495df159b1259a67",
+      "bytes": 4275266
     },
     "supplement.html": {
-      "sha256": "c9bfef0fb6c450eb751170d921ee73d8ebaab654ecafba97e1addd1b9cbed542",
-      "bytes": 3892433
+      "sha256": "8bcf26e89398fe0a1ea2995b51c30c12921d362ed6a5be7ada03a3d8eb81e252",
+      "bytes": 2659246
     },
     "output/manuscript/Manuscript.docx": {
-      "sha256": "0f1d41e2c5a841345646ca8bbf938cb2341703dada8e3d86122d277f31421c6e",
-      "bytes": 39963
+      "sha256": "0c5a90c342abb16e7c1edc972f01da4125e114da3fb7f8fb1e0d753f2cafd42d",
+      "bytes": 31241
     },
     "output/manuscript/Supplement.docx": {
       "sha256": "264321266fc30f86d78f70ca648fe7a40538334d377cbe55f5890c8bb8dd9568",
