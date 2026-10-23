@@ -11,3 +11,6 @@ Parent inspected Gandhi's PLOS Results paragraph confirming overall pairwise agr
 
 ## Audit design for final imported facts
 External literature numbers need context-bound provenance separate from study-output numbers. For each imported claim retain its exact manuscript text, source identity/locator/access, metric and denominator or explicit aggregate definition. A numeric token found somewhere in a study CSV does not validate an external claim. The release audit must validate these ledger spans independently and keep row-level checks for ARBITER results. Narrative edits must not merely whitelist numbers or weaken claim checks.
+
+## Gandhi: reference identity correction
+Direct inspection of the primary PLOS Abstract and Methods in `gandhi.plos-2026.html` confirms OSRAs means **original systematic review authors**, not ophthalmic surgical research assessors. Both candidates inherited the wrong expansion from the raw systems report; this is a source-context error despite correct46/36/54 percentages. The study sampled50RCTs from50meta-analyses. Independent judge notified. Final manuscript and authoritative external-fact ledger must use original systematic review authors. Raw research records are not independent corroboration.
