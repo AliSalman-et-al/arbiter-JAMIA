@@ -3,10 +3,78 @@ import importlib.util
 from pathlib import Path
 import unittest
 import os
+import ast
+import re
 
 spec = importlib.util.spec_from_file_location('builder', Path(__file__).with_name('build-manuscript.py'))
 builder = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(builder)
+
+
+class ManuscriptStructure(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        manuscript_dir = Path(__file__).resolve().parents[1] / 'docs/manuscript'
+        spec = importlib.util.spec_from_file_location('numbers', manuscript_dir / 'verify-numbers.py')
+        cls.numbers = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.numbers)
+        # Load the actual formatting helpers without executing the publication build.
+        from docx import Document
+        from docx.oxml import OxmlElement
+        from docx.oxml.ns import qn
+        from docx.shared import Pt
+        from docx.text.paragraph import Paragraph
+        path = manuscript_dir / 'assemble-publication.py'
+        tree = ast.parse(path.read_text(), filename=str(path))
+        helpers = ast.Module(body=[node for node in tree.body if isinstance(node, ast.FunctionDef)
+                                  and node.name in {'format_abstract', 'bind_reporting_reference'}], type_ignores=[])
+        cls.formatting = dict(re=re, OxmlElement=OxmlElement, qn=qn, Pt=Pt, Paragraph=Paragraph)
+        exec(compile(helpers, str(path), 'exec'), cls.formatting)
+        cls.document = staticmethod(Document)
+
+    def test_repeated_abstract_and_body_headings_are_scoped(self):
+        text = ('# Title\n\n## Front-matter notes\n\n## Abstract\n'
+                '### Objective\n\nAim.\n\n### Materials and Methods\n\nDesign.\n'
+                '### Results\n\nFinding.\n\n### Discussion\n\nAbstract interpretation.\n'
+                '### Conclusion\n\nAbstract conclusion.\n\n## Introduction\n'
+                '### Background and significance\n\nContext.\n\n### Objective\n\nQuestion.\n'
+                '## Materials and methods\n\nMethods.\n\n## Results\n\nResults.\n'
+                '## Discussion\n\nBody interpretation.\n\n### Conclusion\n\nBody conclusion.\n'
+                '## Back matter\n\nDeclarations.\n')
+        self.assertEqual(self.numbers.structure_checks(text), [])
+        counts, total = self.numbers.word_counts(text)
+        self.assertEqual((counts['Abstract'], counts['Introduction'], counts['Discussion'], total), (7, 2, 4, 8))
+        self.assertTrue(any('Introduction heading mismatch' in failure for failure in
+                            self.numbers.structure_checks(text.replace('### Background and significance', '### Background'))))
+        doc = self.document()
+        for heading, style in [('ABSTRACT', 'Heading 1'), ('Discussion', 'Heading 2'),
+                               ('Conclusion', 'Heading 2'), ('INTRODUCTION', 'Heading 1'),
+                               ('Background and significance', 'Heading 2'), ('Objective', 'Heading 2'),
+                               ('DISCUSSION', 'Heading 1'), ('Conclusion', 'Heading 2')]:
+            doc.add_paragraph(heading, style)
+            doc.add_paragraph('Prose.')
+        self.formatting['format_abstract'](doc)
+        self.assertEqual([p.text for p in doc.paragraphs if p.style.name == 'Heading 2'],
+                         ['Background and significance', 'Objective', 'Conclusion'])
+        self.assertEqual([p.text for p in doc.paragraphs if p.text.endswith('. Prose.')],
+                         ['Discussion. Prose.', 'Conclusion. Prose.'])
+
+    def test_reporting_reference_binding_survives_renumbering_and_run_split(self):
+        doc = self.document()
+        p = doc.add_paragraph('Reporting was guided by TRIPOD-LLM and GRRAS, with author-completion fields.')
+        p.add_run('[24,25]')
+        self.formatting['bind_reporting_reference'](p)
+        self.assertTrue(p.text.endswith('fields.\u2060[24,25]'))
+        other = doc.add_paragraph('Unrelated fields.[24,25]')
+        self.formatting['bind_reporting_reference'](other)
+        self.assertEqual(other.text, 'Unrelated fields.[24,25]')
+
+    def test_command_metadata_does_not_exempt_adjacent_study_numbers(self):
+        text = '`/rob2-assess` 987654321 /rob3-assess'
+        spans = self.numbers.metadata_spans(text)
+        classified = [m.group() for m in self.numbers.NUMBER.finditer(text)
+                      if any(start <= m.start() < end for start, end, _ in spans)]
+        self.assertEqual(classified, ['2'])
 
 
 class ManuscriptPage(unittest.TestCase):

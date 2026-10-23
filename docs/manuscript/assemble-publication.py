@@ -17,8 +17,42 @@ OUT = ROOT/'analysis/output/manuscript'
 spec = importlib.util.spec_from_file_location('numbers', Path(__file__).with_name('verify-numbers.py'))
 numbers = importlib.util.module_from_spec(spec); spec.loader.exec_module(numbers)
 text = numbers.MANUSCRIPT.read_text(encoding='utf-8'); sections = numbers.sections(text)
-main_words = sum(numbers.words(sections[k]) for k in ['Background and significance','Objective','Materials and methods','Results','Discussion'])
-abstract_words = numbers.words(sections['Abstract'])
+counts, main_words = numbers.word_counts(text)
+abstract_words = counts['Abstract']
+
+def bind_reporting_reference(p):
+    if 'Reporting was guided by TRIPOD-LLM and GRRAS' not in p.text:
+        return
+    match = re.search(r'fields\.(?=\[[\d,–-]+\])', p.text)
+    if match is None:
+        return
+    offset = match.end()
+    for run in p.runs:
+        if offset <= len(run.text):
+            run.text = run.text[:offset] + '\u2060' + run.text[offset:]
+            break
+        offset -= len(run.text)
+
+
+def format_abstract(doc):
+    # The next body H2 ends the abstract, even when subsection names repeat.
+    in_abstract = False
+    for p in list(doc.paragraphs):
+        if p.style.name == 'Heading 1':
+            in_abstract = p.text == 'ABSTRACT'
+            if in_abstract:
+                p.paragraph_format.line_spacing = 1
+            continue
+        if in_abstract and p.style.name == 'Heading 2':
+            next_node = p._p.getnext()
+            if next_node is not None and next_node.tag == qn('w:p'):
+                following = Paragraph(next_node, doc._body)
+                label = p.text
+                p._element.getparent().remove(p._element)
+                run = OxmlElement('w:r'); props = OxmlElement('w:rPr'); props.append(OxmlElement('w:b')); run.append(props)
+                t = OxmlElement('w:t'); t.set(qn('xml:space'), 'preserve'); t.text = label + '. '; run.append(t)
+                following._p.insert(1 if following._p.pPr is not None else 0, run)
+                following.paragraph_format.space_after = Pt(4)
 
 def page_numbers(doc):
     for section in doc.sections:
@@ -88,13 +122,11 @@ for style in doc.styles:
 for p in list(doc.paragraphs):
     original_style=p.style.name
     # Bind the final reporting citation to its preceding word without changing prose.
-    for run in p.runs:
-        if 'fields.[14,15]' in run.text:
-            run.text=run.text.replace('fields.[14,15]', 'fields.\u2060[14,15]')
+    bind_reporting_reference(p)
     if p.text=='Front-matter notes':
         p._element.getparent().remove(p._element)
         continue
-    if p.text in ['Abstract','Background and significance']:
+    if original_style=='Heading 2' and p.text in ['Abstract','Introduction']:
         p.paragraph_format.page_break_before=True
     # Pandoc's # title, ## sections and ### subsections are one level deeper
     # than the manuscript hierarchy required by the journal.
@@ -109,23 +141,7 @@ for p in list(doc.paragraphs):
         for r in p.runs:r.bold=True
 # Structured abstract uses bold inline labels, leaving room for all five parts
 # on its separate page without changing the required double spacing.
-in_abstract=False
-for p in list(doc.paragraphs):
-    if p.text=='ABSTRACT':
-        in_abstract=True
-        p.paragraph_format.line_spacing=1
-        continue
-    if p.text=='BACKGROUND AND SIGNIFICANCE':in_abstract=False
-    if in_abstract and p.style.name=='Heading 2':
-        next_node=p._p.getnext()
-        if next_node is not None and next_node.tag==qn('w:p'):
-            following=Paragraph(next_node,doc._body)
-            label=p.text
-            p._element.getparent().remove(p._element)
-            run=OxmlElement('w:r');props=OxmlElement('w:rPr');props.append(OxmlElement('w:b'));run.append(props)
-            t=OxmlElement('w:t');t.set(qn('xml:space'),'preserve');t.text=label+'. ';run.append(t)
-            following._p.insert(1 if following._p.pPr is not None else 0,run)
-            following.paragraph_format.space_after=Pt(4)
+format_abstract(doc)
 # Actual generated counts on title page.
 anchor=next(p for p in doc.paragraphs if p.text.startswith('Keywords:'))
 countp=OxmlElement('w:p');anchor._p.addnext(countp)

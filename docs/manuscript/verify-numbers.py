@@ -51,6 +51,17 @@ def words(text):
     return len(text.split())
 
 
+def word_counts(text):
+    content = sections(text)
+    counts = {name: words(content[name]) for name in
+              ("Abstract", "Introduction", "Materials and methods", "Results", "Discussion", "Back matter")}
+    conclusion = content["Discussion"].split("### Conclusion\n", 1)
+    counts["Conclusion (within Discussion)"] = words(conclusion[1]) if len(conclusion) == 2 else 0
+    main_count = sum(counts[name] for name in
+                     ("Introduction", "Materials and methods", "Results", "Discussion"))
+    return counts, main_count
+
+
 def docx_text(path):
     with ZipFile(path) as archive:
         tree = ET.fromstring(archive.read("word/document.xml"))
@@ -107,6 +118,7 @@ def metadata_spans(text):
         "expert identifier": r"\bExperts? [12](?: and [12])?\b",
         "interval convention": r"\b95%",
         "model identifier": r"`claude-sonnet-5-5`",
+        "evaluated assessment command (release audit)": r"`/rob2-assess`",
         "harness version (run README)": r"Claude Code 2\.1\.278",
         "software version (analysis plan)": r"ARBITER 1\.0\.0",
         "software commit (analysis plan)": r"2f549ae(?:30f056ff441ea61a04b719968716f2219)?",
@@ -256,14 +268,22 @@ def citation_order_checks(text):
 
 
 def structure_checks(text):
-    expected = ['Front-matter notes', 'Abstract', 'Background and significance',
-                'Objective', 'Materials and methods', 'Results', 'Discussion', 'Back matter']
+    expected = ['Front-matter notes', 'Abstract', 'Introduction',
+                'Materials and methods', 'Results', 'Discussion', 'Back matter']
     observed = re.findall(r'^## (.+)$', text, re.M)
     failures = [] if observed == expected else [f'Section order mismatch: {observed}']
     abstract = sections(text).get('Abstract', '')
     headings = re.findall(r'^### (.+)$', abstract, re.M)
     if headings != ['Objective', 'Materials and Methods', 'Results', 'Discussion', 'Conclusion']:
         failures.append(f'Abstract heading mismatch: {headings}')
+    introduction = sections(text).get('Introduction', '')
+    headings = re.findall(r'^### (.+)$', introduction, re.M)
+    if headings != ['Background and significance', 'Objective']:
+        failures.append(f'Introduction heading mismatch: {headings}')
+    discussion = sections(text).get('Discussion', '')
+    headings = re.findall(r'^### (.+)$', discussion, re.M)
+    if headings != ['Conclusion']:
+        failures.append(f'Discussion heading mismatch: {headings}')
     if len(re.findall(r'^#(?: |$)', text, re.M)) != 1:
         failures.append('Manuscript must contain exactly one top-level title')
     return failures
@@ -287,15 +307,7 @@ def main():
             traced.append((line, token, sorted(index[normal(token)])[0]))
         else:
             missing.append((line, token, text.splitlines()[line - 1]))
-    content = sections(text)
-    counts = {name: words(content[name]) for name in
-              ("Abstract", "Background and significance", "Objective",
-               "Materials and methods", "Results", "Discussion")}
-    counts["Back matter"] = words(content["Back matter"])
-    discussion = content["Discussion"]
-    counts["Conclusion (within Discussion)"] = words(discussion.split("### Conclusion\n", 1)[1])
-    main_count = sum(counts[name] for name in
-                     ("Background and significance", "Objective", "Materials and methods", "Results", "Discussion"))
+    counts, main_count = word_counts(text)
     failures = structure_checks(text) + headline_checks(text)
     if counts["Abstract"] > 250 or main_count > 4000:
         failures.append("JAMIA word limit exceeded")

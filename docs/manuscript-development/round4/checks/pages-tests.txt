@@ -1,0 +1,6 @@
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.082s
+
+OK
+Staged 20 publication files; 4 local links resolve.

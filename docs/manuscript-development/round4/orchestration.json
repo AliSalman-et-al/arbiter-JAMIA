@@ -1,0 +1,221 @@
+{
+  "note": "Dispatch metadata retained from T3 tool returns; does not claim transcript-level verification of worker conduct.",
+  "tasks": [
+    {
+      "role": "systems",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-research-systems",
+      "providerInstanceId": "codex",
+      "model": "gpt-6-luna",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "riaz",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-research-riaz",
+      "providerInstanceId": "codex",
+      "model": "gpt-6-luna",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "exemplars",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-research-exemplars",
+      "providerInstanceId": "codex",
+      "model": "gpt-6-luna",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "benchmarks",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-expanded-benchmarks",
+      "providerInstanceId": "codex",
+      "model": "gpt-6-luna",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "human_reference",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-expanded-human_reference",
+      "providerInstanceId": "codex",
+      "model": "gpt-6-luna",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "reviewer_use",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-expanded-reviewer_use",
+      "providerInstanceId": "codex",
+      "model": "gpt-6-luna",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "riaz_network",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-expanded-riaz_network",
+      "providerInstanceId": "codex",
+      "model": "gpt-6-luna",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "literature_challenge",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-expanded-literature_challenge",
+      "providerInstanceId": "codex",
+      "model": "gpt-6-luna",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "arena-a",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-arena-a",
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "arena-b",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-arena-b",
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "methods",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-methods-draft",
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "arena-judge",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-arena-judge",
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "integration",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-integration",
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "final-scientific",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-final-scientific",
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "final-editorial",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-final-editorial",
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "proof-a",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-proof-a",
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "proof-b",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-proof-b",
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    },
+    {
+      "role": "trail-review",
+      "taskId": "node:delegated-task:command%3Amcp%3A8a54a208-a387-43fe-ab19-8dc105d98fda%3Adelegate-task%3Amanuscript-r4-trail-review",
+      "providerInstanceId": "codex",
+      "model": "gpt-6.1-sol",
+      "options": [
+        {
+          "id": "reasoningEffort",
+          "value": "medium"
+        }
+      ]
+    }
+  ]
+}

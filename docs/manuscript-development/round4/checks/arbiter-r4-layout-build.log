@@ -1,0 +1,27 @@
+Manuscript assembled: 3 native gt tables; 5 legends and alt texts; 3368 main words; 225 abstract words.
+pandoc 
+  to: html
+  output-file: manuscript.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  css:
+    - ../scripts/manuscript.css
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  knitr:
+    opts_chunk:
+      results: asis
+  pagetitle: ARBITER manuscript
+  
+Output created: manuscript.html
+
+PASS: manuscript HTML built from canonical Markdown, 3 native tables and 5 final figures. Manuscript Word assembled; supplement and analyses were not rebuilt.

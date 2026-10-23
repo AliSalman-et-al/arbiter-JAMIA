@@ -12,13 +12,13 @@
 
 6. Hevia A, Chintalapati S, Lai VKW, et al. ROBOTO2: An Interactive System and Dataset for LLM-assisted Clinical Trial Risk of Bias Assessment. In: *Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations*. Association for Computational Linguistics, 2025:12–25. doi:[10.18653/v1/2025.emnlp-demos.2](https://doi.org/10.18653/v1/2025.emnlp-demos.2).
 
-7. Gandhi S, Shokravi A, Chelliahpillai Y, et al. Evaluating large language model performance in Risk of Bias assessments: A cross-sectional validation study. *PLoS One* 2026;21:e0353155. doi:[10.1371/journal.pone.0353155](https://doi.org/10.1371/journal.pone.0353155).
+7. Ji C, Zhao B, Wang Z, et al. RoBGuard: Enhancing LLMs to Assess Risk of Bias in Clinical Trial Documents. In: *Proceedings of the 31st International Conference on Computational Linguistics*. Association for Computational Linguistics, 2025:1258–77. Available at: [ACL Anthology](https://aclanthology.org/2025.coling-main.84/).
 
-8. Huang J, Lai H, Zhao W, et al. Large Language Model–Assisted Risk-of-Bias Assessment in Randomized Controlled Trials Using the Revised Risk-of-Bias Tool: Evaluation Study. *J Med Internet Res* 2025;27:e70450. doi:[10.2196/70450](https://doi.org/10.2196/70450).
+8. Gandhi S, Shokravi A, Chelliahpillai Y, et al. Evaluating large language model performance in Risk of Bias assessments: A cross-sectional validation study. *PLoS One* 2026;21:e0353155. doi:[10.1371/journal.pone.0353155](https://doi.org/10.1371/journal.pone.0353155).
 
-9. Xiong YT, Wang YC, Sun YN, et al. Impact of prompt engineering on large language models for risk of bias assessment: a comparative study. *BMJ Evid Based Med* 2026;31:332–41. doi:[10.1136/bmjebm-2025-114055](https://doi.org/10.1136/bmjebm-2025-114055).
+9. Huang J, Lai H, Zhao W, et al. Large Language Model–Assisted Risk-of-Bias Assessment in Randomized Controlled Trials Using the Revised Risk-of-Bias Tool: Evaluation Study. *J Med Internet Res* 2025;27:e70450. doi:[10.2196/70450](https://doi.org/10.2196/70450).
 
-10. Nyrhi L, Ponkilainen V, Laaksonen J, et al. Large language models for risk-of-bias assessment in randomised clinical trials—a comparative validation study. *EBioMedicine* 2026;126:106238. doi:[10.1016/j.ebiom.2026.106238](https://doi.org/10.1016/j.ebiom.2026.106238).
+10. Xiong YT, Wang YC, Sun YN, et al. Impact of prompt engineering on large language models for risk of bias assessment: a comparative study. *BMJ Evid Based Med* 2026;31:332–41. doi:[10.1136/bmjebm-2025-114055](https://doi.org/10.1136/bmjebm-2025-114055).
 
 11. Taneri PE. Human Versus Artificial Intelligence: Comparing Cochrane Authors' and ChatGPT's Risk of Bias Assessments. *Cochrane Evidence Synthesis and Methods* 2025;3:e70044. doi:[10.1002/cesm.70044](https://doi.org/10.1002/cesm.70044).
 
@@ -30,10 +30,16 @@
 
 15. Kottner J, Audigé L, Brorson S, et al. Guidelines for Reporting Reliability and Agreement Studies (GRRAS) were proposed. *J Clin Epidemiol* 2011;64:96–106. doi:[10.1016/j.jclinepi.2010.03.002](https://doi.org/10.1016/j.jclinepi.2010.03.002).
 
-16. Liang Z, Sheffield C, Butera G, Antani S. Retrieve-Then-Verify for Evaluating Evidence Support and Hallucination in Large Language Model–Generated Medical Information: Empirical Study. *JMIR AI* 2026;5:e93761. doi:[10.2196/93761](https://doi.org/10.2196/93761).
+16. Nyrhi L, Ponkilainen V, Laaksonen J, et al. Large language models for risk-of-bias assessment in randomised clinical trials—a comparative validation study. *EBioMedicine* 2026;126:106238. doi:[10.1016/j.ebiom.2026.106238](https://doi.org/10.1016/j.ebiom.2026.106238).
 
-17. Joseph J, Vishwanath R, Sisirkumar JV. RoB2-Evaluator: Development and Technical Evaluation of a Rule-Constrained Large Language Model System for Cochrane Risk of Bias 2 Assessment. *medRxiv* [Preprint]. Posted 23 September 2026. doi:[10.64898/2026.09.22.26363693](https://doi.org/10.64898/2026.09.22.26363693).
+17. Choi J, Swan H, Kim MJ, et al. Variability, algorithm conformance, and accuracy of large language model–based tools for risk-of-bias (RoB 2.0) assessment of randomized trials: a pilot study. *Journal of Evidence-Based Practice* 2026;2:91–97. doi:[10.63528/jebp.2026.00011](https://doi.org/10.63528/jebp.2026.00011).
 
-18. Choi J, Swan H, Kim MJ, et al. Variability, algorithm conformance, and accuracy of large language model–based tools for risk-of-bias (RoB 2.0) assessment of randomized trials: a pilot study. *Journal of Evidence-Based Practice* 2026;2:91–97. doi:[10.63528/jebp.2026.00011](https://doi.org/10.63528/jebp.2026.00011).
+18. Huang J, Tang Z, Ling Q, Kuang Z, E H. Can LLMs Follow Medical Expert Logic? A Benchmark for Hierarchical Logical Consistency in Risk-of-Bias Assessment. *arXiv* report, version 1, 10 September 2026. [arXiv:2609.11185v1](https://arxiv.org/abs/2609.11185v1). Accepted to EMNLP 2026 Main Conference.
 
-19. Jardim PSJ, Rose CJ, Ames HM, et al. Automating risk of bias assessment in systematic reviews: a real-time mixed methods comparison of human researchers to a machine learning system. *BMC Med Res Methodol* 2022;22:167. doi:[10.1186/s12874-022-01649-y](https://doi.org/10.1186/s12874-022-01649-y).
+19. Liang Z, Sheffield C, Butera G, Antani S. Retrieve-Then-Verify for Evaluating Evidence Support and Hallucination in Large Language Model–Generated Medical Information: Empirical Study. *JMIR AI* 2026;5:e93761. doi:[10.2196/93761](https://doi.org/10.2196/93761).
+
+20. Joseph J, Vishwanath R, Sisirkumar JV. RoB2-Evaluator: Development and Technical Evaluation of a Rule-Constrained Large Language Model System for Cochrane Risk of Bias 2 Assessment. *medRxiv* [Preprint]. Posted 23 September 2026. doi:[10.64898/2026.09.22.26363693](https://doi.org/10.64898/2026.09.22.26363693).
+
+21. Soboczenski F, Trikalinos TA, Kuiper J, et al. Machine learning to help researchers evaluate biases in clinical trials: a prospective, randomized user study. *BMC Med Inform Decis Mak* 2019;19:96. doi:[10.1186/s12911-019-0814-z](https://doi.org/10.1186/s12911-019-0814-z).
+
+22. Jardim PSJ, Rose CJ, Ames HM, et al. Automating risk of bias assessment in systematic reviews: a real-time mixed methods comparison of human researchers to a machine learning system. *BMC Med Res Methodol* 2022;22:167. doi:[10.1186/s12874-022-01649-y](https://doi.org/10.1186/s12874-022-01649-y).

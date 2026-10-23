@@ -1,0 +1,635 @@
+{
+  "note": "Local research cache outside Git and public Pages. Source URLs, versions and inspection scope remain in slice ledgers; a saved file is not itself proof of inspection.",
+  "files": [
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/benchmarks/LogiMed-RoB-v1.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/benchmarks/LogiMed-RoB-v1.pdf",
+      "sha256": "1ee8b86c4cb0c5f46c8cc48ad0ba806a70fce92bc7f520b8b3783f906c3db5d9",
+      "bytes": 1931632
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/benchmarks/LogiMed-RoB.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/benchmarks/LogiMed-RoB.txt",
+      "sha256": "dd5121cfe0ddee7e06737a1449de6ec5f7ece1d8adba1b26f439448e7ca286b9",
+      "bytes": 173373
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/benchmarks/RoBBR-EMNLP2025.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/benchmarks/RoBBR-EMNLP2025.pdf",
+      "sha256": "cf82a9605307bafb0f897b2260e9e2da321d067b853fb1ca37f445c6b63290c5",
+      "bytes": 11944896
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/benchmarks/RoBBR.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/benchmarks/RoBBR.txt",
+      "sha256": "1994360be22146120a323bb0587321d6faccba03049230b7c1a609067548d73d",
+      "bytes": 113055
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/benchmarks/RoBGuard-COLING2025.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/benchmarks/RoBGuard-COLING2025.pdf",
+      "sha256": "a9f0123a04409258f398eedbbc621bd4b1a2c518cc34b8660256c08e0f842c34",
+      "bytes": 4379714
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/benchmarks/RoBGuard.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/benchmarks/RoBGuard.txt",
+      "sha256": "9ad57b51dac205ac9b7216020f2c688fe195a41518ba2b49d78c7e7b52073935",
+      "bytes": 306407
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/benchmarks/RoBIn-arXiv-v1.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/benchmarks/RoBIn-arXiv-v1.pdf",
+      "sha256": "5df90d3172ebe5fdfbb84f05c922d726b2e247a44e2bb822307970de55ecc247",
+      "bytes": 1618683
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/benchmarks/RoBIn.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/benchmarks/RoBIn.txt",
+      "sha256": "0853c766b8872fb9c129d24fe69fb64c0af0e8d482f5338207953ae7e29f487c",
+      "bytes": 77944
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/exemplars/clinicalkey.bioc.json",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/exemplars/clinicalkey.bioc.json",
+      "sha256": "371566a391ff7c14333a88e85a56159346575c7ffaadb37e1d4b43d384166727",
+      "bytes": 84478
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/exemplars/clinicalkey.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/exemplars/clinicalkey.txt",
+      "sha256": "21b95777479c9d7631f149ced53dff687d4bc74e4871d30184a10eb3acae2364",
+      "bytes": 40503
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/exemplars/orderrx.bioc.json",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/exemplars/orderrx.bioc.json",
+      "sha256": "c8fd1b3f1fb81dc7226c0e8be2ab8ce767ef44cef1a928f6bc12b588f36bb03b",
+      "bytes": 98645
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/exemplars/orderrx.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/exemplars/orderrx.txt",
+      "sha256": "0eddb8271b2689f74601b4924e9aa8e315faab0983ded0e65eba0f08d89b6184",
+      "bytes": 44751
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/exemplars/roboto2.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/exemplars/roboto2.pdf",
+      "sha256": "45ed34e5e7d34052624e6e34ae57b73c2542e044d9b91bba0f05c4a961ff5bb7",
+      "bytes": 1073280
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/exemplars/robotreviewer-user.bioc.json",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/exemplars/robotreviewer-user.bioc.json",
+      "sha256": "e44967c775941c0f5564f3bd1acb8f5cf3ff488a37ce94c1f46f95f69f63f9a7",
+      "bytes": 85219
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/exemplars/robotreviewer-user.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/exemplars/robotreviewer-user.txt",
+      "sha256": "cbd1fffe768e3e230dddff2985b5d865ef927145c64883bbeae8cafd8bbe023d",
+      "bytes": 38120
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/exemplars/robotreviewer.xml",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/exemplars/robotreviewer.xml",
+      "sha256": "832762f91d4ebd1be5af55880cf31ace3e763a9fd22ce40742386119f9f1ffd7",
+      "bytes": 168519
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/bertizzolo2019.BioC_json.xml",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/bertizzolo2019.BioC_json.xml",
+      "sha256": "2ca5f3f9a707260729ce051a0f23d47f3850b995c52d5268b28f5b15ec26ec44",
+      "bytes": 85017
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/bertizzolo2019.bioc.json",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/bertizzolo2019.bioc.json",
+      "sha256": "aeb8b3ef8e6d08e7a8a87d8661b0d5138203bc1821b8178d20fce33e3684adb8",
+      "bytes": 162216
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/bertizzolo2019.fullTextXML.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/bertizzolo2019.fullTextXML.txt",
+      "sha256": "2aa39614bdd6a6ee3f948863b78dfdf031a18b55701dbf51c1b01b80973789df",
+      "bytes": 32090
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/bertizzolo2019.fullTextXML.xml",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/bertizzolo2019.fullTextXML.xml",
+      "sha256": "3237790acba7cdff9521b58e17f82baa3b01cd83d7f0d893274d7c09cf6db130",
+      "bytes": 91775
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/bertizzolo2019.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/bertizzolo2019.txt",
+      "sha256": "77c3e02865b4e6e2d46505d29b9f9a809cf732ba73f9533778fb46c1ec889b5c",
+      "bytes": 61605
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/bertizzolo2019.xml",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/bertizzolo2019.xml",
+      "sha256": "ac5208c208fd4942f41a50279565061d1add3df432bf21777143b680e376ea88",
+      "bytes": 317838
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/fulltext-fetch.py",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/fulltext-fetch.py",
+      "sha256": "b747a359d43033cfd72aa15833d0237ec27f0a9401c08ab18d454bf7944e7f3f",
+      "bytes": 381
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/grras2011.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/grras2011.txt",
+      "sha256": "5bf7bc07c970280160b34b0b9520d00038c96a08bb8b26a3176eeb11a279f672",
+      "bytes": 34698
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/grras2011.xml",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/grras2011.xml",
+      "sha256": "f8f5bea1cb771df3ba1440df2902402c58c53360fd895ce2c71e96202d4f0339",
+      "bytes": 144195
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/minozzi2020.bioc.json",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/minozzi2020.bioc.json",
+      "sha256": "f478490c261ab30b2948c58aab3581e453ac389b2631ace40fe387b39941dbb3",
+      "bytes": 5683
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/minozzi2020.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/minozzi2020.txt",
+      "sha256": "4353b9632166b7ce47f00dd5d348eeb1475a3d19198d2175eff960fb4e356602",
+      "bytes": 2254
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/minozzi2020.xml",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/minozzi2020.xml",
+      "sha256": "bfe5ea5a77cb262b673309bde1aa2d4dc535ed7d7e0e0bca92b7d3821f914b73",
+      "bytes": 100051
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/minozzi2022.bioc.json",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/minozzi2022.bioc.json",
+      "sha256": "b9e6dab90482f96a751d07892268ab6436b3e1478cec4eaff1b8c99b2584783c",
+      "bytes": 50427
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/minozzi2022.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/minozzi2022.txt",
+      "sha256": "c332b5371e78f77ce0528826b79518775092ad0ed385f1d3df4e5dc1f4f1787d",
+      "bytes": 27561
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/human_reference/minozzi2022.xml",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/human_reference/minozzi2022.xml",
+      "sha256": "9e8ce7df1f475b84e909bd86f3321d248bf792ec4382b3afaf95a629cd848c22",
+      "bytes": 172865
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/reviewer_use/jardim2022.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/reviewer_use/jardim2022.pdf",
+      "sha256": "d7f2688de2a6c400b9f2041cc758c9fdb74e255e0a430aec36a536b417fcc07b",
+      "bytes": 1938841
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/reviewer_use/jardim2022.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/reviewer_use/jardim2022.txt",
+      "sha256": "03986e10356b9bc1e303a4236bf9a3bacc8438de907b09563a5023f7f6e1288e",
+      "bytes": 66683
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/reviewer_use/soboczenski2019.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/reviewer_use/soboczenski2019.pdf",
+      "sha256": "04e6757f810754542643a7fa74377fac3930b44b11fb3eda9f49dca8b9059d3e",
+      "bytes": 1947197
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/reviewer_use/soboczenski2019.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/reviewer_use/soboczenski2019.txt",
+      "sha256": "f54c1ee8a69f6b30add576a346c18642ca45533bef6a07a93f67492aec2e85fb",
+      "bytes": 57900
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz/PMC11975841.json",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz/PMC11975841.json",
+      "sha256": "ca6344ecc0174faa911177bf1304e8d2735f14272cda0a2482404db979dac2c7",
+      "bytes": 37359
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz/PMC12005628.html",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz/PMC12005628.html",
+      "sha256": "5d33eeba3a09758c457b1229627afbc5f203856030395336226aaa026677a316",
+      "bytes": 208460
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz/PMC12005628.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz/PMC12005628.txt",
+      "sha256": "234e17a42600cda3fe7cccd70dde7904375ca0003b1a71c45a1e896525b621c4",
+      "bytes": 67008
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz/PMC12047928.json",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz/PMC12047928.json",
+      "sha256": "befa29193a03c8280c2dc32420c50446433e66b425b8ec91c6ba6731129fa860",
+      "bytes": 305325
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz/PMC12152177.json",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz/PMC12152177.json",
+      "sha256": "4609f024a7d9f8984f2761de76eb83c5b9c474e8c052599d252d336be4a99fd5",
+      "bytes": 73728
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz/PMC12351523.json",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz/PMC12351523.json",
+      "sha256": "c228b26265aab746f77dd62f9768479f7fe1fd701542a23e54f0d848b32350ab",
+      "bytes": 145919
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz/evisearch_2026.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz/evisearch_2026.pdf",
+      "sha256": "0de87bad6cfb39c97e1e57dd8845c08fe9be01a3d8625c3c6cfac7393adff9c6",
+      "bytes": 3055891
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz/evisearch_2026.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz/evisearch_2026.txt",
+      "sha256": "c29c4fab6308798b2245c34877f1815c19b4add6b15aa1cfd764ea682a0a3be4",
+      "bytes": 46502
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz/nature_distillation.html",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz/nature_distillation.html",
+      "sha256": "4c0f1ada19c8681945c5318806a7106a4d2ea8e061564be568b782f848f4535a",
+      "bytes": 345095
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz/nature_structured_reasoning_2026.html",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz/nature_structured_reasoning_2026.html",
+      "sha256": "b45b1ca4335873ba888630d7b783e64b5463b12e413d0eb19b427a5535351ba4",
+      "bytes": 510082
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz_network/fdscop.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz_network/fdscop.pdf",
+      "sha256": "7961d941ff28dbbee9341258cb1ffb610723f979ded3e3de4b319d6d3da97a08",
+      "bytes": 2807694
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/riaz_network/fdscop.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/riaz_network/fdscop.txt",
+      "sha256": "e333b6272440c58f240e355190333022cbab21e085e1a6728af233fd65456381",
+      "bytes": 101690
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/li.html",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/li.html",
+      "sha256": "32ed63159c77e21ee19ca1b9aa3213ccf0218eb59539560b132a8e68ef0e18ea",
+      "bytes": 3038
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/logimed-record.html",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/logimed-record.html",
+      "sha256": "d43fdf6fb7c7d5879aee0c0ad3bf9ef3d88ff6af81025fc1da1d8306baa32292",
+      "bytes": 42475
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/logimed.html",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/logimed.html",
+      "sha256": "8fbf4f958b9c96561a6b5ff0e0b9a99f858c617900887e9f1cb1ee79573f6723",
+      "bytes": 707712
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/logimed.html.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/logimed.html.txt",
+      "sha256": "e6f2dfc937156033bf9b0b6bab88826957e9fded2fdcad6299a56eb8d04ba240",
+      "bytes": 142968
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/logimed.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/logimed.pdf",
+      "sha256": "1ee8b86c4cb0c5f46c8cc48ad0ba806a70fce92bc7f520b8b3783f906c3db5d9",
+      "bytes": 1931632
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/robguard.pdf",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/robguard.pdf",
+      "sha256": "a9f0123a04409258f398eedbbc621bd4b1a2c518cc34b8660256c08e0f842c34",
+      "bytes": 4379714
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/robguard.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/robguard.txt",
+      "sha256": "9ad57b51dac205ac9b7216020f2c688fe195a41518ba2b49d78c7e7b52073935",
+      "bytes": 306407
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/robo2.html",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/robo2.html",
+      "sha256": "34a0a82d820e85df9cb0c93ad83519d6596f3963bcfe30c17243d81c85566546",
+      "bytes": 45016
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/robo2.html.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/robo2.html.txt",
+      "sha256": "34b6b2b5a5a8e41ebddb1838d0f9bc0d2a41815690361f46093c8fb1c3142e72",
+      "bytes": 14987
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/robust-rct.html",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/robust-rct.html",
+      "sha256": "81b2bb8f31275dd5c2aca4b55ef55ebad791ff7af35c6f21d7a76d8fbf4fd382",
+      "bytes": 436721
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r4-fulltexts/systems/robust-rct.html.txt",
+      "original_temporary_path": "/tmp/arbiter-r4-fulltexts/systems/robust-rct.html.txt",
+      "sha256": "fe834a6f9c2959ad02afc7f303c6caa624809845fd9e0dc47abbc89d82b4cf9c",
+      "bytes": 52438
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Armijo_Olivo_RobotReviewer_2020_PubMed.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Armijo_Olivo_RobotReviewer_2020_PubMed.html",
+      "sha256": "21ac400ac533b8d431878d9bb1773d69e48fdcefa7f11665be16f687a55f6d02",
+      "bytes": 5590
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Bertizzolo_RoB1_disagreement_2019.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Bertizzolo_RoB1_disagreement_2019.html",
+      "sha256": "ea3f35c08e9472a340829d2d197a34e7ffbb712a6d2f2a0b15bc60e52c54e974",
+      "bytes": 185511
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Bertizzolo_RoB1_disagreement_2019.xml",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Bertizzolo_RoB1_disagreement_2019.xml",
+      "sha256": "3237790acba7cdff9521b58e17f82baa3b01cd83d7f0d893274d7c09cf6db130",
+      "bytes": 91775
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Gandhi_RoB2_validation_2026.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Gandhi_RoB2_validation_2026.html",
+      "sha256": "8feabbcfa2c0890c18cd672046edcee9770292186b3ad538c5e0a2a4fe969bfb",
+      "bytes": 174225
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Huang_RoB2_eval_2025.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Huang_RoB2_eval_2025.html",
+      "sha256": "adc3626e7cb25e4202f0bc0f7100d472a681329890dbb94c33daab1e24c8671f",
+      "bytes": 233256
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Huang_RoB2_eval_2025.xml",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Huang_RoB2_eval_2025.xml",
+      "sha256": "085204f8cfe54298d8c58484aa10750075b1e7de2fb3cba23ff6e0b28c5e4fe5",
+      "bytes": 131280
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Jabbour_Clinician_AI_decisions_2023.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Jabbour_Clinician_AI_decisions_2023.html",
+      "sha256": "f97e33c8f69700371e1af6b3ccee4e829baeeb04656d222381619982105f925f",
+      "bytes": 191618
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Jardim_RobotReviewer_real_time_2022.xml",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Jardim_RobotReviewer_real_time_2022.xml",
+      "sha256": "7d06e66f6f02090617101e361d69627e7bf88bb3cbfbd580ffe80fb38605ffe8",
+      "bytes": 93877
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Li_Human_AI_RoB1_2026.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Li_Human_AI_RoB1_2026.html",
+      "sha256": "13d943c80d41fe9da8451362f67639b5f6e97c77f0870ccb789f2319044ede67",
+      "bytes": 173174
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Li_Human_AI_RoB1_2026.xml",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Li_Human_AI_RoB1_2026.xml",
+      "sha256": "86e968821d1eeddb22c154b8678fd29ca92a34e4f9174b0d5c1de6c9b6fb4828",
+      "bytes": 81393
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Liang_Retrieve_Verify_2026.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Liang_Retrieve_Verify_2026.html",
+      "sha256": "a4dffc33a481890285e80da043c7703b9c82a21e22416cf41d98fe544780f672",
+      "bytes": 231698
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Liang_Retrieve_Verify_2026.xml",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Liang_Retrieve_Verify_2026.xml",
+      "sha256": "80fb87f78d566c36d980c8eb85acae33fdb61e49bd2e9ed6455ea1101336240c",
+      "bytes": 140687
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/Minozzi_RoB2_instruction_2022_PubMed.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/Minozzi_RoB2_instruction_2022_PubMed.html",
+      "sha256": "0ea346b53c2c938133405a83d20085601937172e36bb8567ace4874b401c21e1",
+      "bytes": 5590
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/clinical/ROBOTO2_Hevia_2025.pdf",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/clinical/ROBOTO2_Hevia_2025.pdf",
+      "sha256": "45ed34e5e7d34052624e6e34ae57b73c2542e044d9b91bba0f05c4a961ff5bb7",
+      "bytes": 1073280
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz/PMC11975841.json",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz/PMC11975841.json",
+      "sha256": "ca6344ecc0174faa911177bf1304e8d2735f14272cda0a2482404db979dac2c7",
+      "bytes": 37359
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz/PMC12047928.json",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz/PMC12047928.json",
+      "sha256": "befa29193a03c8280c2dc32420c50446433e66b425b8ec91c6ba6731129fa860",
+      "bytes": 305325
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz/PMC12152177.json",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz/PMC12152177.json",
+      "sha256": "4609f024a7d9f8984f2761de76eb83c5b9c474e8c052599d252d336be4a99fd5",
+      "bytes": 73728
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz/PMC12351523.json",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz/PMC12351523.json",
+      "sha256": "c228b26265aab746f77dd62f9768479f7fe1fd701542a23e54f0d848b32350ab",
+      "bytes": 145919
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz/nature_distillation.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz/nature_distillation.html",
+      "sha256": "4c0f1ada19c8681945c5318806a7106a4d2ea8e061564be568b782f848f4535a",
+      "bytes": 345095
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/PMC11469465.xml",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/PMC11469465.xml",
+      "sha256": "266a5c11c7ed51c4190e244516821dcf4263305a62f26fc8a6c2ab54cc86e82e",
+      "bytes": 98906
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/PMC11975841.json",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/PMC11975841.json",
+      "sha256": "ca6344ecc0174faa911177bf1304e8d2735f14272cda0a2482404db979dac2c7",
+      "bytes": 37359
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/PMC12005628.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/PMC12005628.html",
+      "sha256": "5d33eeba3a09758c457b1229627afbc5f203856030395336226aaa026677a316",
+      "bytes": 208460
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/PMC12005628.json",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/PMC12005628.json",
+      "sha256": "478f38e0765ee9c406831bb2fc27e8019ac5227c20c6b28ca0de582d8449354a",
+      "bytes": 6140
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/PMC12005628.txt",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/PMC12005628.txt",
+      "sha256": "234e17a42600cda3fe7cccd70dde7904375ca0003b1a71c45a1e896525b621c4",
+      "bytes": 67008
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/PMC12047928.json",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/PMC12047928.json",
+      "sha256": "befa29193a03c8280c2dc32420c50446433e66b425b8ec91c6ba6731129fa860",
+      "bytes": 305325
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/PMC12152177.json",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/PMC12152177.json",
+      "sha256": "4609f024a7d9f8984f2761de76eb83c5b9c474e8c052599d252d336be4a99fd5",
+      "bytes": 73728
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/PMC12351523.json",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/PMC12351523.json",
+      "sha256": "c228b26265aab746f77dd62f9768479f7fe1fd701542a23e54f0d848b32350ab",
+      "bytes": 145919
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/evisearch_2026.pdf",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/evisearch_2026.pdf",
+      "sha256": "0de87bad6cfb39c97e1e57dd8845c08fe9be01a3d8625c3c6cfac7393adff9c6",
+      "bytes": 3055891
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/evisearch_2026.txt",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/evisearch_2026.txt",
+      "sha256": "c29c4fab6308798b2245c34877f1815c19b4add6b15aa1cfd764ea682a0a3be4",
+      "bytes": 46502
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/nature_distillation.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/nature_distillation.html",
+      "sha256": "4c0f1ada19c8681945c5318806a7106a4d2ea8e061564be568b782f848f4535a",
+      "bytes": 345095
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/riaz-retrieval/nature_structured_reasoning_2026.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/riaz-retrieval/nature_structured_reasoning_2026.html",
+      "sha256": "b45b1ca4335873ba888630d7b783e64b5463b12e413d0eb19b427a5535351ba4",
+      "bytes": 510082
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/choi.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/choi.html",
+      "sha256": "c9d716a72860657dd1b75f6b2bcc512f4c33273d04c805bc00c8d96ff93c68e2",
+      "bytes": 121481
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/choi.txt",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/choi.txt",
+      "sha256": "4f8f4e9b87cd3f1b07c3fedc40c420e4c1994fe28a84d15293af5488d2672407",
+      "bytes": 31108
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/gandhi.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/gandhi.html",
+      "sha256": "8feabbcfa2c0890c18cd672046edcee9770292186b3ad538c5e0a2a4fe969bfb",
+      "bytes": 174225
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/gandhi.txt",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/gandhi.txt",
+      "sha256": "d2f0ac17a9c479beb09c8590a1a08398c268e982790124a033bb102d73e722db",
+      "bytes": 42897
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/huang.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/huang.html",
+      "sha256": "69fc0a0650f7c19e7650430e00f7c1b87380ef96b609440708c8da83cf30735d",
+      "bytes": 233256
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/huang.pdf",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/huang.pdf",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/huang.txt",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/huang.txt",
+      "sha256": "ed6cd510add3e02e92cc3677edeab3fb469e528ea877ab3a0dde0d35064d4f71",
+      "bytes": 63137
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/lai2024.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/lai2024.html",
+      "sha256": "fa39040890b1009446656a7b119ef90dc3765ca48ed8101cd0cc5d3b2284cd84",
+      "bytes": 219396
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/lai2024.txt",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/lai2024.txt",
+      "sha256": "1b7fbe4194678335e9f414d6ef29dc1ffa60131ca47e1b23027759a0d66e32b9",
+      "bytes": 53022
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/liang.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/liang.html",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/nyrhi.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/nyrhi.html",
+      "sha256": "556eaa5688167a0a85a02114e8eadbca43180414c43a3fd41c92fde73a7b6216",
+      "bytes": 185497
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/nyrhi.txt",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/nyrhi.txt",
+      "sha256": "6c44f60e836161b2bf19fc997a116fe37716a7d15b2f054b99ae0eae6d571157",
+      "bytes": 44036
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/roboto2.pdf",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/roboto2.pdf",
+      "sha256": "45ed34e5e7d34052624e6e34ae57b73c2542e044d9b91bba0f05c4a961ff5bb7",
+      "bytes": 1073280
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/roboto2.txt",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/roboto2.txt",
+      "sha256": "dd588215bbbc01ab69883fc0d13538792785d6d7f68670e95ce6bcb1dcaec0fa",
+      "bytes": 71383
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/robotreviewer.html",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/robotreviewer.html",
+      "sha256": "72e55d369e36e664aef89d54c0138dff3c1a98b1f10a0c76afa5d2ede03f9dfa",
+      "bytes": 168489
+    },
+    {
+      "path": "/home/ali/Documents/Code/arbiter-literature-cache/arbiter-r3-fulltexts/systems/robotreviewer.txt",
+      "original_temporary_path": "/tmp/arbiter-r3-fulltexts/systems/robotreviewer.txt",
+      "sha256": "38f89144690d74a04a63c808fd225aa314e385b605ff5e346d2ef88b56af5053",
+      "bytes": 45837
+    }
+  ]
+}
