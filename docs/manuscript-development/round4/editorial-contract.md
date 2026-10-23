@@ -23,3 +23,7 @@ Preserve all unresolved method/declaration fields. Evaluated and public releases
 ## Literature and style targets
 
 Use actual full texts with verified identities. Select 3–5 exemplars after the swarm reports. A writing model supplies structure and register, not wording to copy or an obligatory citation. Riaz authorship roles are evidence about collaboration, not certainty about his personal preferences. Review the existing corpus before adding papers; new references must materially support a needed proposition.
+
+## Book-grounded register check
+
+Parent inspection of Schimel chapters 14.3.2 and 15.1/15.1.1 distinguishes a useful technical concept from jargon according to the reader's existing schema. His ecology example shows that replacing a precise established term with a general everyday phrase can confuse specialists. That is directly relevant to the user's correction. The revised draft should therefore keep established RoB and statistical terms and define unfamiliar computational roles selectively. The clinical-writing revision guide makes the same distinction for fixed scientific concepts and cautions against sacrificing meaning for word count. These are substantive register decisions, not a synonym blacklist.
