@@ -124,6 +124,7 @@ def metadata_spans(text):
         "software commit (analysis plan)": r"2f549ae(?:30f056ff441ea61a04b719968716f2219)?",
         "date (run README or editorial search/access date)": r"\b(?:12|14|18|19|21) October 2026\b",
         "literature shorthand year (bibliography)": r"(?:Hartling 2019|Zhang 2024)",
+        "review search eligibility years (author-supplied benchmark provenance)": r"(?<=Europe PMC for )2025–2026(?= meta-analyses)",
     }
     for label, pattern in patterns.items():
         result.extend((m.start(), m.end(), label) for m in re.finditer(pattern, text))
@@ -198,8 +199,12 @@ def headline_checks(text):
     check((audit.get("count"), audit.get("n")) == ("65", "509"), "Rule audit changed")
     check("65/509" in text and "1407/1407" in text, "Audit claims missing")
     methods = sections(text)["Materials and methods"]
-    check("all 510 cells" in methods and "formal primary endpoint" in methods,
+    check("all 510 cells" in methods and
+          "The denominator included only cells in which both experts chose the same label" in methods and
+          "among cells where the arms' ratings differed" in methods,
           "Full-cohort and conditional endpoint definitions missing")
+    check(not re.search(r"formal primary endpoint|confirmatory|prespecified secondary", methods, re.I),
+          "Superseded prospective outcome hierarchy retained")
     check(not re.search(r"18 October 2026|before the expert ratings.*analysed|prespecified", methods),
           "Chronology declaration retained")
     check(re.findall(r"^### (.+)$", methods, re.M) == ["System design", "Benchmark and assessment arms",

@@ -10,14 +10,40 @@ from lxml import html
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-# Only these five reviewed reporting artifacts can receive documentary exceptions.
+# Only these individually reviewed reporting and Figure 3 artifacts can receive exceptions.
 DOCUMENTARY_PATHS = frozenset({
     'analysis/output/manuscript/Supplement.docx',
     'analysis/output/manuscript/TRIPOD-LLM.docx',
+    'analysis/output/manuscript/Table2.docx',
+    'analysis/output/manuscript/figure-legends.md',
+    'analysis/output/manuscript/Figure3.pdf',
+    'analysis/output/manuscript/Figure3.png',
+    'analysis/output/manuscript/Figure3.tiff',
     'analysis/output/tables/prompt-template-example.csv',
     'analysis/output/tables/display-supplement-reporting-map.csv',
     'analysis/output/tables/reporting-checklist-skeleton.csv',
+    'analysis/output/tables/display-table2.csv',
+    'analysis/output/tables/display-source-trace.csv',
 })
+
+
+# These paths are already inventoried in round4, but absent from baseline-hashes.json.
+# Carry their historical hashes forward; never derive a baseline from current files.
+FIGURE3_PATHS = (
+    'analysis/output/manuscript/Figure3.pdf',
+    'analysis/output/manuscript/Figure3.png',
+    'analysis/output/manuscript/Figure3.tiff',
+)
+
+
+def historical_baseline():
+    baseline = json.loads((HERE / 'baseline-hashes.json').read_text(), object_pairs_hook=unique_object)
+    round4 = json.loads((HERE / 'round4/baseline.json').read_text(), object_pairs_hook=unique_object)['hashes']
+    for name in FIGURE3_PATHS:
+        if name in baseline and baseline[name] != round4[name]:
+            raise ValueError(f'Conflicting historical hashes: {name}')
+        baseline[name] = round4[name]
+    return baseline
 
 
 def unique_object(pairs):
@@ -71,8 +97,8 @@ def main():
     parser.add_argument('--documentary-updates', type=Path,
                         help='Reviewed JSON old/new SHA-256 hashes and rationales; default is strict historical baseline')
     args = parser.parse_args()
-    baseline = json.loads((HERE / 'baseline-hashes.json').read_text())
     try:
+        baseline = historical_baseline()
         documentary_count = verify_protected_outputs(baseline, args.documentary_updates)
     except (ValueError, OSError) as exc:
         parser.exit(1, f'Integrity check failed: {exc}\n')

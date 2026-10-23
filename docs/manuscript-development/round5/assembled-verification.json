@@ -1,0 +1,21 @@
+{
+  "main_words": 3704,
+  "abstract_words": 214,
+  "rendered_pages": 25,
+  "manuscript_tests": 9,
+  "pages_tests": 9,
+  "release_verifier": "PASS",
+  "unchanged_baseline_sources": 97,
+  "approved_documentary_updates": 12,
+  "references": 23,
+  "verified_display_cells": 79,
+  "native_tables": 3,
+  "figures_with_alt_text": 5,
+  "visual_proof": "PASS: independent individual inspection of all 25 pages; see proof.md",
+  "analysis_validation": "PASS: 224 expectations, 58 numerical tables byte-identical, full shared R output verifier passed; staged production validation, not a successful uninterrupted run.R",
+  "sha256": {
+    "docs/manuscript/manuscript.md": "bb7cc1fa9415147c77c7c6347b4ab2a13cde4c42aaca8aec627cb98be01da2fd",
+    "docs/manuscript/references.md": "1244bd89a957314114078ca81aeb5684dde5416ca1634477e2039f17da93a48c",
+    "analysis/output/manuscript/Manuscript.docx": "ef5cf5e5e49a668f6ab60a32f639cfeaa8347dcbf26615a48ec35862f66a26c3"
+  }
+}

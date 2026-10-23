@@ -41025,8 +41025,8 @@ prompt-template-example,1,slug,
 prompt-template-example,2,slug,aarnoutse-2017
 prompt-template-example,3,slug,
 prompt-template-example,4,slug,
-prompt-template-example,1,prompt,/arbiter-assess Assess risk of bias for {outcome} defined as {definition} in {trial}.
-prompt-template-example,2,prompt,"/arbiter-assess Assess risk of bias for Adverse events graded by CTCAE v4.0; 'Grade 3 (severe AEs)' row of Table 3; patients with grade 3 events in Table 4 defined as Table 3 Grade 3 (severe AEs) number of AEs: 600 mg 6, 900 mg 5, 1,200 mg 9 (all subjects 20); Grade 4: 0; Grade 5 (death): 1 per arm. Table 4 total no. of patients with grade 3 events: 2, 4, 5. Abstract: 'Grade 3 adverse events occurred in only 2 patients in the 600-mg arm, 4 patients in the 900-mg arm, and 5 patients in the 1,200-mg arm.' in aarnoutse-2017."
+prompt-template-example,1,prompt,/rob2-assess Assess risk of bias for {outcome} defined as {definition} in {trial}.
+prompt-template-example,2,prompt,"/rob2-assess Assess risk of bias for Adverse events graded by CTCAE v4.0; 'Grade 3 (severe AEs)' row of Table 3; patients with grade 3 events in Table 4 defined as Table 3 Grade 3 (severe AEs) number of AEs: 600 mg 6, 900 mg 5, 1,200 mg 9 (all subjects 20); Grade 4: 0; Grade 5 (death): 1 per arm. Table 4 total no. of patients with grade 3 events: 2, 4, 5. Abstract: 'Grade 3 adverse events occurred in only 2 patients in the 600-mg arm, 4 patients in the 900-mg arm, and 5 patients in the 1,200-mg arm.' in aarnoutse-2017."
 prompt-template-example,3,prompt,Assess risk of bias for {outcome} defined as {definition} in {trial}.
 prompt-template-example,4,prompt,"When you have finished, give your answers in this format: a table with one row per signalling question (columns: domain, question number, answer as Y, PY, PN, N, NI or NA), and then a final line exactly like ""FINAL: D1=<judgement>; D2=<judgement>; D3=<judgement>; D4=<judgement>; D5=<judgement>; Overall=<judgement>"", where each judgement is Low, Some concerns or High."
 question-map,1,question_id,sq:randomization:sequence
@@ -41334,7 +41334,7 @@ reporting-checklist-skeleton,2,section,Manuscript abstract; results-sentences.md
 reporting-checklist-skeleton,3,section,Manuscript Background and significance (author assembly; ANALYSIS-PLAN section 7)
 reporting-checklist-skeleton,4,section,Manuscript Background and significance; eMethods Interpretive limits
 reporting-checklist-skeleton,5,section,eMethods Blinded expert assessment
-reporting-checklist-skeleton,6,section,eMethods Input parity and label targets; supplementary table
+reporting-checklist-skeleton,6,section,"eMethods Input parity and label targets; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered"
 reporting-checklist-skeleton,7,section,Supplement section 1 Benchmark trials
 reporting-checklist-skeleton,8,section,eMethods Interpretive limits
 reporting-checklist-skeleton,9,section,eMethods Algorithms and validation; prompt templates
@@ -41349,18 +41349,18 @@ reporting-checklist-skeleton,17,section,eMethods Blinded expert assessment; Inde
 reporting-checklist-skeleton,18,section,eMethods Input parity and label targets
 reporting-checklist-skeleton,19,section,eMethods Blinded expert assessment; Manuscript Methods rater credentials (author completion required)
 reporting-checklist-skeleton,20,section,eMethods Input parity and label targets; prompt templates; Table 3
-reporting-checklist-skeleton,21,section,eMethods Algorithms and validation; Blinded expert assessment
+reporting-checklist-skeleton,21,section,eMethods Algorithms and validation; Blinded expert assessment; matched materials and task confirmed by author; original form and multi-outcome conventions unprovided
 reporting-checklist-skeleton,22,section,Figure 4; supplement sections 2 and 5
 reporting-checklist-skeleton,23,section,Manuscript Methods rater credentials (author completion required)
-reporting-checklist-skeleton,24,section,Supplement Prompt templates and run provenance
-reporting-checklist-skeleton,25,section,Supplement Prompt templates and run provenance; supplementary table
+reporting-checklist-skeleton,24,section,"Supplement Prompt templates and run provenance; prompt design, selection and version-freeze provenance require author completion"
+reporting-checklist-skeleton,25,section,Supplement Prompt templates and run provenance; eTable 1; author reports development on ARBITER eval/ and no benchmark use; independent overlap verification pending
 reporting-checklist-skeleton,26,section,N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification
 reporting-checklist-skeleton,27,section,N/A: no instruction tuning or alignment training was performed
 reporting-checklist-skeleton,28,section,Supplement Prompt templates and run provenance; eMethods API list-price reconstruction; time/cost eTables
 reporting-checklist-skeleton,29,section,Manuscript Ethics declaration (author completion required)
 reporting-checklist-skeleton,30,section,Manuscript Funding declaration (author completion required)
 reporting-checklist-skeleton,31,section,Manuscript Competing interests (author completion required)
-reporting-checklist-skeleton,32,section,eMethods Independent reference and Overall; formal primary endpoint and exploratory analyses in Methods
+reporting-checklist-skeleton,32,section,eMethods Independent reference and Overall; evaluation outcomes organized after analysis without a confirmatory hierarchy in Methods
 reporting-checklist-skeleton,33,section,Manuscript Protocol/registration statement (author confirmation required)
 reporting-checklist-skeleton,34,section,Manuscript Data availability; Results report Reproduction
 reporting-checklist-skeleton,35,section,Results report Reproduction; Supplement Prompt templates and run provenance
@@ -41384,8 +41384,8 @@ reporting-checklist-skeleton,52,section,supplementary table; Figure 3
 reporting-checklist-skeleton,53,section,Manuscript Methods rater credentials (author completion required)
 reporting-checklist-skeleton,54,section,eMethods Blinded expert assessment
 reporting-checklist-skeleton,55,section,Benchmark README-FOR-ALI.md sampling; Figure 3 (fixed available sample)
-reporting-checklist-skeleton,56,section,supplementary table; benchmark README-FOR-ALI.md
-reporting-checklist-skeleton,57,section,eMethods Blinded expert assessment
+reporting-checklist-skeleton,56,section,eTable 1; Manuscript Benchmark and assessment arms; eMethods Input parity and label targets; purposive selection and table-order sampling; search records unrecovered
+reporting-checklist-skeleton,57,section,eMethods Blinded expert assessment; same materials and task as model arms; Cochrane RoB 2 guidance; original form and multi-outcome conventions unprovided
 reporting-checklist-skeleton,58,section,Table 1; eMethods Blinded expert assessment
 reporting-checklist-skeleton,59,section,eMethods Independent reference and Overall
 reporting-checklist-skeleton,60,section,Figure 3; Table 1
@@ -41398,7 +41398,7 @@ reporting-checklist-skeleton,2,applicability_and_notes,Manuscript prose location
 reporting-checklist-skeleton,3,applicability_and_notes,Manuscript prose location; verify during author assembly.
 reporting-checklist-skeleton,4,applicability_and_notes,Reported at the named display or supplement location.
 reporting-checklist-skeleton,5,applicability_and_notes,Reported at the named display or supplement location.
-reporting-checklist-skeleton,6,applicability_and_notes,Reported at the named display or supplement location.
+reporting-checklist-skeleton,6,applicability_and_notes,Partial: purposive selection reported by author; search and ranking records unrecovered
 reporting-checklist-skeleton,7,applicability_and_notes,Reported at the named display or supplement location.
 reporting-checklist-skeleton,8,applicability_and_notes,Reported at the named display or supplement location.
 reporting-checklist-skeleton,9,applicability_and_notes,Reported at the named display or supplement location.
@@ -41413,11 +41413,11 @@ reporting-checklist-skeleton,17,applicability_and_notes,Reported at the named di
 reporting-checklist-skeleton,18,applicability_and_notes,Reported at the named display or supplement location.
 reporting-checklist-skeleton,19,applicability_and_notes,"Author information required; the planned location is identified, but the statement is not supplied by these data."
 reporting-checklist-skeleton,20,applicability_and_notes,Reported at the named display or supplement location.
-reporting-checklist-skeleton,21,applicability_and_notes,Reported at the named display or supplement location.
+reporting-checklist-skeleton,21,applicability_and_notes,Partial: matched task and guidance reported; original form and multi-outcome conventions unprovided
 reporting-checklist-skeleton,22,applicability_and_notes,Reported at the named display or supplement location.
 reporting-checklist-skeleton,23,applicability_and_notes,"Author information required; the planned location is identified, but the statement is not supplied by these data."
-reporting-checklist-skeleton,24,applicability_and_notes,Reported at the named display or supplement location.
-reporting-checklist-skeleton,25,applicability_and_notes,Reported at the named display or supplement location.
+reporting-checklist-skeleton,24,applicability_and_notes,Partial: final templates do not establish the prompt-development process
+reporting-checklist-skeleton,25,applicability_and_notes,Partial: author attestation of separate development set; independent overlap audit pending
 reporting-checklist-skeleton,26,applicability_and_notes,N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification
 reporting-checklist-skeleton,27,applicability_and_notes,N/A: no instruction tuning or alignment training was performed
 reporting-checklist-skeleton,28,applicability_and_notes,Reported at the named display or supplement location.
@@ -41448,8 +41448,8 @@ reporting-checklist-skeleton,52,applicability_and_notes,Reported at the named di
 reporting-checklist-skeleton,53,applicability_and_notes,"Author information required; the planned location is identified, but the statement is not supplied by these data."
 reporting-checklist-skeleton,54,applicability_and_notes,Reported at the named display or supplement location.
 reporting-checklist-skeleton,55,applicability_and_notes,Reported at the named display or supplement location.
-reporting-checklist-skeleton,56,applicability_and_notes,Reported at the named display or supplement location.
-reporting-checklist-skeleton,57,applicability_and_notes,Reported at the named display or supplement location.
+reporting-checklist-skeleton,56,applicability_and_notes,Partial: author-supplied purposive selection and within-review sampling reported; search records unrecovered
+reporting-checklist-skeleton,57,applicability_and_notes,"Partial: matched materials, task and guidance confirmed by author; original form and multi-outcome conventions unprovided"
 reporting-checklist-skeleton,58,applicability_and_notes,Reported at the named display or supplement location.
 reporting-checklist-skeleton,59,applicability_and_notes,Reported at the named display or supplement location.
 reporting-checklist-skeleton,60,applicability_and_notes,Reported at the named display or supplement location.

@@ -4,7 +4,7 @@ TRIPOD-LLM,2,Abstract,Manuscript abstract; Manuscript Results,Reported at the na
 TRIPOD-LLM,3a,Context,Manuscript Background and significance,Reported at the named current section or display
 TRIPOD-LLM,3b,Intended users,Manuscript Background and significance; eMethods Interpretive limits,Reported at the named current section or display
 TRIPOD-LLM,4,Objectives,eMethods Blinded expert assessment,Reported at the named current section or display
-TRIPOD-LLM,5a,Data sources,eMethods Input parity and label targets; eTable 1; initial review identification and eligibility require author completion,Partial: initial review identification and eligibility require author completion
+TRIPOD-LLM,5a,Data sources,"eMethods Input parity and label targets; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered",Partial: purposive selection reported by author; search and ranking records unrecovered
 TRIPOD-LLM,5b,Data distribution,Supplement section 1 Benchmark trials,Reported at the named current section or display
 TRIPOD-LLM,5c,Text dates,Text-date coverage is not reported; author information required,Partial: author information required
 TRIPOD-LLM,5d,Preprocessing,eMethods Algorithms and validation; prompt templates,Reported at the named current section or display
@@ -19,18 +19,18 @@ TRIPOD-LLM,7b,Metric relevance,eMethods Blinded expert assessment; Independent r
 TRIPOD-LLM,7c,Outcome definition,eMethods Input parity and label targets,Reported at the named current section or display
 TRIPOD-LLM,7d,Assessors,eMethods Blinded expert assessment; Manuscript Methods rater credentials (author completion required),Partial: author information required
 TRIPOD-LLM,7e,Comparators,eMethods Input parity and label targets; prompt templates; Table 3,Reported at the named current section or display
-TRIPOD-LLM,8a,Annotation guidance,"eMethods Algorithms and validation; Blinded expert assessment; original blank form, instructions, target brief and multi-outcome judgment conventions require author completion",Partial: original annotation materials and target guidance require author completion
+TRIPOD-LLM,8a,Annotation guidance,eMethods Algorithms and validation; Blinded expert assessment; matched materials and task confirmed by author; original form and multi-outcome conventions unprovided,Partial: matched task and guidance reported; original form and multi-outcome conventions unprovided
 TRIPOD-LLM,8b,Annotation agreement,Figure 4; supplement sections 2 and 5,Reported at the named current section or display
 TRIPOD-LLM,8c,Annotator experience,Manuscript Methods rater credentials (author completion required),Partial: author information required
 TRIPOD-LLM,9a,Prompt design,"Supplement Prompt templates and run provenance; prompt design, selection and version-freeze provenance require author completion",Partial: final templates do not establish the prompt-development process
-TRIPOD-LLM,9b,Prompt data,Supplement Prompt templates and run provenance; eTable 1; development data and any benchmark overlap require author completion,Partial: final templates and a filled example do not establish development data
+TRIPOD-LLM,9b,Prompt data,Supplement Prompt templates and run provenance; eTable 1; author reports development on ARBITER eval/ and no benchmark use; independent overlap verification pending,Partial: author attestation of separate development set; independent overlap audit pending
 TRIPOD-LLM,10,Summarization preprocessing,N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification,Not applicable: fixed model and task
 TRIPOD-LLM,11,Alignment evaluation,N/A: no instruction tuning or alignment training was performed,Not applicable: fixed model and task
 TRIPOD-LLM,12,Compute,Supplement Prompt templates and run provenance; eMethods API list-price reconstruction; eTables 20–22,Reported at the named current section or display
 TRIPOD-LLM,13,Ethics,Manuscript Ethics declaration (author completion required),Partial: author information required
 TRIPOD-LLM,14a,Funding,Manuscript Funding declaration (author completion required),Partial: author information required
 TRIPOD-LLM,14b,Conflicts,Manuscript Competing interests (author completion required),Partial: author information required
-TRIPOD-LLM,14c,Protocol,Manuscript Statistical analysis; formal primary endpoint and exploratory analyses; protocol/archive identifier requires author confirmation,Partial: author information required
+TRIPOD-LLM,14c,Protocol,Manuscript Statistical analysis; evaluation outcomes organized after analysis without a confirmatory hierarchy; protocol/archive identifier requires author confirmation,Partial: author information required
 TRIPOD-LLM,14d,Registration,Manuscript Protocol/registration statement (author confirmation required),Partial: author information required
 TRIPOD-LLM,14e,Data access,Manuscript Data availability; Results report Reproduction,Reported at the named current section or display
 TRIPOD-LLM,14f,Code access,Results report Reproduction; Supplement Prompt templates and run provenance,Reported at the named current section or display
@@ -54,8 +54,8 @@ GRRAS,3,Subject population,eTable 1; Figure 3,Reported at the named current sect
 GRRAS,4,Rater population,Manuscript Methods rater credentials (author completion required),Partial: author information required
 GRRAS,5,Rationale,eMethods Blinded expert assessment,Reported at the named current section or display
 GRRAS,6,Sample size rationale,Manuscript Benchmark and assessment arms; Figure 3; eTable 1 (fixed available benchmark),Reported at the named current section or display
-GRRAS,7,Sampling,eTable 1; Manuscript Benchmark and assessment arms; eMethods Input parity and label targets; initial review identification and eligibility require author completion,Partial: within-review sampling is described; initial review selection requires author completion
-GRRAS,8,Rating process and blinding,"eMethods Blinded expert assessment; original blank form, instructions, target brief and multi-outcome judgment conventions require author completion",Partial: assessment sequence is described; original materials and target guidance require author completion
+GRRAS,7,Sampling,eTable 1; Manuscript Benchmark and assessment arms; eMethods Input parity and label targets; purposive selection and table-order sampling; search records unrecovered,Partial: author-supplied purposive selection and within-review sampling reported; search records unrecovered
+GRRAS,8,Rating process and blinding,eMethods Blinded expert assessment; same materials and task as model arms; Cochrane RoB 2 guidance; original form and multi-outcome conventions unprovided,"Partial: matched materials, task and guidance confirmed by author; original form and multi-outcome conventions unprovided"
 GRRAS,9,Independent ratings,Manuscript Independent expert references; eMethods Blinded expert assessment,Reported at the named current section or display
 GRRAS,10,Statistical methods,eMethods Independent reference and Overall,Reported at the named current section or display
 GRRAS,11,Actual sample counts,Figure 3; Table 1,Reported at the named current section or display

@@ -48,7 +48,7 @@ reporting_checklist <- function() {
     '13'='Manuscript Ethics declaration (author completion required)',
     '14a'='Manuscript Funding declaration (author completion required)',
     '14b'='Manuscript Competing interests (author completion required)',
-    '14c'='eMethods Independent reference and Overall; formal primary endpoint and exploratory analyses in Methods',
+    '14c'='eMethods Independent reference and Overall; evaluation outcomes organized after analysis without a confirmatory hierarchy in Methods',
     '14d'='Manuscript Protocol/registration statement (author confirmation required)',
     '14e'='Manuscript Data availability; Results report Reproduction',
     '14f'='Results report Reproduction; Supplement Prompt templates and run provenance',
@@ -86,22 +86,22 @@ reporting_checklist <- function() {
   map$section <- gsub('supplementary table','eTable 1',map$section,fixed=TRUE)
   map$section <- gsub('time/cost eTables','eTables 20–22',map$section,fixed=TRUE)
   map$section[map$guideline=='TRIPOD-LLM' & map$item=='5c'] <- 'Text-date coverage is not reported; author information required'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='14c'] <- 'Manuscript Statistical analysis; formal primary endpoint and exploratory analyses; protocol/archive identifier requires author confirmation'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='14c'] <- 'Manuscript Statistical analysis; evaluation outcomes organized after analysis without a confirmatory hierarchy; protocol/archive identifier requires author confirmation'
   map$section[map$guideline=='GRRAS' & map$item=='9'] <- 'Manuscript Independent expert references; eMethods Blinded expert assessment'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='5a'] <- 'eMethods Input parity and label targets; eTable 1; initial review identification and eligibility require author completion'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='8a'] <- 'eMethods Algorithms and validation; Blinded expert assessment; original blank form, instructions, target brief and multi-outcome judgment conventions require author completion'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='5a'] <- 'eMethods Input parity and label targets; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='8a'] <- 'eMethods Algorithms and validation; Blinded expert assessment; matched materials and task confirmed by author; original form and multi-outcome conventions unprovided'
   map$section[map$guideline=='TRIPOD-LLM' & map$item=='9a'] <- 'Supplement Prompt templates and run provenance; prompt design, selection and version-freeze provenance require author completion'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='9b'] <- 'Supplement Prompt templates and run provenance; eTable 1; development data and any benchmark overlap require author completion'
-  map$section[map$guideline=='GRRAS' & map$item=='7'] <- 'eTable 1; Manuscript Benchmark and assessment arms; eMethods Input parity and label targets; initial review identification and eligibility require author completion'
-  map$section[map$guideline=='GRRAS' & map$item=='8'] <- 'eMethods Blinded expert assessment; original blank form, instructions, target brief and multi-outcome judgment conventions require author completion'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='9b'] <- 'Supplement Prompt templates and run provenance; eTable 1; author reports development on ARBITER eval/ and no benchmark use; independent overlap verification pending'
+  map$section[map$guideline=='GRRAS' & map$item=='7'] <- 'eTable 1; Manuscript Benchmark and assessment arms; eMethods Input parity and label targets; purposive selection and table-order sampling; search records unrecovered'
+  map$section[map$guideline=='GRRAS' & map$item=='8'] <- 'eMethods Blinded expert assessment; same materials and task as model arms; Cochrane RoB 2 guidance; original form and multi-outcome conventions unprovided'
   map <- map |> mutate(page='Stable section/display locator',
     applicability_and_notes=case_when(
-      guideline=='TRIPOD-LLM' & item=='5a'~'Partial: initial review identification and eligibility require author completion',
-      guideline=='TRIPOD-LLM' & item=='8a'~'Partial: original annotation materials and target guidance require author completion',
+      guideline=='TRIPOD-LLM' & item=='5a'~'Partial: purposive selection reported by author; search and ranking records unrecovered',
+      guideline=='TRIPOD-LLM' & item=='8a'~'Partial: matched task and guidance reported; original form and multi-outcome conventions unprovided',
       guideline=='TRIPOD-LLM' & item=='9a'~'Partial: final templates do not establish the prompt-development process',
-      guideline=='TRIPOD-LLM' & item=='9b'~'Partial: final templates and a filled example do not establish development data',
-      guideline=='GRRAS' & item=='7'~'Partial: within-review sampling is described; initial review selection requires author completion',
-      guideline=='GRRAS' & item=='8'~'Partial: assessment sequence is described; original materials and target guidance require author completion',
+      guideline=='TRIPOD-LLM' & item=='9b'~'Partial: author attestation of separate development set; independent overlap audit pending',
+      guideline=='GRRAS' & item=='7'~'Partial: author-supplied purposive selection and within-review sampling reported; search records unrecovered',
+      guideline=='GRRAS' & item=='8'~'Partial: matched materials, task and guidance confirmed by author; original form and multi-outcome conventions unprovided',
       startsWith(section,'N/A:')~'Not applicable: fixed model and task',
       grepl('author completion|author confirmation|author information|author information required',section,ignore.case=TRUE)~'Partial: author information required',
       TRUE~'Reported at the named current section or display'))

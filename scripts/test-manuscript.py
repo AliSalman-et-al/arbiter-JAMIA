@@ -76,6 +76,13 @@ class ManuscriptStructure(unittest.TestCase):
                       if any(start <= m.start() < end for start, end, _ in spans)]
         self.assertEqual(classified, ['2'])
 
+    def test_search_year_metadata_is_limited_to_eligibility_statement(self):
+        text = 'Europe PMC for 2025–2026 meta-analyses; 2025 assessments and 2026 results.'
+        spans = self.numbers.metadata_spans(text)
+        classified = [m.group() for m in self.numbers.NUMBER.finditer(text)
+                      if any(start <= m.start() < end for start, end, _ in spans)]
+        self.assertEqual(classified, ['2025', '2026'])
+
 
 class ManuscriptPage(unittest.TestCase):
     def setUp(self):

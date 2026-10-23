@@ -10,6 +10,7 @@ import importlib.util
 from pathlib import Path
 import re
 import subprocess
+import sys
 import tempfile
 
 from docx import Document
@@ -181,6 +182,11 @@ def build():
             wrapper.append(table)
         styles = '<style>.supplement-table table {min-width:36rem; width:100%} .supplement-table td, .supplement-table th {padding:.45rem .65rem} .supplement-table img {max-width:100%; height:auto} main img {max-width:100%; height:auto}</style>'
         (GENERATED / 'supplement-page.md').write_text(raw_html(styles + serialize(root)), encoding='utf-8')
+        # Quarto parses every project include even when rendering a single page.
+        # On a clean checkout, create the manuscript include only after the two
+        # report includes exist; the HTML-only helper does not rewrite Word.
+        if not (GENERATED / 'manuscript-page.md').is_file():
+            run(sys.executable, ROOT / 'scripts/build-manuscript.py', '--html-only')
         for page in ('results', 'supplement'):
             run('quarto', 'render', f'{page}.qmd')
         results = verify_page(ANALYSIS / 'results.html', [OUT / f'Table{i}.docx' for i in range(1, 4)], 3, [(OUT / f'Figure{i}.png').read_bytes() for i in range(1, 6)])

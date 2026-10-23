@@ -6,7 +6,7 @@ log <- character()
 record <- function(x) {cat(x,'\n');log <<- c(log,x)}
 inputs <- load_inputs()
 record('PASS loader: 102 trials, 510 unique cells per expert; all 3060 workbook source labels match arm exports (including paired missing values).')
-# Independent base-R recomputation from the workbook, without primary-analysis helpers.
+# Independent base-R recomputation from the workbook, without conditional-choice analysis helpers.
 a <- readxl::read_xlsx('../human-adjudication/adjudication-with-explanations-1.xlsx',sheet='Adjudications',col_types='text')
 b <- readxl::read_xlsx('../human-adjudication/adjudication-with-explanations-2.xlsx',sheet='Adjudications',col_types='text')
 i <- match(paste(a$Trial,a$Domain),paste(b$Trial,b$Domain))
@@ -134,7 +134,7 @@ record('PASS results sentences and figure legends exactly regenerate from final 
 primary_display <- primary_endpoint_table()
 stopifnot(identical(as.matrix(primary_display),as.matrix(readr::read_csv('output/tables/display-table2.csv',show_col_types=FALSE,na=character(),col_types=readr::cols(.default='c')))),nrow(primary_display)==4L,
   identical(sub(' .*','',primary_display[[2]]),c('53/60','63/80','61/80','53/80')))
-record('PASS Table 2: formal conditional endpoint and three core sensitivities reproduce from numerical exports.')
+record('PASS Table 2: conditional blinded-label choices and three core sensitivities reproduce from numerical exports.')
 questions <- question_difference_plot()$data
 all_questions <- question_difference_plot(TRUE)$data
 stopifnot(all(questions$n>=20L),all(as.character(questions$level)=='Collapsed'),
@@ -179,7 +179,7 @@ for(path in list.files('output/tables',pattern='^display-supplement-.*[.]csv$',f
 }
 entries <- supplement_entries(inputs)
 for(e in entries) {
-  slug <- tolower(gsub('[^A-Za-z0-9]+','-',e$title))
+  slug <- supplement_display_slug(e$title)
   saved <- readr::read_csv(paste0('output/tables/display-supplement-',slug,'.csv'),
     show_col_types=FALSE,col_types=readr::cols(.default='c'),na=character())
   if(!identical(names(saved),names(e$data)) || !identical(as.matrix(saved),as.matrix(e$data)))
@@ -202,9 +202,15 @@ for(path in c('output/tables/avatar-trace-answers.csv','output/tables/avatar-tra
   x <- readr::read_csv(path,show_col_types=FALSE,col_types=readr::cols(.default='c'))
   values <- unique(na.omit(as.character(unlist(x))))
   values <- gsub('\\s+',' ',values,perl=TRUE)
-  stopifnot(all(vapply(values,function(v) grepl(v,supplement_text,fixed=TRUE),logical(1))))
+  # Long evidence quotes span labelled continuation paragraphs. Remove only
+  # those exact source-handle labels, retaining every character of quote text.
+  trace_text <- supplement_text
+  if('Full verbatim quote' %in% names(x)) for(handle in unique(x[[1]]))
+    trace_text <- gsub(paste0('Context: ',handle,' (quote continued)'),'',trace_text,fixed=TRUE)
+  trace_text <- gsub('\\s+',' ',trace_text,perl=TRUE)
+  stopifnot(all(vapply(values,function(v) grepl(v,trace_text,fixed=TRUE),logical(1))))
 }
-record('PASS every AVATAR answer, rationale and full evidence-record field occurs in the supplement.')
+record('PASS every AVATAR answer, rationale and full evidence-record field occurs in the supplement, retaining full quotes across labelled continuations.')
 record('PASS all supplementary and reporting-map display rows occur in their Word documents in CSV column order.')
 record('PASS all three Word tables contain every corresponding display-CSV cell.')
 html_text <- function(path) {
@@ -257,6 +263,9 @@ reader <- c(list.files('output/manuscript',pattern='results-sentences[.]md$|figu
 for(f in reader) {
   txt <- paste(readLines(f,warn=FALSE),collapse='\n')
   stopifnot(!grepl('(?i)\\b(?:no-kit|meta label|vindicated|decisive|over-flagging)\\b|A/Z',txt,perl=TRUE))
+  # These generated summaries contain no verbatim trial quotations. Clinical
+  # endpoint designations in the complete worked trace retain their source wording.
+  stopifnot(!grepl('(?i)formal primary|primary endpoint|prespecified secondary|confirmatory endpoint',txt,perl=TRUE))
 }
 record('PASS generated Results, legends and main-table reader text has no retired-design labels. Source quotations and immutable artwork are covered by the rebuild QA record.')
 writeLines(log,'provenance/output-verification.txt')
@@ -303,7 +312,7 @@ contexts <- bind_rows(lapply(names(reader_strings),function(name) {
   s <- reader_strings[[name]]
   pos <- gregexpr('(?i)\\b(first|composite|accuracy)\\b',s,perl=TRUE)[[1]]
   if(identical(as.integer(pos),-1L)) return(tibble())
-  tibble(document=name,context=vapply(pos,function(p) substr(s,max(1,p-80),p+120),character(1)))
+  tibble(document=name,context=vapply(pos,function(p) trimws(substr(s,max(1,p-80),p+120)),character(1)))
 }))
 readr::write_csv(contexts,'provenance/rebuild-leak-contexts.csv')
 stopifnot(!grepl('(?i)\\b(first|composite|accuracy)\\b',reader_strings$results_sentences,perl=TRUE))

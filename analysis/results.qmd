@@ -17,4 +17,4 @@ ARBITER is an available workflow that separates model interpretation from execut
 
 ## Reproduction
 
-The [study repository](https://github.com/AliSalman-et-al/arbiter-JAMIA) contains the analysis pipeline, test suite, numerical exports and output verifier. [Supplementary methods and results](supplement.html) provide secondary estimates, full question-level panels, prompts, the worked trace and reporting locations. Trial PDFs are not redistributed.
+The [study repository](https://github.com/AliSalman-et-al/arbiter-JAMIA) contains the analysis pipeline, test suite, numerical exports and output verifier. [Supplementary methods and results](supplement.html) provide supporting estimates, full question-level panels, prompts, the worked trace and reporting locations. Trial PDFs are not redistributed.

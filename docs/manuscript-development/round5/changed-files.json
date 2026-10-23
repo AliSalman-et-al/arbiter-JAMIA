@@ -1,0 +1,98 @@
+{
+  "analysis/output/tables/display-supplement-reporting-map.csv": {
+    "before_sha256": "2b5c4bec75cef84c16246484af0e92a357c393d6acf914498e346a06c37f0c0c",
+    "after_sha256": "7b7064945b24afea1abec2b05e02dcb7e8a46c3e12189b7ca014bfe9a5d7ce15"
+  },
+  "analysis/output/tables/reporting-checklist-skeleton.csv": {
+    "before_sha256": "06cbd10e3fd6645b80b273e1ea3c0c530f4130b0948343b1eed579be136ca12e",
+    "after_sha256": "4bf38a77f88ab2ef10f87c29fe77ce3716ac7e0946eb3d78e37f715227451382"
+  },
+  "analysis/output/manuscript/Figure3.png": {
+    "before_sha256": "cd849a6144f4f1549852f27e3ed17ae5415a66f4765cdb5c57e2eb6a506e6b6a",
+    "after_sha256": "75eceefae8ba2a14fb906fc8e2ae725441e38e7d9362792f40161dc51e0deaf7"
+  },
+  "analysis/output/manuscript/Figure3.tiff": {
+    "before_sha256": "9ce828555fc4cc3445e4674aa3d03e6ef186b5873829cea8bdcccc526c17527a",
+    "after_sha256": "36764cc0f1a02f84d48e284802bfcf69744ead905eda3c14de3ad2229ee27bcb"
+  },
+  "analysis/output/manuscript/Supplement.docx": {
+    "before_sha256": "1d35215f5bede9afa2b89729457f271e62bf57edf6c18e9594d3f416c0462cc7",
+    "after_sha256": "878d6609bde7335f00190aba4215f3424eb6c7e11fd8ebf3a67dea8102254c37"
+  },
+  "analysis/output/manuscript/figure-legends.md": {
+    "before_sha256": "edf58c45f6b1118839abc26adf2f631e5fd22f599c8b32b336046019f3d84a5b",
+    "after_sha256": "fbe60749fcb1e4c322496c56f41e6218a340527d7dd11fe22f1ad664d87862b7"
+  },
+  "analysis/output/manuscript/Table2.docx": {
+    "before_sha256": "c09d2e4846c858164ced0b2f18805b12994cdc35011ee2f0dc29751c728e4d7a",
+    "after_sha256": "427182dd9c164f9e2c555653d7ce8d2c1f2a05e928bc7074a8194dadca70a165"
+  },
+  "analysis/output/manuscript/TRIPOD-LLM.docx": {
+    "before_sha256": "9a3fbd6267de10247b417c59298bc73ba916368ab628be2c58c4fd38ba3440ae",
+    "after_sha256": "04cc3f21c89a4c13ed5041307a6762f0900bad7f0937769266ffafab0cb72fe4"
+  },
+  "analysis/output/manuscript/Figure3.pdf": {
+    "before_sha256": "2d63fff34bd1d0583945b5bde45a986fcdeb3f2b9f04cf1f2572f2fabe46131f",
+    "after_sha256": "402a20882c0fb76bb8f2a4b989afd3ee29883588d0b5c56b1943b07d6a29506b"
+  },
+  "analysis/output/manuscript/results-sentences.md": {
+    "before_sha256": "2c3b138c48f3a4b935913fe34183ee02294c9b304204712fd0a90fbbbe187d82",
+    "after_sha256": "ed4e8c4cb5c69743962f965a311b48acc1a56a0a1a964234aaa85783226f58c6"
+  },
+  "analysis/output/figures/figure3.png": {
+    "before_sha256": "266a34987312852014d934c372547914f92ecd1735d7155a9692cc0292fdebdd",
+    "after_sha256": "75eceefae8ba2a14fb906fc8e2ae725441e38e7d9362792f40161dc51e0deaf7"
+  },
+  "analysis/output/figures/figure3.pdf": {
+    "before_sha256": "125ec000a6dc5d90ac3f622504c63275cd32c10defc3ead3fb24bfc2991641f6",
+    "after_sha256": "402a20882c0fb76bb8f2a4b989afd3ee29883588d0b5c56b1943b07d6a29506b"
+  },
+  "analysis/.quarto/results-page.md": {
+    "before_sha256": "065c4638a1baf89a89cc3f44ef019e3f7ade29ec3fa5ab0abcec5471b3d4f55f",
+    "after_sha256": "8e701be29c460bff8b2adc8d0f9b08d68c98bb04efc154e84f9258a43b132650"
+  },
+  "analysis/.quarto/supplement-page.md": {
+    "before_sha256": "60e88ba7e98cbfc17136466e3f47aaa785c00f35e4da306821adab28b50132ae",
+    "after_sha256": "e42a87322c6cdc34ae6ecfbcd4a1231f448c6071a68c7ae1355e8d8c538a4423"
+  },
+  "analysis/results.html": {
+    "before_sha256": "f06e71f685905843fb239e27ab5e5b821b4d7503fcdb7077495df159b1259a67",
+    "after_sha256": "f84a282e46ca94acdcdcb5760301664a6ee5b2683c5fd9d81bbbdc3554c7ff54"
+  },
+  "analysis/supplement.html": {
+    "before_sha256": "6bbc399f3f328a099eb646010c91bbfb54b8b7907d29d4b92fbde3a47b5b90fe",
+    "after_sha256": "cf79e4a7d6f15abb3c62b981a284ab05c3018041ce9d0c7018ac75c2706b5e2d"
+  },
+  "analysis/R/expert-agreement.R": {
+    "before_sha256": "5ea5cb1f839631d545346822cdd44c372bc1c63c474e3b57cbb30e73530ca644",
+    "after_sha256": "fa99bc670980f81d770b23e0de744aac01d4c89c7eef1917065d647e86bcb188"
+  },
+  "analysis/R/manuscript-supplement.R": {
+    "before_sha256": "f312d743b36978608fe7d42e526c4d599dbba81748647b742e3b225ed7883cbb",
+    "after_sha256": "21b925177befcc47873632d9a2f92711dc318a188f5026f0297d1de1bc58ae12"
+  },
+  "analysis/R/display-numbering.R": {
+    "before_sha256": "b925d831b7adb0acebf7a1768d0e3683e16c95da6bb7815fce489b6a3a82190d",
+    "after_sha256": "11e00e7e06165a4172db1a0fa5cadeef943cbead797c7a71b8f5bad139c49769"
+  },
+  "analysis/R/results-sentences.R": {
+    "before_sha256": "c4ac74bb624cb394a4e276ecfab68ce23290b4266844b6eff03bcc3150f377f7",
+    "after_sha256": "dd94f6b0c2f3c91ccb477afc47c79b302cc4c4fb555a54ee42950dbc0272be16"
+  },
+  "analysis/R/manuscript-figures.R": {
+    "before_sha256": "cdadaa7721231dcd5825d7d0768396192f23729c3c64e524e038c5b401806191",
+    "after_sha256": "7808d9afef3dbc3b6b93eabd61390fe341df469eb1eae4f59069f36cbf673872"
+  },
+  "analysis/R/displays.R": {
+    "before_sha256": "1b5d9a6dc36997b22184d125c77ab15a45037703075bda244c6a33abd270f59b",
+    "after_sha256": "3d6ed1ad7e60f794fb087da33bd211ec6e2cd57e4061762f090d3ea7f65a549c"
+  },
+  "analysis/R/manuscript-legends.R": {
+    "before_sha256": "a05189d378bec337e8a18d46cef0e933658fe749fe178e0809ddc210bccfe0e7",
+    "after_sha256": "b4c866e31076162236d9c03b4a9771193a3b44ffd50e589b97e478ac2c7ad5b5"
+  },
+  "analysis/R/checklist.R": {
+    "before_sha256": "6f664435ec7e84f1f2562ef47e04e39acf7db155027cc077f4a903bbacf2866f",
+    "after_sha256": "1822614bf92cf40c687d9f5db140f338884dd198b5f765c227dce2d96812989e"
+  }
+}

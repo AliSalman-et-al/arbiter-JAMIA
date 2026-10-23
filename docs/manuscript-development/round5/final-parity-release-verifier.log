@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "unchanged_sources": 97,
+  "approved_documentary_updates": 12,
+  "references_in_first_use_order": 23,
+  "display_csv_cells_in_both_formats": 79,
+  "embedded_word_tables_equal_standalone": 3,
+  "figures_with_alt_text": 5
+}

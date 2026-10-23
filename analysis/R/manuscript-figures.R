@@ -36,13 +36,13 @@ study_flow_plot <- function(cells) {
   nodes <- tibble(x=c(5,5,2.5,7.5,5,2.5,7.5,6.2,8.8),y=c(12,10.5,8.7,8.7,6.9,4.6,4.6,2.2,2.2),
     w=c(7.8,8.6,4.5,4.5,7.3,4.5,4.5,2.3,2.3),h=c(.8,1,1.2,1.2,.9,1.8,1.8,1,1),
     label=c('105 benchmark trials; 3 unsupported designs excluded',
-      '102 trials from 16 reviews; identical supplied trial files\nSame Sonnet model; one run per arm',
+      '102 trials from 16 reviews; identical supplied trial files\nSame model identifier; one run per arm',
       'ARBITER complete workflow\nGuidance, tools and rule application',
       'Unassisted comparator\nMinimal task and format prompt',
       'Paired arm outputs: 102 trials × five domains = 510 cells',
       'Full-cohort comparison: all 510 cells\nEach expert independently records ratings\nand answers before viewing labels; no AI',
-      'Conditional primary endpoint: 80 cells\nwhere arm labels differ; experts then\nchoose among randomly ordered labels',
-      '60 agreed choices\n53 favor ARBITER',
+      'Conditional label choice: 80 cells\nwhere arm labels differ; experts then\nchoose among randomly ordered labels',
+      '60 agreed choices\n53 match ARBITER',
       '20 split choices\nSensitivity analyses'))
   edges <- tibble(x=c(5,2.5,7.5,2.5,7.5,5,2.5,7.5,6.2,8.8),y=c(11.6,9.65,9.65,8.1,8.1,7.65,6,6,3.2,3.2),
     xend=c(5,2.5,7.5,2.5,7.5,5,2.5,7.5,6.2,8.8),yend=c(11,9.3,9.3,7.65,7.65,7.35,5.5,5.5,2.7,2.7))
@@ -132,7 +132,7 @@ primary_forest_plot <- function() {
   x <- all |> filter(metric=='ARBITER') |>
     mutate(row=c('Agreed choice','Expert 1','Expert 2','Split cells counted as losses','ARBITER stricter','ARBITER more lenient'),
       y=c(8,6,5,4,2,1),text=paste0(count,'/',n,' (Unassisted ',all$count[all$metric=='Unassisted'],')'))
-  headers <- tibble(y=c(9,7,3),label=c('Primary (agreed choice)',
+  headers <- tibble(y=c(9,7,3),label=c('Agreed label choices',
     'Sensitivity (each expert; split cells counted as losses)','Exploratory strata'))
   ggplot2::ggplot(x,ggplot2::aes(estimate,y))+
     ggplot2::geom_vline(xintercept=.5,linetype='dashed',color='grey65')+

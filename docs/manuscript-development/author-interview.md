@@ -28,6 +28,14 @@ The read-only repository audit found no adequate answers for assessor instructio
 
 ## Next decisions depend on these facts
 
+## Author clarifications superseding earlier open items — latest round
+
+- Experts received the same trial materials, supplements and ClinicalTrials.gov records as the two model arms, and the same assessment task specifying the outcome(s), contrast and numerical anchor. They had access to Cochrane RoB 2 guidance. They were published researchers from BEACON Lab. This does not specify individual degrees, prior RoB 2 experience, training/calibration, or how multi-outcome targets were combined. Report the supplied description without inventing those details. Prior manuscript statements that experts could consult additional sources are not supported by this clarification; replace them with the confirmed input account unless separate evidence requires a distinction about permission versus actual use.
+- Development used the ARBITER `eval/` set; the benchmark set was not used in development, according to the author. Verify available records and distinguish author attestation from an independent overlap audit.
+- The author explicitly rejects the existing primary/secondary designations as arbitrary and authorizes relabeling for the manuscript. This supersedes all earlier instructions to retain formal primary status. Recommended implementation: describe evaluation outcomes without a primary/secondary or confirmatory hierarchy, order Published exact agreement before independent-expert agreement, then conditional blinded-label choices and other checks. Preserve calculations and conditional denominators. Do not retroactively claim prospective specification. Preserve historical plans as historical evidence; document the manuscript reorganization as an author-directed reporting change after analysis.
+
+The unanswered individual expertise/training details and author declarations remain pending; they do not prevent revising the confirmed methods and editorial organization.
+
 - Assessor targets and procedures determine how strongly comparisons can be described as matched assessments.
 - Development overlap and benchmark selection determine reporting of evaluation independence and generalizability.
 - Exclusion rationale requires documentary reconciliation; do not change the analysis set on inference alone.

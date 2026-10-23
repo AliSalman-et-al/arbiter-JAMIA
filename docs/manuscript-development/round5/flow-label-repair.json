@@ -1,0 +1,12 @@
+{
+  "baseline_commit": "343febaecae7ba506f8f520a7a5524c5ba154555",
+  "baseline_pdf_sha256": "2d63fff34bd1d0583945b5bde45a986fcdeb3f2b9f04cf1f2572f2fabe46131f",
+  "changes": {
+    "Same Sonnet model; one run per arm": "Same model identifier; one run per arm",
+    "Conditional primary endpoint: 80 cells": "Conditional label choice: 80 cells",
+    "53 favor ARBITER": "53 match ARBITER"
+  },
+  "numeric_text_unchanged": true,
+  "vector_operations": "All original nontext drawing operations retained; only three text strings and local centering offsets changed.",
+  "raster_note": "PNG/TIFF rerendered from vector PDF at original pixel dimensions; raster bytes differ."
+}

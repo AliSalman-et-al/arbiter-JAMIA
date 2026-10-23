@@ -51,7 +51,7 @@ binary_difference_display <- function(x) {
 table2_note <- function() paste(
   'Cells show exact agreement n/N (%) and linearly weighted κ. Differences are ARBITER − Unassisted exact agreement in percentage points (95% CI).',
   'D1–D5 uses all 510 cells. Overall uses the same 81 trials with an observed Published Overall for every source and expert-to-expert comparison; 21 missing published labels are excluded.',
-  'Independent domain comparisons are prespecified; expert-derived Overall comparisons are exploratory. Full estimates, mean-of-experts and agreed-reference analyses are in the supplement. Binary sensitivity and specificity are exploratory and reported separately.',CI_NOTE)
+  'Domain and derived Overall comparisons are evaluation outcomes without a formal endpoint hierarchy. Overall is derived from independent domain ratings. Full estimates, mean-of-experts, agreed-reference and binary comparisons are in the supplement.',CI_NOTE)
 compact_expert_table <- function(independent,paired,reliability) {
   published <- read_display('table1')
   pubdiff <- read_display('table1-differences')
@@ -111,9 +111,10 @@ benchmark_context_table <- function(inputs) {
   x <- characteristics_table(inputs)
   x |> filter(!grepl('Overall|Expert-to-expert|D1–D5: (ARBITER|Unassisted)',Characteristic))
 }
+# Legacy reader name and CSV key retained for provenance; conditional choices only.
 primary_endpoint_table <- function() {
   x <- read_display('primary-endpoint') |> filter(metric=='ARBITER',analysis %in% c('Consensus','Expert 1','Expert 2','Split sensitivity'))
-  x |> transmute(Population=recode(analysis,Consensus='Agreed choices (formal primary)',`Split sensitivity`='All splits counted against ARBITER'),
+  x |> transmute(Population=recode(analysis,Consensus='Agreed choices',`Split sensitivity`='All splits counted against ARBITER'),
     `ARBITER, No./total (%) (95% CI)`=fmt_estimate(x,TRUE))
 }
 process_integrity_table <- function() {
@@ -136,10 +137,10 @@ build_main_tables <- function(inputs) {
   table2 <- primary_endpoint_table()
   read_display('table1');read_display('table1-differences');read_display('table3')
   tables <- list(benchmark_context_table(inputs),table2,process_integrity_table())
-  titles <- c('Benchmark and reference context','Conditional primary endpoint and core sensitivities',
+  titles <- c('Benchmark and reference context','Conditional blinded-label choices and sensitivities',
     'Process checks and computational resources')
   notes <- c('Reference categories are Low, Some concerns and High; each reference contributes 510 domain cells. Document counts are trials with each role recorded in the source inventory among 102 trials; roles can overlap. SAP, statistical analysis plan. Detailed distributions for all sources and derived Overall appear in the supplement.',
-    paste('The formal primary endpoint conditions on 80 arm-discordant cells and the 60 for which the experts made an agreed choice; 20 choices split. Expert-specific sensitivities use all 80. The final row counts all 20 splits against ARBITER by assumption, without assigning Unassisted wins. Expert 1 chose neither arm in 4/80 cells; this is distinct from the split-loss assumption.',CI_NOTE),
+    paste('Conditional blinded-label choice evaluation includes 80 arm-discordant cells and the 60 for which the experts made an agreed choice; 20 choices split. Expert-specific sensitivities use all 80. The final row counts all 20 splits against ARBITER by assumption, without assigning Unassisted wins. Expert 1 chose neither arm in 4/80 cells; this is distinct from the split-loss assumption.',CI_NOTE),
     paste('Unassisted rule-break cells show No./total (%; 95% CI); CI bounds are percentages. Domain rules use evaluable ratings (ARBITER 510; Unassisted 509); one Unassisted cell is unevaluable. Evidence denominators count active answers or distinct evidence records as indicated; verifier denominator is 102 bundles. ARBITER has no recorded domain overrides; one Overall escalation is permitted. Evidence checks establish quotation occurrence and structural binding, without assessing answer support. Runtime and API list-price equivalents use 102 paired trials; source summaries are median (IQR), contrasts are paired mean differences. Cost is a frozen-rate equivalent, not expenditure. — means not applicable; Not available means not measured.',CI_NOTE))
   readr::write_csv(display_numbering(),'output/manuscript/qa/display-numbering.csv')
   for(i in 1:3) {

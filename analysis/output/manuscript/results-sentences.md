@@ -1,8 +1,10 @@
 The benchmark included 102 trials from 16 reviews and 510 domain cells after exclusion of three unsupported designs (Figure 3; Table 1). Both experts independently assessed every cell.
 
-The formal primary endpoint favored ARBITER in 53/60 agreed choices (88%; 95% CI, 80–96%). These 60 agreed choices arose from 80 arm-discordant cells, with 20 split choices. Expert-specific and split-loss sensitivities are in Table 2.
+Against Published across all 510 cells, exact agreement is 386/510 (75.7%) for ARBITER versus 395/510 (77.5%) for Unassisted, a paired difference of −1.8 points (95% CI, −5.1 to 1.6).
 
-Expert 1: ARBITER 371/510 (72.7%) versus Unassisted 332/510 (65.1%); paired gain 7.6 (5.1–10.2) percentage points. Expert 2: ARBITER 433/510 (84.9%) versus Unassisted 400/510 (78.4%); paired gain 6.5 (3.5–9.4) percentage points. Figure 4 shows absolute levels and paired gains, with the largest observed gains in D5. D3 remains strongly reference-dependent: ARBITER matches 43/102 ratings from Expert 1 and 80/102 from Expert 2. The experts agree on 54/102 D3 cells. Against Published across all 510 cells, agreement is 386/510 (75.7%) versus 395/510 (77.5%), a paired difference of −1.8 points (95% CI, −5.1 to 1.6).
+Expert 1: ARBITER 371/510 (72.7%) versus Unassisted 332/510 (65.1%); paired gain 7.6 (5.1–10.2) percentage points. Expert 2: ARBITER 433/510 (84.9%) versus Unassisted 400/510 (78.4%); paired gain 6.5 (3.5–9.4) percentage points. Figure 4 shows absolute levels and paired gains, with the largest observed gains in D5. D3 remains strongly reference-dependent: ARBITER matches 43/102 ratings from Expert 1 and 80/102 from Expert 2. The experts agree on 54/102 D3 cells.
+
+Conditional blinded-label choices favored ARBITER in 53/60 agreed choices (88%; 95% CI, 80–96%). These 60 agreed choices arose from 80 arm-discordant cells, with 20 split choices. Expert-specific and split-loss sensitivities are in Table 2.
 
 Figure 5 distinguishes five-level from collapsed signalling-answer agreement on paired eligible components. In D3 against Expert 1, the five-level difference is −10.3 points (95% CI, −17.2 to −3.2), whereas the collapsed difference is +8.5 (3.5–13.7), both on 165 components. D5 collapsed gains are +11.3 points for Expert 1 and +3.7 (−0.3 to 7.4) for Expert 2. The supplement retains every question and source-specific denominator.
 

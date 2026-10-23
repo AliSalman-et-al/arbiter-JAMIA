@@ -1,0 +1,151 @@
+{
+  "status": "PASS",
+  "numerical_tables_byte_identical": 58,
+  "all_word_and_figure_bytes_unchanged_from_task_entry": true,
+  "output_changes": [
+    "analysis/output/tables/display-table2.csv",
+    "analysis/output/tables/display-source-trace.csv"
+  ],
+  "csv_changes": {
+    "analysis/output/tables/display-source-trace.csv": {
+      "old_sha256": "aca7a089a5ce3efd530490d30bb1ad6e1aabecca9bd63adb31b08da5cfe0ff08",
+      "new_sha256": "41c41a026a7acb925f93df4c329fd5bab4e43cfa22d671cc46000bb0c6656708",
+      "changed_cells": [
+        {
+          "csv_row_including_header": 40438,
+          "column": 3,
+          "old": "/arbiter-assess Assess risk of bias for {outcome} defined as {definition} in {trial}.",
+          "new": "/rob2-assess Assess risk of bias for {outcome} defined as {definition} in {trial}."
+        },
+        {
+          "csv_row_including_header": 40439,
+          "column": 3,
+          "old": "/arbiter-assess Assess risk of bias for Adverse events graded by CTCAE v4.0; 'Grade 3 (severe AEs)' row of Table 3; patients with grade 3 events in Table 4 defined as Table 3 Grade 3 (severe AEs) number of AEs: 600 mg 6, 900 mg 5, 1,200 mg 9 (all subjects 20); Grade 4: 0; Grade 5 (death): 1 per arm. Table 4 total no. of patients with grade 3 events: 2, 4, 5. Abstract: 'Grade 3 adverse events occurred in only 2 patients in the 600-mg arm, 4 patients in the 900-mg arm, and 5 patients in the 1,200-mg arm.' in aarnoutse-2017.",
+          "new": "/rob2-assess Assess risk of bias for Adverse events graded by CTCAE v4.0; 'Grade 3 (severe AEs)' row of Table 3; patients with grade 3 events in Table 4 defined as Table 3 Grade 3 (severe AEs) number of AEs: 600 mg 6, 900 mg 5, 1,200 mg 9 (all subjects 20); Grade 4: 0; Grade 5 (death): 1 per arm. Table 4 total no. of patients with grade 3 events: 2, 4, 5. Abstract: 'Grade 3 adverse events occurred in only 2 patients in the 600-mg arm, 4 patients in the 900-mg arm, and 5 patients in the 1,200-mg arm.' in aarnoutse-2017."
+        },
+        {
+          "csv_row_including_header": 40747,
+          "column": 3,
+          "old": "eMethods Input parity and label targets; supplementary table",
+          "new": "eMethods Input parity and label targets; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered"
+        },
+        {
+          "csv_row_including_header": 40762,
+          "column": 3,
+          "old": "eMethods Algorithms and validation; Blinded expert assessment",
+          "new": "eMethods Algorithms and validation; Blinded expert assessment; matched materials and task confirmed by author; original form and multi-outcome conventions unprovided"
+        },
+        {
+          "csv_row_including_header": 40765,
+          "column": 3,
+          "old": "Supplement Prompt templates and run provenance",
+          "new": "Supplement Prompt templates and run provenance; prompt design, selection and version-freeze provenance require author completion"
+        },
+        {
+          "csv_row_including_header": 40766,
+          "column": 3,
+          "old": "Supplement Prompt templates and run provenance; supplementary table",
+          "new": "Supplement Prompt templates and run provenance; eTable 1; author reports development on ARBITER eval/ and no benchmark use; independent overlap verification pending"
+        },
+        {
+          "csv_row_including_header": 40773,
+          "column": 3,
+          "old": "eMethods Independent reference and Overall; formal primary endpoint and exploratory analyses in Methods",
+          "new": "eMethods Independent reference and Overall; evaluation outcomes organized after analysis without a confirmatory hierarchy in Methods"
+        },
+        {
+          "csv_row_including_header": 40797,
+          "column": 3,
+          "old": "supplementary table; benchmark README-FOR-ALI.md",
+          "new": "eTable 1; Manuscript Benchmark and assessment arms; eMethods Input parity and label targets; purposive selection and table-order sampling; search records unrecovered"
+        },
+        {
+          "csv_row_including_header": 40798,
+          "column": 3,
+          "old": "eMethods Blinded expert assessment",
+          "new": "eMethods Blinded expert assessment; same materials and task as model arms; Cochrane RoB 2 guidance; original form and multi-outcome conventions unprovided"
+        },
+        {
+          "csv_row_including_header": 40811,
+          "column": 3,
+          "old": "Reported at the named display or supplement location.",
+          "new": "Partial: purposive selection reported by author; search and ranking records unrecovered"
+        },
+        {
+          "csv_row_including_header": 40826,
+          "column": 3,
+          "old": "Reported at the named display or supplement location.",
+          "new": "Partial: matched task and guidance reported; original form and multi-outcome conventions unprovided"
+        },
+        {
+          "csv_row_including_header": 40829,
+          "column": 3,
+          "old": "Reported at the named display or supplement location.",
+          "new": "Partial: final templates do not establish the prompt-development process"
+        },
+        {
+          "csv_row_including_header": 40830,
+          "column": 3,
+          "old": "Reported at the named display or supplement location.",
+          "new": "Partial: author attestation of separate development set; independent overlap audit pending"
+        },
+        {
+          "csv_row_including_header": 40861,
+          "column": 3,
+          "old": "Reported at the named display or supplement location.",
+          "new": "Partial: author-supplied purposive selection and within-review sampling reported; search records unrecovered"
+        },
+        {
+          "csv_row_including_header": 40862,
+          "column": 3,
+          "old": "Reported at the named display or supplement location.",
+          "new": "Partial: matched materials, task and guidance confirmed by author; original form and multi-outcome conventions unprovided"
+        }
+      ]
+    },
+    "analysis/output/tables/display-table2.csv": {
+      "old_sha256": "624cb773f3ff33004dea0e3917edd7663c91259b54311bae7fc35d48be31cb64",
+      "new_sha256": "8d6ddb1826833c6da889626f5f04553a5619145fb6de7ac6457f0e5c3ff3e552",
+      "changed_cells": [
+        {
+          "csv_row_including_header": 1,
+          "column": 0,
+          "old": "Agreed choices (formal primary)",
+          "new": "Agreed choices"
+        }
+      ]
+    }
+  },
+  "owned_existing_file_changes": {
+    "analysis/R/manuscript-supplement.R": {
+      "entry_sha256": "21b925177befcc47873632d9a2f92711dc318a188f5026f0297d1de1bc58ae12",
+      "final_sha256": "2f7286d6a9a1d79f29b628f3960316e00825f18271867ecd4bdb8b66cebc6d7b"
+    },
+    "analysis/verify-output.R": {
+      "entry_sha256": "4febd2ada6c9a7937f0e9ce4cd07e05543060c45479047861e6a91077f457115",
+      "final_sha256": "f2978abded8fa7628f8bd15137fd8473c24e187f7055d1b329f7e334934cc9de"
+    },
+    "analysis/output/tables/display-source-trace.csv": {
+      "entry_sha256": "aca7a089a5ce3efd530490d30bb1ad6e1aabecca9bd63adb31b08da5cfe0ff08",
+      "final_sha256": "41c41a026a7acb925f93df4c329fd5bab4e43cfa22d671cc46000bb0c6656708"
+    },
+    "analysis/output/tables/display-table2.csv": {
+      "entry_sha256": "624cb773f3ff33004dea0e3917edd7663c91259b54311bae7fc35d48be31cb64",
+      "final_sha256": "8d6ddb1826833c6da889626f5f04553a5619145fb6de7ac6457f0e5c3ff3e552"
+    },
+    "docs/manuscript-development/verify-release.py": {
+      "entry_sha256": "1ae556723a7473bd281348661603ed2ff0d8b253968faabe7c4dba9ebb542bfa",
+      "final_sha256": "ef7251c58388c3855cfb7b753a910eb678a4881ce91c6b74a83084b07714884d"
+    },
+    "docs/manuscript-development/round5/documentary-updates.json": {
+      "entry_sha256": "cd9b61e85081d62e2a56296c3e55822d0fdae7e029c4821c5c7f6781fd702cad",
+      "final_sha256": "b34eef668e457bfbb5b5545b8cba0f5a49fd25b47a762bb98ff4c9bdd44fe831"
+    }
+  },
+  "main_word_sha256": "ef5cf5e5e49a668f6ab60a32f639cfeaa8347dcbf26615a48ec35862f66a26c3",
+  "baseline_file_sha256": "346c3be6806ff39e12cf9eaf0ebfb92afdc28e423390c27042610a7d40262dfe",
+  "full_r_verifier_exit": 0,
+  "release_verifier_exit": 0,
+  "number_audit_exit": 0,
+  "manuscript_tests": "9 tests; 1 skipped; no failures"
+}
