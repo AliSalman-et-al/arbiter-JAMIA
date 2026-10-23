@@ -4,7 +4,7 @@ TRIPOD-LLM,2,Abstract,Manuscript abstract; Manuscript Results,Reported at the na
 TRIPOD-LLM,3a,Context,Manuscript Background and significance,Reported at the named current section or display
 TRIPOD-LLM,3b,Intended users,Manuscript Background and significance; eMethods Interpretive limits,Reported at the named current section or display
 TRIPOD-LLM,4,Objectives,eMethods Blinded expert assessment,Reported at the named current section or display
-TRIPOD-LLM,5a,Data sources,"eMethods Input parity and label targets; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered",Partial: purposive selection reported by author; search and ranking records unrecovered
+TRIPOD-LLM,5a,Data sources,"eMethods Input parity and label targets; Benchmark construction and exclusions; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered",Partial: purposive selection reported by author; search and ranking records unrecovered
 TRIPOD-LLM,5b,Data distribution,Supplement section 1 Benchmark trials,Reported at the named current section or display
 TRIPOD-LLM,5c,Text dates,Text-date coverage is not reported; author information required,Partial: author information required
 TRIPOD-LLM,5d,Preprocessing,eMethods Algorithms and validation; prompt templates,Reported at the named current section or display
@@ -23,7 +23,7 @@ TRIPOD-LLM,8a,Annotation guidance,eMethods Algorithms and validation; Blinded ex
 TRIPOD-LLM,8b,Annotation agreement,Figure 4; supplement sections 2 and 5,Reported at the named current section or display
 TRIPOD-LLM,8c,Annotator experience,Manuscript Methods rater credentials (author completion required),Partial: author information required
 TRIPOD-LLM,9a,Prompt design,"Supplement Prompt templates and run provenance; prompt design, selection and version-freeze provenance require author completion",Partial: final templates do not establish the prompt-development process
-TRIPOD-LLM,9b,Prompt data,Supplement Prompt templates and run provenance; eTable 1; author reports development on ARBITER eval/ and no benchmark use; independent overlap verification pending,Partial: author attestation of separate development set; independent overlap audit pending
+TRIPOD-LLM,9b,Prompt data,Supplement Prompt templates and run provenance; eTable 1; ten prostate-cancer development trials and synthetic cases retained in ARBITER eval/; benchmark non-use author-attested; complete exposure history and independent overlap audit unestablished,Partial: author attestation of benchmark non-use; retained records do not establish exhaustive exposure history or a complete independent overlap audit
 TRIPOD-LLM,10,Summarization preprocessing,N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification,Not applicable: fixed model and task
 TRIPOD-LLM,11,Alignment evaluation,N/A: no instruction tuning or alignment training was performed,Not applicable: fixed model and task
 TRIPOD-LLM,12,Compute,Supplement Prompt templates and run provenance; eMethods API list-price reconstruction; eTables 20–22,Reported at the named current section or display

@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "authoritative_supporting_source_sha256": {
+    "analysis/R/manuscript-supplement.R": "fd5987ffe2910b562ca19f75d33de1ef0c8f69a004126d61834a821843122036",
+    "analysis/R/checklist.R": "249f88a336bd5e1b857437bca2ad6501488385a8466ea2366b979068bbdec4f9",
+    "scripts/report-refresh.py": "d1e216efe2a7bc8f35c9e4d20a7612d9beb84179bed86d6f5308a1a8b851bae9"
+  },
+  "relocation_note_sha256": "6bd93ced1e9db056f39d2305280f30772c53479712e9d996d84403da58d83ca2",
+  "entry_note_sha256": "6bd93ced1e9db056f39d2305280f30772c53479712e9d996d84403da58d83ca2",
+  "changed_output_hashes": {
+    "analysis/output/tables/display-supplement-reporting-map.csv": {
+      "entry": "7b7064945b24afea1abec2b05e02dcb7e8a46c3e12189b7ca014bfe9a5d7ce15",
+      "final": "e1a57034ec755e76f2dffe8a7e75d6d4dbaf960abb0c024d9fb6096bab405da4"
+    },
+    "analysis/output/tables/display-source-trace.csv": {
+      "entry": "41c41a026a7acb925f93df4c329fd5bab4e43cfa22d671cc46000bb0c6656708",
+      "final": "0a745e794aecf2ef6ef65eadef8c6427e2ecd3b500b16d01ffcdfca32624144c"
+    },
+    "analysis/output/tables/reporting-checklist-skeleton.csv": {
+      "entry": "4bf38a77f88ab2ef10f87c29fe77ce3716ac7e0946eb3d78e37f715227451382",
+      "final": "45572c482b61bba953d3c3eae59839077f7b2ff9b72f17b7c2ef25cbc97ad126"
+    },
+    "analysis/output/manuscript/Supplement.docx": {
+      "entry": "878d6609bde7335f00190aba4215f3424eb6c7e11fd8ebf3a67dea8102254c37",
+      "final": "e564c736ec0cc9acff674b90b0f1df7339ca311bc10418feb293c68a6bfa3175"
+    },
+    "analysis/output/manuscript/TRIPOD-LLM.docx": {
+      "entry": "04cc3f21c89a4c13ed5041307a6762f0900bad7f0937769266ffafab0cb72fe4",
+      "final": "998a216970d0f7a9db1603ebc4de2d09d1260f283be5126c9f10ef25c6f30cd3"
+    }
+  },
+  "concurrent_parent_output_changes_not_validated": {
+    "analysis/output/manuscript/Manuscript.docx": {
+      "entry": "ef5cf5e5e49a668f6ab60a32f639cfeaa8347dcbf26615a48ec35862f66a26c3",
+      "final": "afdeb1fb574be2863ca863524b4bb67a87e28b01f30b818aa2c2dbc5ca711c6a"
+    },
+    "analysis/output/manuscript/qa/manuscript-assembled.md": {
+      "entry": "5395fa4a897be354ea44124b89666f5ef7262ff524107328f90fff62fd46bf6e",
+      "final": "7d7c7d6e0e4212ee96c4ff0dd4934da349700730f4499dd3b1297c0fabef25d1"
+    }
+  },
+  "numerical_csvs_byte_identical": 58,
+  "release_protected_files": 109,
+  "historical_exceptions_carried": 12,
+  "new_exception_paths": 0,
+  "main_manuscript_validation": "Deferred to parent after final assembly",
+  "word": {
+    "Supplement.docx": {
+      "tables": 98,
+      "physical_cells": 7675,
+      "changed_cells": [],
+      "other_zip_members_identical": true
+    },
+    "TRIPOD-LLM.docx": {
+      "tables": 8,
+      "physical_cells": 368,
+      "changed_cells": [
+        33,
+        146,
+        147
+      ],
+      "other_zip_members_identical": true
+    }
+  },
+  "methods_paragraphs": 10,
+  "provenance_paragraphs": 2,
+  "documentary_csv_cells_changed": 6,
+  "documentary_trace_values_changed": 3,
+  "exact_source_trace_records": 49892
+}

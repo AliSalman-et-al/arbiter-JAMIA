@@ -203,7 +203,8 @@ def build():
         supplement_text = normalized(supplement.text_content())
         for paragraph in source_paragraphs:
             assert normalized(paragraph.text_content()) in supplement_text
-        assert len(supplement.xpath('//details/ul/li/a')) == 62
+        # Round six adds the Benchmark construction and exclusions eMethods heading.
+        assert len(supplement.xpath('//details/ul/li/a')) == 63
         trace = root.xpath('//*[@id="supp-avatar-complete-trace"]')[0]
         trace_paragraphs = []
         for node in trace.itersiblings():
@@ -215,7 +216,7 @@ def build():
         assert before == protected_hashes(), 'Protected publication/statistical sources changed'
         evidence = {'protected_sha256': before, 'main_tables': 3, 'main_images': 5,
                     'supplement_tables': 98, 'supplement_images': image_count,
-                    'supplement_contents_links': 62, 'trace_paragraphs': len(trace_paragraphs),
+                    'supplement_contents_links': 63, 'trace_paragraphs': len(trace_paragraphs),
                     'supplement_paragraphs': len(source_paragraphs),
                     'html_sha256': {name: hashlib.sha256((ANALYSIS / name).read_bytes()).hexdigest()
                                     for name in ('results.html', 'supplement.html')}}

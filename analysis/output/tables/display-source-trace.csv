@@ -41334,7 +41334,7 @@ reporting-checklist-skeleton,2,section,Manuscript abstract; results-sentences.md
 reporting-checklist-skeleton,3,section,Manuscript Background and significance (author assembly; ANALYSIS-PLAN section 7)
 reporting-checklist-skeleton,4,section,Manuscript Background and significance; eMethods Interpretive limits
 reporting-checklist-skeleton,5,section,eMethods Blinded expert assessment
-reporting-checklist-skeleton,6,section,"eMethods Input parity and label targets; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered"
+reporting-checklist-skeleton,6,section,"eMethods Input parity and label targets; Benchmark construction and exclusions; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered"
 reporting-checklist-skeleton,7,section,Supplement section 1 Benchmark trials
 reporting-checklist-skeleton,8,section,eMethods Interpretive limits
 reporting-checklist-skeleton,9,section,eMethods Algorithms and validation; prompt templates
@@ -41353,7 +41353,7 @@ reporting-checklist-skeleton,21,section,eMethods Algorithms and validation; Blin
 reporting-checklist-skeleton,22,section,Figure 4; supplement sections 2 and 5
 reporting-checklist-skeleton,23,section,Manuscript Methods rater credentials (author completion required)
 reporting-checklist-skeleton,24,section,"Supplement Prompt templates and run provenance; prompt design, selection and version-freeze provenance require author completion"
-reporting-checklist-skeleton,25,section,Supplement Prompt templates and run provenance; eTable 1; author reports development on ARBITER eval/ and no benchmark use; independent overlap verification pending
+reporting-checklist-skeleton,25,section,Supplement Prompt templates and run provenance; eTable 1; ten prostate-cancer development trials and synthetic cases retained in ARBITER eval/; benchmark non-use author-attested; complete exposure history and independent overlap audit unestablished
 reporting-checklist-skeleton,26,section,N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification
 reporting-checklist-skeleton,27,section,N/A: no instruction tuning or alignment training was performed
 reporting-checklist-skeleton,28,section,Supplement Prompt templates and run provenance; eMethods API list-price reconstruction; time/cost eTables
@@ -41417,7 +41417,7 @@ reporting-checklist-skeleton,21,applicability_and_notes,Partial: matched task an
 reporting-checklist-skeleton,22,applicability_and_notes,Reported at the named display or supplement location.
 reporting-checklist-skeleton,23,applicability_and_notes,"Author information required; the planned location is identified, but the statement is not supplied by these data."
 reporting-checklist-skeleton,24,applicability_and_notes,Partial: final templates do not establish the prompt-development process
-reporting-checklist-skeleton,25,applicability_and_notes,Partial: author attestation of separate development set; independent overlap audit pending
+reporting-checklist-skeleton,25,applicability_and_notes,Partial: author attestation of benchmark non-use; retained records do not establish exhaustive exposure history or a complete independent overlap audit
 reporting-checklist-skeleton,26,applicability_and_notes,N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification
 reporting-checklist-skeleton,27,applicability_and_notes,N/A: no instruction tuning or alignment training was performed
 reporting-checklist-skeleton,28,applicability_and_notes,Reported at the named display or supplement location.

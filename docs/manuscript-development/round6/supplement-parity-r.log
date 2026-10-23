@@ -1,0 +1,15 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+PASS 49892 exact source-cell trace records
+PASS 10 eMethods and 2 provenance paragraphs exactly match R source
+PASS 23 current supplementary display builders and complete Word notes
+PASS all supplementary/reporting-map CSV rows in Word in exact column order

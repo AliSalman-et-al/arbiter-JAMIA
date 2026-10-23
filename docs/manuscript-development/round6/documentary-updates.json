@@ -1,0 +1,62 @@
+{
+  "analysis/output/manuscript/Supplement.docx": {
+    "old_sha256": "264321266fc30f86d78f70ca648fe7a40538334d377cbe55f5890c8bb8dd9568",
+    "new_sha256": "e564c736ec0cc9acff674b90b0f1df7339ca311bc10418feb293c68a6bfa3175",
+    "rationale": "Round3 approved repair retained; round5 author-authorized reporting labels and clarified methods only. See round5/reporting-repair.md and checks.json; statistical values unchanged. Round6 authorized relocation integration: source-backed eMethods, evaluated/public command and development provenance; completion fields remain pending. All 98 tables and 7675 physical cells, figures, prompts and worked traces unchanged; contents page caches advanced after one added prose page. See round6/supplement-integration-report.md and checks."
+  },
+  "analysis/output/manuscript/TRIPOD-LLM.docx": {
+    "old_sha256": "82085c83989bd7b7c847fb93bf70cd313cf2c5a8747f94c35f61511662bff88a",
+    "new_sha256": "998a216970d0f7a9db1603ebc4de2d09d1260f283be5126c9f10ef25c6f30cd3",
+    "rationale": "Round3 approved repair retained; round5 author-authorized reporting labels and clarified methods only. See round5/reporting-repair.md and checks.json; statistical values unchanged. Round6 documentary TRIPOD-LLM 5a section locator and 9b provenance section/note synchronize with authoritative checklist source. Three cells only; qualifications and all unresolved statuses retained; all nontext XML and other ZIP members unchanged."
+  },
+  "analysis/output/tables/prompt-template-example.csv": {
+    "old_sha256": "481263a32bc2407b80c1e0457140e14b59e0e0c38abc318d32a828ec640e53f6",
+    "new_sha256": "bc68b9b2c0821b97385e217e991681898416e327c5d9e21b787fd4332e6bcbaa",
+    "rationale": "Restore evaluated /rob2-assess prefix in two ARBITER prompts; retain example contents and all other fields."
+  },
+  "analysis/output/tables/display-supplement-reporting-map.csv": {
+    "old_sha256": "1042aaf23e01c12b463ab519a8979e742394fb37942cdf7766705fb427493e97",
+    "new_sha256": "e1a57034ec755e76f2dffe8a7e75d6d4dbaf960abb0c024d9fb6096bab405da4",
+    "rationale": "Round3 approved repair retained; round5 author-authorized reporting labels and clarified methods only. See round5/reporting-repair.md and checks.json; statistical values unchanged. Round6 synchronize the same three documentary TRIPOD-LLM 5a/9b cells with checklist R source and reporting Word. All remaining cells unchanged; no statistical values edited."
+  },
+  "analysis/output/tables/reporting-checklist-skeleton.csv": {
+    "old_sha256": "13799f75e2e5752158d6bf4322cf618d57f49cec4ce4663aabf2d0c37d6a1fe6",
+    "new_sha256": "45572c482b61bba953d3c3eae59839077f7b2ff9b72f17b7c2ef25cbc97ad126",
+    "rationale": "Round3 approved repair retained; round5 author-authorized reporting labels and clarified methods only. See round5/reporting-repair.md and checks.json; statistical values unchanged. Round6 synchronize exactly three documentary cells: TRIPOD-LLM 5a section locator and 9b section/note, reflecting actual supplementary integration and explicitly bounded author attestation. All other cells unchanged."
+  },
+  "analysis/output/manuscript/Table2.docx": {
+    "old_sha256": "c09d2e4846c858164ced0b2f18805b12994cdc35011ee2f0dc29751c728e4d7a",
+    "new_sha256": "427182dd9c164f9e2c555653d7ce8d2c1f2a05e928bc7074a8194dadca70a165",
+    "rationale": "Author-authorized round5 documentary repair of the Table 2 title, agreed-choice population label and note. Historical hash retained; 11 physical cells, all numerical tokens, nontext XML and every other ZIP member unchanged. See round5/reporting-repair.md, checks.json and integrity-review.md."
+  },
+  "analysis/output/manuscript/figure-legends.md": {
+    "old_sha256": "edf58c45f6b1118839abc26adf2f631e5fd22f599c8b32b336046019f3d84a5b",
+    "new_sha256": "fbe60749fcb1e4c322496c56f41e6218a340527d7dd11fe22f1ad664d87862b7",
+    "rationale": "Author-authorized reporting-only Figure 3 caption relabeling from primary endpoint to conditional blinded-label choices. All numerical tokens retained; corresponding R legend prose synchronized. Explicit reviewed prose exception; artwork exceptions are recorded separately. See round5/reporting-repair.md and integrity-review.md."
+  },
+  "analysis/output/manuscript/Figure3.pdf": {
+    "old_sha256": "2d63fff34bd1d0583945b5bde45a986fcdeb3f2b9f04cf1f2572f2fabe46131f",
+    "new_sha256": "402a20882c0fb76bb8f2a4b989afd3ee29883588d0b5c56b1943b07d6a29506b",
+    "rationale": "Author-authorized Figure 3 wording repair only: same model identifier, conditional label choice, and match ARBITER. Numerical text and original nontext vector operations preserved; PNG/TIFF rerendered at original dimensions. See round5/flow-label-repair.json and relabel-flow.py. Historical round4 hash retained."
+  },
+  "analysis/output/manuscript/Figure3.png": {
+    "old_sha256": "cd849a6144f4f1549852f27e3ed17ae5415a66f4765cdb5c57e2eb6a506e6b6a",
+    "new_sha256": "75eceefae8ba2a14fb906fc8e2ae725441e38e7d9362792f40161dc51e0deaf7",
+    "rationale": "Author-authorized Figure 3 wording repair only: same model identifier, conditional label choice, and match ARBITER. Numerical text and original nontext vector operations preserved; PNG/TIFF rerendered at original dimensions. See round5/flow-label-repair.json and relabel-flow.py. Historical round4 hash retained."
+  },
+  "analysis/output/manuscript/Figure3.tiff": {
+    "old_sha256": "9ce828555fc4cc3445e4674aa3d03e6ef186b5873829cea8bdcccc526c17527a",
+    "new_sha256": "36764cc0f1a02f84d48e284802bfcf69744ead905eda3c14de3ad2229ee27bcb",
+    "rationale": "Author-authorized Figure 3 wording repair only: same model identifier, conditional label choice, and match ARBITER. Numerical text and original nontext vector operations preserved; PNG/TIFF rerendered at original dimensions. See round5/flow-label-repair.json and relabel-flow.py. Historical round4 hash retained."
+  },
+  "analysis/output/tables/display-table2.csv": {
+    "old_sha256": "624cb773f3ff33004dea0e3917edd7663c91259b54311bae7fc35d48be31cb64",
+    "new_sha256": "8d6ddb1826833c6da889626f5f04553a5619145fb6de7ac6457f0e5c3ff3e552",
+    "rationale": "Replace only the retired formal-primary designation in the agreed-choice population label with Agreed choices, matching current R builder and already proofed Word/HTML. All remaining cells, structure and numerical strings identical. See round5/final-parity.md and final-parity-checks.json. Historical baseline unchanged."
+  },
+  "analysis/output/tables/display-source-trace.csv": {
+    "old_sha256": "aca7a089a5ce3efd530490d30bb1ad6e1aabecca9bd63adb31b08da5cfe0ff08",
+    "new_sha256": "0a745e794aecf2ef6ef65eadef8c6427e2ecd3b500b16d01ffcdfca32624144c",
+    "rationale": "Synchronize exactly 15 stale documentary source references: two evaluated /rob2-assess prompt prefixes and thirteen reporting-checklist section/note cells already approved in this manifest. Row keys, order, all other values and every statistical numeric trace value unchanged. Exact source-cell equality remains mandatory. See round5/final-parity.md and final-parity-checks.json. Historical baseline unchanged. Round6 update exactly three documentary trace value cells for reporting-checklist-skeleton 5a/9b; all 49892 exact source-cell checks retained. All row/file/column keys, order and statistical trace values unchanged."
+  }
+}

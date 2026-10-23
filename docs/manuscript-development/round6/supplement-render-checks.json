@@ -1,0 +1,360 @@
+{
+  "final_supplement_pages": 142,
+  "reporting_map_pages": 8,
+  "toc_cache_targets_verified": [
+    {
+      "title": "1. Reproducibility and methods",
+      "page": 8
+    },
+    {
+      "title": "eTable 1. Benchmark trials",
+      "page": 8
+    },
+    {
+      "title": "2. Full domain agreement evidence",
+      "page": 10
+    },
+    {
+      "title": "eTable 2. Full independent agreement and paired contrasts",
+      "page": 10
+    },
+    {
+      "title": "eTable 2A. Unweighted agreement with each expert",
+      "page": 23
+    },
+    {
+      "title": "eTable 3. Category distributions",
+      "page": 26
+    },
+    {
+      "title": "eTable 4. Expert reliability",
+      "page": 28
+    },
+    {
+      "title": "eTable 5. Confusion matrices against each independent expert",
+      "page": 29
+    },
+    {
+      "title": "eTable 6. Published label agreement",
+      "page": 41
+    },
+    {
+      "title": "eTable 7. Unweighted agreement with published labels",
+      "page": 43
+    },
+    {
+      "title": "eTable 8. Exploratory binary agreement against each expert",
+      "page": 44
+    },
+    {
+      "title": "eTable 8A. Paired binary differences",
+      "page": 50
+    },
+    {
+      "title": "3. Blinded-label choices and supporting analyses",
+      "page": 52
+    },
+    {
+      "title": "eTable 9. Blinded-label choices and post hoc strata",
+      "page": 52
+    },
+    {
+      "title": "eTable 10. Forced choice on disputed cells",
+      "page": 54
+    },
+    {
+      "title": "eTable 11. Direction of disagreement against independent experts",
+      "page": 55
+    },
+    {
+      "title": "eTable 12. Revised ratings and retained or changed answers",
+      "page": 57
+    },
+    {
+      "title": "eTable 12A. Retained and changed signalling answers",
+      "page": 58
+    },
+    {
+      "title": "4. Signalling diagnostics and rules-only recomputation",
+      "page": 59
+    },
+    {
+      "title": "eTable 13. Full signalling question agreement",
+      "page": 59
+    },
+    {
+      "title": "eTable 13A. Five-level disagreement types",
+      "page": 66
+    },
+    {
+      "title": "eTable 13B. Paired signalling differences",
+      "page": 67
+    },
+    {
+      "title": "eTable 13C. Signalling comparison eligibility",
+      "page": 70
+    },
+    {
+      "title": "eTable 14. Rules only recomputation",
+      "page": 75
+    },
+    {
+      "title": "eTable 14A. Independent agreement after rules only recomputation",
+      "page": 76
+    },
+    {
+      "title": "eTable 14B. Cells changed by rules only recomputation",
+      "page": 82
+    },
+    {
+      "title": "eTable 15. Invalid answer path sensitivity",
+      "page": 84
+    },
+    {
+      "title": "5. Derived Overall and missingness",
+      "page": 85
+    },
+    {
+      "title": "eTable 16. Derived Overall agreement and paired contrasts",
+      "page": 85
+    },
+    {
+      "title": "eTable 17. Derived Overall validation differences",
+      "page": 88
+    },
+    {
+      "title": "6. Process and resources",
+      "page": 90
+    },
+    {
+      "title": "eTable 18. Rule consistency and audit",
+      "page": 90
+    },
+    {
+      "title": "eTable 19. Evidence binding",
+      "page": 98
+    },
+    {
+      "title": "eTable 20. Time cost and token use",
+      "page": 99
+    },
+    {
+      "title": "eTable 21. API cost estimates and reconstruction bounds",
+      "page": 100
+    },
+    {
+      "title": "eTable 22. Token reconciliation",
+      "page": 102
+    },
+    {
+      "title": "7. Prior work and reporting",
+      "page": 105
+    },
+    {
+      "title": "eTable 23. Prior work evidence ledger",
+      "page": 105
+    },
+    {
+      "title": "eFigure 1. Absolute agreement by domain and derived Overall",
+      "page": 106
+    },
+    {
+      "title": "eFigure 2. Collapsed question-level paired differences  (D1 panel)",
+      "page": 107
+    },
+    {
+      "title": "eFigure 2. Collapsed question-level paired differences  (D2 panel)",
+      "page": 108
+    },
+    {
+      "title": "eFigure 2. Collapsed question-level paired differences  (D3 panel)",
+      "page": 109
+    },
+    {
+      "title": "eFigure 2. Collapsed question-level paired differences  (D4 panel)",
+      "page": 110
+    },
+    {
+      "title": "eFigure 2. Collapsed question-level paired differences  (D5 panel)",
+      "page": 111
+    },
+    {
+      "title": "eFigure 3. Published label agreement across reviews",
+      "page": 112
+    },
+    {
+      "title": "eFigure 4. Domain-level signalling agreement",
+      "page": 113
+    },
+    {
+      "title": "eFigure 5. All signalling question paired differences  (D1 panel)",
+      "page": 114
+    },
+    {
+      "title": "eFigure 5. All signalling question paired differences  (D2 panel)",
+      "page": 115
+    },
+    {
+      "title": "eFigure 5. All signalling question paired differences  (D3 panel)",
+      "page": 116
+    },
+    {
+      "title": "eFigure 5. All signalling question paired differences  (D4 panel)",
+      "page": 117
+    },
+    {
+      "title": "eFigure 5. All signalling question paired differences  (D5 panel)",
+      "page": 118
+    },
+    {
+      "title": "AVATAR complete trace",
+      "page": 119
+    },
+    {
+      "title": "Prompt templates and run provenance",
+      "page": 142
+    }
+  ],
+  "all_pages_have_text": true,
+  "pages_with_out_of_bounds_words": [],
+  "supplement_page_bodies_pixel_identical_to_round5_after_page_shift": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141
+  ],
+  "final_cleanup_only_changed_page": 142,
+  "visual_review": "All 150 pages reviewed in ten contact sheets; changed supplement pages 2, 3, 4, 6, 7, 142 and reporting pages 1, 4 additionally inspected individually. Page 5 completion text inspected in the all-page sheet; all other bodies have structural/pixel continuity where applicable. Existing template retained.",
+  "render_directory": "/tmp/arbiter-round6-supplement/render-clean",
+  "reporting_render_directory": "/tmp/arbiter-round6-supplement/render-reporting"
+}

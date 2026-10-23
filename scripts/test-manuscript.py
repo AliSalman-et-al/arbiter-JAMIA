@@ -29,7 +29,7 @@ class ManuscriptStructure(unittest.TestCase):
         path = manuscript_dir / 'assemble-publication.py'
         tree = ast.parse(path.read_text(), filename=str(path))
         helpers = ast.Module(body=[node for node in tree.body if isinstance(node, ast.FunctionDef)
-                                  and node.name in {'format_abstract', 'bind_reporting_reference'}], type_ignores=[])
+                                  and node.name in {'format_abstract', 'bind_final_reference'}], type_ignores=[])
         cls.formatting = dict(re=re, OxmlElement=OxmlElement, qn=qn, Pt=Pt, Paragraph=Paragraph)
         exec(compile(helpers, str(path), 'exec'), cls.formatting)
         cls.document = staticmethod(Document)
@@ -61,15 +61,27 @@ class ManuscriptStructure(unittest.TestCase):
         self.assertEqual([p.text for p in doc.paragraphs if p.text.endswith('. Prose.')],
                          ['Discussion. Prose.', 'Conclusion. Prose.'])
 
-    def test_reporting_reference_binding_survives_renumbering_and_run_split(self):
+    def test_final_reference_binding_survives_renumbering_and_run_split(self):
         doc = self.document()
         p = doc.add_paragraph('Reporting was guided by TRIPOD-LLM and GRRAS, with author-completion fields.')
-        p.add_run('[24,25]')
-        self.formatting['bind_reporting_reference'](p)
+        p.add_run('[24,25]').italic = True
+        self.formatting['bind_final_reference'](p)
         self.assertTrue(p.text.endswith('fields.\u2060[24,25]'))
-        other = doc.add_paragraph('Unrelated fields.[24,25]')
-        self.formatting['bind_reporting_reference'](other)
-        self.assertEqual(other.text, 'Unrelated fields.[24,25]')
+        self.assertTrue(p.runs[-1].italic)
+        other = doc.add_paragraph('Evaluated elsewhere.')
+        other.add_run('[8,9,10]').bold = True
+        original = other.text
+        for _ in range(2):
+            self.formatting['bind_final_reference'](other)
+        self.assertEqual(other.text, 'Evaluated elsewhere.\u2060[8,9,10]')
+        self.assertEqual(other.text.replace('\u2060', ''), original)
+        self.assertTrue(other.runs[-1].bold)
+        for text in ('No citation. [author completion] [8,9,10]',
+                     'Sentence.[8,9,10] More text.', 'Question?[11–13]'):
+            paragraph = doc.add_paragraph(text)
+            self.formatting['bind_final_reference'](paragraph)
+            expected = text.replace('?[', '?\u2060[')
+            self.assertEqual(paragraph.text, expected)
 
     def test_command_metadata_does_not_exempt_adjacent_study_numbers(self):
         text = '`/rob2-assess` 987654321 /rob3-assess'

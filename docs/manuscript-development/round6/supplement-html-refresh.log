@@ -1,0 +1,51 @@
+pandoc 
+  to: html
+  output-file: results.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  css:
+    - ../scripts/manuscript.css
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  knitr:
+    opts_chunk:
+      results: asis
+  title: ARBITER results against blinded expert ratings
+  
+Output created: results.html
+
+pandoc 
+  to: html
+  output-file: supplement.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  css:
+    - ../scripts/manuscript.css
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  knitr:
+    opts_chunk:
+      results: asis
+  title: ARBITER supplementary methods and results
+  
+Output created: supplement.html
+
+PASS: 3 main tables, 5 figures; 98 supplementary tables, 13 images; 290 supplement paragraphs and all physical cells preserved; 155 protected artifacts unchanged.

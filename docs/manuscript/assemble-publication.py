@@ -20,13 +20,11 @@ text = numbers.MANUSCRIPT.read_text(encoding='utf-8'); sections = numbers.sectio
 counts, main_words = numbers.word_counts(text)
 abstract_words = counts['Abstract']
 
-def bind_reporting_reference(p):
-    if 'Reporting was guided by TRIPOD-LLM and GRRAS' not in p.text:
-        return
-    match = re.search(r'fields\.(?=\[[\d,–-]+\])', p.text)
+def bind_final_reference(p):
+    match = re.search(r'(?<=[.!?])(?=\[[\d,–-]+\]$)', p.text)
     if match is None:
         return
-    offset = match.end()
+    offset = match.start()
     for run in p.runs:
         if offset <= len(run.text):
             run.text = run.text[:offset] + '\u2060' + run.text[offset:]
@@ -121,8 +119,8 @@ for style in doc.styles:
             style.paragraph_format.keep_with_next=True
 for p in list(doc.paragraphs):
     original_style=p.style.name
-    # Bind the final reporting citation to its preceding word without changing prose.
-    bind_reporting_reference(p)
+    # Keep paragraph-final numeric citations with the preceding word.
+    bind_final_reference(p)
     if p.text=='Front-matter notes':
         p._element.getparent().remove(p._element)
         continue

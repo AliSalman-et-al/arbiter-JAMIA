@@ -1,0 +1,69 @@
+{
+  "csv_changes": [
+    {
+      "file": "reporting-checklist-skeleton",
+      "row": 6,
+      "column": "section",
+      "old": "eMethods Input parity and label targets; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered",
+      "new": "eMethods Input parity and label targets; Benchmark construction and exclusions; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered"
+    },
+    {
+      "file": "reporting-checklist-skeleton",
+      "row": 25,
+      "column": "section",
+      "old": "Supplement Prompt templates and run provenance; eTable 1; author reports development on ARBITER eval/ and no benchmark use; independent overlap verification pending",
+      "new": "Supplement Prompt templates and run provenance; eTable 1; ten prostate-cancer development trials and synthetic cases retained in ARBITER eval/; benchmark non-use author-attested; complete exposure history and independent overlap audit unestablished"
+    },
+    {
+      "file": "reporting-checklist-skeleton",
+      "row": 25,
+      "column": "applicability_and_notes",
+      "old": "Partial: author attestation of separate development set; independent overlap audit pending",
+      "new": "Partial: author attestation of benchmark non-use; retained records do not establish exhaustive exposure history or a complete independent overlap audit"
+    },
+    {
+      "file": "display-supplement-reporting-map",
+      "row": 6,
+      "column": "Section",
+      "old": "eMethods Input parity and label targets; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered",
+      "new": "eMethods Input parity and label targets; Benchmark construction and exclusions; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered"
+    },
+    {
+      "file": "display-supplement-reporting-map",
+      "row": 25,
+      "column": "Section",
+      "old": "Supplement Prompt templates and run provenance; eTable 1; author reports development on ARBITER eval/ and no benchmark use; independent overlap verification pending",
+      "new": "Supplement Prompt templates and run provenance; eTable 1; ten prostate-cancer development trials and synthetic cases retained in ARBITER eval/; benchmark non-use author-attested; complete exposure history and independent overlap audit unestablished"
+    },
+    {
+      "file": "display-supplement-reporting-map",
+      "row": 25,
+      "column": "Applicability and notes",
+      "old": "Partial: author attestation of separate development set; independent overlap audit pending",
+      "new": "Partial: author attestation of benchmark non-use; retained records do not establish exhaustive exposure history or a complete independent overlap audit"
+    }
+  ],
+  "trace_changes": [
+    {
+      "file": "reporting-checklist-skeleton",
+      "row": 6,
+      "column": "section",
+      "old": "eMethods Input parity and label targets; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered",
+      "new": "eMethods Input parity and label targets; Benchmark construction and exclusions; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered"
+    },
+    {
+      "file": "reporting-checklist-skeleton",
+      "row": 25,
+      "column": "section",
+      "old": "Supplement Prompt templates and run provenance; eTable 1; author reports development on ARBITER eval/ and no benchmark use; independent overlap verification pending",
+      "new": "Supplement Prompt templates and run provenance; eTable 1; ten prostate-cancer development trials and synthetic cases retained in ARBITER eval/; benchmark non-use author-attested; complete exposure history and independent overlap audit unestablished"
+    },
+    {
+      "file": "reporting-checklist-skeleton",
+      "row": 25,
+      "column": "applicability_and_notes",
+      "old": "Partial: author attestation of separate development set; independent overlap audit pending",
+      "new": "Partial: author attestation of benchmark non-use; retained records do not establish exhaustive exposure history or a complete independent overlap audit"
+    }
+  ]
+}

@@ -88,10 +88,10 @@ reporting_checklist <- function() {
   map$section[map$guideline=='TRIPOD-LLM' & map$item=='5c'] <- 'Text-date coverage is not reported; author information required'
   map$section[map$guideline=='TRIPOD-LLM' & map$item=='14c'] <- 'Manuscript Statistical analysis; evaluation outcomes organized after analysis without a confirmatory hierarchy; protocol/archive identifier requires author confirmation'
   map$section[map$guideline=='GRRAS' & map$item=='9'] <- 'Manuscript Independent expert references; eMethods Blinded expert assessment'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='5a'] <- 'eMethods Input parity and label targets; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='5a'] <- 'eMethods Input parity and label targets; Benchmark construction and exclusions; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered'
   map$section[map$guideline=='TRIPOD-LLM' & map$item=='8a'] <- 'eMethods Algorithms and validation; Blinded expert assessment; matched materials and task confirmed by author; original form and multi-outcome conventions unprovided'
   map$section[map$guideline=='TRIPOD-LLM' & map$item=='9a'] <- 'Supplement Prompt templates and run provenance; prompt design, selection and version-freeze provenance require author completion'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='9b'] <- 'Supplement Prompt templates and run provenance; eTable 1; author reports development on ARBITER eval/ and no benchmark use; independent overlap verification pending'
+  map$section[map$guideline=='TRIPOD-LLM' & map$item=='9b'] <- 'Supplement Prompt templates and run provenance; eTable 1; ten prostate-cancer development trials and synthetic cases retained in ARBITER eval/; benchmark non-use author-attested; complete exposure history and independent overlap audit unestablished'
   map$section[map$guideline=='GRRAS' & map$item=='7'] <- 'eTable 1; Manuscript Benchmark and assessment arms; eMethods Input parity and label targets; purposive selection and table-order sampling; search records unrecovered'
   map$section[map$guideline=='GRRAS' & map$item=='8'] <- 'eMethods Blinded expert assessment; same materials and task as model arms; Cochrane RoB 2 guidance; original form and multi-outcome conventions unprovided'
   map <- map |> mutate(page='Stable section/display locator',
@@ -99,7 +99,7 @@ reporting_checklist <- function() {
       guideline=='TRIPOD-LLM' & item=='5a'~'Partial: purposive selection reported by author; search and ranking records unrecovered',
       guideline=='TRIPOD-LLM' & item=='8a'~'Partial: matched task and guidance reported; original form and multi-outcome conventions unprovided',
       guideline=='TRIPOD-LLM' & item=='9a'~'Partial: final templates do not establish the prompt-development process',
-      guideline=='TRIPOD-LLM' & item=='9b'~'Partial: author attestation of separate development set; independent overlap audit pending',
+      guideline=='TRIPOD-LLM' & item=='9b'~'Partial: author attestation of benchmark non-use; retained records do not establish exhaustive exposure history or a complete independent overlap audit',
       guideline=='GRRAS' & item=='7'~'Partial: author-supplied purposive selection and within-review sampling reported; search records unrecovered',
       guideline=='GRRAS' & item=='8'~'Partial: matched materials, task and guidance confirmed by author; original form and multi-outcome conventions unprovided',
       startsWith(section,'N/A:')~'Not applicable: fixed model and task',
