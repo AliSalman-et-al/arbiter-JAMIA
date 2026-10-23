@@ -5,7 +5,7 @@ set -eu
 root=$(git rev-parse --show-toplevel)
 pages="$root/../arbiter-JAMIA-pages"
 [ -d "$pages" ] || git -C "$root" worktree add "$pages" gh-pages
-python "$root/scripts/stage-pages.py" "$pages"
+"${ARBITER_PYTHON:-python3}" "$root/scripts/stage-pages.py" "$pages"
 cd "$pages"
 git add .nojekyll index.html manuscript.html results.html supplement.html publication-manifest.json output/manuscript
 git diff --cached --quiet && { echo "Pages already up to date."; exit 0; }
