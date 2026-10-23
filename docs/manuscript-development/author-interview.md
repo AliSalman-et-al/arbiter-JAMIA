@@ -22,6 +22,8 @@ Use OCAR to build a logical progression from clinical need through the system an
 
 ## Remaining factual branches
 
+Subsequent author answers partially settle these branches: see `interview-refinement/benchmark-provenance.md`. The pasted team conversation documents purposive cross-specialty review selection and target revision before the requested benchmark run. Search dates/ranking records and the sixteenth-review rationale are not recalled. Author confirms Atwine should be treated as unsupported and says the stored model classification is wrong; no more specific subtype is supplied. Preserve the exclusion, record attribution, and do not reopen the same question or invent a detailed reason.
+
 The read-only repository audit found no adequate answers for assessor instructions/targets and qualifications, review sampling, prompt-development history/overlap, or original design rationale. It also identified two unresolved documentary discrepancies: Atwine's exclusion rationale and analysis-specification chronology. Ask for the actual history and supporting records, without suggesting preferred factual answers. Retain distinction between original expert data and replacement full-coverage expert data.
 
 ## Next decisions depend on these facts
