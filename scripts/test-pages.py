@@ -85,7 +85,7 @@ class PublicationLinks(unittest.TestCase):
         output.mkdir(parents=True)
         (project / 'scripts').mkdir()
         html = b'<body>\r\n<p>Report</p>\r\n<p>Second line</p>\r\n</body>'
-        navigation = b'<nav id="publication-navigation"><a href="manuscript.html">Manuscript</a></nav>'
+        navigation = b'<nav id="publication-navigation">\r\n<a href="manuscript.html">Manuscript</a>\r\n</nav>'
         (project / 'scripts/publication-nav.html').write_bytes(navigation)
         for relative in ['scripts/pages-index.html', 'analysis/manuscript.html', 'analysis/results.html', 'analysis/supplement.html']:
             (project / relative).write_bytes(html)
@@ -106,7 +106,7 @@ class PublicationLinks(unittest.TestCase):
         self.assertFalse(retired.exists())
         self.assertEqual(unmanaged.read_text(), 'unmanaged')
         manifest = json.loads((destination / 'publication-manifest.json').read_text())
-        self.assertEqual((destination / 'results.html').read_bytes(), html.replace(b'\r\n', b'\n').replace(b'<body>', b'<body>\n' + navigation))
+        self.assertEqual((destination / 'results.html').read_bytes(), html.replace(b'\r\n', b'\n').replace(b'<body>', b'<body>\n' + navigation.replace(b'\r\n', b'\n')))
         self.assertEqual((destination / 'manuscript.html').read_bytes().count(b'id="publication-navigation"'), 1)
         self.assertEqual((destination / 'output/manuscript/Manuscript.docx').read_bytes(), binary)
         self.assertIn('manuscript.html', manifest['files'])

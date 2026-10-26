@@ -88,7 +88,7 @@ def stage(destination: Path):
             body = source.read_bytes().replace(b'\r\n', b'\n')
             # Older rendered reports gain the same navigation as new Quarto pages.
             if b'id="publication-navigation"' not in body and re.search(br'<body\b[^>]*>', body):
-                navigation = (ROOT / 'scripts/publication-nav.html').read_bytes()
+                navigation = (ROOT / 'scripts/publication-nav.html').read_bytes().replace(b'\r\n', b'\n')
                 body = re.sub(br'(<body\b[^>]*>)', lambda m: m[1] + b'\n' + navigation, body, count=1)
             target.write_bytes(body)
         else:
