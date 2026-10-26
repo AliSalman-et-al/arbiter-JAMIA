@@ -1,33 +1,25 @@
 {
-  "source_commit": "e5729da18debe523f4e59cdcf0e87ffceb790456",
+  "source_commit": "d43a667b0c294cf147a5cbf17a85de2d5bedacc8",
   "files": {
     "index.html": {
-      "sha256": "f7607acbd1015d6100d4f8aea2e817f128746429a66ff854f513eccde8737d3d",
-      "bytes": 3649
-    },
-    "manuscript.html": {
-      "sha256": "017bfc6ef7cd1e49c9059555032f61420517b5005c4f652497dcdbb2739ad830",
-      "bytes": 2866615
+      "sha256": "c654ecd523fdd8949af696f93f191b9a2f3fcb4fb4512a06bc7dff54f8230d85",
+      "bytes": 3350
     },
     "results.html": {
-      "sha256": "3e5f5d729f3b772f820a7579d16b81cae80d4fb16a064999e55874e065a6bb08",
-      "bytes": 2831221
+      "sha256": "dd2c8a335ce4115fcb91ef5bf8d85ddd879ee084f78ff5357fb0c3039c76d93f",
+      "bytes": 2830922
     },
     "supplement.html": {
-      "sha256": "1dbd08efdbe62dd1342ccdebfe995649463484918d66a43ab67bd9df203709c3",
-      "bytes": 1270093
-    },
-    "output/manuscript/Manuscript.docx": {
-      "sha256": "08073f653349e1087fe1ef946488695ccdd0d1b54c060cab30eb909c1bcc732c",
-      "bytes": 31231
+      "sha256": "79490ab97391cabc4fc5c6ab4333704b8d919a341de7c8b1beb62c19572fb7b4",
+      "bytes": 1269948
     },
     "output/manuscript/Supplement.docx": {
       "sha256": "8e485def0dccb4b8d39216162b65ad421464da842a01a117263b8c3ae57eedca",
       "bytes": 49978
     },
     "output/manuscript/TRIPOD-LLM.docx": {
-      "sha256": "d4f0431677b902ca1b1d6eb6b689ddbdde2779fa3bb66beded659508223b6653",
-      "bytes": 18315
+      "sha256": "44e4923043474c9bcdc84c817cf5fb5e882c70e982bdc44f16dff7d75087dcaf",
+      "bytes": 18375
     },
     "output/manuscript/Table1.docx": {
       "sha256": "783b50f2048e739a828d6aae6145fae98e5693e6425573d6a510bbdb29d7e583",
