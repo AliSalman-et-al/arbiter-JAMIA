@@ -20,8 +20,8 @@ def fetch(url):
 
 
 def verify(base, expected):
-    required = {'index.html', 'manuscript.html', 'results.html', 'supplement.html',
-                'output/manuscript/Manuscript.docx'}
+    required = {'index.html', 'results.html', 'supplement.html',
+                'output/manuscript/Supplement.docx'}
     missing = required - expected['files'].keys()
     if missing:
         raise RuntimeError('Publication manifest lacks required files: ' + ', '.join(sorted(missing)))

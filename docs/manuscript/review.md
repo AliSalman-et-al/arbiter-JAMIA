@@ -1,5 +1,7 @@
 # Reduction verification and review
 
+Status update, 26 October 2026. The author subsequently removed the active IMRaD draft to write a fresh manuscript. The previous manuscript source, bibliography, Word and HTML outputs and their dedicated builder/audit tests were deleted. The checks below record the earlier reduction release, not a current article draft. Main analysis materials and the supplement remain. See README.md for the current entry points.
+
 26 October 2026. The reduction is complete for review as a public manuscript draft. Author affiliations, complete assessor information, declarations and an archival DOI remain pending. This is not a submission-readiness certification.
 
 ## Final artifacts

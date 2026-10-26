@@ -19,8 +19,8 @@ reporting_checklist <- function() {
     'Sample/rater characteristics','Estimates and uncertainty','Practical relevance','Detailed results'),
     guideline='GRRAS',source='https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf')
   locations <- c(
-    '1'='Manuscript title','2'='Manuscript abstract','3a'='Manuscript Background and significance',
-    '3b'='Manuscript Objective and Discussion','4'='Manuscript Objective',
+    '1'='Pending manuscript title','2'='Pending manuscript abstract','3a'='Pending manuscript background',
+    '3b'='Pending manuscript objectives and discussion','4'='Pending manuscript objectives',
     '5a'='eMethods Benchmark and supplied inputs; Targets and input parity; eTable 1',
     '5b'='Table 1; eTables 1 and 4','5c'='Text-date coverage not reported; author information required',
     '5d'='eMethods Evidence records and source verification','5e'='eMethods Signalling mapping and eligibility; eTable 6B',
@@ -28,37 +28,37 @@ reporting_checklist <- function() {
     '6c'='Prompt templates and run provenance','6d'='eMethods Algorithms and validation; Figures 1 and 2',
     '6e'='eMethods Algorithms and validation','7a'='Figures 4 and 5; Tables 2 and 3; eTables 2 to 6',
     '7b'='eMethods Inference and Exploratory diagnostic checks','7c'='eMethods Targets and input parity',
-    '7d'='Manuscript Independent human reviews; eMethods Blinded human assessment; individual credentials require author information',
-    '7e'='Manuscript Benchmark and assessment arms; Prompt templates and run provenance',
+    '7d'='eMethods Blinded human assessment; individual credentials require author information',
+    '7e'='eMethods Benchmark and supplied inputs; Prompt templates and run provenance',
     '8a'='eMethods Blinded human assessment; original blank form and multi-outcome conventions require author information',
-    '8b'='Figure 4; eTable 3','8c'='Manuscript Independent human reviews; individual experience/calibration require author information',
+    '8b'='Figure 4; eTable 3','8c'='eMethods Blinded human assessment; individual experience/calibration require author information',
     '9a'='Prompt templates and run provenance; prompt selection and version-freeze history require author information',
     '9b'='Prompt templates and run provenance; author-attested benchmark non-use and bounded development records',
     '10'='N/A: no summarization task; source parsing in eMethods Evidence records and source verification',
     '11'='N/A: no instruction tuning or alignment training','12'='Table 3; eMethods Runtime and API equivalents; linked API ledgers',
-    '13'='Manuscript Ethics declaration; author confirmation required','14a'='Manuscript Funding; author confirmation required',
-    '14b'='Manuscript Competing interests; author confirmation required','14c'='eMethods Reporting scope; archive identifier requires author confirmation',
-    '14d'='Manuscript Ethics, registration and public involvement; author confirmation required',
-    '14e'='Manuscript Data availability; Linked source records and reproducibility materials',
-    '14f'='Manuscript Data availability; Prompt templates and run provenance','15'='Manuscript Public involvement statement; author confirmation required',
+    '13'='Pending manuscript ethics declaration; author confirmation required','14a'='Pending manuscript funding statement; author confirmation required',
+    '14b'='Pending manuscript competing interests; author confirmation required','14c'='eMethods Reporting scope; archive identifier requires author confirmation',
+    '14d'='Pending manuscript registration statement; author confirmation required',
+    '14e'='Linked source records and reproducibility materials; pending manuscript data availability statement',
+    '14f'='Prompt templates and run provenance; pending manuscript code availability statement','15'='Pending manuscript public involvement statement; author confirmation required',
     '16a'='Figure 3','16b'='Table 1; eTable 1','16c'='Table 1; eTable 1; report-level benchmark without patient-level distributions',
     '16d'='Figure 3; Table 1','17'='Figures 4 and 5; Tables 2 and 3; eTables 2 to 6',
-    '18'='N/A: no model updating or adaptation','19a'='Manuscript Discussion','19b'='Manuscript Discussion; eMethods Inference',
-    '19c'='eMethods Targets and input parity','19d'='Manuscript Discussion','19e'='Table 3; eMethods Targets and input parity',
-    '19f'='Manuscript Discussion','19g'='Manuscript Discussion')
+    '18'='N/A: no model updating or adaptation','19a'='Pending manuscript discussion','19b'='eMethods Inference; pending manuscript limitations',
+    '19c'='eMethods Targets and input parity','19d'='Pending manuscript discussion','19e'='Table 3; eMethods Targets and input parity',
+    '19f'='Pending manuscript discussion','19g'='Pending manuscript discussion')
   tripod <- tripod |> mutate(section=unname(locations[item]))
-  grras <- grras |> mutate(section=c('Manuscript title and abstract','eMethods Algorithms and validation',
-    'Table 1; eTable 1','Manuscript Independent human reviews; individual credentials require author information',
-    'Manuscript Objective','eMethods Benchmark and supplied inputs; available purposive sample',
+  grras <- grras |> mutate(section=c('Pending manuscript title and abstract','eMethods Algorithms and validation',
+    'Table 1; eTable 1','eMethods Blinded human assessment; individual credentials require author information',
+    'Pending manuscript objectives','eMethods Benchmark and supplied inputs; available purposive sample',
     'eMethods Benchmark and supplied inputs; search records require author information',
     'Figure 3; eMethods Blinded human assessment','eMethods Blinded human assessment',
     'eMethods Inference; Exploratory diagnostic checks','Figure 3; Table 1',
-    'Table 1; Manuscript Independent human reviews','Figures 4 and 5; eTables 2 to 6',
-    'Manuscript Discussion','eTables 2 to 6; Linked source records and reproducibility materials'))
+    'Table 1; eMethods Blinded human assessment','Figures 4 and 5; eTables 2 to 6',
+    'Pending manuscript discussion','eTables 2 to 6; Linked source records and reproducibility materials'))
   bind_rows(tripod,grras) |> mutate(page='Stable section/display locator',
     applicability_and_notes=case_when(
       startsWith(section,'N/A:')~'Not applicable to this evaluation',
-      grepl('author information|author confirmation',section)~'Partial; author information remains pending',
+      grepl('author information|author confirmation|[Pp]ending manuscript',section)~'Partial or pending; see retained materials and author-completion notes',
       TRUE~'Reported at the named section or display')) |>
     select(guideline,item,topic,page,section,applicability_and_notes,source)
 }

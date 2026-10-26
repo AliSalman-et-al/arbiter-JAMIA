@@ -29569,11 +29569,11 @@ reporting-checklist-skeleton,61,page,Stable section/display locator
 reporting-checklist-skeleton,62,page,Stable section/display locator
 reporting-checklist-skeleton,63,page,Stable section/display locator
 reporting-checklist-skeleton,64,page,Stable section/display locator
-reporting-checklist-skeleton,1,section,Manuscript title
-reporting-checklist-skeleton,2,section,Manuscript abstract
-reporting-checklist-skeleton,3,section,Manuscript Background and significance
-reporting-checklist-skeleton,4,section,Manuscript Objective and Discussion
-reporting-checklist-skeleton,5,section,Manuscript Objective
+reporting-checklist-skeleton,1,section,Pending manuscript title
+reporting-checklist-skeleton,2,section,Pending manuscript abstract
+reporting-checklist-skeleton,3,section,Pending manuscript background
+reporting-checklist-skeleton,4,section,Pending manuscript objectives and discussion
+reporting-checklist-skeleton,5,section,Pending manuscript objectives
 reporting-checklist-skeleton,6,section,eMethods Benchmark and supplied inputs; Targets and input parity; eTable 1
 reporting-checklist-skeleton,7,section,Table 1; eTables 1 and 4
 reporting-checklist-skeleton,8,section,Text-date coverage not reported; author information required
@@ -29587,115 +29587,115 @@ reporting-checklist-skeleton,15,section,eMethods Algorithms and validation
 reporting-checklist-skeleton,16,section,Figures 4 and 5; Tables 2 and 3; eTables 2 to 6
 reporting-checklist-skeleton,17,section,eMethods Inference and Exploratory diagnostic checks
 reporting-checklist-skeleton,18,section,eMethods Targets and input parity
-reporting-checklist-skeleton,19,section,Manuscript Independent human reviews; eMethods Blinded human assessment; individual credentials require author information
-reporting-checklist-skeleton,20,section,Manuscript Benchmark and assessment arms; Prompt templates and run provenance
+reporting-checklist-skeleton,19,section,eMethods Blinded human assessment; individual credentials require author information
+reporting-checklist-skeleton,20,section,eMethods Benchmark and supplied inputs; Prompt templates and run provenance
 reporting-checklist-skeleton,21,section,eMethods Blinded human assessment; original blank form and multi-outcome conventions require author information
 reporting-checklist-skeleton,22,section,Figure 4; eTable 3
-reporting-checklist-skeleton,23,section,Manuscript Independent human reviews; individual experience/calibration require author information
+reporting-checklist-skeleton,23,section,eMethods Blinded human assessment; individual experience/calibration require author information
 reporting-checklist-skeleton,24,section,Prompt templates and run provenance; prompt selection and version-freeze history require author information
 reporting-checklist-skeleton,25,section,Prompt templates and run provenance; author-attested benchmark non-use and bounded development records
 reporting-checklist-skeleton,26,section,N/A: no summarization task; source parsing in eMethods Evidence records and source verification
 reporting-checklist-skeleton,27,section,N/A: no instruction tuning or alignment training
 reporting-checklist-skeleton,28,section,Table 3; eMethods Runtime and API equivalents; linked API ledgers
-reporting-checklist-skeleton,29,section,Manuscript Ethics declaration; author confirmation required
-reporting-checklist-skeleton,30,section,Manuscript Funding; author confirmation required
-reporting-checklist-skeleton,31,section,Manuscript Competing interests; author confirmation required
+reporting-checklist-skeleton,29,section,Pending manuscript ethics declaration; author confirmation required
+reporting-checklist-skeleton,30,section,Pending manuscript funding statement; author confirmation required
+reporting-checklist-skeleton,31,section,Pending manuscript competing interests; author confirmation required
 reporting-checklist-skeleton,32,section,eMethods Reporting scope; archive identifier requires author confirmation
-reporting-checklist-skeleton,33,section,"Manuscript Ethics, registration and public involvement; author confirmation required"
-reporting-checklist-skeleton,34,section,Manuscript Data availability; Linked source records and reproducibility materials
-reporting-checklist-skeleton,35,section,Manuscript Data availability; Prompt templates and run provenance
-reporting-checklist-skeleton,36,section,Manuscript Public involvement statement; author confirmation required
+reporting-checklist-skeleton,33,section,Pending manuscript registration statement; author confirmation required
+reporting-checklist-skeleton,34,section,Linked source records and reproducibility materials; pending manuscript data availability statement
+reporting-checklist-skeleton,35,section,Prompt templates and run provenance; pending manuscript code availability statement
+reporting-checklist-skeleton,36,section,Pending manuscript public involvement statement; author confirmation required
 reporting-checklist-skeleton,37,section,Figure 3
 reporting-checklist-skeleton,38,section,Table 1; eTable 1
 reporting-checklist-skeleton,39,section,Table 1; eTable 1; report-level benchmark without patient-level distributions
 reporting-checklist-skeleton,40,section,Figure 3; Table 1
 reporting-checklist-skeleton,41,section,Figures 4 and 5; Tables 2 and 3; eTables 2 to 6
 reporting-checklist-skeleton,42,section,N/A: no model updating or adaptation
-reporting-checklist-skeleton,43,section,Manuscript Discussion
-reporting-checklist-skeleton,44,section,Manuscript Discussion; eMethods Inference
+reporting-checklist-skeleton,43,section,Pending manuscript discussion
+reporting-checklist-skeleton,44,section,eMethods Inference; pending manuscript limitations
 reporting-checklist-skeleton,45,section,eMethods Targets and input parity
-reporting-checklist-skeleton,46,section,Manuscript Discussion
+reporting-checklist-skeleton,46,section,Pending manuscript discussion
 reporting-checklist-skeleton,47,section,Table 3; eMethods Targets and input parity
-reporting-checklist-skeleton,48,section,Manuscript Discussion
-reporting-checklist-skeleton,49,section,Manuscript Discussion
-reporting-checklist-skeleton,50,section,Manuscript title and abstract
+reporting-checklist-skeleton,48,section,Pending manuscript discussion
+reporting-checklist-skeleton,49,section,Pending manuscript discussion
+reporting-checklist-skeleton,50,section,Pending manuscript title and abstract
 reporting-checklist-skeleton,51,section,eMethods Algorithms and validation
 reporting-checklist-skeleton,52,section,Table 1; eTable 1
-reporting-checklist-skeleton,53,section,Manuscript Independent human reviews; individual credentials require author information
-reporting-checklist-skeleton,54,section,Manuscript Objective
+reporting-checklist-skeleton,53,section,eMethods Blinded human assessment; individual credentials require author information
+reporting-checklist-skeleton,54,section,Pending manuscript objectives
 reporting-checklist-skeleton,55,section,eMethods Benchmark and supplied inputs; available purposive sample
 reporting-checklist-skeleton,56,section,eMethods Benchmark and supplied inputs; search records require author information
 reporting-checklist-skeleton,57,section,Figure 3; eMethods Blinded human assessment
 reporting-checklist-skeleton,58,section,eMethods Blinded human assessment
 reporting-checklist-skeleton,59,section,eMethods Inference; Exploratory diagnostic checks
 reporting-checklist-skeleton,60,section,Figure 3; Table 1
-reporting-checklist-skeleton,61,section,Table 1; Manuscript Independent human reviews
+reporting-checklist-skeleton,61,section,Table 1; eMethods Blinded human assessment
 reporting-checklist-skeleton,62,section,Figures 4 and 5; eTables 2 to 6
-reporting-checklist-skeleton,63,section,Manuscript Discussion
+reporting-checklist-skeleton,63,section,Pending manuscript discussion
 reporting-checklist-skeleton,64,section,eTables 2 to 6; Linked source records and reproducibility materials
-reporting-checklist-skeleton,1,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,2,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,3,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,4,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,5,applicability_and_notes,Reported at the named section or display
+reporting-checklist-skeleton,1,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,2,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,3,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,4,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,5,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,6,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,7,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,8,applicability_and_notes,Partial; author information remains pending
+reporting-checklist-skeleton,8,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,9,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,10,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,11,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,12,applicability_and_notes,Partial; author information remains pending
+reporting-checklist-skeleton,12,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,13,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,14,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,15,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,16,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,17,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,18,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,19,applicability_and_notes,Partial; author information remains pending
+reporting-checklist-skeleton,19,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,20,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,21,applicability_and_notes,Partial; author information remains pending
+reporting-checklist-skeleton,21,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,22,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,23,applicability_and_notes,Partial; author information remains pending
-reporting-checklist-skeleton,24,applicability_and_notes,Partial; author information remains pending
+reporting-checklist-skeleton,23,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,24,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,25,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,26,applicability_and_notes,Not applicable to this evaluation
 reporting-checklist-skeleton,27,applicability_and_notes,Not applicable to this evaluation
 reporting-checklist-skeleton,28,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,29,applicability_and_notes,Partial; author information remains pending
-reporting-checklist-skeleton,30,applicability_and_notes,Partial; author information remains pending
-reporting-checklist-skeleton,31,applicability_and_notes,Partial; author information remains pending
-reporting-checklist-skeleton,32,applicability_and_notes,Partial; author information remains pending
-reporting-checklist-skeleton,33,applicability_and_notes,Partial; author information remains pending
-reporting-checklist-skeleton,34,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,35,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,36,applicability_and_notes,Partial; author information remains pending
+reporting-checklist-skeleton,29,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,30,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,31,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,32,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,33,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,34,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,35,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,36,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,37,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,38,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,39,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,40,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,41,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,42,applicability_and_notes,Not applicable to this evaluation
-reporting-checklist-skeleton,43,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,44,applicability_and_notes,Reported at the named section or display
+reporting-checklist-skeleton,43,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,44,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,45,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,46,applicability_and_notes,Reported at the named section or display
+reporting-checklist-skeleton,46,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,47,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,48,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,49,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,50,applicability_and_notes,Reported at the named section or display
+reporting-checklist-skeleton,48,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,49,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,50,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,51,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,52,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,53,applicability_and_notes,Partial; author information remains pending
-reporting-checklist-skeleton,54,applicability_and_notes,Reported at the named section or display
+reporting-checklist-skeleton,53,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
+reporting-checklist-skeleton,54,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,55,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,56,applicability_and_notes,Partial; author information remains pending
+reporting-checklist-skeleton,56,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,57,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,58,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,59,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,60,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,61,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,62,applicability_and_notes,Reported at the named section or display
-reporting-checklist-skeleton,63,applicability_and_notes,Reported at the named section or display
+reporting-checklist-skeleton,63,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,64,applicability_and_notes,Reported at the named section or display
 reporting-checklist-skeleton,1,source,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf
 reporting-checklist-skeleton,2,source,https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf

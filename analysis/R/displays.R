@@ -84,44 +84,12 @@ build_displays <- function(inputs,cells,rebuild_figures=TRUE) {
   build_figure_legends()
   build_results_sentences()
   write_display_trace()
-  build_manuscript_document()
+  finalize_publication_documents()
 }
 
-build_manuscript_document <- function() {
-  main <- readLines('../docs/manuscript/manuscript.md',encoding='UTF-8')
-  main <- main[!grepl('^Word counts:',main)]
-  text <- c(main,'',readLines('../docs/manuscript/references.md',encoding='UTF-8'))
-  path <- 'output/manuscript/qa/manuscript-assembled.md'
-  writeLines(enc2utf8(text),path,useBytes=TRUE)
-  staged <- tempfile(tmpdir='output/manuscript',fileext='.docx')
-  on.exit(unlink(staged),add=TRUE)
-  stopifnot(system2('quarto',c('pandoc',path,'--from=markdown','--to=docx',paste0('--output=',staged)))==0L)
-  replace_generated_file(staged,'output/manuscript/Manuscript.docx')
-  normalize_manuscript_styles('output/manuscript/Manuscript.docx')
+finalize_publication_documents <- function() {
   python <- Sys.getenv('ARBITER_PYTHON',unset=Sys.which('python'))
   if(!nzchar(python)) python <- Sys.which('python3')
   if(!nzchar(python)) stop('Install Python with python-docx and lxml, or set ARBITER_PYTHON to that interpreter.')
   stopifnot(system2(python,'../docs/manuscript/assemble-publication.py')==0L)
-}
-
-# Keep Pandoc's unnumbered headings and use explicit black in the Word styles.
-normalize_manuscript_styles <- function(file) {
-  target <- normalizePath(file,winslash='/',mustWork=TRUE)
-  folder <- tempfile('manuscript-style-');dir.create(folder)
-  on.exit(unlink(folder,recursive=TRUE),add=TRUE)
-  utils::unzip(target,exdir=folder)
-  path <- file.path(folder,'word/styles.xml')
-  xml <- xml2::read_xml(path)
-  styles <- xml2::xml_find_all(xml,"//w:style[starts-with(@w:styleId,'Heading') or @w:styleId='Title' or @w:styleId='Subtitle']")
-  for(style in styles) {
-    props <- xml2::xml_find_first(style,'w:rPr')
-    if(inherits(props,'xml_missing')) props <- xml2::xml_add_child(style,'w:rPr')
-    xml2::xml_remove(xml2::xml_find_all(props,'w:color'))
-    xml2::xml_add_child(props,'w:color',`w:val`='000000')
-  }
-  xml2::write_xml(xml,path)
-  staged <- tempfile(tmpdir=dirname(target),fileext='.docx')
-  on.exit(unlink(staged),add=TRUE)
-  zip::zipr(staged,files=list.files(folder,all.files=TRUE,no..=TRUE),root=folder,include_directories=FALSE)
-  replace_generated_file(staged,target)
 }

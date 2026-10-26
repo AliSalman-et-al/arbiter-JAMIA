@@ -10,7 +10,6 @@ import importlib.util
 from pathlib import Path
 import re
 import subprocess
-import sys
 import tempfile
 
 from docx import Document
@@ -100,11 +99,9 @@ def supplement_navigation(root):
 
 
 def protected_hashes():
-    # Manuscript.docx belongs to the parent writer; it may change concurrently.
     paths = list((ANALYSIS / 'output/tables').rglob('*.csv'))
     paths += [p for p in OUT.rglob('*') if p.is_file() and p.parent.name != 'qa'
-              and p.suffix.lower() in {'.docx', '.png', '.pdf', '.svg', '.tiff'}
-              and p.name != 'Manuscript.docx']
+              and p.suffix.lower() in {'.docx', '.png', '.pdf', '.svg', '.tiff'}]
     return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
 
 
@@ -122,7 +119,7 @@ def verify_page(path, sources, expected_tables, expected_images):
     for href in root.xpath('//@href'):
         if href.startswith('#') and len(href) > 1:
             assert href[1:] in ids, f'{path.name}: missing anchor {href}'
-    assert root.xpath('//*[@id="publication-navigation"]//a[@href="manuscript.html"]')
+    assert root.xpath('//*[@id="publication-navigation"]//a[@href="results.html"]')
     return root
 
 
@@ -173,11 +170,6 @@ def build():
             wrapper.append(table)
         styles = '<style>.supplement-table table {min-width:36rem; width:100%} .supplement-table td, .supplement-table th {padding:.45rem .65rem} .supplement-table img {max-width:100%; height:auto} main img {max-width:100%; height:auto}</style>'
         (GENERATED / 'supplement-page.md').write_text(raw_html(styles + serialize(root)), encoding='utf-8')
-        # Quarto parses every project include even when rendering a single page.
-        # On a clean checkout, create the manuscript include only after the two
-        # report includes exist; the HTML-only helper does not rewrite Word.
-        if not (GENERATED / 'manuscript-page.md').is_file():
-            run(sys.executable, ROOT / 'scripts/build-manuscript.py', '--html-only')
         for page in ('results', 'supplement'):
             run('quarto', 'render', f'{page}.qmd')
         results = verify_page(ANALYSIS / 'results.html', [OUT / f'Table{i}.docx' for i in range(1, metadata.MAIN_TABLE_COUNT + 1)], metadata.MAIN_TABLE_COUNT, [(OUT / f'Figure{i}.png').read_bytes() for i in range(1, metadata.MAIN_FIGURE_COUNT + 1)])

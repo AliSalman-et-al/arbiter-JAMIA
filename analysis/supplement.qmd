@@ -7,7 +7,7 @@ execute:
   enabled: false
 ---
 
-[Home](index.html) · [Manuscript](manuscript.html) · [Results](results.html) · [Supplement](supplement.html) · [Software](https://github.com/AliSalman-et-al/ARBITER/) · [Study repository and reproduction](https://github.com/AliSalman-et-al/arbiter-JAMIA)
+[Home](index.html) · [Main analysis](results.html) · [Supplement](supplement.html) · [Software](https://github.com/AliSalman-et-al/ARBITER/) · [Study repository and reproduction](https://github.com/AliSalman-et-al/arbiter-JAMIA)
 
 [Download the Word supplement](output/manuscript/Supplement.docx). [TRIPOD-LLM and GRRAS reporting map](output/manuscript/TRIPOD-LLM.docx).
 

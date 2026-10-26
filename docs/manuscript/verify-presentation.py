@@ -11,7 +11,7 @@ spec=importlib.util.spec_from_file_location('report_refresh',ROOT/'scripts/repor
 refresh=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(refresh)
 metadata=refresh.metadata
-for name in ['Table1','Table2','Table3','Manuscript','Supplement','TRIPOD-LLM']:
+for name in ['Table1','Table2','Table3','Supplement','TRIPOD-LLM']:
  with ZipFile(OUT/f'{name}.docx') as z:
   doc=etree.fromstring(z.read('word/document.xml'))
   paragraphs=[''.join(p.xpath('.//w:t/text()',namespaces=NS)) for p in doc.xpath('//w:p',namespaces=NS)]
@@ -26,14 +26,6 @@ for name in ['Table1','Table2','Table3','Manuscript','Supplement','TRIPOD-LLM']:
    assert t.xpath('./w:tr/w:trPr/w:tblHeader',namespaces=NS),name
    assert all(int(v)>=18 for v in t.xpath('.//w:sz/@w:val',namespaces=NS)),name
   assert any(n.startswith('word/footer') for n in z.namelist()),name
-  if name=='Manuscript':
-   assert len(tables)==metadata.MAIN_TABLE_COUNT
-   assert not any(re.match(r'eFigure [1-5][ .]',p) for p in paragraphs), 'Supplementary legends leaked into the main manuscript'
-   assert sum(p.startswith('Alt text:') for p in paragraphs)==metadata.MAIN_FIGURE_COUNT
-   for i in range(1,metadata.MAIN_FIGURE_COUNT+1):assert re.search(rf'Figure {i}[ .]',text)
-   assert re.search(r'Word counts: main text [0-9]+; structured abstract [0-9]+[.]',text)
-   styles=etree.fromstring(z.read('word/styles.xml'))
-   assert styles.xpath('//w:style/w:pPr/w:spacing[@w:line="480"]',namespaces=NS)
   if name=='Supplement':
    assert not doc.xpath('//w:drawing',namespaces=NS),'Retired supplementary figures remain'
    for number in range(1,7):

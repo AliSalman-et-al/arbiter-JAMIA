@@ -40,4 +40,3 @@ writeLines(trimws(capture.output(sessionInfo()),which='right'),'output/session-i
 python <- Sys.getenv('ARBITER_PYTHON', unset=Sys.which('python3'))
 if(!nzchar(python)) python <- Sys.which('python')
 stopifnot(system2(python,c('../scripts/report-refresh.py'))==0L)
-stopifnot(system2(python,c('../scripts/build-manuscript.py','--html-only'))==0L)

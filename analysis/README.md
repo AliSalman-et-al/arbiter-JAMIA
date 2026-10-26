@@ -8,7 +8,6 @@ Rscript run.R
 Rscript -e 'testthat::test_dir("tests/testthat")'
 Rscript verify-output.R
 python ../scripts/verify-reduction.py
-python ../docs/manuscript/verify-numbers.py
 python ../docs/manuscript/verify-presentation.py
 ```
 
@@ -26,19 +25,20 @@ Reader-facing outputs label the independent human assessments Human Review 1 and
 
 The group key Overall in signalling CSVs means pooled answers. Overall in the independent-rating tables means an exploratory worst-domain expert reference. It is not a directly assessed sixth domain. The legacy primary-endpoint.csv filename identifies conditional blinded choices and confers no scientific priority.
 
+The active IMRaD draft, its bibliography and its Word/HTML outputs were removed on 26 October 2026 for a fresh manuscript. The main analysis summaries, tables, figures and supplement remain. Earlier drafts are available in Git history; historical audit records do not define the next manuscript.
+
 ## Publication builds
 
 ```sh
 Rscript build-publication.R
 ```
 
-This reuses finalized numerical exports without resampling. The native editable tables originate in gt. The shared assembler inserts them into Word and checks embedded cells against standalone tables. HTML refresh checks every source table cell, figure and local link.
+This reuses finalized numerical exports without resampling. The native editable tables originate in gt. The shared finalizer adds pagination and stable heading bookmarks to the standalone tables, supplement and reporting map. HTML refresh checks every source table cell, figure and local link.
 
 To refresh only web pages from already finalized artifacts, run from the repository root:
 
 ```sh
 python scripts/report-refresh.py
-python scripts/build-manuscript.py --html-only
 python scripts/stage-pages.py .audit/pages-stage
 ```
 

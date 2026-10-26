@@ -27,7 +27,7 @@ Scope is the 26 October 2026 author-directed reduction and neutral human-review 
 | Rule/source checks establish conformity and structural properties | S4 table3.csv, audit-summary.csv and bundle-domain-checks.csv | Distinct objects and denominators; evidence support remains untested. |
 | Runtime and API equivalents describe computation | S4 table5.csv, api-cost-summary.csv and api-token-reconciliation.csv | Medians/IQRs versus paired means; reconstructed prices are not expenditure or reviewer time. |
 
-All displayed numbers must pass docs/manuscript/verify-numbers.py. Retained numerical rows, including their full scientific identifiers and intervals, must match S1 under scripts/verify-reduction.py. That script also checks source-input identity and its changed-value, swapped-identity and duplicate-row controls. Updated reporting-checklist locators are metadata, checked separately from numerical identity.
+The prior IMRaD number audit was removed with the article draft. Current retained counts are reconciled by analysis/verify-output.R, and table presentation is checked by docs/manuscript/verify-presentation.py. Retained numerical rows, including their full scientific identifiers and intervals, must match S1 under scripts/verify-reduction.py. That script also checks source-input identity and its changed-value, swapped-identity and duplicate-row controls. Updated reporting-checklist locators are metadata, checked separately from numerical identity.
 
 The selection inventory accounts for omitted families. Important adverse diagnostics remain in the current supplement. Full AVATAR answer and evidence records remain directly linked. Peripheral retired code and outputs remain recoverable from S1.
 

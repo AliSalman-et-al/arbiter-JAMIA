@@ -35,7 +35,7 @@ class Links(HTMLParser):
 def check_links(destination: Path):
     failures = []
     checked = 0
-    for filename in ("index.html", "manuscript.html", "results.html", "supplement.html"):
+    for filename in ("index.html", "results.html", "supplement.html"):
         parser = Links()
         parser.feed((destination / filename).read_text(encoding="utf-8"))
         for link in sorted(parser.local):
@@ -54,12 +54,11 @@ def stage(destination: Path):
         raise SystemExit("Choose a dedicated Pages worktree or staging directory.")
     sources = {
         "index.html": ROOT / "scripts/pages-index.html",
-        "manuscript.html": ROOT / "analysis/manuscript.html",
         "results.html": ROOT / "analysis/results.html",
         "supplement.html": ROOT / "analysis/supplement.html",
     }
     output = ROOT / "analysis/output/manuscript"
-    for stem in ("Manuscript", "Supplement", "TRIPOD-LLM", *[f"Table{i}" for i in range(1, metadata.MAIN_TABLE_COUNT + 1)]):
+    for stem in ("Supplement", "TRIPOD-LLM", *[f"Table{i}" for i in range(1, metadata.MAIN_TABLE_COUNT + 1)]):
         sources[f"output/manuscript/{stem}.docx"] = output / f"{stem}.docx"
     for i in range(1, metadata.MAIN_FIGURE_COUNT + 1):
         for suffix in ("pdf", "png"):

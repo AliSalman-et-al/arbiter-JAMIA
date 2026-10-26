@@ -1,7 +1,6 @@
 project:
   type: default
   render:
-    - manuscript.qmd
     - results.qmd
     - supplement.qmd
 engine: knitr

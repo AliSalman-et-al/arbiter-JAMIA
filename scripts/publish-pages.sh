@@ -7,7 +7,8 @@ pages="$root/../arbiter-JAMIA-pages"
 [ -d "$pages" ] || git -C "$root" worktree add "$pages" gh-pages
 "${ARBITER_PYTHON:-python3}" "$root/scripts/stage-pages.py" "$pages"
 cd "$pages"
-git add .nojekyll index.html manuscript.html results.html supplement.html publication-manifest.json output/manuscript
+git add -u
+git add .nojekyll index.html results.html supplement.html publication-manifest.json output/manuscript
 git diff --cached --quiet && { echo "Pages already up to date."; exit 0; }
 git commit -qm "Publish analysis reports from $(git -C "$root" rev-parse --short HEAD)"
 git push -q origin gh-pages

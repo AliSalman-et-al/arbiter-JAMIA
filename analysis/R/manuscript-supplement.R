@@ -202,7 +202,7 @@ build_reporting_map <- function() {
   readr::write_csv(checklist,'output/tables/reporting-checklist-skeleton.csv',na='')
   checklist <- checklist |> select(guideline,item,topic,section,applicability_and_notes)
   doc <- manuscript_doc() |> manuscript_par('TRIPOD LLM and GRRAS reporting map',style='heading 1') |>
-    add_paginated_table(clean_display(checklist),'Reporting map','Author credentials, declarations, text-date coverage and archive details require author completion. Current section titles and display numbers identify reported material.',8L)
+    add_paginated_table(clean_display(checklist),'Reporting map','The previous IMRaD draft was removed for a fresh manuscript. Pending manuscript sections, author credentials, declarations, text-date coverage and archive details require completion. Other locators identify retained analysis and supplement materials.',8L)
   save_manuscript_doc(doc,'output/manuscript/TRIPOD-LLM.docx')
   writeLines(paste(SUPPLEMENT_HTML$tables,collapse='\n<!--GT_TABLE_BOUNDARY-->\n'),'output/manuscript/qa/reporting-gt.html')
 }
