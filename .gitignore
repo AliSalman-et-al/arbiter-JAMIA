@@ -15,6 +15,7 @@ renv/local/
 # Python / uv
 .venv/
 __pycache__/
+.audit/
 
 # Quarto
 /.quarto/

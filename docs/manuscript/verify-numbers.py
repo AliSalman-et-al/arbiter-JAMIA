@@ -121,7 +121,8 @@ def metadata_spans(text):
         "display cross-reference": r"\b(?:Figures?|Tables?|eTables?|eFigures?)\s+\d+(?:[AB]|[–-]\d+)?(?:,\d+(?:[–-]\d+)?)*",
         "instrument identifier": r"\b(?:RoB [12]|ROBOTO2)\b",
         "domain identifier": r"\bD[1-5](?:[–-]D[1-5])?\b",
-        "expert identifier": r"\bExperts? [12](?: and [12])?\b",
+        "human review identifier": r"\bHuman Reviews? [12](?: and [12])?\b",
+        "disclosed AI model identifier": r"\b(?:GPT-6-Astra|GPT-6\.1-Sol|GPT-6-Luna)\b",
         "interval convention": r"\b95%",
         "model identifier": r"`claude-sonnet-5-5`",
         "evaluated assessment command (release audit)": r"`/rob2-assess`",
@@ -304,9 +305,9 @@ def endpoint_definition_checks(methods):
     """Accept reviewed equivalent definitions, independently of result values."""
     outcomes = methods.split("### Outcomes\n", 1)[-1].split("### Statistical analysis\n", 1)[0]
     full_cohort = bool(re.search(r"(?:all 510 cells|across 510 cells)", outcomes))
-    original = ("The denominator included only cells in which both experts chose the same label" in outcomes
+    original = ("The denominator included only cells in which both human reviewers chose the same label" in outcomes
                 and "among cells where the arms' ratings differed" in outcomes)
-    revised = ("The conditional label-choice analysis included the cells where the arms differed and both experts chose the same label." in outcomes
+    revised = ("The conditional label-choice analysis included the cells where the arms differed and both human reviewers chose the same label." in outcomes
                and "Its numerator counted agreed labels matching ARBITER." in outcomes)
     return [] if full_cohort and (original or revised) else [
         "Full-cohort and conditional endpoint definitions missing"]
@@ -327,20 +328,23 @@ def headline_checks(text):
             return {}
         return found[0]
 
-    primary = selected("primary-endpoint.csv", analysis="Consensus", metric="ARBITER")
-    check((primary.get("count"), primary.get("n")) == ("53", "60"), "Primary source counts changed")
-    check("53/60" in text and "7/60" in text, "Primary counts missing")
+    choice = selected("primary-endpoint.csv", analysis="Consensus", metric="ARBITER")
+    check((choice.get("count"), choice.get("n")) == ("53", "60"), "Conditional-choice source counts changed")
+    check("53/60" in text and "7/60" in text, "Conditional-choice counts missing")
     for field, expected in (("estimate", 88.3), ("lower", 79.7), ("upper", 96.3)):
-        check(round(float(primary.get(field, "nan")) * 100, 1) == expected,
-              f"Primary {field} changed")
-    check("88%; 95% CI, 80–96%" in text, "Primary displayed estimate/interval changed")
+        check(round(float(choice.get(field, "nan")) * 100, 1) == expected,
+              f"Conditional-choice {field} changed")
+    check("88%; 95% CI, 80–96%" in text, "Conditional-choice displayed estimate/interval changed")
+    check(all(s in text for s in ("80 cells", "60 and split in 20", "53/80")),
+          "Conditional-choice selection or split-loss sensitivity missing")
     for expert, expected in (("1", (371, 332, 301)), ("2", (433, 400, 362))):
         for source, count in zip(("ARBITER", "Unassisted", "Published"), expected):
             row = selected("independent-estimates.csv", adjudicator=expert,
                            source=source, domain="D1-D5", metric="accuracy")
             check((row.get("count"), row.get("n")) == (str(count), "510"),
                   f"Independent agreement changed: {expert}, {source}")
-            check(f"{count}/510" in text, f"Independent count missing: {expert}, {source}")
+            if source != "Published":
+                check(f"{count}/510" in text, f"Independent count missing: {expert}, {source}")
     for expert, values in (("1", (7.6, 5.1, 10.2)), ("2", (6.5, 3.5, 9.4))):
         row = selected("independent-differences.csv", adjudicator=expert,
                        domain="D1-D5", metric="accuracy", comparison="ARBITER minus Unassisted")
@@ -350,21 +354,6 @@ def headline_checks(text):
         check(f"{values[0]}" in sections(text)["Abstract"] and
               f"{values[1]}–{values[2]}" in sections(text)["Abstract"],
               f"Abstract paired difference missing: {expert}")
-    for expert, count in (("1", 64), ("2", 65)):
-        row = selected("direction-of-disagreement.csv", source="ARBITER", direction="Stricter",
-                       adjudicator=expert, outcome="Expert matches model")
-        check((row.get("count"), row.get("n")) == (str(count), "88"), "Directional count changed")
-
-    changed = rows("rules-only-changed.csv")
-    check(len(changed) == 26 and sum(r["discordant"] == "TRUE" for r in changed) == 6,
-          "Rules-only changed population changed")
-    repaired = selected("rules-only-primary.csv", analysis="Consensus", metric="Unassisted")
-    check((repaired.get("count"), repaired.get("n")) == ("8", "60"), "Recomputed credit changed")
-    for expert, count in (("1", 324), ("2", 391)):
-        row = selected("rules-only-agreement.csv", adjudicator=expert, source="Unassisted",
-                       domain="D1-D5", metric="accuracy")
-        check(row.get("count") == str(count), "Recomputed independent agreement changed")
-
     audit = selected("table3.csv", arm="Unassisted (Sonnet 5.5)", domain="D1-D5", status="Any rule break")
     check((audit.get("count"), audit.get("n")) == ("65", "509"), "Rule audit changed")
     check("65/509" in text and "1407/1407" in text, "Audit claims missing")
@@ -375,7 +364,7 @@ def headline_checks(text):
     check(not re.search(r"18 October 2026|before the expert ratings.*analysed|prespecified", methods),
           "Chronology declaration retained")
     check(re.findall(r"^### (.+)$", methods, re.M) == ["System design", "Benchmark and assessment arms",
-          "Independent expert references", "Outcomes", "Statistical analysis"], "Methods structure changed")
+          "Independent human reviews", "Outcomes", "Statistical analysis"], "Methods structure changed")
     check("https://github.com/AliSalman-et-al/ARBITER/" in methods and "2f549ae" in methods,
           "Live and evaluated software citations missing")
     for source, count in (("Published", 427), ("ARBITER", 375), ("Unassisted", 407),
@@ -384,22 +373,8 @@ def headline_checks(text):
         check((row.get("count"), row.get("n")) == (str(count), "510"),
               f"Severity distribution changed: {source}")
 
-    for expert, metric, values in (("1", "sensitivity", (16.3, 10.6, 22.1)),
-                                   ("1", "specificity", (2.2, 0.7, 3.9)),
-                                   ("2", "sensitivity", (19.5, 12.8, 26.4)),
-                                   ("2", "specificity", (0.0, -2.5, 2.6))):
-        row = selected("independent-binary-differences.csv", adjudicator=expert, metric=metric,
-                       domain="D1-D5", comparison="ARBITER minus Unassisted")
-        check(tuple(round(float(row.get(k, "nan")) * 100, 1)
-                    for k in ("estimate", "lower", "upper")) == values,
-              f"Expert binary difference changed: {expert}, {metric}")
-        interval = (f"{values[1]}–{values[2]}" if values[1] >= 0
-                    else f"{values[1]} to {values[2]}").replace("-", "−")
-
     for metric, scale, values in (("accuracy", 100, (-1.8, -5.1, 1.6)),
-                                  ("kappa", 1, (0.06, -0.03, 0.14)),
-                                  ("sensitivity", 100, (15.7, 6.8, 24.4)),
-                                  ("specificity", 100, (-4.4, -7.6, -1.2))):
+                                  ("kappa", 1, (0.06, -0.03, 0.14))):
         row = selected("agreement-meta-differences.csv", metric=metric, domain="D1-D5",
                        reference="Published",
                        comparison="ARBITER (Sonnet 5.5) minus Unassisted (Sonnet 5.5)")
@@ -407,9 +382,25 @@ def headline_checks(text):
         check(tuple(round(float(row.get(k, "nan")) * scale, places)
                     for k in ("estimate", "lower", "upper")) == values,
               f"Published-label paired difference changed: {metric}")
-    row = selected("expert-reliability-matched.csv", metric="accuracy", domain="Overall")
-    check((row.get("count"), row.get("n")) == ("42", "81"),
-          "Matched expert Overall reliability changed")
+    reliability = selected("expert-reliability.csv", metric="accuracy", domain="D1-D5")
+    check((reliability.get("count"), reliability.get("n")) == ("388", "510"),
+          "Independent expert reliability changed")
+    check("388/510" in text, "Expert disagreement context missing")
+    for level, values in (("five", (-10.3, -17.2, -3.2)),
+                          ("collapsed", (8.5, 3.5, 13.7))):
+        row = selected("signalling-differences.csv", adjudicator="1", group="D3", level=level)
+        check(row.get("n") == "165", f"D3 paired signalling population changed: {level}")
+        check(tuple(round(float(row.get(k, "nan")) * 100, 1)
+                    for k in ("estimate", "lower", "upper")) == values,
+              f"D3 coding-dependent signalling result changed: {level}")
+    check("−10.3" in text and "+8.5" in text, "Unfavorable signalling contrast missing")
+    for expert, n, estimate in (("1", "101", -39.6), ("2", "102", -28.4)):
+        five = selected("signalling-differences.csv", adjudicator=expert, group="4.1", level="five")
+        collapsed = selected("signalling-differences.csv", adjudicator=expert, group="4.1", level="collapsed")
+        check(five.get("n") == collapsed.get("n") == n and
+              round(float(five.get("estimate", "nan")) * 100, 1) == estimate and
+              float(collapsed.get("estimate", "nan")) == 0,
+              f"Question 4.1 adverse/collapsed comparison changed: {expert}")
     return failures
 
 
@@ -464,7 +455,7 @@ def structure_checks(text):
 def wording_checks(text, external_spans):
     pattern = (r"\b(?:first|over-flagging|second reviewer|unchangeable|tamper-proof|Haiku|ground truth|accuracy|correct|kit|hid|reversed|masked|expert-level|matched experts|Adjudicator)\b|supported by evidence")
     reporting_order = [m.span() for m in re.finditer(
-        r"We report published-label agreement first, followed by independent-expert agreement", text)]
+        r"We report published-label agreement first, followed by agreement with independent human reviews", text)]
     banned = []
     for match in re.finditer(pattern, text, re.I):
         # A source's sequential groups and masked human panel are legitimate

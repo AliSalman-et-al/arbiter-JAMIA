@@ -1,5 +1,5 @@
 ---
-title: "ARBITER results against blinded expert ratings"
+title: "ARBITER results against independent human reviews"
 format:
   html:
     css: ../scripts/manuscript.css
@@ -9,7 +9,7 @@ execute:
 
 [Home](index.html) · [Manuscript](manuscript.html) · [Results](results.html) · [Supplement](supplement.html) · [Software](https://github.com/AliSalman-et-al/ARBITER/) · [Study repository and reproduction](https://github.com/AliSalman-et-al/arbiter-JAMIA)
 
-ARBITER is an available workflow that separates model interpretation from executable rules for the Cochrane risk-of-bias tool for randomised trials (RoB 2) and retains sources, answers and evidence for inspection. We compared its complete Sonnet workflow with the same model given a minimal prompt and identical supplied files for 102 trials from 16 reviews. Two experts independently rated all 510 domain cells before viewing labels. A separate conditional forced-choice endpoint used the 60 agreed choices among 80 arm-discordant cells.
+ARBITER separates model interpretation from executable rules for the Cochrane risk-of-bias tool for randomised trials (RoB 2) and retains sources, answers and evidence for inspection. We compared its complete workflow with minimal prompting using the same reported model identifier and identical supplied files for 102 trials from 16 reviews. Two human reviewers independently rated all 510 domain cells before viewing labels. Their assessments are labeled Human Review 1 and Human Review 2. A separate conditional label-choice analysis used 60 agreed choices among 80 arm disagreements; 20 choices split.
 
 {{< include .quarto/results-page.md >}}
 
@@ -17,4 +17,4 @@ ARBITER is an available workflow that separates model interpretation from execut
 
 ## Reproduction
 
-The [study repository](https://github.com/AliSalman-et-al/arbiter-JAMIA) contains the analysis pipeline, test suite, numerical exports and output verifier. [Supplementary methods and results](supplement.html) provide supporting estimates, full question-level panels, prompts, the worked trace and reporting locations. Trial PDFs are not redistributed.
+The [study repository](https://github.com/AliSalman-et-al/arbiter-JAMIA) contains the analysis pipeline, test suite, numerical exports and output verifier. [Supplementary methods and results](supplement.html) provide supporting estimates, complete paired question results, prompts, reporting locations and links to the complete worked-example records. Trial PDFs are not redistributed.

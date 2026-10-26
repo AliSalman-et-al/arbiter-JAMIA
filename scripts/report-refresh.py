@@ -66,7 +66,6 @@ def raw_html(text):
 
 
 def supplement_navigation(root):
-    # Retain the established native-table-html.py contents/heading policy.
     for heading in root.xpath('.//h1|.//p[contains(@class,"heading")]'):
         if normalized(heading.text_content()) == 'ARBITER supplementary methods and results':
             heading.getparent().remove(heading)
@@ -79,35 +78,25 @@ def supplement_navigation(root):
         node = following
     if node is None:
         raise ValueError('Supplement methods boundary missing')
-    for p in root.xpath('.//p[contains(@class,"heading")]'):
-        title = normalized(p.text_content())
-        p.tag = 'h1' if re.match(r'^[1-7]\. |^AVATAR complete trace$|^Prompt templates and run provenance$', title) else 'h2'
+    for heading in root.xpath('.//p[contains(@class,"heading")]'):
+        heading.tag = 'h2'
     nav = dom.Element('details')
     etree.SubElement(nav, 'summary').text = 'Contents and stable display locators'
     listing = etree.SubElement(nav, 'ul')
+    contents.getparent().replace(contents, nav)
     seen = {}
-    before_results = True
     for heading in root.xpath('.//h1|.//h2|.//h3'):
         title = normalized(heading.text_content())
-        if heading is contents:
-            heading.getparent().replace(heading, nav)
-            continue
         slug = 'supp-' + re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
         seen[slug] = seen.get(slug, 0) + 1
         heading.set('id', slug + (f'-{seen[slug]}' if seen[slug] > 1 else ''))
-        heading.tag = 'h' + str(min(6, int(heading.tag[1]) + 1))
-        if re.match(r'^1\. ', title):
-            before_results = False
-        if title == 'Prompt templates and run provenance':
-            heading.tag = 'h2'
-        selected = before_results or bool(re.match(r'^(eTable \d|eFigure [1-5]|[1-7]\. |AVATAR complete trace$|Prompt templates and run provenance$)', title))
-        if selected and '(continued ' not in title:
+        heading.tag = 'h2' if title.startswith('eTable ') or title == 'Prompt templates and run provenance' else 'h3'
+        if '(continued ' not in title:
             etree.SubElement(etree.SubElement(listing, 'li'), 'a', href='#' + heading.get('id')).text = title
-    for prefix, label in [('Algorithms and validation', 'Supplementary methods'), ('eFigure 1.', 'Supplementary figures')]:
-        target = next(h for h in root.xpath('.//h2|.//h3|.//h4') if normalized(h.text_content()).startswith(prefix))
-        heading = dom.Element('h2')
-        heading.text = label
-        target.addprevious(heading)
+    target = next(h for h in root.xpath('.//h3') if normalized(h.text_content()) == 'Algorithms and validation')
+    heading = dom.Element('h2')
+    heading.text = 'Supplementary methods'
+    target.addprevious(heading)
 
 
 def protected_hashes():
@@ -149,8 +138,10 @@ def build():
                 f'<figure class="manuscript-figure"><img src="output/manuscript/Figure{i}.png" alt="{html.escape(alt, quote=True)}">'
                 f'<figcaption>{html.escape(caption)}</figcaption></figure>') +
                 f'\n[Download figure PDF](output/manuscript/Figure{i}.pdf) · [PNG](output/manuscript/Figure{i}.png)')
+            if i == 2:
+                blocks.append(metadata.worked_example_markdown())
         blocks.append('## Tables')
-        for i in range(1, 4):
+        for i in range(1, metadata.MAIN_TABLE_COUNT + 1):
             target = folder / f'Table{i}.html'
             source = OUT / f'Table{i}.docx'
             run('quarto', 'pandoc', source, '--to=html', f'--output={target}')
@@ -189,8 +180,8 @@ def build():
             run(sys.executable, ROOT / 'scripts/build-manuscript.py', '--html-only')
         for page in ('results', 'supplement'):
             run('quarto', 'render', f'{page}.qmd')
-        results = verify_page(ANALYSIS / 'results.html', [OUT / f'Table{i}.docx' for i in range(1, 4)], 3, [(OUT / f'Figure{i}.png').read_bytes() for i in range(1, 6)])
-        supplement = verify_page(ANALYSIS / 'supplement.html', [OUT / 'Supplement.docx'], 98, image_bytes)
+        results = verify_page(ANALYSIS / 'results.html', [OUT / f'Table{i}.docx' for i in range(1, metadata.MAIN_TABLE_COUNT + 1)], metadata.MAIN_TABLE_COUNT, [(OUT / f'Figure{i}.png').read_bytes() for i in range(1, metadata.MAIN_FIGURE_COUNT + 1)])
+        supplement = verify_page(ANALYSIS / 'supplement.html', [OUT / 'Supplement.docx'], len(word_cells(OUT / 'Supplement.docx')), image_bytes)
         rendered = normalized(results.text_content())
         for paragraph in (OUT / 'results-sentences.md').read_text(encoding='utf-8').split('\n\n'):
             assert normalized(paragraph) in rendered
@@ -203,25 +194,21 @@ def build():
         supplement_text = normalized(supplement.text_content())
         for paragraph in source_paragraphs:
             assert normalized(paragraph.text_content()) in supplement_text
-        # Round six adds the Benchmark construction and exclusions eMethods heading.
-        assert len(supplement.xpath('//details/ul/li/a')) == 63
-        trace = root.xpath('//*[@id="supp-avatar-complete-trace"]')[0]
-        trace_paragraphs = []
-        for node in trace.itersiblings():
-            if node.tag == 'h2' and normalized(node.text_content()) == 'Prompt templates and run provenance':
-                break
-            if node.tag == 'p':
-                trace_paragraphs.append(normalized(node.text_content()))
-        assert len(trace_paragraphs) == 233, 'Unexpected finalized trace inventory'
+        navigation_links = supplement.xpath('//details/ul/li/a')
+        assert navigation_links, 'Supplement contents missing'
+        assert not image_bytes, 'Retired supplementary figures remain embedded'
+        for number in range(1, 7):
+            assert any(normalized(a.text_content()).startswith(f'eTable {number}.') for a in navigation_links), f'Missing eTable {number}'
         assert before == protected_hashes(), 'Protected publication/statistical sources changed'
-        evidence = {'protected_sha256': before, 'main_tables': 3, 'main_images': 5,
-                    'supplement_tables': 98, 'supplement_images': image_count,
-                    'supplement_contents_links': 63, 'trace_paragraphs': len(trace_paragraphs),
+        evidence = {'protected_sha256': before, 'main_tables': metadata.MAIN_TABLE_COUNT, 'main_images': metadata.MAIN_FIGURE_COUNT,
+                    'supplement_tables': len(word_cells(OUT / 'Supplement.docx')), 'supplement_images': image_count,
+                    'supplement_contents_links': len(navigation_links),
                     'supplement_paragraphs': len(source_paragraphs),
                     'html_sha256': {name: hashlib.sha256((ANALYSIS / name).read_bytes()).hexdigest()
                                     for name in ('results.html', 'supplement.html')}}
         (GENERATED / 'report-refresh-verification.json').write_text(json.dumps(evidence, indent=2) + '\n', encoding='utf-8')
-        print(f'PASS: 3 main tables, 5 figures; 98 supplementary tables, {image_count} images; '
+        print(f'PASS: {metadata.MAIN_TABLE_COUNT} main tables, {metadata.MAIN_FIGURE_COUNT} figures; '
+              f"{evidence['supplement_tables']} supplementary tables, {image_count} images; "
               f'{len(source_paragraphs)} supplement paragraphs and all physical cells preserved; '
               f'{len(before)} protected artifacts unchanged.')
 

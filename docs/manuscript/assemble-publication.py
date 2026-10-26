@@ -14,6 +14,8 @@ from docx.enum.style import WD_STYLE_TYPE
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT/'analysis/output/manuscript'
+spec = importlib.util.spec_from_file_location('manuscript_sources', ROOT/'scripts/manuscript-sources.py')
+metadata = importlib.util.module_from_spec(spec); spec.loader.exec_module(metadata)
 spec = importlib.util.spec_from_file_location('numbers', Path(__file__).with_name('verify-numbers.py'))
 numbers = importlib.util.module_from_spec(spec); spec.loader.exec_module(numbers)
 text = numbers.MANUSCRIPT.read_text(encoding='utf-8'); sections = numbers.sections(text)
@@ -146,7 +148,7 @@ countp=OxmlElement('w:p');anchor._p.addnext(countp)
 from docx.text.paragraph import Paragraph
 Paragraph(countp,doc._body).add_run(f'Word counts: main text {main_words}; structured abstract {abstract_words}.')
 # Insert complete editable native gt table blocks immediately after first citation.
-for i in range(1,4):
+for i in range(1,metadata.MAIN_TABLE_COUNT+1):
     anchor=next(p for p in doc.paragraphs if re.search(rf'\bTable {i}\b',p.text))
     anchor.paragraph_format.keep_together=True
     anchor.paragraph_format.keep_with_next=False
@@ -191,13 +193,25 @@ for j, (caption, alt) in enumerate(metadata.main_legends((OUT/'figure-legends.md
     cap.paragraph_format.keep_with_next=True
     altp=doc.add_paragraph('Alt text: '+alt)
     altp.paragraph_format.keep_together=True
+    if j == 1:
+        for label, url in metadata.WORKED_EXAMPLE_LINKS:
+            paragraph = doc.add_paragraph()
+            link = OxmlElement('w:hyperlink')
+            link.set(qn('r:id'), paragraph.part.relate_to(url,
+                     'http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink', is_external=True))
+            run = OxmlElement('w:r')
+            content = OxmlElement('w:t')
+            content.text = label
+            run.append(content)
+            link.append(run)
+            paragraph._p.append(link)
 bookkeep(doc);doc.save(path)
 # Fail at the assembly boundary if any embedded table is stale or altered.
 # Whitespace/run layout may differ, but every cell and note must match.
 def table_text(table):
     return [' '.join(cell.text.split()) for row in table.rows for cell in row.cells]
 assembled = Document(path)
-assert len(assembled.tables) == 3
+assert len(assembled.tables) == metadata.MAIN_TABLE_COUNT
 for i, embedded in enumerate(assembled.tables, 1):
     standalone = Document(OUT/f'Table{i}.docx')
     assert len(standalone.tables) == 1
@@ -206,42 +220,10 @@ for i, embedded in enumerate(assembled.tables, 1):
 for name in ([] if '--main-only' in sys.argv else ['Table1','Table2','Table3','Supplement','TRIPOD-LLM']):
     path=OUT/f'{name}.docx';doc=Document(path)
     if name=='Supplement':
-        # Match the publication width without reducing the 8-point figure labels.
-        for shape in doc.inline_shapes:
-            ratio=shape.height/shape.width
-            shape.width=Inches(6.86)
-            shape.height=int(shape.width*ratio)
-        manifest=OUT/'qa/figure-panels.csv'
-        rows=list(csv.DictReader(manifest.open(encoding='utf-8-sig')))
-        for row in rows:
-            ratio=float(row['height_inches'])/float(row['width_inches'])
-            row['width_inches']='6.86';row['height_inches']=str(6.86*ratio)
-        with manifest.open('w',encoding='utf-8',newline='') as handle:
-            writer=csv.DictWriter(handle,fieldnames=rows[0]);writer.writeheader();writer.writerows(rows)
-        in_trace=False
-        evidence_trace=False
+        assert not doc.inline_shapes, 'The compact supplement has no supplementary figures'
         for p in doc.paragraphs:
-            if p.text.startswith(('All confidence intervals use stratified trial-cluster resampling','Frequency percentages and percentage confidence limits')):
-                prose=p.text.replace('No p-values','No P values').replace('no p-values','no P values')
-                prefix,suffix=prose.split('P values',1)
-                p.clear();p.add_run(prefix);p.add_run('P').italic=True;p.add_run(' values'+suffix)
-            if p.text=='AVATAR complete trace':in_trace=True
-            if p.text=='Part B. Evidence records':evidence_trace=True
-            if p.text=='Prompt templates and run provenance':in_trace=False
-            if in_trace:
-                p.paragraph_format.keep_together=True
-                if not evidence_trace:
-                    p.paragraph_format.keep_with_next=not p.text.startswith('Unassisted:')
-                elif p.text.startswith(('Source:','Page:','Lines:','Source-version hash:','Context:')):
-                    p.paragraph_format.keep_with_next=True
             if not p.style.name.lower().startswith('heading'):
-                # Keep complete standalone supplementary legends beside the
-                # full-size readable artwork without reducing figure labels.
-                p.paragraph_format.line_spacing=1 if re.match(r'^eFigure [1-5][ .]',p.text) else 2
-                if re.match(r'^eFigure [1-5][ .]',p.text):
-                    p.paragraph_format.keep_together=True
-                if p._p.xpath('.//w:drawing'):
-                    p.paragraph_format.keep_with_next=True
+                p.paragraph_format.line_spacing=1.3
                 p.paragraph_format.space_after=Pt(4)
     bookkeep(doc);doc.save(path)
 print(f'Manuscript assembled: 3 native gt tables; 5 legends and alt texts; {main_words} main words; {abstract_words} abstract words.')

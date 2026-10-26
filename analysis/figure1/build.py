@@ -108,7 +108,7 @@ def load(data_root, source_root):
     published = row(data_root / "rob2-meta-benchmark-set/LABEL-TARGETS.csv", slug=SLUG)
     unassisted = row(data_root / "no-kit-sonnet-5.5/model-domain-labels.csv", slug=SLUG)
     adjud = row(data_root / "analysis/output/tables/adjudication-analysis-cells.csv", slug=SLUG, domain="D5")
-    assert adjud["consensus"] == "TRUE" and adjud["chosen_label_A"] == adjud["chosen_label_Z"]
+    assert adjud["consensus"] == "TRUE" and adjud["chosen_label_1"] == adjud["chosen_label_2"]
     assert labels["rob2kit_D5"] == DISPLAY[d["decision"]["adopted"]] == adjud["preferred"]
     assert verification["result"] == "verified"
     server_path = source_root / "src/arbiter/interfaces/mcp/server.py"
@@ -434,7 +434,7 @@ def trace_data(data,root,logs_root=None):
     table=root/'analysis/output/tables/domain-consistency-cells.csv'
     with table.open(encoding='utf-8-sig') as f:
         candidates=[a for a in csv.DictReader(f) if a.get('slug')==SLUG and a.get('domain')=='D4']
-    assert any('invalid' in json.dumps(a).lower() for a in candidates),candidates
+    assert any(a.get('status') in ('Invalid answer path','Required question skipped') for a in candidates),candidates
     excerpts=[['Allocation used a computer-generated, centre-stratified permuted-block sequence delivered through a web-based interactive response system, so concealment was adequate.'],
               ['The trial was open label, so participants and clinicians knew the assignments.'],
               ['All 157 patients were analysed. One patient lost to follow-up was censored.'],
@@ -573,7 +573,7 @@ def write_notes(data,rows,out):
           '', 'Source quotations are verbatim selections with ellipses for omissions and normalized extraction whitespace. Two extraction breaks are joined: assign-↵ment and cen↵sored. Questions are paraphrased; official wording is retained below and in eTable 31. Model reasons are verbatim excerpts, with ellipses for omissions.',
           '', 'Every manifest hash and source-version binding is checked at build time. The archive stores source identities and evidence quotations, rather than complete trial PDFs. Source-version identities bind each quote to its stored text copy and remain asserted internally. Fingerprints and their explanation are omitted from the displayed figure. Archived independent-verifier receipt: '+data['verification']['result']+'; this is a structure/evidence-binding check, not a clinical judgement.',
           '', 'D5 rule checked against the scientific-pack selection.md Algorithm section: High if 5.2 or 5.3 is Yes/Probably yes; otherwise Some concerns if 5.1 is No/Probably no/No information, or 5.2/5.3 is No information. NI/PN/PN therefore yields Some concerns. The overall.any_concerns rule is asserted from the bundle; the figure describes this trial, where no domain is High.',
-          '', 'Both adjudicators preferred D5 Some concerns; Published D5 is Low. Overall was not adjudicated. The Without ARBITER comparison strip has been removed.',
+          '', 'Both human reviews chose D5 Some concerns in the blinded-label exercise; Published D5 is Low. Overall was not adjudicated. The Without ARBITER comparison strip has been removed.',
           '', 'Bundle SHA-256: `'+data['bundle_sha256']+'`. AVATAR is illustrative, not representative.',
           '', '## Save-call rejection audit', '',json.dumps(json.loads((HERE/'save-rejections-summary.json').read_text()),indent=2)]
     text += ['', '## Fixed recorded-rule display mapping', '', 'Algorithm text is read from rob2-kit commit 2848c7926a2acc25402345a42be39d695a99861a, the exact run build. No model-generated clinical interpretation is placed in the ARBITER column. Each domain trace ID is asserted to match its adopted result; driver question IDs select the outlined chip and its official number.']

@@ -200,21 +200,21 @@ class ExternalClaimLedger(unittest.TestCase):
         # prose fixture isolates the original primary count assertion.
         text = ('## Abstract\n\n53/60 and 7/60.\n\n'
                 '## Materials and methods\n\nDefinitions.\n')
-        self.assertNotIn('Primary counts missing', self.audit.headline_checks(text))
-        self.assertIn('Primary counts missing',
+        self.assertNotIn('Conditional-choice counts missing', self.audit.headline_checks(text))
+        self.assertIn('Conditional-choice counts missing',
                       self.audit.headline_checks(text.replace('53/60', '52/60')))
 
     def test_equivalent_endpoint_wording_retains_all_conditions(self):
         original = ("### Outcomes\nAcross all 510 cells. "
-                    "The denominator included only cells in which both experts chose the same label "
+                    "The denominator included only cells in which both human reviewers chose the same label "
                     "among cells where the arms' ratings differed.")
         revised = ("### Outcomes\nFor Published, paired differences across 510 cells. "
-                   "The conditional label-choice analysis included the cells where the arms differed and both experts chose the same label. "
+                   "The conditional label-choice analysis included the cells where the arms differed and both human reviewers chose the same label. "
                    "Its numerator counted agreed labels matching ARBITER.")
         self.assertEqual(self.audit.endpoint_definition_checks(original), [])
         self.assertEqual(self.audit.endpoint_definition_checks(revised), [])
         for before, after in (('510', '60'), ('arms differed', 'arms agreed'),
-                              ('both experts', 'one expert'), ('matching ARBITER', 'matching Unassisted')):
+                              ('both human reviewers', 'one human reviewer'), ('matching ARBITER', 'matching Unassisted')):
             with self.subTest(before=before):
                 self.assertTrue(self.audit.endpoint_definition_checks(revised.replace(before, after)))
 

@@ -61,7 +61,7 @@ load_inputs <- function(root='..') {
       sheet='Adjudications',col_types='text') |>
       transmute(slug=Trial,domain=Domain,human=clean_label(Human),kit=clean_label(Kit),
         nokit=clean_label(`No-kit`),independent=clean_label(Independent),
-        chosen_label=clean_label(`Chosen label`),revised=clean_label(Revised),adjudicator=as.character(who)) |>
+        chosen_label=clean_label(`Chosen label`),adjudicator=as.character(who)) |>
       filter(!slug %in% EXCLUDED)
   }))
   validate_adjudication(adjud,labels,trials)
@@ -69,7 +69,7 @@ load_inputs <- function(root='..') {
     readxl::read_xlsx(file.path(root,'human-adjudication',paste0('adjudication-with-explanations-',who,'.xlsx')),
       sheet='Signalling evidence',col_types='text') |>
       transmute(slug=Trial,phase=Phase,domain=Domain,question=Question,raw_answer=Answer,
-        raw_change=`Retained or changed`,evidence=`Evidence and locators`,guidance=`RoB 2 guidance`,
+        evidence=`Evidence and locators`,guidance=`RoB 2 guidance`,
         adjudicator=as.character(who),workbook_row=row_number()+1L) |> filter(!slug %in% EXCLUDED)
   }))
   stopifnot(all(count(evidence,adjudicator)$n==4488L),
@@ -80,10 +80,8 @@ load_inputs <- function(root='..') {
     readxl::read_xlsx(file.path(root,'human-adjudication',paste0('adjudication-with-explanations-',who,'.xlsx')),
       sheet='Trial sources',col_types='text') |> mutate(adjudicator=as.character(who))
   }))
-  overall_sheet <- readxl::read_xlsx(file.path(root,'human-adjudication/adjudication-with-explanations-2.xlsx'),
-    sheet='Overall (derived)',col_types='text')
-  list(labels=labels,signals=bind_rows(signals),adjud=adjud,trials=trials,evidence=evidence,
-    sources=sources,overall_sheet=overall_sheet,
+  list(labels=labels,signals=bind_rows(signals),adjud=adjud,trials=trials,evidence=filter(evidence,phase=='Independent'),
+    sources=sources,
     targets=read_input(file.path(root,'rob2-meta-benchmark-set/LABEL-TARGETS.csv')) |> filter(!slug %in% EXCLUDED))
 }
 label_cells <- function(labels) {
@@ -98,7 +96,7 @@ validate_adjudication <- function(adjud,labels,trials) {
     x <- adjud |> filter(adjudicator==who)
     stopifnot(nrow(x)==510L,!anyDuplicated(paste(x$slug,x$domain)),setequal(x$slug,trials$slug),
       setequal(paste(x$slug,x$domain),paste(expected$slug,expected$domain)),
-      !anyNA(x$independent),!anyNA(x$chosen_label),!anyNA(x$revised))
+      !anyNA(x$independent),!anyNA(x$chosen_label))
     x <- left_join(x,expected,by=c('slug','domain'),suffix=c('_sheet','_arm'))
     same <- function(a,b) all((is.na(a)&is.na(b))|(!is.na(a)&!is.na(b)&a==b))
     if(!same(x$human,x$meta)||!same(x$kit_sheet,x$kit_arm)||!same(x$nokit_sheet,x$nokit_arm))
@@ -107,8 +105,8 @@ validate_adjudication <- function(adjud,labels,trials) {
   invisible(TRUE)
 }
 adjudication_cells <- function(inputs) {
-  a <- inputs$adjud |> select(slug,domain,adjudicator,independent,chosen_label,revised) |>
-    pivot_wider(names_from=adjudicator,values_from=c(independent,chosen_label,revised))
+  a <- inputs$adjud |> select(slug,domain,adjudicator,independent,chosen_label) |>
+    pivot_wider(names_from=adjudicator,values_from=c(independent,chosen_label))
   label_cells(inputs$labels) |> left_join(a,by=c('slug','domain')) |>
     mutate(consensus=chosen_label_1==chosen_label_2,
       preferred=if_else(consensus,chosen_label_1,NA_character_))

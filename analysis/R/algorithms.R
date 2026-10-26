@@ -151,7 +151,6 @@ validate_gate <- function(checks) {
   invisible(TRUE)
 }
 
-# Canonical Overall is the worst domain; optional escalation is never imposed.
 derived_overall <- function(domains) {
   if(length(domains)!=5L || anyNA(domains) || any(!domains %in% LABELS)) return(NA_character_)
   LABELS[max(match(domains,LABELS))]

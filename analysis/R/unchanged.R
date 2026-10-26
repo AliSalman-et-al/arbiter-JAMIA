@@ -39,14 +39,13 @@ save_table(process_summary(run_metrics),'process-summary')
 save_table(process_display(run_metrics,weights),'table5')
 save_table(paired_process_difference(run_metrics,weights),'process-differences')
 save_table(audit_summary(run_metrics,weights,bundle_bindings),'audit-summary')
-save_table(evidence_distribution(run_metrics),'evidence-bases-distribution')
 save_table(bundle_decisions,'bundle-domain-checks')
 save_table(tibble(seed=SEED,replicates=B,coding_sample_seed=20261019L,
   rng_kind=RNGkind()[1],quantile_type=7),'reproducibility')
 agreement_outputs <- function(labels,reference,exclude_missing=FALSE) {
   all_low <- labels |> filter(arm=='ARBITER-Sonnet') |> mutate(arm='All-Low',label='Low')
   labels <- bind_rows(labels,all_low)
-  groups <- c('D1-D5',paste0('D',1:5),'Overall')
+  groups <- c('D1-D5',paste0('D',1:5))
   results <- differences <- list()
   for(g in groups) {
     x <- if(g=='D1-D5') filter(labels,domain!='Overall') else filter(labels,domain==g)
@@ -55,14 +54,14 @@ agreement_outputs <- function(labels,reference,exclude_missing=FALSE) {
     for(a in unique(x$arm)) {
       d <- x |> filter(arm==a,!is.na(meta))
       if(!nrow(d)) next
-      reps[[a]] <- agreement_replicates(d,weights,exclude_missing)
-      if(a=='All-Low') reps[[a]][c('kappa','AC2','sensitivity'),] <- NA_real_
+      reps[[a]] <- agreement_replicates(d,weights,exclude_missing)[c('accuracy','kappa'),,drop=FALSE]
+      if(a=='All-Low') reps[[a]]['kappa',] <- NA_real_
       results[[paste(g,a)]] <- interval_table(reps[[a]]) |>
         mutate(arm=a,domain=g,reference=reference,n=sum(!exclude_missing|!is.na(d$label)),
           missing=sum(is.na(d$label)),count=NA_integer_)
       out <- results[[paste(g,a)]]
       kept <- if(exclude_missing) filter(d,!is.na(label)) else d
-      for(m in c('accuracy','sensitivity','specificity')) {
+      for(m in 'accuracy') {
         eligible <- switch(m,accuracy=rep(TRUE,nrow(kept)),
           sensitivity=kept$meta!='Low',specificity=kept$meta=='Low')
         correct <- switch(m,accuracy=!is.na(kept$label)&kept$label==kept$meta,
@@ -103,29 +102,8 @@ consistency <- bind_rows(overall_rates,domain_rates,bundle_decision_rates(bundle
 save_table(consistency,'table3-supplement')
 save_table(consistency |> filter(arm %in% c('Meta','ARBITER-Sonnet','Baseline-Sonnet')),'table3')
 
-grounding <- bind_rows(lapply(names(ARMS),function(a)
-  grounding_share(filter(inputs$signals,arm==a),weights) |> mutate(arm=a)))
-save_table(grounding,'grounding')
-save_table(inputs$signals |> filter(startsWith(arm,'Baseline'),active) |>
-  group_by(arm) |> summarise(n=n(),answer_code_only=sum(!is.na(justification) &
-    trimws(justification) %in% c('Y','PY','PN','N','NI','NA')),.groups='drop'),
-  'baseline-justification-content')
-confusion <- inputs$labels |> filter(!is.na(meta)) |>
-  mutate(predicted=coalesce(label,'Missing')) |> count(arm,domain,meta,predicted) |>
-  complete(arm,domain,meta=LABELS,predicted=c(LABELS,'Missing'),fill=list(n=0))
-save_table(confusion,'confusion-matrices')
-forest <- bind_rows(lapply(split(filter(inputs$labels,domain!='Overall'),
-  interaction(filter(inputs$labels,domain!='Overall')$meta_id,
-    filter(inputs$labels,domain!='Overall')$arm,drop=TRUE)),function(d) {
-      interval_table(agreement_replicates(d,weights)) |> filter(metric=='kappa') |>
-        mutate(meta_id=d$meta_id[1],arm=d$arm[1],n=nrow(d))
-    }))
-save_table(forest,'forest-meta')
-
   source('R/materials.R',local=TRUE)
   build_materials(inputs,NULL)
-  save_table(unweighted_agreement(inputs$labels,weights),'agreement-unweighted')
-  save_table(read_input('data-curated/prior-work-comparison.csv'),'prior-work-data')
   save_table(inputs$targets |> count(assess_vs_label,name='trials') |>
     mutate(analysis='Descriptive label-target audit'),'label-target-summary')
   x <- inputs$targets

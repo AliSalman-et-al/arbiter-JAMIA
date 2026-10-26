@@ -5,28 +5,11 @@ Figure,3,Paired evaluation and conditional choice
 Figure,4,Absolute and paired domain agreement
 Figure,5,Paired signalling diagnostics
 Table,1,Benchmark and reference context
-Table,2,Conditional primary endpoint
+Table,2,Conditional blinded-label choices
 Table,3,Process and resources
-eTable,1,Benchmark trials
-eTable,2,Full independent agreement and paired contrasts
-eTable,3,Category distributions
-eTable,4,Expert reliability
-eTable,5,Confusion matrices against each independent expert
-eTable,6,Published label agreement
-eTable,7,Unweighted agreement with published labels
-eTable,8,Exploratory binary agreement against each expert
-eTable,9,Primary endpoint sensitivities and post hoc strata
-eTable,10,Forced choice on disputed cells
-eTable,11,Direction of disagreement against independent experts
-eTable,12,Revised ratings and retained or changed answers
-eTable,13,Full signalling question agreement
-eTable,14,Rules only recomputation
-eTable,15,Invalid answer path sensitivity
-eTable,16,Derived Overall agreement and paired contrasts
-eTable,17,Derived Overall validation differences
-eTable,18,Rule consistency and audit
-eTable,19,Evidence binding
-eTable,20,Time cost and token use
-eTable,21,API cost estimates and reconstruction bounds
-eTable,22,Token reconciliation
-eTable,23,Prior work evidence ledger
+eTable,1,Benchmark targets and sources
+eTable,2,Agreement with Published labels
+eTable,3,Agreement with independent human reviewers
+eTable,4,Category distributions and disagreements
+eTable,5,Exploratory diagnostic checks
+eTable,6,Signalling agreement and eligibility

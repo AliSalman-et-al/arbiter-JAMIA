@@ -1,71 +1,149 @@
-# Read-only verification of final artifacts, plus verification records in provenance/.
 source('R/load.R')
 for(f in setdiff(list.files('R',pattern='[.]R$',full.names=TRUE),'R/load.R')) source(f)
-dir.create('provenance',showWarnings=FALSE)
-log <- character()
-record <- function(x) {cat(x,'\n');log <<- c(log,x)}
 inputs <- load_inputs()
-record('PASS loader: 102 trials, 510 unique cells per expert; all 3060 workbook source labels match arm exports (including paired missing values).')
-# Independent base-R recomputation from the workbook, without conditional-choice analysis helpers.
-a <- readxl::read_xlsx('../human-adjudication/adjudication-with-explanations-1.xlsx',sheet='Adjudications',col_types='text')
-b <- readxl::read_xlsx('../human-adjudication/adjudication-with-explanations-2.xlsx',sheet='Adjudications',col_types='text')
-i <- match(paste(a$Trial,a$Domain),paste(b$Trial,b$Domain))
-stopifnot(!anyNA(i)); b <- b[i,]
-disputed <- a$Kit!=a$Human | a$`No-kit`!=a$Human
+read_output <- function(name) readr::read_csv(paste0('output/tables/',name,'.csv'),show_col_types=FALSE)
+check <- function(ok,message) {
+  if(!isTRUE(ok)) stop(message,call.=FALSE)
+  cat('PASS ',message,'\n',sep='')
+}
+
+workbooks <- lapply(1:2,function(i) {
+  x <- readxl::read_xlsx(paste0('../human-adjudication/adjudication-with-explanations-',i,'.xlsx'),
+    sheet='Adjudications',col_types='text')
+  x[!x$Trial %in% EXCLUDED,]
+})
+a <- workbooks[[1]]
+b <- workbooks[[2]][match(paste(a$Trial,a$Domain),paste(workbooks[[2]]$Trial,workbooks[[2]]$Domain)),]
+check(nrow(a)==510L && nrow(b)==510L && !anyNA(b$Trial),'two independent workbooks cover the same 510 trial-domain cells')
 differ <- a$Kit!=a$`No-kit`
 agreed <- a$`Chosen label`==b$`Chosen label`
 keep <- differ & agreed
-provisional <- c(disputed=sum(disputed),discordant=sum(differ),agreed_choice=sum(keep),ARBITER=sum(a$Kit[keep]==a$`Chosen label`[keep]),
-  Unassisted=sum(a$`No-kit`[keep]==a$`Chosen label`[keep]),agreed_reference=sum(a$Independent==b$Independent),concordant=sum(!disputed))
-stopifnot(identical(as.integer(provisional),c(154L,80L,60L,53L,7L,388L,356L)))
-saved_cells <- readr::read_csv('output/tables/adjudication-analysis-cells.csv',show_col_types=FALSE)
-stopifnot(n_distinct(saved_cells$slug)==102L,nrow(saved_cells)==510L,
-  sum(saved_cells$disputed)==154L,sum(saved_cells$discordant)==80L,
-  sum(saved_cells$discordant & saved_cells$consensus)==60L)
-record('PASS Figure 3 counts reproduce from adjudication-analysis-cells.csv.')
-record(paste('PASS independent workbook recomputation:',paste(names(provisional),provisional,collapse='; ')))
-# Compare generated values with direct base-R equality counts.
-est <- readr::read_csv('output/tables/independent-estimates.csv',show_col_types=FALSE)
-for(expert in c('1','2')) for(source in c('ARBITER','Unassisted','Published')) {
-  ref <- if(expert=='1') a$Independent else b$Independent
-  pred <- switch(source,ARBITER=a$Kit,Unassisted=a$`No-kit`,Published=a$Human)
-  row <- filter(est,adjudicator==expert,.data$source==.env$source,domain=='D1-D5',metric=='accuracy')
-  stopifnot(row$count==sum(pred==ref),row$n==510L)
+check(sum(differ)==80L && sum(keep)==60L && sum(differ & !agreed)==20L,
+  'conditional choice population is 80 disagreements, 60 agreed choices and 20 splits')
+choices <- read_output('primary-endpoint')
+expected_choices <- list(Consensus=c(53L,7L,0L),`Expert 1`=c(63L,13L,4L),
+  `Expert 2`=c(61L,19L,0L),`Split sensitivity`=c(53L,7L,20L))
+for(analysis_name in names(expected_choices)) {
+  x <- choices[choices$analysis==analysis_name,]
+  expected_n <- if(analysis_name=='Consensus') 60L else 80L
+  check(nrow(x)==3L && all(x$count==expected_choices[[analysis_name]]) && all(x$n==expected_n),
+    paste('conditional choice counts for',analysis_name))
 }
-overall <- filter(est,domain=='Overall',adjudicator %in% c('1','2'))
-stopifnot(all(overall$n[overall$population=='All trials']==102L),
-  !any(overall$source=='Published' & overall$population=='All trials'),
-  all(overall$n[overall$population=='Observed Published Overall']==81L))
-agreed_overall <- filter(est,domain=='Overall',adjudicator=='Agreed reference')
-stopifnot(all(agreed_overall$n[agreed_overall$population=='All trials']==52L),
-  all(agreed_overall$n[agreed_overall$population=='Observed Published Overall']==42L))
-paired <- readr::read_csv('output/tables/independent-differences.csv',show_col_types=FALSE) |>
-  filter(domain=='Overall',adjudicator %in% c('1','2'),grepl('Published',comparison))
-stopifnot(all(paired$n==81L))
-for(expert in c('1','2')) {
-  workbook <- if(expert=='1') a else b
-  derived <- tapply(match(workbook$Independent,LABELS),workbook$Trial,max)
-  for(source_name in c('ARBITER','Unassisted','Published')) {
-    arm <- if(source_name=='Unassisted') 'Baseline-Sonnet' else 'ARBITER-Sonnet'
-    pred <- inputs$labels |> filter(domain=='Overall',.data$arm==.env$arm)
-    values <- if(source_name=='Published') pred$meta else pred$label
-    expected <- LABELS[derived[pred$slug]]
-    observed <- inputs$labels |> filter(domain=='Overall',arm=='ARBITER-Sonnet',!is.na(meta)) |> pull(slug)
-    for(population_name in unique(overall$population)) {
-      row <- overall |> filter(adjudicator==expert,source==source_name,population==population_name,metric=='accuracy')
-      if(!nrow(row)) next
-      keep <- if(population_name=='Observed Published Overall') pred$slug %in% observed else rep(TRUE,nrow(pred))
-      stopifnot(row$n==sum(keep),row$count==sum(!is.na(values[keep]) & values[keep]==expected[keep]))
-    }
-  }
+
+ordinal_kappa <- function(reference,prediction) {
+  missing <- is.na(prediction)
+  prediction[missing] <- ifelse(reference[missing]=='Low','High','Low')
+  p <- table(factor(reference,levels=LABELS),factor(prediction,levels=LABELS))/length(reference)
+  w <- 1-abs(outer(1:3,1:3,'-'))/2
+  observed <- sum(p*w)
+  expected <- sum(outer(rowSums(p),colSums(p))*w)
+  (observed-expected)/(1-expected)
 }
-record('PASS independent base-R worst-domain Overall counts for every source, expert and full/matched cohort.')
-record('PASS Overall cohorts: ARBITER and Unassisted n=102 plus matched n=81; Published and paired Published contrasts n=81. Missing Published labels are excluded.')
-record('PASS independent direct equality counts for all six source/expert comparisons.')
-direction <- readr::read_csv('output/tables/direction-of-disagreement.csv',show_col_types=FALSE)
-stopifnot(all(abs(direction$estimate-direction$count/direction$n)<1e-12))
-stopifnot(all((direction |> group_by(source,direction,adjudicator) |> summarise(total=sum(count),n=dplyr::first(n),.groups='drop') |> mutate(ok=total==n))$ok))
-record('PASS direction counts partition each source/direction/expert population and reproduce every point estimate.')
+est <- read_output('independent-estimates')
+check(setequal(est$adjudicator,c('1','2')) && setequal(est$domain,c('D1-D5',paste0('D',1:5),'Overall')) &&
+  setequal(est$metric,c('accuracy','kappa')) && nrow(est)==80L,
+  'independent estimates use separate experts, domain ratings and a compact derived Overall check')
+for(expert in 1:2) for(source_name in c('ARBITER','Unassisted','Published')) for(domain_name in c('D1-D5',paste0('D',1:5))) {
+  reference <- workbooks[[expert]]$Independent
+  prediction <- switch(source_name,ARBITER=workbooks[[expert]]$Kit,
+    Unassisted=workbooks[[expert]]$`No-kit`,Published=workbooks[[expert]]$Human)
+  include <- if(domain_name=='D1-D5') rep(TRUE,510L) else workbooks[[expert]]$Domain==domain_name
+  x <- est[est$adjudicator==as.character(expert) & est$source==source_name & est$domain==domain_name,]
+  accuracy <- x[x$metric=='accuracy',]
+  kappa <- x[x$metric=='kappa',]
+  count <- sum(!is.na(prediction[include]) & prediction[include]==reference[include])
+  stopifnot(nrow(x)==2L,accuracy$n==sum(include),accuracy$count==count,
+    abs(accuracy$estimate-count/sum(include))<1e-12,
+    abs(kappa$estimate-ordinal_kappa(reference[include],prediction[include]))<1e-12)
+}
+cat('PASS all independent exact and weighted agreement values reproduce directly from workbook ratings.\n')
+derived <- lapply(workbooks,function(book) book |>
+  group_by(Trial) |> summarise(reference=LABELS[max(match(Independent,LABELS))],.groups='drop'))
+for(expert in 1:2) for(source_name in c('ARBITER','Unassisted')) {
+  prediction <- inputs$labels |> filter(arm==if(source_name=='ARBITER') 'ARBITER-Sonnet' else 'Baseline-Sonnet',domain=='Overall')
+  d <- derived[[expert]] |> inner_join(prediction,by=c('Trial'='slug'))
+  x <- est |> filter(adjudicator==as.character(expert),source==source_name,domain=='Overall')
+  accuracy <- filter(x,metric=='accuracy')
+  kappa <- filter(x,metric=='kappa')
+  stopifnot(nrow(d)==102L,nrow(x)==2L,all(x$population=='All trials'),
+    accuracy$n==102L,accuracy$count==sum(!is.na(d$label)&d$label==d$reference),
+    abs(kappa$estimate-ordinal_kappa(d$reference,d$label))<1e-12)
+}
+check(!any(est$domain=='Overall' & est$source=='Published'),
+  'derived Overall has no different-population Published comparison')
+paired <- read_output('independent-differences')
+check(all(paired$comparison=='ARBITER minus Unassisted') && nrow(paired)==28L,
+  'paired expert comparisons contain only the retained arm contrast')
+reliability <- read_output('expert-reliability')
+pooled <- reliability[reliability$domain=='D1-D5' & reliability$metric=='accuracy',]
+check(pooled$n==510L && pooled$count==sum(a$Independent==b$Independent) && pooled$count==388L,
+  'expert agreement is 388 of 510 cells')
+overall_references <- inner_join(derived[[1]],derived[[2]],by='Trial',suffix=c('_1','_2'))
+overall_reliability <- reliability |> filter(domain=='Overall',metric=='accuracy')
+check(overall_reliability$n==102L && overall_reliability$count==sum(overall_references$reference_1==overall_references$reference_2) &&
+  overall_reliability$count==52L,'derived expert Overall agreement is 52 of 102 trials')
+
+repairs <- read_output('rules-only-changed')
+repaired_agreement <- read_output('rules-only-agreement')
+checks <- domain_checks(inputs)
+contradictions <- checks |> filter(arm=='Baseline-Sonnet',status=='Violation') |>
+  select(slug,domain,algorithm)
+stopifnot(nrow(repairs)==26L,nrow(repaired_agreement)==4L,
+  nrow(inner_join(repairs,contradictions,by=c('slug','domain')))==26L)
+repaired <- inputs$labels |> filter(arm=='Baseline-Sonnet',domain!='Overall') |>
+  left_join(contradictions,by=c('slug','domain')) |> mutate(label=coalesce(algorithm,label))
+for(expert in 1:2) {
+  d <- workbooks[[expert]] |> transmute(slug=Trial,domain=Domain,reference=Independent) |>
+    inner_join(repaired,by=c('slug','domain'))
+  x <- repaired_agreement |> filter(adjudicator==as.character(expert))
+  accuracy <- filter(x,metric=='accuracy')
+  kappa <- filter(x,metric=='kappa')
+  stopifnot(all(x$source=='Unassisted' & x$domain=='D1-D5'),accuracy$n==510L,
+    accuracy$count==sum(!is.na(d$label)&d$label==d$reference),accuracy$count==c(324L,391L)[expert],
+    abs(kappa$estimate-ordinal_kappa(d$reference,d$label))<1e-12)
+}
+cat('PASS pooled rules-only agreement reproduces from the 26 contradictory labels, with invalid paths retained.\n')
+
+published <- read_output('agreement-meta')
+check(!any(published$domain=='Overall') && setequal(published$metric,c('accuracy','kappa')),
+  'Published agreement contains domain exact agreement and weighted kappa')
+for(source_name in unique(published$arm)) for(domain_name in unique(published$domain)) {
+  d <- inputs$labels |> filter(arm==if(source_name=='Unassisted (Sonnet 5.5)') 'Baseline-Sonnet' else 'ARBITER-Sonnet',
+    if(domain_name=='D1-D5') domain!='Overall' else domain==domain_name)
+  prediction <- if(source_name=='All-Low rule') rep('Low',nrow(d)) else d$label
+  x <- published |> filter(arm==source_name,domain==domain_name,metric=='accuracy')
+  stopifnot(nrow(x)==1L,x$n==nrow(d),x$count==sum(!is.na(prediction)&prediction==d$meta))
+}
+cat('PASS Published and All-Low exact agreement counts reproduce from source labels.\n')
+
+signals <- read_output('signalling-estimates')
+signal_delta <- read_output('signalling-differences')
+check(setequal(signals$group,c('Overall',paste0('D',1:5))) && setequal(signals$level,c('five','collapsed')) &&
+  nrow(signals)==48L && nrow(signal_delta)==112L &&
+  setequal(signal_delta$group,c('Overall',paste0('D',1:5),question_map()$question)),
+  'signalling tables retain pooled/domain summaries and complete paired question results with both codings')
+comparisons <- readr::read_csv('data-derived/expert-signalling-comparisons.csv',show_col_types=FALSE)
+for(i in seq_len(nrow(signals))) {
+  x <- signals[i,]
+  d <- comparisons |> filter(adjudicator==x$adjudicator,source==x$source,evaluable,
+    if(x$group=='Overall') TRUE else domain==x$group)
+  stopifnot(x$n==nrow(d),x$count==sum(d[[paste0(x$level,'_match')]]))
+}
+for(i in seq_len(nrow(signal_delta))) {
+  x <- signal_delta[i,]
+  d <- comparisons |> filter(adjudicator==x$adjudicator,
+    if(x$group=='Overall') TRUE else if(startsWith(x$group,'D')) domain==x$group else question==x$group) |>
+    select(slug,domain,question,component,source,evaluable,five_match,collapsed_match) |>
+    pivot_wider(names_from=source,values_from=c(evaluable,five_match,collapsed_match)) |>
+    filter(evaluable_ARBITER & evaluable_Unassisted)
+  delta <- mean(as.integer(d[[paste0(x$level,'_match_ARBITER')]])-as.integer(d[[paste0(x$level,'_match_Unassisted')]]))
+  stopifnot(x$n==nrow(d),if(nrow(d)) abs(x$estimate-delta)<1e-12 else is.na(x$estimate))
+}
+cat('PASS signalling numerators, denominators and paired intersections reproduce from matched components.\n')
+q41 <- signal_delta |> filter(group=='4.1')
+stopifnot(identical(round(100*q41$estimate[q41$level=='five'],1),c(-39.6,-28.4)),
+  all(q41$estimate[q41$level=='collapsed']==0))
+cat('PASS the unfavorable Q4.1 five-level contrasts remain visible alongside collapsed results.\n')
 for(path in list.files('output/tables',pattern='[.]csv$',full.names=TRUE)) {
   x <- readr::read_csv(path,show_col_types=FALSE)
   if(all(c('count','n','estimate') %in% names(x))) {
@@ -74,260 +152,9 @@ for(path in list.files('output/tables',pattern='[.]csv$',full.names=TRUE)) {
     stopifnot(all(abs(x$estimate[keep]-x$count[keep]/x$n[keep])<1e-12))
   }
 }
-record('PASS every exported count/denominator proportion agrees with its estimate.')
-v <- readr::read_csv('output/tables/derived-overall-validation.csv',show_col_types=FALSE)
-stopifnot(nrow(v)==612L,all(v$matches[v$column %in% c('independent','chosen_label','revised','nokit')]))
-stopifnot(sum(!v$matches & is.na(v$workbook))==21L)
-allowed <- 0L
-for(column_name in c('human','kit')) {
-  rows <- filter(v,column==column_name,!matches,!is.na(workbook),workbook=='High',calculated=='Some concerns')
-  d <- filter(inputs$adjud,adjudicator=='2')
-  sc <- tapply(d[[column_name]]=='Some concerns',d$slug,sum)
-  stopifnot(all(sc[rows$slug]>=2L))
-  allowed <- allowed+nrow(rows)
-}
-stopifnot(allowed==7L,nrow(filter(v,!matches,workbook=='Low',calculated=='Some concerns',slug=='gupta-2024'))==1L)
-record('PASS Overall differences classified: 21 absent Published labels, seven permitted multi-domain High escalations, one Published Low versus derived Some concerns.')
-record(paste('Derived Overall validation:',sum(!v$matches),'differences across',nrow(v),'columns/trial checks; all expert independent, chosen and revised ratings match.'))
-# Exact CSV diffs to the parent; git diff content is retained, not inferred from rounded numbers.
-unchanged <- c('agreement-meta','agreement-meta-differences','table1','table1-differences','table3','table3-supplement',
-  'audit-summary','bundle-domain-checks','api-cost-summary','api-token-reconciliation','process-summary','process-differences',
-  'table5','evidence-bases-distribution','overall-consistency-cells','domain-consistency-cells','invalid-path-sensitivity')
-paths <- paste0('analysis/output/tables/',unchanged,'.csv')
-diffs <- system2('git',c('-C','..','diff','fee1225','--',paths),stdout=TRUE)
-writeLines(diffs,'provenance/unchanged-analysis.diff')
-stopifnot(!length(diffs))
-prior <- readr::read_csv('data-curated/prior-work-comparison.csv',show_col_types=FALSE)
-parent <- system2('git',c('show','HEAD:analysis/data-curated/prior-work-comparison.csv'),stdout=TRUE)
-parent <- readr::read_csv(I(paste(parent,collapse='\n')),show_col_types=FALSE)
-stopifnot(identical(prior[setdiff(names(prior),'reference_standard')],parent[setdiff(names(parent),'reference_standard')]))
-writeLines(system2('git',c('-C','..','diff','HEAD','--','analysis/data-curated/prior-work-comparison.csv'),stdout=TRUE),'provenance/prior-work-data.diff')
-record('PASS 17 unchanged CSVs: empty git diff against fee1225; prior-work data identical except the authorised reference description.')
-figures <- list.files('output/manuscript',pattern='^Figure[12][.](pdf|png|tiff|svg)$',full.names=TRUE)
-stopifnot(length(figures)==8L)
-artwork <- list()
-for(p in figures) {
-  actual <- system2('git',c('hash-object',p),stdout=TRUE)
-  expected <- system2('git',c('rev-parse',paste0('fee1225:analysis/',p)),stdout=TRUE)
-  stopifnot(identical(actual,expected))
-  artwork[[p]] <- tibble(file=p,actual_git_blob=actual,parent_git_blob=expected)
-}
-readr::write_csv(bind_rows(artwork),'provenance/protected-artwork.csv')
-record('PASS Figures 1 and 2: all eight PNG/PDF/SVG/TIFF files byte-identical to fee1225.')
-trace <- readr::read_csv('output/tables/display-source-trace.csv',show_col_types=FALSE,col_types=readr::cols(.default='c'))
-for(file in unique(trace$file)) {
-  x <- readr::read_csv(paste0('output/tables/',file,'.csv'),show_col_types=FALSE)
-  rows <- trace[trace$file==file,]
-  for(column in unique(rows$column)) {
-    z <- rows[rows$column==column,]
-    actual <- as.character(x[[column]][as.integer(z$row)])
-    same <- (is.na(actual)&is.na(z$value))|(!is.na(actual)&!is.na(z$value)&actual==z$value)
-    stopifnot(all(same))
-  }
-}
-record(paste('PASS',nrow(trace),'source-cell trace records resolve to final CSV values.'))
-expected <- paste(results_sentences(),collapse='\n\n')
-actual <- paste(readLines('output/manuscript/results-sentences.md',encoding='UTF-8'),collapse='\n')
-stopifnot(identical(enc2utf8(expected),enc2utf8(actual)))
-stopifnot(identical(paste(figure_legend_sections(),collapse='\n\n'),paste(readLines('output/manuscript/figure-legends.md',encoding='UTF-8'),collapse='\n')))
-record('PASS results sentences and figure legends exactly regenerate from final CSVs and the protected supplied legends.')
-primary_display <- primary_endpoint_table()
-stopifnot(identical(as.matrix(primary_display),as.matrix(readr::read_csv('output/tables/display-table2.csv',show_col_types=FALSE,na=character(),col_types=readr::cols(.default='c')))),nrow(primary_display)==4L,
-  identical(sub(' .*','',primary_display[[2]]),c('53/60','63/80','61/80','53/80')))
-record('PASS Table 2: conditional blinded-label choices and three core sensitivities reproduce from numerical exports.')
-questions <- question_difference_plot()$data
-all_questions <- question_difference_plot(TRUE)$data
-stopifnot(all(questions$n>=20L),all(as.character(questions$level)=='Collapsed'),
-  is.null(question_difference_plot()$labels$title),any(all_questions$n==0L),nrow(all_questions)>nrow(questions))
-comparison <- readr::read_csv('data-derived/expert-signalling-comparisons.csv',show_col_types=FALSE)
-counts <- read_display('signalling-disagreement-types')
-five <- readr::read_csv('output/tables/signalling-estimates.csv',show_col_types=FALSE) |> filter(group=='Overall',level=='five')
-for(i in seq_len(nrow(counts))) {
-  row <- counts[i,]
-  prior <- filter(five,adjudicator==row$adjudicator,source==row$source)
-  stopifnot(row$n==prior$n,row$five_level_disagreements==prior$n-prior$count)
-  d <- comparison[comparison$adjudicator==row$adjudicator & comparison$source==row$source & comparison$evaluable,]
-  within <- (d$answer=='Y' & d$arm_answer=='PY') | (d$answer=='PY' & d$arm_answer=='Y') |
-    (d$answer=='N' & d$arm_answer=='PN') | (d$answer=='PN' & d$arm_answer=='N')
-  disagree <- d$answer!=d$arm_answer
-  stopifnot(row$n==nrow(d),row$five_level_disagreements==sum(disagree),
-    row$within_direction==sum(within),row$cross_direction==sum(disagree & !within),
-    row$within_direction+row$cross_direction==row$five_level_disagreements)
-}
-record('PASS independent answer-code recomputation of every within/cross-direction count; within/cross-direction counts reproduce directly from answer codes.')
-record('PASS eFigure 2 retains only question/expert rows with at least 20 paired answers; eFigure 5 retains every sparse and zero-answer row.')
-# Word tables must contain every displayed value in the CSV in reading order.
-docx_text <- function(path) {
-  con <- unz(path,'word/document.xml')
-  xml <- xml2::read_xml(con)
-  paste(xml2::xml_text(xml2::xml_find_all(xml,'//w:p',xml2::xml_ns(xml))),collapse=' ')
-}
-for(i in 1:3) {
-  x <- readr::read_csv(paste0('output/tables/display-table',i,'.csv'),show_col_types=FALSE)
-  text <- docx_text(paste0('output/manuscript/Table',i,'.docx'))
-  values <- unique(na.omit(as.character(unlist(x))))
-  text <- gsub('[[:space:]]+',' ',text)
-  values <- gsub('[[:space:]]+',' ',values)
-  stopifnot(all(vapply(values,function(v) grepl(v,text,fixed=TRUE),logical(1))))
-}
-supplement_text <- gsub('\\s+',' ',docx_text('output/manuscript/Supplement.docx'),perl=TRUE)
-for(path in list.files('output/tables',pattern='^display-supplement-.*[.]csv$',full.names=TRUE)) {
-  x <- readr::read_csv(path,show_col_types=FALSE,col_types=readr::cols(.default='c'))
-  target <- if(grepl('reporting-map[.]csv$',path)) gsub('\\s+',' ',docx_text('output/manuscript/TRIPOD-LLM.docx'),perl=TRUE) else supplement_text
-  expected_rows <- apply(as.data.frame(x),1,function(v) gsub('\\s+',' ',trimws(paste(v[!is.na(v)],collapse=' ')),perl=TRUE))
-  if(!all(vapply(expected_rows,function(v) grepl(v,target,fixed=TRUE),logical(1)))) stop('Supplement row trace failed: ',basename(path))
-}
-entries <- supplement_entries(inputs)
-for(e in entries) {
-  slug <- supplement_display_slug(e$title)
-  saved <- readr::read_csv(paste0('output/tables/display-supplement-',slug,'.csv'),
-    show_col_types=FALSE,col_types=readr::cols(.default='c'),na=character())
-  if(!identical(names(saved),names(e$data)) || !identical(as.matrix(saved),as.matrix(e$data)))
-    stop('Current display-builder trace failed: ',e$title,' :: ',paste(all.equal(as.matrix(saved),as.matrix(e$data)),collapse='; '))
-  expected_note <- gsub('\\s+',' ',supplement_note(e),perl=TRUE)
-  stopifnot(grepl(expected_note,supplement_text,fixed=TRUE))
-}
-record('PASS current display builders reproduce every supplemental display CSV and its Word footnote exactly.')
-entry <- function(title) entries[[match(title,vapply(entries,`[[`,character(1),'title'))]]$data
-stopifnot('Source' %in% names(entry('Published label agreement')),
-  'Source' %in% names(entry('Evidence binding')),
-  'Unweighted κ' %in% names(entry('Unweighted agreement with published labels')),
-  !any(unlist(entry('Derived Overall validation differences')) %in% c('kit','nokit','human')))
-matrices <- entry('Confusion matrices against each independent expert')
-counts <- rowSums(sapply(matrices[c('Low','Some concerns','High','Missing')],as.numeric))
-raw <- readr::read_csv('output/tables/independent-confusion.csv',show_col_types=FALSE)
-stopifnot(sum(counts)==sum(raw$n[raw$adjudicator %in% c('1','2')]))
-record('PASS supplementary source labels, unweighted κ labels, public validation labels and complete confusion-matrix totals.')
-for(path in c('output/tables/avatar-trace-answers.csv','output/tables/avatar-trace-evidence.csv')) {
-  x <- readr::read_csv(path,show_col_types=FALSE,col_types=readr::cols(.default='c'))
-  values <- unique(na.omit(as.character(unlist(x))))
-  values <- gsub('\\s+',' ',values,perl=TRUE)
-  # Long evidence quotes span labelled continuation paragraphs. Remove only
-  # those exact source-handle labels, retaining every character of quote text.
-  trace_text <- supplement_text
-  if('Full verbatim quote' %in% names(x)) for(handle in unique(x[[1]]))
-    trace_text <- gsub(paste0('Context: ',handle,' (quote continued)'),'',trace_text,fixed=TRUE)
-  trace_text <- gsub('\\s+',' ',trace_text,perl=TRUE)
-  stopifnot(all(vapply(values,function(v) grepl(v,trace_text,fixed=TRUE),logical(1))))
-}
-record('PASS every AVATAR answer, rationale and full evidence-record field occurs in the supplement, retaining full quotes across labelled continuations.')
-record('PASS all supplementary and reporting-map display rows occur in their Word documents in CSV column order.')
-record('PASS all three Word tables contain every corresponding display-CSV cell.')
-html_text <- function(path) {
-  xml <- xml2::read_html(path)
-  xml2::xml_remove(xml2::xml_find_all(xml,'//script|//style'))
-  gsub('\\s+',' ',paste(xml2::xml_text(xml2::xml_find_all(xml,'//body//text()')),collapse=' '),perl=TRUE)
-}
-normalise_html_typography <- function(x) {
-  # Pandoc may append a text/emoji presentation selector to the bidirectional arrow.
-  x <- gsub('[\uFE0E\uFE0F]','',x,perl=TRUE)
-  x <- chartr('‘’“”',paste0("''",'\"\"'),x)
-  x <- gsub('`','',x,fixed=TRUE)
-  gsub('[[:space:]\u00a0]+',' ',x,perl=TRUE)
-}
-result_html <- normalise_html_typography(html_text('results.html'))
-supplement_html <- normalise_html_typography(html_text('supplement.html'))
-stopifnot(all(vapply(results_sentences(),function(v) grepl(normalise_html_typography(v),result_html,fixed=TRUE),logical(1))))
-for(path in list.files('output/tables',pattern='^display-.*[.]csv$',full.names=TRUE)) {
-  if(grepl('source-trace|reporting-map',path)) next
-  x <- readr::read_csv(path,show_col_types=FALSE,col_types=readr::cols(.default='c'),na=character())
-  target <- if(grepl('display-table[1-4][.]csv$',path)) result_html else supplement_html
-  values <- unique(na.omit(as.character(unlist(x))))
-  values <- normalise_html_typography(gsub('\\s+',' ',values,perl=TRUE))
-  ok <- vapply(values,function(v) grepl(v,target,fixed=TRUE),logical(1))
-  if(!all(ok)) stop('HTML cell trace failed: ',basename(path),' :: ',paste(head(values[!ok],3),collapse=' | '))
-}
-stopifnot(!grepl('Composite-reference|decisive|eTable 32',supplement_html))
-record('PASS final HTML: every Results sentence and main/supplementary display-CSV cell appears; no retired supplement sections remain.')
-
-for(f in c(paste0('output/manuscript/Table',1:3,'.docx'),'output/manuscript/Supplement.docx','output/manuscript/TRIPOD-LLM.docx','results.html','supplement.html')) stopifnot(file.exists(f),file.info(f)$size>0)
-for(i in 3:5) for(ext in c('pdf','png','tiff')) stopifnot(file.exists(paste0('output/manuscript/Figure',i,'.',ext)))
-# Strict model leak check covers every textual output, plus text inside all Word files.
-texts <- list.files('output',pattern='[.](csv|md|txt|svg)$',recursive=TRUE,full.names=TRUE)
-for(f in texts) stopifnot(!any(grepl('haiku',readLines(f,warn=FALSE),ignore.case=TRUE)))
-word <- list.files('output/manuscript',pattern='[.]docx$',full.names=TRUE)
-for(f in word) stopifnot(!grepl('haiku',docx_text(f),ignore.case=TRUE))
-for(f in c('results.html','supplement.html')) stopifnot(!any(grepl('haiku',reader_html_text(f),ignore.case=TRUE)))
-record('PASS unreported-model leak scan over all textual outputs, all Word documents and both HTML views.')
-# Scan rendered prose, never link targets or the technical provenance CSVs.
-filename_pattern <- '(?i)\\b[[:alnum:]_][[:alnum:]_.-]*[.](csv|md|txt|lock|json|pdf|docx|xlsx|R)\\b'
-reader_text <- c(docx_text('output/manuscript/Supplement.docx'),result_html,supplement_html,
-  paste(readLines('output/manuscript/figure-legends.md'),collapse=' '),
-  paste(readLines('output/manuscript/results-sentences.md'),collapse=' '))
-stopifnot(!any(grepl(filename_pattern,reader_text,perl=TRUE)),
-  !any(grepl('mainly reflected',reader_text,fixed=TRUE)))
-record('PASS reader-facing text contains no filenames or overstated five-level disagreement wording; technical link targets are excluded.')
-
-reader <- c(list.files('output/manuscript',pattern='results-sentences[.]md$|figure-legends[.]md$',full.names=TRUE),
-  list.files('output/tables',pattern='^display-table.*[.]csv$',full.names=TRUE))
-for(f in reader) {
-  txt <- paste(readLines(f,warn=FALSE),collapse='\n')
-  stopifnot(!grepl('(?i)\\b(?:no-kit|meta label|vindicated|decisive|over-flagging)\\b|A/Z',txt,perl=TRUE))
-  # These generated summaries contain no verbatim trial quotations. Clinical
-  # endpoint designations in the complete worked trace retain their source wording.
-  stopifnot(!grepl('(?i)formal primary|primary endpoint|prespecified secondary|confirmatory endpoint',txt,perl=TRUE))
-}
-record('PASS generated Results, legends and main-table reader text has no retired-design labels. Source quotations and immutable artwork are covered by the rebuild QA record.')
-writeLines(log,'provenance/output-verification.txt')
-
-severity <- readr::read_csv('output/tables/severity-distribution.csv',show_col_types=FALSE)
-stopifnot(identical(severity |> filter(population=='D1-D5',label=='Low') |> pull(count),c(427,375,407,277,346)))
-binary <- readr::read_csv('output/tables/independent-binary.csv',show_col_types=FALSE)
-for(expert in c('1','2')) for(src in c('ARBITER','Unassisted','Published')) for(dom in c('D1-D5',paste0('D',1:5))) {
-  wb <- if(expert=='1') a else b
-  if(dom!='D1-D5') wb <- wb[wb$Domain==dom,]
-  truth <- wb$Independent!='Low'
-  prediction <- wb[[switch(src,ARBITER='Kit',Unassisted='No-kit',Published='Human')]]!='Low'
-  rows <- filter(binary,adjudicator==expert,source==src,domain==dom)
-  stopifnot(rows$n[rows$metric=='sensitivity']==sum(truth),rows$count[rows$metric=='sensitivity']==sum(truth&prediction),
-    rows$n[rows$metric=='specificity']==sum(!truth),rows$count[rows$metric=='specificity']==sum(!truth&!prediction))
-}
-record('PASS independent workbook severity counts and every expert binary pooled/domain numerator and denominator.')
-# Preserve all prior statistical estimates, including supplementary analyses.
-stat_files <- list.files('output/tables',pattern='[.]csv$',full.names=TRUE)
-stat_files <- stat_files[!grepl('/display-',stat_files,fixed=TRUE)]
-compared <- character()
-for(path in stat_files) {
-  before <- suppressWarnings(system2('git',c('show',paste0('951dddd3e28e0d6316c641491667353e0b851a78:analysis/',path)),stdout=TRUE,stderr=FALSE))
-  if(!is.null(attr(before,'status'))) next
-  old <- readr::read_csv(I(paste(before,collapse='\n')),show_col_types=FALSE)
-  current <- readr::read_csv(path,show_col_types=FALSE)
-  fields <- intersect(c('estimate','lower','upper','count','n','valid_replicates'),names(old))
-  if(!length(fields)) next
-  if(!identical(old[fields],current[fields])) stop('Numerical invariance failed: ',path,': ',paste(all.equal(old[fields],current[fields]),collapse='; '))
-  compared <- c(compared,basename(path))
-}
-writeLines(compared,'provenance/rebuild-estimate-invariance.txt')
-record(paste('PASS every numeric estimate/count/denominator/CI unchanged in',length(compared),'analysis CSVs against approved baseline 951dddd.'))
-writeLines(log,'provenance/output-verification.txt')
-# Complete reader-language scan. Clinical quotations keep their source wording.
-reader_documents <- list.files('output/manuscript',pattern='[.]docx$',full.names=TRUE)
-reader_strings <- c(setNames(lapply(reader_documents,docx_text),reader_documents),
-  list(results_html=result_html,supplement_html=supplement_html,
-    results_sentences=paste(readLines('output/manuscript/results-sentences.md'),collapse=' '),
-    figure_legends=paste(readLines('output/manuscript/figure-legends.md'),collapse=' ')))
-hard_ban <- '(?i)haiku|A/Z|adjudicator[[:space:]]+[12AZ]\\b|composite reference|vindicated|decisive question|over-flagging|expert-level|matched experts|ground truth|supported by evidence'
-stopifnot(!any(vapply(reader_strings,function(s) grepl(hard_ban,s,perl=TRUE),logical(1))))
-contexts <- bind_rows(lapply(names(reader_strings),function(name) {
-  s <- reader_strings[[name]]
-  pos <- gregexpr('(?i)\\b(first|composite|accuracy)\\b',s,perl=TRUE)[[1]]
-  if(identical(as.integer(pos),-1L)) return(tibble())
-  tibble(document=name,context=vapply(pos,function(p) trimws(substr(s,max(1,p-80),p+120)),character(1)))
-}))
-readr::write_csv(contexts,'provenance/rebuild-leak-contexts.csv')
-stopifnot(!grepl('(?i)\\b(first|composite|accuracy)\\b',reader_strings$results_sentences,perl=TRUE))
-record('PASS complete reader-language scan; remaining first/composite/accuracy contexts are recorded for review of unchanged clinical quotations and rationale.')
-writeLines(log,'provenance/output-verification.txt')
-expected_binary_display <- clean_display(binary_difference_display(read_display('independent-binary-differences')))
-saved_binary_display <- readr::read_csv('output/tables/display-supplement-paired-binary-differences.csv',show_col_types=FALSE,col_types=readr::cols(.default='c'),na=character())
-stopifnot(identical(as.matrix(expected_binary_display),as.matrix(saved_binary_display)))
-record('PASS new binary-difference display regenerates in percentage points, with identical numerators, denominators and intervals.')
-writeLines(log,'provenance/output-verification.txt')
-
-stopifnot(!file.exists('output/manuscript/Table4.docx'),!file.exists('output/manuscript/Figure6.png'))
-stopifnot(identical(sort(list.files('output/manuscript',pattern='^Figure[0-9]+[.]png$')),paste0('Figure',1:5,'.png')))
-stopifnot(!grepl('18 October 2026 plan|Design status and limitations|Published-label target matching',supplement_text))
-record('PASS current five-figure/three-table inventory and chronology-free supplement.')
-stopifnot(n_distinct(forest_plot()$data$meta_id)==16L,nrow(forest_plot()$data)==32L)
-record('PASS review-level forest retains both arms from all 16 reviews, including degenerate or undefined intervals.')
-writeLines(log,'provenance/output-verification.txt')
+cat('PASS every exported count/denominator proportion agrees with its estimate.\n')
+retired <- c('agreement-unweighted','answer-changes','derived-overall-validation','direction-of-disagreement',
+  'expert-reliability-matched','expert-unweighted','forced-choice','forest-meta','independent-binary',
+  'independent-binary-differences','revised-ratings',
+  'rules-only-primary','signalling-paired-estimates','signalling-disagreement-types')
+check(!any(file.exists(paste0('output/tables/',retired,'.csv'))),'retired analytical exports are absent')

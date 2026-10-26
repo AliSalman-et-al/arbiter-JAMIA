@@ -1,50 +1,60 @@
 # Rebuild the ARBITER analysis
 
-Run these commands from `analysis/`:
+Run from analysis/ with R, Quarto, Python, python-docx and lxml available. Set ARBITER_PYTHON to the Python executable when it is not on PATH.
 
 ```sh
 Rscript -e 'renv::restore()'
 Rscript run.R
 Rscript -e 'testthat::test_dir("tests/testthat")'
 Rscript verify-output.R
+python ../scripts/verify-reduction.py
+python ../docs/manuscript/verify-numbers.py
+python ../docs/manuscript/verify-presentation.py
 ```
 
-`run.R` reads the two Sonnet arms and the two full-coverage blinded expert workbooks, computes all estimates, and builds the figures, Word documents and HTML views. The inputs remain read-only. `tests/testthat/` is the single test suite. `verify-output.R` verifies CSV provenance, protected artwork, unchanged analyses, provisional counts, artifact presence and reader-facing leaks.
+The source inputs remain read-only. The current contract is ../ANALYSIS-PLAN.md. The selection rationale and item-by-item defense are in ../docs/analysis-simplification.md. The complete earlier analysis and report remain recoverable at Git revision 54645d75e7a8b32bbf09968893e7be45faa4cab4.
 
-The frozen lockfile records R 4.6.1 and includes `gt` 1.4.0 for native editable Word and HTML tables. `output/session-info.txt` records the environment actually used. All intervals use 10,000 trial-cluster bootstrap samples within meta-analysis, seed 20261018, with shared weights for paired estimates.
+## Current scope
 
-For presentation-only changes, use `Rscript build-publication.R` to reuse finalized numerical exports without resampling. Quarto and Python with `python-docx` and `lxml` must be installed. The assembler uses Python on PATH; set `ARBITER_PYTHON` to select another interpreter. Main tables are built before insertion into the manuscript, and assembly checks every embedded cell against its standalone table. Update Word fields before exporting final visual proofs. The current audit, style contract and verification evidence are in `../docs/rethink-2026-10-22/final-audit/`.
+The main report retains five figures and three tables. The reduced supplement has six numbered table families and no supplementary figure families. It keeps separate expert references, Published agreement, prevalence/reliability context, one pooled category-disagreement table, compact exploratory Overall and rules-only checks, complete paired signalling questions, both answer codings and eligibility accounting. Exact prompts and methods remain available. The complete AVATAR answer and evidence records are directly linked rather than printed in full.
 
-To refresh only the Results and Supplement web pages from **already finalized** publication artifacts, run this from the repository root:
+Expert means, agreed-reference restrictions, extra source contrasts, revised/post-exposure summaries, directional/strictness strata, extra binary/unweighted metrics and redundant graphical/table expansions have been removed from the supported current pipeline. The reporting-scope note records these post-analysis decisions. No prospective outcome hierarchy is claimed.
+
+All intervals retain 10,000 trial-cluster bootstrap replicates within the 16 fixed reviews, seed 20261018. Paired contrasts share weights. verify-reduction.py compares every retained analytical CSV row with the earlier release, including its scientific identifiers, values and intervals. It also checks study-input content, Figure 1 byte identity and that Figure 2 changes only its authorized footer clarification. verify-output.R independently reconciles retained counts with the original workbooks and matched answer components. Neither check establishes semantic evidence support.
+
+Reader-facing outputs label the independent human assessments Human Review 1 and Human Review 2. Original workbook identifiers and numerical CSV keys remain stable. Figure 2's footer identifies the later blinded D5 choices, not independently rated Overall judgments.
+
+The group key Overall in signalling CSVs means pooled answers. Overall in the independent-rating tables means an exploratory worst-domain expert reference. It is not a directly assessed sixth domain. The legacy primary-endpoint.csv filename identifies conditional blinded choices and confers no scientific priority.
+
+## Publication builds
 
 ```sh
-python3 scripts/report-refresh.py
-python3 scripts/stage-pages.py /tmp/arbiter-pages
+Rscript build-publication.R
 ```
 
-Use a Python interpreter with `python-docx` and `lxml` (for example, `"$ARBITER_PYTHON" scripts/report-refresh.py` when that variable names the interpreter); Quarto must be on PATH. This path requires no R packages and never recomputes analyses, tables, figures, or Word documents. It converts the three finalized `Table*.docx` files and `Supplement.docx` into native HTML, reads `results-sentences.md` and `figure-legends.md`, and renders `results.qmd` and `supplement.qmd`. The supplement retains all 98 tables, 13 images, full worked trace and 62 contents destinations. The helper checks every table cell and note, prose/legends, embedded image bytes, anchors, and unchanged protected artifact hashes. Evidence is in disposable `.quarto/report-refresh-verification.json`.
+This reuses finalized numerical exports without resampling. The native editable tables originate in gt. The shared assembler inserts them into Word and checks embedded cells against standalone tables. HTML refresh checks every source table cell, figure and local link.
 
-The `.quarto/results-page.md` and `.quarto/supplement-page.md` includes and extracted media are generated inputs; use the helper before rendering those QMD files in a fresh checkout, and rerun it after finalized artifacts change. Direct `quarto render` alone does not regenerate those inputs. A complete presentation build with `build-publication.R` still needs its R dependencies; it invokes the HTML refresh helper after producing finalized Word outputs. Staging also requires a current `manuscript.html`; build that with `scripts/build-manuscript.py --html-only` before staging when needed. Do not substitute this HTML refresh for numerical validation when analytical inputs change.
+To refresh only web pages from already finalized artifacts, run from the repository root:
 
-The Round 16 specification is in `../docs/round16/BRIEF.md` and `../ANALYSIS-PLAN.md`. The current plan organizes evaluation outcomes after analysis without a primary/secondary or confirmatory hierarchy; it makes no prospective prespecification claim. The 23 October pre-reconciliation plan is retained in `provenance/ANALYSIS-PLAN-2026-10-23-before-reconciliation.md`; `../docs/manuscript-development/round5/analysis-repair.md` records the reporting change and validation. Independent domain comparisons use all 510 cells. `round16-report.md` is a historical generation record of results, discrepancies and verification; its endpoint-status terminology does not govern the current report. `provenance/ANALYSIS-PLAN-2026-10-18.md` is the unedited plan extracted from `e1c0ccf`. `../docs/round16/release-manifest.md` lists the clean-snapshot release paths. Historical reports are retained unchanged in `archive/`. `public-release-exclusions.txt` records release exclusions for raw and historical material.
+```sh
+python scripts/report-refresh.py
+python scripts/build-manuscript.py --html-only
+python scripts/stage-pages.py .audit/pages-stage
+```
 
-`R/load.R` checks every workbook label against the arm exports and requires exactly 102 trials and 510 unique domain cells per expert. `R/signalling.R` preserves answer components and records unresolved rows. `R/expert-agreement.R` implements the independent references, forced choice, direction counts and rules-only recomputation. `R/unchanged.R` retains the parent published-label, rule, audit and process calculations. Display CSVs, source traces and numerical estimates are in `output/tables/`; publication artifacts are in `output/manuscript/`.
+Direct Quarto rendering does not regenerate its intermediate includes. The presentation check must run after refresh. The reporting map is a separate attachment; pending author declarations and assessor details remain explicit. Inspect rendered Word documents and figures before release.
 
-Raw logs are not required to rebuild the analysis. The explicit extraction commands below regenerate committed derived metrics when their raw inputs are available and stop when those inputs are absent:
+## Extraction and provenance
+
+Rebuilding numerical results uses committed derived metrics, not raw logs. These explicit extractors regenerate metrics when their raw inputs are available and stop if inputs are absent:
 
 ```sh
 Rscript R/extract-run-metrics.R
 Rscript extract-bundle-review.R
 Rscript extract-api-costs.R
-python3 reverify-bundles.py
+python reverify-bundles.py
 ```
 
-The full AVATAR trace uses committed bundle projections. Trial PDFs are not redistributed; the benchmark records source identifiers and content hashes.
+Original expert workbooks, trial targets, source manifests and captured-input hashes remain available. Trial PDFs are not redistributed. Runtime is computation time, and API list-price equivalents are reconstructed values, not subscription expenditure or reviewer cost.
 
-New expert-reference Overall comparisons use n = 102 for ARBITER and Unassisted, and n = 81 observed Published labels. Twenty-one published reviews gave no Overall label; these are excluded, never counted as disagreements. ARBITER and Unassisted are also reported on the same n = 81 trials, and every paired Overall contrast involving Published is restricted to that subset. Agreed-reference rows further restrict to equal expert ratings; each row prints n.
-
-`signalling-disagreement-types.csv` partitions all evaluable five-level arm–expert disagreements into within-direction Y↔PY or N↔PN changes and cross-direction changes (including NI versus either direction). The counts appear in eTable 13A. Main Figure 5 shows domain-level paired differences. eFigure 2 shows collapsed question differences in five domain panels; eFigure 5 retains both scales and all sparse questions. The complete multipage PDFs accompany the individual domain-panel files.
-
-After committing the verified source and artifacts, run `scripts/publish-pages.sh` from the repository root. The packager checks local links and records source commit, sizes and SHA-256 hashes in `publication-manifest.json`. `scripts/verify-pages.py` checks the deployed files against that manifest.
-
-Legacy filenames `primary-endpoint.csv` and `rules-only-primary.csv`, the rules-only list key `primary`, and module `secondary.R` remain stable for source traces and readers. These are compatibility identifiers, not scientific endpoint designations. `conditional_choice_analyses()` computes the conditional choices; scoring and resampling are unchanged. The RoB 2 question ID `selection:prespecified-analysis` describes a trial-level signalling question and must remain unchanged.
+Publication remains a separate action. scripts/publish-pages.sh stages the verified artifacts and records source revision, file sizes and SHA-256 hashes. scripts/verify-pages.py checks a deployed release against that manifest.

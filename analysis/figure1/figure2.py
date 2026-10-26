@@ -272,7 +272,7 @@ def draw_trace(data,rows):
         for p in matches:p.setdefault('svg_text_lines',[]).append(t['text'])
     text(12,y+10,'This trial: 15 questions answered · 7 not needed · 16 quotes, all found in the stored sources')
     wrap(12,y+26,"All of this appears in ARBITER's HTML report for the reviewer and is saved in one audit file (.arbiter.zip), checked by an independent verifier.",670)
-    text(12,y+42,'Published review: Low · Both expert adjudicators: Some concerns')
+    text(12,y+42,'Published D5: Low · Blinded D5 choice, both human reviews: Some concerns')
     s.height=y+46
     rendered=' '.join(r['text'] for r in s.text_records)
     assert not re.search(r'eh_|sha256|_|span|adopted|proposal',rendered,re.I),'Reader-facing jargon guard'

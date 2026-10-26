@@ -53,11 +53,23 @@ reader_label <- function(x, supplement=FALSE) {
     'Meta label'='Published label','meta label'='published label','Baseline'='Unassisted',
     'All-Low'='All-Low rule')
   for(k in names(replacements)) x <- gsub(k,replacements[[k]],x,fixed=TRUE)
+  x <- gsub('Expert-to-expert','Between human reviews',x,fixed=TRUE)
+  x <- gsub('expert-to-expert','between human reviews',x,fixed=TRUE)
+  x <- gsub('Expert-specific','Review-specific',x,fixed=TRUE)
+  x <- gsub('expert-specific','review-specific',x,fixed=TRUE)
+  x <- gsub('Expert 1','Human Review 1',x,fixed=TRUE)
+  x <- gsub('Expert 2','Human Review 2',x,fixed=TRUE)
+  x <- gsub('Experts 1 and 2','Human Reviews 1 and 2',x,fixed=TRUE)
+  x <- gsub('\\bexperts\\b','human reviewers',x,perl=TRUE)
+  x <- gsub('\\bexpert\\b','human reviewer',x,perl=TRUE)
+  x <- gsub('\\bExperts\\b','Human reviewers',x,perl=TRUE)
+  x <- gsub('\\bExpert\\b','Human reviewer',x,perl=TRUE)
+  x <- gsub('an human reviewer','a human reviewer',x,fixed=TRUE)
   x <- gsub('All-Low rule rule','All-Low rule',x,fixed=TRUE)
   x <- gsub('D1-D5','D1\u2013D5',x,fixed=TRUE)
   x[x=='kappa'] <- 'Weighted κ'; x[x=='accuracy'] <- 'Exact agreement'
   x[x=='sensitivity'] <- 'Sensitivity'; x[x=='specificity'] <- 'Specificity'; x[x=='share'] <- 'Share'
-  x[x=='Consensus'] <- 'Both experts agreed'
+  x[x=='Consensus'] <- 'Both human reviewers agreed'
   x[x=='Meta'] <- 'Published'
   x
 }
@@ -118,8 +130,14 @@ display_frame <- function(x,supplement=TRUE) {
   x
 }
 # Shared native gt presentation. Both exports are made from these objects.
+reader_table <- function(x) {
+  for(k in names(x)) if(is.character(x[[k]])) x[[k]] <- reader_label(x[[k]])
+  names(x) <- reader_label(names(x))
+  x
+}
 house_table <- function(x,footnote=NULL,width=6.85) {
-  x <- as.data.frame(x,check.names=FALSE)
+  x <- as.data.frame(reader_table(x),check.names=FALSE)
+  if(!is.null(footnote)) footnote <- reader_label(footnote)
   for(k in names(x)) if(is.logical(x[[k]])) x[[k]] <- ifelse(x[[k]],'Yes','No')
   groups <- which(apply(x[,-1,drop=FALSE],1,function(v) all(is.na(v)|v=='')))
   if(length(groups)) {
@@ -158,7 +176,8 @@ house_table <- function(x,footnote=NULL,width=6.85) {
   # Column roles, rather than short cell strings, set widths in result matrices.
   if(all(c('Exact agreement (95% CI)','Weighted κ (95% CI)') %in% visible)) weights <- c(.85,.9,1.4,.4,1.75,1.55)
   else if(all(c('Sensitivity','Specificity') %in% visible)) weights <- c(1.05,.75,.9,.8,1.1,1.15,1.1)
-  else if(all(c('Low','Some concerns','High','Missing') %in% visible)) weights <- c(.65,1.15,.7,1.15,.5,.95,.5,.85,.4)
+  else if(all(c('Low','Some concerns','High','Missing') %in% visible))
+    weights <- c(Reference=1,Source=1.1,`Human reviewer rating`=1.2,Low=.6,`Some concerns`=.9,High=.6,Missing=.6)[visible]
   else if('Recomputed' %in% visible) weights <- c(.95,.7,1.05,1.15,1.65,1.4)
   else if('Original violations' %in% visible) weights <- c(1.15,.4,.95,.8,.95,.75,.85,1.0)
   else if(all(c('Analysis','Metric','Count','N','Value') %in% visible)) weights <- c(2.1,2,.5,.5,1.75)
@@ -247,13 +266,27 @@ manuscript_doc <- function() {
     page_margins=officer::page_mar(top=.6,bottom=.6,left=.65,right=.65)))
 }
 manuscript_par <- function(x,value,style='Manuscript body') {
+  value <- reader_label(value)
   if(grepl('heading',style)) value <- sub('^(e?Table [0-9]+[A-C]?|e?Figure [0-9]+) ','\\1. ',value)
   officer::body_add_par(x,value,style=style)
+}
+replace_generated_file <- function(staged,target) {
+  python <- Sys.getenv('ARBITER_PYTHON',unset=Sys.which('python'))
+  stopifnot(nzchar(python),system2(python,c('-c',
+    shQuote('import os,sys; os.replace(sys.argv[1],sys.argv[2])'),
+    shQuote(normalizePath(staged,winslash='/',mustWork=TRUE)),
+    shQuote(normalizePath(target,winslash='/',mustWork=FALSE))))==0L)
+}
+save_manuscript_doc <- function(doc,target) {
+  staged <- tempfile(tmpdir=dirname(target),fileext='.docx')
+  on.exit(unlink(staged))
+  print(doc,target=staged)
+  replace_generated_file(staged,target)
 }
 write_word_table <- function(x,file,caption,footnote) {
   tab <- house_table(x,footnote)
   doc <- manuscript_doc() |> manuscript_par(caption,style='heading 1') |> add_gt(tab)
-  print(doc,target=file)
+  save_manuscript_doc(doc,file)
 }
 
 register_figure_fonts <- function() {

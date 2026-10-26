@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 from html.parser import HTMLParser
 import json
 import re
@@ -12,6 +13,9 @@ import subprocess
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+spec = importlib.util.spec_from_file_location('manuscript_sources', Path(__file__).with_name('manuscript-sources.py'))
+metadata = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(metadata)
 
 
 class Links(HTMLParser):
@@ -55,19 +59,25 @@ def stage(destination: Path):
         "supplement.html": ROOT / "analysis/supplement.html",
     }
     output = ROOT / "analysis/output/manuscript"
-    for stem in ("Manuscript", "Supplement", "TRIPOD-LLM", "Table1", "Table2", "Table3"):
+    for stem in ("Manuscript", "Supplement", "TRIPOD-LLM", *[f"Table{i}" for i in range(1, metadata.MAIN_TABLE_COUNT + 1)]):
         sources[f"output/manuscript/{stem}.docx"] = output / f"{stem}.docx"
-    for i in range(1, 6):
+    for i in range(1, metadata.MAIN_FIGURE_COUNT + 1):
         for suffix in ("pdf", "png"):
             name = f"Figure{i}.{suffix}"
             sources[f"output/manuscript/{name}"] = output / name
-    for source in sorted(output.glob("eFigure*")):
-        if source.suffix.lower() in {".pdf", ".png"}:
-            sources[f"output/manuscript/{source.name}"] = source
     missing = [str(path) for path in sources.values() if not path.is_file()]
     if missing:
         raise SystemExit("Build publication artifacts first:\n" + "\n".join(missing))
     destination.mkdir(parents=True, exist_ok=True)
+    previous_manifest = destination / 'publication-manifest.json'
+    if previous_manifest.is_file():
+        previous_files = json.loads(previous_manifest.read_text(encoding='utf-8'))['files']
+        obsolete = [(destination / name).resolve() for name in previous_files.keys() - sources.keys()]
+        if any(not path.is_relative_to(destination) for path in obsolete):
+            raise SystemExit('Previous publication manifest contains an out-of-package path.')
+        for path in obsolete:
+            if path.is_file():
+                path.unlink()
     manifest = {"source_commit": subprocess.check_output(
         ["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip(), "files": {}}
     for relative, source in sources.items():

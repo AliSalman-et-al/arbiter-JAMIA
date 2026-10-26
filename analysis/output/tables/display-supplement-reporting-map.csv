@@ -1,65 +1,65 @@
-Guideline,Item,Topic,Section,Applicability and notes
-TRIPOD-LLM,1,Title,Manuscript title,Reported at the named current section or display
-TRIPOD-LLM,2,Abstract,Manuscript abstract; Manuscript Results,Reported at the named current section or display
-TRIPOD-LLM,3a,Context,Manuscript Background and significance,Reported at the named current section or display
-TRIPOD-LLM,3b,Intended users,Manuscript Background and significance; eMethods Interpretive limits,Reported at the named current section or display
-TRIPOD-LLM,4,Objectives,eMethods Blinded expert assessment,Reported at the named current section or display
-TRIPOD-LLM,5a,Data sources,"eMethods Input parity and label targets; Benchmark construction and exclusions; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered",Partial: purposive selection reported by author; search and ranking records unrecovered
-TRIPOD-LLM,5b,Data distribution,Supplement section 1 Benchmark trials,Reported at the named current section or display
-TRIPOD-LLM,5c,Text dates,Text-date coverage is not reported; author information required,Partial: author information required
-TRIPOD-LLM,5d,Preprocessing,eMethods Algorithms and validation; prompt templates,Reported at the named current section or display
-TRIPOD-LLM,5e,Missingness,eMethods Independent reference and Overall; supplement section 5,Reported at the named current section or display
-TRIPOD-LLM,6a,Model identity,Supplement Prompt templates and run provenance; eMethods Interpretive limits,Reported at the named current section or display
-TRIPOD-LLM,6b,Development,N/A: fixed provider model; no model development or fine-tuning,Not applicable: fixed model and task
-TRIPOD-LLM,6c,Inference settings,Supplement Prompt templates and run provenance,Reported at the named current section or display
-TRIPOD-LLM,6d,Outputs,eMethods Algorithms and validation; prompt templates,Reported at the named current section or display
-TRIPOD-LLM,6e,Classification,eMethods Algorithms and validation; Input parity and label targets,Reported at the named current section or display
-TRIPOD-LLM,7a,Generative metrics,Table 3; eMethods Evidence binding and verification,Reported at the named current section or display
-TRIPOD-LLM,7b,Metric relevance,eMethods Blinded expert assessment; Independent reference and Overall,Reported at the named current section or display
-TRIPOD-LLM,7c,Outcome definition,eMethods Input parity and label targets,Reported at the named current section or display
-TRIPOD-LLM,7d,Assessors,eMethods Blinded expert assessment; Manuscript Methods rater credentials (author completion required),Partial: author information required
-TRIPOD-LLM,7e,Comparators,eMethods Input parity and label targets; prompt templates; Table 3,Reported at the named current section or display
-TRIPOD-LLM,8a,Annotation guidance,eMethods Algorithms and validation; Blinded expert assessment; matched materials and task confirmed by author; original form and multi-outcome conventions unprovided,Partial: matched task and guidance reported; original form and multi-outcome conventions unprovided
-TRIPOD-LLM,8b,Annotation agreement,Figure 4; supplement sections 2 and 5,Reported at the named current section or display
-TRIPOD-LLM,8c,Annotator experience,Manuscript Methods rater credentials (author completion required),Partial: author information required
-TRIPOD-LLM,9a,Prompt design,"Supplement Prompt templates and run provenance; prompt design, selection and version-freeze provenance require author completion",Partial: final templates do not establish the prompt-development process
-TRIPOD-LLM,9b,Prompt data,Supplement Prompt templates and run provenance; eTable 1; ten prostate-cancer development trials and synthetic cases retained in ARBITER eval/; benchmark non-use author-attested; complete exposure history and independent overlap audit unestablished,Partial: author attestation of benchmark non-use; retained records do not establish exhaustive exposure history or a complete independent overlap audit
-TRIPOD-LLM,10,Summarization preprocessing,N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification,Not applicable: fixed model and task
-TRIPOD-LLM,11,Alignment evaluation,N/A: no instruction tuning or alignment training was performed,Not applicable: fixed model and task
-TRIPOD-LLM,12,Compute,Supplement Prompt templates and run provenance; eMethods API list-price reconstruction; eTables 20–22,Reported at the named current section or display
-TRIPOD-LLM,13,Ethics,Manuscript Ethics declaration (author completion required),Partial: author information required
-TRIPOD-LLM,14a,Funding,Manuscript Funding declaration (author completion required),Partial: author information required
-TRIPOD-LLM,14b,Conflicts,Manuscript Competing interests (author completion required),Partial: author information required
-TRIPOD-LLM,14c,Protocol,Manuscript Statistical analysis; evaluation outcomes organized after analysis without a confirmatory hierarchy; protocol/archive identifier requires author confirmation,Partial: author information required
-TRIPOD-LLM,14d,Registration,Manuscript Protocol/registration statement (author confirmation required),Partial: author information required
-TRIPOD-LLM,14e,Data access,Manuscript Data availability; Results report Reproduction,Reported at the named current section or display
-TRIPOD-LLM,14f,Code access,Results report Reproduction; Supplement Prompt templates and run provenance,Reported at the named current section or display
-TRIPOD-LLM,15,Public involvement,Manuscript Public involvement statement (author confirmation required),Partial: author information required
-TRIPOD-LLM,16a,Data flow,Figure 3,Reported at the named current section or display
-TRIPOD-LLM,16b,Data characteristics,eTable 1,Reported at the named current section or display
-TRIPOD-LLM,16c,Clinical distributions,eTable 1; N/A for individual-patient distributions: report-level benchmark,Reported at the named current section or display
-TRIPOD-LLM,16d,Analysis counts,Figure 3; Tables 1–3,Reported at the named current section or display
-TRIPOD-LLM,17,Performance,"Figures 4–5; Tables 1–3; eTable 2 and eTable 16; eTables 13, 13A and 13B; eFigure 2 collapsed question differences; eFigure 5 five-level and collapsed differences; eFigure 4 source-specific signalling agreement",Reported at the named current section or display
-TRIPOD-LLM,18,Model updating,N/A: no model updating or adaptation was performed,Not applicable: fixed model and task
-TRIPOD-LLM,19a,Interpretation,Manuscript Discussion; Manuscript Results,Reported at the named current section or display
-TRIPOD-LLM,19b,Limitations,eMethods Interpretive limits,Reported at the named current section or display
-TRIPOD-LLM,19c,Data challenges,eMethods Input parity and label targets; Interpretive limits,Reported at the named current section or display
-TRIPOD-LLM,19d,Implementation scope,eMethods Interpretive limits; Manuscript Discussion deployment,Reported at the named current section or display
-TRIPOD-LLM,19e,Poor inputs,Table 3; eMethods Algorithms and validation; Interpretive limits,Reported at the named current section or display
-TRIPOD-LLM,19f,User expertise,Manuscript Discussion human oversight,Reported at the named current section or display
-TRIPOD-LLM,19g,Future research,Manuscript Discussion future work,Reported at the named current section or display
-GRRAS,1,Title/abstract identification,Manuscript title and abstract,Reported at the named current section or display
-GRRAS,2,Measurement instrument,eMethods Algorithms and validation,Reported at the named current section or display
-GRRAS,3,Subject population,eTable 1; Figure 3,Reported at the named current section or display
-GRRAS,4,Rater population,Manuscript Methods rater credentials (author completion required),Partial: author information required
-GRRAS,5,Rationale,eMethods Blinded expert assessment,Reported at the named current section or display
-GRRAS,6,Sample size rationale,Manuscript Benchmark and assessment arms; Figure 3; eTable 1 (fixed available benchmark),Reported at the named current section or display
-GRRAS,7,Sampling,eTable 1; Manuscript Benchmark and assessment arms; eMethods Input parity and label targets; purposive selection and table-order sampling; search records unrecovered,Partial: author-supplied purposive selection and within-review sampling reported; search records unrecovered
-GRRAS,8,Rating process and blinding,eMethods Blinded expert assessment; same materials and task as model arms; Cochrane RoB 2 guidance; original form and multi-outcome conventions unprovided,"Partial: matched materials, task and guidance confirmed by author; original form and multi-outcome conventions unprovided"
-GRRAS,9,Independent ratings,Manuscript Independent expert references; eMethods Blinded expert assessment,Reported at the named current section or display
-GRRAS,10,Statistical methods,eMethods Independent reference and Overall,Reported at the named current section or display
-GRRAS,11,Actual sample counts,Figure 3; Table 1,Reported at the named current section or display
-GRRAS,12,Sample/rater characteristics,eTable 1; Manuscript Methods rater credentials (author completion required),Partial: author information required
-GRRAS,13,Estimates and uncertainty,Tables 1–3; Figures 4–5,Reported at the named current section or display
-GRRAS,14,Practical relevance,Manuscript Discussion,Reported at the named current section or display
-GRRAS,15,Detailed results,Supplementary analyses; results.html; repository CSVs,Reported at the named current section or display
+Guideline,Item,Topic,Section,Applicability and Notes
+TRIPOD-LLM,1,Title,Manuscript title,Reported at the named section or display
+TRIPOD-LLM,2,Abstract,Manuscript abstract,Reported at the named section or display
+TRIPOD-LLM,3a,Context,Manuscript Background and significance,Reported at the named section or display
+TRIPOD-LLM,3b,Intended users,Manuscript Objective and Discussion,Reported at the named section or display
+TRIPOD-LLM,4,Objectives,Manuscript Objective,Reported at the named section or display
+TRIPOD-LLM,5a,Data sources,eMethods Benchmark and supplied inputs; Targets and input parity; eTable 1,Reported at the named section or display
+TRIPOD-LLM,5b,Data distribution,Table 1; eTables 1 and 4,Reported at the named section or display
+TRIPOD-LLM,5c,Text dates,Text-date coverage not reported; author information required,Partial; author information remains pending
+TRIPOD-LLM,5d,Preprocessing,eMethods Evidence records and source verification,Reported at the named section or display
+TRIPOD-LLM,5e,Missingness,eMethods Signalling mapping and eligibility; eTable 6B,Reported at the named section or display
+TRIPOD-LLM,6a,Model identity,Prompt templates and run provenance,Reported at the named section or display
+TRIPOD-LLM,6b,Development,Prompt templates and run provenance; complete development history requires author information,Partial; author information remains pending
+TRIPOD-LLM,6c,Inference settings,Prompt templates and run provenance,Reported at the named section or display
+TRIPOD-LLM,6d,Outputs,eMethods Algorithms and validation; Figures 1 and 2,Reported at the named section or display
+TRIPOD-LLM,6e,Classification,eMethods Algorithms and validation,Reported at the named section or display
+TRIPOD-LLM,7a,Generative metrics,Figures 4 and 5; Tables 2 and 3; eTables 2 to 6,Reported at the named section or display
+TRIPOD-LLM,7b,Metric relevance,eMethods Inference and Exploratory diagnostic checks,Reported at the named section or display
+TRIPOD-LLM,7c,Outcome definition,eMethods Targets and input parity,Reported at the named section or display
+TRIPOD-LLM,7d,Assessors,Manuscript Independent human reviews; eMethods Blinded human assessment; individual credentials require author information,Partial; author information remains pending
+TRIPOD-LLM,7e,Comparators,Manuscript Benchmark and assessment arms; Prompt templates and run provenance,Reported at the named section or display
+TRIPOD-LLM,8a,Annotation guidance,eMethods Blinded human assessment; original blank form and multi-outcome conventions require author information,Partial; author information remains pending
+TRIPOD-LLM,8b,Annotation agreement,Figure 4; eTable 3,Reported at the named section or display
+TRIPOD-LLM,8c,Annotator experience,Manuscript Independent human reviews; individual experience/calibration require author information,Partial; author information remains pending
+TRIPOD-LLM,9a,Prompt design,Prompt templates and run provenance; prompt selection and version-freeze history require author information,Partial; author information remains pending
+TRIPOD-LLM,9b,Prompt data,Prompt templates and run provenance; author-attested benchmark non-use and bounded development records,Reported at the named section or display
+TRIPOD-LLM,10,Summarization preprocessing,N/A: no summarization task; source parsing in eMethods Evidence records and source verification,Not applicable to this evaluation
+TRIPOD-LLM,11,Alignment evaluation,N/A: no instruction tuning or alignment training,Not applicable to this evaluation
+TRIPOD-LLM,12,Compute,Table 3; eMethods Runtime and API equivalents; linked API ledgers,Reported at the named section or display
+TRIPOD-LLM,13,Ethics,Manuscript Ethics declaration; author confirmation required,Partial; author information remains pending
+TRIPOD-LLM,14a,Funding,Manuscript Funding; author confirmation required,Partial; author information remains pending
+TRIPOD-LLM,14b,Conflicts,Manuscript Competing interests; author confirmation required,Partial; author information remains pending
+TRIPOD-LLM,14c,Protocol,eMethods Reporting scope; archive identifier requires author confirmation,Partial; author information remains pending
+TRIPOD-LLM,14d,Registration,"Manuscript Ethics, registration and public involvement; author confirmation required",Partial; author information remains pending
+TRIPOD-LLM,14e,Data access,Manuscript Data availability; Linked source records and reproducibility materials,Reported at the named section or display
+TRIPOD-LLM,14f,Code access,Manuscript Data availability; Prompt templates and run provenance,Reported at the named section or display
+TRIPOD-LLM,15,Public involvement,Manuscript Public involvement statement; author confirmation required,Partial; author information remains pending
+TRIPOD-LLM,16a,Data flow,Figure 3,Reported at the named section or display
+TRIPOD-LLM,16b,Data characteristics,Table 1; eTable 1,Reported at the named section or display
+TRIPOD-LLM,16c,Clinical distributions,Table 1; eTable 1; report-level benchmark without patient-level distributions,Reported at the named section or display
+TRIPOD-LLM,16d,Analysis counts,Figure 3; Table 1,Reported at the named section or display
+TRIPOD-LLM,17,Performance,Figures 4 and 5; Tables 2 and 3; eTables 2 to 6,Reported at the named section or display
+TRIPOD-LLM,18,Model updating,N/A: no model updating or adaptation,Not applicable to this evaluation
+TRIPOD-LLM,19a,Interpretation,Manuscript Discussion,Reported at the named section or display
+TRIPOD-LLM,19b,Limitations,Manuscript Discussion; eMethods Inference,Reported at the named section or display
+TRIPOD-LLM,19c,Data challenges,eMethods Targets and input parity,Reported at the named section or display
+TRIPOD-LLM,19d,Implementation scope,Manuscript Discussion,Reported at the named section or display
+TRIPOD-LLM,19e,Poor inputs,Table 3; eMethods Targets and input parity,Reported at the named section or display
+TRIPOD-LLM,19f,User expertise,Manuscript Discussion,Reported at the named section or display
+TRIPOD-LLM,19g,Future research,Manuscript Discussion,Reported at the named section or display
+GRRAS,1,Title/abstract identification,Manuscript title and abstract,Reported at the named section or display
+GRRAS,2,Measurement instrument,eMethods Algorithms and validation,Reported at the named section or display
+GRRAS,3,Subject population,Table 1; eTable 1,Reported at the named section or display
+GRRAS,4,Rater population,Manuscript Independent human reviews; individual credentials require author information,Partial; author information remains pending
+GRRAS,5,Rationale,Manuscript Objective,Reported at the named section or display
+GRRAS,6,Sample size rationale,eMethods Benchmark and supplied inputs; available purposive sample,Reported at the named section or display
+GRRAS,7,Sampling,eMethods Benchmark and supplied inputs; search records require author information,Partial; author information remains pending
+GRRAS,8,Rating process and blinding,Figure 3; eMethods Blinded human assessment,Reported at the named section or display
+GRRAS,9,Independent ratings,eMethods Blinded human assessment,Reported at the named section or display
+GRRAS,10,Statistical methods,eMethods Inference; Exploratory diagnostic checks,Reported at the named section or display
+GRRAS,11,Actual sample counts,Figure 3; Table 1,Reported at the named section or display
+GRRAS,12,Sample/rater characteristics,Table 1; Manuscript Independent human reviews,Reported at the named section or display
+GRRAS,13,Estimates and uncertainty,Figures 4 and 5; eTables 2 to 6,Reported at the named section or display
+GRRAS,14,Practical relevance,Manuscript Discussion,Reported at the named section or display
+GRRAS,15,Detailed results,eTables 2 to 6; Linked source records and reproducibility materials,Reported at the named section or display

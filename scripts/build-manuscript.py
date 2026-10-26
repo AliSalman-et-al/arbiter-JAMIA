@@ -56,12 +56,14 @@ def manuscript_page(text, tables, legends):
 ```
 
 [Figure {i} PDF](output/manuscript/Figure{i}.pdf) · [PNG](output/manuscript/Figure{i}.png)''')
+        if i == 2:
+            figures.append(metadata.worked_example_markdown())
     return '\n\n'.join(blocks + figures) + '\n'
 
 
 def build(html_only=False):
-    required = [OUT / f'Table{i}.docx' for i in range(1, 4)]
-    required += [OUT / f'Figure{i}.{ext}' for i in range(1, 6) for ext in ('png', 'pdf')]
+    required = [OUT / f'Table{i}.docx' for i in range(1, metadata.MAIN_TABLE_COUNT + 1)]
+    required += [OUT / f'Figure{i}.{ext}' for i in range(1, metadata.MAIN_FIGURE_COUNT + 1) for ext in ('png', 'pdf')]
     required += [OUT / 'figure-legends.md']
     missing = [str(p) for p in required if not p.is_file()]
     if missing:
@@ -73,7 +75,7 @@ def build(html_only=False):
     qa.mkdir(parents=True, exist_ok=True)
     tables = []
     with tempfile.TemporaryDirectory(prefix='arbiter-manuscript-') as folder:
-        for i in range(1, 4):
+        for i in range(1, metadata.MAIN_TABLE_COUNT + 1):
             target = Path(folder) / f'Table{i}.html'
             run('quarto', 'pandoc', OUT / f'Table{i}.docx', '--to=html', f'--output={target}')
             table = target.read_text(encoding='utf-8')
@@ -91,7 +93,10 @@ def build(html_only=False):
         run(python, '-c', 'import docx, lxml')
         # Existing assembler enforces manuscript hierarchy, typography, pagination,
         # cell-for-cell table equality and five legends. --main-only protects supplement.
-        run('quarto', 'pandoc', qa / 'manuscript-assembled.md', '--from=markdown', '--to=docx', f'--output={OUT / "Manuscript.docx"}')
+        with tempfile.TemporaryDirectory(prefix='arbiter-word-') as folder:
+            staged = Path(folder) / 'Manuscript.docx'
+            run('quarto', 'pandoc', qa / 'manuscript-assembled.md', '--from=markdown', '--to=docx', f'--output={staged}')
+            os.replace(staged, OUT / 'Manuscript.docx')
         run(python, ROOT / 'docs/manuscript/assemble-publication.py', '--main-only')
     run('quarto', 'render', 'manuscript.qmd')
     print('PASS: manuscript HTML built from canonical Markdown, 3 native tables and 5 final figures.'

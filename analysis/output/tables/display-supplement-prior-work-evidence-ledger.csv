@@ -1,9 +1,0 @@
-Study,Task and workflow,Evaluation and interpretation,Primary source
-RobotReviewer (2016),RoB 1 automated judgments and supporting text,Judgments and text relevance evaluated,https://doi.org/10.1093/jamia/ocv044
-ROBoto2 (2025),Interactive RoB 2 retrieval and user correction,System and evaluation dataset,https://aclanthology.org/2025.emnlp-demos.2/
-Huang et al. (2025),Structured RoB 2 prompts; answer-derived ratings,Fresh reviewers and Cochrane references,https://www.jmir.org/2025/1/e70450
-Xiong et al. (2026),RoB 1 direct command versus constrained prompts,158 trials; same-model prompt comparison,https://pubmed.ncbi.nlm.nih.gov/42144258/
-Gandhi et al. (2026),Structured RoB 2 prompts,50 trials; review labels and fresh human panel,https://doi.org/10.1371/journal.pone.0353155
-Li et al. (2026),RoB 1 human–AI collaboration modes,Human-use intervention; workload findings do not transfer here,https://pubmed.ncbi.nlm.nih.gov/41559613/
-Lai et al. (2026),RoB 2 decision logic in prompts; repeated assessments,Published review references,https://doi.org/10.2196/84915
-ARBITER (this study),RoB 2 model interpretation with executable rules and retained source records,102 trials; two separate independent experts; full same-model workflow comparison,https://github.com/AliSalman-et-al/ARBITER/tree/2f549ae30f056ff441ea61a04b719968716f2219

@@ -10,11 +10,13 @@ checks={}
 spec=importlib.util.spec_from_file_location('report_refresh',ROOT/'scripts/report-refresh.py')
 refresh=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(refresh)
+metadata=refresh.metadata
 for name in ['Table1','Table2','Table3','Manuscript','Supplement','TRIPOD-LLM']:
  with ZipFile(OUT/f'{name}.docx') as z:
   doc=etree.fromstring(z.read('word/document.xml'))
   paragraphs=[''.join(p.xpath('.//w:t/text()',namespaces=NS)) for p in doc.xpath('//w:p',namespaces=NS)]
   text='\n'.join(paragraphs)
+  assert not re.search(r'\bExpert [12]\b',text),f'{name}: old numbered human-reference label'
   tables=doc.xpath('//w:tbl',namespaces=NS)
   assert tables,name
   assert not re.search(r'CI, confidence interval\.\s*CI, confidence interval|\bTRUE\b|\bFALSE\b',text),name
@@ -25,53 +27,53 @@ for name in ['Table1','Table2','Table3','Manuscript','Supplement','TRIPOD-LLM']:
    assert all(int(v)>=18 for v in t.xpath('.//w:sz/@w:val',namespaces=NS)),name
   assert any(n.startswith('word/footer') for n in z.namelist()),name
   if name=='Manuscript':
-   assert len(tables)==3
+   assert len(tables)==metadata.MAIN_TABLE_COUNT
    assert not any(re.match(r'eFigure [1-5][ .]',p) for p in paragraphs), 'Supplementary legends leaked into the main manuscript'
-   assert sum(p.startswith('Alt text:') for p in paragraphs)==5
-   for i in range(1,6):assert re.search(rf'Figure {i}[ .]',text)
+   assert sum(p.startswith('Alt text:') for p in paragraphs)==metadata.MAIN_FIGURE_COUNT
+   for i in range(1,metadata.MAIN_FIGURE_COUNT+1):assert re.search(rf'Figure {i}[ .]',text)
    assert re.search(r'Word counts: main text [0-9]+; structured abstract [0-9]+[.]',text)
    styles=etree.fromstring(z.read('word/styles.xml'))
    assert styles.xpath('//w:style/w:pPr/w:spacing[@w:line="480"]',namespaces=NS)
   if name=='Supplement':
-   normalized=' '.join('\n'.join(p for p in paragraphs if not p.startswith('Context: eh_')).split())
-   trace_cells=0
-   for trace in (ROOT/'analysis/output/tables').glob('avatar-trace-*.csv'):
-    with trace.open(encoding='utf-8-sig',newline='') as f:
-     for row in csv.DictReader(f):
-      for value in row.values():
-       if value:
-        assert ' '.join(value.split()) in normalized,(trace.name,'missing original trace text',value[:70])
-        trace_cells+=1
-   assert trace_cells>50
-   for p in doc.xpath('//w:body/w:p',namespaces=NS):
-    caption=''.join(p.xpath('.//w:t/text()',namespaces=NS))
-    style_id=p.xpath('./w:pPr/w:pStyle/@w:val',namespaces=NS)
-    if caption.startswith(('eTable 13B.','eTable 16.')) and not any(s.lower().startswith('toc') for s in style_id):
-     table=p.xpath('following-sibling::w:tbl[1]',namespaces=NS)[0]
-     content=' '.join(table.xpath('.//w:t/text()',namespaces=NS))
-     assert re.search(r'CI, (?:95% )?confidence interval',content),caption
-     if caption.startswith('eTable 16.'):
-      assert 'D1–D5' not in content and '81 trials' in content,caption
+   assert not doc.xpath('//w:drawing',namespaces=NS),'Retired supplementary figures remain'
+   for number in range(1,7):
+    assert any(p.startswith(f'eTable {number}.') for p in paragraphs),f'Missing eTable {number}'
+   assert not any(re.match(r'eTable (?:[7-9]|[12][0-9])[ .]',p) for p in paragraphs),'Retired eTable remains'
+   for caption in ('eTable 4A. Pooled category disagreements','eTable 5A. Rules-only recomputation',
+                   'eTable 6A. Complete paired question diagnostics','eTable 6B. Eligibility counts'):
+    assert caption in paragraphs,caption
+   for value in ('39/102','72/102','324/510','391/510','−39.6','−28.4'):
+    assert value in text,('Retained adverse diagnostic missing',value)
+   assert '26 October 2026' in text and '54645d75e7a8b32bbf09968893e7be45faa4cab4' in text
+   relationships=etree.fromstring(z.read('word/_rels/document.xml.rels'))
+   targets=relationships.xpath('//@Target')
+   for label,url in metadata.WORKED_EXAMPLE_LINKS:
+    assert url in targets,(label,'Current complete worked example link missing')
+    source=url.split('/blob/main/',1)[1]
+    assert (ROOT/source).is_file(),source
   checks[name]={'tables':len(tables),'page_footer':True,'editable_gt_ooxml':True}
-  if name=='Supplement':checks[name]['original_trace_cells_retained']=trace_cells
+  if name=='Supplement':checks[name]['six_table_families_and_adverse_diagnostics']=True
 for name in ['results','supplement']:
  page=html.fromstring((ROOT/f'analysis/{name}.html').read_bytes())
  tables=page.xpath('//table')
  assert len(page.xpath('//h1'))==1,(name,'duplicate document h1')
  assert tables and all(t.xpath('ancestor::*[contains(concat(" ",normalize-space(@class)," ")," manuscript-table ")]') for t in tables),name
- sources=[OUT/f'Table{i}.docx' for i in range(1,4)] if name=='results' else [OUT/'Supplement.docx']
+ sources=[OUT/f'Table{i}.docx' for i in range(1,metadata.MAIN_TABLE_COUNT+1)] if name=='results' else [OUT/'Supplement.docx']
  assert refresh.html_cells(page)==[cells for source in sources for cells in refresh.word_cells(source)],(name,'HTML differs from finalized gt Word tables')
  assert not page.xpath('//table//blockquote'),name
  if name=='supplement':
   ids=set(page.xpath('//@id'))
   navigation=page.xpath('//details//a[starts-with(@href,"#")]')
-  assert len(navigation)>=40
+  for number in range(1,7):
+   assert any(a.text_content().startswith(f'eTable {number}.') for a in navigation),number
   assert all(a.get('href')[1:] in ids for a in navigation)
  if name=='results':
-  assert len(tables)==3
+  assert len(tables)==metadata.MAIN_TABLE_COUNT
   assert not any(re.match(r'eFigure [1-5]',h.text_content()) for h in page.xpath('//h1|//h2|//h3|//h4'))
   imgs=page.xpath('//img[contains(@src,"data:")]')
-  assert sum(len(i.get('alt',''))>60 for i in imgs)>=5
+  assert sum(len(i.get('alt',''))>60 for i in imgs)==metadata.MAIN_FIGURE_COUNT
+  for label,url in metadata.WORKED_EXAMPLE_LINKS:
+   assert page.xpath('//a[@href=$url]',url=url),(name,label)
  for a in page.xpath('//a[@href]'):
   href=a.get('href').split('#')[0]
   if not href or re.match(r'[a-z]+:',href) or href.startswith('//'):continue

@@ -1,3 +1,0 @@
-metric,estimate,lower,upper,valid_replicates,n,quoted,arm
-share,0.022106631989596878,0.01095360824742268,0.034754668473817814,10000,1538,34,ARBITER (Sonnet 5.5)
-share,0,0,0,10000,1459,0,Unassisted (Sonnet 5.5)

@@ -19,91 +19,46 @@ reporting_checklist <- function() {
     'Sample/rater characteristics','Estimates and uncertainty','Practical relevance','Detailed results'),
     guideline='GRRAS',source='https://www.equator-network.org/wp-content/uploads/2012/12/GRRAS-checklist-for-reporting-of-studies-of-reliability-and-agreement.pdf')
   locations <- c(
-    '1'='Manuscript title (ANALYSIS-PLAN section 7)',
-    '2'='Manuscript abstract; results-sentences.md (author assembly)',
-    '3a'='Manuscript Background and significance (author assembly; ANALYSIS-PLAN section 7)',
-    '3b'='Manuscript Background and significance; eMethods Interpretive limits',
-    '4'='eMethods Blinded expert assessment',
-    '5a'='eMethods Input parity and label targets; supplementary table',
-    '5b'='Supplement section 1 Benchmark trials', '5c'='eMethods Interpretive limits',
-    '5d'='eMethods Algorithms and validation; prompt templates',
-    '5e'='eMethods Independent reference and Overall; supplement section 5',
-    '6a'='Supplement Prompt templates and run provenance; eMethods Interpretive limits',
-    '6b'='N/A: fixed provider model; no model development or fine-tuning',
-    '6c'='Supplement Prompt templates and run provenance', '6d'='eMethods Algorithms and validation; prompt templates',
-    '6e'='eMethods Algorithms and validation; Input parity and label targets',
-    '7a'='Table 3; eMethods Evidence binding and verification',
-    '7b'='eMethods Blinded expert assessment; Independent reference and Overall',
-    '7c'='eMethods Input parity and label targets',
-    '7d'='eMethods Blinded expert assessment; Manuscript Methods rater credentials (author completion required)',
-    '7e'='eMethods Input parity and label targets; prompt templates; Table 3',
-    '8a'='eMethods Algorithms and validation; Blinded expert assessment',
-    '8b'='Figure 4; supplement sections 2 and 5',
-    '8c'='Manuscript Methods rater credentials (author completion required)',
-    '9a'='Supplement Prompt templates and run provenance',
-    '9b'='Supplement Prompt templates and run provenance; supplementary table',
-    '10'='N/A: no summarisation task; source parsing described in eMethods Evidence binding and verification',
-    '11'='N/A: no instruction tuning or alignment training was performed',
-    '12'='Supplement Prompt templates and run provenance; eMethods API list-price reconstruction; time/cost eTables',
-    '13'='Manuscript Ethics declaration (author completion required)',
-    '14a'='Manuscript Funding declaration (author completion required)',
-    '14b'='Manuscript Competing interests (author completion required)',
-    '14c'='eMethods Independent reference and Overall; evaluation outcomes organized after analysis without a confirmatory hierarchy in Methods',
-    '14d'='Manuscript Protocol/registration statement (author confirmation required)',
-    '14e'='Manuscript Data availability; Results report Reproduction',
-    '14f'='Results report Reproduction; Supplement Prompt templates and run provenance',
-    '15'='Manuscript Public involvement statement (author confirmation required)',
-    '16a'='Figure 3', '16b'='supplementary table', '16c'='supplementary table; N/A for individual-patient distributions: report-level benchmark',
-    '16d'='Figure 3; Tables 1–3', '17'='Figures 4–5; Tables 1–3; supplementary table full contrasts; supplementary table signalling questions and disagreement types; eFigure 2 collapsed question differences; eFigure 5 five-level and collapsed differences; eFigure 4 source-specific signalling agreement',
-    '18'='N/A: no model updating or adaptation was performed',
-    '19a'='Manuscript Discussion (author assembly); results-sentences.md',
-    '19b'='eMethods Interpretive limits', '19c'='eMethods Input parity and label targets; Interpretive limits',
-    '19d'='eMethods Interpretive limits; Manuscript Discussion deployment (author assembly)',
-    '19e'='Table 3; eMethods Algorithms and validation; Interpretive limits',
-    '19f'='Manuscript Discussion human oversight (author assembly)',
-    '19g'='Manuscript Discussion future work (author assembly)')
+    '1'='Manuscript title','2'='Manuscript abstract','3a'='Manuscript Background and significance',
+    '3b'='Manuscript Objective and Discussion','4'='Manuscript Objective',
+    '5a'='eMethods Benchmark and supplied inputs; Targets and input parity; eTable 1',
+    '5b'='Table 1; eTables 1 and 4','5c'='Text-date coverage not reported; author information required',
+    '5d'='eMethods Evidence records and source verification','5e'='eMethods Signalling mapping and eligibility; eTable 6B',
+    '6a'='Prompt templates and run provenance','6b'='Prompt templates and run provenance; complete development history requires author information',
+    '6c'='Prompt templates and run provenance','6d'='eMethods Algorithms and validation; Figures 1 and 2',
+    '6e'='eMethods Algorithms and validation','7a'='Figures 4 and 5; Tables 2 and 3; eTables 2 to 6',
+    '7b'='eMethods Inference and Exploratory diagnostic checks','7c'='eMethods Targets and input parity',
+    '7d'='Manuscript Independent human reviews; eMethods Blinded human assessment; individual credentials require author information',
+    '7e'='Manuscript Benchmark and assessment arms; Prompt templates and run provenance',
+    '8a'='eMethods Blinded human assessment; original blank form and multi-outcome conventions require author information',
+    '8b'='Figure 4; eTable 3','8c'='Manuscript Independent human reviews; individual experience/calibration require author information',
+    '9a'='Prompt templates and run provenance; prompt selection and version-freeze history require author information',
+    '9b'='Prompt templates and run provenance; author-attested benchmark non-use and bounded development records',
+    '10'='N/A: no summarization task; source parsing in eMethods Evidence records and source verification',
+    '11'='N/A: no instruction tuning or alignment training','12'='Table 3; eMethods Runtime and API equivalents; linked API ledgers',
+    '13'='Manuscript Ethics declaration; author confirmation required','14a'='Manuscript Funding; author confirmation required',
+    '14b'='Manuscript Competing interests; author confirmation required','14c'='eMethods Reporting scope; archive identifier requires author confirmation',
+    '14d'='Manuscript Ethics, registration and public involvement; author confirmation required',
+    '14e'='Manuscript Data availability; Linked source records and reproducibility materials',
+    '14f'='Manuscript Data availability; Prompt templates and run provenance','15'='Manuscript Public involvement statement; author confirmation required',
+    '16a'='Figure 3','16b'='Table 1; eTable 1','16c'='Table 1; eTable 1; report-level benchmark without patient-level distributions',
+    '16d'='Figure 3; Table 1','17'='Figures 4 and 5; Tables 2 and 3; eTables 2 to 6',
+    '18'='N/A: no model updating or adaptation','19a'='Manuscript Discussion','19b'='Manuscript Discussion; eMethods Inference',
+    '19c'='eMethods Targets and input parity','19d'='Manuscript Discussion','19e'='Table 3; eMethods Targets and input parity',
+    '19f'='Manuscript Discussion','19g'='Manuscript Discussion')
   tripod <- tripod |> mutate(section=unname(locations[item]))
-  grras_locations <- c('Manuscript title and abstract (author assembly)',
-    'eMethods Algorithms and validation','supplementary table; Figure 3',
-    'Manuscript Methods rater credentials (author completion required)',
-    'eMethods Blinded expert assessment',
-    'Benchmark README-FOR-ALI.md sampling; Figure 3 (fixed available sample)',
-    'supplementary table; benchmark README-FOR-ALI.md',
-    'eMethods Blinded expert assessment',
-    'Table 1; eMethods Blinded expert assessment',
-    'eMethods Independent reference and Overall','Figure 3; Table 1',
-    'supplementary table; Manuscript Methods rater credentials (author completion required)',
-    'Tables 1–3; Figures 4–5','Manuscript Discussion (author assembly)',
-    'Supplementary analyses; results.html; repository CSVs')
-  grras <- grras |> mutate(section=grras_locations)
-  map <- bind_rows(tripod,grras)
-  map$section <- gsub(' [(](author assembly|ANALYSIS-PLAN)[^)]*[)]','',map$section)
-  map$section <- gsub('results-sentences.md','Manuscript Results',map$section,fixed=TRUE)
-  map$section <- gsub('Benchmark README-FOR-ALI.md sampling; Figure 3 (fixed available sample)','Manuscript Benchmark and assessment arms; Figure 3; eTable 1 (fixed available benchmark)',map$section,fixed=TRUE)
-  map$section <- gsub('benchmark README-FOR-ALI.md','Manuscript Benchmark and assessment arms',map$section,fixed=TRUE)
-  map$section <- gsub('supplementary table full contrasts','eTable 2 and eTable 16',map$section,fixed=TRUE)
-  map$section <- gsub('supplementary table signalling questions and disagreement types','eTables 13, 13A and 13B',map$section,fixed=TRUE)
-  map$section <- gsub('supplementary table','eTable 1',map$section,fixed=TRUE)
-  map$section <- gsub('time/cost eTables','eTables 20–22',map$section,fixed=TRUE)
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='5c'] <- 'Text-date coverage is not reported; author information required'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='14c'] <- 'Manuscript Statistical analysis; evaluation outcomes organized after analysis without a confirmatory hierarchy; protocol/archive identifier requires author confirmation'
-  map$section[map$guideline=='GRRAS' & map$item=='9'] <- 'Manuscript Independent expert references; eMethods Blinded expert assessment'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='5a'] <- 'eMethods Input parity and label targets; Benchmark construction and exclusions; eTable 1; author-supplied purposive selection; search dates, ranking records and additional-review rationale unrecovered'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='8a'] <- 'eMethods Algorithms and validation; Blinded expert assessment; matched materials and task confirmed by author; original form and multi-outcome conventions unprovided'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='9a'] <- 'Supplement Prompt templates and run provenance; prompt design, selection and version-freeze provenance require author completion'
-  map$section[map$guideline=='TRIPOD-LLM' & map$item=='9b'] <- 'Supplement Prompt templates and run provenance; eTable 1; ten prostate-cancer development trials and synthetic cases retained in ARBITER eval/; benchmark non-use author-attested; complete exposure history and independent overlap audit unestablished'
-  map$section[map$guideline=='GRRAS' & map$item=='7'] <- 'eTable 1; Manuscript Benchmark and assessment arms; eMethods Input parity and label targets; purposive selection and table-order sampling; search records unrecovered'
-  map$section[map$guideline=='GRRAS' & map$item=='8'] <- 'eMethods Blinded expert assessment; same materials and task as model arms; Cochrane RoB 2 guidance; original form and multi-outcome conventions unprovided'
-  map <- map |> mutate(page='Stable section/display locator',
+  grras <- grras |> mutate(section=c('Manuscript title and abstract','eMethods Algorithms and validation',
+    'Table 1; eTable 1','Manuscript Independent human reviews; individual credentials require author information',
+    'Manuscript Objective','eMethods Benchmark and supplied inputs; available purposive sample',
+    'eMethods Benchmark and supplied inputs; search records require author information',
+    'Figure 3; eMethods Blinded human assessment','eMethods Blinded human assessment',
+    'eMethods Inference; Exploratory diagnostic checks','Figure 3; Table 1',
+    'Table 1; Manuscript Independent human reviews','Figures 4 and 5; eTables 2 to 6',
+    'Manuscript Discussion','eTables 2 to 6; Linked source records and reproducibility materials'))
+  bind_rows(tripod,grras) |> mutate(page='Stable section/display locator',
     applicability_and_notes=case_when(
-      guideline=='TRIPOD-LLM' & item=='5a'~'Partial: purposive selection reported by author; search and ranking records unrecovered',
-      guideline=='TRIPOD-LLM' & item=='8a'~'Partial: matched task and guidance reported; original form and multi-outcome conventions unprovided',
-      guideline=='TRIPOD-LLM' & item=='9a'~'Partial: final templates do not establish the prompt-development process',
-      guideline=='TRIPOD-LLM' & item=='9b'~'Partial: author attestation of benchmark non-use; retained records do not establish exhaustive exposure history or a complete independent overlap audit',
-      guideline=='GRRAS' & item=='7'~'Partial: author-supplied purposive selection and within-review sampling reported; search records unrecovered',
-      guideline=='GRRAS' & item=='8'~'Partial: matched materials, task and guidance confirmed by author; original form and multi-outcome conventions unprovided',
-      startsWith(section,'N/A:')~'Not applicable: fixed model and task',
-      grepl('author completion|author confirmation|author information|author information required',section,ignore.case=TRUE)~'Partial: author information required',
-      TRUE~'Reported at the named current section or display'))
-  map |> select(guideline,item,topic,page,section,applicability_and_notes,source)
+      startsWith(section,'N/A:')~'Not applicable to this evaluation',
+      grepl('author information|author confirmation',section)~'Partial; author information remains pending',
+      TRUE~'Reported at the named section or display')) |>
+    select(guideline,item,topic,page,section,applicability_and_notes,source)
 }

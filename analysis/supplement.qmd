@@ -11,6 +11,4 @@ execute:
 
 [Download the Word supplement](output/manuscript/Supplement.docx). [TRIPOD-LLM and GRRAS reporting map](output/manuscript/TRIPOD-LLM.docx).
 
-Question-level figures are split into readable domain panels. Complete multipage PDFs: [eFigure 2](output/manuscript/eFigure2.pdf), [eFigure 5](output/manuscript/eFigure5.pdf).
-
 {{< include .quarto/supplement-page.md >}}

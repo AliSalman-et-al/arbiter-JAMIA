@@ -1,0 +1,63 @@
+Reference,Source,Domain,Evaluable,Reason,N
+Human Review 1,ARBITER,D1,Yes,Evaluable,306
+Human Review 1,ARBITER,D2,No,Arm question inactive,340
+Human Review 1,ARBITER,D2,No,Component not matched,17
+Human Review 1,ARBITER,D2,No,Not applicable,4
+Human Review 1,ARBITER,D2,Yes,Evaluable,362
+Human Review 1,ARBITER,D3,No,Arm question inactive,192
+Human Review 1,ARBITER,D3,No,Component not matched,39
+Human Review 1,ARBITER,D3,No,Not applicable,3
+Human Review 1,ARBITER,D3,Yes,Evaluable,198
+Human Review 1,ARBITER,D4,No,Arm question inactive,159
+Human Review 1,ARBITER,D4,No,Component not matched,30
+Human Review 1,ARBITER,D4,No,Not applicable,1
+Human Review 1,ARBITER,D4,Yes,Evaluable,339
+Human Review 1,ARBITER,D5,No,Component not matched,12
+Human Review 1,ARBITER,D5,Yes,Evaluable,302
+Human Review 1,Unassisted,D1,No,Component not matched,3
+Human Review 1,Unassisted,D1,Yes,Evaluable,303
+Human Review 1,Unassisted,D2,No,Arm question inactive,340
+Human Review 1,Unassisted,D2,No,Component not matched,19
+Human Review 1,Unassisted,D2,No,Not applicable,11
+Human Review 1,Unassisted,D2,Yes,Evaluable,353
+Human Review 1,Unassisted,D3,No,Arm question inactive,214
+Human Review 1,Unassisted,D3,No,Component not matched,42
+Human Review 1,Unassisted,D3,No,Not applicable,8
+Human Review 1,Unassisted,D3,Yes,Evaluable,168
+Human Review 1,Unassisted,D4,No,Arm question inactive,205
+Human Review 1,Unassisted,D4,No,Component not matched,31
+Human Review 1,Unassisted,D4,No,Not applicable,1
+Human Review 1,Unassisted,D4,Yes,Evaluable,292
+Human Review 1,Unassisted,D5,No,Component not matched,13
+Human Review 1,Unassisted,D5,Yes,Evaluable,301
+Human Review 2,ARBITER,D1,Yes,Evaluable,306
+Human Review 2,ARBITER,D2,No,Arm question inactive,341
+Human Review 2,ARBITER,D2,No,Component not matched,8
+Human Review 2,ARBITER,D2,No,Not applicable,9
+Human Review 2,ARBITER,D2,Yes,Evaluable,360
+Human Review 2,ARBITER,D3,No,Arm question inactive,188
+Human Review 2,ARBITER,D3,No,Component not matched,46
+Human Review 2,ARBITER,D3,No,Not applicable,3
+Human Review 2,ARBITER,D3,Yes,Evaluable,194
+Human Review 2,ARBITER,D4,No,Arm question inactive,159
+Human Review 2,ARBITER,D4,No,Component not matched,18
+Human Review 2,ARBITER,D4,No,Not applicable,1
+Human Review 2,ARBITER,D4,Yes,Evaluable,340
+Human Review 2,ARBITER,D5,No,Component not matched,8
+Human Review 2,ARBITER,D5,Yes,Evaluable,301
+Human Review 2,Unassisted,D1,No,Component not matched,3
+Human Review 2,Unassisted,D1,Yes,Evaluable,303
+Human Review 2,Unassisted,D2,No,Arm question inactive,343
+Human Review 2,Unassisted,D2,No,Component not matched,10
+Human Review 2,Unassisted,D2,No,Not applicable,13
+Human Review 2,Unassisted,D2,Yes,Evaluable,352
+Human Review 2,Unassisted,D3,No,Arm question inactive,208
+Human Review 2,Unassisted,D3,No,Component not matched,49
+Human Review 2,Unassisted,D3,No,Not applicable,8
+Human Review 2,Unassisted,D3,Yes,Evaluable,166
+Human Review 2,Unassisted,D4,No,Arm question inactive,205
+Human Review 2,Unassisted,D4,No,Component not matched,19
+Human Review 2,Unassisted,D4,No,Not applicable,1
+Human Review 2,Unassisted,D4,Yes,Evaluable,293
+Human Review 2,Unassisted,D5,No,Component not matched,9
+Human Review 2,Unassisted,D5,Yes,Evaluable,300

@@ -11,9 +11,3 @@ Neither,0,0,0,10000,Expert 2,80,0,
 ARBITER,0.6625,0.5802469135802469,0.746268656716418,10000,Split sensitivity,80,53,Neither includes split cells forced as ARBITER losses
 Unassisted,0.0875,0.02702702702702703,0.15492957746478872,10000,Split sensitivity,80,7,Neither includes split cells forced as ARBITER losses
 Neither,0.25,0.1780821917808219,0.325,10000,Split sensitivity,80,20,Neither includes split cells forced as ARBITER losses
-ARBITER,0.9772727272727273,0.926829268292683,1,10000,Post hoc: Stricter,44,43,
-Unassisted,0.022727272727272728,0,0.07317073170731707,10000,Post hoc: Stricter,44,1,
-Neither,0,0,0,10000,Post hoc: Stricter,44,0,
-ARBITER,0.625,0.4166666666666667,0.8333333333333334,10000,Post hoc: More lenient,16,10,
-Unassisted,0.375,0.16666666666666666,0.5833333333333334,10000,Post hoc: More lenient,16,6,
-Neither,0,0,0,10000,Post hoc: More lenient,16,0,

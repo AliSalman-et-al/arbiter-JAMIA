@@ -17,6 +17,13 @@ verify_spec.loader.exec_module(verifier)
 
 
 class PublicationVerification(unittest.TestCase):
+    def test_main_inventory_and_current_worked_example_links(self):
+        self.assertEqual((pages.metadata.MAIN_FIGURE_COUNT,pages.metadata.MAIN_TABLE_COUNT),(5,3))
+        self.assertEqual(len(pages.metadata.WORKED_EXAMPLE_LINKS),2)
+        for label,url in pages.metadata.WORKED_EXAMPLE_LINKS:
+            relative=url.split('/blob/main/',1)[1]
+            self.assertTrue((pages.ROOT/relative).is_file(),label)
+
     def test_old_manifest_without_manuscript_is_rejected(self):
         with self.assertRaisesRegex(RuntimeError, "lacks required files.*manuscript.html"):
             verifier.verify('https://example.org', {'files': {}})
@@ -88,8 +95,16 @@ class PublicationLinks(unittest.TestCase):
         for name in names:
             (output / name).write_bytes(binary)
         destination = self.root / 'release'
+        destination.mkdir()
+        retired = destination / 'eFigure-retired.png'
+        retired.write_bytes(b'old managed artwork')
+        unmanaged = destination / 'personal-note.txt'
+        unmanaged.write_text('unmanaged')
+        (destination / 'publication-manifest.json').write_text(json.dumps({'files': {retired.name: {}}}))
         with patch.object(pages, 'ROOT', project), patch.object(pages.subprocess, 'check_output', return_value='source-sha\n'):
             pages.stage(destination)
+        self.assertFalse(retired.exists())
+        self.assertEqual(unmanaged.read_text(), 'unmanaged')
         manifest = json.loads((destination / 'publication-manifest.json').read_text())
         self.assertEqual((destination / 'results.html').read_bytes(), html.replace(b'\r\n', b'\n').replace(b'<body>', b'<body>\n' + navigation))
         self.assertEqual((destination / 'manuscript.html').read_bytes().count(b'id="publication-navigation"'), 1)

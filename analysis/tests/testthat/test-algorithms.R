@@ -52,3 +52,11 @@ test_that('gate rejects a mismatch rather than tuning it away', {
 test_that('section 5.4 mandatory ARBITER validation gate passes', {
   expect_no_error(validate_gate(domain_checks(inputs)))
 })
+
+test_that('derived Overall uses five complete domains without optional escalation', {
+  expect_equal(derived_overall(rep('Low',5)),'Low')
+  expect_equal(derived_overall(c('Some concerns','Some concerns',rep('Low',3))),'Some concerns')
+  expect_equal(derived_overall(c(rep('Low',4),'High')),'High')
+  expect_true(is.na(derived_overall(rep('Low',4))))
+  expect_true(is.na(derived_overall(c(rep('Low',4),NA))))
+})
