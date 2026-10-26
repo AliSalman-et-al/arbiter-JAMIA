@@ -58,7 +58,7 @@ def stage(destination: Path):
         "supplement.html": ROOT / "analysis/supplement.html",
     }
     output = ROOT / "analysis/output/manuscript"
-    for stem in ("Supplement", "TRIPOD-LLM", *[f"Table{i}" for i in range(1, metadata.MAIN_TABLE_COUNT + 1)]):
+    for stem in ("Main-analysis", "Supplement", "TRIPOD-LLM", *[f"Table{i}" for i in range(1, metadata.MAIN_TABLE_COUNT + 1)]):
         sources[f"output/manuscript/{stem}.docx"] = output / f"{stem}.docx"
     for i in range(1, metadata.MAIN_FIGURE_COUNT + 1):
         for suffix in ("pdf", "png"):

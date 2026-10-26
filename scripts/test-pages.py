@@ -29,7 +29,7 @@ class PublicationVerification(unittest.TestCase):
             verifier.verify('https://example.org', {'files': {}})
 
     def test_changed_analysis_is_rejected(self):
-        files = ['index.html', 'results.html', 'supplement.html', 'output/manuscript/Supplement.docx']
+        files = ['index.html', 'results.html', 'supplement.html', 'output/manuscript/Supplement.docx', 'output/manuscript/Main-analysis.docx']
         expected = {'source_commit': 'sha', 'files': {name: {'bytes': 4, 'sha256': hashlib.sha256(b'good').hexdigest()} for name in files}}
         def fetch(url):
             if 'publication-manifest.json' in url:
@@ -90,7 +90,7 @@ class PublicationLinks(unittest.TestCase):
         for relative in ['scripts/pages-index.html', 'analysis/results.html', 'analysis/supplement.html']:
             (project / relative).write_bytes(html)
         binary = b'binary\r\n\x00content'
-        names = [f'{stem}.docx' for stem in ['Supplement', 'TRIPOD-LLM', 'Table1', 'Table2', 'Table3']]
+        names = [f'{stem}.docx' for stem in ['Main-analysis', 'Supplement', 'TRIPOD-LLM', 'Table1', 'Table2', 'Table3']]
         names += [f'Figure{i}.{ext}' for i in range(1, 6) for ext in ['pdf', 'png']]
         for name in names:
             (output / name).write_bytes(binary)
@@ -112,6 +112,7 @@ class PublicationLinks(unittest.TestCase):
         self.assertEqual((destination / 'results.html').read_bytes().count(b'id="publication-navigation"'), 1)
         self.assertEqual((destination / 'output/manuscript/Supplement.docx').read_bytes(), binary)
         self.assertIn('results.html', manifest['files'])
+        self.assertIn('output/manuscript/Main-analysis.docx', manifest['files'])
         self.assertNotIn('manuscript.html', manifest['files'])
         self.assertNotIn('output/manuscript/Manuscript.docx', manifest['files'])
         for relative, expected in manifest['files'].items():

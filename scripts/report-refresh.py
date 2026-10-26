@@ -10,6 +10,7 @@ import importlib.util
 from pathlib import Path
 import re
 import subprocess
+import sys
 import tempfile
 
 from docx import Document
@@ -101,7 +102,8 @@ def supplement_navigation(root):
 def protected_hashes():
     paths = list((ANALYSIS / 'output/tables').rglob('*.csv'))
     paths += [p for p in OUT.rglob('*') if p.is_file() and p.parent.name != 'qa'
-              and p.suffix.lower() in {'.docx', '.png', '.pdf', '.svg', '.tiff'}]
+              and p.suffix.lower() in {'.docx', '.png', '.pdf', '.svg', '.tiff'}
+              and p.name != 'Main-analysis.docx']
     return {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
 
 
@@ -192,6 +194,7 @@ def build():
         for number in range(1, 7):
             assert any(normalized(a.text_content()).startswith(f'eTable {number}.') for a in navigation_links), f'Missing eTable {number}'
         assert before == protected_hashes(), 'Protected publication/statistical sources changed'
+        run(sys.executable, ROOT / 'scripts/build-results-word.py')
         evidence = {'protected_sha256': before, 'main_tables': metadata.MAIN_TABLE_COUNT, 'main_images': metadata.MAIN_FIGURE_COUNT,
                     'supplement_tables': len(word_cells(OUT / 'Supplement.docx')), 'supplement_images': image_count,
                     'supplement_contents_links': len(navigation_links),

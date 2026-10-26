@@ -7,6 +7,8 @@ execute:
   enabled: false
 ---
 
+[Download main analysis (Word)](output/manuscript/Main-analysis.docx)
+
 [Home](index.html) · [Main analysis](results.html) · [Supplement](supplement.html) · [Software](https://github.com/AliSalman-et-al/ARBITER/) · [Study repository and reproduction](https://github.com/AliSalman-et-al/arbiter-JAMIA)
 
 ARBITER separates model interpretation from executable rules for the Cochrane risk-of-bias tool for randomised trials (RoB 2) and retains sources, answers and evidence for inspection. We compared its complete workflow with minimal prompting using the same reported model identifier and identical supplied files for 102 trials from 16 reviews. Two human reviewers independently rated all 510 domain cells before viewing labels. Their assessments are labeled Human Review 1 and Human Review 2. A separate conditional label-choice analysis used 60 agreed choices among 80 arm disagreements; 20 choices split.

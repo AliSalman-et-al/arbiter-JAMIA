@@ -11,7 +11,7 @@ spec=importlib.util.spec_from_file_location('report_refresh',ROOT/'scripts/repor
 refresh=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(refresh)
 metadata=refresh.metadata
-for name in ['Table1','Table2','Table3','Supplement','TRIPOD-LLM']:
+for name in ['Table1','Table2','Table3','Main-analysis','Supplement','TRIPOD-LLM']:
  with ZipFile(OUT/f'{name}.docx') as z:
   doc=etree.fromstring(z.read('word/document.xml'))
   paragraphs=[''.join(p.xpath('.//w:t/text()',namespaces=NS)) for p in doc.xpath('//w:p',namespaces=NS)]
@@ -26,6 +26,12 @@ for name in ['Table1','Table2','Table3','Supplement','TRIPOD-LLM']:
    assert t.xpath('./w:tr/w:trPr/w:tblHeader',namespaces=NS),name
    assert all(int(v)>=18 for v in t.xpath('.//w:sz/@w:val',namespaces=NS)),name
   assert any(n.startswith('word/footer') for n in z.namelist()),name
+  if name in {'Table3','Main-analysis'}:
+   assert 'B. Structural record checks' not in text,name
+   assert 'B. Computational resources' in text,name
+  if name=='Main-analysis':
+   assert len(tables)==metadata.MAIN_TABLE_COUNT
+   assert len(doc.xpath('//w:drawing',namespaces=NS))==metadata.MAIN_FIGURE_COUNT
   if name=='Supplement':
    assert not doc.xpath('//w:drawing',namespaces=NS),'Retired supplementary figures remain'
    for number in range(1,7):

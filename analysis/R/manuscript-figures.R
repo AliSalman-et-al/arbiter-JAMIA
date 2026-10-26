@@ -17,30 +17,45 @@ export_manuscript_figure <- function(plot,name,height_mm,width_mm=174) {
   invisible(plot)
 }
 study_flow_plot <- function(cells) {
-  nodes <- tibble(x=c(5,5,2.5,7.5,5,2.5,7.5,6.2,8.8),y=c(12,10.5,8.7,8.7,6.9,4.6,4.6,2.2,2.2),
-    w=c(7.8,8.6,4.5,4.5,7.3,4.5,4.5,2.3,2.3),h=c(.8,1,1.2,1.2,.9,1.8,1.8,1,1),
+  nodes <- tibble(
+    x=c(5,5,1.65,5,8.35,3.325,8.35,2.5,7.5,6.15,8.7),
+    y=c(14,12.6,10.65,10.65,10.65,8.1,8.1,5.75,5.75,2.7,2.7),
+    w=c(9.6,9.6,3.1,3.1,3.1,6.45,3.1,4.6,4.6,2.4,2.4),
+    h=c(.8,.9,1.7,1.7,1.7,1.3,1.3,1.9,1.9,1.2,1.2),
     label=c('105 benchmark trials; 3 unsupported designs excluded',
-      '102 trials from 16 reviews; identical supplied trial files\nSame model identifier; one run per arm',
-      'ARBITER complete workflow\nGuidance, tools and rule application',
-      'Unassisted comparator\nMinimal task and format prompt',
-      'Paired arm outputs: 102 trials × five domains = 510 cells',
-      'Full-cohort comparison: all 510 cells\nEach human reviewer independently records ratings\nand answers before viewing labels; no AI',
-      'Conditional label choice: 80 cells\nwhere arm labels differ; human reviewers then\nchoose among randomly ordered labels',
+      '102 trials from 16 reviews; five domains per trial',
+      'ARBITER\nComplete workflow\nGuidance, tools and rules',
+      'Unassisted\nMinimal task and\nformat prompt',
+      'Human Reviewers\nTwo independent reviews\nRatings and signalling answers\nfrozen before label exposure',
+      'Paired AI outputs: 510 domain cells per arm\nSame reported model identifier; one run per arm\nIdentical supplied trial files',
+      'Human Review 1 and 2\n510 ratings per review\nPlus signalling answers',
+      'Full-cohort comparison\nEach AI arm against each human review\nAll 510 domain cells retained\nSignalling: paired eligible components',
+      'Later blinded label choice\nHuman reviewers choose among\nthree randomly ordered labels\nRetain 80 arm-discordant cells',
       '60 agreed choices\n53 match ARBITER',
       '20 split choices\nSensitivity analyses'))
-  edges <- tibble(x=c(5,2.5,7.5,2.5,7.5,5,2.5,7.5,6.2,8.8),y=c(11.6,9.65,9.65,8.1,8.1,7.65,6,6,3.2,3.2),
-    xend=c(5,2.5,7.5,2.5,7.5,5,2.5,7.5,6.2,8.8),yend=c(11,9.3,9.3,7.65,7.65,7.35,5.5,5.5,2.7,2.7))
-  joins <- tibble(x=c(2.5,2.5,2.5,6.2),xend=c(7.5,7.5,7.5,8.8),y=c(9.65,7.65,6,3.2))
+  arrows <- tibble(
+    x=c(5,1.65,5,8.35,3.325,8.35,2.5,7.5,6.15,8.7),
+    y=c(13.6,11.75,11.75,11.75,9.2,9.8,6.95,6.95,3.7,3.7),
+    xend=c(5,1.65,5,8.35,3.325,8.35,2.5,7.5,6.15,8.7),
+    yend=c(13.05,11.5,11.5,11.5,8.75,8.75,6.7,6.7,3.3,3.3))
+  lines <- tibble(
+    x=c(5,1.65,1.65,5,1.65,3.325,8.35,2.5,7.5,6.15),
+    y=c(12.15,11.75,9.8,9.8,9.2,7.45,7.45,6.95,4.8,3.7),
+    xend=c(5,8.35,1.65,5,5,3.325,8.35,8.35,7.5,8.7),
+    yend=c(11.75,11.75,9.2,9.2,9.2,6.95,6.95,6.95,3.7,3.7))
   ggplot2::ggplot(nodes,ggplot2::aes(x,y))+
-    ggplot2::geom_segment(data=joins,ggplot2::aes(x=x,xend=xend,y=y,yend=y),inherit.aes=FALSE,linewidth=.5)+
-    ggplot2::geom_segment(data=edges,ggplot2::aes(x=x,y=y,xend=xend,yend=yend),inherit.aes=FALSE,
-      arrow=grid::arrow(type='closed',length=grid::unit(1.8,'mm')),linewidth=.5)+
-    ggplot2::geom_segment(data=tibble(x=c(5,5,7.5),y=c(10,6.45,3.7),yend=c(9.65,6,3.2)),ggplot2::aes(x=x,xend=x,y=y,yend=yend),inherit.aes=FALSE,linewidth=.5)+
-    ggplot2::geom_rect(ggplot2::aes(xmin=x-w/2,xmax=x+w/2,ymin=y-h/2,ymax=y+h/2),fill='#F5F5F3',color='grey30')+
+    ggplot2::geom_segment(data=lines,ggplot2::aes(x=x,y=y,xend=xend,yend=yend),
+      inherit.aes=FALSE,linewidth=.5)+
+    ggplot2::geom_segment(data=arrows,ggplot2::aes(x=x,y=y,xend=xend,yend=yend),
+      inherit.aes=FALSE,arrow=grid::arrow(type='closed',length=grid::unit(1.8,'mm')),linewidth=.5)+
+    ggplot2::geom_rect(ggplot2::aes(xmin=x-w/2,xmax=x+w/2,ymin=y-h/2,ymax=y+h/2),
+      fill='#F5F5F3',color='grey30')+
     ggplot2::geom_text(ggplot2::aes(label=label),family='Fira Sans Condensed',size=3)+
-    ggplot2::annotate('text',x=2.5,y=2.4,label='Separate human reviews\nFull cohort retained',size=2.9)+
-    ggplot2::coord_cartesian(xlim=c(0,10.2),ylim=c(1.4,12.5),expand=FALSE,clip='off')+ggplot2::theme_void()
+    ggplot2::annotate('text',x=2.5,y=3.5,label='Separate human references\nHuman Review 1 and Human Review 2',size=2.9)+
+    ggplot2::coord_cartesian(xlim=c(0,10),ylim=c(1.9,14.5),expand=FALSE,clip='off')+
+    ggplot2::theme_void()
 }
+
 domain_agreement_plot <- function() {
   domains <- c('D1-D5',paste0('D',1:5))
   labels <- c('Pooled (510 cells)','D1 Randomisation','D2 Deviations','D3 Missing data','D4 Measurement','D5 Reported result')
@@ -85,7 +100,7 @@ signalling_difference_plot <- function() {
 }
 build_manuscript_figures <- function(cells) {
   register_figure_fonts()
-  export_manuscript_figure(study_flow_plot(cells),'Figure3',150)
+  export_manuscript_figure(study_flow_plot(cells),'Figure3',175)
   export_manuscript_figure(domain_agreement_plot(),'Figure4',190)
   export_manuscript_figure(signalling_difference_plot(),'Figure5',145)
   dir.create('output/figures',recursive=TRUE,showWarnings=FALSE)

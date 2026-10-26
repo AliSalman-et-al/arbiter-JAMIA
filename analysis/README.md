@@ -33,7 +33,7 @@ The active IMRaD draft, its bibliography and its Word/HTML outputs were removed 
 Rscript build-publication.R
 ```
 
-This reuses finalized numerical exports without resampling. The native editable tables originate in gt. The shared finalizer adds pagination and stable heading bookmarks to the standalone tables, supplement and reporting map. HTML refresh checks every source table cell, figure and local link.
+This reuses finalized numerical exports without resampling. The native editable tables originate in gt. The shared finalizer adds pagination and stable heading bookmarks to the standalone tables, supplement and reporting map. HTML refresh checks every source table cell, figure and local link, then exports Main-analysis.docx from the analysis page with the same text, embedded figures and native editable tables.
 
 To refresh only web pages from already finalized artifacts, run from the repository root:
 

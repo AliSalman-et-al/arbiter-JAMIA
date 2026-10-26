@@ -52,12 +52,11 @@ process_integrity_table <- function() {
   p$Measure <- c('Runtime (minutes/trial), median (IQR)','API list-price equivalent (US$/trial), median (IQR)')
   bind_rows(tibble(Measure='A. Rule conformance',ARBITER='',Unassisted=''),
     tibble(Measure='Domain outputs reproduced from proposals',ARBITER='510/510 (100.0%)',Unassisted='Not available'),x[1:3,],
-    tibble(Measure='B. Structural record checks',ARBITER='',Unassisted=''),x[4:nrow(x),],
-    tibble(Measure='C. Computational resources',ARBITER='',Unassisted=''),p) |>
+    tibble(Measure='B. Computational resources',ARBITER='',Unassisted=''),p) |>
     mutate(across(everything(),~replace_na(.x,'')),
-      `Paired mean difference (95% CI)`=if_else(`Paired mean difference (95% CI)`=='' & !grepl('^[ABC][.]',Measure),'—',`Paired mean difference (95% CI)`))
+      `Paired mean difference (95% CI)`=if_else(`Paired mean difference (95% CI)`=='' & !grepl('^[AB][.]',Measure),'—',`Paired mean difference (95% CI)`))
 }
-build_main_tables <- function(inputs) {
+build_main_tables <- function(inputs,table_numbers=1:3) {
   dir.create('output/manuscript/qa',recursive=TRUE,showWarnings=FALSE)
   table2 <- primary_endpoint_table()
   tables <- list(benchmark_context_table(inputs),table2,process_integrity_table())
@@ -65,9 +64,9 @@ build_main_tables <- function(inputs) {
     'Process checks and computational resources')
   notes <- c('Reference categories are Low, Some concerns and High; each reference contributes 510 domain cells. Document counts are trials with each role recorded in the source inventory among 102 trials; roles can overlap. SAP, statistical analysis plan. Reference distributions and separate expert agreement appear in the compact supplement.',
     paste('Conditional blinded-label choice evaluation includes 80 arm-discordant cells and the 60 for which the experts made an agreed choice; 20 choices split. Expert-specific sensitivities use all 80. The final row counts all 20 splits against ARBITER by assumption, without assigning Unassisted wins. Expert 1 chose neither arm in 4/80 cells; this is distinct from the split-loss assumption.',CI_NOTE),
-    paste('Unassisted rule-break cells show No./total (%; 95% CI); CI bounds are percentages. Domain rules use evaluable ratings (ARBITER 510; Unassisted 509); one Unassisted cell is unevaluable. Evidence denominators count active answers or distinct evidence records as indicated; verifier denominator is 102 bundles. ARBITER has no recorded domain overrides; one Overall escalation is permitted. Evidence checks establish quotation occurrence and structural binding, without assessing answer support. Runtime and API list-price equivalents use 102 paired trials; source summaries are median (IQR), contrasts are paired mean differences. Cost is a frozen-rate equivalent, not expenditure. — means not applicable; Not available means not measured.',CI_NOTE))
+    paste('Unassisted rule-break cells show No./total (%; 95% CI); CI bounds are percentages. Domain rules use evaluable ratings (ARBITER 510; Unassisted 509); one Unassisted cell is unevaluable. ARBITER has no recorded domain overrides; one Overall escalation is permitted. Runtime and API list-price equivalents use 102 paired trials; source summaries are median (IQR), contrasts are paired mean differences. Cost is a frozen-rate equivalent, not expenditure. — means not applicable; Not available means not measured.',CI_NOTE))
   readr::write_csv(display_numbering(),'output/manuscript/qa/display-numbering.csv')
-  for(i in 1:3) {
+  for(i in table_numbers) {
     x <- reader_table(tables[[i]]);readr::write_csv(x,paste0('output/tables/display-table',i,'.csv'),na='')
     doc <- manuscript_doc() |> manuscript_par(paste0('Table ',i,' ',titles[i]),style='heading 1')
     tab <- house_table(x,notes[i],6.85)

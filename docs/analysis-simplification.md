@@ -24,12 +24,12 @@ Original table numbers below identify the earlier supplement, not the reduced nu
 |---|---|---|
 | Main Figure 1, architecture | Defines the evaluated intervention and responsibilities | Keep. Explains the Action. Preserve protected artwork. |
 | Main Figure 2, AVATAR | Demonstrates inspectability and unresolved interpretation | Keep. Preserve the illustrative-case limitation and directly link the complete current record. |
-| Main Figure 3, evaluation flow | Protects assessment chronology and conditional denominators | Keep. Distinguish 510 independent comparisons from 80 disagreements, 60 agreed choices and 20 splits. |
+| Main Figure 3, evaluation flow | Protects assessment chronology and conditional denominators | Keep three parallel lanes for ARBITER, Unassisted and Human Reviewers. Distinguish 510 independent comparisons from the later 80 disagreements, 60 agreed choices and 20 splits. |
 | Main Figure 4, agreement | Answers the central comparison with absolute levels and paired gains | Keep both experts, all domains and the Published comparison. |
 | Main Figure 5, signalling | Tests answer agreement and exposes coding dependence | Keep both codings, experts and paired denominators. |
 | Main Table 1, context | Defines the benchmark, prevalence and supplied sources | Keep. Supports the limits on generalization and reference interpretation. |
 | Main Table 2, choices | Makes the selected choice result accountable to sensitivities | Keep four rows. Do not repeat them in a supplementary family. |
-| Main Table 3, process/resources | Separates structural properties from semantic support and computation | Keep distinct audit objects, unevaluable cells and resource summaries. |
+| Main Table 3, process/resources | Separates structural properties from semantic support and computation | Keep rule conformance, unevaluable cells and resource summaries. At the author's subsequent request, remove the structural-record section and relabel computational resources B. |
 | eTable 1, trials | Supports inspection of sampling, targets and source availability | Keep a compact trial index with alignment and availability information or direct row-level manifest links. |
 | eTable 2, expert agreement | Gives numerical access to the central comparisons | Keep separate experts, pooled/domain rates, weighted kappa and arm contrasts. Remove means, agreed-reference variants and extra source contrasts. |
 | eTable 3, category distributions | Explains prevalence dependence | Keep one pooled three-category distribution for each source. |
@@ -48,7 +48,7 @@ Original table numbers below identify the earlier supplement, not the reduced nu
 | eTable 16, derived Overall | Bounds generalization from domain agreement to overall judgments | Keep a tiny exploratory comparison with each derived expert reference, both arms, paired differences and expert reliability. No Published 81-trial subset. |
 | eTable 17, Overall validation | Records stored-versus-derived discrepancies and permitted escalation | Remove the display. Explain worst-domain derivation, no imposed optional escalation and the lack of directly rated expert Overall. Original sheets remain. |
 | eTable 18, rule audit | Establishes observed adopted-rating conformance | Main Table 3 plus compact definitions. Cut repeated domain/status grids. |
-| eTable 19, evidence binding | Distinguishes answer coverage, source binding and record integrity | Main Table 3 plus compact definitions. Keep distinct denominators and the semantic-support boundary. |
+| eTable 19, evidence binding | Distinguishes answer coverage, source binding and record integrity | Retain current audit CSVs, compact methods and the separate analysis summary. The author subsequently removed the structural-record block from main Table 3. Keep the semantic-support boundary. |
 | eTable 20, resources | Makes computation visible, including skew | Main Table 3. Remove repeated token-category tables; retain directly linked reconstruction data. |
 | eTables 21 and 22, cost bounds/reconciliation | Makes reconstructed costs reproducible | Condense assumptions and bounds into prose. Link current small CSV ledgers; remove their printed table families. |
 | eTable 23, literature ledger | Supports the background and novelty account | Remove from the reading supplement and its generator. Keep citations and bounded comparisons in the manuscript. |
