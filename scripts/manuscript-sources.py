@@ -3,6 +3,7 @@ import re
 
 MAIN_FIGURE_COUNT = 5
 MAIN_TABLE_COUNT = 3
+SUPPLEMENT_TABLE_COUNT = 4
 WORKED_EXAMPLE_LINKS = [
     ('Complete AVATAR answers', 'https://github.com/AliSalman-et-al/arbiter-JAMIA/blob/main/analysis/output/tables/avatar-trace-answers.csv'),
     ('Complete AVATAR evidence and quotations', 'https://github.com/AliSalman-et-al/arbiter-JAMIA/blob/main/analysis/output/tables/avatar-trace-evidence.csv'),

@@ -191,7 +191,7 @@ def build():
         navigation_links = supplement.xpath('//details/ul/li/a')
         assert navigation_links, 'Supplement contents missing'
         assert not image_bytes, 'Retired supplementary figures remain embedded'
-        for number in range(1, 7):
+        for number in range(1, metadata.SUPPLEMENT_TABLE_COUNT + 1):
             assert any(normalized(a.text_content()).startswith(f'eTable {number}.') for a in navigation_links), f'Missing eTable {number}'
         assert before == protected_hashes(), 'Protected publication/statistical sources changed'
         run(sys.executable, ROOT / 'scripts/build-results-word.py')

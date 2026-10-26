@@ -4,6 +4,8 @@
 
 The author subsequently requested neutral labels. Current text, tables and figures use Human Review 1 and Human Review 2 for the independent assessments. Source identifiers remain stable. Figure 2's revised footer explicitly identifies the later blinded D5 choices; it does not attribute directly rated Overall judgments to the human reviewers.
 
+The author subsequently removed the reduced eTable 1 benchmark-target family and eTable 5 exploratory-diagnostic family, including its rules-only panel. The remaining tables are renumbered 1 to 4. Source records and analytical CSVs remain available. The earlier defense and restoration decisions below describe the earlier reduction and are superseded for these two printed families.
+
 ## Argument and review
 
 Opening. Evidence reviewers need to inspect the evidence and decisions behind result-specific risk-of-bias judgments.
@@ -86,7 +88,7 @@ The original proposal cut too much diagnostic information. The independent revie
 - Retain complete paired question results. Q4.1 five-level differences are unfavorable against both experts, with zero collapsed differences. Domain summaries alone conceal that distinction.
 - Retain pooled rules-only repair. Original Unassisted agreement of 332/510 and 400/510 becomes 324/510 and 391/510 after repairing its 26 contradictory labels. This does not isolate a causal component effect.
 
-The final numbered supplement has six families. They cover the benchmark, Published agreement, independent agreement/reliability, category context, exploratory diagnostic checks, and signalling/eligibility. Methods, prompts, provenance and a short linked-record index accompany them. Conditional choices are already in main Table 2.
+The current numbered supplement has four families. They cover Published agreement, independent agreement/reliability, category context, and signalling/eligibility. Methods, prompts, provenance and a short linked-record index accompany them. Conditional choices are already in main Table 2.
 
 ## History and verification
 

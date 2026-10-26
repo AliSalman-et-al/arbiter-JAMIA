@@ -29574,23 +29574,23 @@ reporting-checklist-skeleton,2,section,Pending manuscript abstract
 reporting-checklist-skeleton,3,section,Pending manuscript background
 reporting-checklist-skeleton,4,section,Pending manuscript objectives and discussion
 reporting-checklist-skeleton,5,section,Pending manuscript objectives
-reporting-checklist-skeleton,6,section,eMethods Benchmark and supplied inputs; Targets and input parity; eTable 1
-reporting-checklist-skeleton,7,section,Table 1; eTables 1 and 4
+reporting-checklist-skeleton,6,section,eMethods Benchmark and supplied inputs; Targets and input parity; Linked benchmark source records
+reporting-checklist-skeleton,7,section,Table 1; eTable 3
 reporting-checklist-skeleton,8,section,Text-date coverage not reported; author information required
 reporting-checklist-skeleton,9,section,eMethods Evidence records and source verification
-reporting-checklist-skeleton,10,section,eMethods Signalling mapping and eligibility; eTable 6B
+reporting-checklist-skeleton,10,section,eMethods Signalling mapping and eligibility; eTable 4B
 reporting-checklist-skeleton,11,section,Prompt templates and run provenance
 reporting-checklist-skeleton,12,section,Prompt templates and run provenance; complete development history requires author information
 reporting-checklist-skeleton,13,section,Prompt templates and run provenance
 reporting-checklist-skeleton,14,section,eMethods Algorithms and validation; Figures 1 and 2
 reporting-checklist-skeleton,15,section,eMethods Algorithms and validation
-reporting-checklist-skeleton,16,section,Figures 4 and 5; Tables 2 and 3; eTables 2 to 6
+reporting-checklist-skeleton,16,section,Figures 4 and 5; Tables 2 and 3; eTables 1 to 4
 reporting-checklist-skeleton,17,section,eMethods Inference and Exploratory diagnostic checks
 reporting-checklist-skeleton,18,section,eMethods Targets and input parity
 reporting-checklist-skeleton,19,section,eMethods Blinded human assessment; individual credentials require author information
 reporting-checklist-skeleton,20,section,eMethods Benchmark and supplied inputs; Prompt templates and run provenance
 reporting-checklist-skeleton,21,section,eMethods Blinded human assessment; original blank form and multi-outcome conventions require author information
-reporting-checklist-skeleton,22,section,Figure 4; eTable 3
+reporting-checklist-skeleton,22,section,Figure 4; eTable 2
 reporting-checklist-skeleton,23,section,eMethods Blinded human assessment; individual experience/calibration require author information
 reporting-checklist-skeleton,24,section,Prompt templates and run provenance; prompt selection and version-freeze history require author information
 reporting-checklist-skeleton,25,section,Prompt templates and run provenance; author-attested benchmark non-use and bounded development records
@@ -29606,10 +29606,10 @@ reporting-checklist-skeleton,34,section,Linked source records and reproducibilit
 reporting-checklist-skeleton,35,section,Prompt templates and run provenance; pending manuscript code availability statement
 reporting-checklist-skeleton,36,section,Pending manuscript public involvement statement; author confirmation required
 reporting-checklist-skeleton,37,section,Figure 3
-reporting-checklist-skeleton,38,section,Table 1; eTable 1
-reporting-checklist-skeleton,39,section,Table 1; eTable 1; report-level benchmark without patient-level distributions
+reporting-checklist-skeleton,38,section,Table 1; Linked benchmark source records
+reporting-checklist-skeleton,39,section,Table 1; Linked benchmark source records; report-level benchmark without patient-level distributions
 reporting-checklist-skeleton,40,section,Figure 3; Table 1
-reporting-checklist-skeleton,41,section,Figures 4 and 5; Tables 2 and 3; eTables 2 to 6
+reporting-checklist-skeleton,41,section,Figures 4 and 5; Tables 2 and 3; eTables 1 to 4
 reporting-checklist-skeleton,42,section,N/A: no model updating or adaptation
 reporting-checklist-skeleton,43,section,Pending manuscript discussion
 reporting-checklist-skeleton,44,section,eMethods Inference; pending manuscript limitations
@@ -29620,7 +29620,7 @@ reporting-checklist-skeleton,48,section,Pending manuscript discussion
 reporting-checklist-skeleton,49,section,Pending manuscript discussion
 reporting-checklist-skeleton,50,section,Pending manuscript title and abstract
 reporting-checklist-skeleton,51,section,eMethods Algorithms and validation
-reporting-checklist-skeleton,52,section,Table 1; eTable 1
+reporting-checklist-skeleton,52,section,Table 1; Linked benchmark source records
 reporting-checklist-skeleton,53,section,eMethods Blinded human assessment; individual credentials require author information
 reporting-checklist-skeleton,54,section,Pending manuscript objectives
 reporting-checklist-skeleton,55,section,eMethods Benchmark and supplied inputs; available purposive sample
@@ -29630,9 +29630,9 @@ reporting-checklist-skeleton,58,section,eMethods Blinded human assessment
 reporting-checklist-skeleton,59,section,eMethods Inference; Exploratory diagnostic checks
 reporting-checklist-skeleton,60,section,Figure 3; Table 1
 reporting-checklist-skeleton,61,section,Table 1; eMethods Blinded human assessment
-reporting-checklist-skeleton,62,section,Figures 4 and 5; eTables 2 to 6
+reporting-checklist-skeleton,62,section,Figures 4 and 5; eTables 1 to 4
 reporting-checklist-skeleton,63,section,Pending manuscript discussion
-reporting-checklist-skeleton,64,section,eTables 2 to 6; Linked source records and reproducibility materials
+reporting-checklist-skeleton,64,section,eTables 1 to 4; Linked source records and reproducibility materials
 reporting-checklist-skeleton,1,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,2,applicability_and_notes,Partial or pending; see retained materials and author-completion notes
 reporting-checklist-skeleton,3,applicability_and_notes,Partial or pending; see retained materials and author-completion notes

@@ -15,7 +15,7 @@ The source inputs remain read-only. The current contract is ../ANALYSIS-PLAN.md.
 
 ## Current scope
 
-The main report retains five figures and three tables. The reduced supplement has six numbered table families and no supplementary figure families. It keeps separate expert references, Published agreement, prevalence/reliability context, one pooled category-disagreement table, compact exploratory Overall and rules-only checks, complete paired signalling questions, both answer codings and eligibility accounting. Exact prompts and methods remain available. The complete AVATAR answer and evidence records are directly linked rather than printed in full.
+The main report retains five figures and three tables. The reduced supplement has four numbered table families and no supplementary figure families. It keeps separate expert references, Published agreement, prevalence/reliability context, one pooled category-disagreement table, complete paired signalling questions, both answer codings and eligibility accounting. The benchmark-target and exploratory-diagnostic table families were subsequently removed at the author's request. Their underlying numerical and source records remain in the repository. Exact prompts and methods remain available. The complete AVATAR answer and evidence records are directly linked rather than printed in full.
 
 Expert means, agreed-reference restrictions, extra source contrasts, revised/post-exposure summaries, directional/strictness strata, extra binary/unweighted metrics and redundant graphical/table expansions have been removed from the supported current pipeline. The reporting-scope note records these post-analysis decisions. No prospective outcome hierarchy is claimed.
 

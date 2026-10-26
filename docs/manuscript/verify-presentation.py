@@ -34,13 +34,14 @@ for name in ['Table1','Table2','Table3','Main-analysis','Supplement','TRIPOD-LLM
    assert len(doc.xpath('//w:drawing',namespaces=NS))==metadata.MAIN_FIGURE_COUNT
   if name=='Supplement':
    assert not doc.xpath('//w:drawing',namespaces=NS),'Retired supplementary figures remain'
-   for number in range(1,7):
+   assert not any(re.match(r'eTable .*?(Benchmark targets and sources|Exploratory diagnostic checks|Rules-only recomputation)',p) for p in paragraphs),'Removed table family remains'
+   for number in range(1,metadata.SUPPLEMENT_TABLE_COUNT+1):
     assert any(p.startswith(f'eTable {number}.') for p in paragraphs),f'Missing eTable {number}'
-   assert not any(re.match(r'eTable (?:[7-9]|[12][0-9])[ .]',p) for p in paragraphs),'Retired eTable remains'
-   for caption in ('eTable 4A. Pooled category disagreements','eTable 5A. Rules-only recomputation',
-                   'eTable 6A. Complete paired question diagnostics','eTable 6B. Eligibility counts'):
+   assert not any(re.match(r'eTable (?:[5-9]|[12][0-9])[A-Z]?[ .]',p) for p in paragraphs),'Retired eTable remains'
+   for caption in ('eTable 3A. Pooled category disagreements',
+                   'eTable 4A. Complete paired question diagnostics','eTable 4B. Eligibility counts'):
     assert caption in paragraphs,caption
-   for value in ('39/102','72/102','324/510','391/510','−39.6','−28.4'):
+   for value in ('−39.6','−28.4'):
     assert value in text,('Retained adverse diagnostic missing',value)
    assert '26 October 2026' in text and '54645d75e7a8b32bbf09968893e7be45faa4cab4' in text
    relationships=etree.fromstring(z.read('word/_rels/document.xml.rels'))
@@ -50,7 +51,7 @@ for name in ['Table1','Table2','Table3','Main-analysis','Supplement','TRIPOD-LLM
     source=url.split('/blob/main/',1)[1]
     assert (ROOT/source).is_file(),source
   checks[name]={'tables':len(tables),'page_footer':True,'editable_gt_ooxml':True}
-  if name=='Supplement':checks[name]['six_table_families_and_adverse_diagnostics']=True
+  if name=='Supplement':checks[name]['four_table_families_and_paired_question_diagnostics']=True
 for name in ['results','supplement']:
  page=html.fromstring((ROOT/f'analysis/{name}.html').read_bytes())
  tables=page.xpath('//table')
@@ -62,7 +63,7 @@ for name in ['results','supplement']:
  if name=='supplement':
   ids=set(page.xpath('//@id'))
   navigation=page.xpath('//details//a[starts-with(@href,"#")]')
-  for number in range(1,7):
+  for number in range(1,metadata.SUPPLEMENT_TABLE_COUNT+1):
    assert any(a.text_content().startswith(f'eTable {number}.') for a in navigation),number
   assert all(a.get('href')[1:] in ids for a in navigation)
  if name=='results':

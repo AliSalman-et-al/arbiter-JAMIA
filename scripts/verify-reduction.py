@@ -88,7 +88,7 @@ def verify(baseline):
             for row in new:
                 assert row['section'].strip(), f'Missing reporting locator: {row}'
                 assert not re.search(r'\beFigure\b', row['section']), row
-                assert all(int(n) <= 6 for n in re.findall(r'\beTable\s+(\d+)', row['section'])), row
+                assert all(int(n) <= 4 for n in re.findall(r'\beTable\s+(\d+)', row['section'])), row
             continue
         assert new or not old, f'Nonempty baseline output became empty: {relative}'
         assert set(fields) <= set(old_fields), f'Unexpected analytical columns: {relative}'

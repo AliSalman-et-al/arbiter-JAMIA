@@ -6,17 +6,15 @@ METHODS_APPENDIX <- c(
   'Signalling mapping and eligibility'=paste('The 22 semantic ARBITER question identifiers map to the official numbered questions; Unassisted identifiers are already numbered. An answer component is an explicitly named outcome or other part of an answer; a bare answer code has one unnamed component. Names are lowercased and trimmed. Matching requires the same trial, domain, question and component. Scalar answers are not broadcast across components. Missing, inactive, not-applicable, unresolved and unmatched components are excluded. The eligibility panel records exclusions. Absolute agreement uses each source-specific eligible set. Paired differences use the intersection evaluable in both arms. Five-level agreement distinguishes yes, probably yes, no, probably no and no information. Collapsed agreement combines yes/probably yes and no/probably no, retaining no information. The pooled answer group includes all five domains, not a derived Overall rating.'),
   'Exploratory diagnostic checks'=paste('Overall ratings are derived as the worst of the five independent expert domain ratings, without optional escalation for multiple Some concerns domains. They are not directly rated expert Overall judgments or an independent sixth domain. Comparisons retain all 102 trials and both model arms; Published Overall is not included. The post hoc rules-only diagnostic replaces Unassisted ratings that contradict their own signalling answers with the algorithm-implied rating. Invalid paths, missing answers and all other ratings remain unchanged. The 26 changed labels and pooled expert agreement before and after recomputation are descriptive checks, not an ablation or a causal estimate of the rule engine.'),
   'Inference'=paste('All intervals use 10,000 percentile bootstrap replicates, seed 20261018. Trials are sampled within each of the 16 fixed reviews, carrying both arms and all domains together. Paired contrasts share weights. Intervals describe trial variation conditional on these reviews, experts and observed runs. They do not sample new reviews, experts or model runs. No P values or multiplicity adjustments are used. Exact agreement is reported before linearly weighted Cohen κ. The All-Low rule shows the contribution of label prevalence.'),
-  'Reporting scope'='Reporting order was adopted after analysis on 23 October 2026 without a formal primary, secondary or confirmatory hierarchy. On 26 October 2026, the author approved a focused report and deletion of redundant code and exports. Expert averages, agreed-reference restrictions, extra source contrasts, binary and extra unweighted metrics, post-exposure summaries, all-disputed choices and strictness/directional strata are omitted. Duplicate supplementary figures, repeated tables and the printed complete AVATAR trace are removed. Complete paired question contrasts, compact derived Overall and rules-only diagnostics, and the current linked AVATAR records remain available. The complete earlier release is recoverable at git revision 54645d75e7a8b32bbf09968893e7be45faa4cab4. Retained estimands, eligibility, numerical results and uncertainty are unchanged. This reduction does not establish prospective specification.',
+  'Reporting scope'='Reporting order was adopted after analysis on 23 October 2026 without a formal primary, secondary or confirmatory hierarchy. On 26 October 2026, the author approved a focused report and deletion of redundant code and exports. Expert averages, agreed-reference restrictions, extra source contrasts, binary and extra unweighted metrics, post-exposure summaries, all-disputed choices and strictness/directional strata are omitted. Duplicate supplementary figures, repeated tables and the printed complete AVATAR trace are removed. The author subsequently removed the benchmark-target table and exploratory-diagnostic table family, including rules-only recomputation, from the supplement. Benchmark records and diagnostic numerical exports remain in the repository. Complete paired question contrasts and the current linked AVATAR records remain available. The complete earlier release is recoverable at git revision 54645d75e7a8b32bbf09968893e7be45faa4cab4. Retained estimands, eligibility, numerical results and uncertainty are unchanged. This reduction does not establish prospective specification.',
   'Evidence records and source verification'=paste('ARBITER retains captured documents, versioned extracted text, selected evidence, signalling answers and proposed/adopted ratings. Text selection uses returned passage references, page/line ranges or copied text as a locator. Copied text must match the captured source; unmatched or ambiguous selections are rejected. Software stores the captured source slice with source identity, page and character offsets. The structural audit counts distinct cited records in current active answers, excluding superseded histories. Text spans require quotation, source/version identity and valid page/offset records. Visual records require a captured source, page, PNG hash, valid region and transcription. Image transcriptions are model-written. The audit did not independently re-extract quotations or judge their relevance, completeness or support. Assessment-file verification is a separate structural check. Unassisted evidence traces were unavailable. The repository AVATAR answer and evidence CSVs retain the worked example without duplicating its full trace here.'),
   'Runtime and API equivalents'=paste('Runtime sums recorded model-turn elapsed durations. API list-price equivalents use frozen 18 October 2026 rates in US dollars per million tokens. Sonnet uncached input 2.00, one-hour cache write 4.00, five-minute write 2.50, cache read 0.10 and output 10.00. Output includes thinking tokens. Main-thread events are deduplicated by message identity within turn; synthetic zero-usage events are excluded. Additional-call usage is total recorded model usage minus terminal usage, using one-hour cache writes for the main reconstruction. Equivalents sum the rate-weighted tokens over recorded calls and divide by one million. Routing was global without a geographic multiplier. Runs used a subscription, so equivalents are not expenditure. Source summaries are medians and IQRs; paired contrasts are mean differences. Alternative five-minute cache-write assumptions, reconstruction bounds and signed token gaps are retained in the linked current API ledgers. Human review time was not measured.'))
 RUN_PROVENANCE <- c(
   'Both arms used claude-sonnet-5-5 at medium effort in Claude Code 2.1.278, once per trial. ARBITER ran on 12 October 2026 and Unassisted on 14 October. Immutable model-snapshot identity across dates was not established. Isolated settings disabled memory and external connectors. The protocol allowed Continue at most twice per phase without coaching. Unassisted received the task and fixed output-format instruction without RoB 2 guidance. ARBITER additionally received the packaged assessment instructions, RoB 2 guidance and software tools.',
   'The evaluated revision was 2848c7926a2acc25402345a42be39d695a99861a; public ARBITER 1.0.0 is 2f549ae30f056ff441ea61a04b719968716f2219. The evaluated command was /rob2-assess and the public command is /arbiter-assess. Findings concern the evaluated revision. Development included ten prostate-cancer trials and synthetic cases. Benchmark non-use in development is author-attested; complete exposure, prompt-selection and version-freeze histories remain pending.')
-SUPPLEMENT_SPECS <- list(c('Benchmark targets and sources','benchmark-trials'),
-  c('Agreement with Published labels','published-agreement'),
+SUPPLEMENT_SPECS <- list(c('Agreement with Published labels','published-agreement'),
   c('Agreement with independent experts','expert-agreement'),
   c('Category distributions and disagreements','label-distributions'),
-  c('Exploratory diagnostic checks','diagnostic-checks'),
   c('Signalling agreement and eligibility','signalling-agreement'))
 supplement_number <- function(caption) match(caption,vapply(SUPPLEMENT_SPECS,`[`,character(1),1))
 clean_display <- function(x) {
@@ -55,15 +53,6 @@ independent_supplement <- function() {
   r <- read_display('expert-reliability') |> filter(domain!='Overall') |> mutate(adjudicator='Expert-to-expert',source='Expert 2')
   expert_display(bind_rows(x,d,r))
 }
-trial_index <- function(inputs) {
-  x <- inputs$trials |> arrange(meta_id,slug)
-  roles <- c(protocol='P',sap='A',registry='R',supplement='S')
-  documents <- read_display('benchmark-documents') |> filter(available) |> arrange(match(document_type,names(roles))) |>
-    group_by(slug) |> summarise(`Supplied sources`=paste(unname(roles[document_type]),collapse=', '),.groups='drop')
-  targets <- inputs$targets |> select(slug,`Target alignment`=assess_vs_label)
-  x |> transmute(Trial=slug,Review=meta_id) |> left_join(targets,by=c('Trial'='slug')) |>
-    left_join(documents,by=c('Trial'='slug')) |> mutate(`Supplied sources`=replace_na(`Supplied sources`,'Article only'))
-}
 label_distribution_display <- function() {
   x <- read_display('severity-distribution') |> filter(population=='D1-D5')
   x$value <- fmt_fraction(x$count,x$n)
@@ -77,22 +66,6 @@ category_disagreements <- function() {
     mutate(adjudicator=paste('Expert',adjudicator)) |>
     rename(Reference=adjudicator,Source=source,`Expert rating`=reference) |>
     select(Reference,Source,`Expert rating`,all_of(c(LABELS,'Missing')))
-}
-overall_diagnostic <- function() {
-  x <- read_display('independent-estimates') |> filter(domain=='Overall',metric=='accuracy',
-    adjudicator %in% c('1','2'),source %in% c('ARBITER','Unassisted'),population=='All trials')
-  x$value <- fmt_estimate(x,TRUE)
-  x <- x |> select(adjudicator,source,value) |> pivot_wider(names_from=source,values_from=value)
-  d <- read_display('independent-differences') |> filter(domain=='Overall',metric=='accuracy',
-    adjudicator %in% c('1','2'),comparison=='ARBITER minus Unassisted',population=='All trials') |>
-    transmute(adjudicator,`Paired difference (95% CI)`=paste0(fmt_number(100*estimate,1),' ',fmt_ci(100*lower,100*upper,1)))
-  left_join(x,d,by='adjudicator') |> mutate(adjudicator=paste('Expert',adjudicator)) |> rename(Reference=adjudicator)
-}
-rules_diagnostic <- function() {
-  before <- read_display('independent-estimates') |> filter(source=='Unassisted',domain=='D1-D5',metric=='accuracy',adjudicator %in% c('1','2'))
-  after <- read_display('rules-only-agreement') |> filter(source=='Unassisted',domain=='D1-D5',metric=='accuracy',adjudicator %in% c('1','2'))
-  tibble(Reference=paste('Expert',before$adjudicator),`Original Unassisted`=fmt_estimate(before,TRUE)) |>
-    left_join(tibble(Reference=paste('Expert',after$adjudicator),`Recomputed Unassisted`=fmt_estimate(after,TRUE)),by='Reference')
 }
 signalling_supplement <- function() {
   x <- read_display('signalling-estimates') |> filter(group %in% c('Overall',paste0('D',1:5)))
@@ -115,8 +88,8 @@ paired_question_display <- function() {
     rename(Reference=adjudicator,Question=group,`Paired N`=n,`Five-level difference (95% CI)`=five,`Collapsed difference (95% CI)`=collapsed)
 }
 supplement_entries <- function(inputs) {
-  data <- list(trial_index(inputs),published_supplement(),independent_supplement(),
-    label_distribution_display(),overall_diagnostic(),signalling_supplement())
+  data <- list(published_supplement(),independent_supplement(),
+    label_distribution_display(),signalling_supplement())
   lapply(seq_along(SUPPLEMENT_SPECS),function(i) list(number=i,title=SUPPLEMENT_SPECS[[i]][1],
     source=SUPPLEMENT_SPECS[[i]][2],data=data[[i]]))
 }
@@ -138,40 +111,32 @@ add_paginated_table <- function(doc,x,title,note='',rows_per_page=18L) {
 }
 supplement_note <- function(e) {
   specific <- switch(e$source,
-    'benchmark-trials'='Target alignment reproduces the recorded relationship between the assessed result and Published target, including uncertainty. Source codes show availability in the captured input inventory: P, protocol; A, statistical analysis plan; R, registry; S, supplement. Every trial has an article. Availability does not establish completeness or correct identity. Complete targets, source identifiers and alignment notes are linked in the resource index.',
     'published-agreement'='Published is the reference. Pooled D1 to D5 has 510 cells; each domain has 102. All-Low predicts Low for every cell. Exact agreement is n/N (%); its paired difference is in percentage points. κ is linearly weighted; its paired difference is in coefficient units. A dash marks an undefined or omitted value.',
     'expert-agreement'='Each expert independently rated all 510 cells, 102 per domain, before seeing offered labels. The Expert-to-expert rows compare the two independent references. Exact agreement is n/N (%); its paired difference is in percentage points. κ is linearly weighted; its paired difference is in coefficient units. References are kept separate.',
     'label-distributions'='Each source contributes 510 domain labels. Categories are Low, Some concerns and High. Values are n/N (%). The following pooled cross-tabulation describes category disagreements against each expert; neither expert is treated as an error-free reference.',
-    'diagnostic-checks'='Overall is the worst of five independent expert domain ratings, without optional escalation; it was not rated independently. Each arm comparison uses 102 trials. Paired differences are ARBITER minus Unassisted in percentage points. Published Overall is omitted because its available-label population differs. The following rules-only panel is a post hoc arithmetic diagnostic, not a component ablation.',
     'signalling-agreement'='ARBITER and Unassisted cells show matched/source-specific eligible components (%; 95% CI). Paired N is the intersection evaluable in both arms, so absolute rates need not subtract to the paired difference. Paired differences are percentage points. Five-level distinguishes yes/probably yes/no/probably no/no information. Collapsed combines yes/probably yes and no/probably no; no information stays separate. Pooled includes all five domains.')
-  paste(specific,if(e$source %in% c('published-agreement','expert-agreement','diagnostic-checks','signalling-agreement')) CI_NOTE else '')
+  paste(specific,if(e$source %in% c('published-agreement','expert-agreement','signalling-agreement')) CI_NOTE else '')
 }
 build_supplement <- function(inputs) {
   entries <- supplement_entries(inputs)
   SUPPLEMENT_HTML$tables <- list()
   doc <- manuscript_doc() |> manuscript_par('ARBITER supplementary methods and results',style='heading 1') |>
-    manuscript_par('This focused supplement documents benchmark targets and sources, agreement with Published labels and each independent expert, category disagreements and diagnostic checks. Main Table 2 contains conditional-choice sensitivities and Table 3 contains process and resource results. The resource index links complete worked-example records and reproducibility materials.') |>
+    manuscript_par('This focused supplement documents agreement with Published labels and each independent human review, category distributions and disagreements, and signalling agreement and eligibility. Benchmark targets and sources remain in the linked repository records. Main Table 2 contains conditional-choice sensitivities and Table 3 contains process and resource results. The resource index links complete worked-example records and reproducibility materials.') |>
     manuscript_par('Contents and stable display locators',style='heading 2') |> officer::body_add_toc(level=2)
   for(k in seq_along(METHODS_APPENDIX)) doc <- doc |> manuscript_par(names(METHODS_APPENDIX)[k],style='heading 2') |> manuscript_par(METHODS_APPENDIX[k])
   for(e in entries) {
     doc <- officer::body_add_break(doc) |> manuscript_par(paste0('eTable ',e$number,'. ',e$title),style='heading 2')
     doc <- add_paginated_table(doc,e$data,e$title,supplement_note(e),if(ncol(e$data)>6L) 12L else 18L)
     if(e$source=='label-distributions') {
-      doc <- manuscript_par(doc,'eTable 4A. Pooled category disagreements',style='heading 2') |>
+      doc <- manuscript_par(doc,paste0('eTable ',e$number,'A. Pooled category disagreements'),style='heading 2') |>
         add_paginated_table(category_disagreements(),'Pooled category disagreements','Rows are each expert reference category; columns are the model prediction. Counts sum to 510 cells for every expert/arm pair. Missing predictions remain explicit. These are disagreements with imperfect references, not verified clinical errors.',12L)
     }
-    if(e$source=='diagnostic-checks') {
-      reliability <- read_display('expert-reliability') |> filter(domain=='Overall',metric=='accuracy')
-      doc <- manuscript_par(doc,paste('The experts agreed on',fmt_fraction(reliability$count,reliability$n),'derived Overall ratings.')) |>
-        manuscript_par('eTable 5A. Rules-only recomputation',style='heading 2') |>
-        add_paginated_table(rules_diagnostic(),'Rules-only recomputation',paste('Exactly 26 Unassisted domain labels were replaced by the ratings implied by their own answers. Invalid paths and missingness were retained. Each expert comparison uses all 510 domain cells. This post hoc diagnostic does not isolate the causal contribution of software rules.',CI_NOTE),18L)
-    }
     if(e$source=='signalling-agreement') {
-      doc <- officer::body_add_break(doc) |> manuscript_par('eTable 6A. Complete paired question diagnostics',style='heading 2') |>
+      doc <- officer::body_add_break(doc) |> manuscript_par(paste0('eTable ',e$number,'A. Complete paired question diagnostics'),style='heading 2') |>
         add_paginated_table(paired_question_display(),'Complete paired question diagnostics',paste('All official questions and both codings are shown against each expert. Differences are ARBITER minus Unassisted in percentage points on the same paired eligible components. Sparse and zero-denominator rows remain visible; Not evaluable indicates zero paired components. Official wording is available in the linked question map.',CI_NOTE),18L)
       eligibility <- read_display('signalling-eligibility') |> mutate(adjudicator=paste('Expert',adjudicator)) |>
         rename(Reference=adjudicator,Source=source,Domain=domain,Evaluable=evaluable,Reason=reason,N=count) |> clean_display()
-      doc <- officer::body_add_break(doc) |> manuscript_par('eTable 6B. Eligibility counts',style='heading 2') |>
+      doc <- officer::body_add_break(doc) |> manuscript_par(paste0('eTable ',e$number,'B. Eligibility counts'),style='heading 2') |>
         add_paginated_table(eligibility,'Signalling eligibility counts','Counts are question components in the comparison frame, not trials. Eligibility requires the same explicit question and component. Exclusion reasons are mutually exclusive within each source comparison. Paired contrasts use the intersection.',18L)
     }
   }
@@ -185,6 +150,8 @@ build_supplement <- function(inputs) {
     'Complete benchmark targets and alignment notes'='rob2-meta-benchmark-set/LABEL-TARGETS.csv',
     'Trial and source manifest'='rob2-meta-benchmark-set/TRIAL-SUMMARY.csv',
     'Official signalling-question map'='analysis/output/tables/question-map.csv',
+    'Derived Overall and domain agreement exports'='analysis/output/tables/independent-estimates.csv',
+    'Rules-only recomputed agreement exports'='analysis/output/tables/rules-only-agreement.csv',
     'The 26 labels changed by rules-only recomputation'='analysis/output/tables/rules-only-changed.csv',
     'Hypothetical invalid-path completion sensitivity'='analysis/output/tables/invalid-path-sensitivity.csv',
     'API reconstruction bounds and cache sensitivity'='analysis/output/tables/api-cost-summary.csv',
