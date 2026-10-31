@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.10.20">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -2210,7 +2210,7 @@ remain in the linked repository records. Main Table 4 contains
 conditional-choice sensitivities and Table 3 contains process and
 resource results. The resource index links complete worked-example
 records and reproducibility materials.</p>
-<details><summary>Contents and stable display locators</summary><ul><li><a href="#supp-algorithms-and-validation">Algorithms and validation</a></li><li><a href="#supp-benchmark-and-supplied-inputs">Benchmark and supplied inputs</a></li><li><a href="#supp-targets-and-input-parity">Targets and input parity</a></li><li><a href="#supp-blinded-human-reviewer-assessment">Blinded human reviewer assessment</a></li><li><a href="#supp-signalling-mapping-and-eligibility">Signalling mapping and eligibility</a></li><li><a href="#supp-exploratory-diagnostic-checks">Exploratory diagnostic checks</a></li><li><a href="#supp-inference">Inference</a></li><li><a href="#supp-reporting-scope">Reporting scope</a></li><li><a href="#supp-evidence-records-and-source-verification">Evidence records and source verification</a></li><li><a href="#supp-runtime-and-api-equivalents">Runtime and API equivalents</a></li><li><a href="#supp-etable-1-agreement-with-independent-human-reviewers">eTable 1. Agreement with independent human reviewers</a></li><li><a href="#supp-etable-2-agreement-with-published-labels">eTable 2. Agreement with Published labels</a></li><li><a href="#supp-etable-3-category-distributions-and-disagreements">eTable 3. Category distributions and disagreements</a></li><li><a href="#supp-etable-3a-pooled-category-disagreements">eTable 3A. Pooled category disagreements</a></li><li><a href="#supp-etable-4-signalling-agreement-and-eligibility">eTable 4. Signalling agreement and eligibility</a></li><li><a href="#supp-etable-4a-complete-paired-question-diagnostics">eTable 4A. Complete paired question diagnostics</a></li><li><a href="#supp-etable-4b-eligibility-counts">eTable 4B. Eligibility counts</a></li><li><a href="#supp-etable-5-agreement-under-four-metrics-post-hoc">eTable 5. Agreement under four metrics post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-exact-agreement-post-hoc">Agreement under four metrics Exact agreement post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-weighted-post-hoc">Agreement under four metrics Weighted κ post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-ac1-post-hoc">Agreement under four metrics AC1 post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-ac2-post-hoc">Agreement under four metrics AC2 post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-between-human-reviews-post-hoc">Agreement under four metrics between human reviews post hoc</a></li><li><a href="#supp-etable-6-overall-judgment-agreement-post-hoc">eTable 6. Overall judgment agreement post hoc</a></li><li><a href="#supp-overall-judgment-agreement-exact-agreement-post-hoc">Overall judgment agreement Exact agreement post hoc</a></li><li><a href="#supp-overall-judgment-agreement-weighted-post-hoc">Overall judgment agreement Weighted κ post hoc</a></li><li><a href="#supp-overall-judgment-agreement-ac2-post-hoc">Overall judgment agreement AC2 post hoc</a></li><li><a href="#supp-overall-judgment-agreement-between-human-reviews-post-hoc">Overall judgment agreement between human reviews post hoc</a></li><li><a href="#supp-etable-7-agreement-relative-to-inter-reviewer-agreement-post-hoc">eTable 7. Agreement relative to inter-reviewer agreement post hoc</a></li><li><a href="#supp-etable-8-distribution-of-ratings-by-source-post-hoc">eTable 8. Distribution of ratings by source post hoc</a></li><li><a href="#supp-etable-8a-overall-judgment-availability-post-hoc">eTable 8A. Overall judgment availability post hoc</a></li><li><a href="#supp-prompt-templates-and-run-provenance">Prompt templates and run provenance</a></li><li><a href="#supp-arbiter-template">ARBITER template</a></li><li><a href="#supp-arbiter-example">ARBITER example</a></li><li><a href="#supp-direct-prompting-template">Direct prompting template</a></li><li><a href="#supp-direct-prompting-output-format-instruction">Direct prompting output-format instruction</a></li><li><a href="#supp-linked-source-records-and-reproducibility-materials">Linked source records and reproducibility materials</a></li></ul></details><h2 class="anchored">Supplementary methods</h2><h3 id="supp-algorithms-and-validation" class="anchored">Algorithms and validation</h3>
+<details><summary>Contents and stable display locators</summary><ul><li><a href="#supp-algorithms-and-validation">Algorithms and validation</a></li><li><a href="#supp-benchmark-and-supplied-inputs">Benchmark and supplied inputs</a></li><li><a href="#supp-targets-and-input-parity">Targets and input parity</a></li><li><a href="#supp-blinded-human-reviewer-assessment">Blinded human reviewer assessment</a></li><li><a href="#supp-signalling-mapping-and-eligibility">Signalling mapping and eligibility</a></li><li><a href="#supp-exploratory-diagnostic-checks">Exploratory diagnostic checks</a></li><li><a href="#supp-inference">Inference</a></li><li><a href="#supp-reporting-scope">Reporting scope</a></li><li><a href="#supp-evidence-records-and-source-verification">Evidence records and source verification</a></li><li><a href="#supp-runtime-and-api-equivalents">Runtime and API equivalents</a></li><li><a href="#supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1. Source meta-analyses and benchmark composition</a></li><li><a href="#supp-etable-2-agreement-with-independent-human-reviewers">eTable 2. Agreement with independent human reviewers</a></li><li><a href="#supp-etable-3-agreement-with-published-labels">eTable 3. Agreement with Published labels</a></li><li><a href="#supp-etable-4-category-distributions-and-disagreements">eTable 4. Category distributions and disagreements</a></li><li><a href="#supp-etable-4a-pooled-category-disagreements">eTable 4A. Pooled category disagreements</a></li><li><a href="#supp-etable-5-signalling-agreement-and-eligibility">eTable 5. Signalling agreement and eligibility</a></li><li><a href="#supp-etable-5a-complete-paired-question-diagnostics">eTable 5A. Complete paired question diagnostics</a></li><li><a href="#supp-etable-5b-eligibility-counts">eTable 5B. Eligibility counts</a></li><li><a href="#supp-etable-6-agreement-under-four-metrics-post-hoc">eTable 6. Agreement under four metrics post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-exact-agreement-post-hoc">Agreement under four metrics Exact agreement post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-weighted-post-hoc">Agreement under four metrics Weighted κ post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-ac1-post-hoc">Agreement under four metrics AC1 post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-ac2-post-hoc">Agreement under four metrics AC2 post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-between-human-reviews-post-hoc">Agreement under four metrics between human reviews post hoc</a></li><li><a href="#supp-etable-7-overall-judgment-agreement-post-hoc">eTable 7. Overall judgment agreement post hoc</a></li><li><a href="#supp-overall-judgment-agreement-exact-agreement-post-hoc">Overall judgment agreement Exact agreement post hoc</a></li><li><a href="#supp-overall-judgment-agreement-weighted-post-hoc">Overall judgment agreement Weighted κ post hoc</a></li><li><a href="#supp-overall-judgment-agreement-ac2-post-hoc">Overall judgment agreement AC2 post hoc</a></li><li><a href="#supp-overall-judgment-agreement-between-human-reviews-post-hoc">Overall judgment agreement between human reviews post hoc</a></li><li><a href="#supp-etable-8-agreement-relative-to-inter-reviewer-agreement-post-hoc">eTable 8. Agreement relative to inter-reviewer agreement post hoc</a></li><li><a href="#supp-etable-9-distribution-of-ratings-by-source-post-hoc">eTable 9. Distribution of ratings by source post hoc</a></li><li><a href="#supp-etable-9a-overall-judgment-availability-post-hoc">eTable 9A. Overall judgment availability post hoc</a></li><li><a href="#supp-prompt-templates-and-run-provenance">Prompt templates and run provenance</a></li><li><a href="#supp-arbiter-template">ARBITER template</a></li><li><a href="#supp-arbiter-example">ARBITER example</a></li><li><a href="#supp-direct-prompting-template">Direct prompting template</a></li><li><a href="#supp-direct-prompting-output-format-instruction">Direct prompting output-format instruction</a></li><li><a href="#supp-linked-source-records-and-reproducibility-materials">Linked source records and reproducibility materials</a></li></ul></details><h2 class="anchored">Supplementary methods</h2><h3 id="supp-algorithms-and-validation" class="anchored">Algorithms and validation</h3>
 <p>The official 22 August 2019 RoB 2 algorithms cover randomisation,
 deviations from intended interventions (effect of assignment), missing
 outcome data, outcome measurement and selection of the reported result.
@@ -2357,7 +2357,216 @@ summaries are medians and IQRs; paired contrasts are mean differences.
 Alternative five-minute cache-write assumptions, reconstruction bounds
 and signed token gaps are retained in the linked current API ledgers.
 Human review time was not measured.</p>
-<h2 class="Heading-navigation anchored" id="supp-etable-1-agreement-with-independent-human-reviewers">eTable 1.
+<h2 class="Heading-navigation anchored" id="supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1.
+Source meta-analyses and benchmark composition</h2>
+<div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 28%">
+<col style="width: 7%">
+<col style="width: 17%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr>
+<th><strong>Specialty</strong></th>
+<th><strong>Journal and year</strong></th>
+<th><strong>Topic</strong></th>
+<th><strong>Trials</strong></th>
+<th><strong>Published D1–D5 labels (Low/SC/High)</strong></th>
+<th><strong>Overall given</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General medicine</td>
+<td>JAMA 2026</td>
+<td>SGLT2 inhibitors and kidney outcomes across eGFR and
+albuminuria</td>
+<td>7</td>
+<td>35 / 0 / 0</td>
+<td>No</td>
+</tr>
+<tr>
+<td>General medicine</td>
+<td>Lancet 2025</td>
+<td>Clopidogrel vs aspirin for secondary prevention of coronary artery
+disease</td>
+<td>7</td>
+<td>32 / 3 / 0</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Cardiology</td>
+<td>J Am Coll Cardiol 2025</td>
+<td>Early aortic valve replacement vs surveillance in asymptomatic
+severe aortic stenosis</td>
+<td>2</td>
+<td>10 / 0 / 0</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Endocrinology</td>
+<td>Lancet Diabetes Endocrinol 2025</td>
+<td>GLP-1 receptor agonists and kidney and cardiovascular outcomes</td>
+<td>7</td>
+<td>35 / 0 / 0</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Gastroenterology</td>
+<td>Gastroenterology 2025</td>
+<td>GLP-1 receptor agonists and gastrointestinal adverse events</td>
+<td>7</td>
+<td>31 / 4 / 0</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Infectious diseases</td>
+<td>Clin Infect Dis 2025</td>
+<td>Safety of high-dose rifampin in tuberculosis treatment</td>
+<td>6</td>
+<td>30 / 0 / 0</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Nephrology</td>
+<td>Clin J Am Soc Nephrol 2025</td>
+<td>Therapies for proteinuria and eGFR decline in IgA nephropathy</td>
+<td>7</td>
+<td>30 / 5 / 0</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Neurology</td>
+<td>Lancet Neurol 2025</td>
+<td>Pharmacotherapy and non-invasive neuromodulation for neuropathic
+pain</td>
+<td>7</td>
+<td>24 / 7 / 4</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Obstetrics and gynaecology</td>
+<td>Hum Reprod Update 2026</td>
+<td>Preconception lifestyle interventions for women</td>
+<td>7</td>
+<td>23 / 10 / 2</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td colspan="6">The 16 source meta-analyses span 15 specialties and
+contribute 102 included trials. Published domain-label counts are pooled
+over five domains per trial, ordered Low / Some concerns / High (SC,
+Some concerns). Overall given indicates availability of recorded
+Published Overall judgments. This restored descriptive table uses the
+frozen benchmark set.</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="supp-source-meta-analyses-and-benchmark-composition-continued-2" class="anchored">Source
+meta-analyses and benchmark composition (continued 2)</h3>
+<div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 28%">
+<col style="width: 7%">
+<col style="width: 17%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr>
+<th><strong>Specialty</strong></th>
+<th><strong>Journal and year</strong></th>
+<th><strong>Topic</strong></th>
+<th><strong>Trials</strong></th>
+<th><strong>Published D1–D5 labels (Low/SC/High)</strong></th>
+<th><strong>Overall given</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Oncology</td>
+<td>Lancet Oncol 2026</td>
+<td>CDK4/6 inhibitors plus endocrine therapy in HR-positive,
+HER2-negative advanced breast cancer</td>
+<td>7</td>
+<td>35 / 0 / 0</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Orthopaedics</td>
+<td>Am J Sports Med 2025</td>
+<td>Lateral extra-articular procedure added to primary ACL
+reconstruction</td>
+<td>5</td>
+<td>20 / 3 / 2</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Paediatrics</td>
+<td>JAMA Pediatr 2025</td>
+<td>Active treatment vs expectant management of patent ductus arteriosus
+in preterm infants</td>
+<td>7</td>
+<td>29 / 6 / 0</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Psychiatry</td>
+<td>Lancet Psychiatry 2026</td>
+<td>Cannabinoids for mental and substance use disorders</td>
+<td>5</td>
+<td>19 / 6 / 0</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Pulmonary and critical care</td>
+<td>Lancet Respir Med 2025</td>
+<td>Preoxygenation strategies for intubation in critically ill
+patients</td>
+<td>7</td>
+<td>32 / 0 / 3</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Rheumatology</td>
+<td>Lancet Rheumatol 2025</td>
+<td>Long-term effectiveness of non-surgical interventions for chronic
+low back pain</td>
+<td>7</td>
+<td>12 / 23 / 0</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Surgery and anaesthesia</td>
+<td>Br J Anaesth 2025</td>
+<td>Home-based prehabilitation before surgery</td>
+<td>7</td>
+<td>30 / 2 / 3</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Total</td>
+<td></td>
+<td></td>
+<td>102</td>
+<td>427 / 69 / 14</td>
+<td>81 / 102</td>
+</tr>
+<tr>
+<td colspan="6">The 16 source meta-analyses span 15 specialties and
+contribute 102 included trials. Published domain-label counts are pooled
+over five domains per trial, ordered Low / Some concerns / High (SC,
+Some concerns). Overall given indicates availability of recorded
+Published Overall judgments. This restored descriptive table uses the
+frozen benchmark set.</td>
+</tr>
+</tbody>
+</table>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-2-agreement-with-independent-human-reviewers">eTable 2.
 Agreement with independent human reviewers</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -2888,7 +3097,7 @@ replicates, trials resampled within meta-analysis; seed 20261018.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-2-agreement-with-published-labels">eTable 2. Agreement with
+</div><h2 class="Heading-navigation anchored" id="supp-etable-3-agreement-with-published-labels">eTable 3. Agreement with
 Published labels</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -3118,7 +3327,7 @@ within meta-analysis; seed 20261018.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-3-category-distributions-and-disagreements">eTable 3.
+</div><h2 class="Heading-navigation anchored" id="supp-etable-4-category-distributions-and-disagreements">eTable 4.
 Category distributions and disagreements</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -3175,7 +3384,7 @@ reference.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-3a-pooled-category-disagreements">eTable 3A. Pooled category
+</div><h2 class="Heading-navigation anchored" id="supp-etable-4a-pooled-category-disagreements">eTable 4A. Pooled category
 disagreements</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -3322,7 +3531,7 @@ errors.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-4-signalling-agreement-and-eligibility">eTable 4. Signalling
+</div><h2 class="Heading-navigation anchored" id="supp-etable-5-signalling-agreement-and-eligibility">eTable 5. Signalling
 agreement and eligibility</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -3612,7 +3821,7 @@ within meta-analysis; seed 20261018.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-4a-complete-paired-question-diagnostics">eTable 4A. Complete
+</div><h2 class="Heading-navigation anchored" id="supp-etable-5a-complete-paired-question-diagnostics">eTable 5A. Complete
 paired question diagnostics</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -4013,8 +4222,8 @@ replicates, trials resampled within meta-analysis; seed 20261018.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-4b-eligibility-counts">eTable
-4B. Eligibility counts</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-5b-eligibility-counts">eTable
+5B. Eligibility counts</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 20%">
@@ -4629,7 +4838,7 @@ comparison. Paired contrasts use the intersection.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-5-agreement-under-four-metrics-post-hoc">eTable 5. Agreement
+</div><h2 class="Heading-navigation anchored" id="supp-etable-6-agreement-under-four-metrics-post-hoc">eTable 6. Agreement
 under four metrics post hoc</h2>
 <h3 id="supp-agreement-under-four-metrics-exact-agreement-post-hoc" class="anchored">Agreement
 under four metrics Exact agreement post hoc</h3>
@@ -4716,7 +4925,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -4807,7 +5016,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -4898,7 +5107,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -4989,7 +5198,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -5080,7 +5289,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -5171,7 +5380,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -5262,7 +5471,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -5353,7 +5562,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -5444,7 +5653,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -5535,7 +5744,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -5626,7 +5835,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -5717,7 +5926,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
 10,000 valid replicates; rows with no recorded reference have 0.</td>
 </tr>
@@ -5806,7 +6015,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights.</td>
 </tr>
 </tbody>
@@ -5894,7 +6103,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights.</td>
 </tr>
 </tbody>
@@ -5982,12 +6191,12 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-6-overall-judgment-agreement-post-hoc">eTable 6. Overall
+</div><h2 class="Heading-navigation anchored" id="supp-etable-7-overall-judgment-agreement-post-hoc">eTable 7. Overall
 judgment agreement post hoc</h2>
 <h3 id="supp-overall-judgment-agreement-exact-agreement-post-hoc" class="anchored">Overall
 judgment agreement Exact agreement post hoc</h3>
@@ -6047,7 +6256,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. Recorded Overall only.
 Human Reviews 1 and 2 have no recorded Overall labels (0/102); their
 comparisons are not estimable and exclude 102 trials. Domain-derived
@@ -6117,7 +6326,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. Recorded Overall only.
 Human Reviews 1 and 2 have no recorded Overall labels (0/102); their
 comparisons are not estimable and exclude 102 trials. Domain-derived
@@ -6187,7 +6396,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. Recorded Overall only.
 Human Reviews 1 and 2 have no recorded Overall labels (0/102); their
 comparisons are not estimable and exclude 102 trials. Domain-derived
@@ -6247,7 +6456,7 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. Recorded Overall only.
 Human Reviews 1 and 2 have no recorded Overall labels (0/102); their
 comparisons are not estimable and exclude 102 trials. Domain-derived
@@ -6258,8 +6467,8 @@ rating. Against Published labels, N is the observed-reference subset;
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-7-agreement-relative-to-inter-reviewer-agreement-post-hoc">eTable
-7. Agreement relative to inter-reviewer agreement post hoc</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-8-agreement-relative-to-inter-reviewer-agreement-post-hoc">eTable
+8. Agreement relative to inter-reviewer agreement post hoc</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 11%">
@@ -6369,14 +6578,14 @@ intervals use 10,000 shared trial resamples within 16 reviews, seed
 20261018, type 7. Missing model ratings count as disagreement using the
 existing ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
+9 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. D(A) is the mean agreement
 with the two human reviews minus agreement between the human reviews,
 recomputed in every replicate.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-8-distribution-of-ratings-by-source-post-hoc">eTable 8.
+</div><h2 class="Heading-navigation anchored" id="supp-etable-9-distribution-of-ratings-by-source-post-hoc">eTable 9.
 Distribution of ratings by source post hoc</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -6839,7 +7048,7 @@ review is unrecorded, not a derived judgment.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-8a-overall-judgment-availability-post-hoc">eTable 8A.
+</div><h2 class="Heading-navigation anchored" id="supp-etable-9a-overall-judgment-availability-post-hoc">eTable 9A.
 Overall judgment availability post hoc</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
