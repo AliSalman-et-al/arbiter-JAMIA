@@ -2205,12 +2205,12 @@ vertical-align: -.125em;
 <p><a href="output/manuscript/Supplement.docx">Download the Word supplement</a>. <a href="output/manuscript/TRIPOD-LLM.docx">TRIPOD-LLM and GRRAS reporting map</a>.</p>
 <style>.supplement-table table {min-width:36rem; width:100%} .supplement-table td, .supplement-table th {padding:.45rem .65rem} .supplement-table img {max-width:100%; height:auto} main img {max-width:100%; height:auto}</style><div><p>This focused supplement documents agreement with Published labels and
 each independent human review, category distributions and disagreements,
-and signalling agreement and eligibility. Benchmark targets and sources
+and signaling agreement and eligibility. Benchmark targets and sources
 remain in the linked repository records. Main Table 3 contains
 conditional-choice sensitivities and Table 2 contains process and
 resource results. The resource index links complete worked-example
 records and reproducibility materials.</p>
-<details><summary>Contents and stable display locators</summary><ul><li><a href="#supp-algorithms-and-validation">Algorithms and validation</a></li><li><a href="#supp-benchmark-and-supplied-inputs">Benchmark and supplied inputs</a></li><li><a href="#supp-targets-and-input-parity">Targets and input parity</a></li><li><a href="#supp-blinded-human-reviewer-assessment">Blinded human reviewer assessment</a></li><li><a href="#supp-signalling-mapping-and-eligibility">Signalling mapping and eligibility</a></li><li><a href="#supp-exploratory-diagnostic-checks">Exploratory diagnostic checks</a></li><li><a href="#supp-inference">Inference</a></li><li><a href="#supp-reading-the-displays">Reading the displays</a></li><li><a href="#supp-reporting-scope">Reporting scope</a></li><li><a href="#supp-evidence-records-and-source-verification">Evidence records and source verification</a></li><li><a href="#supp-runtime-and-api-equivalents">Runtime and API equivalents</a></li><li><a href="#supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1. Source meta-analyses and benchmark composition</a></li><li><a href="#supp-etable-2-pooled-distribution-of-domain-ratings">eTable 2. Pooled distribution of domain ratings</a></li><li><a href="#supp-etable-3-agreement-with-independent-human-reviews">eTable 3. Agreement with independent human reviews</a></li><li><a href="#supp-etable-4-agreement-under-four-metrics">eTable 4. Agreement under four metrics</a></li><li><a href="#supp-agreement-under-four-metrics-exact-agreement">Agreement under four metrics Exact agreement</a></li><li><a href="#supp-agreement-under-four-metrics-weighted">Agreement under four metrics Weighted κ</a></li><li><a href="#supp-agreement-under-four-metrics-ac1">Agreement under four metrics AC1</a></li><li><a href="#supp-agreement-under-four-metrics-ac2">Agreement under four metrics AC2</a></li><li><a href="#supp-agreement-under-four-metrics-between-human-reviews">Agreement under four metrics between human reviews</a></li><li><a href="#supp-etable-5-model-agreement-relative-to-human-agreement">eTable 5. Model agreement relative to human agreement</a></li><li><a href="#supp-etable-6-pooled-category-disagreements">eTable 6. Pooled category disagreements</a></li><li><a href="#supp-etable-7-agreement-with-published-labels">eTable 7. Agreement with Published labels</a></li><li><a href="#supp-etable-8-distribution-of-ratings-by-source">eTable 8. Distribution of ratings by source</a></li><li><a href="#supp-etable-9-overall-judgment-agreement">eTable 9. Overall judgment agreement</a></li><li><a href="#supp-overall-judgment-agreement-exact-agreement">Overall judgment agreement Exact agreement</a></li><li><a href="#supp-overall-judgment-agreement-weighted">Overall judgment agreement Weighted κ</a></li><li><a href="#supp-overall-judgment-agreement-ac2">Overall judgment agreement AC2</a></li><li><a href="#supp-overall-judgment-agreement-between-human-reviews">Overall judgment agreement between human reviews</a></li><li><a href="#supp-etable-10-overall-judgment-availability">eTable 10. Overall judgment availability</a></li><li><a href="#supp-etable-11-signalling-eligibility-counts">eTable 11. Signalling eligibility counts</a></li><li><a href="#supp-etable-12-signalling-answer-agreement">eTable 12. Signalling-answer agreement</a></li><li><a href="#supp-etable-13-paired-signalling-answer-differences-by-question">eTable 13. Paired signalling-answer differences by question</a></li><li><a href="#supp-prompt-templates-and-run-provenance">Prompt templates and run provenance</a></li><li><a href="#supp-arbiter-template">ARBITER template</a></li><li><a href="#supp-arbiter-example">ARBITER example</a></li><li><a href="#supp-direct-prompting-template">Direct prompting template</a></li><li><a href="#supp-direct-prompting-output-format-instruction">Direct prompting output-format instruction</a></li><li><a href="#supp-linked-source-records-and-reproducibility-materials">Linked source records and reproducibility materials</a></li></ul></details><h2 class="anchored">Supplementary methods</h2><h3 id="supp-algorithms-and-validation" class="anchored">Algorithms and validation</h3>
+<details><summary>Contents and stable display locators</summary><ul><li><a href="#supp-algorithms-and-validation">Algorithms and validation</a></li><li><a href="#supp-benchmark-and-supplied-inputs">Benchmark and supplied inputs</a></li><li><a href="#supp-targets-and-input-parity">Targets and input parity</a></li><li><a href="#supp-blinded-human-reviewer-assessment">Blinded human reviewer assessment</a></li><li><a href="#supp-signaling-mapping-and-eligibility">Signaling mapping and eligibility</a></li><li><a href="#supp-exploratory-diagnostic-checks">Exploratory diagnostic checks</a></li><li><a href="#supp-inference">Inference</a></li><li><a href="#supp-reading-the-displays">Reading the displays</a></li><li><a href="#supp-reporting-scope">Reporting scope</a></li><li><a href="#supp-evidence-records-and-source-verification">Evidence records and source verification</a></li><li><a href="#supp-runtime-and-api-equivalents">Runtime and API equivalents</a></li><li><a href="#supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1. Source meta-analyses and benchmark composition</a></li><li><a href="#supp-etable-2-pooled-distribution-of-domain-ratings">eTable 2. Pooled distribution of domain ratings</a></li><li><a href="#supp-etable-3-agreement-with-independent-human-reviews">eTable 3. Agreement with independent human reviews</a></li><li><a href="#supp-etable-4-agreement-under-four-metrics">eTable 4. Agreement under four metrics</a></li><li><a href="#supp-agreement-under-four-metrics-exact-agreement">Agreement under four metrics Exact agreement</a></li><li><a href="#supp-agreement-under-four-metrics-weighted">Agreement under four metrics Weighted κ</a></li><li><a href="#supp-agreement-under-four-metrics-ac1">Agreement under four metrics AC1</a></li><li><a href="#supp-agreement-under-four-metrics-ac2">Agreement under four metrics AC2</a></li><li><a href="#supp-agreement-under-four-metrics-between-human-reviews">Agreement under four metrics between human reviews</a></li><li><a href="#supp-etable-5-model-agreement-relative-to-human-agreement">eTable 5. Model agreement relative to human agreement</a></li><li><a href="#supp-etable-6-pooled-category-disagreements">eTable 6. Pooled category disagreements</a></li><li><a href="#supp-etable-7-agreement-with-published-labels">eTable 7. Agreement with Published labels</a></li><li><a href="#supp-etable-8-distribution-of-ratings-by-source">eTable 8. Distribution of ratings by source</a></li><li><a href="#supp-etable-9-overall-judgment-agreement">eTable 9. Overall judgment agreement</a></li><li><a href="#supp-overall-judgment-agreement-exact-agreement">Overall judgment agreement Exact agreement</a></li><li><a href="#supp-overall-judgment-agreement-weighted">Overall judgment agreement Weighted κ</a></li><li><a href="#supp-overall-judgment-agreement-ac2">Overall judgment agreement AC2</a></li><li><a href="#supp-overall-judgment-agreement-between-human-reviews">Overall judgment agreement between human reviews</a></li><li><a href="#supp-etable-10-overall-judgment-availability">eTable 10. Overall judgment availability</a></li><li><a href="#supp-etable-11-signaling-eligibility-counts">eTable 11. Signaling eligibility counts</a></li><li><a href="#supp-etable-12-signaling-answer-agreement">eTable 12. Signaling-answer agreement</a></li><li><a href="#supp-etable-13-paired-signaling-answer-differences-by-question">eTable 13. Paired signaling-answer differences by question</a></li><li><a href="#supp-prompt-templates-and-run-provenance">Prompt templates and run provenance</a></li><li><a href="#supp-arbiter-template">ARBITER template</a></li><li><a href="#supp-arbiter-example">ARBITER example</a></li><li><a href="#supp-direct-prompting-template">Direct prompting template</a></li><li><a href="#supp-direct-prompting-output-format-instruction">Direct prompting output-format instruction</a></li><li><a href="#supp-linked-source-records-and-reproducibility-materials">Linked source records and reproducibility materials</a></li></ul></details><h2 class="anchored">Supplementary methods</h2><h3 id="supp-algorithms-and-validation" class="anchored">Algorithms and validation</h3>
 <p>The official 22 August 2019 RoB 2 algorithms cover randomisation,
 deviations from intended interventions (effect of assignment), missing
 outcome data, outcome measurement and selection of the reported result.
@@ -2250,7 +2250,7 @@ targets and source records.</p>
 assessment</h3>
 <p>Two blinded published researchers from BEACON Lab independently rated
 all five domains for all 102 trials without AI, freezing ratings and
-signalling answers before offered labels. They received the same trial
+signaling answers before offered labels. They received the same trial
 materials and task targets as the arms, including available supplements
 and ClinicalTrials.gov records, with access to Cochrane guidance.
 Individual qualifications, prior experience, calibration and
@@ -2263,7 +2263,7 @@ reviewer choices. The remaining 20 choices split. Review-specific
 choices use all 80 cells. The split-loss sensitivity counts splits
 against ARBITER without assigning Direct prompting wins. Later revised
 ratings were collected but are not analyzed in this focused report.</p>
-<h3 id="supp-signalling-mapping-and-eligibility" class="anchored">Signalling mapping and
+<h3 id="supp-signaling-mapping-and-eligibility" class="anchored">Signaling mapping and
 eligibility</h3>
 <p>The 22 semantic ARBITER question identifiers map to the official
 numbered questions; Direct prompting identifiers are already numbered.
@@ -2287,7 +2287,7 @@ Some concerns domains. They are not directly rated human reviewer
 Overall judgments or an independent sixth domain. Comparisons retain all
 102 trials and both model arms; Published Overall is not included. The
 post hoc rules-only diagnostic replaces Direct prompting ratings that
-contradict their own signalling answers with the algorithm-implied
+contradict their own signaling answers with the algorithm-implied
 rating. Invalid paths, missing answers and all other ratings remain
 unchanged. The 26 changed labels and pooled human reviewer agreement
 before and after recomputation are descriptive checks, not an ablation
@@ -2314,8 +2314,8 @@ establish selective reporting. The displayed P value is compatible with
 chance but does not establish adequate randomization. The simplified
 Overall rule omits permitted escalation when multiple Some concerns
 domains substantially lower confidence in the result. Five-level
-signalling coding distinguishes yes, probably yes, no, probably no and
-no information; collapsed coding merges definite and probable answers,
+signaling coding distinguishes yes, probably yes, no, probably no and no
+information; collapsed coding merges definite and probable answers,
 retaining no information. Independent ratings, subsequent blinded label
 choices and derived Overall ratings are distinct.</p>
 <h3 id="supp-reporting-scope" class="anchored">Reporting scope</h3>
@@ -2339,18 +2339,18 @@ reduction does not establish prospective specification.</p>
 <h3 id="supp-evidence-records-and-source-verification" class="anchored">Evidence records and
 source verification</h3>
 <p>ARBITER retains captured documents, versioned extracted text,
-selected evidence, signalling answers and proposed/adopted ratings.
-Table 2 section C reports 1,538/1,538 active required answers citing
-evidence, 1,407/1,407 text spans with complete binding fields, 14/14
-image records with complete fields, and 102/102 exported records passing
-verification. Text selection uses returned passage references, page/line
-ranges or copied text as a locator. Copied text must match the captured
-source; unmatched or ambiguous selections are rejected. Software stores
-the captured source slice with source identity, page and character
-offsets. The structural audit counts distinct cited records in current
-active answers, excluding superseded histories. Text spans require
-quotation, source/version identity and valid page/offset records. Visual
-records require a captured source, page, PNG hash, valid region and
+selected evidence, signaling answers and proposed/adopted ratings. Table
+2 section C reports 1,538/1,538 active required answers citing evidence,
+1,407/1,407 text spans with complete binding fields, 14/14 image records
+with complete fields, and 102/102 exported records passing verification.
+Text selection uses returned passage references, page/line ranges or
+copied text as a locator. Copied text must match the captured source;
+unmatched or ambiguous selections are rejected. Software stores the
+captured source slice with source identity, page and character offsets.
+The structural audit counts distinct cited records in current active
+answers, excluding superseded histories. Text spans require quotation,
+source/version identity and valid page/offset records. Visual records
+require a captured source, page, PNG hash, valid region and
 transcription. Image transcriptions are model-written. The audit did not
 independently re-extract quotations or judge their relevance,
 completeness or support. Assessment-file verification is a separate
@@ -5813,7 +5813,7 @@ were not independently recorded; derived ratings are excluded.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-11-signalling-eligibility-counts">eTable 11. Signalling
+</div><h2 class="Heading-navigation anchored" id="supp-etable-11-signaling-eligibility-counts">eTable 11. Signaling
 eligibility counts</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -5987,8 +5987,8 @@ contrasts use the intersection.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-signalling-eligibility-counts-continued-2" class="anchored">Signalling
-eligibility counts (continued 2)</h3>
+</div><h3 id="supp-signaling-eligibility-counts-continued-2" class="anchored">Signaling eligibility
+counts (continued 2)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 17%">
@@ -6161,8 +6161,8 @@ contrasts use the intersection.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-signalling-eligibility-counts-continued-3" class="anchored">Signalling
-eligibility counts (continued 3)</h3>
+</div><h3 id="supp-signaling-eligibility-counts-continued-3" class="anchored">Signaling eligibility
+counts (continued 3)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 17%">
@@ -6335,8 +6335,8 @@ contrasts use the intersection.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-signalling-eligibility-counts-continued-4" class="anchored">Signalling
-eligibility counts (continued 4)</h3>
+</div><h3 id="supp-signaling-eligibility-counts-continued-4" class="anchored">Signaling eligibility
+counts (continued 4)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 17%">
@@ -6429,7 +6429,7 @@ contrasts use the intersection.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-12-signalling-answer-agreement">eTable 12. Signalling-answer
+</div><h2 class="Heading-navigation anchored" id="supp-etable-12-signaling-answer-agreement">eTable 12. Signaling-answer
 agreement</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -6572,7 +6572,7 @@ Pooled includes all five domains. CI, confidence interval. Intervals use
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-signalling-answer-agreement-continued-2" class="anchored">Signalling-answer
+</div><h3 id="supp-signaling-answer-agreement-continued-2" class="anchored">Signaling-answer
 agreement (continued 2)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -6715,8 +6715,8 @@ Pooled includes all five domains. CI, confidence interval. Intervals use
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-13-paired-signalling-answer-differences-by-question">eTable
-13. Paired signalling-answer differences by question</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-13-paired-signaling-answer-differences-by-question">eTable
+13. Paired signaling-answer differences by question</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 16%">
@@ -6871,8 +6871,8 @@ percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-paired-signalling-answer-differences-by-question-continued-2" class="anchored">Paired
-signalling-answer differences by question (continued 2)</h3>
+</div><h3 id="supp-paired-signaling-answer-differences-by-question-continued-2" class="anchored">Paired
+signaling-answer differences by question (continued 2)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 16%">
@@ -7027,8 +7027,8 @@ percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-paired-signalling-answer-differences-by-question-continued-3" class="anchored">Paired
-signalling-answer differences by question (continued 3)</h3>
+</div><h3 id="supp-paired-signaling-answer-differences-by-question-continued-3" class="anchored">Paired
+signaling-answer differences by question (continued 3)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 16%">
@@ -7133,7 +7133,7 @@ in the 600-mg arm, 4 patients in the 900-mg arm, and 5 patients in the
 <h3 id="supp-direct-prompting-output-format-instruction" class="anchored">Direct prompting
 output-format instruction</h3>
 <p>When you have finished, give your answers in this format: a table
-with one row per signalling question (columns: domain, question number,
+with one row per signaling question (columns: domain, question number,
 answer as Y, PY, PN, N, NI or NA), and then a final line exactly like
 &quot;FINAL: D1=&lt;judgement&gt;; D2=&lt;judgement&gt;;
 D3=&lt;judgement&gt;; D4=&lt;judgement&gt;; D5=&lt;judgement&gt;;
@@ -7166,7 +7166,7 @@ benchmark targets and alignment notes</a></p>
 <p><a href="https://github.com/AliSalman-et-al/arbiter-JAMIA/blob/main/rob2-meta-benchmark-set/TRIAL-SUMMARY.csv">Trial
 and source manifest</a></p>
 <p><a href="https://github.com/AliSalman-et-al/arbiter-JAMIA/blob/main/analysis/output/tables/question-map.csv">Official
-signalling-question map</a></p>
+signaling-question map</a></p>
 <p><a href="https://github.com/AliSalman-et-al/arbiter-JAMIA/blob/main/analysis/output/tables/independent-estimates.csv">Derived
 Overall and domain agreement exports</a></p>
 <p><a href="https://github.com/AliSalman-et-al/arbiter-JAMIA/blob/main/analysis/output/tables/rules-only-agreement.csv">Rules-only
