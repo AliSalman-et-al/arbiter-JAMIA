@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ARBITER supplementary methods and results</title>
+<title>ARBITER supplementary tables and materials</title>
 <style>
 
 span.smallcaps{font-variant: small-caps;}
@@ -2184,7 +2184,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ARBITER supplementary methods and results</h1>
+<h1 class="title">ARBITER supplementary tables and materials</h1>
 </div>
 
 
@@ -2210,170 +2210,7 @@ remain in the linked repository records. Main Table 3 contains
 conditional-choice sensitivities and Table 2 contains process and
 resource results. The resource index links complete worked-example
 records and reproducibility materials.</p>
-<details><summary>Contents and stable display locators</summary><ul><li><a href="#supp-algorithms-and-validation">Algorithms and validation</a></li><li><a href="#supp-benchmark-and-supplied-inputs">Benchmark and supplied inputs</a></li><li><a href="#supp-targets-and-input-parity">Targets and input parity</a></li><li><a href="#supp-blinded-human-reviewer-assessment">Blinded human reviewer assessment</a></li><li><a href="#supp-signaling-mapping-and-eligibility">Signaling mapping and eligibility</a></li><li><a href="#supp-exploratory-diagnostic-checks">Exploratory diagnostic checks</a></li><li><a href="#supp-inference">Inference</a></li><li><a href="#supp-reading-the-displays">Reading the displays</a></li><li><a href="#supp-reporting-scope">Reporting scope</a></li><li><a href="#supp-evidence-records-and-source-verification">Evidence records and source verification</a></li><li><a href="#supp-runtime-and-api-equivalents">Runtime and API equivalents</a></li><li><a href="#supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1. Source meta-analyses and benchmark composition</a></li><li><a href="#supp-etable-2-pooled-distribution-of-domain-ratings">eTable 2. Pooled distribution of domain ratings</a></li><li><a href="#supp-etable-3-agreement-with-independent-human-reviews">eTable 3. Agreement with independent human reviews</a></li><li><a href="#supp-etable-4-agreement-under-four-metrics">eTable 4. Agreement under four metrics</a></li><li><a href="#supp-agreement-under-four-metrics-exact-agreement">Agreement under four metrics Exact agreement</a></li><li><a href="#supp-agreement-under-four-metrics-weighted">Agreement under four metrics Weighted κ</a></li><li><a href="#supp-agreement-under-four-metrics-ac1">Agreement under four metrics AC1</a></li><li><a href="#supp-agreement-under-four-metrics-ac2">Agreement under four metrics AC2</a></li><li><a href="#supp-agreement-under-four-metrics-between-human-reviews">Agreement under four metrics between human reviews</a></li><li><a href="#supp-etable-5-model-agreement-relative-to-human-agreement">eTable 5. Model agreement relative to human agreement</a></li><li><a href="#supp-etable-6-pooled-category-disagreements">eTable 6. Pooled category disagreements</a></li><li><a href="#supp-etable-7-agreement-with-published-labels">eTable 7. Agreement with Published labels</a></li><li><a href="#supp-etable-8-distribution-of-ratings-by-source">eTable 8. Distribution of ratings by source</a></li><li><a href="#supp-etable-9-overall-judgment-agreement">eTable 9. Overall judgment agreement</a></li><li><a href="#supp-overall-judgment-agreement-exact-agreement">Overall judgment agreement Exact agreement</a></li><li><a href="#supp-overall-judgment-agreement-weighted">Overall judgment agreement Weighted κ</a></li><li><a href="#supp-overall-judgment-agreement-ac2">Overall judgment agreement AC2</a></li><li><a href="#supp-overall-judgment-agreement-between-human-reviews">Overall judgment agreement between human reviews</a></li><li><a href="#supp-etable-10-overall-judgment-availability">eTable 10. Overall judgment availability</a></li><li><a href="#supp-etable-11-signaling-eligibility-counts">eTable 11. Signaling eligibility counts</a></li><li><a href="#supp-etable-12-signaling-answer-agreement">eTable 12. Signaling-answer agreement</a></li><li><a href="#supp-etable-13-paired-signaling-answer-differences-by-question">eTable 13. Paired signaling-answer differences by question</a></li><li><a href="#supp-prompt-templates-and-run-provenance">Prompt templates and run provenance</a></li><li><a href="#supp-arbiter-template">ARBITER template</a></li><li><a href="#supp-arbiter-example">ARBITER example</a></li><li><a href="#supp-direct-prompting-template">Direct prompting template</a></li><li><a href="#supp-direct-prompting-output-format-instruction">Direct prompting output-format instruction</a></li><li><a href="#supp-linked-source-records-and-reproducibility-materials">Linked source records and reproducibility materials</a></li></ul></details><h2 class="anchored">Supplementary methods</h2><h3 id="supp-algorithms-and-validation" class="anchored">Algorithms and validation</h3>
-<p>The official 22 August 2019 RoB 2 algorithms cover randomisation,
-deviations from intended interventions (effect of assignment), missing
-outcome data, outcome measurement and selection of the reported result.
-Required missing or not-applicable answers invalidate a nonempty
-question path; absent ratings or wholly absent answer sets are
-unevaluable. Checks compare each source with the rating implied by its
-own answers. Proposed and adopted ARBITER ratings are checked separately
-because a documented override is permitted. No domain overrides were
-recorded. Source occurrence and structural verification do not establish
-that evidence supports an answer.</p>
-<h3 id="supp-benchmark-and-supplied-inputs" class="anchored">Benchmark and supplied
-inputs</h3>
-<p>The source set contained 105 trials from 16 purposively selected
-reviews. Three unsupported designs, Atwine, Haney and Herrmann, were
-excluded, leaving 102 trials and 510 domain cells. The author confirms
-Atwine is unsupported despite its incorrect stored design
-classification; no more specific subtype is established. Reviews were
-selected across specialties using Europe PMC, prioritizing recent highly
-cited reviews in high-ranking journals with extractable RoB 2 labels.
-Search dates and ranking records are unavailable. Within reviews,
-selection followed table order, up to seven obtainable eligible trials,
-with availability-dependent replacement and deduplication. This is not a
-representative sample.</p>
-<h3 id="supp-targets-and-input-parity" class="anchored">Targets and input parity</h3>
-<p>Before the runs, 43 of 105 trial-primary targets were revised toward
-the results underlying the published labels. Final tasks specified
-outcome, comparison, time point and numerical result. Some published
-labels covered broader, different or uncertain targets; no
-target-matching filter was applied. Both arms received the same captured
-trial inputs, with availability varying by trial. Direct prompting
-received captured registry copies and documents acquired during the
-ARBITER run, rather than new retrievals. The supplied De Waal registry
-record concerned another trial. Equal inputs therefore do not establish
-completeness or correctness. The repository trial index retains full
-targets and source records.</p>
-<h3 id="supp-blinded-human-reviewer-assessment" class="anchored">Blinded human reviewer
-assessment</h3>
-<p>Two blinded published researchers from BEACON Lab independently rated
-all five domains for all 102 trials without AI, freezing ratings and
-signaling answers before offered labels. They received the same trial
-materials and task targets as the arms, including available supplements
-and ClinicalTrials.gov records, with access to Cochrane guidance.
-Individual qualifications, prior experience, calibration and
-multi-outcome conventions remain unprovided. Each human reviewer
-subsequently chose the most defensible of three labels in
-cell-randomized order without identities or rationales. Credit follows
-label equality. Conditional analyses retain the 80 cells where the arms
-differed; the agreed-choice estimate further retains 60 equal human
-reviewer choices. The remaining 20 choices split. Review-specific
-choices use all 80 cells. The split-loss sensitivity counts splits
-against ARBITER without assigning Direct prompting wins. Later revised
-ratings were collected but are not analyzed in this focused report.</p>
-<h3 id="supp-signaling-mapping-and-eligibility" class="anchored">Signaling mapping and
-eligibility</h3>
-<p>The 22 semantic ARBITER question identifiers map to the official
-numbered questions; Direct prompting identifiers are already numbered.
-An answer component is an explicitly named outcome or other part of an
-answer; a bare answer code has one unnamed component. Names are
-lowercased and trimmed. Matching requires the same trial, domain,
-question and component. Scalar answers are not broadcast across
-components. Missing, inactive, not-applicable, unresolved and unmatched
-components are excluded. The eligibility panel records exclusions.
-Absolute agreement uses each source-specific eligible set. Paired
-differences use the intersection evaluable in both arms. Five-level
-agreement distinguishes yes, probably yes, no, probably no and no
-information. Collapsed agreement combines yes/probably yes and
-no/probably no, retaining no information. The pooled answer group
-includes all five domains, not a derived Overall rating.</p>
-<h3 id="supp-exploratory-diagnostic-checks" class="anchored">Exploratory diagnostic
-checks</h3>
-<p>Overall ratings are derived as the worst of the five independent
-human reviewer domain ratings, without optional escalation for multiple
-Some concerns domains. They are not directly rated human reviewer
-Overall judgments or an independent sixth domain. Comparisons retain all
-102 trials and both model arms; Published Overall is not included. The
-post hoc rules-only diagnostic replaces Direct prompting ratings that
-contradict their own signaling answers with the algorithm-implied
-rating. Invalid paths, missing answers and all other ratings remain
-unchanged. The 26 changed labels and pooled human reviewer agreement
-before and after recomputation are descriptive checks, not an ablation
-or a causal estimate of the rule engine.</p>
-<h3 id="supp-inference" class="anchored">Inference</h3>
-<p>All intervals use 10,000 percentile bootstrap replicates, seed
-20261018. Trials are sampled within each of the 16 fixed reviews,
-carrying both arms and all domains together. Paired contrasts share
-weights; interval endpoints use type 7 quantiles. Intervals describe
-trial variation conditional on these reviews, human reviewers and
-observed runs. They do not sample new reviews, human reviewers or model
-runs. No P values or multiplicity adjustments are used. Exact agreement
-is reported before linearly weighted Cohen κ. The All-Low rule shows the
-contribution of label prevalence.</p>
-<h3 id="supp-reading-the-displays" class="anchored">Reading the displays</h3>
-<p>Figure 1. separates model interpretation from software checks; the
-audit file contains source identifiers and selected evidence, not
-complete source documents. Interactive target approval belongs to the
-general workflow and was not tested in the benchmark. In Figure 2,
-AVATAR is an illustrative model assessment whose rationales were not
-independently validated. A No information answer about a dated analysis
-plan contributes to Some concerns; absence of a plan alone does not
-establish selective reporting. The displayed P value is compatible with
-chance but does not establish adequate randomization. The simplified
-Overall rule omits permitted escalation when multiple Some concerns
-domains substantially lower confidence in the result. Five-level
-signaling coding distinguishes yes, probably yes, no, probably no and no
-information; collapsed coding merges definite and probable answers,
-retaining no information. Independent ratings, subsequent blinded label
-choices and derived Overall ratings are distinct.</p>
-<h3 id="supp-reporting-scope" class="anchored">Reporting scope</h3>
-<p>Reporting order was adopted after analysis on 23 October 2026 without
-a formal primary, secondary or confirmatory hierarchy. On 26 October
-2026, the author approved a focused report and deletion of redundant
-code and exports. Human reviewer averages, agreed-reference
-restrictions, extra source contrasts, binary and extra unweighted
-metrics, post-exposure summaries, all-disputed choices and
-strictness/directional strata are omitted. Duplicate supplementary
-figures, repeated tables and the printed complete AVATAR trace are
-removed. The author subsequently removed the benchmark-target table and
-exploratory-diagnostic table family, including rules-only recomputation,
-from the supplement. Benchmark records and diagnostic numerical exports
-remain in the repository. Complete paired question contrasts and the
-current linked AVATAR records remain available. The complete earlier
-release is recoverable at git revision
-54645d75e7a8b32bbf09968893e7be45faa4cab4. Retained estimands,
-eligibility, numerical results and uncertainty are unchanged. This
-reduction does not establish prospective specification.</p>
-<h3 id="supp-evidence-records-and-source-verification" class="anchored">Evidence records and
-source verification</h3>
-<p>ARBITER retains captured documents, versioned extracted text,
-selected evidence, signaling answers and proposed/adopted ratings. Table
-2 section C reports 1,538/1,538 active required answers citing evidence,
-1,407/1,407 text spans with complete binding fields, 14/14 image records
-with complete fields, and 102/102 exported records passing verification.
-Text selection uses returned passage references, page/line ranges or
-copied text as a locator. Copied text must match the captured source;
-unmatched or ambiguous selections are rejected. Software stores the
-captured source slice with source identity, page and character offsets.
-The structural audit counts distinct cited records in current active
-answers, excluding superseded histories. Text spans require quotation,
-source/version identity and valid page/offset records. Visual records
-require a captured source, page, PNG hash, valid region and
-transcription. Image transcriptions are model-written. The audit did not
-independently re-extract quotations or judge their relevance,
-completeness or support. Assessment-file verification is a separate
-structural check. Direct prompting evidence traces were unavailable. The
-repository AVATAR answer and evidence CSVs retain the worked example
-without duplicating its full trace here.</p>
-<h3 id="supp-runtime-and-api-equivalents" class="anchored">Runtime and API equivalents</h3>
-<p>Runtime sums recorded model-turn elapsed durations. API list-price
-equivalents use frozen 18 October 2026 rates in US dollars per million
-tokens. Sonnet uncached input 2.00, one-hour cache write 4.00,
-five-minute write 2.50, cache read 0.10 and output 10.00. Output
-includes thinking tokens. Main-thread events are deduplicated by message
-identity within turn; synthetic zero-usage events are excluded.
-Additional-call usage is total recorded model usage minus terminal
-usage, using one-hour cache writes for the main reconstruction.
-Equivalents sum the rate-weighted tokens over recorded calls and divide
-by one million. Routing was global without a geographic multiplier. Runs
-used a subscription, so equivalents are not expenditure. Source
-summaries are medians and IQRs; paired contrasts are mean differences.
-Alternative five-minute cache-write assumptions, reconstruction bounds
-and signed token gaps are retained in the linked current API ledgers.
-Human review time was not measured.</p>
-<h2 class="Heading-navigation anchored" id="supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1.
+<details><summary>Contents and stable display locators</summary><ul><li><a href="#supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1. Source meta-analyses and benchmark composition</a></li><li><a href="#supp-etable-2-pooled-distribution-of-domain-ratings">eTable 2. Pooled distribution of domain ratings</a></li><li><a href="#supp-etable-3-agreement-with-independent-human-reviews">eTable 3. Agreement with independent human reviews</a></li><li><a href="#supp-etable-4-agreement-under-four-metrics">eTable 4. Agreement under four metrics</a></li><li><a href="#supp-agreement-under-four-metrics-exact-agreement">Agreement under four metrics Exact agreement</a></li><li><a href="#supp-agreement-under-four-metrics-weighted">Agreement under four metrics Weighted κ</a></li><li><a href="#supp-agreement-under-four-metrics-ac1">Agreement under four metrics AC1</a></li><li><a href="#supp-agreement-under-four-metrics-ac2">Agreement under four metrics AC2</a></li><li><a href="#supp-agreement-under-four-metrics-between-human-reviews">Agreement under four metrics between human reviews</a></li><li><a href="#supp-etable-5-model-agreement-relative-to-human-agreement">eTable 5. Model agreement relative to human agreement</a></li><li><a href="#supp-etable-6-pooled-category-disagreements">eTable 6. Pooled category disagreements</a></li><li><a href="#supp-etable-7-agreement-with-published-labels">eTable 7. Agreement with Published labels</a></li><li><a href="#supp-etable-8-distribution-of-ratings-by-source">eTable 8. Distribution of ratings by source</a></li><li><a href="#supp-etable-9-overall-judgment-agreement">eTable 9. Overall judgment agreement</a></li><li><a href="#supp-overall-judgment-agreement-exact-agreement">Overall judgment agreement Exact agreement</a></li><li><a href="#supp-overall-judgment-agreement-weighted">Overall judgment agreement Weighted κ</a></li><li><a href="#supp-overall-judgment-agreement-ac2">Overall judgment agreement AC2</a></li><li><a href="#supp-overall-judgment-agreement-between-human-reviews">Overall judgment agreement between human reviews</a></li><li><a href="#supp-etable-10-overall-judgment-availability">eTable 10. Overall judgment availability</a></li><li><a href="#supp-etable-11-signaling-eligibility-counts">eTable 11. Signaling eligibility counts</a></li><li><a href="#supp-etable-12-signaling-answer-agreement">eTable 12. Signaling-answer agreement</a></li><li><a href="#supp-etable-13-paired-signaling-answer-differences-by-question">eTable 13. Paired signaling-answer differences by question</a></li><li><a href="#supp-prompt-templates">Prompt templates</a></li><li><a href="#supp-arbiter-template">ARBITER template</a></li><li><a href="#supp-arbiter-example">ARBITER example</a></li><li><a href="#supp-direct-prompting-template">Direct prompting template</a></li><li><a href="#supp-direct-prompting-output-format-instruction">Direct prompting output-format instruction</a></li><li><a href="#supp-linked-source-records-and-reproducibility-materials">Linked source records and reproducibility materials</a></li></ul></details><h2 class="Heading-navigation anchored" id="supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1.
 Source meta-analyses and benchmark composition</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
@@ -7113,14 +6950,14 @@ percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-prompt-templates-and-run-provenance">Prompt templates and run
-provenance</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-prompt-templates">Prompt
+templates</h2>
 <h3 id="supp-arbiter-template" class="anchored">ARBITER template</h3>
-<p>/rob2-assess Assess risk of bias for {outcome} defined as
+<p>/arbiter-assess Assess risk of bias for {outcome} defined as
 {definition} in {trial}.</p>
 <h3 id="supp-arbiter-example" class="anchored">ARBITER example</h3>
-<p>/rob2-assess Assess risk of bias for Adverse events graded by CTCAE
-v4.0; &#39;Grade 3 (severe AEs)&#39; row of Table 3; patients with grade 3
+<p>/arbiter-assess Assess risk of bias for Adverse events graded by
+CTCAE v4.0; &#39;Grade 3 (severe AEs)&#39; row of Table 3; patients with grade 3
 events in Table 4 defined as Table 3 Grade 3 (severe AEs) number of AEs:
 600 mg 6, 900 mg 5, 1,200 mg 9 (all subjects 20); Grade 4: 0; Grade 5
 (death): 1 per arm. Table 4 total no. of patients with grade 3 events:
@@ -7139,22 +6976,6 @@ answer as Y, PY, PN, N, NI or NA), and then a final line exactly like
 D3=&lt;judgement&gt;; D4=&lt;judgement&gt;; D5=&lt;judgement&gt;;
 Overall=&lt;judgement&gt;&quot;, where each judgement is Low, Some concerns
 or High.</p>
-<p>Both arms used claude-sonnet-5-5 at medium effort in Claude Code
-2.1.278, once per trial. ARBITER ran on 12 October 2026 and Direct
-prompting on 14 October. Immutable model-snapshot identity across dates
-was not established. Isolated settings disabled memory and external
-connectors. The protocol allowed Continue at most twice per phase
-without coaching. Direct prompting received the task and fixed
-output-format instruction without RoB 2 guidance. ARBITER additionally
-received the packaged assessment instructions, RoB 2 guidance and
-software tools.</p>
-<p>The evaluated revision was 2848c7926a2acc25402345a42be39d695a99861a;
-public ARBITER 1.0.0 is 2f549ae30f056ff441ea61a04b719968716f2219. The
-evaluated command was /rob2-assess and the public command is
-/arbiter-assess. Findings concern the evaluated revision. Development
-included ten prostate-cancer trials and synthetic cases. Benchmark
-non-use in development is author-attested; complete exposure,
-prompt-selection and version-freeze histories remain pending.</p>
 <h3 id="supp-linked-source-records-and-reproducibility-materials" class="anchored">Linked
 source records and reproducibility materials</h3>
 <p><a href="https://github.com/AliSalman-et-al/arbiter-JAMIA/blob/main/analysis/output/tables/avatar-trace-answers.csv">Complete
