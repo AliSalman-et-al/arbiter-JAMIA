@@ -1,5 +1,5 @@
 ---
-title: "ARBITER supplementary methods and results"
+title: "ARBITER supplementary tables and materials"
 format:
   html:
     css: ../scripts/manuscript.css
@@ -9,6 +9,8 @@ execute:
 
 [Home](index.html) · [Main analysis](results.html) · [Supplement](supplement.html) · [Software](https://github.com/AliSalman-et-al/ARBITER/) · [Study repository and reproduction](https://github.com/AliSalman-et-al/arbiter-JAMIA)
 
-[Download the Word supplement](output/manuscript/Supplement.docx). [TRIPOD-LLM and GRRAS reporting map](output/manuscript/TRIPOD-LLM.docx).
+[Download the Word supplement](output/manuscript/Supplement.docx). [TRIPOD-LLM and GRRAS reporting checklists](output/manuscript/TRIPOD-LLM.docx).
+
+[AVATAR worked-example report (HTML)](output/manuscript/banovic26-avatar-2024.html) is supplied as a separate supplementary file.
 
 {{< include .quarto/supplement-page.md >}}

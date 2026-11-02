@@ -76,7 +76,11 @@ def verify():
         path = ROOT / name
         if path.name in allowed:
             continue
-        assert hashlib.sha256(path.read_bytes()).hexdigest() == expected, f'Protected file changed: {name}'
+        actual = hashlib.sha256(path.read_bytes()).hexdigest()
+        if actual != expected:
+            spelling = json.loads((PROVENANCE / 'signaling-spelling.json').read_text())
+            change = spelling['figure3_hash_updates'].get(name.replace('\\', '/'), {})
+            assert change == {'before': expected, 'after': actual}, f'Protected file changed: {name}'
     checks = {
         '1': ['does not establish support', 'not complete documents', 'not tested'],
         '2': ['not independently validated', 'No information', 'not independently rated Overall',

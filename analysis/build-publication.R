@@ -7,4 +7,5 @@ build_displays(inputs,adjudication_cells(inputs),rebuild_figures=!'--tables-only
 # Refresh HTML from the finalized analysis and supplement materials.
 python <- Sys.getenv('ARBITER_PYTHON', unset=Sys.which('python3'))
 if(!nzchar(python)) python <- Sys.which('python')
+stopifnot(system2(python,c('../scripts/prepare-avatar-supplement.py'))==0L)
 stopifnot(system2(python,c('../scripts/report-refresh.py'))==0L)

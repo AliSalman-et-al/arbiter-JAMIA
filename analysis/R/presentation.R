@@ -71,6 +71,9 @@ reader_label <- function(x, supplement=FALSE) {
   x[x=='Consensus'] <- 'Both human reviewers agreed'
   x[x=='Meta'] <- 'Published'
   x <- gsub('Unassisted','Direct prompting',x,fixed=TRUE)
+  x <- gsub('signalling','signaling',x,fixed=TRUE)
+  x <- gsub('Signalling','Signaling',x,fixed=TRUE)
+  x <- gsub('/rob2-assess','/arbiter-assess',x,fixed=TRUE)
   x
 }
 fmt_number <- function(x,digits=2L) {
@@ -188,6 +191,7 @@ house_table <- function(x,footnote=NULL,width=6.85) {
   else if(all(c('Expert','Source','Metric','Direction','Outcome','Count','N','Value') %in% visible)) weights <- c(.65,1,.65,.8,1.3,.6,.4,1.45)
   else if(all(c('Specialty','DOI') %in% visible)) weights <- c(1.3,1.3,1.8,1.8,.65,1.3,.8)
   else if('Specialty' %in% visible) weights <- c(1.25,1.25,2,.55,1.2,.6)
+  else if(all(c('Item','Reporting item','Location','Reporting note') %in% visible)) weights <- c(.4,1.1,2.25,3.1)
   else if('Guideline' %in% visible) weights <- c(.75,.45,1,3.1,1.55)
   else {
     # Reserve readable identifier gutters, then distribute the remaining width.

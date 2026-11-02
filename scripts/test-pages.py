@@ -94,6 +94,8 @@ class PublicationLinks(unittest.TestCase):
         names += [f'Figure{i}.{ext}' for i in range(1, 6) for ext in ['pdf', 'png']]
         for name in names:
             (output / name).write_bytes(binary)
+        avatar = b'<html><body>Original report\r\n<details>Evidence</details></body></html>'
+        (project / 'analysis' / pages.metadata.AVATAR_REPORT).write_bytes(avatar)
         destination = self.root / 'release'
         destination.mkdir()
         retired = [destination / name for name in ['manuscript.html', 'output/manuscript/Manuscript.docx', 'eFigure-retired.png']]
@@ -111,6 +113,7 @@ class PublicationLinks(unittest.TestCase):
         self.assertEqual((destination / 'results.html').read_bytes(), html.replace(b'\r\n', b'\n').replace(b'<body>', b'<body>\n' + navigation.replace(b'\r\n', b'\n')))
         self.assertEqual((destination / 'results.html').read_bytes().count(b'id="publication-navigation"'), 1)
         self.assertEqual((destination / 'output/manuscript/Supplement.docx').read_bytes(), binary)
+        self.assertEqual((destination / pages.metadata.AVATAR_REPORT).read_bytes(), avatar)
         self.assertIn('results.html', manifest['files'])
         self.assertIn('output/manuscript/Main-analysis.docx', manifest['files'])
         self.assertNotIn('manuscript.html', manifest['files'])

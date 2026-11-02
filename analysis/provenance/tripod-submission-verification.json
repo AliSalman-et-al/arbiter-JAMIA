@@ -1,0 +1,179 @@
+{
+  "status": "PASS",
+  "official_item_order_complete": true,
+  "manuscript_unchanged": true,
+  "all_numerical_exports_and_figures_unchanged": true,
+  "author_declarations_preserved": true,
+  "tripod_status_counts": {
+    "Partial": 14,
+    "Reported": 22,
+    "Not reported": 2,
+    "Not applicable": 11
+  },
+  "grras_status_counts": {
+    "Partial": 4,
+    "Reported": 11
+  },
+  "manuscript_reporting_gaps": [
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "1",
+      "topic": "Title",
+      "page": "Section or display",
+      "section": "Title",
+      "status": "Partial",
+      "applicability_and_notes": "The task and randomized-trial setting are identified. The title does not explicitly identify an LLM performance evaluation.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "2",
+      "topic": "Abstract",
+      "page": "Section or display",
+      "section": "Abstract",
+      "status": "Partial",
+      "applicability_and_notes": "Background, paired design, endpoints, results and conclusions are reported. The abstract does not name or version the model, as requested by abstract item 2f.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "5a",
+      "topic": "Data sources",
+      "page": "Section or display",
+      "section": "Methods, Benchmark and reference assessments; eTable 1",
+      "status": "Partial",
+      "applicability_and_notes": "Evaluation sources and nonbenchmark workflow-development data are described. The base-model training corpus is not stated.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "5b",
+      "topic": "Data distribution",
+      "page": "Section or display",
+      "section": "Results, Benchmark and references; Table 1; eTables 1-2 and 8",
+      "status": "Partial",
+      "applicability_and_notes": "Review specialties, document availability and rating distributions are reported. Dataset language and country distributions are not described.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "5c",
+      "topic": "Text dates",
+      "page": "Section or display",
+      "section": "Not reported",
+      "status": "Not reported",
+      "applicability_and_notes": "Oldest and newest text dates for development and evaluation data are not stated. Review publication years do not establish these ranges.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "6a",
+      "topic": "Model identity",
+      "page": "Section or display",
+      "section": "Methods, Benchmark and reference assessments",
+      "status": "Partial",
+      "applicability_and_notes": "The model identifier, reasoning effort and host version are stated. The last training date and an immutable model-snapshot identifier are not stated.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "6c",
+      "topic": "Inference settings",
+      "page": "Section or display",
+      "section": "Methods, Benchmark and reference assessments; Supplement, Prompt templates",
+      "status": "Partial",
+      "applicability_and_notes": "Reasoning effort, host version, isolated settings and one run per arm per trial are stated. Temperature, output-length limits and an inference seed are not reported.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "7a",
+      "topic": "Generated-output quality",
+      "page": "Section or display",
+      "section": "Methods, Measures; Table 2; Discussion, paragraphs 8-12",
+      "status": "Partial",
+      "applicability_and_notes": "Rating and answer agreement and structural checks are reported. The relevance or support of generated rationales was not independently assessed.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "7c",
+      "topic": "Outcomes and inference dates",
+      "page": "Section or display",
+      "section": "Methods, ARBITER workflow; Methods, Measures; Methods, Statistical analysis",
+      "status": "Partial",
+      "applicability_and_notes": "Targets, rating derivation and metrics are defined. Closed-source model inference dates are not stated in the manuscript or supplement.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "7d",
+      "topic": "Assessors",
+      "page": "Section or display",
+      "section": "Methods, Benchmark and reference assessments; Results, Agreement with the human reviews",
+      "status": "Partial",
+      "applicability_and_notes": "Two researchers, RoB 2 guidance, blinding and agreement are described. Professional qualifications, prior experience and calibration are not stated.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "8a",
+      "topic": "Annotation guidance",
+      "page": "Section or display",
+      "section": "Methods, Benchmark and reference assessments",
+      "status": "Partial",
+      "applicability_and_notes": "Assigned targets, RoB 2 guidance and freezing before label exposure are described. Reviewer-specific annotation instructions and worked annotation examples are not supplied.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "8c",
+      "topic": "Annotator experience",
+      "page": "Section or display",
+      "section": "Methods, Benchmark and reference assessments",
+      "status": "Not reported",
+      "applicability_and_notes": "The assessors are described as two researchers. Their relevant professional background and RoB 2 experience are not stated.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "9a",
+      "topic": "Prompt design",
+      "page": "Section or display",
+      "section": "Methods, ARBITER workflow; Methods, Benchmark and reference assessments; Supplement, Prompt templates",
+      "status": "Partial",
+      "applicability_and_notes": "Workflow instructions and prompt templates are supplied. Prompt curation, selection and version-freeze procedures are not fully described.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "13",
+      "topic": "Ethics and consent",
+      "page": "Section or display",
+      "section": "This checklist, author declaration",
+      "status": "Partial",
+      "applicability_and_notes": "The authors deemed ethics approval unnecessary because publicly available data were used. Consent handling is not separately stated.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "19a",
+      "topic": "Interpretation",
+      "page": "Section or display",
+      "section": "Discussion, paragraphs 1-9; Conclusion",
+      "status": "Partial",
+      "applicability_and_notes": "Main findings are interpreted against prior work and reference disagreement. Fairness is not explicitly discussed.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    },
+    {
+      "guideline": "TRIPOD-LLM",
+      "item": "19f",
+      "topic": "User expertise",
+      "page": "Section or display",
+      "section": "Discussion, paragraphs 10-11",
+      "status": "Partial",
+      "applicability_and_notes": "Reviewer actions are specified. Minimum user training, calibration or a competence threshold is not stated.",
+      "source": "https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf"
+    }
+  ]
+}

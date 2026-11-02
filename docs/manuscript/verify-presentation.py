@@ -16,6 +16,7 @@ for name in ['Table1','Table2','Table3','Main-analysis','Supplement','TRIPOD-LLM
   doc=etree.fromstring(z.read('word/document.xml'))
   paragraphs=[''.join(p.xpath('.//w:t/text()',namespaces=NS)) for p in doc.xpath('//w:p',namespaces=NS)]
   text='\n'.join(paragraphs)
+  assert not re.search(r'signalling',text,re.I),f'{name}: British spelling remains'
   assert 'Unassisted' not in text,f'{name}: comparison arm display rename missing'
   assert not re.search(r'\bExpert [12]\b',text),f'{name}: old numbered human-reference label'
   tables=doc.xpath('//w:tbl',namespaces=NS)
@@ -44,7 +45,7 @@ for name in ['Table1','Table2','Table3','Main-analysis','Supplement','TRIPOD-LLM
    assert len(doc.xpath('//w:drawing',namespaces=NS))==metadata.MAIN_FIGURE_COUNT
   if name=='Supplement':
    assert 'Main Table 3 contains conditional-choice sensitivities' in text
-   assert not re.search(r'(?<!e)\bTable 4\b',text.split('Prompt templates and run provenance')[0]),'Old main table reference remains'
+   assert not re.search(r'(?<!e)\bTable 4\b',text.split('Prompt templates')[0]),'Old main table reference remains'
    assert not doc.xpath('//w:drawing',namespaces=NS),'Retired supplementary figures remain'
    assert not any(re.match(r'eTable .*?(Benchmark targets and sources|Exploratory diagnostic checks|Rules-only recomputation)',p) for p in paragraphs),'Removed table family remains'
    for number in range(1,metadata.SUPPLEMENT_TABLE_COUNT+1):
@@ -55,11 +56,14 @@ for name in ['Table1','Table2','Table3','Main-analysis','Supplement','TRIPOD-LLM
    assert not any(re.match(r'eTable \d+[A-Z][ .]',p) for p in paragraphs),'Lettered eTable remains'
    assert not any(re.search(r'post[ -]?hoc',p,re.I) for p in paragraphs if p.startswith('eTable ')), 'Post hoc table label remains'
    for caption in ('eTable 6. Pooled category disagreements',
-                   'eTable 13. Paired signalling-answer differences by question','eTable 11. Signalling eligibility counts'):
+                   'eTable 13. Paired signaling-answer differences by question','eTable 11. Signaling eligibility counts'):
     assert caption in paragraphs,caption
    for value in ('−39.6','−28.4'):
     assert value in text,('Retained adverse diagnostic missing',value)
-   assert '26 October 2026' in text and '54645d75e7a8b32bbf09968893e7be45faa4cab4' in text
+   assert 'Algorithms and validation' not in paragraphs and 'Reading the displays' not in paragraphs
+   assert 'The evaluated revision was' not in text and 'Both arms used claude-sonnet-5-5' not in text
+   assert '/rob2-assess' not in text
+   assert '/arbiter-assess' in text
    relationships=etree.fromstring(z.read('word/_rels/document.xml.rels'))
    targets=relationships.xpath('//@Target')
    for label,url in metadata.WORKED_EXAMPLE_LINKS:

@@ -1,0 +1,13 @@
+{
+  "source": "analysis\\data-curated\\banovic26-avatar-2024-source.html",
+  "output": "analysis\\output\\manuscript\\banovic26-avatar-2024.html",
+  "source_sha256": "16dca2722c3342a73e5cc851a600dffea8f6670e15625cbacf8cc6721e950a08",
+  "output_sha256": "bf12e55e07a2575046210bd91719b9d39c03dcb878d2489d03b96517becc67eb",
+  "only_change": "Batch-index brand link now returns to the top of this report.",
+  "assessment_text_unchanged": true,
+  "no_external_rendering_dependencies": true,
+  "supplement_table_cells_unchanged": true,
+  "all_existing_csv_exports_and_figures_unchanged": true,
+  "linked_from_word_main_and_supplement": true,
+  "linked_from_both_web_reports": true
+}

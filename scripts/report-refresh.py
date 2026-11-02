@@ -67,17 +67,19 @@ def raw_html(text):
 
 def supplement_navigation(root):
     for heading in root.xpath('.//h1|.//p[contains(@class,"heading")]'):
-        if normalized(heading.text_content()) == 'ARBITER supplementary methods and results':
+        if normalized(heading.text_content()) == 'ARBITER supplementary tables and materials':
             heading.getparent().remove(heading)
     contents = next(p for p in root.xpath('.//p|.//h2')
                     if normalized(p.text_content()) == 'Contents and stable display locators')
+    first_table = next(h for h in root.xpath('.//p[contains(@class,"heading")]|.//h1|.//h2|.//h3')
+                       if normalized(h.text_content()).startswith('eTable 1.'))
     node = contents.getnext()
-    while node is not None and normalized(node.text_content()) != 'Algorithms and validation':
+    while node is not None and node is not first_table:
         following = node.getnext()
         node.getparent().remove(node)
         node = following
     if node is None:
-        raise ValueError('Supplement methods boundary missing')
+        raise ValueError('First supplementary table missing')
     for heading in root.xpath('.//p[contains(@class,"heading")]'):
         heading.tag = 'h2'
     nav = dom.Element('details')
@@ -90,13 +92,9 @@ def supplement_navigation(root):
         slug = 'supp-' + re.sub(r'[^a-z0-9]+', '-', title.lower()).strip('-')
         seen[slug] = seen.get(slug, 0) + 1
         heading.set('id', slug + (f'-{seen[slug]}' if seen[slug] > 1 else ''))
-        heading.tag = 'h2' if title.startswith('eTable ') or title == 'Prompt templates and run provenance' else 'h3'
+        heading.tag = 'h2' if title.startswith('eTable ') or title == 'Prompt templates' else 'h3'
         if '(continued ' not in title:
             etree.SubElement(etree.SubElement(listing, 'li'), 'a', href='#' + heading.get('id')).text = title
-    target = next(h for h in root.xpath('.//h3') if normalized(h.text_content()) == 'Algorithms and validation')
-    heading = dom.Element('h2')
-    heading.text = 'Supplementary methods'
-    target.addprevious(heading)
 
 
 def protected_hashes():

@@ -25,9 +25,9 @@
       "annotation_words": 88
     },
     "5": {
-      "caption": "Figure 5. Paired differences in signalling-answer agreement. Diamonds and bars show paired ARBITER minus Direct prompting differences and 95% CIs. The sample size is the number of answer components evaluable in both arms. Five-level coding keeps yes, probably yes, no, probably no and no information separate. Collapsed coding merges definite and probable answers, retaining no information. Eligibility and question-level results are in eTables 11 to 13. D1, randomisation process; D2, deviations from intended interventions; D3, missing outcome data; D4, outcome measurement; D5, selection of the reported result. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews.",
-      "alt": "Paired signalling-answer differences by domain and human reviewer, separating five-level and collapsed coding. D3 changes direction with coding against Human Review 1; D5 collapsed gains are smaller against Human Review 2.",
-      "title": "Paired differences in signalling-answer agreement",
+      "caption": "Figure 5. Paired differences in signaling-answer agreement. Diamonds and bars show paired ARBITER minus Direct prompting differences and 95% CIs. The sample size is the number of answer components evaluable in both arms. Five-level coding keeps yes, probably yes, no, probably no and no information separate. Collapsed coding merges definite and probable answers, retaining no information. Eligibility and question-level results are in eTables 11 to 13. D1, randomisation process; D2, deviations from intended interventions; D3, missing outcome data; D4, outcome measurement; D5, selection of the reported result. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews.",
+      "alt": "Paired signaling-answer differences by domain and human reviewer, separating five-level and collapsed coding. D3 changes direction with coding against Human Review 1; D5 collapsed gains are smaller against Human Review 2.",
+      "title": "Paired differences in signaling-answer agreement",
       "annotation_words": 98
     }
   },
@@ -79,9 +79,9 @@
         "eTable 8. Distribution of ratings by source",
         "eTable 9. Overall judgment agreement",
         "eTable 10. Overall judgment availability",
-        "eTable 11. Signalling eligibility counts",
-        "eTable 12. Signalling-answer agreement",
-        "eTable 13. Paired signalling-answer differences by question"
+        "eTable 11. Signaling eligibility counts",
+        "eTable 12. Signaling-answer agreement",
+        "eTable 13. Paired signaling-answer differences by question"
       ],
       "notes": [
         "DOI, digital object identifier; SC, Some concerns. Published domain counts pool five domains per trial, ordered Low / SC / High. Overall given indicates whether a Published Overall judgment was recorded. ",

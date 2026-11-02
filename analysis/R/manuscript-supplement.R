@@ -138,10 +138,9 @@ supplement_note <- function(e) {
 build_supplement <- function(inputs) {
   entries <- supplement_entries(inputs)
   SUPPLEMENT_HTML$tables <- list()
-  doc <- manuscript_doc() |> manuscript_par('ARBITER supplementary methods and results',style='heading 1') |>
+  doc <- manuscript_doc() |> manuscript_par('ARBITER supplementary tables and materials',style='heading 1') |>
     manuscript_par('This focused supplement documents agreement with Published labels and each independent human review, category distributions and disagreements, and signalling agreement and eligibility. Benchmark targets and sources remain in the linked repository records. Main Table 3 contains conditional-choice sensitivities and Table 2 contains process and resource results. The resource index links complete worked-example records and reproducibility materials.') |>
     manuscript_par('Contents and stable display locators',style='heading 2') |> officer::body_add_toc(level=2)
-  for(k in seq_along(METHODS_APPENDIX)) doc <- doc |> manuscript_par(names(METHODS_APPENDIX)[k],style='heading 2') |> manuscript_par(METHODS_APPENDIX[k])
   for(e in entries) {
     if(is.null(e$data)) {
       doc <- add_requested_posthoc_tables(doc,e$source)
@@ -151,10 +150,9 @@ build_supplement <- function(inputs) {
     rows <- if(e$source=='benchmark-set') 9L else if(e$source=='category-disagreements' || ncol(e$data)>6L) 12L else 18L
     doc <- add_paginated_table(doc,e$data,e$title,supplement_note(e),rows)
   }
-  doc <- officer::body_add_break(doc) |> manuscript_par('Prompt templates and run provenance',style='heading 2')
+  doc <- officer::body_add_break(doc) |> manuscript_par('Prompt templates',style='heading 2')
   prompts <- read_display('prompt-template-example')
   for(i in seq_len(nrow(prompts))) doc <- doc |> manuscript_par(prompts$type[i],style='heading 2') |> manuscript_par(prompts$prompt[i])
-  for(line in RUN_PROVENANCE) doc <- manuscript_par(doc,line)
   doc <- manuscript_par(doc,'Linked source records and reproducibility materials',style='heading 2')
   resources <- c('Complete AVATAR answers'='analysis/output/tables/avatar-trace-answers.csv',
     'Complete AVATAR evidence and quotations'='analysis/output/tables/avatar-trace-evidence.csv',
@@ -167,8 +165,11 @@ build_supplement <- function(inputs) {
     'Hypothetical invalid-path completion sensitivity'='analysis/output/tables/invalid-path-sensitivity.csv',
     'API reconstruction bounds and cache sensitivity'='analysis/output/tables/api-cost-summary.csv',
     'Signed token reconciliation'='analysis/output/tables/api-token-reconciliation.csv')
+  doc <- officer::body_add_fpar(doc,officer::fpar(officer::hyperlink_ftext(
+    text='AVATAR worked-example report (HTML)',
+    href='https://alisalman-et-al.github.io/arbiter-JAMIA/output/manuscript/banovic26-avatar-2024.html')))
   for(label in names(resources)) doc <- officer::body_add_fpar(doc,officer::fpar(
-    officer::hyperlink_ftext(text=label,href=paste0('https://github.com/AliSalman-et-al/arbiter-JAMIA/blob/main/',resources[[label]]))))
+    officer::hyperlink_ftext(text=reader_label(label),href=paste0('https://github.com/AliSalman-et-al/arbiter-JAMIA/blob/main/',resources[[label]]))))
   save_manuscript_doc(doc,'output/manuscript/Supplement.docx')
   writeLines(paste(SUPPLEMENT_HTML$tables,collapse='\n<!--GT_TABLE_BOUNDARY-->\n'),'output/manuscript/qa/supplement-gt.html')
   build_reporting_map()
@@ -177,10 +178,25 @@ build_supplement <- function(inputs) {
 build_reporting_map <- function() {
   SUPPLEMENT_HTML$tables <- list()
   checklist <- reporting_checklist()
+  readr::write_csv(checklist,'output/tables/reporting-checklist.csv',na='')
   readr::write_csv(checklist,'output/tables/reporting-checklist-skeleton.csv',na='')
-  checklist <- checklist |> select(guideline,item,topic,section,applicability_and_notes)
-  doc <- manuscript_doc() |> manuscript_par('TRIPOD LLM and GRRAS reporting map',style='heading 1') |>
-    add_paginated_table(clean_display(checklist),'Reporting map','The previous IMRaD draft was removed for a fresh manuscript. Pending manuscript sections, author credentials, declarations, text-date coverage and archive details require completion. Other locators identify retained analysis and supplement materials.',8L)
+  doc <- manuscript_doc() |>
+    manuscript_par('TRIPOD-LLM reporting checklist',style='heading 1') |>
+    manuscript_par('ARBITER: inspectable agentic risk-of-bias assessment of randomized trials') |>
+    manuscript_par('The study is an LLM evaluation with risk-of-bias classification, evidence retrieval and generated justifications. Locations use manuscript section headings and numbered displays because pagination is not fixed. Item labels are abbreviated from the 2025 checklist.') |>
+    manuscript_par('Reported identifies information at the cited location. Partial identifies an unreported component. Not reported means no statement was found. Not applicable is explained for each item. Author declarations supplied on 3 November 2026 are identified explicitly.')
+  doc <- officer::body_add_fpar(doc,officer::fpar(officer::hyperlink_ftext(
+    text='Official TRIPOD-LLM checklist (Gallifant et al., Nature Medicine, 2025)',
+    href='https://www.tripod-statement.org/wp-content/uploads/2025/01/TRIPOD-LLM-Checklist.pdf')))
+  for(guideline in c('TRIPOD-LLM','GRRAS')) {
+    if(guideline=='GRRAS') doc <- officer::body_add_break(doc) |>
+      manuscript_par('GRRAS reporting checklist',style='heading 1')
+    x <- checklist |> filter(.data$guideline==.env$guideline) |>
+      transmute(Item=item,`Reporting item`=topic,Location=section,
+        `Reporting note`=paste0(status,'. ',applicability_and_notes))
+    note <- if(guideline=='TRIPOD-LLM') 'API, application programming interface; EHR, electronic health record; LLM, large language model; RoB 2, Cochrane risk-of-bias tool. Numbering follows the official 2025 TRIPOD-LLM checklist; item labels are abbreviated.' else 'GRRAS, Guidelines for Reporting Reliability and Agreement Studies. Locations refer to the same manuscript and supplement.'
+    doc <- add_paginated_table(doc,x,paste(guideline,'checklist'),note,10L)
+  }
   save_manuscript_doc(doc,'output/manuscript/TRIPOD-LLM.docx')
   writeLines(paste(SUPPLEMENT_HTML$tables,collapse='\n<!--GT_TABLE_BOUNDARY-->\n'),'output/manuscript/qa/reporting-gt.html')
 }

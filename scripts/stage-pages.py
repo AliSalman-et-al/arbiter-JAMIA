@@ -64,10 +64,16 @@ def stage(destination: Path):
         for suffix in ("pdf", "png"):
             name = f"Figure{i}.{suffix}"
             sources[f"output/manuscript/{name}"] = output / name
+    sources[metadata.AVATAR_REPORT] = ROOT / "analysis" / metadata.AVATAR_REPORT
     missing = [str(path) for path in sources.values() if not path.is_file()]
     if missing:
         raise SystemExit("Build publication artifacts first:\n" + "\n".join(missing))
     destination.mkdir(parents=True, exist_ok=True)
+    attributes = destination / '.gitattributes'
+    rules = attributes.read_text(encoding='utf-8') if attributes.exists() else ''
+    preserve_html = f'{metadata.AVATAR_REPORT} -text'
+    if preserve_html not in rules.splitlines():
+        attributes.write_text(rules.rstrip() + ('\n' if rules.strip() else '') + preserve_html + '\n', encoding='utf-8')
     previous_manifest = destination / 'publication-manifest.json'
     if previous_manifest.is_file():
         previous_files = json.loads(previous_manifest.read_text(encoding='utf-8'))['files']
@@ -82,7 +88,7 @@ def stage(destination: Path):
     for relative, source in sources.items():
         target = destination / relative
         target.parent.mkdir(parents=True, exist_ok=True)
-        if source.suffix == '.html':
+        if relative in {'index.html', 'results.html', 'supplement.html'}:
             # Git stores text as LF; hash the exact bytes Pages will serve.
             body = source.read_bytes().replace(b'\r\n', b'\n')
             # Older rendered reports gain the same navigation as new Quarto pages.

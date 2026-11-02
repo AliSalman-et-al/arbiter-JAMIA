@@ -1,0 +1,12 @@
+{
+  "supplement_table_data_and_notes_unchanged": true,
+  "all_listed_narrative_passages_removed": true,
+  "all_other_supplement_paragraphs_preserved_except_title_heading_and_command_rename": true,
+  "raw_estimates_and_figures_unchanged": true,
+  "changed_existing_csvs": [
+    "analysis\\output\\tables\\display-supplement-reporting-map.csv",
+    "analysis\\output\\tables\\reporting-checklist-skeleton.csv"
+  ],
+  "removed_paragraphs": 24,
+  "displayed_command": "/arbiter-assess"
+}

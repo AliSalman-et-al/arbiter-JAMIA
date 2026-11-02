@@ -35,7 +35,7 @@ def bookkeep(doc):
             nav.base_style=doc.styles['heading 2']
         for p in doc.paragraphs:
             if p.style.name.lower().startswith('heading'):
-                selected=bool(re.match(r'^(eTable \d+[A-C]?[ .]|eFigure [1-5][ .]|[1-7]\. |eMethods|AVATAR complete trace$|Prompt templates and run provenance$)',p.text))
+                selected=bool(re.match(r'^(eTable \d+[A-C]?[ .]|eFigure [1-5][ .]|[1-7]\. |eMethods|AVATAR complete trace$|Prompt templates$)',p.text))
                 if selected and '(continued ' not in p.text:p.style=doc.styles[nav_name]
         for field in toc_fields:field.text='TOC \\t "Heading navigation,1" \\h \\z'
     settings=doc.settings.element

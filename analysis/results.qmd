@@ -17,4 +17,4 @@ ARBITER separates model interpretation from executable rules for the Cochrane ri
 
 ## Reproduction
 
-The [study repository](https://github.com/AliSalman-et-al/arbiter-JAMIA) contains the analysis pipeline, test suite, numerical exports and output verifier. [Supplementary methods and results](supplement.html) provide supporting estimates, complete paired question results, prompts, reporting locations and links to the complete worked-example records. Trial PDFs are not redistributed.
+The [study repository](https://github.com/AliSalman-et-al/arbiter-JAMIA) contains the analysis pipeline, test suite, numerical exports and output verifier. [Supplementary tables and materials](supplement.html) provide supporting estimates, complete paired question results, prompts, reporting locations and links to the complete worked-example records. Trial PDFs are not redistributed.

@@ -1,0 +1,30 @@
+{
+  "change": "signalling to signaling in display text",
+  "figure3_pdf_text_diff_is_only_spelling": true,
+  "figure3_hash_updates": {
+    "analysis/output/manuscript/Figure3.png": {
+      "before": "ec8565449ce648f69977c2cc4b1806239a7205081ed12a61aa1ebeca78368d6e",
+      "after": "2ca33c97030458d13f850ac76b583567ef19fbe1afdb2b55fb64f92d1be1d3e4"
+    },
+    "analysis/output/manuscript/Figure3.pdf": {
+      "before": "b4a7c24490f88619c16e184e66f482d45857d6d4e27e06e41df9f84773fc296b",
+      "after": "d5c408e1c63fde28cc8ad3b18f3dd588593bb0cf426a9e644a3978f7befb6866"
+    },
+    "analysis/output/manuscript/Figure3.tiff": {
+      "before": "c8f01f1f329546d7d0b2e6e0d68ea5356cd5e1bff667867265e84eb92547bed3",
+      "after": "819531d49dad24fa28580060c45849adb64cffebd0ce303ac914793e7be05ef9"
+    }
+  },
+  "no_models_or_bootstrap_rerun": true,
+  "manuscript_display_blocks_updated": "C:\\Users\\Ali-Salman\\Documents\\Research\\Active Projects\\2026 ARBITER\\docs\\manuscript\\second-draft\\ARBITER-manuscript-combined-revised.md",
+  "manuscript_prose_unchanged": true,
+  "all_word_text_changes_are_only_spelling": true,
+  "no_british_spelling_in_rendered_word_or_html": true,
+  "changed_existing_exports": [
+    "analysis\\output\\tables\\display-supplement-reporting-map.csv",
+    "analysis\\output\\manuscript\\Figure3.pdf",
+    "analysis\\output\\manuscript\\Figure3.png",
+    "analysis\\output\\manuscript\\Figure3.tiff"
+  ],
+  "numerical_estimates_unchanged": true
+}

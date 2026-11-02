@@ -1,0 +1,16 @@
+Item,Reporting item,Location,Reporting note
+1,Title and abstract,Title; Abstract,Partial. A paired agreement evaluation is clear in the abstract. The title does not explicitly identify an agreement study.
+2,Measurement instrument,"Methods, ARBITER workflow; Methods, Measures; Figure 2","Reported. The RoB 2 domains, ordinal categories and algorithm-based ratings are described."
+3,Subject population,"Methods, Benchmark and reference assessments; Figure 3; Table 1; eTable 1","Reported. Trial eligibility, source reviews and unsupported-design exclusions are described."
+4,Rater population,"Methods, Benchmark and reference assessments","Partial. Two researchers are described. Qualifications, relevant experience and recruitment are not fully reported."
+5,Rationale,"Introduction, final paragraph",Reported. The objective is agreement with independent human reviews and published labels while retaining an inspectable record.
+6,Sample-size rationale,"Methods, Benchmark and reference assessments",Partial. Selection of up to seven eligible trials per review is described. A precision-based sample-size rationale is not supplied.
+7,Sampling,"Methods, Benchmark and reference assessments; Figure 3; eTable 1","Reported. The journal/review selection process, within-review order, document availability, deduplication and exclusions are stated."
+8,Rating process,"Methods, Benchmark and reference assessments; Figure 3","Reported. Inputs, independent assessments, label freezing and subsequent anonymized label choices are distinguished."
+9,Independent ratings,"Methods, Benchmark and reference assessments",Reported. Both researchers submitted ratings before seeing other labels. Blinded choices form a separate stage.
+10,Statistical methods,"Methods, Measures; Methods, Statistical analysis","Reported. Agreement metrics, paired contrasts, missingness rules and trial-within-review bootstrap resampling are defined."
+11,Analysis counts,"Results, Benchmark and references; Figure 3; Table 1",Reported. Trial and domain-cell counts and conditional-choice denominators are reported.
+12,Rater characteristics,"Methods, Benchmark and reference assessments; Table 1; eTable 1",Partial. Benchmark characteristics are reported. Rater qualifications and experience remain unstated.
+13,Estimates and uncertainty,Results; Figure 4; eTables 3-5 and 7,Reported. Agreement and paired estimates include confidence intervals; references are kept separate.
+14,Practical relevance,"Discussion, paragraphs 8-12; Conclusion","Reported. Interpretation distinguishes agreement, evidence support and supervised reviewer use."
+15,Detailed results,eTables 1-13; Data availability,Reported. Detailed numerical results and reproducibility materials are identified.
