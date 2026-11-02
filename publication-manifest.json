@@ -6,36 +6,36 @@
       "bytes": 3425
     },
     "results.html": {
-      "sha256": "44d133baa41112a3cf49f32fcfd6c18ac36470c8f8c2c7f574d8ba9c8a174be1",
-      "bytes": 2859825
+      "sha256": "0cdc7cf09fd951dcd31912d74dee0f9695e295a48e5295c6d88cfec1ba4cab4a",
+      "bytes": 2857746
     },
     "supplement.html": {
-      "sha256": "1c93577ae2bf24216b6f500b728f38cbda143be83f367adfc2e5ffdd826b3e60",
-      "bytes": 1319099
+      "sha256": "ec56b031b0a7c25df22b8cd8c48466002f11fc3a973ff5715fb96fe2aa24cd19",
+      "bytes": 1317618
     },
     "output/manuscript/Main-analysis.docx": {
-      "sha256": "bc0dfebfb6cefa27493517d00c55a279103ef6203fe1e119191eac835c7f5685",
-      "bytes": 862544
+      "sha256": "7f7b78366543c6f49507f5ad3b8944b70824307c2da812db65dadd114d0d1218",
+      "bytes": 861776
     },
     "output/manuscript/Supplement.docx": {
-      "sha256": "3f77ccd99b3c49493e37ffd461ba70a675b6af43981b121cdeed5867684aa804",
-      "bytes": 70438
+      "sha256": "b07e3e4edbdaa6f90605f76532cb6adf591e14231f2c026cf9dcf7f376e985d5",
+      "bytes": 69539
     },
     "output/manuscript/TRIPOD-LLM.docx": {
-      "sha256": "168019d1dc166bce21c886c3e8de6e44860bed529d4b45fd052847b0e802febb",
+      "sha256": "b6561edd83836ca401a872e3e4bf603a4950c163659ec184c18ebe17fd77fcef",
       "bytes": 18401
     },
     "output/manuscript/Table1.docx": {
-      "sha256": "b1a79aaa2ae6952404d10def128dac315ff4c3c31d681f1d1aafdac10c4c473e",
-      "bytes": 14167
+      "sha256": "d50e675fd433353ab1e1f1dec06fa4e4a99b697b31bbf0e0fddf41b9087a625b",
+      "bytes": 14072
     },
     "output/manuscript/Table2.docx": {
-      "sha256": "8f79640116363164df476a602d71d8d0e635024aa018644fbb79763d03e5328f",
-      "bytes": 14772
+      "sha256": "cd8a5c2975c52fc406be46c099153336c989b9e5d95e0fafdf1a383d7ab45cfd",
+      "bytes": 14705
     },
     "output/manuscript/Table3.docx": {
-      "sha256": "ea47cf6619ff676d54dceecc6e1c7f58ab9f91d79985b110d1fae20fd41d75ba",
-      "bytes": 14017
+      "sha256": "d507c7149a29897914ebb2b811816170e2d00adb244c90661aaa2579877ef45d",
+      "bytes": 13910
     },
     "output/manuscript/Figure1.pdf": {
       "sha256": "cdf60b48945d8376daca7c80205f0a154d66853016bae9942593e406a530dcab",

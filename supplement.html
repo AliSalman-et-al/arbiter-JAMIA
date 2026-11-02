@@ -2210,7 +2210,7 @@ remain in the linked repository records. Main Table 3 contains
 conditional-choice sensitivities and Table 2 contains process and
 resource results. The resource index links complete worked-example
 records and reproducibility materials.</p>
-<details><summary>Contents and stable display locators</summary><ul><li><a href="#supp-algorithms-and-validation">Algorithms and validation</a></li><li><a href="#supp-benchmark-and-supplied-inputs">Benchmark and supplied inputs</a></li><li><a href="#supp-targets-and-input-parity">Targets and input parity</a></li><li><a href="#supp-blinded-human-reviewer-assessment">Blinded human reviewer assessment</a></li><li><a href="#supp-signalling-mapping-and-eligibility">Signalling mapping and eligibility</a></li><li><a href="#supp-exploratory-diagnostic-checks">Exploratory diagnostic checks</a></li><li><a href="#supp-inference">Inference</a></li><li><a href="#supp-reporting-scope">Reporting scope</a></li><li><a href="#supp-evidence-records-and-source-verification">Evidence records and source verification</a></li><li><a href="#supp-runtime-and-api-equivalents">Runtime and API equivalents</a></li><li><a href="#supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1. Source meta-analyses and benchmark composition</a></li><li><a href="#supp-etable-2-category-distributions-and-disagreements">eTable 2. Category distributions and disagreements</a></li><li><a href="#supp-etable-3-agreement-with-the-independent-human-reviews">eTable 3. Agreement with the independent human reviews</a></li><li><a href="#supp-etable-4-agreement-under-four-metrics">eTable 4. Agreement under four metrics</a></li><li><a href="#supp-agreement-under-four-metrics-exact-agreement">Agreement under four metrics Exact agreement</a></li><li><a href="#supp-agreement-under-four-metrics-weighted">Agreement under four metrics Weighted κ</a></li><li><a href="#supp-agreement-under-four-metrics-ac1">Agreement under four metrics AC1</a></li><li><a href="#supp-agreement-under-four-metrics-ac2">Agreement under four metrics AC2</a></li><li><a href="#supp-agreement-under-four-metrics-between-human-reviews">Agreement under four metrics between human reviews</a></li><li><a href="#supp-etable-5-agreement-relative-to-agreement-between-the-human-reviews">eTable 5. Agreement relative to agreement between the human reviews</a></li><li><a href="#supp-etable-6-pooled-category-disagreements">eTable 6. Pooled category disagreements</a></li><li><a href="#supp-etable-7-agreement-with-published-labels">eTable 7. Agreement with Published labels</a></li><li><a href="#supp-etable-8-distribution-of-ratings-by-source">eTable 8. Distribution of ratings by source</a></li><li><a href="#supp-etable-9-overall-judgment-agreement">eTable 9. Overall judgment agreement</a></li><li><a href="#supp-overall-judgment-agreement-exact-agreement">Overall judgment agreement Exact agreement</a></li><li><a href="#supp-overall-judgment-agreement-weighted">Overall judgment agreement Weighted κ</a></li><li><a href="#supp-overall-judgment-agreement-ac2">Overall judgment agreement AC2</a></li><li><a href="#supp-overall-judgment-agreement-between-human-reviews">Overall judgment agreement between human reviews</a></li><li><a href="#supp-etable-10-overall-judgment-availability">eTable 10. Overall judgment availability</a></li><li><a href="#supp-etable-11-signalling-eligibility-counts">eTable 11. Signalling eligibility counts</a></li><li><a href="#supp-etable-12-signalling-agreement-and-eligibility">eTable 12. Signalling agreement and eligibility</a></li><li><a href="#supp-etable-13-complete-paired-question-diagnostics">eTable 13. Complete paired question diagnostics</a></li><li><a href="#supp-prompt-templates-and-run-provenance">Prompt templates and run provenance</a></li><li><a href="#supp-arbiter-template">ARBITER template</a></li><li><a href="#supp-arbiter-example">ARBITER example</a></li><li><a href="#supp-direct-prompting-template">Direct prompting template</a></li><li><a href="#supp-direct-prompting-output-format-instruction">Direct prompting output-format instruction</a></li><li><a href="#supp-linked-source-records-and-reproducibility-materials">Linked source records and reproducibility materials</a></li></ul></details><h2 class="anchored">Supplementary methods</h2><h3 id="supp-algorithms-and-validation" class="anchored">Algorithms and validation</h3>
+<details><summary>Contents and stable display locators</summary><ul><li><a href="#supp-algorithms-and-validation">Algorithms and validation</a></li><li><a href="#supp-benchmark-and-supplied-inputs">Benchmark and supplied inputs</a></li><li><a href="#supp-targets-and-input-parity">Targets and input parity</a></li><li><a href="#supp-blinded-human-reviewer-assessment">Blinded human reviewer assessment</a></li><li><a href="#supp-signalling-mapping-and-eligibility">Signalling mapping and eligibility</a></li><li><a href="#supp-exploratory-diagnostic-checks">Exploratory diagnostic checks</a></li><li><a href="#supp-inference">Inference</a></li><li><a href="#supp-reading-the-displays">Reading the displays</a></li><li><a href="#supp-reporting-scope">Reporting scope</a></li><li><a href="#supp-evidence-records-and-source-verification">Evidence records and source verification</a></li><li><a href="#supp-runtime-and-api-equivalents">Runtime and API equivalents</a></li><li><a href="#supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1. Source meta-analyses and benchmark composition</a></li><li><a href="#supp-etable-2-pooled-distribution-of-domain-ratings">eTable 2. Pooled distribution of domain ratings</a></li><li><a href="#supp-etable-3-agreement-with-independent-human-reviews">eTable 3. Agreement with independent human reviews</a></li><li><a href="#supp-etable-4-agreement-under-four-metrics">eTable 4. Agreement under four metrics</a></li><li><a href="#supp-agreement-under-four-metrics-exact-agreement">Agreement under four metrics Exact agreement</a></li><li><a href="#supp-agreement-under-four-metrics-weighted">Agreement under four metrics Weighted κ</a></li><li><a href="#supp-agreement-under-four-metrics-ac1">Agreement under four metrics AC1</a></li><li><a href="#supp-agreement-under-four-metrics-ac2">Agreement under four metrics AC2</a></li><li><a href="#supp-agreement-under-four-metrics-between-human-reviews">Agreement under four metrics between human reviews</a></li><li><a href="#supp-etable-5-model-agreement-relative-to-human-agreement">eTable 5. Model agreement relative to human agreement</a></li><li><a href="#supp-etable-6-pooled-category-disagreements">eTable 6. Pooled category disagreements</a></li><li><a href="#supp-etable-7-agreement-with-published-labels">eTable 7. Agreement with Published labels</a></li><li><a href="#supp-etable-8-distribution-of-ratings-by-source">eTable 8. Distribution of ratings by source</a></li><li><a href="#supp-etable-9-overall-judgment-agreement">eTable 9. Overall judgment agreement</a></li><li><a href="#supp-overall-judgment-agreement-exact-agreement">Overall judgment agreement Exact agreement</a></li><li><a href="#supp-overall-judgment-agreement-weighted">Overall judgment agreement Weighted κ</a></li><li><a href="#supp-overall-judgment-agreement-ac2">Overall judgment agreement AC2</a></li><li><a href="#supp-overall-judgment-agreement-between-human-reviews">Overall judgment agreement between human reviews</a></li><li><a href="#supp-etable-10-overall-judgment-availability">eTable 10. Overall judgment availability</a></li><li><a href="#supp-etable-11-signalling-eligibility-counts">eTable 11. Signalling eligibility counts</a></li><li><a href="#supp-etable-12-signalling-answer-agreement">eTable 12. Signalling-answer agreement</a></li><li><a href="#supp-etable-13-paired-signalling-answer-differences-by-question">eTable 13. Paired signalling-answer differences by question</a></li><li><a href="#supp-prompt-templates-and-run-provenance">Prompt templates and run provenance</a></li><li><a href="#supp-arbiter-template">ARBITER template</a></li><li><a href="#supp-arbiter-example">ARBITER example</a></li><li><a href="#supp-direct-prompting-template">Direct prompting template</a></li><li><a href="#supp-direct-prompting-output-format-instruction">Direct prompting output-format instruction</a></li><li><a href="#supp-linked-source-records-and-reproducibility-materials">Linked source records and reproducibility materials</a></li></ul></details><h2 class="anchored">Supplementary methods</h2><h3 id="supp-algorithms-and-validation" class="anchored">Algorithms and validation</h3>
 <p>The official 22 August 2019 RoB 2 algorithms cover randomisation,
 deviations from intended interventions (effect of assignment), missing
 outcome data, outcome measurement and selection of the reported result.
@@ -2296,12 +2296,28 @@ or a causal estimate of the rule engine.</p>
 <p>All intervals use 10,000 percentile bootstrap replicates, seed
 20261018. Trials are sampled within each of the 16 fixed reviews,
 carrying both arms and all domains together. Paired contrasts share
-weights. Intervals describe trial variation conditional on these
-reviews, human reviewers and observed runs. They do not sample new
-reviews, human reviewers or model runs. No P values or multiplicity
-adjustments are used. Exact agreement is reported before linearly
-weighted Cohen κ. The All-Low rule shows the contribution of label
-prevalence.</p>
+weights; interval endpoints use type 7 quantiles. Intervals describe
+trial variation conditional on these reviews, human reviewers and
+observed runs. They do not sample new reviews, human reviewers or model
+runs. No P values or multiplicity adjustments are used. Exact agreement
+is reported before linearly weighted Cohen κ. The All-Low rule shows the
+contribution of label prevalence.</p>
+<h3 id="supp-reading-the-displays" class="anchored">Reading the displays</h3>
+<p>Figure 1. separates model interpretation from software checks; the
+audit file contains source identifiers and selected evidence, not
+complete source documents. Interactive target approval belongs to the
+general workflow and was not tested in the benchmark. In Figure 2,
+AVATAR is an illustrative model assessment whose rationales were not
+independently validated. A No information answer about a dated analysis
+plan contributes to Some concerns; absence of a plan alone does not
+establish selective reporting. The displayed P value is compatible with
+chance but does not establish adequate randomization. The simplified
+Overall rule omits permitted escalation when multiple Some concerns
+domains substantially lower confidence in the result. Five-level
+signalling coding distinguishes yes, probably yes, no, probably no and
+no information; collapsed coding merges definite and probable answers,
+retaining no information. Independent ratings, subsequent blinded label
+choices and derived Overall ratings are distinct.</p>
 <h3 id="supp-reporting-scope" class="anchored">Reporting scope</h3>
 <p>Reporting order was adopted after analysis on 23 October 2026 without
 a formal primary, secondary or confirmatory hierarchy. On 26 October
@@ -2467,12 +2483,10 @@ pain</td>
 <td>Yes</td>
 </tr>
 <tr>
-<td colspan="7">The 16 source meta-analyses span 15 specialties and
-contribute 102 included trials. Published domain-label counts are pooled
-over five domains per trial, ordered Low / Some concerns / High (SC,
-Some concerns). Overall given indicates availability of recorded
-Published Overall judgments. This restored descriptive table uses the
-frozen benchmark set.</td>
+<td colspan="7">DOI, digital object identifier; SC, Some concerns.
+Published domain counts pool five domains per trial, ordered Low / SC /
+High. Overall given indicates whether a Published Overall judgment was
+recorded.</td>
 </tr>
 </tbody>
 </table>
@@ -2578,17 +2592,15 @@ low back pain</td>
 <td>81 / 102</td>
 </tr>
 <tr>
-<td colspan="7">The 16 source meta-analyses span 15 specialties and
-contribute 102 included trials. Published domain-label counts are pooled
-over five domains per trial, ordered Low / Some concerns / High (SC,
-Some concerns). Overall given indicates availability of recorded
-Published Overall judgments. This restored descriptive table uses the
-frozen benchmark set.</td>
+<td colspan="7">DOI, digital object identifier; SC, Some concerns.
+Published domain counts pool five domains per trial, ordered Low / SC /
+High. Overall given indicates whether a Published Overall judgment was
+recorded.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-2-category-distributions-and-disagreements">eTable 2.
-Category distributions and disagreements</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-2-pooled-distribution-of-domain-ratings">eTable 2. Pooled
+distribution of domain ratings</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 24%">
@@ -2636,16 +2648,14 @@ Category distributions and disagreements</h2>
 <td>33/510 (6.5%)</td>
 </tr>
 <tr>
-<td colspan="4">Each source contributes 510 domain labels. Categories
-are Low, Some concerns and High. Values are n/N (%). The pooled
-cross-tabulation in eTable 6 describes category disagreements against
-each human reviewer; neither human reviewer is treated as an error-free
-reference.</td>
+<td colspan="4">Values are n/N (%), with 510 cells per source. Category
+disagreements appear in eTable 6. References are not treated as
+error-free.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-3-agreement-with-the-independent-human-reviews">eTable 3.
-Agreement with the independent human reviews</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-3-agreement-with-independent-human-reviews">eTable 3.
+Agreement with independent human reviews</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 13%">
@@ -2811,18 +2821,17 @@ Agreement with the independent human reviews</h2>
 <td>0.16 (0.11–0.21)</td>
 </tr>
 <tr>
-<td colspan="6">Each human reviewer independently rated all 510 cells,
-102 per domain, before seeing offered labels. The Between human reviews
-rows compare the two independent references. Exact agreement is n/N (%);
-its paired difference is in percentage points. κ is linearly weighted;
-its paired difference is in coefficient units. References are kept
-separate. CI, 95% confidence interval; 10,000 percentile bootstrap
-replicates, trials resampled within meta-analysis; seed 20261018.</td>
+<td colspan="6">Human reviews were recorded before blinded label
+choices. Pooled N=510; each domain N=102. Between-review rows compare
+the human reviews. Exact agreement is n/N (%); differences are
+percentage points. Kappa is linearly weighted Cohen&#39;s kappa; its
+differences are in coefficient units. CI, confidence interval. Intervals
+use 10,000 percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-agreement-with-the-independent-human-reviews-continued-2" class="anchored">Agreement
-with the independent human reviews (continued 2)</h3>
+</div><h3 id="supp-agreement-with-independent-human-reviews-continued-2" class="anchored">Agreement
+with independent human reviews (continued 2)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 13%">
@@ -2988,18 +2997,17 @@ with the independent human reviews (continued 2)</h3>
 <td>0.26 (0.14–0.38)</td>
 </tr>
 <tr>
-<td colspan="6">Each human reviewer independently rated all 510 cells,
-102 per domain, before seeing offered labels. The Between human reviews
-rows compare the two independent references. Exact agreement is n/N (%);
-its paired difference is in percentage points. κ is linearly weighted;
-its paired difference is in coefficient units. References are kept
-separate. CI, 95% confidence interval; 10,000 percentile bootstrap
-replicates, trials resampled within meta-analysis; seed 20261018.</td>
+<td colspan="6">Human reviews were recorded before blinded label
+choices. Pooled N=510; each domain N=102. Between-review rows compare
+the human reviews. Exact agreement is n/N (%); differences are
+percentage points. Kappa is linearly weighted Cohen&#39;s kappa; its
+differences are in coefficient units. CI, confidence interval. Intervals
+use 10,000 percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-agreement-with-the-independent-human-reviews-continued-3" class="anchored">Agreement
-with the independent human reviews (continued 3)</h3>
+</div><h3 id="supp-agreement-with-independent-human-reviews-continued-3" class="anchored">Agreement
+with independent human reviews (continued 3)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 16%">
@@ -3165,13 +3173,12 @@ with the independent human reviews (continued 3)</h3>
 <td>0.55 (0.44–0.67)</td>
 </tr>
 <tr>
-<td colspan="6">Each human reviewer independently rated all 510 cells,
-102 per domain, before seeing offered labels. The Between human reviews
-rows compare the two independent references. Exact agreement is n/N (%);
-its paired difference is in percentage points. κ is linearly weighted;
-its paired difference is in coefficient units. References are kept
-separate. CI, 95% confidence interval; 10,000 percentile bootstrap
-replicates, trials resampled within meta-analysis; seed 20261018.</td>
+<td colspan="6">Human reviews were recorded before blinded label
+choices. Pooled N=510; each domain N=102. Between-review rows compare
+the human reviews. Exact agreement is n/N (%); differences are
+percentage points. Kappa is linearly weighted Cohen&#39;s kappa; its
+differences are in coefficient units. CI, confidence interval. Intervals
+use 10,000 percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
@@ -3256,15 +3263,16 @@ four metrics Exact agreement</h3>
 <td>26/102 (25.5%) (21.6–29.4)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -3347,15 +3355,16 @@ under four metrics Exact agreement (continued 2)</h3>
 <td>47/102 (46.1%) (39.2–52.9)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -3438,15 +3447,16 @@ under four metrics Exact agreement (continued 3)</h3>
 <td>81/102 (79.4%) (74.5–84.3)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -3529,15 +3539,16 @@ metrics Weighted κ</h3>
 <td>0.00 (0.00–0.00)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -3620,15 +3631,16 @@ under four metrics Weighted κ (continued 2)</h3>
 <td>0.00 (0.00–0.00)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -3711,15 +3723,16 @@ under four metrics Weighted κ (continued 3)</h3>
 <td>0.00 (0.00–0.00)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -3802,15 +3815,16 @@ AC1</h3>
 <td>0.03 (−0.03 to 0.09)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -3893,15 +3907,16 @@ four metrics AC1 (continued 2)</h3>
 <td>0.33 (0.22–0.43)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -3984,15 +3999,16 @@ four metrics AC1 (continued 3)</h3>
 <td>0.77 (0.71–0.83)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -4075,15 +4091,16 @@ AC2</h3>
 <td>0.39 (0.35–0.43)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -4166,15 +4183,16 @@ four metrics AC2 (continued 2)</h3>
 <td>0.58 (0.50–0.66)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -4257,15 +4275,16 @@ four metrics AC2 (continued 3)</h3>
 <td>0.86 (0.82–0.90)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. All estimable rows have
-10,000 valid replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -4346,14 +4365,16 @@ under four metrics between human reviews</h3>
 <td>0.90 (0.84–0.95)</td>
 </tr>
 <tr>
-<td colspan="5">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights.</td>
+<td colspan="5">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -4434,14 +4455,16 @@ under four metrics between human reviews (continued 2)</h3>
 <td>0.38 (0.27–0.49)</td>
 </tr>
 <tr>
-<td colspan="5">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights.</td>
+<td colspan="5">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
@@ -4522,19 +4545,21 @@ under four metrics between human reviews (continued 3)</h3>
 <td>0.81 (0.75–0.87)</td>
 </tr>
 <tr>
-<td colspan="5">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights.</td>
+<td colspan="5">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Kappa is Cohen&#39;s linearly
+weighted coefficient. AC1 and AC2 are Gwet&#39;s agreement coefficients; AC1
+is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC
+1.4 and all three categories. All 10,000 replicates are valid for
+estimable comparisons; comparisons without a recorded reference have
+0.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-5-agreement-relative-to-agreement-between-the-human-reviews">eTable
-5. Agreement relative to agreement between the human reviews</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-5-model-agreement-relative-to-human-agreement">eTable 5.
+Model agreement relative to human agreement</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 11%">
@@ -4638,16 +4663,11 @@ all three categories and linear AC2 weights.</td>
 <td>0.211 (0.108–0.313)</td>
 </tr>
 <tr>
-<td colspan="5">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. D(A) is the mean agreement
-with the two human reviews minus agreement between the human reviews,
-recomputed in every replicate.</td>
+<td colspan="5">For each arm, D is its mean agreement with the two human
+reviews minus agreement between those reviews, recomputed in every
+resample. Exact-agreement differences are percentage points; kappa
+differences are in coefficient units. CI, confidence interval. Intervals
+use 10,000 percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
@@ -4790,11 +4810,9 @@ disagreements</h2>
 <td>0</td>
 </tr>
 <tr>
-<td colspan="7">Rows are each human reviewer reference category; columns
-are the model prediction. Counts sum to 510 cells for every human
-reviewer/arm pair. Missing predictions remain explicit. These are
-disagreements with imperfect references, not verified clinical
-errors.</td>
+<td colspan="7">Rows give human-reference ratings; columns give model
+predictions, including missing predictions. Counts sum to 510 per
+review/arm pair. Disagreements are not verified errors.</td>
 </tr>
 </tbody>
 </table>
@@ -4945,13 +4963,12 @@ Published labels</h2>
 <td>—</td>
 </tr>
 <tr>
-<td colspan="5">Published is the reference. Pooled D1 to D5 has 510
-cells; each domain has 102. All-Low rule predicts Low for every cell.
-Exact agreement is n/N (%); its paired difference is in percentage
-points. κ is linearly weighted; its paired difference is in coefficient
-units. A dash marks an undefined or omitted value. CI, 95% confidence
-interval; 10,000 percentile bootstrap replicates, trials resampled
-within meta-analysis; seed 20261018.</td>
+<td colspan="5">Pooled N=510; each domain N=102. All-Low rule rates
+every cell Low. Exact agreement is n/N (%); paired differences are
+percentage points. Kappa is linearly weighted Cohen&#39;s kappa; its
+differences are in coefficient units. A dash indicates an undefined or
+omitted value. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
@@ -5018,13 +5035,12 @@ Published labels (continued 2)</h3>
 <td>0.05 (−0.15 to 0.24)</td>
 </tr>
 <tr>
-<td colspan="5">Published is the reference. Pooled D1 to D5 has 510
-cells; each domain has 102. All-Low rule predicts Low for every cell.
-Exact agreement is n/N (%); its paired difference is in percentage
-points. κ is linearly weighted; its paired difference is in coefficient
-units. A dash marks an undefined or omitted value. CI, 95% confidence
-interval; 10,000 percentile bootstrap replicates, trials resampled
-within meta-analysis; seed 20261018.</td>
+<td colspan="5">Pooled N=510; each domain N=102. All-Low rule rates
+every cell Low. Exact agreement is n/N (%); paired differences are
+percentage points. Kappa is linearly weighted Cohen&#39;s kappa; its
+differences are in coefficient units. A dash indicates an undefined or
+omitted value. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
@@ -5149,9 +5165,8 @@ of ratings by source</h2>
 <td>0 (0.0%)</td>
 </tr>
 <tr>
-<td colspan="7">Descriptive counts (%), with no intervals. Pooled N=510;
-each domain and Overall N=102. Overall for each human review is
-unrecorded, not a derived judgment.</td>
+<td colspan="7">Values are counts (%). Pooled N=510; each domain and
+Overall N=102. Human Overall judgments were not recorded.</td>
 </tr>
 </tbody>
 </table>
@@ -5276,9 +5291,8 @@ ratings by source (continued 2)</h3>
 <td>0 (0.0%)</td>
 </tr>
 <tr>
-<td colspan="7">Descriptive counts (%), with no intervals. Pooled N=510;
-each domain and Overall N=102. Overall for each human review is
-unrecorded, not a derived judgment.</td>
+<td colspan="7">Values are counts (%). Pooled N=510; each domain and
+Overall N=102. Human Overall judgments were not recorded.</td>
 </tr>
 </tbody>
 </table>
@@ -5403,9 +5417,8 @@ ratings by source (continued 3)</h3>
 <td>0 (0.0%)</td>
 </tr>
 <tr>
-<td colspan="7">Descriptive counts (%), with no intervals. Pooled N=510;
-each domain and Overall N=102. Overall for each human review is
-unrecorded, not a derived judgment.</td>
+<td colspan="7">Values are counts (%). Pooled N=510; each domain and
+Overall N=102. Human Overall judgments were not recorded.</td>
 </tr>
 </tbody>
 </table>
@@ -5485,9 +5498,8 @@ ratings by source (continued 4)</h3>
 <td>21 (20.6%)</td>
 </tr>
 <tr>
-<td colspan="7">Descriptive counts (%), with no intervals. Pooled N=510;
-each domain and Overall N=102. Overall for each human review is
-unrecorded, not a derived judgment.</td>
+<td colspan="7">Values are counts (%). Pooled N=510; each domain and
+Overall N=102. Human Overall judgments were not recorded.</td>
 </tr>
 </tbody>
 </table>
@@ -5545,21 +5557,17 @@ agreement Exact agreement</h3>
 <td>42/81 (52%) (44.4–59.3)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. Recorded Overall only.
-Human Reviews 1 and 2 have no recorded Overall labels (0/102); their
-comparisons are not estimable and exclude 102 trials. Domain-derived
-human reviewer Overall remains a separate diagnostic. The one recorded
-ARBITER Overall escalation (fulop-2021) is included using its adopted
-rating. Against Published labels, N is the observed-reference subset;
-102 minus N trials are excluded. All estimable rows have 10,000 valid
-replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Recorded Overall judgments
+only. Human reviews have none (0/102); their comparisons exclude all
+trials. N includes only trials with a recorded reference; 102 minus N
+are excluded. ARBITER includes one adopted Overall escalation
+(fulop-2021). AC2 is Gwet&#39;s linearly weighted agreement coefficient. All
+10,000 replicates are valid for estimable comparisons; comparisons
+without a recorded reference have 0.</td>
 </tr>
 </tbody>
 </table>
@@ -5615,21 +5623,17 @@ agreement Weighted κ</h3>
 <td>0.00 (0.00–0.00)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. Recorded Overall only.
-Human Reviews 1 and 2 have no recorded Overall labels (0/102); their
-comparisons are not estimable and exclude 102 trials. Domain-derived
-human reviewer Overall remains a separate diagnostic. The one recorded
-ARBITER Overall escalation (fulop-2021) is included using its adopted
-rating. Against Published labels, N is the observed-reference subset;
-102 minus N trials are excluded. All estimable rows have 10,000 valid
-replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Recorded Overall judgments
+only. Human reviews have none (0/102); their comparisons exclude all
+trials. N includes only trials with a recorded reference; 102 minus N
+are excluded. ARBITER includes one adopted Overall escalation
+(fulop-2021). AC2 is Gwet&#39;s linearly weighted agreement coefficient. All
+10,000 replicates are valid for estimable comparisons; comparisons
+without a recorded reference have 0.</td>
 </tr>
 </tbody>
 </table>
@@ -5685,21 +5689,17 @@ AC2</h3>
 <td>0.49 (0.37–0.60)</td>
 </tr>
 <tr>
-<td colspan="7">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. Recorded Overall only.
-Human Reviews 1 and 2 have no recorded Overall labels (0/102); their
-comparisons are not estimable and exclude 102 trials. Domain-derived
-human reviewer Overall remains a separate diagnostic. The one recorded
-ARBITER Overall escalation (fulop-2021) is included using its adopted
-rating. Against Published labels, N is the observed-reference subset;
-102 minus N trials are excluded. All estimable rows have 10,000 valid
-replicates; rows with no recorded reference have 0.</td>
+<td colspan="7">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Recorded Overall judgments
+only. Human reviews have none (0/102); their comparisons exclude all
+trials. N includes only trials with a recorded reference; 102 minus N
+are excluded. ARBITER includes one adopted Overall escalation
+(fulop-2021). AC2 is Gwet&#39;s linearly weighted agreement coefficient. All
+10,000 replicates are valid for estimable comparisons; comparisons
+without a recorded reference have 0.</td>
 </tr>
 </tbody>
 </table>
@@ -5745,20 +5745,17 @@ judgment agreement between human reviews</h3>
 <td>Not estimable</td>
 </tr>
 <tr>
-<td colspan="5">Exact agreement is n/N (%); differences are percentage
-points. Other metrics use coefficient units. 95% percentile intervals
-use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
-7. Missing model ratings count as disagreement using the existing
-ordinal convention. Every estimable statistic has 10,000 valid
-replicates; unavailable comparisons have 0. Missing counts are in eTable
-8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
-all three categories and linear AC2 weights. Recorded Overall only.
-Human Reviews 1 and 2 have no recorded Overall labels (0/102); their
-comparisons are not estimable and exclude 102 trials. Domain-derived
-human reviewer Overall remains a separate diagnostic. The one recorded
-ARBITER Overall escalation (fulop-2021) is included using its adopted
-rating. Against Published labels, N is the observed-reference subset;
-102 minus N trials are excluded.</td>
+<td colspan="5">Exact agreement is n/N (%); its differences are
+percentage points. Coefficient differences are in coefficient units.
+Missing model ratings count as disagreements; missing counts are in
+eTable 8. CI, confidence interval. Intervals use 10,000 percentile
+bootstrap resamples of trials within reviews. Recorded Overall judgments
+only. Human reviews have none (0/102); their comparisons exclude all
+trials. N includes only trials with a recorded reference; 102 minus N
+are excluded. ARBITER includes one adopted Overall escalation
+(fulop-2021). AC2 is Gwet&#39;s linearly weighted agreement coefficient. All
+10,000 replicates are valid for estimable comparisons; comparisons
+without a recorded reference have 0.</td>
 </tr>
 </tbody>
 </table>
@@ -5811,9 +5808,8 @@ judgment availability</h2>
 <td>102</td>
 </tr>
 <tr>
-<td colspan="4">Recorded judgments only. Neither human review contains
-an independently recorded Overall judgment; their domain-derived Overall
-diagnostic is distinct. No model was rerun.</td>
+<td colspan="4">Recorded Overall judgments only. Human Overall judgments
+were not independently recorded; derived ratings are excluded.</td>
 </tr>
 </tbody>
 </table>
@@ -5984,10 +5980,10 @@ eligibility counts</h2>
 <td>340</td>
 </tr>
 <tr>
-<td colspan="6">Counts are question components in the comparison frame,
-not trials. Eligibility requires the same explicit question and
-component. Exclusion reasons are mutually exclusive within each source
-comparison. Paired contrasts use the intersection.</td>
+<td colspan="6">Counts are answer components, not trials. Eligibility
+requires matching trial, domain, question and component. Exclusion
+reasons are mutually exclusive within each source comparison; paired
+contrasts use the intersection.</td>
 </tr>
 </tbody>
 </table>
@@ -6158,10 +6154,10 @@ eligibility counts (continued 2)</h3>
 <td>360</td>
 </tr>
 <tr>
-<td colspan="6">Counts are question components in the comparison frame,
-not trials. Eligibility requires the same explicit question and
-component. Exclusion reasons are mutually exclusive within each source
-comparison. Paired contrasts use the intersection.</td>
+<td colspan="6">Counts are answer components, not trials. Eligibility
+requires matching trial, domain, question and component. Exclusion
+reasons are mutually exclusive within each source comparison; paired
+contrasts use the intersection.</td>
 </tr>
 </tbody>
 </table>
@@ -6332,10 +6328,10 @@ eligibility counts (continued 3)</h3>
 <td>49</td>
 </tr>
 <tr>
-<td colspan="6">Counts are question components in the comparison frame,
-not trials. Eligibility requires the same explicit question and
-component. Exclusion reasons are mutually exclusive within each source
-comparison. Paired contrasts use the intersection.</td>
+<td colspan="6">Counts are answer components, not trials. Eligibility
+requires matching trial, domain, question and component. Exclusion
+reasons are mutually exclusive within each source comparison; paired
+contrasts use the intersection.</td>
 </tr>
 </tbody>
 </table>
@@ -6426,15 +6422,15 @@ eligibility counts (continued 4)</h3>
 <td>300</td>
 </tr>
 <tr>
-<td colspan="6">Counts are question components in the comparison frame,
-not trials. Eligibility requires the same explicit question and
-component. Exclusion reasons are mutually exclusive within each source
-comparison. Paired contrasts use the intersection.</td>
+<td colspan="6">Counts are answer components, not trials. Eligibility
+requires matching trial, domain, question and component. Exclusion
+reasons are mutually exclusive within each source comparison; paired
+contrasts use the intersection.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-12-signalling-agreement-and-eligibility">eTable 12.
-Signalling agreement and eligibility</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-12-signalling-answer-agreement">eTable 12. Signalling-answer
+agreement</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 12%">
@@ -6566,20 +6562,18 @@ Signalling agreement and eligibility</h2>
 <td>11.3 (8.2–14.6)</td>
 </tr>
 <tr>
-<td colspan="7">ARBITER and Direct prompting cells show
-matched/source-specific eligible components (%; 95% CI). Paired N is the
-intersection evaluable in both arms, so absolute rates need not subtract
-to the paired difference. Paired differences are percentage points.
-Five-level distinguishes yes/probably yes/no/probably no/no information.
-Collapsed combines yes/probably yes and no/probably no; no information
-stays separate. Pooled includes all five domains. CI, 95% confidence
-interval; 10,000 percentile bootstrap replicates, trials resampled
-within meta-analysis; seed 20261018.</td>
+<td colspan="7">Arm values use source-specific eligible components;
+paired differences use components evaluable in both arms and need not
+equal the difference between arm percentages. Differences are percentage
+points. Five-level coding keeps all answers separate; collapsed coding
+merges yes/probably yes and no/probably no, retaining no information.
+Pooled includes all five domains. CI, confidence interval. Intervals use
+10,000 percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-signalling-agreement-and-eligibility-continued-2" class="anchored">Signalling
-agreement and eligibility (continued 2)</h3>
+</div><h3 id="supp-signalling-answer-agreement-continued-2" class="anchored">Signalling-answer
+agreement (continued 2)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 12%">
@@ -6711,20 +6705,18 @@ agreement and eligibility (continued 2)</h3>
 <td>3.7 (−0.3 to 7.4)</td>
 </tr>
 <tr>
-<td colspan="7">ARBITER and Direct prompting cells show
-matched/source-specific eligible components (%; 95% CI). Paired N is the
-intersection evaluable in both arms, so absolute rates need not subtract
-to the paired difference. Paired differences are percentage points.
-Five-level distinguishes yes/probably yes/no/probably no/no information.
-Collapsed combines yes/probably yes and no/probably no; no information
-stays separate. Pooled includes all five domains. CI, 95% confidence
-interval; 10,000 percentile bootstrap replicates, trials resampled
-within meta-analysis; seed 20261018.</td>
+<td colspan="7">Arm values use source-specific eligible components;
+paired differences use components evaluable in both arms and need not
+equal the difference between arm percentages. Differences are percentage
+points. Five-level coding keeps all answers separate; collapsed coding
+merges yes/probably yes and no/probably no, retaining no information.
+Pooled includes all five domains. CI, confidence interval. Intervals use
+10,000 percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-13-complete-paired-question-diagnostics">eTable 13. Complete
-paired question diagnostics</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-13-paired-signalling-answer-differences-by-question">eTable
+13. Paired signalling-answer differences by question</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 16%">
@@ -6870,18 +6862,17 @@ paired question diagnostics</h2>
 <td>33.3 (7.1–58.3)</td>
 </tr>
 <tr>
-<td colspan="5">All official questions and both codings are shown
-against each human reviewer. Differences are ARBITER minus Direct
-prompting in percentage points on the same paired eligible components.
-Sparse and zero-denominator rows remain visible; Not evaluable indicates
-zero paired components. Official wording is available in the linked
-question map. CI, 95% confidence interval; 10,000 percentile bootstrap
-replicates, trials resampled within meta-analysis; seed 20261018.</td>
+<td colspan="5">Differences are ARBITER minus Direct prompting
+percentage points among components evaluable in both arms. Not evaluable
+indicates no paired components. Five-level coding keeps all answers
+separate; collapsed coding merges yes/probably yes and no/probably no,
+retaining no information. CI, confidence interval. Intervals use 10,000
+percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-complete-paired-question-diagnostics-continued-2" class="anchored">Complete
-paired question diagnostics (continued 2)</h3>
+</div><h3 id="supp-paired-signalling-answer-differences-by-question-continued-2" class="anchored">Paired
+signalling-answer differences by question (continued 2)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 16%">
@@ -7027,18 +7018,17 @@ paired question diagnostics (continued 2)</h3>
 <td>−10.0 (−31.8 to 12.5)</td>
 </tr>
 <tr>
-<td colspan="5">All official questions and both codings are shown
-against each human reviewer. Differences are ARBITER minus Direct
-prompting in percentage points on the same paired eligible components.
-Sparse and zero-denominator rows remain visible; Not evaluable indicates
-zero paired components. Official wording is available in the linked
-question map. CI, 95% confidence interval; 10,000 percentile bootstrap
-replicates, trials resampled within meta-analysis; seed 20261018.</td>
+<td colspan="5">Differences are ARBITER minus Direct prompting
+percentage points among components evaluable in both arms. Not evaluable
+indicates no paired components. Five-level coding keeps all answers
+separate; collapsed coding merges yes/probably yes and no/probably no,
+retaining no information. CI, confidence interval. Intervals use 10,000
+percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-complete-paired-question-diagnostics-continued-3" class="anchored">Complete
-paired question diagnostics (continued 3)</h3>
+</div><h3 id="supp-paired-signalling-answer-differences-by-question-continued-3" class="anchored">Paired
+signalling-answer differences by question (continued 3)</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 16%">
@@ -7114,13 +7104,12 @@ paired question diagnostics (continued 3)</h3>
 <td>−2.0 (−7.8 to 4.0)</td>
 </tr>
 <tr>
-<td colspan="5">All official questions and both codings are shown
-against each human reviewer. Differences are ARBITER minus Direct
-prompting in percentage points on the same paired eligible components.
-Sparse and zero-denominator rows remain visible; Not evaluable indicates
-zero paired components. Official wording is available in the linked
-question map. CI, 95% confidence interval; 10,000 percentile bootstrap
-replicates, trials resampled within meta-analysis; seed 20261018.</td>
+<td colspan="5">Differences are ARBITER minus Direct prompting
+percentage points among components evaluable in both arms. Not evaluable
+indicates no paired components. Five-level coding keeps all answers
+separate; collapsed coding merges yes/probably yes and no/probably no,
+retaining no information. CI, confidence interval. Intervals use 10,000
+percentile bootstrap resamples of trials within reviews.</td>
 </tr>
 </tbody>
 </table>
