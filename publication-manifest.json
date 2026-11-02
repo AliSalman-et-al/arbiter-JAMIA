@@ -6,35 +6,35 @@
       "bytes": 3425
     },
     "results.html": {
-      "sha256": "c0551e3f5080f0bb56ed933eddb42761d3bc9316ba11bf2021edbafc7458d516",
+      "sha256": "06bbb87ae8f321213aa5bc0077f5cddb8e7728ae1081ffae2a9a1613c9dbc546",
       "bytes": 2858835
     },
     "supplement.html": {
-      "sha256": "b43d79d1827d612dcdff732b38bd3c778e6d4bf29b8b9ef8900f635430179a99",
+      "sha256": "1e6e31d1edc429720e3e951b90bf150999f1afb1c528bf99c7528b01db1ee0fb",
       "bytes": 1319038
     },
     "output/manuscript/Main-analysis.docx": {
-      "sha256": "268cf42607d01ed47e53016fcf6d8782c1e2a4328aa9cc5462a483b3c25f4985",
-      "bytes": 862282
+      "sha256": "b10b042d312aeb65ceafba0cfe7bde2adde14c32b304a4673dad2a0ca50c8fb8",
+      "bytes": 862284
     },
     "output/manuscript/Supplement.docx": {
-      "sha256": "c338a631fcbeaed634ae41a8c85688b7941a26b63e855ea7b1cd2da8abdb4309",
-      "bytes": 69901
+      "sha256": "8df14f85567a9845645e9f936a57b10e01eb5ca45c8d49b71d6fb629f00aae2e",
+      "bytes": 69900
     },
     "output/manuscript/TRIPOD-LLM.docx": {
-      "sha256": "e9c83841841de5f3a600c126f2ee16c248f21ced8d1643acb27e1791bcd58d20",
-      "bytes": 18405
+      "sha256": "0d1ece12746f8a43e37ea1ac03283248080c8ddcd54fa6ea5c510153e97b5a84",
+      "bytes": 18401
+    },
+    "output/manuscript/Table1.docx": {
+      "sha256": "931387ea7b31851c9c8e9dc7126d048b578cbe6b80296b7210ec3a5f470a92a1",
+      "bytes": 14167
     },
     "output/manuscript/Table2.docx": {
-      "sha256": "4fc4005b12c8daf131af89585497dc3d3152fe1dcbc495ff65b2575d60ab9b72",
-      "bytes": 14168
-    },
-    "output/manuscript/Table3.docx": {
-      "sha256": "1c222b4df633f48614d409901a4a1b0b92460d88580d3c7a9498b029128a7d12",
+      "sha256": "7c467848ca0043d48bdd2635a66b9e1e897a2b667b4ecccd74cfba817f50fa1c",
       "bytes": 14765
     },
-    "output/manuscript/Table4.docx": {
-      "sha256": "91b3b2576e9f82a4a6badc89291c5fe39d71adaffbfa7c7100510928901d48d1",
+    "output/manuscript/Table3.docx": {
+      "sha256": "91ed953f5efe3737014c5d7916d5a9a154c4e2aa0c6c47a4a7c9ec0b8ef63891",
       "bytes": 14016
     },
     "output/manuscript/Figure1.pdf": {
