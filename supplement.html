@@ -2210,7 +2210,7 @@ remain in the linked repository records. Main Table 3 contains
 conditional-choice sensitivities and Table 2 contains process and
 resource results. The resource index links complete worked-example
 records and reproducibility materials.</p>
-<details><summary>Contents and stable display locators</summary><ul><li><a href="#supp-algorithms-and-validation">Algorithms and validation</a></li><li><a href="#supp-benchmark-and-supplied-inputs">Benchmark and supplied inputs</a></li><li><a href="#supp-targets-and-input-parity">Targets and input parity</a></li><li><a href="#supp-blinded-human-reviewer-assessment">Blinded human reviewer assessment</a></li><li><a href="#supp-signalling-mapping-and-eligibility">Signalling mapping and eligibility</a></li><li><a href="#supp-exploratory-diagnostic-checks">Exploratory diagnostic checks</a></li><li><a href="#supp-inference">Inference</a></li><li><a href="#supp-reporting-scope">Reporting scope</a></li><li><a href="#supp-evidence-records-and-source-verification">Evidence records and source verification</a></li><li><a href="#supp-runtime-and-api-equivalents">Runtime and API equivalents</a></li><li><a href="#supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1. Source meta-analyses and benchmark composition</a></li><li><a href="#supp-etable-2-category-distributions-and-disagreements">eTable 2. Category distributions and disagreements</a></li><li><a href="#supp-etable-3-agreement-with-independent-human-reviewers">eTable 3. Agreement with independent human reviewers</a></li><li><a href="#supp-etable-4-agreement-under-four-metrics-post-hoc">eTable 4. Agreement under four metrics post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-exact-agreement-post-hoc">Agreement under four metrics Exact agreement post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-weighted-post-hoc">Agreement under four metrics Weighted κ post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-ac1-post-hoc">Agreement under four metrics AC1 post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-ac2-post-hoc">Agreement under four metrics AC2 post hoc</a></li><li><a href="#supp-agreement-under-four-metrics-between-human-reviews-post-hoc">Agreement under four metrics between human reviews post hoc</a></li><li><a href="#supp-etable-5-agreement-relative-to-inter-reviewer-agreement-post-hoc">eTable 5. Agreement relative to inter-reviewer agreement post hoc</a></li><li><a href="#supp-etable-6-pooled-category-disagreements">eTable 6. Pooled category disagreements</a></li><li><a href="#supp-etable-7-agreement-with-published-labels">eTable 7. Agreement with Published labels</a></li><li><a href="#supp-etable-8-distribution-of-ratings-by-source-post-hoc">eTable 8. Distribution of ratings by source post hoc</a></li><li><a href="#supp-etable-9-overall-judgment-agreement-post-hoc">eTable 9. Overall judgment agreement post hoc</a></li><li><a href="#supp-overall-judgment-agreement-exact-agreement-post-hoc">Overall judgment agreement Exact agreement post hoc</a></li><li><a href="#supp-overall-judgment-agreement-weighted-post-hoc">Overall judgment agreement Weighted κ post hoc</a></li><li><a href="#supp-overall-judgment-agreement-ac2-post-hoc">Overall judgment agreement AC2 post hoc</a></li><li><a href="#supp-overall-judgment-agreement-between-human-reviews-post-hoc">Overall judgment agreement between human reviews post hoc</a></li><li><a href="#supp-etable-10-overall-judgment-availability-post-hoc">eTable 10. Overall judgment availability post hoc</a></li><li><a href="#supp-etable-11-signalling-eligibility-counts">eTable 11. Signalling eligibility counts</a></li><li><a href="#supp-etable-12-signalling-agreement-and-eligibility">eTable 12. Signalling agreement and eligibility</a></li><li><a href="#supp-etable-13-complete-paired-question-diagnostics">eTable 13. Complete paired question diagnostics</a></li><li><a href="#supp-prompt-templates-and-run-provenance">Prompt templates and run provenance</a></li><li><a href="#supp-arbiter-template">ARBITER template</a></li><li><a href="#supp-arbiter-example">ARBITER example</a></li><li><a href="#supp-direct-prompting-template">Direct prompting template</a></li><li><a href="#supp-direct-prompting-output-format-instruction">Direct prompting output-format instruction</a></li><li><a href="#supp-linked-source-records-and-reproducibility-materials">Linked source records and reproducibility materials</a></li></ul></details><h2 class="anchored">Supplementary methods</h2><h3 id="supp-algorithms-and-validation" class="anchored">Algorithms and validation</h3>
+<details><summary>Contents and stable display locators</summary><ul><li><a href="#supp-algorithms-and-validation">Algorithms and validation</a></li><li><a href="#supp-benchmark-and-supplied-inputs">Benchmark and supplied inputs</a></li><li><a href="#supp-targets-and-input-parity">Targets and input parity</a></li><li><a href="#supp-blinded-human-reviewer-assessment">Blinded human reviewer assessment</a></li><li><a href="#supp-signalling-mapping-and-eligibility">Signalling mapping and eligibility</a></li><li><a href="#supp-exploratory-diagnostic-checks">Exploratory diagnostic checks</a></li><li><a href="#supp-inference">Inference</a></li><li><a href="#supp-reporting-scope">Reporting scope</a></li><li><a href="#supp-evidence-records-and-source-verification">Evidence records and source verification</a></li><li><a href="#supp-runtime-and-api-equivalents">Runtime and API equivalents</a></li><li><a href="#supp-etable-1-source-meta-analyses-and-benchmark-composition">eTable 1. Source meta-analyses and benchmark composition</a></li><li><a href="#supp-etable-2-category-distributions-and-disagreements">eTable 2. Category distributions and disagreements</a></li><li><a href="#supp-etable-3-agreement-with-independent-human-reviewers">eTable 3. Agreement with independent human reviewers</a></li><li><a href="#supp-etable-4-agreement-under-four-metrics">eTable 4. Agreement under four metrics</a></li><li><a href="#supp-agreement-under-four-metrics-exact-agreement">Agreement under four metrics Exact agreement</a></li><li><a href="#supp-agreement-under-four-metrics-weighted">Agreement under four metrics Weighted κ</a></li><li><a href="#supp-agreement-under-four-metrics-ac1">Agreement under four metrics AC1</a></li><li><a href="#supp-agreement-under-four-metrics-ac2">Agreement under four metrics AC2</a></li><li><a href="#supp-agreement-under-four-metrics-between-human-reviews">Agreement under four metrics between human reviews</a></li><li><a href="#supp-etable-5-agreement-relative-to-inter-reviewer-agreement">eTable 5. Agreement relative to inter-reviewer agreement</a></li><li><a href="#supp-etable-6-pooled-category-disagreements">eTable 6. Pooled category disagreements</a></li><li><a href="#supp-etable-7-agreement-with-published-labels">eTable 7. Agreement with Published labels</a></li><li><a href="#supp-etable-8-distribution-of-ratings-by-source">eTable 8. Distribution of ratings by source</a></li><li><a href="#supp-etable-9-overall-judgment-agreement">eTable 9. Overall judgment agreement</a></li><li><a href="#supp-overall-judgment-agreement-exact-agreement">Overall judgment agreement Exact agreement</a></li><li><a href="#supp-overall-judgment-agreement-weighted">Overall judgment agreement Weighted κ</a></li><li><a href="#supp-overall-judgment-agreement-ac2">Overall judgment agreement AC2</a></li><li><a href="#supp-overall-judgment-agreement-between-human-reviews">Overall judgment agreement between human reviews</a></li><li><a href="#supp-etable-10-overall-judgment-availability">eTable 10. Overall judgment availability</a></li><li><a href="#supp-etable-11-signalling-eligibility-counts">eTable 11. Signalling eligibility counts</a></li><li><a href="#supp-etable-12-signalling-agreement-and-eligibility">eTable 12. Signalling agreement and eligibility</a></li><li><a href="#supp-etable-13-complete-paired-question-diagnostics">eTable 13. Complete paired question diagnostics</a></li><li><a href="#supp-prompt-templates-and-run-provenance">Prompt templates and run provenance</a></li><li><a href="#supp-arbiter-template">ARBITER template</a></li><li><a href="#supp-arbiter-example">ARBITER example</a></li><li><a href="#supp-direct-prompting-template">Direct prompting template</a></li><li><a href="#supp-direct-prompting-output-format-instruction">Direct prompting output-format instruction</a></li><li><a href="#supp-linked-source-records-and-reproducibility-materials">Linked source records and reproducibility materials</a></li></ul></details><h2 class="anchored">Supplementary methods</h2><h3 id="supp-algorithms-and-validation" class="anchored">Algorithms and validation</h3>
 <p>The official 22 August 2019 RoB 2 algorithms cover randomisation,
 deviations from intended interventions (effect of assignment), missing
 outcome data, outcome measurement and selection of the reported result.
@@ -3175,10 +3175,10 @@ replicates, trials resampled within meta-analysis; seed 20261018.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-4-agreement-under-four-metrics-post-hoc">eTable 4. Agreement
-under four metrics post hoc</h2>
-<h3 id="supp-agreement-under-four-metrics-exact-agreement-post-hoc" class="anchored">Agreement
-under four metrics Exact agreement post hoc</h3>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-4-agreement-under-four-metrics">eTable 4. Agreement under
+four metrics</h2>
+<h3 id="supp-agreement-under-four-metrics-exact-agreement" class="anchored">Agreement under
+four metrics Exact agreement</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 11%">
@@ -3256,11 +3256,11 @@ under four metrics Exact agreement post hoc</h3>
 <td>26/102 (25.5%) (21.6–29.4)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -3347,11 +3347,11 @@ under four metrics Exact agreement (continued 2)</h3>
 <td>47/102 (46.1%) (39.2–52.9)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -3438,11 +3438,11 @@ under four metrics Exact agreement (continued 3)</h3>
 <td>81/102 (79.4%) (74.5–84.3)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -3450,8 +3450,8 @@ all three categories and linear AC2 weights. All estimable rows have
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-agreement-under-four-metrics-weighted-post-hoc" class="anchored">Agreement
-under four metrics Weighted κ post hoc</h3>
+</div><h3 id="supp-agreement-under-four-metrics-weighted" class="anchored">Agreement under four
+metrics Weighted κ</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 12%">
@@ -3529,11 +3529,11 @@ under four metrics Weighted κ post hoc</h3>
 <td>0.00 (0.00–0.00)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -3620,11 +3620,11 @@ under four metrics Weighted κ (continued 2)</h3>
 <td>0.00 (0.00–0.00)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -3711,11 +3711,11 @@ under four metrics Weighted κ (continued 3)</h3>
 <td>0.00 (0.00–0.00)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -3723,8 +3723,8 @@ all three categories and linear AC2 weights. All estimable rows have
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-agreement-under-four-metrics-ac1-post-hoc" class="anchored">Agreement under four
-metrics AC1 post hoc</h3>
+</div><h3 id="supp-agreement-under-four-metrics-ac1" class="anchored">Agreement under four metrics
+AC1</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 12%">
@@ -3802,11 +3802,11 @@ metrics AC1 post hoc</h3>
 <td>0.03 (−0.03 to 0.09)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -3893,11 +3893,11 @@ four metrics AC1 (continued 2)</h3>
 <td>0.33 (0.22–0.43)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -3984,11 +3984,11 @@ four metrics AC1 (continued 3)</h3>
 <td>0.77 (0.71–0.83)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -3996,8 +3996,8 @@ all three categories and linear AC2 weights. All estimable rows have
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-agreement-under-four-metrics-ac2-post-hoc" class="anchored">Agreement under four
-metrics AC2 post hoc</h3>
+</div><h3 id="supp-agreement-under-four-metrics-ac2" class="anchored">Agreement under four metrics
+AC2</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 12%">
@@ -4075,11 +4075,11 @@ metrics AC2 post hoc</h3>
 <td>0.39 (0.35–0.43)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -4166,11 +4166,11 @@ four metrics AC2 (continued 2)</h3>
 <td>0.58 (0.50–0.66)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -4257,11 +4257,11 @@ four metrics AC2 (continued 3)</h3>
 <td>0.86 (0.82–0.90)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. All estimable rows have
@@ -4269,8 +4269,8 @@ all three categories and linear AC2 weights. All estimable rows have
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-agreement-under-four-metrics-between-human-reviews-post-hoc" class="anchored">Agreement
-under four metrics between human reviews post hoc</h3>
+</div><h3 id="supp-agreement-under-four-metrics-between-human-reviews" class="anchored">Agreement
+under four metrics between human reviews</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 21%">
@@ -4346,11 +4346,11 @@ under four metrics between human reviews post hoc</h3>
 <td>0.90 (0.84–0.95)</td>
 </tr>
 <tr>
-<td colspan="5">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="5">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights.</td>
@@ -4434,11 +4434,11 @@ under four metrics between human reviews (continued 2)</h3>
 <td>0.38 (0.27–0.49)</td>
 </tr>
 <tr>
-<td colspan="5">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="5">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights.</td>
@@ -4522,19 +4522,19 @@ under four metrics between human reviews (continued 3)</h3>
 <td>0.81 (0.75–0.87)</td>
 </tr>
 <tr>
-<td colspan="5">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="5">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-5-agreement-relative-to-inter-reviewer-agreement-post-hoc">eTable
-5. Agreement relative to inter-reviewer agreement post hoc</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-5-agreement-relative-to-inter-reviewer-agreement">eTable 5.
+Agreement relative to inter-reviewer agreement</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 11%">
@@ -4638,11 +4638,11 @@ all three categories and linear AC2 weights.</td>
 <td>0.211 (0.108–0.313)</td>
 </tr>
 <tr>
-<td colspan="5">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="5">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. D(A) is the mean agreement
@@ -5028,8 +5028,8 @@ within meta-analysis; seed 20261018.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-8-distribution-of-ratings-by-source-post-hoc">eTable 8.
-Distribution of ratings by source post hoc</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-8-distribution-of-ratings-by-source">eTable 8. Distribution
+of ratings by source</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 15%">
@@ -5149,9 +5149,9 @@ Distribution of ratings by source post hoc</h2>
 <td>0 (0.0%)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc descriptive counts (%), with no intervals.
-Pooled N=510; each domain and Overall N=102. Overall for each human
-review is unrecorded, not a derived judgment.</td>
+<td colspan="7">Descriptive counts (%), with no intervals. Pooled N=510;
+each domain and Overall N=102. Overall for each human review is
+unrecorded, not a derived judgment.</td>
 </tr>
 </tbody>
 </table>
@@ -5276,9 +5276,9 @@ ratings by source (continued 2)</h3>
 <td>0 (0.0%)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc descriptive counts (%), with no intervals.
-Pooled N=510; each domain and Overall N=102. Overall for each human
-review is unrecorded, not a derived judgment.</td>
+<td colspan="7">Descriptive counts (%), with no intervals. Pooled N=510;
+each domain and Overall N=102. Overall for each human review is
+unrecorded, not a derived judgment.</td>
 </tr>
 </tbody>
 </table>
@@ -5403,9 +5403,9 @@ ratings by source (continued 3)</h3>
 <td>0 (0.0%)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc descriptive counts (%), with no intervals.
-Pooled N=510; each domain and Overall N=102. Overall for each human
-review is unrecorded, not a derived judgment.</td>
+<td colspan="7">Descriptive counts (%), with no intervals. Pooled N=510;
+each domain and Overall N=102. Overall for each human review is
+unrecorded, not a derived judgment.</td>
 </tr>
 </tbody>
 </table>
@@ -5485,16 +5485,16 @@ ratings by source (continued 4)</h3>
 <td>21 (20.6%)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc descriptive counts (%), with no intervals.
-Pooled N=510; each domain and Overall N=102. Overall for each human
-review is unrecorded, not a derived judgment.</td>
+<td colspan="7">Descriptive counts (%), with no intervals. Pooled N=510;
+each domain and Overall N=102. Overall for each human review is
+unrecorded, not a derived judgment.</td>
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-9-overall-judgment-agreement-post-hoc">eTable 9. Overall
-judgment agreement post hoc</h2>
-<h3 id="supp-overall-judgment-agreement-exact-agreement-post-hoc" class="anchored">Overall
-judgment agreement Exact agreement post hoc</h3>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-9-overall-judgment-agreement">eTable 9. Overall judgment
+agreement</h2>
+<h3 id="supp-overall-judgment-agreement-exact-agreement" class="anchored">Overall judgment
+agreement Exact agreement</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 12%">
@@ -5545,11 +5545,11 @@ judgment agreement Exact agreement post hoc</h3>
 <td>42/81 (52%) (44.4–59.3)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. Recorded Overall only.
@@ -5563,8 +5563,8 @@ replicates; rows with no recorded reference have 0.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-overall-judgment-agreement-weighted-post-hoc" class="anchored">Overall judgment
-agreement Weighted κ post hoc</h3>
+</div><h3 id="supp-overall-judgment-agreement-weighted" class="anchored">Overall judgment
+agreement Weighted κ</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 14%">
@@ -5615,11 +5615,11 @@ agreement Weighted κ post hoc</h3>
 <td>0.00 (0.00–0.00)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. Recorded Overall only.
@@ -5633,8 +5633,8 @@ replicates; rows with no recorded reference have 0.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-overall-judgment-agreement-ac2-post-hoc" class="anchored">Overall judgment
-agreement AC2 post hoc</h3>
+</div><h3 id="supp-overall-judgment-agreement-ac2" class="anchored">Overall judgment agreement
+AC2</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 14%">
@@ -5685,11 +5685,11 @@ agreement AC2 post hoc</h3>
 <td>0.49 (0.37–0.60)</td>
 </tr>
 <tr>
-<td colspan="7">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="7">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. Recorded Overall only.
@@ -5703,8 +5703,8 @@ replicates; rows with no recorded reference have 0.</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="supp-overall-judgment-agreement-between-human-reviews-post-hoc" class="anchored">Overall
-judgment agreement between human reviews post hoc</h3>
+</div><h3 id="supp-overall-judgment-agreement-between-human-reviews" class="anchored">Overall
+judgment agreement between human reviews</h3>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 24%">
@@ -5745,11 +5745,11 @@ judgment agreement between human reviews post hoc</h3>
 <td>Not estimable</td>
 </tr>
 <tr>
-<td colspan="5">Post hoc. Exact agreement is n/N (%); differences are
-percentage points. Other metrics use coefficient units. 95% percentile
-intervals use 10,000 shared trial resamples within 16 reviews, seed
-20261018, type 7. Missing model ratings count as disagreement using the
-existing ordinal convention. Every estimable statistic has 10,000 valid
+<td colspan="5">Exact agreement is n/N (%); differences are percentage
+points. Other metrics use coefficient units. 95% percentile intervals
+use 10,000 shared trial resamples within 16 reviews, seed 20261018, type
+7. Missing model ratings count as disagreement using the existing
+ordinal convention. Every estimable statistic has 10,000 valid
 replicates; unavailable comparisons have 0. Missing counts are in eTable
 8 and the numerical CSV exports. Gwet coefficients use irrCAC 1.4 with
 all three categories and linear AC2 weights. Recorded Overall only.
@@ -5762,8 +5762,8 @@ rating. Against Published labels, N is the observed-reference subset;
 </tr>
 </tbody>
 </table>
-</div><h2 class="Heading-navigation anchored" id="supp-etable-10-overall-judgment-availability-post-hoc">eTable 10.
-Overall judgment availability post hoc</h2>
+</div><h2 class="Heading-navigation anchored" id="supp-etable-10-overall-judgment-availability">eTable 10. Overall
+judgment availability</h2>
 <div class="manuscript-table supplement-table"><table style="width:99%;" data-quarto-disable-processing="true">
 <colgroup>
 <col style="width: 39%">
@@ -5811,9 +5811,9 @@ Overall judgment availability post hoc</h2>
 <td>102</td>
 </tr>
 <tr>
-<td colspan="4">Post hoc. Recorded judgments only. Neither human review
-contains an independently recorded Overall judgment; their
-domain-derived Overall diagnostic is distinct. No model was rerun.</td>
+<td colspan="4">Recorded judgments only. Neither human review contains
+an independently recorded Overall judgment; their domain-derived Overall
+diagnostic is distinct. No model was rerun.</td>
 </tr>
 </tbody>
 </table>
