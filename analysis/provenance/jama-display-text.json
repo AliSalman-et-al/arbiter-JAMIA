@@ -1,0 +1,113 @@
+{
+  "figures": {
+    "1": {
+      "caption": "Figure 1. ARBITER assessment workflow. The language-model agent finds evidence and answers questions. Software binds selected text to captured documents, applies RoB 2 algorithms and exports the assessment record. Binding locates text; it does not establish support for an answer. The audit file contains source identifiers and selected evidence, not complete documents. Reviewer approval is part of the general workflow but was not tested in the benchmark. AI indicates artificial intelligence; MCP, Model Context Protocol; RoB 2, the Cochrane risk-of-bias tool.",
+      "alt": "A language-model agent searches captured trial documents, records answers and selects evidence. Software binds selected text to the captured extraction, applies RoB 2 algorithms and exports an assessment record. Reviewer approval belongs to the general workflow and was not tested in the benchmark. The audit file contains source identifiers and selected evidence, not complete source files. Binding locates text and does not establish that it supports an answer.",
+      "title": "ARBITER assessment workflow",
+      "annotation_words": 79
+    },
+    "2": {
+      "caption": "Figure 2. AVATAR assessment linking evidence, answers and ratings. AVATAR compares early surgery with watchful waiting for asymptomatic severe aortic stenosis; the outcome is all-cause death. The example illustrates the workflow, not typical performance. Its rationales were not independently validated. Letter/page tabs identify sources; counterevidence and unknowns remain visible. A No information answer about the dated analysis plan contributes to Some concerns overall. Footer labels concern D5, not independently rated Overall judgments. The simplified Overall rule omits permitted escalation to High when multiple Some concerns domains substantially lower confidence. The displayed P value does not establish adequate randomization. Y indicates yes; PY, probably yes; PN, probably no; N, no; NI, no information; D5, selection of the reported result; AI, artificial intelligence; RoB 2, the Cochrane risk-of-bias tool.",
+      "alt": "AVATAR's five domains link source excerpts, model answers, software checks and ratings. Four domains are Low. A No information answer about the dated analysis plan contributes to Some concerns for selection of the reported result and Overall. Counterevidence and unknowns remain visible. The figure illustrates a model assessment; its rationales were not independently validated. The simplified Overall rule does not show every permitted escalation.",
+      "title": "AVATAR assessment linking evidence, answers and ratings",
+      "annotation_words": 125
+    },
+    "3": {
+      "caption": "Figure 3. Paired evaluation and blinded label choices. Both model arms used the same reported model identifier and documents for 102 trials. Human reviews covered all 510 domain cells before reviewers saw labels. Choices were among three anonymized labels in random order without rationales. The conditional comparison uses 60 agreed choices from 80 cells where arms differed; 20 split choices enter sensitivities. Agreement analyses use all 510 cells.",
+      "alt": "Three parallel assessment lanes for ARBITER, Direct prompting and two independent human reviews across 102 trials and 510 domain cells. A separate conditional branch contains 80 arm-discordant cells, 60 agreed choices and 20 splits.",
+      "title": "Paired evaluation and blinded label choices",
+      "annotation_words": 66
+    },
+    "4": {
+      "caption": "Figure 4. Domain agreement with human reviews and published labels. Blue circles show ARBITER; orange squares, Direct prompting. Bars show 95% CIs. Diamonds show paired ARBITER minus Direct prompting differences in percentage points; zero lines indicate no difference. Each human review includes 510 pooled cells, 102 per domain. Human agreement provides context, not a performance ceiling. D1, randomisation process; D2, deviations from intended interventions; D3, missing outcome data; D4, outcome measurement; D5, selection of the reported result. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews.",
+      "alt": "Exact agreement and paired gains against each human reviewer, pooled and by domain. Both pooled gains favor ARBITER; D5 gains are largest and D3 depends strongly on the human reviewer reference. The full-cohort Published comparison is shown separately.",
+      "title": "Domain agreement with human reviews and published labels",
+      "annotation_words": 88
+    },
+    "5": {
+      "caption": "Figure 5. Paired differences in signalling-answer agreement. Diamonds and bars show paired ARBITER minus Direct prompting differences and 95% CIs. The sample size is the number of answer components evaluable in both arms. Five-level coding keeps yes, probably yes, no, probably no and no information separate. Collapsed coding merges definite and probable answers, retaining no information. Eligibility and question-level results are in eTables 11 to 13. D1, randomisation process; D2, deviations from intended interventions; D3, missing outcome data; D4, outcome measurement; D5, selection of the reported result. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews.",
+      "alt": "Paired signalling-answer differences by domain and human reviewer, separating five-level and collapsed coding. D3 changes direction with coding against Human Review 1; D5 collapsed gains are smaller against Human Review 2.",
+      "title": "Paired differences in signalling-answer agreement",
+      "annotation_words": 98
+    }
+  },
+  "tables": {
+    "Table1": {
+      "data_sha256": "9134338d4e765b74e1716187f7c5b8d141a41895db0833297a48d0de45335180",
+      "physical_tables": 1,
+      "titles": [
+        "Table 1. Benchmark and reference context"
+      ],
+      "notes": [
+        "SAP, statistical analysis plan. Each source contributes 510 domain cells. Document counts are among 102 trials; document types overlap."
+      ],
+      "annotation_words": 25
+    },
+    "Table2": {
+      "data_sha256": "07bcd4e8602d9e5077d39b56c500ae4e356ffa540760e9ac8a7148c0dfba2ec2",
+      "physical_tables": 1,
+      "titles": [
+        "Table 2. Process checks and computational resources"
+      ],
+      "notes": [
+        "API, application programming interface; IQR, interquartile range. Rule checks include 510 ARBITER and 509 Direct prompting cells; one Direct prompting cell was unevaluable. ARBITER had no domain overrides and one Overall escalation. Resource summaries include 102 paired trials. API list-price equivalents are not expenditure. Evidence-record checks do not assess whether evidence supports an answer. A dash indicates not applicable; Not available, not measured. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews."
+      ],
+      "annotation_words": 83
+    },
+    "Table3": {
+      "data_sha256": "3842e1894702169b2320c2720bb215b9796b246f0e05379c391339af8f5ddca5",
+      "physical_tables": 1,
+      "titles": [
+        "Table 3. Blinded label choices"
+      ],
+      "notes": [
+        "Choices were evaluated in 80 cells where arms differed; 60 had agreed reviewer choices and 20 split. Review-specific rows use all 80. The final row counts every split against ARBITER without crediting Direct prompting. Human Review 1 chose neither arm in 4 of 80 cells. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews."
+      ],
+      "annotation_words": 63
+    },
+    "Supplement": {
+      "data_sha256": "6a12c1db903807527a9298762190c46b3a68a3a96b7aebfc30b30f46a4e56036",
+      "physical_tables": 43,
+      "titles": [
+        "eTable 1. Source meta-analyses and benchmark composition",
+        "eTable 2. Pooled distribution of domain ratings",
+        "eTable 3. Agreement with independent human reviews",
+        "eTable 4. Agreement under four metrics",
+        "eTable 5. Model agreement relative to human agreement",
+        "eTable 6. Pooled category disagreements",
+        "eTable 7. Agreement with Published labels",
+        "eTable 8. Distribution of ratings by source",
+        "eTable 9. Overall judgment agreement",
+        "eTable 10. Overall judgment availability",
+        "eTable 11. Signalling eligibility counts",
+        "eTable 12. Signalling-answer agreement",
+        "eTable 13. Paired signalling-answer differences by question"
+      ],
+      "notes": [
+        "DOI, digital object identifier; SC, Some concerns. Published domain counts pool five domains per trial, ordered Low / SC / High. Overall given indicates whether a Published Overall judgment was recorded. ",
+        "Values are n/N (%), with 510 cells per source. Category disagreements appear in eTable 6. References are not treated as error-free. ",
+        "Human reviews were recorded before blinded label choices. Pooled N=510; each domain N=102. Between-review rows compare the human reviews. Exact agreement is n/N (%); differences are percentage points. Kappa is linearly weighted Cohen's kappa; its differences are in coefficient units. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews.",
+        "Exact agreement is n/N (%); its differences are percentage points. Coefficient differences are in coefficient units. Missing model ratings count as disagreements; missing counts are in eTable 8. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews. Kappa is Cohen's linearly weighted coefficient. AC1 and AC2 are Gwet's agreement coefficients; AC1 is unweighted and AC2 uses linear weights. Gwet coefficients use irrCAC 1.4 and all three categories. All 10,000 replicates are valid for estimable comparisons; comparisons without a recorded reference have 0.",
+        "For each arm, D is its mean agreement with the two human reviews minus agreement between those reviews, recomputed in every resample. Exact-agreement differences are percentage points; kappa differences are in coefficient units. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews.",
+        "Rows give human-reference ratings; columns give model predictions, including missing predictions. Counts sum to 510 per review/arm pair. Disagreements are not verified errors. ",
+        "Pooled N=510; each domain N=102. All-Low rule rates every cell Low. Exact agreement is n/N (%); paired differences are percentage points. Kappa is linearly weighted Cohen's kappa; its differences are in coefficient units. A dash indicates an undefined or omitted value. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews.",
+        "Values are counts (%). Pooled N=510; each domain and Overall N=102. Human Overall judgments were not recorded.",
+        "Exact agreement is n/N (%); its differences are percentage points. Coefficient differences are in coefficient units. Missing model ratings count as disagreements; missing counts are in eTable 8. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews. Recorded Overall judgments only. Human reviews have none (0/102); their comparisons exclude all trials. N includes only trials with a recorded reference; 102 minus N are excluded. ARBITER includes one adopted Overall escalation (fulop-2021). AC2 is Gwet's linearly weighted agreement coefficient. All 10,000 replicates are valid for estimable comparisons; comparisons without a recorded reference have 0.",
+        "Recorded Overall judgments only. Human Overall judgments were not independently recorded; derived ratings are excluded.",
+        "Counts are answer components, not trials. Eligibility requires matching trial, domain, question and component. Exclusion reasons are mutually exclusive within each source comparison; paired contrasts use the intersection. ",
+        "Arm values use source-specific eligible components; paired differences use components evaluable in both arms and need not equal the difference between arm percentages. Differences are percentage points. Five-level coding keeps all answers separate; collapsed coding merges yes/probably yes and no/probably no, retaining no information. Pooled includes all five domains. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews.",
+        "Differences are ARBITER minus Direct prompting percentage points among components evaluable in both arms. Not evaluable indicates no paired components. Five-level coding keeps all answers separate; collapsed coding merges yes/probably yes and no/probably no, retaining no information. CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews. "
+      ],
+      "annotation_words": 662
+    }
+  },
+  "status": "PASS",
+  "annotation_words_before": 2014,
+  "annotation_words_after": 1289,
+  "percent_reduction": 36.0,
+  "scope": "Five figure captions; main and supplementary table titles and unique notes. Alt text and data cells excluded from word counts.",
+  "all_table_data_and_protected_estimates_unchanged": true,
+  "jama_source": "https://jamanetwork.com/journals/jama/pages/instructions-for-authors/",
+  "title_word_target": 15,
+  "jama_has_no_fixed_caption_word_limit": true
+}

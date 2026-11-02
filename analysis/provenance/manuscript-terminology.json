@@ -1,0 +1,25 @@
+{
+  "manuscript_source": "C:\\Users\\Ali-Salman\\.t3\\userdata\\attachments\\c1251e87-f6db-47be-b498-18106019dc96-b2a59ba9-75fe-4b53-80e1-e8ca1604d2af-txt.txt",
+  "manuscript_sha256": "d5ec321dd24575e3f1f6147a42259fbb4d2ef38e6f4472cf0682941189e4dd3f",
+  "approved_captions": {
+    "1": "Figure 1. The ARBITER assessment workflow. A language-model agent searches and reads captured trial documents, records answers and selects evidence. Software binds selected text to the captured extraction, applies the RoB 2 algorithms to propose ratings, and exports the assessment record. A reviewer may approve a proposed result in the general workflow. In the benchmark, the harness supplied the assigned target and the interactive approval step was not tested. The reviewer receives an HTML report and an audit file. In the audit-file box, 'source' refers to source identifiers and selected evidence; complete source files are not included. Binding identifies a location in the captured text; it does not establish that the passage supports the answer.",
+    "2": "Figure 2. Each answer is tied to stored sources, and RoB 2 rules compute the rating across every domain. AVATAR compares early surgery with watchful waiting in asymptomatic severe aortic stenosis; the outcome is all-cause death. This trial was chosen to illustrate the process, not as representative. Rows link paraphrased questions, source excerpts, AI answers, software checks and domain ratings. Letter/page tabs identify sources; \u201cWeighed against\u201d and \u201cOpen point\u201d give counter-evidence and unknowns. In this example, a No information answer about the dated analysis plan contributes to the overall judgment of Some concerns. Full answers and official question wording appear in the linked repository AVATAR answer and evidence records. Y, yes; PY, probably yes; PN, probably no; N, no; NI, no information. The footer compares the Published D5 label with the subsequent blinded D5 choices from both human reviews; it does not report independently rated Overall judgments. The example reproduces a model assessment; the displayed rationales were not independently validated. The illustrated P value is compatible with chance but does not itself establish that randomization was adequate. [23] The overall rule shown is simplified: multiple domains with Some concerns can justify an overall High judgment when they substantially lower confidence in the result. The illustrated trial has one Some concerns domain. [1]"
+  },
+  "caption_word_counts": {
+    "1": 115,
+    "2": 212
+  },
+  "new_estimates": false,
+  "manuscript_modified": false,
+  "table_cells_unchanged_except_approved_labels": true,
+  "raw_estimate_csvs_and_all_figure_files_unchanged": true,
+  "changed_existing_csvs": [
+    "analysis\\output\\tables\\display-table2.csv"
+  ],
+  "captions_match_supplied_manuscript": true,
+  "manuscript_unchanged": true,
+  "obsolete_identical_display_exports_removed": [
+    "analysis\\output\\tables\\display-supplement-agreement-with-independent-experts.csv",
+    "analysis\\output\\tables\\display-supplement-agreement-relative-to-inter-reviewer-agreement.csv"
+  ]
+}

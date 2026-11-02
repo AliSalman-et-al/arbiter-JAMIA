@@ -1,0 +1,141 @@
+source,label,count,n,percent,domain,analysis
+ARBITER,High,21,510,4.117647058823529,D1-D5,post hoc
+ARBITER,Low,375,510,73.52941176470588,D1-D5,post hoc
+ARBITER,Missing,0,510,0,D1-D5,post hoc
+ARBITER,Some concerns,114,510,22.352941176470587,D1-D5,post hoc
+Direct prompting,High,23,510,4.509803921568627,D1-D5,post hoc
+Direct prompting,Low,407,510,79.80392156862744,D1-D5,post hoc
+Direct prompting,Missing,0,510,0,D1-D5,post hoc
+Direct prompting,Some concerns,80,510,15.686274509803921,D1-D5,post hoc
+Human Review 1,High,70,510,13.72549019607843,D1-D5,post hoc
+Human Review 1,Low,277,510,54.31372549019608,D1-D5,post hoc
+Human Review 1,Missing,0,510,0,D1-D5,post hoc
+Human Review 1,Some concerns,163,510,31.96078431372549,D1-D5,post hoc
+Human Review 2,High,33,510,6.470588235294118,D1-D5,post hoc
+Human Review 2,Low,346,510,67.84313725490196,D1-D5,post hoc
+Human Review 2,Missing,0,510,0,D1-D5,post hoc
+Human Review 2,Some concerns,131,510,25.686274509803923,D1-D5,post hoc
+Published labels,High,14,510,2.7450980392156863,D1-D5,post hoc
+Published labels,Low,427,510,83.72549019607843,D1-D5,post hoc
+Published labels,Missing,0,510,0,D1-D5,post hoc
+Published labels,Some concerns,69,510,13.529411764705882,D1-D5,post hoc
+ARBITER,High,4,102,3.9215686274509802,D1,post hoc
+ARBITER,Low,83,102,81.37254901960785,D1,post hoc
+ARBITER,Missing,0,102,0,D1,post hoc
+ARBITER,Some concerns,15,102,14.705882352941176,D1,post hoc
+Direct prompting,High,2,102,1.9607843137254901,D1,post hoc
+Direct prompting,Low,82,102,80.3921568627451,D1,post hoc
+Direct prompting,Missing,0,102,0,D1,post hoc
+Direct prompting,Some concerns,18,102,17.647058823529413,D1,post hoc
+Human Review 1,High,4,102,3.9215686274509802,D1,post hoc
+Human Review 1,Low,75,102,73.52941176470588,D1,post hoc
+Human Review 1,Missing,0,102,0,D1,post hoc
+Human Review 1,Some concerns,23,102,22.54901960784314,D1,post hoc
+Human Review 2,High,5,102,4.901960784313726,D1,post hoc
+Human Review 2,Low,80,102,78.43137254901961,D1,post hoc
+Human Review 2,Missing,0,102,0,D1,post hoc
+Human Review 2,Some concerns,17,102,16.666666666666668,D1,post hoc
+Published labels,High,5,102,4.901960784313726,D1,post hoc
+Published labels,Low,84,102,82.3529411764706,D1,post hoc
+Published labels,Missing,0,102,0,D1,post hoc
+Published labels,Some concerns,13,102,12.745098039215685,D1,post hoc
+ARBITER,High,4,102,3.9215686274509802,D2,post hoc
+ARBITER,Low,82,102,80.3921568627451,D2,post hoc
+ARBITER,Missing,0,102,0,D2,post hoc
+ARBITER,Some concerns,16,102,15.686274509803921,D2,post hoc
+Direct prompting,High,5,102,4.901960784313726,D2,post hoc
+Direct prompting,Low,83,102,81.37254901960785,D2,post hoc
+Direct prompting,Missing,0,102,0,D2,post hoc
+Direct prompting,Some concerns,14,102,13.72549019607843,D2,post hoc
+Human Review 1,High,16,102,15.686274509803921,D2,post hoc
+Human Review 1,Low,71,102,69.6078431372549,D2,post hoc
+Human Review 1,Missing,0,102,0,D2,post hoc
+Human Review 1,Some concerns,15,102,14.705882352941176,D2,post hoc
+Human Review 2,High,4,102,3.9215686274509802,D2,post hoc
+Human Review 2,Low,86,102,84.31372549019608,D2,post hoc
+Human Review 2,Missing,0,102,0,D2,post hoc
+Human Review 2,Some concerns,12,102,11.764705882352942,D2,post hoc
+Published labels,High,1,102,0.9803921568627451,D2,post hoc
+Published labels,Low,86,102,84.31372549019608,D2,post hoc
+Published labels,Missing,0,102,0,D2,post hoc
+Published labels,Some concerns,15,102,14.705882352941176,D2,post hoc
+ARBITER,High,12,102,11.764705882352942,D3,post hoc
+ARBITER,Low,68,102,66.66666666666667,D3,post hoc
+ARBITER,Missing,0,102,0,D3,post hoc
+ARBITER,Some concerns,22,102,21.568627450980394,D3,post hoc
+Direct prompting,High,11,102,10.784313725490197,D3,post hoc
+Direct prompting,Low,78,102,76.47058823529412,D3,post hoc
+Direct prompting,Missing,0,102,0,D3,post hoc
+Direct prompting,Some concerns,13,102,12.745098039215685,D3,post hoc
+Human Review 1,High,46,102,45.09803921568628,D3,post hoc
+Human Review 1,Low,28,102,27.45098039215686,D3,post hoc
+Human Review 1,Missing,0,102,0,D3,post hoc
+Human Review 1,Some concerns,28,102,27.45098039215686,D3,post hoc
+Human Review 2,High,18,102,17.647058823529413,D3,post hoc
+Human Review 2,Low,55,102,53.92156862745098,D3,post hoc
+Human Review 2,Missing,0,102,0,D3,post hoc
+Human Review 2,Some concerns,29,102,28.431372549019606,D3,post hoc
+Published labels,High,5,102,4.901960784313726,D3,post hoc
+Published labels,Low,83,102,81.37254901960785,D3,post hoc
+Published labels,Missing,0,102,0,D3,post hoc
+Published labels,Some concerns,14,102,13.72549019607843,D3,post hoc
+ARBITER,High,1,102,0.9803921568627451,D4,post hoc
+ARBITER,Low,89,102,87.25490196078431,D4,post hoc
+ARBITER,Missing,0,102,0,D4,post hoc
+ARBITER,Some concerns,12,102,11.764705882352942,D4,post hoc
+Direct prompting,High,3,102,2.9411764705882355,D4,post hoc
+Direct prompting,Low,93,102,91.17647058823529,D4,post hoc
+Direct prompting,Missing,0,102,0,D4,post hoc
+Direct prompting,Some concerns,6,102,5.882352941176471,D4,post hoc
+Human Review 1,High,4,102,3.9215686274509802,D4,post hoc
+Human Review 1,Low,77,102,75.49019607843137,D4,post hoc
+Human Review 1,Missing,0,102,0,D4,post hoc
+Human Review 1,Some concerns,21,102,20.58823529411765,D4,post hoc
+Human Review 2,High,4,102,3.9215686274509802,D4,post hoc
+Human Review 2,Low,78,102,76.47058823529412,D4,post hoc
+Human Review 2,Missing,0,102,0,D4,post hoc
+Human Review 2,Some concerns,20,102,19.607843137254903,D4,post hoc
+Published labels,High,0,102,0,D4,post hoc
+Published labels,Low,93,102,91.17647058823529,D4,post hoc
+Published labels,Missing,0,102,0,D4,post hoc
+Published labels,Some concerns,9,102,8.823529411764707,D4,post hoc
+ARBITER,High,0,102,0,D5,post hoc
+ARBITER,Low,53,102,51.96078431372549,D5,post hoc
+ARBITER,Missing,0,102,0,D5,post hoc
+ARBITER,Some concerns,49,102,48.03921568627451,D5,post hoc
+Direct prompting,High,2,102,1.9607843137254901,D5,post hoc
+Direct prompting,Low,71,102,69.6078431372549,D5,post hoc
+Direct prompting,Missing,0,102,0,D5,post hoc
+Direct prompting,Some concerns,29,102,28.431372549019606,D5,post hoc
+Human Review 1,High,0,102,0,D5,post hoc
+Human Review 1,Low,26,102,25.49019607843137,D5,post hoc
+Human Review 1,Missing,0,102,0,D5,post hoc
+Human Review 1,Some concerns,76,102,74.50980392156863,D5,post hoc
+Human Review 2,High,2,102,1.9607843137254901,D5,post hoc
+Human Review 2,Low,47,102,46.07843137254902,D5,post hoc
+Human Review 2,Missing,0,102,0,D5,post hoc
+Human Review 2,Some concerns,53,102,51.96078431372549,D5,post hoc
+Published labels,High,3,102,2.9411764705882355,D5,post hoc
+Published labels,Low,81,102,79.41176470588235,D5,post hoc
+Published labels,Missing,0,102,0,D5,post hoc
+Published labels,Some concerns,18,102,17.647058823529413,D5,post hoc
+ARBITER,High,18,102,17.647058823529413,Overall,post hoc
+ARBITER,Low,40,102,39.21568627450981,Overall,post hoc
+ARBITER,Missing,0,102,0,Overall,post hoc
+ARBITER,Some concerns,44,102,43.13725490196079,Overall,post hoc
+Direct prompting,High,16,102,15.686274509803921,Overall,post hoc
+Direct prompting,Low,61,102,59.80392156862745,Overall,post hoc
+Direct prompting,Missing,0,102,0,Overall,post hoc
+Direct prompting,Some concerns,25,102,24.50980392156863,Overall,post hoc
+Human Review 1,High,0,102,0,Overall,post hoc
+Human Review 1,Low,0,102,0,Overall,post hoc
+Human Review 1,Missing,102,102,100,Overall,post hoc
+Human Review 1,Some concerns,0,102,0,Overall,post hoc
+Human Review 2,High,0,102,0,Overall,post hoc
+Human Review 2,Low,0,102,0,Overall,post hoc
+Human Review 2,Missing,102,102,100,Overall,post hoc
+Human Review 2,Some concerns,0,102,0,Overall,post hoc
+Published labels,High,17,102,16.666666666666668,Overall,post hoc
+Published labels,Low,42,102,41.1764705882353,Overall,post hoc
+Published labels,Missing,21,102,20.58823529411765,Overall,post hoc
+Published labels,Some concerns,22,102,21.568627450980394,Overall,post hoc

@@ -1,0 +1,44 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Post hoc group: D1-D5
+  Completed Human Review 1
+  Completed Human Review 2
+  Completed Published labels
+Post hoc group: D1
+  Completed Human Review 1
+  Completed Human Review 2
+  Completed Published labels
+Post hoc group: D2
+  Completed Human Review 1
+  Completed Human Review 2
+  Completed Published labels
+Post hoc group: D3
+  Completed Human Review 1
+  Completed Human Review 2
+  Completed Published labels
+Post hoc group: D4
+  Completed Human Review 1
+  Completed Human Review 2
+  Completed Published labels
+Post hoc group: D5
+  Completed Human Review 1
+  Completed Human Review 2
+  Completed Published labels
+Post hoc group: Overall
+  Completed Human Review 1
+  Completed Human Review 2
+  Completed Published labels

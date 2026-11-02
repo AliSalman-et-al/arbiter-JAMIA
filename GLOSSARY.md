@@ -8,7 +8,7 @@ Terms for the ARBITER JAMIA benchmark analysis.
 
 **ARBITER arm**: A model run that uses the ARBITER MCP server and the arbiter-assess skill. The data files call it "kit". The manuscript reports one ARBITER arm, ARBITER-Sonnet. The Haiku arms exist in the data but are not reported anywhere.
 
-**Baseline arm**: A model run with the same trial files but without ARBITER, given a minimal prompt (the task sentence and one output-format sentence, no RoB 2 guidance). The data files call it "no-kit".
+**Direct prompting**: A model run with the same trial files but without ARBITER, given a minimal prompt (the task sentence and one output-format sentence, no RoB 2 guidance). The data files call it "no-kit".
 
 **Meta label**: The published RoB 2 judgement for a trial, taken from the source meta-analysis. The data files call it "human". Do not call it "the human label" or "ground truth".
 
@@ -53,9 +53,9 @@ _Avoid_: preferred judgement
 
 **Disagreement with Published**: A cell where a source's label differs from the meta label. Do not call it a "departure".
 
-**Direction of disagreement**: Whether a source's label is stricter (more severe) or more lenient (less severe) than the published label for the same cell, on Low < Some concerns < High. The literature calls a model's stricter labels "over-flagging". Use "stricter" and "more lenient" in outputs, never "over-flagging" or "under-flagging", because those words assume the published label is right.
+**Direction of disagreement**: Whether a source's label is stricter (more severe) or more lenient (less severe) than the published label for the same cell, on Low < Some concerns < High. The literature calls a model's stricter labels "over-flagging". Use "more severe" and "less severe" in outputs, never "over-flagging" or "under-flagging", because those words assume the published label is right.
 
-**Rules-only recomputation**: The unassisted arm's labels with every algorithm violation replaced by the label the official algorithm gives from that arm's own signalling answers. It tests whether correcting inconsistent final labels closes the observed agreement gap; it does not isolate the causal contribution of ARBITER's rule engine. Invalid answer paths and missing ratings remain unchanged. Do not call it "Unassisted with ARBITER".
+**Rules-only recomputation**: The unassisted arm's labels with every algorithm violation replaced by the label the official algorithm gives from that arm's own signalling answers. It tests whether correcting inconsistent final labels closes the observed agreement gap; it does not isolate the causal contribution of ARBITER's rule engine. Invalid answer paths and missing ratings remain unchanged. Do not call it "Direct prompting with ARBITER".
 
 **Quotation found**: A quotation whose text exists in ARBITER's stored copy of the cited source. It does not mean the quotation supports the answer. Use "found in the stored source", never "supported by evidence".
 
@@ -70,7 +70,7 @@ These are the labels used in manuscript text, figures and tables. The internal t
 | Internal term | Main text | Supplement |
 |---|---|---|
 | ARBITER-Sonnet | ARBITER | ARBITER |
-| Baseline-Sonnet | Unassisted | Unassisted |
+| Baseline-Sonnet | Direct prompting | Direct prompting |
 | Meta label | Published label | Published label |
 | All-Low rule | All-Low rule | All-Low rule |
 | Human assessment (file -1 / -2) | Human Review 1 / 2 | Human Review 1 / 2 |
@@ -86,8 +86,8 @@ These are the labels used in manuscript text, figures and tables. The internal t
 | Departure | Any rule break | Any rule break |
 | Overall consistent or permitted escalation | Overall rating follows the RoB 2 rules (incl. permitted escalation) | Overall follows the RoB 2 rules; escalation reported separately |
 | Split cells | Human reviewers split | Human reviewers split |
-| Direction of disagreement | stricter / more lenient than the published label | stricter / more lenient than the published label |
-| Rules-only recomputation | Unassisted ratings recomputed from its own answers | Unassisted ratings recomputed from its own answers |
+| Direction of disagreement | more severe / less severe than the published label | more severe / less severe than the published label |
+| Rules-only recomputation | Direct prompting ratings recomputed from its own answers | Direct prompting ratings recomputed from its own answers |
 | Quotation found | quotation found in the stored source | quotation found in the stored source |
 
 ## Outcome status and legacy identifiers
@@ -97,3 +97,15 @@ These are the labels used in manuscript text, figures and tables. The internal t
 **Conditional blinded-label choice**: The label-match share among arm-discordant cells, restricted to equal human reviewer choices for the agreed-choice estimate. Review-specific and split-loss sensitivities retain their original eligibility and scoring. It is preference among offered labels, not accuracy.
 
 **Legacy analysis keys**: `primary-endpoint.csv` and module `secondary.R` are retained identifiers. Their names confer no scientific status. The RoB 2 question identifier `selection:prespecified-analysis` concerns the assessed trial's analysis plan and is unrelated to this evaluation's planning chronology.
+
+## Manuscript terminology
+
+**Human review**: An independent risk-of-bias assessment. The named references are Human Review 1 and Human Review 2; a human reviewer is the person performing an assessment.
+_Avoid_: expert review, adjudication for independent assessments
+
+**Structural verification**: A check that an assessment record contains the required fields and satisfies the specified structural requirements. It does not establish whether cited evidence supports an answer.
+_Avoid_: evidence validation, verified support
+
+**Assessment record**: The record linking a rating to its signalling answers, reasoning and cited evidence. A source identifier or selected passage in the record is distinct from a complete source document.
+
+**Blinded label choices**: Reviewers' choices among anonymized, randomly ordered labels without source identities or rationales. Agreement with a chosen label is distinct from accuracy against an established true rating.

@@ -1,0 +1,40 @@
+metric,estimate,lower,upper,valid_replicates,domain,reference,source,n,excluded_reference,missing_prediction,count,analysis
+accuracy,,,,0,Overall,Human Review 1,ARBITER,0,102,0,0,post hoc
+kappa,,,,0,Overall,Human Review 1,ARBITER,0,102,0,,post hoc
+AC2,,,,0,Overall,Human Review 1,ARBITER,0,102,0,,post hoc
+accuracy,,,,0,Overall,Human Review 1,Direct prompting,0,102,0,0,post hoc
+kappa,,,,0,Overall,Human Review 1,Direct prompting,0,102,0,,post hoc
+AC2,,,,0,Overall,Human Review 1,Direct prompting,0,102,0,,post hoc
+accuracy,,,,0,Overall,Human Review 1,All-Low,0,102,0,0,post hoc
+kappa,,,,0,Overall,Human Review 1,All-Low,0,102,0,,post hoc
+AC2,,,,0,Overall,Human Review 1,All-Low,0,102,0,,post hoc
+accuracy,,,,0,Overall,Human Review 1,ARBITER minus Direct prompting,0,102,,,post hoc
+kappa,,,,0,Overall,Human Review 1,ARBITER minus Direct prompting,0,102,,,post hoc
+AC2,,,,0,Overall,Human Review 1,ARBITER minus Direct prompting,0,102,,,post hoc
+accuracy,,,,0,Overall,Human Review 2,ARBITER,0,102,0,0,post hoc
+kappa,,,,0,Overall,Human Review 2,ARBITER,0,102,0,,post hoc
+AC2,,,,0,Overall,Human Review 2,ARBITER,0,102,0,,post hoc
+accuracy,,,,0,Overall,Human Review 2,Direct prompting,0,102,0,0,post hoc
+kappa,,,,0,Overall,Human Review 2,Direct prompting,0,102,0,,post hoc
+AC2,,,,0,Overall,Human Review 2,Direct prompting,0,102,0,,post hoc
+accuracy,,,,0,Overall,Human Review 2,All-Low,0,102,0,0,post hoc
+kappa,,,,0,Overall,Human Review 2,All-Low,0,102,0,,post hoc
+AC2,,,,0,Overall,Human Review 2,All-Low,0,102,0,,post hoc
+accuracy,,,,0,Overall,Human Review 2,ARBITER minus Direct prompting,0,102,,,post hoc
+kappa,,,,0,Overall,Human Review 2,ARBITER minus Direct prompting,0,102,,,post hoc
+AC2,,,,0,Overall,Human Review 2,ARBITER minus Direct prompting,0,102,,,post hoc
+accuracy,0.5802469135802469,0.49382716049382713,0.6666666666666666,10000,Overall,Published labels,ARBITER,81,21,0,47,post hoc
+kappa,0.440363636363636,0.31907327222365395,0.5582829370153941,10000,Overall,Published labels,ARBITER,81,21,0,,post hoc
+AC2,0.4950235152575741,0.39130845859491464,0.5988529250046076,10000,Overall,Published labels,ARBITER,81,21,0,,post hoc
+accuracy,0.5925925925925926,0.5061728395061729,0.6790123456790124,10000,Overall,Published labels,Direct prompting,81,21,0,48,post hoc
+kappa,0.4242424242424239,0.27311744049941467,0.5616959300838211,10000,Overall,Published labels,Direct prompting,81,21,0,,post hoc
+AC2,0.531886849842847,0.43033005695291593,0.6357857198232421,10000,Overall,Published labels,Direct prompting,81,21,0,,post hoc
+accuracy,0.5185185185185185,0.4444444444444444,0.5925925925925926,10000,Overall,Published labels,All-Low,81,21,0,42,post hoc
+kappa,0,0,0,10000,Overall,Published labels,All-Low,81,21,0,,post hoc
+AC2,0.48529606445146284,0.367022662151602,0.5968371075065747,10000,Overall,Published labels,All-Low,81,21,0,,post hoc
+accuracy,-0.012345679012345623,-0.11111111111111116,0.0864197530864198,10000,Overall,Published labels,ARBITER minus Direct prompting,81,21,,,post hoc
+kappa,0.016121212121212092,-0.11460865882659528,0.1568709508088255,10000,Overall,Published labels,ARBITER minus Direct prompting,81,21,,,post hoc
+AC2,-0.036863334585272856,-0.15602855544165292,0.08756107213514873,10000,Overall,Published labels,ARBITER minus Direct prompting,81,21,,,post hoc
+accuracy,,,,0,Overall,Human Review 2,Human Review 1,0,102,0,0,post hoc
+kappa,,,,0,Overall,Human Review 2,Human Review 1,0,102,0,,post hoc
+AC2,,,,0,Overall,Human Review 2,Human Review 1,0,102,0,,post hoc

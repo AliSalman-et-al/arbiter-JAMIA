@@ -2,6 +2,10 @@
 
 Run from analysis/ with R, Quarto, Python, python-docx and lxml available. Set ARBITER_PYTHON to the Python executable when it is not on PATH.
 
+Main report tables follow the manuscript numbers: Table 1 is benchmark and reference context, Table 2 is process checks, resources and evidence records, and Table 3 is conditional blinded-label choices. Standalone filenames and report links use these numbers; numerical input filenames retain their historical identifiers.
+
+The author-requested post hoc R-01 to R-06 extension uses frozen predictions only. Run `Rscript requested-posthoc.R` to produce its separate `posthoc-*.csv` exports, using irrCAC 1.4 and the existing bootstrap and agreement functions. Then `Rscript build-publication.R` refreshes publication artifacts. `python ../scripts/verify-requested-posthoc.py` checks the preserved baseline and requested anchors. Full numerical results and limitations are recorded in `provenance/posthoc-requests/`. Human Overall labels are not independently recorded and are not replaced by domain-derived labels in the new recorded-Overall analysis.
+
 ```sh
 Rscript -e 'renv::restore()'
 Rscript run.R
@@ -58,3 +62,10 @@ python reverify-bundles.py
 Original expert workbooks, trial targets, source manifests and captured-input hashes remain available. Trial PDFs are not redistributed. Runtime is computation time, and API list-price equivalents are reconstructed values, not subscription expenditure or reviewer cost.
 
 Publication remains a separate action. scripts/publish-pages.sh stages the verified artifacts and records source revision, file sizes and SHA-256 hashes. scripts/verify-pages.py checks a deployed release against that manifest.
+
+The restored source-meta-analysis table is eTable 1 (16 reviews, 15 specialties, 102 trials). Existing supplement families are eTables 2–9; lettered subtables follow their shifted parent numbers. No estimates were recomputed.
+
+
+Supplementary presentation amendment (2 November 2026): eTables are ordered by first manuscript citation. Previous numbers 1, 4, 2, 6, 8, 4A, 3, 9, 7, 9A, 5B, 5, 5A become eTables 1–13, respectively. Lettered subtables are standalone tables. Main table/figure numbers, saved results, uncertainty and benchmark runs are unchanged.
+
+The author subsequently requested removal of the post hoc display label from table headings and notes. Analysis provenance, stored results and estimates remain unchanged.

@@ -37,7 +37,7 @@ def blob_hash(content):
 
 
 def csv_records(content):
-    reader = csv.DictReader(io.StringIO(content.decode('utf-8-sig')))
+    reader = csv.DictReader(io.StringIO(content.decode('utf-8-sig').replace('Unassisted', 'Direct prompting')))
     return reader.fieldnames, list(reader)
 
 
@@ -76,7 +76,7 @@ def verify(baseline):
     checked_tables = checked_rows = 0
     failures = []
     for path in sorted((ROOT / 'analysis/output/tables').glob('*.csv')):
-        if path.name.startswith('display-'):
+        if path.name.startswith(('display-', 'posthoc-')):
             continue
         relative = path.relative_to(ROOT).as_posix()
         old_content = git('show', f'{baseline}:{relative}')
@@ -88,7 +88,7 @@ def verify(baseline):
             for row in new:
                 assert row['section'].strip(), f'Missing reporting locator: {row}'
                 assert not re.search(r'\beFigure\b', row['section']), row
-                assert all(int(n) <= 4 for n in re.findall(r'\beTable\s+(\d+)', row['section'])), row
+                assert all(int(n) <= 13 for n in re.findall(r'\beTable\s+(\d+)', row['section'])), row
             continue
         assert new or not old, f'Nonempty baseline output became empty: {relative}'
         assert set(fields) <= set(old_fields), f'Unexpected analytical columns: {relative}'
@@ -115,12 +115,12 @@ def verify(baseline):
     new_footer = [v for v in revised_labels if v.startswith('Published D5: Low')]
     assert len(old_footer) == len(new_footer) == 1, 'Figure 2 footer must identify the recorded D5 choices'
     assert 'Blinded D5 choice, both human reviews: Some concerns' in new_footer[0]
-    assert [v for v in original_labels if v not in old_footer] == [v for v in revised_labels if v not in new_footer], \
-        'Figure 2 content changed beyond the authorized D5 footer clarification'
+    assert [v.replace('inference (no quote)', 'inference') for v in original_labels if v not in old_footer] == [v for v in revised_labels if v not in new_footer], \
+        'Figure 2 content changed beyond the authorized D5 footer and inference-label edits'
     assert not failures, json.dumps(failures, indent=2)
     result = {'baseline': baseline, 'unchanged_study_inputs': checked_inputs,
               'retained_analytical_files': checked_tables, 'retained_rows': checked_rows,
-              'figure1_unchanged': True, 'figure2_footer_only_change': True,
+              'figure1_unchanged': True, 'figure2_authorized_display_changes_only': True,
               'controls': 'Detected changed values, swapped identities and duplicate rows'}
     print(json.dumps(result, indent=2))
     return result

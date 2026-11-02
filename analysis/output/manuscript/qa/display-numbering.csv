@@ -5,11 +5,18 @@ Figure,3,Paired evaluation and conditional choice
 Figure,4,Absolute and paired domain agreement
 Figure,5,Paired signalling diagnostics
 Table,1,Benchmark and reference context
-Table,2,Conditional blinded-label choices
-Table,3,Process and resources
-eTable,1,Benchmark targets and sources
-eTable,2,Agreement with Published labels
-eTable,3,Agreement with independent human reviewers
-eTable,4,Category distributions and disagreements
-eTable,5,Exploratory diagnostic checks
-eTable,6,Signalling agreement and eligibility
+Table,2,Process and resources
+Table,3,Conditional blinded-label choices
+eTable,1,Source meta-analyses and benchmark composition
+eTable,2,Pooled distribution of domain ratings
+eTable,3,Agreement with independent human reviews
+eTable,4,Agreement under four metrics
+eTable,5,Model agreement relative to human agreement
+eTable,6,Pooled category disagreements
+eTable,7,Agreement with Published labels
+eTable,8,Distribution of ratings by source
+eTable,9,Overall judgment agreement
+eTable,10,Overall judgment availability
+eTable,11,Signalling eligibility counts
+eTable,12,Signalling-answer agreement
+eTable,13,Paired signalling-answer differences by question

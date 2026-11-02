@@ -19,6 +19,9 @@ from lxml import html
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'analysis/output/manuscript'
 BASE = 'https://alisalman-et-al.github.io/arbiter-JAMIA/'
+metadata_spec = importlib.util.spec_from_file_location('manuscript_sources', ROOT / 'scripts/manuscript-sources.py')
+metadata = importlib.util.module_from_spec(metadata_spec)
+metadata_spec.loader.exec_module(metadata)
 
 
 def normalized(text):
@@ -58,7 +61,7 @@ def build():
                         f'--output={target}'], check=True)
         doc = Document(target)
         assert len(doc.tables) == 3
-        for i, table in enumerate(list(doc.tables), 1):
+        for i, table in zip(metadata.MAIN_TABLE_NUMBERS, list(doc.tables)):
             native = Document(OUT / f'Table{i}.docx').tables[0]
             table._tbl.getparent().replace(table._tbl, deepcopy(native._tbl))
         for section in doc.sections:
@@ -107,7 +110,7 @@ def build():
         spec = importlib.util.spec_from_file_location('refresh', ROOT / 'scripts/report-refresh.py')
         refresh = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(refresh)
-        expected = [cells for i in range(1, 4) for cells in refresh.word_cells(OUT / f'Table{i}.docx')]
+        expected = [cells for i in refresh.metadata.MAIN_TABLE_NUMBERS for cells in refresh.word_cells(OUT / f'Table{i}.docx')]
         assert refresh.word_cells(target) == expected, 'Exported table cells differ'
         written = Document(target)
         text = normalized(' '.join(p.text for p in written.paragraphs))

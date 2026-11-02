@@ -1,6 +1,6 @@
 arm,status,n
 ARBITER (Sonnet 5.5),Consistent,510
-Unassisted (Sonnet 5.5),Consistent,444
-Unassisted (Sonnet 5.5),Required question skipped,39
-Unassisted (Sonnet 5.5),Not evaluable,1
-Unassisted (Sonnet 5.5),Rating contradicts its own answers,26
+Direct prompting (Sonnet 5.5),Consistent,444
+Direct prompting (Sonnet 5.5),Required question skipped,39
+Direct prompting (Sonnet 5.5),Not evaluable,1
+Direct prompting (Sonnet 5.5),Rating contradicts its own answers,26

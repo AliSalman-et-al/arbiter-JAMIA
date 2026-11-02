@@ -1,6 +1,11 @@
-CI_NOTE <- 'CI, 95% confidence interval; 10,000 percentile bootstrap replicates, trials resampled within meta-analysis; seed 20261018.'
+CI_NOTE <- 'CI, confidence interval. Intervals use 10,000 percentile bootstrap resamples of trials within reviews.'
 read_display <- function(name) {
   x <- readr::read_csv(paste0('output/tables/',name,'.csv'),show_col_types=FALSE)
+  # Preserve legacy internal identifiers when reading renamed display exports.
+  if(!startsWith(name,'posthoc-')) {
+    for(k in names(x)) if(is.character(x[[k]])) x[[k]] <- gsub('Direct prompting','Unassisted',x[[k]],fixed=TRUE)
+    names(x) <- gsub('Direct prompting','Unassisted',names(x),fixed=TRUE)
+  }
   if('adjudicator' %in% names(x)) x$adjudicator <- as.character(x$adjudicator)
   x
 }
@@ -13,7 +18,9 @@ write_display_trace <- function() {
     tibble(file=name,row=rep(seq_len(nrow(x)),times=ncol(x)),
       column=rep(names(x),each=nrow(x)),value=unlist(lapply(x,as.character),use.names=FALSE))
   })
-  readr::write_csv(bind_rows(trace),'output/tables/display-source-trace.csv',na='')
+  trace <- bind_rows(trace) |> mutate(value=gsub('Unassisted','Direct prompting',value,fixed=TRUE),
+    column=gsub('Unassisted','Direct prompting',column,fixed=TRUE))
+  readr::write_csv(trace,'output/tables/display-source-trace.csv',na='')
 }
 characteristics_table <- function(inputs) {
   sev <- read_display('severity-distribution')
@@ -22,7 +29,7 @@ characteristics_table <- function(inputs) {
   rows <- read_display('benchmark-characteristics') |> transmute(Characteristic=characteristic,Value=as.character(count))
   rows <- bind_rows(rows,docs |> group_by(document_type) |> summarise(count=sum(available),n=n(),.groups='drop') |>
     transmute(Characteristic=paste('Trials with',recode(document_type,sap='SAP')),Value=fmt_fraction(count,n)))
-  for(pop in 'D1-D5') for(src in c('Published','ARBITER','Unassisted','Expert 1','Expert 2')) {
+  for(pop in 'D1-D5') for(src in c('Expert 1','Expert 2','Published','ARBITER','Unassisted')) {
     x <- filter(sev,population==pop,source==src) |> arrange(match(label,LABELS))
     rows <- bind_rows(rows,tibble(Characteristic=paste(if(pop=='D1-D5') 'D1–D5' else pop,src,sep=': '),
       Value=paste(paste0(x$label,': ',fmt_fraction(x$count,x$n)),collapse='; ')))
@@ -35,7 +42,7 @@ characteristics_table <- function(inputs) {
 }
 benchmark_context_table <- function(inputs) {
   x <- characteristics_table(inputs)
-  x |> filter(!grepl('Overall|Expert-to-expert|D1–D5: (ARBITER|Unassisted)',Characteristic))
+  x |> filter(!grepl('Overall|Expert-to-expert',Characteristic))
 }
 # Legacy reader name and CSV key retained for provenance; conditional choices only.
 primary_endpoint_table <- function() {
@@ -44,32 +51,38 @@ primary_endpoint_table <- function() {
     `ARBITER, No./total (%) (95% CI)`=fmt_estimate(x,TRUE))
 }
 process_integrity_table <- function() {
-  x <- main_table3() |> select(Measure,ARBITER,Unassisted) |>
+  source_rows <- main_table3() |> select(Measure,ARBITER,Unassisted)
+  x <- source_rows |>
     filter(!grepl('^D[1-5] rule|^Overall|^Domain ratings|^Evidence and audit',Measure)) |>
     mutate(Measure=sub('supporting passage','passage',Measure,fixed=TRUE))
   p <- read_display('table5')[1:2,] |> mutate(across(where(is.character),fmt_process_text))
   names(p) <- c('Measure','ARBITER','Unassisted','Paired mean difference (95% CI)')
   p$Measure <- c('Runtime (minutes/trial), median (IQR)','API list-price equivalent (US$/trial), median (IQR)')
+  evidence <- source_rows[4:7,]
+  evidence$Measure <- c('Active required answers citing evidence','Text spans with complete binding fields',
+    'Image records with complete fields','Exported records passing structural verification')
   bind_rows(tibble(Measure='A. Rule conformance',ARBITER='',Unassisted=''),
     tibble(Measure='Domain outputs reproduced from proposals',ARBITER='510/510 (100.0%)',Unassisted='Not available'),x[1:3,],
-    tibble(Measure='B. Computational resources',ARBITER='',Unassisted=''),p) |>
+    tibble(Measure='B. Computational resources',ARBITER='',Unassisted=''),p,
+    tibble(Measure='C. Evidence records (ARBITER only)',ARBITER='',Unassisted=''),evidence) |>
     mutate(across(everything(),~replace_na(.x,'')),
-      `Paired mean difference (95% CI)`=if_else(`Paired mean difference (95% CI)`=='' & !grepl('^[AB][.]',Measure),'—',`Paired mean difference (95% CI)`))
+      `Paired mean difference (95% CI)`=if_else(`Paired mean difference (95% CI)`=='' & !grepl('^[ABC][.]',Measure),'—',`Paired mean difference (95% CI)`))
 }
 build_main_tables <- function(inputs,table_numbers=1:3) {
   dir.create('output/manuscript/qa',recursive=TRUE,showWarnings=FALSE)
   table2 <- primary_endpoint_table()
   tables <- list(benchmark_context_table(inputs),table2,process_integrity_table())
-  titles <- c('Benchmark and reference context','Conditional blinded-label choices and sensitivities',
+  titles <- c('Benchmark and reference context','Blinded label choices',
     'Process checks and computational resources')
-  notes <- c('Reference categories are Low, Some concerns and High; each reference contributes 510 domain cells. Document counts are trials with each role recorded in the source inventory among 102 trials; roles can overlap. SAP, statistical analysis plan. Reference distributions and separate expert agreement appear in the compact supplement.',
-    paste('Conditional blinded-label choice evaluation includes 80 arm-discordant cells and the 60 for which the experts made an agreed choice; 20 choices split. Expert-specific sensitivities use all 80. The final row counts all 20 splits against ARBITER by assumption, without assigning Unassisted wins. Expert 1 chose neither arm in 4/80 cells; this is distinct from the split-loss assumption.',CI_NOTE),
-    paste('Unassisted rule-break cells show No./total (%; 95% CI); CI bounds are percentages. Domain rules use evaluable ratings (ARBITER 510; Unassisted 509); one Unassisted cell is unevaluable. ARBITER has no recorded domain overrides; one Overall escalation is permitted. Runtime and API list-price equivalents use 102 paired trials; source summaries are median (IQR), contrasts are paired mean differences. Cost is a frozen-rate equivalent, not expenditure. — means not applicable; Not available means not measured.',CI_NOTE))
+  notes <- c('SAP, statistical analysis plan. Each source contributes 510 domain cells. Document counts are among 102 trials; document types overlap.',
+    paste('Choices were evaluated in 80 cells where arms differed; 60 had agreed reviewer choices and 20 split. Review-specific rows use all 80. The final row counts every split against ARBITER without crediting Direct prompting. Human Review 1 chose neither arm in 4 of 80 cells.',CI_NOTE),
+    paste('API, application programming interface; IQR, interquartile range. Rule checks include 510 ARBITER and 509 Direct prompting cells; one Direct prompting cell was unevaluable. ARBITER had no domain overrides and one Overall escalation. Resource summaries include 102 paired trials. API list-price equivalents are not expenditure. Evidence-record checks do not assess whether evidence supports an answer. A dash indicates not applicable; Not available, not measured.',CI_NOTE))
   readr::write_csv(display_numbering(),'output/manuscript/qa/display-numbering.csv')
   for(i in table_numbers) {
-    x <- reader_table(tables[[i]]);readr::write_csv(x,paste0('output/tables/display-table',i,'.csv'),na='')
-    doc <- manuscript_doc() |> manuscript_par(paste0('Table ',i,' ',titles[i]),style='heading 1')
-    tab <- house_table(x,notes[i],6.85)
+    j <- c('1'=1L,'2'=3L,'3'=2L)[as.character(i)]
+    x <- reader_table(tables[[j]]);readr::write_csv(x,paste0('output/tables/display-table',i,'.csv'),na='')
+    doc <- manuscript_doc() |> manuscript_par(paste0('Table ',i,' ',titles[j]),style='heading 1')
+    tab <- house_table(x,notes[j],6.85)
     writeLines(gt::as_raw_html(tab,inline_css=FALSE),paste0('output/manuscript/qa/Table',i,'.html'))
     doc <- add_gt(doc,tab)
     save_manuscript_doc(doc,paste0('output/manuscript/Table',i,'.docx'))

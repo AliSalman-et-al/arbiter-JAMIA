@@ -1,0 +1,10 @@
+{
+  "main_table_mapping": {
+    "2": 1,
+    "3": 2,
+    "4": 3
+  },
+  "all_table_cells_preserved": true,
+  "etable_numbers_unchanged": true,
+  "numerical_exports_unchanged": true
+}

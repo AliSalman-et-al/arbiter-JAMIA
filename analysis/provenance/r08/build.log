@@ -1,0 +1,101 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Finalized three main tables, supplement and reporting map.
+pandoc 
+  to: html
+  output-file: results.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  css:
+    - ../scripts/manuscript.css
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  knitr:
+    opts_chunk:
+      results: asis
+  title: ARBITER main manuscript analysis
+  
+Output created: results.html
+
+pandoc 
+  to: html
+  output-file: supplement.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  css:
+    - ../scripts/manuscript.css
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  knitr:
+    opts_chunk:
+      results: asis
+  title: ARBITER supplementary methods and results
+  
+Output created: supplement.html
+
+Traceback (most recent call last):
+  File "C:\Users\Ali-Salman\Documents\Analysis\arbiter-JAMIA\scripts\build-results-word.py", line 125, in <module>
+    build()
+  File "C:\Users\Ali-Salman\Documents\Analysis\arbiter-JAMIA\scripts\build-results-word.py", line 62, in build
+    native = Document(OUT / f'Table{i}.docx').tables[0]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ALI-SA~1\CACHE~1\CODEX-~1\CODEX-~2\DEPEND~1\python\Lib\site-packages\docx\api.py", line 27, in Document
+    document_part = cast("DocumentPart", Package.open(docx).main_document_part)
+                                         ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ALI-SA~1\CACHE~1\CODEX-~1\CODEX-~2\DEPEND~1\python\Lib\site-packages\docx\opc\package.py", line 126, in open
+    pkg_reader = PackageReader.from_file(pkg_file)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ALI-SA~1\CACHE~1\CODEX-~1\CODEX-~2\DEPEND~1\python\Lib\site-packages\docx\opc\pkgreader.py", line 22, in from_file
+    phys_reader = PhysPkgReader(pkg_file)
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ALI-SA~1\CACHE~1\CODEX-~1\CODEX-~2\DEPEND~1\python\Lib\site-packages\docx\opc\phys_pkg.py", line 76, in __init__
+    self._zipf = ZipFile(pkg_file, "r")
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ALI-SA~1\CACHE~1\CODEX-~1\CODEX-~2\DEPEND~1\python\Lib\zipfile\__init__.py", line 1353, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Ali-Salman\\Documents\\Analysis\\arbiter-JAMIA\\analysis\\output\\manuscript\\Table1.docx'
+Traceback (most recent call last):
+  File "C:\Users\Ali-Salman\Documents\Analysis\arbiter-JAMIA\scripts\report-refresh.py", line 212, in <module>
+    build()
+  File "C:\Users\Ali-Salman\Documents\Analysis\arbiter-JAMIA\scripts\report-refresh.py", line 197, in build
+    run(sys.executable, ROOT / 'scripts/build-results-word.py')
+  File "C:\Users\Ali-Salman\Documents\Analysis\arbiter-JAMIA\scripts\report-refresh.py", line 29, in run
+    subprocess.run([str(arg) for arg in args], cwd=ANALYSIS, check=True)
+  File "C:\Users\ALI-SA~1\CACHE~1\CODEX-~1\CODEX-~2\DEPEND~1\python\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\ALI-SA~1\\CACHE~1\\CODEX-~1\\CODEX-~2\\DEPEND~1\\python\\python.exe', 'C:\\Users\\Ali-Salman\\Documents\\Analysis\\arbiter-JAMIA\\scripts\\build-results-word.py']' returned non-zero exit status 1.
+Error: system2(python, c("../scripts/report-refresh.py")) == 0L is not TRUE
+Execution halted

@@ -3,12 +3,12 @@ D1,High,High,4,1,ARBITER
 D1,Low,Low,75,1,ARBITER
 D1,Some concerns,Low,8,1,ARBITER
 D1,Some concerns,Some concerns,15,1,ARBITER
-D1,High,High,2,1,Unassisted
-D1,High,Low,1,1,Unassisted
-D1,High,Some concerns,1,1,Unassisted
-D1,Low,Low,75,1,Unassisted
-D1,Some concerns,Low,6,1,Unassisted
-D1,Some concerns,Some concerns,17,1,Unassisted
+D1,High,High,2,1,Direct prompting
+D1,High,Low,1,1,Direct prompting
+D1,High,Some concerns,1,1,Direct prompting
+D1,Low,Low,75,1,Direct prompting
+D1,Some concerns,Low,6,1,Direct prompting
+D1,Some concerns,Some concerns,17,1,Direct prompting
 D1,High,High,1,1,Published
 D1,High,Low,3,1,Published
 D1,Low,High,1,1,Published
@@ -26,15 +26,15 @@ D2,Low,Some concerns,3,1,ARBITER
 D2,Some concerns,High,1,1,ARBITER
 D2,Some concerns,Low,10,1,ARBITER
 D2,Some concerns,Some concerns,4,1,ARBITER
-D2,High,High,2,1,Unassisted
-D2,High,Low,9,1,Unassisted
-D2,High,Some concerns,5,1,Unassisted
-D2,Low,High,2,1,Unassisted
-D2,Low,Low,62,1,Unassisted
-D2,Low,Some concerns,7,1,Unassisted
-D2,Some concerns,High,1,1,Unassisted
-D2,Some concerns,Low,12,1,Unassisted
-D2,Some concerns,Some concerns,2,1,Unassisted
+D2,High,High,2,1,Direct prompting
+D2,High,Low,9,1,Direct prompting
+D2,High,Some concerns,5,1,Direct prompting
+D2,Low,High,2,1,Direct prompting
+D2,Low,Low,62,1,Direct prompting
+D2,Low,Some concerns,7,1,Direct prompting
+D2,Some concerns,High,1,1,Direct prompting
+D2,Some concerns,Low,12,1,Direct prompting
+D2,Some concerns,Some concerns,2,1,Direct prompting
 D2,High,High,1,1,Published
 D2,High,Low,9,1,Published
 D2,High,Some concerns,6,1,Published
@@ -48,12 +48,12 @@ D3,Low,Low,27,1,ARBITER
 D3,Low,Some concerns,1,1,ARBITER
 D3,Some concerns,Low,24,1,ARBITER
 D3,Some concerns,Some concerns,4,1,ARBITER
-D3,High,High,11,1,Unassisted
-D3,High,Low,24,1,Unassisted
-D3,High,Some concerns,11,1,Unassisted
-D3,Low,Low,26,1,Unassisted
-D3,Low,Some concerns,2,1,Unassisted
-D3,Some concerns,Low,28,1,Unassisted
+D3,High,High,11,1,Direct prompting
+D3,High,Low,24,1,Direct prompting
+D3,High,Some concerns,11,1,Direct prompting
+D3,Low,Low,26,1,Direct prompting
+D3,Low,Some concerns,2,1,Direct prompting
+D3,Some concerns,Low,28,1,Direct prompting
 D3,High,High,5,1,Published
 D3,High,Low,30,1,Published
 D3,High,Some concerns,11,1,Published
@@ -67,14 +67,14 @@ D4,Low,Low,76,1,ARBITER
 D4,Low,Some concerns,1,1,ARBITER
 D4,Some concerns,Low,12,1,ARBITER
 D4,Some concerns,Some concerns,9,1,ARBITER
-D4,High,High,1,1,Unassisted
-D4,High,Low,1,1,Unassisted
-D4,High,Some concerns,2,1,Unassisted
-D4,Low,Low,76,1,Unassisted
-D4,Low,Some concerns,1,1,Unassisted
-D4,Some concerns,High,2,1,Unassisted
-D4,Some concerns,Low,16,1,Unassisted
-D4,Some concerns,Some concerns,3,1,Unassisted
+D4,High,High,1,1,Direct prompting
+D4,High,Low,1,1,Direct prompting
+D4,High,Some concerns,2,1,Direct prompting
+D4,Low,Low,76,1,Direct prompting
+D4,Low,Some concerns,1,1,Direct prompting
+D4,Some concerns,High,2,1,Direct prompting
+D4,Some concerns,Low,16,1,Direct prompting
+D4,Some concerns,Some concerns,3,1,Direct prompting
 D4,High,Low,2,1,Published
 D4,High,Some concerns,2,1,Published
 D4,Low,Low,74,1,Published
@@ -84,10 +84,10 @@ D4,Some concerns,Some concerns,4,1,Published
 D5,Low,Low,26,1,ARBITER
 D5,Some concerns,Low,27,1,ARBITER
 D5,Some concerns,Some concerns,49,1,ARBITER
-D5,Low,Low,26,1,Unassisted
-D5,Some concerns,High,2,1,Unassisted
-D5,Some concerns,Low,45,1,Unassisted
-D5,Some concerns,Some concerns,29,1,Unassisted
+D5,Low,Low,26,1,Direct prompting
+D5,Some concerns,High,2,1,Direct prompting
+D5,Some concerns,Low,45,1,Direct prompting
+D5,Some concerns,Some concerns,29,1,Direct prompting
 D5,Low,Low,26,1,Published
 D5,Some concerns,High,3,1,Published
 D5,Some concerns,Low,55,1,Published
@@ -98,13 +98,13 @@ D1,Low,Low,79,2,ARBITER
 D1,Low,Some concerns,1,2,ARBITER
 D1,Some concerns,Low,3,2,ARBITER
 D1,Some concerns,Some concerns,14,2,ARBITER
-D1,High,High,2,2,Unassisted
-D1,High,Low,2,2,Unassisted
-D1,High,Some concerns,1,2,Unassisted
-D1,Low,Low,77,2,Unassisted
-D1,Low,Some concerns,3,2,Unassisted
-D1,Some concerns,Low,3,2,Unassisted
-D1,Some concerns,Some concerns,14,2,Unassisted
+D1,High,High,2,2,Direct prompting
+D1,High,Low,2,2,Direct prompting
+D1,High,Some concerns,1,2,Direct prompting
+D1,Low,Low,77,2,Direct prompting
+D1,Low,Some concerns,3,2,Direct prompting
+D1,Some concerns,Low,3,2,Direct prompting
+D1,Some concerns,Some concerns,14,2,Direct prompting
 D1,High,High,1,2,Published
 D1,High,Low,4,2,Published
 D1,Low,High,1,2,Published
@@ -122,14 +122,14 @@ D2,Low,Some concerns,9,2,ARBITER
 D2,Some concerns,High,1,2,ARBITER
 D2,Some concerns,Low,5,2,ARBITER
 D2,Some concerns,Some concerns,6,2,ARBITER
-D2,High,High,2,2,Unassisted
-D2,High,Low,2,2,Unassisted
-D2,Low,High,1,2,Unassisted
-D2,Low,Low,75,2,Unassisted
-D2,Low,Some concerns,10,2,Unassisted
-D2,Some concerns,High,2,2,Unassisted
-D2,Some concerns,Low,6,2,Unassisted
-D2,Some concerns,Some concerns,4,2,Unassisted
+D2,High,High,2,2,Direct prompting
+D2,High,Low,2,2,Direct prompting
+D2,Low,High,1,2,Direct prompting
+D2,Low,Low,75,2,Direct prompting
+D2,Low,Some concerns,10,2,Direct prompting
+D2,Some concerns,High,2,2,Direct prompting
+D2,Some concerns,Low,6,2,Direct prompting
+D2,Some concerns,Some concerns,4,2,Direct prompting
 D2,High,Low,2,2,Published
 D2,High,Some concerns,2,2,Published
 D2,Low,High,1,2,Published
@@ -145,14 +145,14 @@ D3,Low,Some concerns,1,2,ARBITER
 D3,Some concerns,High,1,2,ARBITER
 D3,Some concerns,Low,13,2,ARBITER
 D3,Some concerns,Some concerns,15,2,ARBITER
-D3,High,High,9,2,Unassisted
-D3,High,Low,4,2,Unassisted
-D3,High,Some concerns,5,2,Unassisted
-D3,Low,Low,54,2,Unassisted
-D3,Low,Some concerns,1,2,Unassisted
-D3,Some concerns,High,2,2,Unassisted
-D3,Some concerns,Low,20,2,Unassisted
-D3,Some concerns,Some concerns,7,2,Unassisted
+D3,High,High,9,2,Direct prompting
+D3,High,Low,4,2,Direct prompting
+D3,High,Some concerns,5,2,Direct prompting
+D3,Low,Low,54,2,Direct prompting
+D3,Low,Some concerns,1,2,Direct prompting
+D3,Some concerns,High,2,2,Direct prompting
+D3,Some concerns,Low,20,2,Direct prompting
+D3,Some concerns,Some concerns,7,2,Direct prompting
 D3,High,High,2,2,Published
 D3,High,Low,10,2,Published
 D3,High,Some concerns,6,2,Published
@@ -166,12 +166,12 @@ D4,High,Some concerns,3,2,ARBITER
 D4,Low,Low,78,2,ARBITER
 D4,Some concerns,Low,11,2,ARBITER
 D4,Some concerns,Some concerns,9,2,ARBITER
-D4,High,High,2,2,Unassisted
-D4,High,Some concerns,2,2,Unassisted
-D4,Low,Low,78,2,Unassisted
-D4,Some concerns,High,1,2,Unassisted
-D4,Some concerns,Low,15,2,Unassisted
-D4,Some concerns,Some concerns,4,2,Unassisted
+D4,High,High,2,2,Direct prompting
+D4,High,Some concerns,2,2,Direct prompting
+D4,Low,Low,78,2,Direct prompting
+D4,Some concerns,High,1,2,Direct prompting
+D4,Some concerns,Low,15,2,Direct prompting
+D4,Some concerns,Some concerns,4,2,Direct prompting
 D4,High,Low,1,2,Published
 D4,High,Some concerns,3,2,Published
 D4,Low,Low,76,2,Published
@@ -183,13 +183,13 @@ D5,Low,Low,42,2,ARBITER
 D5,Low,Some concerns,5,2,ARBITER
 D5,Some concerns,Low,11,2,ARBITER
 D5,Some concerns,Some concerns,42,2,ARBITER
-D5,High,High,1,2,Unassisted
-D5,High,Some concerns,1,2,Unassisted
-D5,Low,Low,45,2,Unassisted
-D5,Low,Some concerns,2,2,Unassisted
-D5,Some concerns,High,1,2,Unassisted
-D5,Some concerns,Low,26,2,Unassisted
-D5,Some concerns,Some concerns,26,2,Unassisted
+D5,High,High,1,2,Direct prompting
+D5,High,Some concerns,1,2,Direct prompting
+D5,Low,Low,45,2,Direct prompting
+D5,Low,Some concerns,2,2,Direct prompting
+D5,Some concerns,High,1,2,Direct prompting
+D5,Some concerns,Low,26,2,Direct prompting
+D5,Some concerns,Some concerns,26,2,Direct prompting
 D5,High,High,1,2,Published
 D5,High,Low,1,2,Published
 D5,Low,High,1,2,Published

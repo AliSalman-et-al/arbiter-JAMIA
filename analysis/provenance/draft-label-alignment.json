@@ -1,0 +1,18 @@
+{
+  "draft_unchanged": true,
+  "figures_unchanged": true,
+  "other_main_tables_and_supplement_unchanged": true,
+  "existing_table2_rows_unchanged": true,
+  "added_rows": [
+    [
+      "D1\u2013D5: ARBITER",
+      "Low: 375/510 (73.5%); Some concerns: 114/510 (22.4%); High: 21/510 (4.1%)"
+    ],
+    [
+      "D1\u2013D5: Direct prompting",
+      "Low: 407/510 (79.8%); Some concerns: 80/510 (15.7%); High: 23/510 (4.5%)"
+    ]
+  ],
+  "footnote_change": "Reference categories/reference counts/distributions changed to Rating categories/source counts/distributions",
+  "numeric_exports_unchanged_except_display_table2": true
+}

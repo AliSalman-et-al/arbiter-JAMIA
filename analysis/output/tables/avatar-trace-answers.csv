@@ -1,4 +1,4 @@
-Question,ARBITER,Evidence handles (type),Justification,Unknowns,Counterevidence,Unassisted
+Question,ARBITER,Evidence handles (type),Justification,Unknowns,Counterevidence,Direct prompting
 D1 judgement / rationale,Proposed: Low; adopted: Low,,,,,"Low
 Allocation used a computer-generated, centre-stratified permuted-block sequence delivered through a web-based interactive response system, so concealment was adequate. The baseline differences in age (P = .02) and haemoglobin (P = .01) are consistent with chance across about 25 variables."
 1.1 Random allocation sequence,Yes,eh_d6c269341c7d8a5d (direct support),"The original AVATAR paper states the assignment was computer-generated and stratified by centre using a permuted-block sequence with variable block size, which is a random component.",—,—,Yes

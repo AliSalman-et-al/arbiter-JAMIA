@@ -1,0 +1,45 @@
+{
+  "all_table_rows_unchanged_except_cross_references": true,
+  "protected_artifacts": 90,
+  "only_changed_csvs": [
+    "analysis\\output\\tables\\display-source-trace.csv",
+    "analysis\\output\\tables\\display-supplement-reporting-map.csv",
+    "analysis\\output\\tables\\reporting-checklist-skeleton.csv",
+    "analysis\\output\\manuscript\\figure-legends.md"
+  ],
+  "headings": [
+    "eTable 1. Source meta-analyses and benchmark composition",
+    "eTable 2. Category distributions and disagreements",
+    "eTable 3. Agreement with independent human reviewers",
+    "eTable 4. Agreement under four metrics",
+    "eTable 5. Agreement relative to inter-reviewer agreement",
+    "eTable 6. Pooled category disagreements",
+    "eTable 7. Agreement with Published labels",
+    "eTable 8. Distribution of ratings by source",
+    "eTable 9. Overall judgment agreement",
+    "eTable 10. Overall judgment availability",
+    "eTable 11. Signalling eligibility counts",
+    "eTable 12. Signalling agreement and eligibility",
+    "eTable 13. Complete paired question diagnostics"
+  ],
+  "physical_tables_before": 43,
+  "physical_tables_after": 43,
+  "old_to_new": {
+    "1": 1,
+    "4": 2,
+    "2": 3,
+    "6": 4,
+    "8": 5,
+    "4A": 6,
+    "3": 7,
+    "9": 8,
+    "7": 9,
+    "9A": 10,
+    "5B": 11,
+    "5": 12,
+    "5A": 13
+  },
+  "date": "2026-11-02",
+  "manuscript_draft_modified": false,
+  "table_display_label_removed": "post hoc"
+}

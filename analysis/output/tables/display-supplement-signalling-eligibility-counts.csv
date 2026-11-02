@@ -14,22 +14,22 @@ Human Review 1,ARBITER,D4,No,Not applicable,1
 Human Review 1,ARBITER,D4,Yes,Evaluable,339
 Human Review 1,ARBITER,D5,No,Component not matched,12
 Human Review 1,ARBITER,D5,Yes,Evaluable,302
-Human Review 1,Unassisted,D1,No,Component not matched,3
-Human Review 1,Unassisted,D1,Yes,Evaluable,303
-Human Review 1,Unassisted,D2,No,Arm question inactive,340
-Human Review 1,Unassisted,D2,No,Component not matched,19
-Human Review 1,Unassisted,D2,No,Not applicable,11
-Human Review 1,Unassisted,D2,Yes,Evaluable,353
-Human Review 1,Unassisted,D3,No,Arm question inactive,214
-Human Review 1,Unassisted,D3,No,Component not matched,42
-Human Review 1,Unassisted,D3,No,Not applicable,8
-Human Review 1,Unassisted,D3,Yes,Evaluable,168
-Human Review 1,Unassisted,D4,No,Arm question inactive,205
-Human Review 1,Unassisted,D4,No,Component not matched,31
-Human Review 1,Unassisted,D4,No,Not applicable,1
-Human Review 1,Unassisted,D4,Yes,Evaluable,292
-Human Review 1,Unassisted,D5,No,Component not matched,13
-Human Review 1,Unassisted,D5,Yes,Evaluable,301
+Human Review 1,Direct prompting,D1,No,Component not matched,3
+Human Review 1,Direct prompting,D1,Yes,Evaluable,303
+Human Review 1,Direct prompting,D2,No,Arm question inactive,340
+Human Review 1,Direct prompting,D2,No,Component not matched,19
+Human Review 1,Direct prompting,D2,No,Not applicable,11
+Human Review 1,Direct prompting,D2,Yes,Evaluable,353
+Human Review 1,Direct prompting,D3,No,Arm question inactive,214
+Human Review 1,Direct prompting,D3,No,Component not matched,42
+Human Review 1,Direct prompting,D3,No,Not applicable,8
+Human Review 1,Direct prompting,D3,Yes,Evaluable,168
+Human Review 1,Direct prompting,D4,No,Arm question inactive,205
+Human Review 1,Direct prompting,D4,No,Component not matched,31
+Human Review 1,Direct prompting,D4,No,Not applicable,1
+Human Review 1,Direct prompting,D4,Yes,Evaluable,292
+Human Review 1,Direct prompting,D5,No,Component not matched,13
+Human Review 1,Direct prompting,D5,Yes,Evaluable,301
 Human Review 2,ARBITER,D1,Yes,Evaluable,306
 Human Review 2,ARBITER,D2,No,Arm question inactive,341
 Human Review 2,ARBITER,D2,No,Component not matched,8
@@ -45,19 +45,19 @@ Human Review 2,ARBITER,D4,No,Not applicable,1
 Human Review 2,ARBITER,D4,Yes,Evaluable,340
 Human Review 2,ARBITER,D5,No,Component not matched,8
 Human Review 2,ARBITER,D5,Yes,Evaluable,301
-Human Review 2,Unassisted,D1,No,Component not matched,3
-Human Review 2,Unassisted,D1,Yes,Evaluable,303
-Human Review 2,Unassisted,D2,No,Arm question inactive,343
-Human Review 2,Unassisted,D2,No,Component not matched,10
-Human Review 2,Unassisted,D2,No,Not applicable,13
-Human Review 2,Unassisted,D2,Yes,Evaluable,352
-Human Review 2,Unassisted,D3,No,Arm question inactive,208
-Human Review 2,Unassisted,D3,No,Component not matched,49
-Human Review 2,Unassisted,D3,No,Not applicable,8
-Human Review 2,Unassisted,D3,Yes,Evaluable,166
-Human Review 2,Unassisted,D4,No,Arm question inactive,205
-Human Review 2,Unassisted,D4,No,Component not matched,19
-Human Review 2,Unassisted,D4,No,Not applicable,1
-Human Review 2,Unassisted,D4,Yes,Evaluable,293
-Human Review 2,Unassisted,D5,No,Component not matched,9
-Human Review 2,Unassisted,D5,Yes,Evaluable,300
+Human Review 2,Direct prompting,D1,No,Component not matched,3
+Human Review 2,Direct prompting,D1,Yes,Evaluable,303
+Human Review 2,Direct prompting,D2,No,Arm question inactive,343
+Human Review 2,Direct prompting,D2,No,Component not matched,10
+Human Review 2,Direct prompting,D2,No,Not applicable,13
+Human Review 2,Direct prompting,D2,Yes,Evaluable,352
+Human Review 2,Direct prompting,D3,No,Arm question inactive,208
+Human Review 2,Direct prompting,D3,No,Component not matched,49
+Human Review 2,Direct prompting,D3,No,Not applicable,8
+Human Review 2,Direct prompting,D3,Yes,Evaluable,166
+Human Review 2,Direct prompting,D4,No,Arm question inactive,205
+Human Review 2,Direct prompting,D4,No,Component not matched,19
+Human Review 2,Direct prompting,D4,No,Not applicable,1
+Human Review 2,Direct prompting,D4,Yes,Evaluable,293
+Human Review 2,Direct prompting,D5,No,Component not matched,9
+Human Review 2,Direct prompting,D5,Yes,Evaluable,300

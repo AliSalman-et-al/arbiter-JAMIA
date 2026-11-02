@@ -1,0 +1,69 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Finalized three main tables, supplement and reporting map.
+pandoc 
+  to: html
+  output-file: results.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  css:
+    - ../scripts/manuscript.css
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  knitr:
+    opts_chunk:
+      results: asis
+  title: ARBITER main manuscript analysis
+  
+Output created: results.html
+
+pandoc 
+  to: html
+  output-file: supplement.html
+  standalone: true
+  embed-resources: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  toc: true
+  css:
+    - ../scripts/manuscript.css
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  knitr:
+    opts_chunk:
+      results: asis
+  title: ARBITER supplementary methods and results
+  
+Output created: supplement.html
+
+PASS: main analysis Word export preserves page text, five figure images and three editable tables.
+PASS: 3 main tables, 5 figures; 41 supplementary tables, 0 images; 28 supplement paragraphs and all physical cells preserved; 93 protected artifacts unchanged.

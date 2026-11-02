@@ -4,6 +4,8 @@ Current reporting and computational contract, reduced on 26 October 2026 after a
 
 ## Question and scope
 
+Author-requested post hoc amendment, 27 October 2026: R-01 to R-06 add pooled and domain AC1/linear AC2 alongside the retained exact agreement and weighted kappa, paired differences, All-Low and human-human comparisons; agreement relative to human-human agreement; recorded Overall availability and agreement; and complete rating distributions. These use frozen benchmark predictions and the original bootstrap functions. No models are rerun and no existing estimate is changed. All new analyses are labeled post hoc. The comparison arm is displayed as Direct prompting; internal identifiers remain unchanged. Agreement references are displayed Human Review 1, Human Review 2, then Published labels, superseding the earlier reporting order below. All-Low kappa is computed in the new tables where defined; historical suppressed exports are retained. Overall availability is established from recorded fields: domain-derived human Overall values are not substituted for missing recorded judgments. Published Overall uses its observed subset, with denominators and exclusions stated. The supplement flags the recorded ARBITER Overall escalation.
+
 What assessment record does ARBITER preserve, and how do its ratings compare with published review labels and two independent experts? The comparison concerns complete workflows. It cannot isolate software, prompting or computation effects. Source occurrence and structural checks do not establish semantic support, and computational runtime does not measure reviewer effort.
 
 Report Published agreement first, then each expert separately. Exact agreement precedes weighted agreement. Keep domain variation, expert disagreement, label prevalence and unfavorable results visible. Conditional label choices and signalling comparisons provide supporting evidence.
@@ -20,19 +22,19 @@ The benchmark was not used in development, according to the author. Bounded chec
 
 ## Retained agreement analyses
 
-1. Published reference. Compare ARBITER and Unassisted with Published using exact agreement and linearly weighted Cohen's kappa, pooled and in each domain. Report the paired ARBITER minus Unassisted difference. The All-Low rule provides prevalence context; suppress its undefined kappa.
-2. Independent references. Compare ARBITER, Unassisted and Published separately with Expert 1 and Expert 2, pooled and by domain. Retain exact agreement, weighted kappa and paired ARBITER minus Unassisted differences. No expert average or agreed-reference restriction is reported.
+1. Published reference. Compare ARBITER and Direct prompting with Published using exact agreement and linearly weighted Cohen's kappa, pooled and in each domain. Report the paired ARBITER minus Direct prompting difference. The All-Low rule provides prevalence context; suppress its undefined kappa.
+2. Independent references. Compare ARBITER, Direct prompting and Published separately with Expert 1 and Expert 2, pooled and by domain. Retain exact agreement, weighted kappa and paired ARBITER minus Direct prompting differences. No expert average or agreed-reference restriction is reported.
 3. Reference context. Report expert-to-expert exact agreement and weighted kappa, pooled and by domain, and pooled Low/Some concerns/High counts for each source. Expert agreement is context, not a mathematical performance ceiling or error-free reference.
 
 ## Supporting analyses
 
-Conditional blinded-label choices retain cells where the arms differ. The agreed-choice estimate further requires equal expert choices. Credit follows label equality, not the selected source letter. Report 53/60 alongside the 80 arm disagreements and 20 split choices. Sensitivities use each expert across all arm disagreements and count splits against ARBITER without assigning Unassisted wins. This measures conditional label matches, not accuracy or endorsement of reasoning.
+Conditional blinded-label choices retain cells where the arms differ. The agreed-choice estimate further requires equal expert choices. Credit follows label equality, not the selected source letter. Report 53/60 alongside the 80 arm disagreements and 20 split choices. Sensitivities use each expert across all arm disagreements and count splits against ARBITER without assigning Direct prompting wins. This measures conditional label matches, not accuracy or endorsement of reasoning.
 
 Signalling analyses retain pooled and domain absolute summaries and complete paired question results against each expert. Five-level coding distinguishes yes, probably yes, probably no, no and no information. Collapsed coding combines yes/probably yes and no/probably no, retaining no information. Match trial, domain, official question and explicit component. Do not broadcast scalar answers across named outcomes. Missing, inactive, inapplicable, unmatched and unresolved answers are excluded. Report source-specific counts and paired intersections with their own denominators. Retain both codings, including unfavorable, sparse and zero-denominator question rows. The stored group key Overall means pooled signalling answers, not a sixth domain or a derived expert Overall rating.
 
-Retain pooled category-disagreement matrices against each expert for ARBITER and Unassisted, including missing predictions. These reference disagreements do not establish clinical errors. They replace parallel binary metric grids in the report.
+Retain pooled category-disagreement matrices against each expert for ARBITER and Direct prompting, including missing predictions. These reference disagreements do not establish clinical errors. They replace parallel binary metric grids in the report.
 
-Two compact exploratory checks bound interpretation. Derived expert Overall is the worst of each expert's five independent domain ratings, without optional escalation. Compare both recorded arm Overall ratings with each expert separately on 102 trials, and show expert agreement. This is not an independently rated sixth domain. Do not add Published's different observed-Overall subset. Rules-only recomputation replaces the 26 contradictory Unassisted labels with the ratings implied by that arm's own answers, leaving invalid paths and missingness unchanged. Keep only pooled before/after expert agreement and the changed-cell audit list. This post hoc arithmetic check is not a causal component comparison.
+Two compact exploratory checks bound interpretation. Derived expert Overall is the worst of each expert's five independent domain ratings, without optional escalation. Compare both recorded arm Overall ratings with each expert separately on 102 trials, and show expert agreement. This is not an independently rated sixth domain. Do not add Published's different observed-Overall subset. Rules-only recomputation replaces the 26 contradictory Direct prompting labels with the ratings implied by that arm's own answers, leaving invalid paths and missingness unchanged. Keep only pooled before/after expert agreement and the changed-cell audit list. This post hoc arithmetic check is not a causal component comparison.
 
 ## Process and resources
 
@@ -54,7 +56,7 @@ These cuts reflect the author-approved question and duplication, not effect dire
 
 ## Production and verification
 
-The publication retains five main figures and three main tables, as the author clarified that the supplement is the priority for reduction. Figures 1 and 2 retain the architecture and worked example. Figure 3 shows the evaluation flow, Figure 4 combines absolute and paired agreement, and Figure 5 shows paired signalling diagnostics. Table 1 describes the benchmark, Table 2 reports conditional choices, and Table 3 combines process checks and resources. The supplement now contains four numbered families covering Published agreement, independent agreement/reliability, category context, and signalling/eligibility. Compact methods, prompts and a reporting-scope account accompany them. Use glossary labels and the existing readable publication styles.
+The publication retains five main figures and three main tables, as the author clarified that the supplement is the priority for reduction. Figures 1 and 2 retain the architecture and worked example. Figure 3 shows the evaluation flow, Figure 4 combines absolute and paired agreement, and Figure 5 shows paired signalling diagnostics. Table 2 describes the benchmark, Table 4 reports conditional choices, and Table 3 combines process checks, resources and evidence-record checks. Manuscript Table 1 is the separately authored failure-mode table. The supplement now contains four numbered families covering Published agreement, independent agreement/reliability, category context, and signalling/eligibility. Compact methods, prompts and a reporting-scope account accompany them. Use glossary labels and the existing readable publication styles.
 
 From analysis/, run Rscript run.R to recompute retained estimates and rebuild artifacts. Rscript build-publication.R reuses finalized estimates. Run the testthat suite, verify-output.R, ../scripts/verify-reduction.py and the retained-materials presentation check. Verify retained numerical rows against the earlier Git revision, source-input identity, protected artwork, editable Word tables, Word-to-HTML cell equality and local links. Inspect rendered documents and figures.
 
@@ -62,3 +64,12 @@ Report the model identifier claude-sonnet-5-5, medium effort, Claude Code 2.1.27
 
 Legacy primary-endpoint.csv names conditional-choice calculations only. Internal source identifiers and the RoB 2 question selection:prespecified-analysis do not establish outcome priority or prospective evaluation planning. Trial PDFs are not redistributed. Author declarations, complete assessor details and an archival DOI remain pending.
 
+
+Author-requested reporting amendment, 31 October 2026: restore the source-meta-analysis benchmark composition table as eTable 1 and shift existing eTables 1–8 to 2–9, including lettered subtables and cross-references. This restores descriptive source context without recomputing estimates.
+
+Reporting amendment, 2 November 2026: the separate failure-mode Table 1 has been removed from the manuscript. Main report Tables 2, 3 and 4 become Tables 1, 2 and 3 respectively. Supplementary eTable numbers and all estimates remain unchanged.
+
+
+Supplementary presentation amendment (2 November 2026): eTables are ordered by first manuscript citation. Previous numbers 1, 4, 2, 6, 8, 4A, 3, 9, 7, 9A, 5B, 5, 5A become eTables 1–13, respectively. Lettered subtables are standalone tables. Main table/figure numbers, saved results, uncertainty and benchmark runs are unchanged.
+
+The author subsequently requested removal of the post hoc display label from table headings and notes. Analysis provenance, stored results and estimates remain unchanged.

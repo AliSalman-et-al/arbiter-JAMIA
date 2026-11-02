@@ -1,0 +1,20 @@
+{
+  "changed_svg_elements": [
+    [
+      "inference (no quote)",
+      "inference"
+    ]
+  ],
+  "png_pixel_change_bounds": [
+    657,
+    159,
+    757,
+    185
+  ],
+  "unchanged_canvas": [
+    1644,
+    2129
+  ],
+  "all_other_figures_and_numerical_exports_unchanged": true,
+  "geometry": "passed"
+}

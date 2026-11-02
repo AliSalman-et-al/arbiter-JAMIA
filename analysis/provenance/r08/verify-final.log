@@ -1,0 +1,25 @@
+{
+  "renumbered_tables_match_original_cells": true,
+  "existing_table3_rows_unchanged": true,
+  "evidence_counts": {
+    "Active required answers citing evidence": [
+      1538,
+      1538
+    ],
+    "Text spans with complete binding fields": [
+      1407,
+      1407
+    ],
+    "Image records with complete fields": [
+      14,
+      14
+    ],
+    "Exported records passing verification": [
+      102,
+      102
+    ]
+  },
+  "direct_prompting_evidence": "Not available",
+  "supplement_cross_references": "passed",
+  "frozen_numerical_exports": "unchanged"
+}

@@ -1,0 +1,20 @@
+{
+  "changes": [
+    "legend rectangle",
+    "legend rectangle",
+    "context",
+    "legend rectangle",
+    "inference"
+  ],
+  "pixel_difference_bounds": [
+    207,
+    150,
+    842,
+    192
+  ],
+  "all_changes_confined_to_legend": true,
+  "geometry": "passed",
+  "numerical_exports_and_other_figures": "unchanged",
+  "pages_commit": "53c13847d23f0f6b87b104135decacd694ab2783",
+  "figure_png_sha256": "4966490bb556d705dd026c88b8b232f5f09b770a02ab30335ffdc5514553d2c6"
+}

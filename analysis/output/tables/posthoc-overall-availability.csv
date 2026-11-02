@@ -1,0 +1,6 @@
+source,recorded,missing,total,provenance,analysis
+ARBITER,102,0,102,Recorded Overall,post hoc
+Direct prompting,102,0,102,Recorded Overall,post hoc
+Human Review 1,0,102,102,No independently recorded Overall; domain-derived Overall is a separate existing diagnostic,post hoc
+Human Review 2,0,102,102,No independently recorded Overall; domain-derived Overall is a separate existing diagnostic,post hoc
+Published labels,81,21,102,Recorded Overall,post hoc

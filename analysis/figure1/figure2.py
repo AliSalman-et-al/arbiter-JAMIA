@@ -167,10 +167,13 @@ def draw_trace(data,rows):
     text(12,35,'Asymptomatic severe aortic stenosis · RoB 2 asks up to 22 questions about risk of bias across 5 domains.')
     text(12,53,'Y yes · PY / PN probably yes / no · N no · NI no information')
     s.add('<defs><pattern id="not-asked" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#FAFAF8"/><path d="M0 6 L6 0" stroke="#BBB" stroke-width=".5"/></pattern></defs>')
-    for x,w,label,fill,stroke,dashed in [(12,112,'direct quotation',HILITE,INK,False),(135,85,'context',CONTEXT,'none',False),(231,125,'inference (no quote)','white',GREY,True)]:
+    x=12
+    for label,fill,stroke,dashed in [('direct quotation',HILITE,INK,False),('context',CONTEXT,'none',False),('inference','white',GREY,True)]:
+        w=s.width(label,size)+12
         s.rect(x,64,w,17,fill,3,stroke,.7)
         if dashed:s.parts[-1]=s.parts[-1].replace('/>',' stroke-dasharray="3 3"/>')
         text(x+6,76,label)
+        x+=w+8
     s.rect(530,64,14,17,'url(#not-asked)',2,INK,.6,'pill');s.hatch_records.append((530,64,14,17))
     text(550,76,'not needed (RoB 2 branching)')
     s.text(12,96,'Sources stored',11.5,'bold');text(125,96,'7 sources stored · 4 cited below',color=GREY)

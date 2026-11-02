@@ -140,7 +140,7 @@ def build():
             if i == 2:
                 blocks.append(metadata.worked_example_markdown())
         blocks.append('## Tables')
-        for i in range(1, metadata.MAIN_TABLE_COUNT + 1):
+        for i in metadata.MAIN_TABLE_NUMBERS:
             target = folder / f'Table{i}.html'
             source = OUT / f'Table{i}.docx'
             run('quarto', 'pandoc', source, '--to=html', f'--output={target}')
@@ -174,7 +174,7 @@ def build():
         (GENERATED / 'supplement-page.md').write_text(raw_html(styles + serialize(root)), encoding='utf-8')
         for page in ('results', 'supplement'):
             run('quarto', 'render', f'{page}.qmd')
-        results = verify_page(ANALYSIS / 'results.html', [OUT / f'Table{i}.docx' for i in range(1, metadata.MAIN_TABLE_COUNT + 1)], metadata.MAIN_TABLE_COUNT, [(OUT / f'Figure{i}.png').read_bytes() for i in range(1, metadata.MAIN_FIGURE_COUNT + 1)])
+        results = verify_page(ANALYSIS / 'results.html', [OUT / f'Table{i}.docx' for i in metadata.MAIN_TABLE_NUMBERS], metadata.MAIN_TABLE_COUNT, [(OUT / f'Figure{i}.png').read_bytes() for i in range(1, metadata.MAIN_FIGURE_COUNT + 1)])
         supplement = verify_page(ANALYSIS / 'supplement.html', [OUT / 'Supplement.docx'], len(word_cells(OUT / 'Supplement.docx')), image_bytes)
         rendered = normalized(results.text_content())
         for paragraph in (OUT / 'results-sentences.md').read_text(encoding='utf-8').split('\n\n'):

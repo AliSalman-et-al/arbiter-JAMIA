@@ -1,0 +1,50 @@
+{
+  "PASS": true,
+  "checks": {
+    "Table1": {
+      "tables": 1,
+      "page_footer": true,
+      "editable_gt_ooxml": true
+    },
+    "Table2": {
+      "tables": 1,
+      "page_footer": true,
+      "editable_gt_ooxml": true
+    },
+    "Table3": {
+      "tables": 1,
+      "page_footer": true,
+      "editable_gt_ooxml": true
+    },
+    "Main-analysis": {
+      "tables": 3,
+      "page_footer": true,
+      "editable_gt_ooxml": true
+    },
+    "Supplement": {
+      "tables": 41,
+      "page_footer": true,
+      "editable_gt_ooxml": true,
+      "eight_table_families_and_paired_question_diagnostics": true
+    },
+    "TRIPOD-LLM": {
+      "tables": 8,
+      "page_footer": true,
+      "editable_gt_ooxml": true
+    },
+    "results": {
+      "native_tables_from_gt_word": 3,
+      "source_cell_equality": true,
+      "no_blockquote_cells": true,
+      "local_downloads_exist": true
+    },
+    "supplement": {
+      "native_tables_from_gt_word": 41,
+      "source_cell_equality": true,
+      "no_blockquote_cells": true,
+      "local_downloads_exist": true,
+      "validated_contents_links": 37
+    },
+    "production_table_path": "gt objects -> native Word OOXML -> verified native HTML"
+  }
+}

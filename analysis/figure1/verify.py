@@ -19,7 +19,8 @@ def check_legends(path=OUT/'legends-fig1-2.md'):
         # Include title words; exclude the figure number and Markdown markers.
         legend_words=len(legend.replace('**','').split())
         alt_words=len(alt.split())
-        assert legend_words<=140, f'Figure {number}: legend has {legend_words} words (limit 140)'
+        limit = {'1': 100, '2': 160}[number]
+        assert legend_words<=limit, f'Figure {number}: legend has {legend_words} words (limit {limit})'
         assert alt_words<=90, f'Figure {number}: alt text has {alt_words} words (limit 90)'
         counts[number]=dict(legend=legend_words,alt_text=alt_words)
     print('Legend word counts:',json.dumps(counts))

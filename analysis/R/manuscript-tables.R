@@ -18,7 +18,29 @@ main_table3 <- function() {
       sub('[)]$','',d$value) |> paste0('; ',sub('^[(]','',fmt_ci(100*d$lower,100*d$upper,1,suppress_degenerate=TRUE))),d$value)
     if(a=='ARBITER-Sonnet') d$value <- ifelse(d$status %in% c('Violation','Invalid answer path','Departure'),'0 by design',d$value)
     wanted <- left_join(wanted,d |> select(domain,status,value),by=c('domain','status'))
-    names(wanted)[names(wanted)=='value'] <- reader_label(a)
+    names(wanted)[names(wanted)=='value'] <- if(a=='ARBITER-Sonnet') 'ARBITER' else 'Unassisted'
   }
   wanted |> mutate(Unassisted=if_else(domain=='Audit'|is.na(Unassisted),'Not available',Unassisted)) |> select(Measure,ARBITER,Unassisted)
+}
+
+benchmark_table <- function(inputs,per_domain=FALSE) {
+  meta <- readr::read_csv('data-curated/meta-analyses.csv',show_col_types=FALSE)
+  x <- inputs$labels |> filter(arm=='ARBITER-Sonnet')
+  counts <- x |> filter(domain!='Overall') |> count(meta_id,meta) |>
+    complete(meta_id,meta=LABELS,fill=list(n=0)) |>
+    pivot_wider(names_from=meta,values_from=n)
+  trials <- inputs$trials |> count(meta_id,name='Trials')
+  overall <- x |> filter(domain=='Overall') |> group_by(meta_id) |>
+    summarise(`Overall given`=if(all(!is.na(meta))) 'Yes' else if(all(is.na(meta))) 'No' else 'Partly',.groups='drop')
+  out <- meta |> left_join(trials,by='meta_id') |> left_join(counts,by='meta_id') |>
+    left_join(overall,by='meta_id') |> arrange(specialty!='General medicine',specialty,journal) |>
+    transmute(Specialty=specialty,Journal=dplyr::recode(journal,'Journal of the American College of Cardiology'='J Am Coll Cardiol','Clinical Journal of the American Society of Nephrology'='Clin J Am Soc Nephrol','The American Journal of Sports Medicine'='Am J Sports Med','British Journal of Anaesthesia'='Br J Anaesth','The Lancet Diabetes & Endocrinology'='Lancet Diabetes Endocrinol','The Lancet Respiratory Medicine'='Lancet Respir Med','The Lancet Rheumatology'='Lancet Rheumatol','The Lancet Neurology'='Lancet Neurol','The Lancet Oncology'='Lancet Oncol','The Lancet Psychiatry'='Lancet Psychiatry','Clinical Infectious Diseases'='Clin Infect Dis','Human Reproduction Update'='Hum Reprod Update','JAMA Pediatrics'='JAMA Pediatr','The Lancet'='Lancet'),Topic=topic,Year=as.character(year),
+      DOI=doi,Trials,`Published D1–D5 labels (Low/SC/High)`=paste(Low,`Some concerns`,High,sep=' / '),`Overall given`)
+  out$Journal <- paste(out$Journal,out$Year)
+  out$Year <- NULL
+  names(out)[names(out)=='Journal'] <- 'Journal and year'
+  totals <- tibble(Specialty='Total',`Journal and year`='',Topic='',DOI='',Trials=sum(out$Trials),
+    `Published D1–D5 labels (Low/SC/High)`=paste(sum(counts$Low),sum(counts$`Some concerns`),sum(counts$High),sep=' / '),
+    `Overall given`=paste(sum(!is.na(filter(x,domain=='Overall')$meta)),'/ 102'))
+  bind_rows(out,totals)
 }

@@ -11,10 +11,12 @@ publication_labels <- function(x,decode=FALSE) {
  map <- c(PUBLICATION_LABELS, 'Adjudicator 1'='Expert 1','Adjudicator 2'='Expert 2')
  if(decode) map <- setNames(names(map),unname(map))
  convert <- function(v) {
+   if(decode) v <- gsub('Direct prompting','Unassisted',v,fixed=TRUE)
    v <- gsub('\r\n','\n',v,fixed=TRUE)
    # Embedded source identifiers occur in paired-comparison columns.
    for(k in names(map)[grepl('Sonnet| vs |independent| label',names(map))]) v <- gsub(k,map[[k]],v,fixed=TRUE)
    i <- match(v,names(map)); v[!is.na(i)] <- unname(map[i[!is.na(i)]])
+   if(!decode) v <- gsub('Unassisted','Direct prompting',v,fixed=TRUE)
    v
  }
  for(k in names(x)) if(is.character(x[[k]])) x[[k]] <- convert(x[[k]])

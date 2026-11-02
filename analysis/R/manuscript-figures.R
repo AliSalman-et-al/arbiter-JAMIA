@@ -43,6 +43,7 @@ study_flow_plot <- function(cells) {
     y=c(12.15,11.75,9.8,9.8,9.2,7.45,7.45,6.95,4.8,3.7),
     xend=c(5,8.35,1.65,5,5,3.325,8.35,8.35,7.5,8.7),
     yend=c(11.75,11.75,9.2,9.2,9.2,6.95,6.95,6.95,3.7,3.7))
+  nodes$label <- reader_label(nodes$label)
   ggplot2::ggplot(nodes,ggplot2::aes(x,y))+
     ggplot2::geom_segment(data=lines,ggplot2::aes(x=x,y=y,xend=xend,yend=yend),
       inherit.aes=FALSE,linewidth=.5)+
@@ -70,7 +71,7 @@ domain_agreement_plot <- function() {
       ggplot2::geom_hline(yintercept=5.5,color='grey80')+
       ggplot2::geom_errorbar(ggplot2::aes(xmin=100*lower,xmax=100*upper),width=.12,position=ggplot2::position_dodge(.45,reverse=TRUE))+
       ggplot2::geom_point(size=1.9,position=ggplot2::position_dodge(.45,reverse=TRUE))+
-      ggplot2::scale_color_manual(values=JAMA_ROLES)+ggplot2::scale_shape_manual(values=c(ARBITER=16,Unassisted=15))+
+      ggplot2::scale_color_manual(values=JAMA_ROLES,labels=reader_label)+ggplot2::scale_shape_manual(values=c(ARBITER=16,Unassisted=15),labels=reader_label)+
       ggplot2::scale_y_discrete(labels=setNames(labels,domains))+
       ggplot2::scale_x_continuous(limits=c(0,100),breaks=seq(0,100,25))+
       ggplot2::labs(title=paste('Human Review',expert),subtitle=paste0('Pooled: ',paste0(fmt_number(100*pooled$estimate,1),'%',collapse=' vs ')),x='Exact agreement (%)',y=NULL,color=NULL,shape=NULL)+theme_manuscript()+
@@ -79,7 +80,7 @@ domain_agreement_plot <- function() {
       ggplot2::geom_hline(yintercept=5.5,color='grey80')+ggplot2::geom_vline(xintercept=0,color='grey55',linetype=2)+
       ggplot2::geom_errorbar(ggplot2::aes(xmin=100*lower,xmax=100*upper),width=.12)+ggplot2::geom_point(shape=18,size=2)+
       ggplot2::scale_x_continuous(limits=c(-10,30),breaks=seq(-10,30,10))+
-      ggplot2::labs(title='ARBITER minus Unassisted',subtitle=paste0('Pooled: +',fmt_number(100*dp$estimate,1),' ',fmt_ci(100*dp$lower,100*dp$upper,1)),x='Paired difference (percentage points)',y=NULL)+theme_manuscript()+
+      ggplot2::labs(title='ARBITER minus Direct prompting',subtitle=paste0('Pooled: +',fmt_number(100*dp$estimate,1),' ',fmt_ci(100*dp$lower,100*dp$upper,1)),x='Paired difference (percentage points)',y=NULL)+theme_manuscript()+
       ggplot2::theme(axis.text.y=ggplot2::element_blank(),axis.ticks.y=ggplot2::element_blank(),plot.subtitle=ggplot2::element_text(size=8),plot.title=ggplot2::element_text(size=9))
     panels[[length(panels)+1L]] <- rate; panels[[length(panels)+1L]] <- diff
   }
@@ -96,7 +97,7 @@ signalling_difference_plot <- function() {
     ggplot2::geom_errorbar(ggplot2::aes(xmin=100*lower,xmax=100*upper),width=.13)+ggplot2::geom_point(shape=18,size=2)+
     ggplot2::facet_grid(adjudicator~level,scales='free_y')+
     ggplot2::scale_x_continuous(limits=c(-20,40),breaks=seq(-20,40,10))+
-    ggplot2::labs(x='ARBITER − Unassisted agreement (percentage points; 95% CI)',y=NULL)+theme_manuscript()
+    ggplot2::labs(x='ARBITER − Direct prompting agreement (percentage points; 95% CI)',y=NULL)+theme_manuscript()
 }
 build_manuscript_figures <- function(cells) {
   register_figure_fonts()

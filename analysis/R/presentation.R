@@ -33,9 +33,8 @@ reader_html_text <- function(path) {
 }
 
 reader_label <- function(x, supplement=FALSE) {
-  replacements <- c('ARBITER more severe'='ARBITER stricter than Unassisted',
-    'ARBITER less severe'='ARBITER more lenient than Unassisted',
-    'More severe'='Stricter','Less severe'='More lenient',
+  replacements <- c('ARBITER more severe'='ARBITER more severe than Unassisted',
+    'ARBITER less severe'='ARBITER less severe than Unassisted',
     'Split sensitivity'='Counting split decisions against ARBITER','Algorithm violation'='Rating contradicts its own answers',
     'Invalid answer path'='Required question skipped','Any departure'='Any rule break',
     'consensus cells'='cells where both experts agreed','split cells'='cells where experts split',
@@ -71,6 +70,7 @@ reader_label <- function(x, supplement=FALSE) {
   x[x=='sensitivity'] <- 'Sensitivity'; x[x=='specificity'] <- 'Specificity'; x[x=='share'] <- 'Share'
   x[x=='Consensus'] <- 'Both human reviewers agreed'
   x[x=='Meta'] <- 'Published'
+  x <- gsub('Unassisted','Direct prompting',x,fixed=TRUE)
   x
 }
 fmt_number <- function(x,digits=2L) {
@@ -147,7 +147,7 @@ house_table <- function(x,footnote=NULL,width=6.85) {
     tab <- gt::gt(x,rowname_col=names(x)[1],groupname_col='.section')
   } else tab <- gt::gt(x,rowname_col=names(x)[1])
   cols <- setdiff(names(x),c(names(x)[1],'.section'))
-  numeric <- cols[vapply(x[cols],function(v) mean(grepl('^[−+0-9—]|^Not available$|^Yes$|^No$',as.character(v)))>.75,logical(1))]
+  numeric <- setdiff(cols[vapply(x[cols],function(v) mean(grepl('^[−+0-9—]|^Not available$|^Yes$|^No$',as.character(v)))>.75,logical(1))],'DOI')
   tab <- tab |> gt::tab_options(table.font.names='Arial',table.font.size='10pt',
     table.width=gt::px(width*96),data_row.padding=gt::px(4),column_labels.padding=gt::px(5),
     data_row.padding.horizontal=gt::px(8),column_labels.padding.horizontal=gt::px(8),
@@ -175,9 +175,10 @@ house_table <- function(x,footnote=NULL,width=6.85) {
   if(length(visible)==2) weights <- c(34,66)
   # Column roles, rather than short cell strings, set widths in result matrices.
   if(all(c('Exact agreement (95% CI)','Weighted κ (95% CI)') %in% visible)) weights <- c(.85,.9,1.4,.4,1.75,1.55)
+  else if(all(c('Reference','Coding','ARBITER','Direct prompting','Paired N') %in% visible)) weights <- c(.95,.7,.8,1.4,1.4,.65,1.5)
   else if(all(c('Sensitivity','Specificity') %in% visible)) weights <- c(1.05,.75,.9,.8,1.1,1.15,1.1)
   else if(all(c('Low','Some concerns','High','Missing') %in% visible))
-    weights <- c(Reference=1,Source=1.1,`Human reviewer rating`=1.2,Low=.6,`Some concerns`=.9,High=.6,Missing=.6)[visible]
+    weights <- c(Reference=1,Source=1.1,source=1.1,Domain=.8,domain=.8,N=.45,n=.45,`Human reviewer rating`=1.2,Low=.6,`Some concerns`=.9,High=.6,Missing=.6)[visible]
   else if('Recomputed' %in% visible) weights <- c(.95,.7,1.05,1.15,1.65,1.4)
   else if('Original violations' %in% visible) weights <- c(1.15,.4,.95,.8,.95,.75,.85,1.0)
   else if(all(c('Analysis','Metric','Count','N','Value') %in% visible)) weights <- c(2.1,2,.5,.5,1.75)
@@ -185,6 +186,7 @@ house_table <- function(x,footnote=NULL,width=6.85) {
   else if(all(c('Expert','Comparison','Domain','Metric','N','Value') %in% visible)) weights <- c(.65,1.8,.75,1.0,.4,2.25)
   else if(all(c('Expert','Source','Domain','Metric','N','Value') %in% visible)) weights <- c(.65,1.1,.8,1.0,.4,2.9)
   else if(all(c('Expert','Source','Metric','Direction','Outcome','Count','N','Value') %in% visible)) weights <- c(.65,1,.65,.8,1.3,.6,.4,1.45)
+  else if(all(c('Specialty','DOI') %in% visible)) weights <- c(1.3,1.3,1.8,1.8,.65,1.3,.8)
   else if('Specialty' %in% visible) weights <- c(1.25,1.25,2,.55,1.2,.6)
   else if('Guideline' %in% visible) weights <- c(.75,.45,1,3.1,1.55)
   else {

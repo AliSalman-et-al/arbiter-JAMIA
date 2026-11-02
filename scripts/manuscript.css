@@ -10,5 +10,5 @@ main p, main a { overflow-wrap: anywhere; }
 .manuscript-figure figcaption { margin-top: .75rem; color: inherit; }
 
 .manuscript-table .table-title { font-size: 1rem; margin-bottom: .5rem; }
-.manuscript-table[aria-label="Table 2"] td:nth-child(n+2),
-.manuscript-table[aria-label="Table 3"] td:nth-child(n+2) { text-align: right; font-variant-numeric: tabular-nums; }
+.manuscript-table[aria-label="Table 3"] td:nth-child(n+2),
+.manuscript-table[aria-label="Table 2"] td:nth-child(n+2) { text-align: right; font-variant-numeric: tabular-nums; }

@@ -1,0 +1,9 @@
+{
+  "baseline": "54645d75e7a8b32bbf09968893e7be45faa4cab4",
+  "unchanged_study_inputs": 464,
+  "retained_analytical_files": 41,
+  "retained_rows": 3755,
+  "figure1_unchanged": true,
+  "figure2_footer_only_change": true,
+  "controls": "Detected changed values, swapped identities and duplicate rows"
+}

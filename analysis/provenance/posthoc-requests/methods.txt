@@ -1,0 +1,6 @@
+irrCAC 1.4
+Every AC1/AC2 coefficient calculated with irrCAC::gwet.ac1.table; fixed category set 1:3.
+Linear weights from irrCAC::linear.weights(1:3). Existing agreement_replicates for exact/kappa.
+Existing stratified_cluster_weights and interval_table; B=10000, seed=20261018, type 7.
+Human Review Overall is not independently recorded. No derived values substituted.
+One recorded ARBITER Overall escalation; adopted ratings retained.

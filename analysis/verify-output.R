@@ -1,7 +1,7 @@
 source('R/load.R')
 for(f in setdiff(list.files('R',pattern='[.]R$',full.names=TRUE),'R/load.R')) source(f)
 inputs <- load_inputs()
-read_output <- function(name) readr::read_csv(paste0('output/tables/',name,'.csv'),show_col_types=FALSE)
+read_output <- function(name) read_display(name)
 check <- function(ok,message) {
   if(!isTRUE(ok)) stop(message,call.=FALSE)
   cat('PASS ',message,'\n',sep='')

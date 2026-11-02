@@ -1,4 +1,4 @@
-slug,meta_id,domain,meta,ARBITER_label,Unassisted_label,disputed,discordant,independent_1,independent_2,chosen_label_1,chosen_label_2,consensus,preferred
+slug,meta_id,domain,meta,ARBITER_label,Direct prompting_label,disputed,discordant,independent_1,independent_2,chosen_label_1,chosen_label_2,consensus,preferred
 aarnoutse-2017,cid-rifampin,D1,Low,Low,Low,FALSE,FALSE,Some concerns,Low,Low,Low,TRUE,Low
 abbasi-2012,lrheum-lbp,D1,Low,High,High,TRUE,FALSE,High,High,High,High,TRUE,High
 aboelfadl-2022,lrheum-lbp,D1,Low,Low,Low,FALSE,FALSE,Low,Low,Low,Low,TRUE,Low

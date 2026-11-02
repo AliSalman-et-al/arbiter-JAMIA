@@ -6,5 +6,5 @@ Text-span evidence binding,1,1,1,10000,1407,1407,ARBITER (Sonnet 5.5),
 Visual evidence binding,1,1,1,9996,14,14,ARBITER (Sonnet 5.5),
 Other evidence records,0,0,0,10000,1421,0,ARBITER (Sonnet 5.5),
 Trials using visual evidence,0.0784313725490196,0.029411764705882353,0.12745098039215685,10000,102,8,ARBITER (Sonnet 5.5),
-Evidence coverage,,,,0,,,Unassisted (Sonnet 5.5),Not available
-Bundle verification,,,,0,,,Unassisted (Sonnet 5.5),Not available
+Evidence coverage,,,,0,,,Direct prompting (Sonnet 5.5),Not available
+Bundle verification,,,,0,,,Direct prompting (Sonnet 5.5),Not available

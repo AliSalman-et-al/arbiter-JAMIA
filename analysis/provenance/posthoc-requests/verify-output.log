@@ -1,0 +1,36 @@
+During startup - Warning messages:
+1: Setting LC_COLLATE=C.UTF-8 failed 
+2: Setting LC_CTYPE=C.UTF-8 failed 
+3: Setting LC_MONETARY=C.UTF-8 failed 
+4: Setting LC_TIME=C.UTF-8 failed 
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+PASS two independent workbooks cover the same 510 trial-domain cells
+PASS conditional choice population is 80 disagreements, 60 agreed choices and 20 splits
+PASS conditional choice counts for Consensus
+PASS conditional choice counts for Expert 1
+PASS conditional choice counts for Expert 2
+PASS conditional choice counts for Split sensitivity
+PASS independent estimates use separate experts, domain ratings and a compact derived Overall check
+PASS all independent exact and weighted agreement values reproduce directly from workbook ratings.
+PASS derived Overall has no different-population Published comparison
+PASS paired expert comparisons contain only the retained arm contrast
+PASS expert agreement is 388 of 510 cells
+PASS derived expert Overall agreement is 52 of 102 trials
+PASS pooled rules-only agreement reproduces from the 26 contradictory labels, with invalid paths retained.
+PASS Published agreement contains domain exact agreement and weighted kappa
+PASS Published and All-Low exact agreement counts reproduce from source labels.
+PASS signalling tables retain pooled/domain summaries and complete paired question results with both codings
+PASS signalling numerators, denominators and paired intersections reproduce from matched components.
+PASS the unfavorable Q4.1 five-level contrasts remain visible alongside collapsed results.
+PASS every exported count/denominator proportion agrees with its estimate.
+PASS retired analytical exports are absent

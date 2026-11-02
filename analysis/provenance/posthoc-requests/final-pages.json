@@ -1,0 +1,273 @@
+{
+  "supplement_pages": 44,
+  "changed_pages": [
+    10,
+    11
+  ],
+  "geometry": [
+    {
+      "page": 1,
+      "words": 538,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 2,
+      "words": 617,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 3,
+      "words": 211,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 4,
+      "words": 315,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 5,
+      "words": 315,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 6,
+      "words": 337,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 7,
+      "words": 244,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 8,
+      "words": 172,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 9,
+      "words": 263,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 10,
+      "words": 264,
+      "outside": [],
+      "pixel_identical_to_reviewed": false
+    },
+    {
+      "page": 11,
+      "words": 270,
+      "outside": [],
+      "pixel_identical_to_reviewed": false
+    },
+    {
+      "page": 12,
+      "words": 279,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 13,
+      "words": 275,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 14,
+      "words": 171,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 15,
+      "words": 212,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 16,
+      "words": 222,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 17,
+      "words": 220,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 18,
+      "words": 125,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 19,
+      "words": 219,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 20,
+      "words": 213,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 21,
+      "words": 215,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 22,
+      "words": 211,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 23,
+      "words": 213,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 24,
+      "words": 215,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 25,
+      "words": 211,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 26,
+      "words": 212,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 27,
+      "words": 214,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 28,
+      "words": 212,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 29,
+      "words": 212,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 30,
+      "words": 214,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 31,
+      "words": 165,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 32,
+      "words": 165,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 33,
+      "words": 165,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 34,
+      "words": 220,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 35,
+      "words": 213,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 36,
+      "words": 212,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 37,
+      "words": 178,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 38,
+      "words": 269,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 39,
+      "words": 171,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 40,
+      "words": 169,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 41,
+      "words": 169,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 42,
+      "words": 108,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 43,
+      "words": 63,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    },
+    {
+      "page": 44,
+      "words": 381,
+      "outside": [],
+      "pixel_identical_to_reviewed": true
+    }
+  ]
+}
