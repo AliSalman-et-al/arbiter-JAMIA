@@ -10,31 +10,31 @@
       "bytes": 2858835
     },
     "supplement.html": {
-      "sha256": "1e6e31d1edc429720e3e951b90bf150999f1afb1c528bf99c7528b01db1ee0fb",
-      "bytes": 1319038
+      "sha256": "d8d6c97be19e058ce98d4f974531ab0f846e313971e972e8e045b1f8fe63adc2",
+      "bytes": 1319743
     },
     "output/manuscript/Main-analysis.docx": {
-      "sha256": "b10b042d312aeb65ceafba0cfe7bde2adde14c32b304a4673dad2a0ca50c8fb8",
+      "sha256": "8fcb9f3e9b979c4b985b50c9c58aea8d71c89918c2c028250314323c36e9a62b",
       "bytes": 862284
     },
     "output/manuscript/Supplement.docx": {
-      "sha256": "8df14f85567a9845645e9f936a57b10e01eb5ca45c8d49b71d6fb629f00aae2e",
-      "bytes": 69900
+      "sha256": "79a540a132f35a0467ba3a408da3eb88f1d3186fffc690b217171cb0cc477a45",
+      "bytes": 70316
     },
     "output/manuscript/TRIPOD-LLM.docx": {
-      "sha256": "0d1ece12746f8a43e37ea1ac03283248080c8ddcd54fa6ea5c510153e97b5a84",
-      "bytes": 18401
+      "sha256": "6cd9f03ca7cf055637a899a84fac7fad8ed93b6454f86cfd5288c3fdf6e3bf96",
+      "bytes": 18400
     },
     "output/manuscript/Table1.docx": {
-      "sha256": "931387ea7b31851c9c8e9dc7126d048b578cbe6b80296b7210ec3a5f470a92a1",
+      "sha256": "78a1928dfbffcfbe67e13be59b65249aec8701334ac5e90c93f4188ac31c85ab",
       "bytes": 14167
     },
     "output/manuscript/Table2.docx": {
-      "sha256": "7c467848ca0043d48bdd2635a66b9e1e897a2b667b4ecccd74cfba817f50fa1c",
+      "sha256": "67f51d86d5e6712adda05d75a9cd5dce23bd7cb73d82c62678a3f80b57681090",
       "bytes": 14765
     },
     "output/manuscript/Table3.docx": {
-      "sha256": "91ed953f5efe3737014c5d7916d5a9a154c4e2aa0c6c47a4a7c9ec0b8ef63891",
+      "sha256": "2be0bdb66fdca6b8ac0564eb9221187e14b26430507fd498bab0c9bd0f6d2beb",
       "bytes": 14016
     },
     "output/manuscript/Figure1.pdf": {
