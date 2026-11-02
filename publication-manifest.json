@@ -2,39 +2,39 @@
   "source_commit": "68b9b8938fddebca1254d652d7a64320721580bf",
   "files": {
     "index.html": {
-      "sha256": "8a5e72e408b051f5f46f108a928f13434b5403ce1bbeb63145a393e2b7fe226d",
-      "bytes": 3414
+      "sha256": "858ecc723c27219a8cbc6d2816912141e52235b8a4c35e1b3a80373f6f7ce946",
+      "bytes": 3438
     },
     "results.html": {
-      "sha256": "38442327780754729666306b2c326d94cdfded3a918615456b8f2697aa5e271e",
-      "bytes": 2857719
+      "sha256": "5c0dea3afb16b177de3579c20f064dc19146266db4d188d1efa37ccc84bd81e6",
+      "bytes": 2857800
     },
     "supplement.html": {
-      "sha256": "cd8c076d8898681b8fe45e302f497a18cf57c46269fa9402e63cc6e742bf57fc",
-      "bytes": 1304748
+      "sha256": "d5efc2844ff4479fa47b4105a5554d0f8d5b703750d0a298e3e9210f662b6911",
+      "bytes": 1305046
     },
     "output/manuscript/Main-analysis.docx": {
-      "sha256": "8d709da8eb68e8a132eca4fd0f1c885b54b26caa056b31779e60f10bc47dacdb",
-      "bytes": 861780
+      "sha256": "40af140e83cf2ff14668488a0aeca112dc1d2555ae725679b84c847a7d947b17",
+      "bytes": 861858
     },
     "output/manuscript/Supplement.docx": {
-      "sha256": "da919c690d7db3bb55f4dba7d503f0fcd8e2f7f5b22e83975ff1bbad0f8cc031",
-      "bytes": 64464
+      "sha256": "d02744696f12fb431e05193d6b6346d9692a65437c2813d70f7249e7cc92f15a",
+      "bytes": 64533
     },
     "output/manuscript/TRIPOD-LLM.docx": {
-      "sha256": "44e3ef49c999293ae943b3610bdaa7044fea5fdd87e9d81e37b9c4960f0fd833",
+      "sha256": "c0dae1dae2966f61f86623e8a06ce951b2a2e17d043dc5b1003b6810d32a6203",
       "bytes": 21469
     },
     "output/manuscript/Table1.docx": {
-      "sha256": "b00963179b8c161ebb8d28f65aa69292a05d255dfdb78a16a30e88f6ab36b9d8",
+      "sha256": "c32222ad162e0a668ba4395388ccbfe9c00d97f4ef8cb1abf7321fc48958cede",
       "bytes": 14072
     },
     "output/manuscript/Table2.docx": {
-      "sha256": "7e2f449529235cb83ba860e4d1cd3bac7af9bd172434a983a2d822d90c1adb04",
+      "sha256": "3f617df6bf9ec85c31e7028f87a8437054e2c9525e474c972d1e2d305d54969d",
       "bytes": 14704
     },
     "output/manuscript/Table3.docx": {
-      "sha256": "d8a1e65e9d8ba562e9255b6a2ed9775af8b3133e568c745d02db217610511c49",
+      "sha256": "a17017c35e4dda387bd306a0ce9427b37f17560297b4bb40e55e37111771453e",
       "bytes": 13911
     },
     "output/manuscript/Figure1.pdf": {
@@ -76,6 +76,10 @@
     "output/manuscript/Figure5.png": {
       "sha256": "875ff1d657b5c2541ab29842289f25fdf28dc7e37b961bbeee3f706a1e564331",
       "bytes": 51658
+    },
+    "output/manuscript/banovic26-avatar-2024.html": {
+      "sha256": "bf12e55e07a2575046210bd91719b9d39c03dcb878d2489d03b96517becc67eb",
+      "bytes": 198064
     }
   }
 }
